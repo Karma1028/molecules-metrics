@@ -6,6 +6,7 @@ import { motionTokens, springs } from "../../lib/motion-tokens"
 import { PlateHeader } from "../../components/headers/PlateHeader"
 import { useGoaPhrase } from "../../lib/useGoaClock"
 import { useOneScreen } from "../../hooks/useOneScreen"
+import { TwinDoor } from "../../components/TwinDoor"
 
 /** Stamp trail (ref: dejiajetomobi.com cursor stickers): spacing, cap, lifetime. */
 const TRAIL_GAP_PX = 64
@@ -83,7 +84,7 @@ const CSS = String.raw`
   .p-ac{position:relative}
   .p-ac .trail{position:absolute;inset:0;pointer-events:none;z-index:5;overflow:hidden}
   .p-ac .stamp{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;animation:ac-stamp ${TRAIL_LIFE_MS}ms cubic-bezier(.22,1,.36,1) forwards}
-  .p-ac .stamp.horse{background:var(--accent);-webkit-mask:url(/motifs/bankura-horse.png) center / contain no-repeat;mask:url(/motifs/bankura-horse.png) center / contain no-repeat}
+  .p-ac .stamp.horse{background:var(--accent);-webkit-mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;mask:url(/motifs/bankura-horse.webp) center / contain no-repeat}
   .p-ac .stamp.ring{border:1.5px dashed var(--accent);border-radius:50%;width:22px;height:22px;margin:-11px 0 0 -11px}
   @keyframes ac-stamp{0%{opacity:0;scale:.4}18%{opacity:.85;scale:1.08}100%{opacity:0;scale:.9;translate:0 10px}}
 
@@ -159,7 +160,10 @@ export function Contact() {
             lede={<>For <b>frames, collaborations</b> and conversations that start with a photo and end up somewhere else. Fastest on Instagram.</>}
             showRule={true}
           />
-          <span className="ac-where"><Icon id="i-pin" /> Based in Goa · India · <b className="ac-clock">{goaPhrase}</b></span>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap", marginTop: 12 }}>
+            <span className="ac-where"><Icon id="i-pin" /> Based in Goa · India · <b className="ac-clock">{goaPhrase}</b></span>
+            <TwinDoor to="/analyst/contact" label="You've met Karma. Meet Tuhin" world="analyst" />
+          </div>
         </div>
 
         <motion.div className="chans" variants={container} initial="hidden" animate="visible">

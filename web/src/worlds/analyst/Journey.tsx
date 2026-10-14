@@ -4,6 +4,7 @@ import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { LogHeader } from "../../components/headers/LogHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
 // Every date, institution, CGPA and role below is taken verbatim from the
 // real CV (public/Tuhin_Bhattacharya_Resume.pdf). Nothing fabricated.
@@ -176,7 +177,8 @@ export function Journey() {
         title="From reactors to regressions."
         lede={<>A straight line through <b>chemical engineering</b>, a Celebal BI internship, and a Big Data Analytics PGDM. Same instinct throughout: <b>measure, tune, de-bottleneck</b>.</>}
         right={
-          <div className="jn-arc">
+          <div className="jn-arc" style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+            <TwinDoor to="/artist/about" label="The person behind the path" world="artist" />
             <span className="flow">
               <b>chem-eng</b> <Icon id="i-arrow" /> <span className="a">analytics</span>
             </span>

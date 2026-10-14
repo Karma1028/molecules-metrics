@@ -6,6 +6,7 @@ import { useFrames, LOCAL_FRAMES, type Frame } from "../../lib/live"
 import { GalleryLightbox } from "./GalleryLightbox"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { PlateHeader } from "../../components/headers/PlateHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
 const DRIVE_FOLDER = "https://drive.google.com/drive/folders/1h-dsIi3apvvKvj3XBv-pAccL3F-EPnDI"
 
@@ -278,8 +279,8 @@ export function Gallery() {
         lede={<>The whole roll at once. <b>Pick any negative</b> and it prints to the big frame, or <b>scroll, swipe or arrow</b> through them. Drop a photo into the live folder and it joins the sheet.</>}
         right={
           <div className="gl-src">
+            <TwinDoor to="/analyst/work" label="Pull the thread: how I work" world="analyst" />
             <span className="live"><span className="dot" /> <b>{n}</b> frames · {live ? "live from Drive" : "local set"}</span>
-            <span className="cue">pick or scroll to print</span>
           </div>
         }
       />

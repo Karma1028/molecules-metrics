@@ -4,6 +4,7 @@ import { Icon } from "../../lib/icons"
 import { springs, motionTokens } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { LogHeader } from "../../components/headers/LogHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
 type Level = "strong" | "working" | "building" | "exploring"
 interface Item { name: string; note: string; lv: Level }
@@ -258,7 +259,12 @@ export function Skills() {
         tag="capability-map"
         title="Skills map"
         lede={<>Not a scorecard. Lenses on the same person: the <b>technical toolkit</b>, the <b>engineering rigour</b> under it, the <b>AI stack</b>, research, design and scoping. Pick a lens.</>}
-        right={<div className="sk-note">{String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}<br />{n} lenses</div>}
+        right={
+          <div className="sk-note" style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+            <TwinDoor to="/artist/notes" label="Toolkit, from notebooks" world="artist" />
+            <div>{String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")} · {n} lenses</div>
+          </div>
+        }
       />
 
       <div className="body">
