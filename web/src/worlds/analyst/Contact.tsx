@@ -4,6 +4,7 @@ import { SOCIAL } from "../../lib/worlds"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { LogHeader } from "../../components/headers/LogHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
 interface Channel {
   icon: string
@@ -114,6 +115,9 @@ export function Contact() {
               tag="uplink-terminal"
               title="Let's talk data."
               lede={<>Open to <b>analyst and BI conversations</b>, collaborations and the occasional football argument. Fastest on email.</>}
+              right={
+                <TwinDoor to="/artist/contact" label="You've met Tuhin. Meet Karma" world="artist" />
+              }
             />
           </motion.div>
           <motion.div className="status" variants={item}>

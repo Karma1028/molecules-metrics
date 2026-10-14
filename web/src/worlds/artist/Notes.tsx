@@ -6,6 +6,7 @@ import { useMedium } from "../../lib/live"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { PlateHeader } from "../../components/headers/PlateHeader"
 import { useOneScreen } from "../../hooks/useOneScreen"
+import { TwinDoor } from "../../components/TwinDoor"
 
 // Honest: there is no published longform yet. These entries are real threads the
 // site already evidences — each links to the actual built page, not an invented
@@ -151,6 +152,9 @@ export function Notes() {
         note="~ more, in longhand, soon"
         lede="Threads I keep coming back to. Pull a leaf from the hand: each opens the page where the thinking actually lives."
         showRule={true}
+        right={
+          <TwinDoor to="/analyst/skills" label="Notebooks into toolkit" world="analyst" />
+        }
       />
 
       <motion.nav className="notebook" aria-label="Notebook threads" variants={container} initial="hidden" animate="visible">

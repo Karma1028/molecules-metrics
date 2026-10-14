@@ -4,6 +4,7 @@ import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { PlateHeader } from "../../components/headers/PlateHeader"
 import { useOneScreen } from "../../hooks/useOneScreen"
+import { TwinDoor } from "../../components/TwinDoor"
 
 // Facts sourced from the real CV + the Gallery/Sound/Matchday pages. No invented
 // biography: only what the portfolio itself already evidences.
@@ -159,6 +160,9 @@ export function About() {
         title={<>The person behind the <em className="hl">frames</em>.</>}
         note="~ origins, in ink"
         showRule={true}
+        right={
+          <TwinDoor to="/analyst/journey" label="Bankura to Goa, mapped" world="analyst" />
+        }
       />
 
       <div className="grid">

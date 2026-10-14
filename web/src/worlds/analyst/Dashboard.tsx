@@ -4,6 +4,7 @@ import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { LogHeader } from "../../components/headers/LogHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 import {
   useSpotifyWrapped, useFootball, useNowPlaying, useGithub, useMedium, useClock,
 } from "../../lib/live"
@@ -172,7 +173,8 @@ export function Dashboard() {
         title="Live instruments."
         lede="Real feeds, honestly labelled. Dark cells are channels not yet wired, not empty numbers dressed up."
         right={
-          <div className="db-clockbox">
+          <div className="db-clockbox" style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+            <TwinDoor to="/artist/sound" label="The listening behind the numbers" world="artist" />
             <div className="t">{clock}</div>
             <div className="z">IST · Asia/Kolkata</div>
           </div>

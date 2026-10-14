@@ -2,7 +2,7 @@
    Hero (front page) assets, preserved verbatim from the approved prototype
    hero v0.7. Mounted as a self-contained island on the "/" route so the
    signature cover-story hero keeps its exact look + behaviour. The SPA's
-   world shell is NOT applied here — this page owns its own styling.
+   world shell is NOT applied here: this page owns its own styling.
    ===================================================================== */
 
 export const HERO_STYLE = String.raw`
@@ -84,9 +84,12 @@ export const HERO_STYLE = String.raw`
     letter-spacing:.12em; text-transform:uppercase; color:var(--muted); transition:color .4s; white-space:nowrap}
   :root[data-mode="artist"] .hero-root .opt-artist, :root[data-mode="analyst"] .hero-root .opt-analyst{color:#fff}
   :root[data-theme="dark"][data-mode="analyst"] .hero-root .opt-analyst{color:#14202c}
-  .hero-root .hint{display:inline-block; margin-left:14px; font:600 19px/1 "Caveat",cursive; color:var(--muted); rotate:-4deg}
+  .hero-root .switch-row{display:flex; align-items:center; gap:14px; margin:14px 0 8px}
+  .hero-root .hint{display:inline-block; font:600 18px/1 "Caveat",cursive; color:var(--muted); rotate:-4deg}
   .hero-root .hint b{color:var(--accent); transition:color .5s}
-  .hero-root .elsewhere{margin-top:26px; font:500 10.5px/1.9 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .hero-root .thesis-line{font:400 12px/1.45 "Fraunces",serif; font-style:italic; color:var(--muted); max-width:48ch; margin:0 0 14px}
+  .hero-root .thesis-line .thread{color:var(--accent); font-style:normal; font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; display:inline-block; margin-left:6px; font-weight:600}
+  .hero-root .elsewhere{margin-top:20px; font:500 10.5px/1.9 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   .hero-root .elsewhere a{color:var(--ink); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,transparent); margin-right:14px; transition:color .3s}
   .hero-root .elsewhere a:hover{color:var(--accent)}
   .hero-root .elsewhere a[hidden]{display:none}
@@ -107,7 +110,7 @@ export const HERO_STYLE = String.raw`
   :root[data-mode="analyst"] .hero-root .ph.plot{opacity:.55}
   .hero-root .figcap{position:absolute; left:14px; bottom:calc(3vh + 12px); z-index:2; font:500 10px/1 "JetBrains Mono",monospace; letter-spacing:.16em;
     text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.5)}
-  .hero-root .figcap::after{content:"fig.1 — the artist, Goa"} :root[data-mode="analyst"] .hero-root .figcap::after{content:"fig.1 — specimen: analyst (chem-eng lineage)"}
+  .hero-root .figcap::after{content:"fig.1 · the artist, Goa"} :root[data-mode="analyst"] .hero-root .figcap::after{content:"fig.1 · specimen: analyst (chem-eng lineage)"}
 
   .hero-root .disc{position:absolute; z-index:-1; right:-13%; top:-11%; width:62%; aspect-ratio:1; overflow:visible; animation:pop 1.1s var(--spring) .35s both}
   .hero-root .disc .core{fill:var(--accent); transition:fill .6s}
@@ -344,10 +347,13 @@ export const HERO_STYLE = String.raw`
     .hero-root .issue{margin-bottom:4px; font-size:clamp(8.5px,2.2vw,10px); letter-spacing:.18em}
     .hero-root h1{font-size:clamp(28px,7.5vw,36px); line-height:.95}
     .hero-root .sub{min-height:0; font-size:clamp(11px,2.8vw,12.5px); line-height:1.35; margin:6px 0 8px; max-width:100%}
+    .hero-root .switch-row{margin:4px 0 2px; gap:8px}
     .hero-root .switch{padding:3px; border-radius:24px}
     .hero-root .switch .thumb{border-radius:20px}
     .hero-root .switch .opt{padding:6px 14px; font-size:10px; letter-spacing:.08em}
     .hero-root .hint{font-size:14px; margin-left:6px}
+    .hero-root .thesis-line{font-size:10px; line-height:1.25; margin:2px 0 4px; max-width:100%}
+    .hero-root .thesis-line .thread{font-size:8.5px; margin-left:4px}
     .hero-root .elsewhere{margin-top:6px; font-size:8.5px; line-height:1.4}
     .hero-root .elsewhere a{margin-right:10px}
     .hero-root .portrait{position:relative; right:auto; top:auto; bottom:auto; width:100%; flex:1; min-height:0; margin-top:6px;

@@ -141,8 +141,8 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   *{animation-duration:.001ms!important;transition-duration:.08s!important}
 }
 
-/* ── World-switch gallop (BENGAL-MOTIF §4.5) ─────────────────────────────── */
-/* Terracotta wipe + Bankura horse silhouette across artist<->analyst swap.
+/* ── World-switch gallop & shuttle pass (GEMINI-EXECUTION-BRIEF §3, §4 R3) ── */
+/* Terracotta wipe + Bankura horse shuttle across artist<->analyst swap.
    Hardcoded hexes: the incoming world's tokens may not define the terracotta
    ramp at mount. Transforms only (GPU). Reduced-motion never mounts this
    (guarded in WorldTransition.tsx), so no reduced-motion override needed. */
@@ -151,6 +151,34 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   background:#b85c2e; pointer-events:none; overflow:hidden;
   will-change:transform;
 }
+.world-wipe-thread{
+  position:absolute; top:50%; left:0; width:100%; height:2px;
+  background:#f4ead9; opacity:.85; pointer-events:none;
+  box-shadow:0 0 10px rgba(244,234,217,.8);
+  will-change:transform;
+}
+.world-wipe-thread.reverse{
+  left:auto; right:0;
+}
+.world-wipe-label{
+  position:absolute; inset:0; display:grid; place-items:center;
+  pointer-events:none; z-index:2; text-align:center; padding:24px;
+}
+.world-wipe-label .ww-text{
+  display:inline-block; max-width:90vw;
+}
+.world-wipe-label.artist{
+  font-family:"Fraunces",serif; font-style:italic; font-weight:700;
+  font-size:clamp(26px,4.5vw,52px); color:#f4ead9;
+  letter-spacing:-.015em; line-height:1.1;
+  text-shadow:0 3px 20px rgba(0,0,0,.45);
+}
+.world-wipe-label.analyst{
+  font-family:"JetBrains Mono",monospace; font-weight:600;
+  font-size:clamp(16px,2.8vw,32px); color:#f4ead9;
+  letter-spacing:.18em; text-transform:uppercase; line-height:1.2;
+  text-shadow:0 3px 20px rgba(0,0,0,.45);
+}
 .world-wipe-horse{
   position:absolute; top:50%; left:0;
   width:38vmin; aspect-ratio:1/1; translate:0 -50%;
@@ -158,6 +186,52 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   -webkit-mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;
   mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;
   will-change:transform;
+}
+.world-thread-line{
+  position:fixed; left:0; right:0; top:50%; height:2px; z-index:190;
+  background:#b85c2e; pointer-events:none;
+  box-shadow:0 0 10px rgba(184,92,46,.75);
+}
+
+/* ── Twin Door: Pulled-thread bridge link (GEMINI-EXECUTION-BRIEF §3, §4 R3) ── */
+.twin-door{
+  display:inline-flex; align-items:center; gap:7px;
+  padding:3px 10px 3px 8px; border-radius:999px;
+  font:500 10px/1 var(--font-mono, monospace);
+  letter-spacing:.09em; text-transform:uppercase; text-decoration:none;
+  color:var(--muted);
+  border:1px dashed color-mix(in srgb, #b85c2e 45%, transparent);
+  background:color-mix(in srgb, var(--card) 80%, transparent);
+  transition:color .25s, border-color .25s, background .25s, box-shadow .25s;
+  white-space:nowrap; cursor:pointer; flex-shrink:0;
+}
+.twin-door:hover, .twin-door:focus-visible{
+  color:var(--ink);
+  border-color:#b85c2e;
+  border-style:solid;
+  background:color-mix(in srgb, var(--card) 96%, transparent);
+  box-shadow:0 1px 8px -2px rgba(184, 92, 46, 0.3);
+}
+.twin-door .td-loop{
+  display:inline-flex; align-items:center; width:22px; height:12px;
+  color:#b85c2e; flex-shrink:0;
+}
+.twin-door .td-loop svg{
+  width:100%; height:100%; display:block;
+}
+.twin-door .td-label{
+  color:inherit;
+}
+.twin-door .td-arr{
+  color:#b85c2e; font-weight:700; display:inline-block;
+}
+@media (max-width:760px){
+  .twin-door{
+    font-size:9px; padding:2px 7px 2px 5px; gap:5px;
+  }
+  .twin-door .td-loop{
+    width:18px; height:10px;
+  }
 }
 
 /* ── Alpona flourishes (BENGAL-MOTIF §2B) ────────────────────────────────── */

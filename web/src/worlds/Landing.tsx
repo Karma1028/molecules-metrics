@@ -49,9 +49,13 @@ const HERO_BODY = String.raw`
         <span class="s artist">I photograph Goa, never miss a <b>Bar&ccedil;a</b> match and over-think every playlist. Everything pinned to the photo is <b>live</b>, pulled from the real thing, right now.</span>
         <span class="s analyst">Chemical engineer turned data analyst. <b>Data Science Intern at InfoLeap</b>, PGDM Big Data Analytics at GIM. Same instincts, new raw material.</span>
       </p>
-      <button class="switch" id="switch" aria-label="switch side: artist or analyst">
-        <span class="thumb"></span><span class="opt opt-artist">Karma</span><span class="opt opt-analyst">Tuhin</span>
-      </button><span class="hint">one switch, <b>two sides</b> &#8634;</span>
+      <div class="switch-row">
+        <button class="switch" id="switch" aria-label="switch side: artist or analyst">
+          <span class="thumb"></span><span class="opt opt-artist">Karma</span><span class="opt opt-analyst">Tuhin</span>
+        </button>
+        <span class="hint">one switch, <b>two sides</b> &#8634;</span>
+      </div>
+      <p class="thesis-line">Chemical engineer by training, analyst by trade, photographer by habit.<span class="thread">One thread, two weaves.</span></p>
       <nav class="elsewhere" aria-label="elsewhere">
         elsewhere &rarr;
         <a href="https://www.linkedin.com/in/tuhinbhattacharya28" target="_blank" rel="noopener">LinkedIn &#8599;</a>
@@ -554,11 +558,11 @@ function initHero(spa: (path: string) => void): () => void {
     $("#fx-dot")?.classList.toggle("live", live || ms < 6 * 3600e3)
     setTxt("#fx-k", live ? "LIVE · right now" : "next · kick-off")
     if (live) {
-      setTxt("#fx-cd", "● in play — refresh for the score")
+      setTxt("#fx-cd", "● in play · refresh for the score")
       return
     }
     if (ms < 0) {
-      setTxt("#fx-cd", "full time — result updating")
+      setTxt("#fx-cd", "full time · result updating")
       return
     }
     const d = Math.floor(ms / 864e5)

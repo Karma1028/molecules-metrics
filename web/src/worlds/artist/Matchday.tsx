@@ -5,6 +5,7 @@ import { Icon } from "../../lib/icons"
 import { springs, motionTokens } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { PlateHeader } from "../../components/headers/PlateHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
 /* ── kickoff countdown (editorial one-liner, not a chip grid) ─────────── */
 function kickoffLine(ts?: string | null): string | null {
@@ -500,6 +501,7 @@ export function Matchday() {
         lede="I read Barça through Messi, then went and measured why."
         right={
           <div className="mh-meta">
+            <TwinDoor to="/analyst/work" label="The system behind the fandom" world="analyst" />
             <div className="mh-iss">No. 10 · Garnet &amp; Blue</div>
             <div className="mh-src">Last season from FBref + Understat · this season live via TheSportsDB</div>
           </div>

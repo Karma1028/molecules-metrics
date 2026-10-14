@@ -4,6 +4,7 @@ import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { LogHeader } from "../../components/headers/LogHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
 /**
  * The Work — honest living work-log, styled as an instrument panel.
@@ -285,13 +286,14 @@ export function Work() {
         lede={<>An honest ledger. <b>Real work, verified numbers.</b> No logo wall, nothing inflated.</>}
         right={
           <div className="mast-right">
+            <TwinDoor
+              to={active.id === "barca" ? "/artist/matchday" : "/artist/gallery"}
+              label={active.id === "barca" ? "The terrace behind the model" : "Pull the thread: what I see"}
+              world="artist"
+            />
             <div>
-              <span className="n">{shippedCount}</span> shipped
+              <span className="n">{shippedCount}</span> shipped · <span className="n">{ENTRIES.length}</span> logged
             </div>
-            <div>
-              <span className="n">{ENTRIES.length}</span> logged
-            </div>
-            <div>audit-ready</div>
           </div>
         }
       />

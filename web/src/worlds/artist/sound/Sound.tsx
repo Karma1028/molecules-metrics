@@ -4,6 +4,7 @@ import { SoundMe } from "./SoundMe"
 import { Radio } from "./Radio"
 import { useOneScreen } from "../../../hooks/useOneScreen"
 import { PlateHeader } from "../../../components/headers/PlateHeader"
+import { TwinDoor } from "../../../components/TwinDoor"
 
 type Mode = "me" | "radio"
 const STORE = "mm-sound-mode"
@@ -316,25 +317,28 @@ export function Sound() {
         title={<>Eight years of <em className="hl">listening</em>.</>}
         note={mode === "me" ? "~ my sound" : "~ apna gaana bajao"}
         right={
-          <div className="tuner-row" style={{ margin: 0 }}>
-            <div className="tuner" data-on={mode} role="tablist" aria-label="sound mode">
-              <button
-                className="tn me"
-                role="tab"
-                aria-selected={mode === "me"}
-                onClick={() => setMode("me")}
-              >
-                Me · My Sound
-              </button>
-              <button
-                className="tn radio"
-                role="tab"
-                aria-selected={mode === "radio"}
-                onClick={() => setMode("radio")}
-              >
-                Radio · Hostel
-              </button>
-              <span className="tn-slide" aria-hidden="true" />
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
+            <TwinDoor to="/analyst/dashboard" label="The numbers behind the playlist" world="analyst" />
+            <div className="tuner-row" style={{ margin: 0 }}>
+              <div className="tuner" data-on={mode} role="tablist" aria-label="sound mode">
+                <button
+                  className="tn me"
+                  role="tab"
+                  aria-selected={mode === "me"}
+                  onClick={() => setMode("me")}
+                >
+                  Me · My Sound
+                </button>
+                <button
+                  className="tn radio"
+                  role="tab"
+                  aria-selected={mode === "radio"}
+                  onClick={() => setMode("radio")}
+                >
+                  Radio · Hostel
+                </button>
+                <span className="tn-slide" aria-hidden="true" />
+              </div>
             </div>
           </div>
         }
