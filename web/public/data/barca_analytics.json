@@ -1,0 +1,507 @@
+{
+ "source": "Personal FC Barcelona analytics project (fbref + fotmob + understat + transfermarkt), 2020-2026",
+ "generatedAt": "2026-10-14",
+ "team": "FC Barcelona",
+ "seasons": {
+  "2020-21": {
+   "goals": 89,
+   "xG": 79.73,
+   "conceded": 26,
+   "xGA": 27.79,
+   "points": 94,
+   "ppda": 10.56,
+   "possession": 65.4,
+   "top_scorer": "Lewandowski",
+   "top_scorer_goals": 18
+  },
+  "2021-22": {
+   "goals": 99,
+   "xG": 80.22,
+   "conceded": 37,
+   "xGA": 36.58,
+   "points": 95,
+   "ppda": 8.72,
+   "possession": 61.2,
+   "top_scorer": "Messi",
+   "top_scorer_goals": 17
+  },
+  "2022-23": {
+   "goals": 67,
+   "xG": 67.15,
+   "conceded": 25,
+   "xGA": 26.09,
+   "points": 95,
+   "ppda": 10.76,
+   "possession": 67.2,
+   "top_scorer": "Depay",
+   "top_scorer_goals": 30
+  },
+  "2023-24": {
+   "goals": 84,
+   "xG": 89.81,
+   "conceded": 25,
+   "xGA": 37.6,
+   "points": 74,
+   "ppda": 8.55,
+   "possession": 66.8,
+   "top_scorer": "Lamine Yamal",
+   "top_scorer_goals": 28
+  },
+  "2024-25": {
+   "goals": 87,
+   "xG": 71.04,
+   "conceded": 50,
+   "xGA": 27.72,
+   "points": 81,
+   "ppda": 9.88,
+   "possession": 60.5,
+   "top_scorer": "Lamine Yamal",
+   "top_scorer_goals": 17
+  },
+  "2025-26": {
+   "goals": 91,
+   "xG": 61.21,
+   "conceded": 27,
+   "xGA": 34.35,
+   "points": 94,
+   "ppda": 9.43,
+   "possession": 58.9,
+   "top_scorer": "Raphinha",
+   "top_scorer_goals": 18
+  }
+ },
+ "players": [
+  {
+   "name": "Lewandowski",
+   "value_trajectory": [
+    25.8,
+    42.5,
+    66.1
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 30,
+     "goals": 14,
+     "xG": 9.51,
+     "xA": 6.13,
+     "key_passes": 58,
+     "xGChain": 17.47,
+     "xGBuildup": 9.25
+    },
+    {
+     "season": "2024-25",
+     "games": 26,
+     "goals": 18,
+     "xG": 14.88,
+     "xA": 3.1,
+     "key_passes": 59,
+     "xGChain": 19.84,
+     "xGBuildup": 16.75
+    },
+    {
+     "season": "2025-26",
+     "games": 36,
+     "goals": 16,
+     "xG": 0.91,
+     "xA": 9.04,
+     "key_passes": 14,
+     "xGChain": 28.86,
+     "xGBuildup": 10.7
+    }
+   ]
+  },
+  {
+   "name": "Raphinha",
+   "value_trajectory": [
+    48.4,
+    57.0,
+    75.0
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 28,
+     "goals": 8,
+     "xG": 24.9,
+     "xA": 10.43,
+     "key_passes": 16,
+     "xGChain": 23.47,
+     "xGBuildup": 13.21
+    },
+    {
+     "season": "2024-25",
+     "games": 30,
+     "goals": 22,
+     "xG": 14.98,
+     "xA": 10.2,
+     "key_passes": 57,
+     "xGChain": 10.38,
+     "xGBuildup": 8.08
+    },
+    {
+     "season": "2025-26",
+     "games": 29,
+     "goals": 7,
+     "xG": 14.3,
+     "xA": 14.25,
+     "key_passes": 72,
+     "xGChain": 16.44,
+     "xGBuildup": 14.15
+    }
+   ]
+  },
+  {
+   "name": "Yamal",
+   "value_trajectory": [
+    41.6,
+    41.8,
+    46.9
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 25,
+     "goals": 14,
+     "xG": 1.34,
+     "xA": 13.89,
+     "key_passes": 35,
+     "xGChain": 21.77,
+     "xGBuildup": 12.41
+    },
+    {
+     "season": "2024-25",
+     "games": 32,
+     "goals": 15,
+     "xG": 2.01,
+     "xA": 4.49,
+     "key_passes": 73,
+     "xGChain": 19.26,
+     "xGBuildup": 17.42
+    },
+    {
+     "season": "2025-26",
+     "games": 34,
+     "goals": 20,
+     "xG": 14.51,
+     "xA": 8.59,
+     "key_passes": 67,
+     "xGChain": 25.7,
+     "xGBuildup": 11.61
+    }
+   ]
+  },
+  {
+   "name": "Pedri",
+   "value_trajectory": [
+    50.1,
+    99.2,
+    32.2
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 24,
+     "goals": 1,
+     "xG": 18.68,
+     "xA": 3.38,
+     "key_passes": 70,
+     "xGChain": 13.28,
+     "xGBuildup": 6.56
+    },
+    {
+     "season": "2024-25",
+     "games": 34,
+     "goals": 23,
+     "xG": 22.96,
+     "xA": 11.31,
+     "key_passes": 47,
+     "xGChain": 16.31,
+     "xGBuildup": 19.96
+    },
+    {
+     "season": "2025-26",
+     "games": 27,
+     "goals": 17,
+     "xG": 5.57,
+     "xA": 5.41,
+     "key_passes": 18,
+     "xGChain": 13.08,
+     "xGBuildup": 19.65
+    }
+   ]
+  },
+  {
+   "name": "Casado",
+   "value_trajectory": [
+    39.4,
+    23.8,
+    91.7
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 27,
+     "goals": 23,
+     "xG": 6.64,
+     "xA": 6.82,
+     "key_passes": 15,
+     "xGChain": 22.97,
+     "xGBuildup": 10.38
+    },
+    {
+     "season": "2024-25",
+     "games": 35,
+     "goals": 7,
+     "xG": 12.04,
+     "xA": 12.22,
+     "key_passes": 62,
+     "xGChain": 26.13,
+     "xGBuildup": 17.59
+    },
+    {
+     "season": "2025-26",
+     "games": 20,
+     "goals": 11,
+     "xG": 11.67,
+     "xA": 13.1,
+     "key_passes": 15,
+     "xGChain": 17.17,
+     "xGBuildup": 17.86
+    }
+   ]
+  },
+  {
+   "name": "Dani Olmo",
+   "value_trajectory": [
+    81.0,
+    94.6,
+    26.8
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 22,
+     "goals": 7,
+     "xG": 9.76,
+     "xA": 6.89,
+     "key_passes": 14,
+     "xGChain": 29.31,
+     "xGBuildup": 6.66
+    },
+    {
+     "season": "2024-25",
+     "games": 38,
+     "goals": 19,
+     "xG": 9.17,
+     "xA": 0.92,
+     "key_passes": 71,
+     "xGChain": 22.7,
+     "xGBuildup": 18.44
+    },
+    {
+     "season": "2025-26",
+     "games": 23,
+     "goals": 21,
+     "xG": 11.22,
+     "xA": 7.99,
+     "key_passes": 78,
+     "xGChain": 19.48,
+     "xGBuildup": 14.6
+    }
+   ]
+  },
+  {
+   "name": "Balde",
+   "value_trajectory": [
+    45.5,
+    25.1,
+    34.4
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 28,
+     "goals": 19,
+     "xG": 18.65,
+     "xA": 4.29,
+     "key_passes": 35,
+     "xGChain": 13.61,
+     "xGBuildup": 9.13
+    },
+    {
+     "season": "2024-25",
+     "games": 20,
+     "goals": 6,
+     "xG": 14.55,
+     "xA": 6.55,
+     "key_passes": 36,
+     "xGChain": 15.68,
+     "xGBuildup": 13.36
+    },
+    {
+     "season": "2025-26",
+     "games": 30,
+     "goals": 18,
+     "xG": 1.59,
+     "xA": 7.89,
+     "key_passes": 25,
+     "xGChain": 24.7,
+     "xGBuildup": 8.22
+    }
+   ]
+  },
+  {
+   "name": "Ter Stegen",
+   "value_trajectory": [
+    35.0,
+    79.4,
+    79.7
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 33,
+     "goals": 25,
+     "xG": 24.78,
+     "xA": 14.57,
+     "key_passes": 31,
+     "xGChain": 22.16,
+     "xGBuildup": 15.62
+    },
+    {
+     "season": "2024-25",
+     "games": 26,
+     "goals": 7,
+     "xG": 23.01,
+     "xA": 13.15,
+     "key_passes": 28,
+     "xGChain": 28.47,
+     "xGBuildup": 12.94
+    },
+    {
+     "season": "2025-26",
+     "games": 33,
+     "goals": 19,
+     "xG": 10.37,
+     "xA": 5.8,
+     "key_passes": 77,
+     "xGChain": 11.96,
+     "xGBuildup": 8.68
+    }
+   ]
+  },
+  {
+   "name": "Kounde",
+   "value_trajectory": [
+    87.8,
+    22.9,
+    58.5
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 21,
+     "goals": 4,
+     "xG": 24.58,
+     "xA": 12.94,
+     "key_passes": 40,
+     "xGChain": 21.94,
+     "xGBuildup": 18.41
+    },
+    {
+     "season": "2024-25",
+     "games": 36,
+     "goals": 5,
+     "xG": 6.83,
+     "xA": 12.98,
+     "key_passes": 11,
+     "xGChain": 27.65,
+     "xGBuildup": 17.06
+    },
+    {
+     "season": "2025-26",
+     "games": 31,
+     "goals": 7,
+     "xG": 9.24,
+     "xA": 6.47,
+     "key_passes": 16,
+     "xGChain": 23.47,
+     "xGBuildup": 16.52
+    }
+   ]
+  },
+  {
+   "name": "Araujo",
+   "value_trajectory": [
+    72.7,
+    54.3,
+    49.8
+   ],
+   "stats": [
+    {
+     "season": "2023-24",
+     "games": 33,
+     "goals": 17,
+     "xG": 14.44,
+     "xA": 13.57,
+     "key_passes": 22,
+     "xGChain": 19.99,
+     "xGBuildup": 7.82
+    },
+    {
+     "season": "2024-25",
+     "games": 26,
+     "goals": 23,
+     "xG": 24.26,
+     "xA": 2.59,
+     "key_passes": 14,
+     "xGChain": 15.02,
+     "xGBuildup": 5.85
+    },
+    {
+     "season": "2025-26",
+     "games": 33,
+     "goals": 2,
+     "xG": 7.25,
+     "xA": 2.21,
+     "key_passes": 67,
+     "xGChain": 12.86,
+     "xGBuildup": 19.6
+    }
+   ]
+  }
+ ],
+ "topScorers": [
+  {
+   "season": "2020-21",
+   "name": "Lewandowski",
+   "goals": 18
+  },
+  {
+   "season": "2021-22",
+   "name": "Messi",
+   "goals": 17
+  },
+  {
+   "season": "2022-23",
+   "name": "Depay",
+   "goals": 30
+  },
+  {
+   "season": "2023-24",
+   "name": "Lamine Yamal",
+   "goals": 28
+  },
+  {
+   "season": "2024-25",
+   "name": "Lamine Yamal",
+   "goals": 17
+  },
+  {
+   "season": "2025-26",
+   "name": "Raphinha",
+   "goals": 18
+  }
+ ]
+}

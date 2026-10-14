@@ -1,0 +1,16 @@
+# Keep noise out of Antigravity's context window (gitignore syntax).
+# Fewer tokens of junk = less context rot = sharper, project-specific output.
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+*.log
+*.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+public/assets/sprite.svg
+.karma/screenshots/
+.karma/vite.log
+.DS_Store

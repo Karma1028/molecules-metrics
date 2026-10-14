@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Molecules → Metrics — hero v0.2 (photo + eclipse toggle)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF6F0; --ink:#1A1613; --muted:#6B5F54;
+    --orange:#EA6A2B; --orange-deep:#C9471A;
+    --scrim: 250,246,240;        /* paper rgb for the text scrim */
+    --photo-filter: saturate(1.02) contrast(1.02) brightness(1.0);
+    --photo-overlay: linear-gradient(90deg, rgba(250,246,240,.92) 0%, rgba(250,246,240,.55) 28%, rgba(250,246,240,0) 55%);
+    --sky:#FAF6F0;
+  }
+  :root[data-theme="dark"]{
+    --paper:#14110E; --ink:#F2EBE2; --muted:#A99C8C;
+    --orange:#FF8A4C; --orange-deep:#FF6A2B;
+    --scrim: 20,17,14;
+    --photo-filter: brightness(.52) contrast(1.12) saturate(.72) hue-rotate(-8deg);
+    --photo-overlay: linear-gradient(90deg, rgba(20,17,14,.95) 0%, rgba(20,17,14,.6) 30%, rgba(20,17,14,.12) 60%), linear-gradient(0deg, rgba(10,18,34,.5), rgba(10,18,34,.2));
+    --sky:#14110E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--sky); color:var(--ink); font-family:"Fraunces",Georgia,serif; overflow:hidden; -webkit-font-smoothing:antialiased;
+    transition:background .4s ease, color .4s ease}
+  .stage{position:fixed; inset:0; overflow:hidden}
+  .photo{position:absolute; inset:0; background:url("me.jpg") no-repeat; background-size:cover;
+    background-position:72% center; filter:var(--photo-filter);
+    transform:scale(1.12); transform-origin:70% 40%;
+    clip-path: inset(0 0 0 100%);
+    transition:filter .6s ease;}
+  .photo.rev{ animation:wipe 1.15s cubic-bezier(.76,0,.24,1) forwards, kodak 1.5s ease forwards, drift 18s ease-in-out 1.6s infinite alternate; }
+  @keyframes wipe{ to{ clip-path:inset(0 0 0 0) } }
+  @keyframes kodak{ from{ filter:saturate(.15) brightness(1.15) sepia(.35) } to{ filter:var(--photo-filter) } }
+  @keyframes drift{ from{ transform:scale(1.12) translate(0,0) } to{ transform:scale(1.16) translate(-1.4%,-1.2%) } }
+  .overlay{position:absolute; inset:0; background:var(--photo-overlay); pointer-events:none; transition:background .4s ease}
+  .grain{position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+
+  .wrap{position:relative; z-index:5; height:100%; display:flex; flex-direction:column; justify-content:center;
+    padding:0 clamp(24px,7vw,120px); max-width:1180px}
+  .kicker{font-family:"JetBrains Mono",monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--muted); margin-bottom:22px;
+    opacity:0; animation:rise .7s ease .55s forwards}
+  .kicker b{color:var(--orange-deep)}
+  h1{font-size:clamp(46px,8.4vw,120px); line-height:.94; font-weight:900; letter-spacing:-.02em; margin-bottom:26px}
+  .line{display:block; overflow:hidden}
+  .line > span{display:inline-block; transform:translateY(112%); animation:up .9s cubic-bezier(.22,1,.36,1) forwards}
+  .line:nth-child(1) > span{animation-delay:.45s}
+  .line:nth-child(2) > span{animation-delay:.6s}
+  @keyframes up{to{transform:translateY(0)}}
+  .hand{font-family:"Caveat",cursive; font-weight:700; color:var(--orange); font-size:1.16em; display:inline-block; transform:translateY(112%) rotate(-3deg); animation:upr .9s cubic-bezier(.22,1,.36,1) forwards}
+  .hand.two{color:var(--orange-deep)}
+  .line:nth-child(1) .hand{animation-delay:.52s}
+  .line:nth-child(2) .hand{animation-delay:.67s}
+  @keyframes upr{to{transform:translateY(0) rotate(-3deg)}}
+  .rule{height:3px; width:0; background:var(--orange); margin:6px 0 26px; animation:grow .8s ease .9s forwards}
+  @keyframes grow{to{width:92px}}
+  .sub{font-size:clamp(16px,1.6vw,20px); max-width:520px; color:var(--ink); opacity:.82; line-height:1.55; font-weight:400; margin-bottom:34px;
+    opacity:0; animation:rise .7s ease 1s forwards}
+  .cta{display:flex; gap:16px; align-items:center; flex-wrap:wrap; opacity:0; animation:rise .7s ease 1.15s forwards}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)} to{opacity:.82;transform:none}}
+  .cta{animation-name:rise}
+  .btn{font-family:"JetBrains Mono",monospace; font-size:14px; letter-spacing:.04em; padding:14px 24px; border-radius:40px; border:1.5px solid var(--ink); cursor:pointer; text-decoration:none; color:var(--ink); background:transparent; transition:transform .25s, background .25s, color .25s, border-color .4s}
+  .btn.primary{background:var(--orange); border-color:var(--orange); color:#1A1613}
+  .btn.primary:hover{background:var(--orange-deep); border-color:var(--orange-deep); transform:translateY(-3px)}
+  .btn.ghost:hover{background:var(--ink); color:var(--paper); transform:translateY(-3px)}
+
+  /* ECLIPSE theme toggle */
+  .eclipse{position:fixed; z-index:9; right:clamp(20px,4vw,52px); top:clamp(20px,4vw,44px);
+    width:52px; height:52px; border-radius:50%; cursor:pointer; border:none; background:transparent;
+    display:grid; place-items:center}
+  .eclipse .disc{position:relative; width:30px; height:30px; border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, #FFD9A8, var(--orange) 70%);
+    box-shadow:0 0 0 6px rgba(234,106,43,.14), 0 0 22px rgba(234,106,43,.5); transition:box-shadow .4s}
+  .eclipse .disc::after{ /* the moon that eclipses the sun */
+    content:""; position:absolute; inset:0; border-radius:50%;
+    background:var(--sky); transform:translateX(130%); transition:transform .5s cubic-bezier(.76,0,.24,1), background .4s}
+  :root[data-theme="dark"] .eclipse .disc{ background:radial-gradient(circle at 60% 40%, #E9E4DC, #BFB7AC 75%); box-shadow:0 0 0 6px rgba(255,255,255,.06), 0 0 20px rgba(200,210,235,.35)}
+  :root[data-theme="dark"] .eclipse .disc::after{ transform:translateX(42%) }
+  .eclipse .ring{position:absolute; inset:0; border-radius:50%; border:1.5px solid var(--muted); opacity:.35}
+  .eclipse .lbl{position:absolute; top:56px; right:0; font-family:"JetBrains Mono",monospace; font-size:10px; letter-spacing:.18em; color:var(--muted); text-transform:uppercase; white-space:nowrap}
+
+  .foot{position:fixed; z-index:6; left:clamp(24px,7vw,120px); bottom:30px; display:flex; align-items:flex-end; gap:28px; opacity:0; animation:rise .7s ease 1.3s forwards}
+  .cue{font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.2em; color:var(--muted); text-transform:uppercase}
+  .cue .ar{display:inline-block; animation:bob 1.8s ease-in-out infinite; color:var(--orange)}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+  .sig{font-family:"Caveat",cursive; font-size:30px; color:var(--ink); transform:rotate(-6deg); opacity:.75}
+  @media (max-width:640px){ .foot .sig{display:none} .photo{background-position:68% center} }
+
+  /* View Transition eclipse wipe */
+  ::view-transition-old(root){ animation:none }
+  ::view-transition-new(root){ animation:eclipseIn .6s cubic-bezier(.76,0,.24,1) }
+  @keyframes eclipseIn{ from{ clip-path:circle(0% at var(--cx,90%) var(--cy,10%)) } to{ clip-path:circle(150% at var(--cx,90%) var(--cy,10%)) } }
+
+  @media (prefers-reduced-motion:reduce){
+    .photo{clip-path:none; transform:scale(1.02); animation:none}
+    .line>span,.hand,.kicker,.sub,.cta,.foot{animation:none!important; transform:none!important; opacity:1!important}
+    .rule{width:92px; animation:none}
+    .cue .ar{animation:none}
+    ::view-transition-new(root){animation:none}
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="photo" id="photo"></div>
+    <div class="overlay"></div>
+    <div class="grain"></div>
+  </div>
+
+  <button class="eclipse" id="eclipse" aria-label="Toggle day / night theme" title="Eclipse — toggle light / dark">
+    <span class="ring"></span><span class="disc"></span>
+    <span class="lbl" id="eclbl">day</span>
+  </button>
+
+  <div class="wrap">
+    <div class="kicker">Tuhin Bhattacharya · <b>Data Analyst / BI</b></div>
+    <h1>
+      <span class="line"><span>From <i class="hand">molecules</i></span></span>
+      <span class="line"><span>to <i class="hand two">metrics</i>.</span></span>
+    </h1>
+    <div class="rule"></div>
+    <p class="sub">Chemical engineer turned BI analyst. I turn raw data into stories that drive
+      decisions — 300+ DAX measures, ML models, and dashboards people actually use.</p>
+    <div class="cta">
+      <a class="btn primary" href="#" onclick="return false">See the work ↓</a>
+      <a class="btn ghost" href="#" onclick="return false">Download CV</a>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="cue">scroll <span class="ar">↓</span></div>
+    <div class="sig">~ Tuhin</div>
+  </div>
+
+<script>
+  const root = document.documentElement;
+  const photo = document.getElementById('photo');
+  const ecl = document.getElementById('eclipse');
+  const lbl = document.getElementById('eclbl');
+
+  // restore saved theme
+  try{ const t=localStorage.getItem('mm-theme'); if(t) root.dataset.theme=t; }catch(e){}
+  lbl.textContent = root.dataset.theme==='dark' ? 'night' : 'day';
+
+  // cinematic photo reveal on load
+  requestAnimationFrame(()=> photo.classList.add('rev'));
+
+  function setTheme(next){
+    root.dataset.theme = next;
+    lbl.textContent = next==='dark' ? 'night' : 'day';
+    try{ localStorage.setItem('mm-theme', next); }catch(e){}
+  }
+
+  ecl.addEventListener('click', ()=>{
+    const next = root.dataset.theme==='dark' ? 'light' : 'dark';
+    const r = ecl.getBoundingClientRect();
+    root.style.setProperty('--cx', (r.left + r.width/2) + 'px');
+    root.style.setProperty('--cy', (r.top + r.height/2) + 'px');
+    if(document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.startViewTransition(()=> setTheme(next));
+    } else {
+      setTheme(next);
+    }
+  });
+
+  // subtle mouse parallax on the photo
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    addEventListener('mousemove', e=>{
+      const dx=(e.clientX/innerWidth-0.5), dy=(e.clientY/innerHeight-0.5);
+      photo.style.backgroundPosition = `calc(72% + ${dx*-14}px) calc(center + ${dy*-10}px)`;
+    });
+  }
+</script>
+</body>
+</html>

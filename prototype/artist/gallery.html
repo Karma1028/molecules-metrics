@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-mode="artist">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Gallery — The Artist</title>
+<meta name="description" content="Field dispatches from Goa — a photo folder that updates itself."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+<link rel="stylesheet" href="/assets/theme-base.css"><link rel="stylesheet" href="/assets/world-artist.css">
+<style>
+  .counter{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font:500 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .counter .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite} .counter b{color:var(--ink);font-weight:600}
+  #grid{columns:3 260px;column-gap:16px;margin-top:34px} @media(max-width:560px){#grid{columns:2 150px;column-gap:10px}}
+  .frame{break-inside:avoid;margin:0 0 16px;position:relative;border-radius:10px;overflow:hidden;background:var(--card);box-shadow:var(--shadow-sm);cursor:zoom-in;transition:transform .4s var(--ease),box-shadow .4s var(--ease);opacity:0}
+  .frame.show{animation:rise .6s var(--ease) forwards}
+  .frame:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:var(--shadow)}
+  .frame img{display:block;width:100%;height:auto;background:#b9a98f;transition:filter .6s var(--ease),transform .8s var(--ease)}
+  .frame:hover img{transform:scale(1.04)}
+  .frame .cap{position:absolute;inset:auto 0 0 0;padding:20px 12px 9px;color:#fff;pointer-events:none;font:500 10px/1.3 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;opacity:0;transition:opacity .3s;background:linear-gradient(transparent,rgba(0,0,0,.6))}
+  .frame:hover .cap{opacity:1}
+  .frame .n{position:absolute;top:8px;left:8px;font:500 9px/1 var(--font-mono);color:#fff;opacity:.85;background:rgba(0,0,0,.35);padding:4px 6px;border-radius:5px;letter-spacing:.08em}
+  .empty{color:var(--muted);font-size:14px;margin-top:34px;max-width:52ch;text-wrap:pretty}
+  .add{margin-top:14px;display:inline-flex;gap:7px;align-items:center;font:500 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+  .lb{position:fixed;inset:0;z-index:80;background:color-mix(in srgb,var(--paper2) 90%,#000 40%);backdrop-filter:blur(6px);display:none;place-items:center;padding:30px;cursor:zoom-out}
+  .lb.open{display:grid;animation:fadein .3s var(--ease)}
+  .lb figure{max-width:min(1000px,94vw);max-height:88vh;display:flex;flex-direction:column;gap:10px;cursor:auto}
+  .lb img{max-width:100%;max-height:78vh;object-fit:contain;border-radius:8px;box-shadow:var(--shadow)}
+  .lb figcaption{font:500 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);display:flex;justify-content:space-between;gap:12px}
+  .lb .nav-btn{position:fixed;top:50%;translate:0 -50%;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+  .lb .prev{left:18px}.lb .next{right:18px}.lb .prev .ic{transform:rotate(180deg)}
+  .lb .x{position:fixed;top:18px;right:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer;font:400 20px/1 Inter}
+</style>
+</head>
+<body data-world="artist" data-page="gallery.html">
+  <div class="bg"></div><div class="grain"></div>
+  <main class="page">
+    <div data-rise>
+      <div class="kicker"><svg class="ic"><use href="#i-camera"/></svg>Field Dispatches · Goa</div>
+      <h1 class="display">The <em>gallery</em>.</h1>
+      <p class="lede">Light I chased and kept — ridge lines, lantern streets, the sea at odd hours. Every frame shot on foot around Goa, and the folder below <b>updates itself</b>: drop a photo into Drive, it shows up here.</p>
+      <div class="counter"><span class="dot"></span><span id="count">loading frames…</span></div>
+    </div>
+    <div id="grid" aria-live="polite"></div>
+    <div id="empty" class="empty" hidden>No frames in the live folder yet — showing the local set.
+      <br><a class="add" href="https://drive.google.com/drive/folders/1h-dsIi3apvvKvj3XBv-pAccL3F-EPnDI" target="_blank" rel="noopener"><svg class="ic"><use href="#i-download"/></svg>Drop photos into the live folder</a></div>
+  </main>
+  <div class="lb" id="lb" aria-hidden="true">
+    <button class="x" id="lbx" aria-label="close">×</button>
+    <button class="nav-btn prev" id="lbp" aria-label="previous"><svg class="ic"><use href="#i-arrow"/></svg></button>
+    <button class="nav-btn next" id="lbn" aria-label="next"><svg class="ic"><use href="#i-arrow"/></svg></button>
+    <figure><img id="lbimg" alt=""><figcaption><span id="lbcap"></span><span id="lbidx" class="num"></span></figcaption></figure>
+  </div>
+  <script src="/assets/app.js"></script>
+  <script>
+  (function(){
+    const LOCAL=[['ridge','ridge line'],['lantern-street','lantern street'],['blue-beams','blue beams'],['dawn-sun','dawn'],['lake','still lake'],
+      ['night-ride','night ride'],['doorway','doorway'],['yellow-leaves','yellow leaves'],['hazy-tree','haze'],['orange-sun','orange sun']]
+      .map(([f,name])=>({url:`/frames/${f}.webp`,name}));
+    const grid=document.getElementById('grid'),countEl=document.getElementById('count'),emptyEl=document.getElementById('empty');
+    let FR=[];
+    function render(frames,source){ FR=frames; grid.innerHTML='';
+      frames.forEach((fr,i)=>{ const a=document.createElement('div'); a.className='frame'; a.style.animationDelay=(i*.05)+'s';
+        a.innerHTML=`<span class="n num">${String(i+1).padStart(2,'0')}/${String(frames.length).padStart(2,'0')}</span><img loading="lazy" decoding="async" src="${fr.url}" alt="${fr.name}"><div class="cap">${fr.name}</div>`;
+        a.addEventListener('click',()=>openLb(i)); grid.appendChild(a); requestAnimationFrame(()=>a.classList.add('show')); });
+      countEl.innerHTML=`<b>${frames.length}</b> frames · ${source==='drive'?'live from Drive':'local set'}`; emptyEl.hidden=source==='drive'&&frames.length>0; }
+    const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),lbcap=document.getElementById('lbcap'),lbidx=document.getElementById('lbidx'); let cur=0;
+    function openLb(i){cur=i;show();lb.classList.add('open');lb.setAttribute('aria-hidden','false');}
+    function closeLb(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');}
+    function show(){const f=FR[cur];lbimg.src=f.url;lbimg.alt=f.name;lbcap.textContent=f.name;lbidx.textContent=(cur+1)+' / '+FR.length;}
+    function step(d){cur=(cur+d+FR.length)%FR.length;show();}
+    document.getElementById('lbx').onclick=closeLb;
+    document.getElementById('lbp').onclick=e=>{e.stopPropagation();step(-1);};
+    document.getElementById('lbn').onclick=e=>{e.stopPropagation();step(1);};
+    lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+    addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
+    render(LOCAL,'local');
+    fetch('/api/frames').then(r=>r.json()).then(d=>{ if(d&&Array.isArray(d.frames)&&d.frames.length) render(d.frames.map(f=>({url:f.url,name:f.name})),'drive'); else if(d&&d.source==='drive') emptyEl.hidden=false; }).catch(()=>{});
+  })();
+  </script>
+</body>
+</html>

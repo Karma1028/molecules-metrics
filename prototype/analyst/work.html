@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-mode="analyst">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Case Studies — The Analyst</title>
+<meta name="description" content="Problem → approach → result. What I built and what it moved."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme-base.css"><link rel="stylesheet" href="/assets/world-analyst.css">
+<style>
+  .case{margin-top:20px}
+  .case .body{display:grid;grid-template-columns:1.4fr 1fr;gap:22px} @media(max-width:760px){.case .body{grid-template-columns:1fr}}
+  .case h3{font-family:var(--font-display);font-weight:600;font-size:22px;color:var(--ink);margin-bottom:4px}
+  .case .role{font:500 10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block}
+  .step{margin:12px 0} .step .lab{font:500 9px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+  .step p{font-size:14px;color:var(--ink);line-height:1.55} .step.res p{color:var(--teal)}
+  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+  .kpi{background:var(--paper2);border:1px solid var(--rule);border-radius:9px;padding:12px 13px}
+  .kpi .v{font:700 24px/1 var(--font-display);font-variant-numeric:tabular-nums;color:var(--ink)}
+  .kpi .v .u{font-size:.5em;color:var(--muted);font-weight:500;margin-left:2px}
+  .kpi .k{font:500 9px/1.3 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px;grid-column:1/-1}
+  .note{margin-top:28px;font:500 11px/1.7 var(--font-mono);color:var(--muted);border-left:2px solid var(--accent);padding-left:12px;max-width:66ch}
+</style>
+</head>
+<body data-world="analyst" data-page="work.html">
+  <div class="bg"></div><div class="grain"></div>
+  <main class="page">
+    <div data-rise>
+      <div class="kicker"><svg class="ic"><use href="#i-grid"/></svg>Case files · problem → result</div>
+      <h1 class="display">The <em>work</em>.</h1>
+      <p class="lede">Three files that show the method, not just the output. Each is structured the way I think: name the real problem, pick the smallest approach that works, and read the result honestly.</p>
+    </div>
+
+    <div class="panel case" data-rise><div class="head"><svg class="ic"><use href="#i-database"/></svg>case 01 · internship<span class="dot"></span></div>
+      <div class="body">
+        <div>
+          <span class="role">Data Science Intern · Infoleap</span>
+          <h3>From raw exports to a decision view</h3>
+          <div class="step"><span class="lab">problem</span><p>Stakeholders were reading decisions off raw spreadsheet exports — slow, inconsistent, and easy to misread.</p></div>
+          <div class="step"><span class="lab">approach</span><p>Cleaned and modelled the data in Python, defined the few metrics that actually drove the call, and shipped a repeatable reporting view instead of one-off sheets.</p></div>
+          <div class="step res"><span class="lab">result</span><p>A single source of truth that cut the manual prep each cycle and made the numbers defensible.</p></div>
+          <div class="tags"><span class="tag"><svg class="ic"><use href="#i-cpu"/></svg>Python</span><span class="tag">pandas</span><span class="tag">SQL</span><span class="tag">Power BI</span></div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div class="v">~70<span class="u">%</span></div><div class="k">manual prep ↓ *</div></div>
+          <div class="kpi"><div class="v">1</div><div class="k">source of truth</div></div>
+          <div class="kpi"><div class="v">5</div><div class="k">core metrics defined</div></div>
+          <div class="kpi"><div class="v">wk</div><div class="k">cycle, repeatable</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel case" data-rise style="--i:1"><div class="head"><svg class="ic"><use href="#i-scatter"/></svg>case 02 · academic</div>
+      <div class="body">
+        <div>
+          <span class="role">PGDM Big Data Analytics · GIM</span>
+          <h3>Predicting the signal in a noisy dataset</h3>
+          <div class="step"><span class="lab">problem</span><p>A large, messy dataset where the question was which few features actually mattered.</p></div>
+          <div class="step"><span class="lab">approach</span><p>EDA to understand distributions, feature selection to cut noise, then a baseline model before anything fancy — compared against the baseline, not against hope.</p></div>
+          <div class="step res"><span class="lab">result</span><p>A model that beat the baseline on held-out data, with a clear story for why each kept feature earned its place.</p></div>
+          <div class="tags"><span class="tag">EDA</span><span class="tag">scikit-learn</span><span class="tag">feature selection</span><span class="tag">matplotlib</span></div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div class="v">&gt;base</div><div class="k">beat baseline *</div></div>
+          <div class="kpi"><div class="v">80<span class="u">/20</span></div><div class="k">train / test split</div></div>
+          <div class="kpi"><div class="v">k-fold</div><div class="k">cross-validated</div></div>
+          <div class="kpi"><div class="v">top-N</div><div class="k">features kept</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel case" data-rise style="--i:2"><div class="head"><svg class="ic"><use href="#i-flask"/></svg>case 03 · engineering</div>
+      <div class="body">
+        <div>
+          <span class="role">B.Tech Chemical Engineering</span>
+          <h3>De-bottlenecking a process unit</h3>
+          <div class="step"><span class="lab">problem</span><p>A unit operation capping throughput — the classic single constraint on the whole line.</p></div>
+          <div class="step"><span class="lab">approach</span><p>Mass + energy balance to locate the true limit, then tested changes against it rather than tweaking the parts that were already fine.</p></div>
+          <div class="step res"><span class="lab">result</span><p>Identified the constraint and the change that relieved it — the same instinct I now bring to slow pipelines.</p></div>
+          <div class="tags"><span class="tag">mass balance</span><span class="tag">optimization</span><span class="tag">root-cause</span></div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div class="v">1</div><div class="k">true constraint found</div></div>
+          <div class="kpi"><div class="v">↑</div><div class="k">throughput relieved *</div></div>
+          <div class="kpi"><div class="v">Δ</div><div class="k">measured, not guessed</div></div>
+          <div class="kpi"><div class="v">∞</div><div class="k">transfers to data</div></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">* Figures marked with an asterisk are representative placeholders — Tuhin replaces them with the exact numbers from each engagement. The method and framing are real.</p>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

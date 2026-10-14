@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-mode="analyst">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The Analyst — Tuhin Bhattacharya</title>
+<meta name="description" content="The work side — chemical engineer turned data analyst. Pipelines, models, decisions."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme-base.css">
+<link rel="stylesheet" href="/assets/world-analyst.css">
+<style>
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(22px,3vw,44px);align-items:end;min-height:50vh}
+  @media(max-width:860px){.hero{grid-template-columns:1fr;gap:26px}}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .cta{display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:var(--accent);color:#fff;
+    font:600 12px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;padding:13px 19px;border-radius:9px;box-shadow:var(--shadow-sm);
+    transition:transform .3s,box-shadow .3s} .cta:hover{transform:translateY(-2px);box-shadow:var(--glow)} .cta .ic{width:15px;height:15px}
+  .cta.ghost{background:transparent;color:var(--ink);border:1px solid color-mix(in srgb,var(--accent) 40%,var(--rule))}
+  .consoline{margin-top:22px}
+  .statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+  .mod{text-decoration:none;display:block} .mod .body{display:flex;flex-direction:column;gap:7px}
+  .mod h3{font-family:var(--font-display);font-weight:600;font-size:17px;color:var(--ink)}
+  .mod p{font-size:13px;color:var(--muted)} .mod .go{margin-top:4px;font:500 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:flex;gap:6px;align-items:center}
+  .mod .go .ic{width:13px;height:13px;transition:transform .3s} .mod:hover .go .ic{transform:translateX(4px)}
+  .spark{width:100%;height:46px;display:block}
+  .spark path.line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .spark path.area{fill:color-mix(in srgb,var(--accent) 16%,transparent);stroke:none}
+  .spark path.line{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s var(--ease)}
+  [data-rise]:not(.in) .spark path.line{stroke-dashoffset:1}
+</style>
+</head>
+<body data-world="analyst" data-page="index.html">
+  <div class="bg"></div><div class="grain"></div>
+
+  <main class="page">
+    <section class="hero">
+      <div data-rise>
+        <div class="kicker"><span class="live"></span>SYS · chem-eng → data analyst</div>
+        <h1 class="display">Messy questions,<br>made into <em>decisions</em>.</h1>
+        <p class="lede">I took the rigour of a reactor — mass balances, control loops, finding the one bottleneck — and pointed it at data. <b>Data Science Intern</b>, PGDM Big Data Analytics. This side is the <b>work</b>.</p>
+        <div class="ctas">
+          <a class="cta" href="work.html"><svg class="ic"><use href="#i-grid"/></svg>Case studies</a>
+          <a class="cta ghost" href="resume.html"><svg class="ic"><use href="#i-download"/></svg>Résumé</a>
+        </div>
+        <div class="console consoline" data-rise style="--i:1">
+          <span class="p">tuhin@goa</span>:<span class="c">~</span>$ whoami<br>
+          <b>chemical engineer</b> who learned to <b>ship analysis</b> — python · sql · power bi · pandas<br>
+          <span class="p">status</span>: <b style="color:var(--teal)">open to data roles</b> · building pipelines in the open
+        </div>
+      </div>
+
+      <div class="statgrid" data-rise style="--i:1">
+        <div class="panel"><div class="head"><svg class="ic"><use href="#i-pulse"/></svg>Local time<span class="dot"></span></div>
+          <div class="body"><div class="stat"><div class="v num" id="clock">--:--</div><div class="k">Asia/Kolkata · live</div></div></div></div>
+        <div class="panel"><div class="head"><svg class="ic"><use href="#i-layers"/></svg>Toolbelt</div>
+          <div class="body"><div class="stat"><div class="v num">6<span class="u">core</span></div><div class="k">py · sql · bi · excel · pandas · git</div></div></div></div>
+        <div class="panel"><div class="head"><svg class="ic"><use href="#i-branch"/></svg>Domains</div>
+          <div class="body"><div class="stat"><div class="v num">2</div><div class="k">process eng ↔ analytics</div></div></div></div>
+        <div class="panel"><div class="head"><svg class="ic"><use href="#i-chart"/></svg>Trend</div>
+          <div class="body">
+            <svg class="spark" viewBox="0 0 120 46" preserveAspectRatio="none" aria-hidden="true">
+              <path class="area" d="M0,40 L0,34 L20,30 L40,32 L60,22 L80,24 L100,12 L120,8 L120,46 L0,46 Z"/>
+              <path class="line" d="M0,34 L20,30 L40,32 L60,22 L80,24 L100,12 L120,8"/>
+            </svg>
+            <div class="stat"><div class="k">chem → data trajectory</div></div></div></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2 class="sec">Modules</h2>
+      <div class="sec-kick">the work, broken out</div>
+      <div class="modules">
+        <a class="mod panel" href="skills.html" data-rise><div class="head"><svg class="ic"><use href="#i-layers"/></svg>skills<span class="dot"></span></div>
+          <div class="body"><h3>Skills</h3><p>Transferable rigour, with honest proficiency meters — not a logo wall.</p><span class="go">inspect<svg class="ic"><use href="#i-arrow"/></svg></span></div></a>
+        <a class="mod panel" href="work.html" data-rise style="--i:1"><div class="head"><svg class="ic"><use href="#i-grid"/></svg>work</div>
+          <div class="body"><h3>Case Studies</h3><p>Problem → approach → result. What I actually built and what it moved.</p><span class="go">open<svg class="ic"><use href="#i-arrow"/></svg></span></div></a>
+        <a class="mod panel" href="journey.html" data-rise style="--i:2"><div class="head"><svg class="ic"><use href="#i-route"/></svg>journey</div>
+          <div class="body"><h3>Journey</h3><p>Reactor to regression — the chem-eng → analyst path, step by step.</p><span class="go">trace<svg class="ic"><use href="#i-arrow"/></svg></span></div></a>
+        <a class="mod panel" href="dashboard.html" data-rise style="--i:3"><div class="head"><svg class="ic"><use href="#i-database"/></svg>dashboard</div>
+          <div class="body"><h3>Dashboard</h3><p>Live signals about this very site + a few numbers I track on myself.</p><span class="go">monitor<svg class="ic"><use href="#i-arrow"/></svg></span></div></a>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/app.js"></script>
+  <script>
+  (function(){
+    const c=document.getElementById('clock');
+    const fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+    const tick=()=>{ c.textContent=fmt.format(new Date()); }; tick(); setInterval(tick,1000);
+  })();
+  </script>
+</body>
+</html>

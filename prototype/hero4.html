@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Field Notebook — hero v0.4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECE2D0; --paper2:#E4D8C2; --ink:#241E17; --muted:#7D7059;
+    --orange:#E4631F; --orange2:#C1461A; --pen:#2B4C6F; --teal:#2C9C98;
+    --grid:rgba(90,70,45,.08); --glass:rgba(255,251,244,.6); --glassbd:rgba(255,255,255,.7);
+    --back:#F4ECDC; --shadow:0 18px 40px rgba(80,55,25,.16);
+  }
+  :root[data-theme="dark"]{
+    --paper:#1C1813; --paper2:#15110D; --ink:#EFE7DA; --muted:#9C8E79;
+    --orange:#FF8A4C; --orange2:#FF6A2B; --pen:#8FB3D6; --teal:#44C0BC;
+    --grid:rgba(255,235,200,.06); --glass:rgba(40,33,26,.55); --glassbd:rgba(255,255,255,.1);
+    --back:#272019; --shadow:0 18px 44px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--paper); color:var(--ink); font-family:"Inter",system-ui,sans-serif; overflow:hidden;
+    -webkit-font-smoothing:antialiased; transition:background .5s,color .5s}
+  .bg{position:fixed; inset:0; z-index:0;
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px) 0 0/28px 28px,
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0/28px 28px,
+      radial-gradient(120% 90% at 20% 10%, var(--paper), var(--paper2));
+    transition:background .5s}
+  .grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");}
+
+  .top{position:fixed; z-index:20; inset:0 0 auto 0; display:flex; justify-content:space-between; align-items:center;
+    padding:clamp(16px,3vw,26px) clamp(22px,5vw,56px); font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
+  .top .brand b{color:var(--orange)}
+
+  .scene{position:fixed; inset:0; z-index:5}
+  .stage{position:absolute; inset:0}
+
+  .lead{position:absolute; left:clamp(24px,6vw,92px); top:50%; transform:translateY(-50%); max-width:620px; z-index:8}
+  .issue{font-family:"JetBrains Mono",monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--orange2); margin-bottom:16px}
+  h1{font-family:"Fraunces",serif; font-weight:900; font-size:clamp(46px,7.4vw,104px); line-height:.92; letter-spacing:-.015em; color:var(--ink)}
+  h1 em{font-style:italic; font-weight:600}
+  h1 .hand{font-family:"Caveat",cursive; font-weight:700; font-style:normal; color:var(--orange); font-size:1.18em}
+  .sub{font-size:clamp(15px,1.4vw,18px); color:var(--muted); line-height:1.6; max-width:430px; margin:24px 0 30px}
+  .cta{display:inline-flex; gap:10px; align-items:center; font-family:"JetBrains Mono",monospace; font-size:13px; letter-spacing:.04em; text-transform:uppercase;
+    padding:14px 24px; border-radius:40px; border:1.5px solid var(--ink); color:var(--ink); text-decoration:none; background:transparent; transition:transform .3s,background .3s,color .3s}
+  .cta:hover{background:var(--orange); border-color:var(--orange); color:#fff; transform:translateY(-2px)}
+
+  .float{position:absolute; will-change:transform}
+
+  /* taped double-exposure photo */
+  .photo{right:clamp(24px,7vw,96px); top:50%; width:clamp(240px,27vw,360px); transform:translateY(-50%) rotate(2.5deg)}
+  .photo .frame{position:relative; padding:12px 12px 48px; background:#fffdf8; box-shadow:var(--shadow); border-radius:3px}
+  :root[data-theme="dark"] .photo .frame{background:#262019}
+  .photo .pic{position:relative; aspect-ratio:3/4; overflow:hidden; background:#ddd}
+  .photo .pic .base{position:absolute; inset:0; background:url("me.jpg") center/cover; background-position:70% center}
+  .photo .pic .dbl{position:absolute; inset:0; background:url("shot-ridge.webp") center/cover; mix-blend-mode:screen; opacity:0; transition:opacity .6s ease}
+  :root[data-theme="dark"] .photo .pic .dbl{mix-blend-mode:lighten}
+  .photo:hover .pic .dbl{opacity:.55}
+  .photo .cap{font-family:"Caveat",cursive; font-size:22px; color:var(--ink); position:absolute; left:16px; bottom:12px}
+  .tape{position:absolute; width:86px; height:26px; background:rgba(226,200,150,.55); box-shadow:0 2px 6px rgba(0,0,0,.08); transform:rotate(-6deg)}
+  .tape.t1{top:-10px; left:30px} .tape.t2{bottom:34px; right:-16px; transform:rotate(8deg)}
+
+  /* ---- FLIP CARDS (stat front -> punchline back) ---- */
+  .card{width:170px; height:92px; perspective:900px; cursor:default}
+  .card .inner{position:relative; width:100%; height:100%; transition:transform .6s cubic-bezier(.22,1,.36,1); transform-style:preserve-3d}
+  .card:hover .inner{transform:rotateY(180deg)}
+  .card .face{position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden;
+    background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--glassbd); border-radius:14px; padding:13px 15px; box-shadow:var(--shadow); overflow:hidden}
+  .card .back{transform:rotateY(180deg); background:var(--back); display:flex; align-items:center}
+  .card .k{font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:5px; display:flex; gap:7px; align-items:center}
+  .card .big{font-family:"Fraunces",serif; font-weight:900; font-size:27px; line-height:1; color:var(--ink)}
+  .card .lbl{font-size:11px; color:var(--muted); margin-top:3px; line-height:1.3}
+  .card .joke{font-family:"Caveat",cursive; font-weight:600; font-size:19px; color:var(--pen); line-height:1.15}
+  .dotled{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px color-mix(in srgb,var(--teal) 25%,transparent)}
+  .dotled.live{background:#E4631F;box-shadow:0 0 0 3px rgba(228,99,31,.25);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 2px rgba(228,99,31,.3)}50%{box-shadow:0 0 0 6px rgba(228,99,31,0)}}
+  .hint{position:absolute; right:9px; bottom:7px; font-size:9px; color:var(--muted); opacity:.6; font-family:"JetBrains Mono",monospace}
+
+  .c-dax{left:39%; top:22%; transform:rotate(-3deg)}
+  .c-mood{left:31%; bottom:19%; transform:rotate(2.5deg)}
+  .c-bugs{right:30%; top:19%; transform:rotate(3deg)}
+  .c-np{right:25%; bottom:16%; transform:rotate(-2deg); width:210px}
+  .c-gym{left:49%; bottom:11%; transform:rotate(-4deg)}
+
+  .bars{display:flex; gap:3px; align-items:flex-end; height:20px; margin-top:7px}
+  .bars i{width:4px; background:var(--orange); border-radius:2px; animation:eq 1s ease-in-out infinite}
+  .bars i:nth-child(2){animation-delay:.2s}.bars i:nth-child(3){animation-delay:.4s}.bars i:nth-child(4){animation-delay:.1s}.bars i:nth-child(5){animation-delay:.3s}.bars i:nth-child(6){animation-delay:.5s}
+  @keyframes eq{0%,100%{height:4px}50%{height:20px}}
+  .np-track{font-family:"Inter";font-weight:600;font-size:13px;color:var(--ink);margin-top:1px}
+
+  .note{position:absolute; font-family:"Caveat",cursive; font-weight:600; font-size:22px; color:var(--pen); z-index:9}
+  .note.n1{left:39%; top:15%}
+  .note.n2{right:21%; top:50%; transform:rotate(-4deg)}
+  .note svg{position:absolute; overflow:visible}
+
+  .sketch{left:33%; top:39%; width:90px; height:70px; z-index:9; cursor:pointer}
+  .sketch svg{width:100%;height:100%}
+  .sketch .mol,.sketch .cht{transition:opacity .5s}
+  .sketch .cht{opacity:0}
+  .sketch:hover .mol{opacity:0}.sketch:hover .cht{opacity:1}
+  .sketch .tag{font-family:"Caveat";font-size:15px;fill:var(--muted)}
+
+  /* ---- THEME TOGGLE: sun <-> crescent morph ---- */
+  .eclipse{position:fixed; z-index:20; right:clamp(20px,4vw,48px); top:clamp(48px,7vw,62px);
+    width:52px;height:52px;border:none;background:transparent;cursor:pointer;display:grid;place-items:center}
+  .eclipse svg{width:30px;height:30px;overflow:visible; transition:transform .6s ease}
+  .eclipse .core{fill:var(--orange); transition:fill .5s}
+  .eclipse .cut{fill:var(--paper); transform:translateX(26px); transition:transform .55s cubic-bezier(.76,0,.24,1),fill .5s}
+  .eclipse .ray{stroke:var(--orange); stroke-width:2.2; stroke-linecap:round; transform-origin:15px 15px; transition:opacity .4s,transform .55s cubic-bezier(.76,0,.24,1)}
+  :root[data-theme="dark"] .eclipse .core{fill:#D9D7CF}
+  :root[data-theme="dark"] .eclipse .cut{transform:translateX(9px); fill:var(--paper)}
+  :root[data-theme="dark"] .eclipse .ray{opacity:0; transform:scale(.4)}
+  .eclipse:hover svg{transform:rotate(22deg)}
+
+  .foot{position:fixed; z-index:9; left:clamp(24px,6vw,92px); bottom:26px; font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted)}
+  .foot .ar{color:var(--orange); display:inline-block; animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+  ::view-transition-old(root){animation:none}
+  ::view-transition-new(root){animation:ec .6s cubic-bezier(.76,0,.24,1)}
+  @keyframes ec{from{clip-path:circle(0% at var(--cx,92%) var(--cy,8%))}to{clip-path:circle(150% at var(--cx,92%) var(--cy,8%))}}
+
+  @media(max-width:860px){
+    .lead{position:static; transform:none; max-width:none; padding:96px 24px 0}
+    .scene{position:relative; height:auto}
+    .float{position:relative!important; display:inline-block; margin:10px; transform:none!important; left:auto!important;right:auto!important;top:auto!important;bottom:auto!important}
+    .photo{width:70vw; margin:20px auto; display:block}
+    .note,.sketch{display:none}
+    body{overflow:auto}
+    .card:hover .inner{transform:none} .card .inner{transition:none}
+    .card .back{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){ *{animation:none!important} .photo .pic .dbl{opacity:.4} .card:hover .inner{transform:none} }
+</style>
+</head>
+<body>
+  <div class="bg"></div><div class="grain"></div>
+
+  <header class="top">
+    <div class="brand">Tuhin Bhattacharya <b>·</b> Field Notebook</div>
+    <div>Vol.01 — Molecules → Metrics</div>
+  </header>
+
+  <button class="eclipse" id="eclipse" aria-label="toggle theme">
+    <svg viewBox="0 0 30 30">
+      <g class="rays">
+        <line class="ray" x1="15" y1="0" x2="15" y2="4"/><line class="ray" x1="15" y1="26" x2="15" y2="30"/>
+        <line class="ray" x1="0" y1="15" x2="4" y2="15"/><line class="ray" x1="26" y1="15" x2="30" y2="15"/>
+        <line class="ray" x1="4.4" y1="4.4" x2="7.2" y2="7.2"/><line class="ray" x1="22.8" y1="22.8" x2="25.6" y2="25.6"/>
+        <line class="ray" x1="25.6" y1="4.4" x2="22.8" y2="7.2"/><line class="ray" x1="7.2" y1="22.8" x2="4.4" y2="25.6"/>
+      </g>
+      <clipPath id="disc"><circle cx="15" cy="15" r="9"/></clipPath>
+      <g clip-path="url(#disc)"><circle class="core" cx="15" cy="15" r="9"/><circle class="cut" cx="15" cy="15" r="9"/></g>
+    </svg>
+  </button>
+
+  <div class="scene" id="scene">
+    <div class="stage" id="stage">
+
+      <div class="lead">
+        <div class="issue">Issue 01 · Chemical Eng → Data Analyst</div>
+        <h1>From <em>molecules</em><br>to <span class="hand">metrics</span>.</h1>
+        <p class="sub">BI analyst &amp; photographer. I turn raw data into stories that drive decisions —
+          and shoot the world in between.</p>
+        <a class="cta" href="#" onclick="return false">Open the notebook ↓</a>
+      </div>
+
+      <!-- double-exposure taped photo -->
+      <div class="float photo" data-depth="1.4">
+        <span class="tape t1"></span><span class="tape t2"></span>
+        <div class="frame">
+          <div class="pic"><div class="base"></div><div class="dbl"></div></div>
+          <div class="cap">both sides ~</div>
+        </div>
+      </div>
+
+      <!-- flip data cards: stat -> punchline -->
+      <div class="float card c-dax" data-depth="3">
+        <div class="inner">
+          <div class="face"><div class="k"><span class="dotled"></span>Power BI</div><div class="big"><span data-count="300">0</span>+</div><div class="lbl">DAX measures shipped</div><span class="hint">hover ↺</span></div>
+          <div class="face back"><div class="joke">…and about 300 of them were just the last one, re-fixed.</div></div>
+        </div>
+      </div>
+
+      <div class="float card c-mood" data-depth="2.2">
+        <div class="inner">
+          <div class="face"><div class="k"><span class="dotled live"></span>Right now</div><div class="big" id="mood" style="font-size:22px">the analyst</div><div class="lbl">switches without warning</div><span class="hint">hover ↺</span></div>
+          <div class="face back"><div class="joke">9–5 I clean data. 5–9 I shoot it. Same obsession, different light.</div></div>
+        </div>
+      </div>
+
+      <div class="float card c-bugs" data-depth="2.6">
+        <div class="inner">
+          <div class="face"><div class="k"><span class="dotled live"></span>Honesty meter</div><div class="big" id="bugs">0</div><div class="lbl">bugs blamed on "the data"</div><span class="hint">hover ↺</span></div>
+          <div class="face back"><div class="joke">It was me. It's always been me. The data was fine.</div></div>
+        </div>
+      </div>
+
+      <div class="float card c-np" data-depth="3.4">
+        <div class="inner">
+          <div class="face"><div class="k"><span class="dotled live"></span>Now playing</div><div class="np-track">— your Spotify feed —</div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="hint">hover ↺</span></div>
+          <div class="face back"><div class="joke">The DAX writes itself better at 140 bpm. Science.</div></div>
+        </div>
+      </div>
+
+      <div class="float card c-gym" data-depth="2.8">
+        <div class="inner">
+          <div class="face"><div class="k"><span class="dotled"></span>Hevy · split</div><div class="big">PPL</div><div class="lbl">push / pull / legs</div><span class="hint">hover ↺</span></div>
+          <div class="face back"><div class="joke">Legs day: scheduled Monday, observed… occasionally.</div></div>
+        </div>
+      </div>
+
+      <!-- margin notes -->
+      <div class="note n1" data-depth="1.6">the analyst
+        <svg width="70" height="40"><path d="M4 6 C 30 30, 50 30, 64 20" fill="none" stroke="var(--pen)" stroke-width="1.5"/><path d="M58 14 L66 20 L56 24" fill="none" stroke="var(--pen)" stroke-width="1.5"/></svg>
+      </div>
+      <div class="note n2" data-depth="1.6">the artist
+        <svg width="70" height="40" style="left:-70px;top:4px"><path d="M66 6 C 40 28, 20 28, 6 18" fill="none" stroke="var(--pen)" stroke-width="1.5"/><path d="M12 12 L4 18 L14 22" fill="none" stroke="var(--pen)" stroke-width="1.5"/></svg>
+      </div>
+
+      <!-- molecule -> chart sketch -->
+      <div class="float sketch" data-depth="2" title="hover me">
+        <svg viewBox="0 0 90 70">
+          <g class="mol" stroke="var(--pen)" stroke-width="1.6" fill="none">
+            <circle cx="20" cy="40" r="6"/><circle cx="45" cy="22" r="6"/><circle cx="68" cy="44" r="6"/><circle cx="45" cy="56" r="6"/>
+            <line x1="25" y1="37" x2="40" y2="25"/><line x1="50" y1="25" x2="63" y2="40"/><line x1="45" y1="50" x2="45" y2="28"/>
+          </g>
+          <g class="cht">
+            <rect x="16" y="40" width="10" height="20" fill="var(--orange)"/><rect x="33" y="30" width="10" height="30" fill="var(--orange)"/><rect x="50" y="22" width="10" height="38" fill="var(--orange)"/><rect x="67" y="14" width="10" height="46" fill="var(--orange)"/>
+          </g>
+          <text class="tag" x="2" y="68">molecules→metrics</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="foot">scroll to read the notebook <span class="ar">↓</span></div>
+
+<script>
+  const root=document.documentElement, $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setTheme(t){root.dataset.theme=t;try{localStorage.setItem('nb-theme',t)}catch(e){}}
+  try{const t=localStorage.getItem('nb-theme');if(t)root.dataset.theme=t;}catch(e){}
+  $('#eclipse').addEventListener('click',()=>{
+    const n=root.dataset.theme==='dark'?'light':'dark';const r=$('#eclipse').getBoundingClientRect();
+    root.style.setProperty('--cx',(r.left+r.width/2)+'px');root.style.setProperty('--cy',(r.top+r.height/2)+'px');
+    if(document.startViewTransition&&!reduce)document.startViewTransition(()=>setTheme(n));else setTheme(n);
+  });
+
+  // count-up DAX
+  $$('[data-count]').forEach(el=>{const to=+el.dataset.count;let n=0;const step=()=>{n+=Math.ceil(to/40);if(n>=to){el.textContent=to;}else{el.textContent=n;requestAnimationFrame(step);}};if(!reduce)requestAnimationFrame(step);else el.textContent=to;});
+
+  // honesty meter: slow absurd tick-up
+  (function(){const el=$('#bugs');if(!el)return;let n=0;setInterval(()=>{n+=Math.floor(Math.random()*3)+1;el.textContent=n;},1400);})();
+
+  // mood cycler
+  (function(){const el=$('#mood');if(!el)return;const m=['the analyst','the artist','the gym rat','the night owl','the over-thinker'];let i=0;
+    el.style.transition='opacity .25s';
+    setInterval(()=>{i=(i+1)%m.length;el.style.opacity=0;setTimeout(()=>{el.textContent=m[i];el.style.opacity=1;},250);},2600);})();
+
+  // parallax
+  if(!reduce && matchMedia('(min-width:861px)').matches){
+    const floats=[...$$('.float, .note')];const base=new WeakMap();
+    floats.forEach(f=>base.set(f, getComputedStyle(f).transform==='none'?'':getComputedStyle(f).transform));
+    let tx=0,ty=0,cx=0,cy=0;
+    addEventListener('mousemove',e=>{ tx=(e.clientX/innerWidth-.5); ty=(e.clientY/innerHeight-.5); });
+    (function loop(){ cx+=(tx-cx)*.06; cy+=(ty-cy)*.06;
+      floats.forEach(f=>{const d=+(f.dataset.depth||1); const b=base.get(f);
+        f.style.transform=`${b} translate(${cx*d*-14}px, ${cy*d*-12}px)`; });
+      requestAnimationFrame(loop); })();
+  }
+</script>
+</body>
+</html>
