@@ -1,7 +1,7 @@
 # Molecules → Metrics — Portfolio Checkpoint
 
 > ## 🔎 GAP AUDIT (2026-10-15) — read `AUDIT-2026-10-15.md` before continuing
-> Revised order R0-R8 replaces MASTER-PLAN P3-P7. Key facts: web/ has NO git; cover `/` overflows at
+> Revised order R0-R8 replaces MASTER-PLAN P3-P7. Key facts: git now set up (private Karma1028/molecules-metrics, baseline 96b874a); Gemini follows web/GEMINI-EXECUTION-BRIEF.md; cover `/` overflows at
 > 768+375 (both axes); Skills/Work/Journey/Dashboard still have inner scrollers at 375; 26 infinite
 > loops → budget ≤8; one wow = ThreeUI Woven Cloth on cover (pending OK); horse mask PNG 1.6 MB.
 
