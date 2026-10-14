@@ -322,32 +322,46 @@ export const HERO_STYLE = String.raw`
   @keyframes bob{0%,100%{translate:0 0}50%{translate:0 4px}}
   @keyframes ec{from{clip-path:circle(0% at var(--cx,92%) var(--cy,6%))}to{clip-path:circle(150% at var(--cx,92%) var(--cy,6%))}}
 
-  @media (max-width:1180px){
-    .hero-root .portrait{width:min(48vw,640px)}
-    .hero-root .obj{scale:.86} .hero-root .set.in .obj{animation-name:slapS}
-    .hero-root .spot{right:-30px} .hero-root .pola{right:-26px} .hero-root .n2,.hero-root .n3,.hero-root .n4{right:-36px}
+  @media (max-width:1180px) and (min-width:761px){
+    .hero-root .portrait{width:min(46vw,560px); right:clamp(16px,2.5vw,32px); top:68px; bottom:16px}
+    .hero-root .lead{width:min(44vw,400px); left:clamp(16px,3vw,36px)}
+    .hero-root h1{font-size:clamp(38px,5vw,64px)}
+    .hero-root .sub{font-size:12.5px; line-height:1.45; min-height:0; margin:12px 0 16px}
+    .hero-root .obj{scale:.75} .hero-root .set.in .obj{animation-name:slapS}
+    .hero-root .spot{right:-16px} .hero-root .pola{right:-16px} .hero-root .n2,.hero-root .n3,.hero-root .n4{right:-24px}
+    .hero-root .disc{width:54%; right:-6%; top:-6%}
   }
   @keyframes slapS{0%{opacity:0; scale:1.2; rotate:calc(var(--r,0deg) + 14deg)}100%{opacity:1; scale:.86; rotate:var(--r,0deg)}}
-  @media (max-width:900px){
-    html[data-hero] body{overflow:auto}
-    .hero-root .stage{position:relative}
-    .hero-root .top{position:absolute} .hero-root .top .right{display:none}
-    .hero-root .eclipse{position:absolute}
-    .hero-root .lead{position:relative; left:auto; top:auto; translate:none; width:auto; padding:88px 22px 0}
-    .hero-root h1{font-size:clamp(50px,15vw,84px)}
-    .hero-root .sub{min-height:0}
-    .hero-root .hint{display:block; margin:12px 0 0 6px}
-    .hero-root .portrait{position:relative; right:auto; top:auto; bottom:auto; width:auto; margin:34px 22px 0}
-    .hero-root .print{position:relative; inset:auto; aspect-ratio:4/5; max-height:80vh; width:100%}
-    .hero-root .figcap{bottom:12px}
-    .hero-root .disc{width:78%; right:-16%; top:-8%}
-    .hero-root .set{position:relative; inset:auto; display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:0 0 64px; margin-top:-34px}
-    :root[data-mode="analyst"] .hero-root .set.artist, :root[data-mode="artist"] .hero-root .set.analyst{display:none}
-    .hero-root .obj{position:relative; inset:auto!important; width:auto!important; scale:1}
-    .hero-root .set.in .obj{animation-name:slap}
-    .hero-root .spot{grid-column:1/-1; margin:0 18px 0 30%} .hero-root .barca{grid-column:1/-1} .hero-root .mood{width:120px; height:120px; justify-self:center; align-self:center}
-    .hero-root .pola{width:100%!important}
-    .hero-root .set.analyst{grid-template-columns:1fr; margin-top:18px} .hero-root .note{width:auto!important}
+  @media (max-width:760px){
+    html[data-hero], html[data-hero] body{height:100%!important; width:100%!important; overflow:hidden!important}
+    .hero-root{width:100%; height:100%; overflow:hidden}
+    .hero-root .stage{position:fixed; inset:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between;
+      padding:clamp(40px,7vh,50px) 16px 12px; box-sizing:border-box}
+    .hero-root .top{position:absolute; inset:0 0 auto 0; padding:10px 16px}
+    .hero-root .top .right{display:none}
+    .hero-root .eclipse{position:absolute; top:8px; right:12px}
+    .hero-root .lead{position:relative; left:auto; top:auto; translate:none; width:100%; flex:0 0 auto; padding:0; z-index:10}
+    .hero-root .issue{margin-bottom:4px; font-size:clamp(8.5px,2.2vw,10px); letter-spacing:.18em}
+    .hero-root h1{font-size:clamp(28px,7.5vw,36px); line-height:.95}
+    .hero-root .sub{min-height:0; font-size:clamp(11px,2.8vw,12.5px); line-height:1.35; margin:6px 0 8px; max-width:100%}
+    .hero-root .switch{padding:3px; border-radius:24px}
+    .hero-root .switch .thumb{border-radius:20px}
+    .hero-root .switch .opt{padding:6px 14px; font-size:10px; letter-spacing:.08em}
+    .hero-root .hint{font-size:14px; margin-left:6px}
+    .hero-root .elsewhere{margin-top:6px; font-size:8.5px; line-height:1.4}
+    .hero-root .elsewhere a{margin-right:10px}
+    .hero-root .portrait{position:relative; right:auto; top:auto; bottom:auto; width:100%; flex:1; min-height:0; margin-top:6px;
+      overflow:hidden; border-radius:10px; box-shadow:var(--shadow)}
+    .hero-root .print{position:absolute; inset:0; width:100%; height:100%; max-height:none; aspect-ratio:auto; border-radius:10px}
+    .hero-root .figcap{bottom:6px; left:8px; font-size:8px}
+    .hero-root .disc{display:none}
+    .hero-root .set{position:absolute; inset:0; overflow:hidden}
+    .hero-root .obj{scale:.7; transform-origin:bottom right}
+    .hero-root .spot{right:6px; bottom:6px; top:auto; left:auto; width:220px}
+    .hero-root .barca{left:6px; bottom:6px; top:auto; right:auto; width:150px; scale:.68; transform-origin:bottom left}
+    .hero-root .mood{left:6px; top:6px; width:72px; height:72px; scale:.7; transform-origin:top left}
+    .hero-root .pola{right:6px; top:6px; width:110px; scale:.65; transform-origin:top right}
+    .hero-root .set.analyst .note{right:6px; bottom:6px; top:auto; left:auto; width:220px}
     .hero-root .leaders,.hero-root .pin,.hero-root .scribble{display:none}
     .hero-root .scrollcue{display:none}
   }

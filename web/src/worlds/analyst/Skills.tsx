@@ -162,17 +162,17 @@ const CSS = String.raw`
   .p-sk .card .lv[data-lv="exploring"]{color:var(--orange);background:color-mix(in srgb,var(--orange) 11%,transparent);border-color:color-mix(in srgb,var(--orange) 24%,transparent)}
   .p-sk .card .cno{font-size:clamp(10.5px,.95vw,12.5px);line-height:1.4;color:var(--muted);text-wrap:pretty}
 
-  .p-sk .hint{flex:0 0 auto;margin-top:clamp(7px,1.2vh,12px);font:500 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.7}
-  .p-sk .hint b{color:var(--accent)}
+  .p-sk .sk-stepper{display:none}
 
   @media(max-width:880px){
     .p-sk{height:100%;min-height:0;overflow:hidden;padding-bottom:8px}
     .p-sk .sk-note{display:none}
     .p-sk .body{display:flex;flex-direction:column;gap:8px;flex:1;min-height:0}
-    .p-sk .rail{flex-direction:row;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;gap:6px;padding-bottom:3px;flex:0 0 auto}
-    .p-sk .cat{flex:0 0 auto;padding:5px 10px;width:auto}
+    .p-sk .rail{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;gap:4px;flex:0 0 auto;padding-bottom:0}
+    .p-sk .cat{padding:5px 6px;width:100%;text-align:center;justify-content:center;gap:6px}
     .p-sk .cat .cc{display:none}
-    .p-sk .cat .cn{font-size:11.5px}
+    .p-sk .cat .ic{width:13px;height:13px}
+    .p-sk .cat .cn{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .p-sk .stage{flex:1;min-height:0;display:flex;flex-direction:column;position:relative}
     .p-sk .deck{position:relative;display:flex;flex-direction:column;flex:1;min-height:0}
     .p-sk .dh{margin-bottom:6px}
@@ -184,7 +184,16 @@ const CSS = String.raw`
     .p-sk .card .cno{font-size:10.5px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .p-sk .hint{display:none}
   }
-  @media(max-width:480px){
+  @media(max-width:540px){
+    .p-sk .rail{display:none}
+    .p-sk .sk-stepper{display:flex;align-items:center;justify-content:space-between;gap:8px;
+      padding:6px 10px;background:var(--card);border:1px solid var(--rule);border-radius:10px;flex:0 0 auto;overflow:hidden}
+    .p-sk .sk-step-btn{background:transparent;border:0;color:var(--ink);cursor:pointer;padding:4px 8px;display:grid;place-items:center}
+    .p-sk .sk-step-btn.prev .ic{transform:scaleX(-1)}
+    .p-sk .sk-step-btn .ic{width:14px;height:14px;color:var(--accent)}
+    .p-sk .sk-step-info{display:flex;align-items:baseline;gap:8px;min-width:0;overflow:hidden}
+    .p-sk .sk-step-num{font:700 11px/1 var(--font-mono);letter-spacing:.12em;color:var(--teal)}
+    .p-sk .sk-step-name{font:600 12.5px/1.2 var(--font-display);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .p-sk .cards{grid-template-columns:1fr;gap:5px}
     .p-sk .card{padding:6px 9px}
   }
@@ -253,6 +262,19 @@ export function Skills() {
       />
 
       <div className="body">
+        <div className="sk-stepper" role="group" aria-label="Category stepper">
+          <button type="button" className="sk-step-btn prev" onClick={() => go(-1)} aria-label="Previous category">
+            <Icon id="i-arrow" />
+          </button>
+          <div className="sk-step-info">
+            <span className="sk-step-num">{String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}</span>
+            <span className="sk-step-name">{cat.name}</span>
+          </div>
+          <button type="button" className="sk-step-btn next" onClick={() => go(1)} aria-label="Next category">
+            <Icon id="i-arrow" />
+          </button>
+        </div>
+
         <nav className="rail" aria-label="Skill categories">
           {CATS.map((c, idx) => (
             <button

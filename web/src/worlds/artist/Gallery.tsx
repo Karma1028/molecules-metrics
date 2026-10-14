@@ -310,6 +310,8 @@ export function Gallery() {
             layoutId={`frame-${f.url}`}
             className="print"
             src={f.url}
+            srcSet={`${f.url.replace(/\.webp$/, "")}-800w.webp 800w, ${f.url.replace(/\.webp$/, "")}-1600w.webp 1600w`}
+            sizes="(max-width: 768px) 800px, 1600px"
             alt={f.name}
             decoding="async"
             transition={morph}

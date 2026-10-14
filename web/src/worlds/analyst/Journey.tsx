@@ -126,9 +126,10 @@ const CSS = String.raw`
     .p-jn{height:100%;min-height:0;overflow:hidden}
     .p-jn .spine{display:none}
     .p-jn .jn-arc{display:none}
-    .p-jn .jtabs{display:flex;gap:5px;overflow-x:auto;overflow-y:hidden;padding-bottom:3px;margin-bottom:8px;flex:0 0 auto}
-    .p-jn .jtab{padding:5px 10px;font:600 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;
-      border-radius:20px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;flex:0 0 auto}
+    .p-jn .jtabs{display:flex;gap:4px;overflow:hidden;margin-bottom:8px;flex:0 0 auto}
+    .p-jn .jtab{flex:1 1 0;min-width:0;text-align:center;padding:6px 4px;font:600 10px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;
+      border-radius:16px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .p-jn .jtab .jtab-span{display:none}
     .p-jn .jtab.on{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
     .p-jn .rail{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
     .p-jn .era{display:none;flex:1;min-height:0;flex-direction:column}
@@ -194,7 +195,7 @@ export function Journey() {
             aria-selected={jtab === idx}
             onClick={() => setJtab(idx)}
           >
-            {e.tag} · {e.span}
+            {e.tag}<span className="jtab-span"> · {e.span}</span>
           </button>
         ))}
       </div>

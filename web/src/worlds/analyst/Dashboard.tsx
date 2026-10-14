@@ -11,11 +11,11 @@ import {
 const nf = new Intl.NumberFormat("en-US")
 
 const DTABS = [
-  { id: "sp", label: "Listening" },
-  { id: "fb", label: "Barça" },
-  { id: "sys", label: "System" },
-  { id: "np", label: "Now Playing" },
-  { id: "ch", label: "Channels" },
+  { id: "sp", label: "Listening", short: "Music" },
+  { id: "fb", label: "Barça", short: "Barça" },
+  { id: "sys", label: "System", short: "System" },
+  { id: "np", label: "Now Playing", short: "Now" },
+  { id: "ch", label: "Channels", short: "Links" },
 ]
 
 function fixtureLine(f?: { strHomeTeam?: string | null; strAwayTeam?: string | null }) {
@@ -101,9 +101,11 @@ const CSS = String.raw`
   @media(max-width:700px){
     .p-db{height:100%;min-height:0;overflow:hidden}
     .p-db .db-clockbox{display:none}
-    .p-db .dtabs{display:flex;gap:5px;overflow-x:auto;overflow-y:hidden;padding-bottom:3px;margin-bottom:6px;flex:0 0 auto}
-    .p-db .dtab{padding:5px 10px;font:600 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;
-      border-radius:20px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;flex:0 0 auto}
+    .p-db .dtabs{display:flex;gap:4px;overflow:hidden;margin-bottom:6px;flex:0 0 auto}
+    .p-db .dtab{flex:1 1 0;min-width:0;padding:6px 2px;font:600 9.5px/1 var(--font-mono);letter-spacing:.04em;text-transform:uppercase;
+      border-radius:14px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+    .p-db .dtab .dtab-full{display:none}
+    .p-db .dtab .dtab-short{display:inline}
     .p-db .dtab.on{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
     .p-db .bento{flex:1;min-height:0;display:flex;flex-direction:column}
     .p-db .bento .pnl{display:none;flex:1;min-height:0}
@@ -113,6 +115,9 @@ const CSS = String.raw`
     .p-db .bento[data-tab="np"] .a-np{display:flex}
     .p-db .bento[data-tab="ch"] .a-ch{display:flex}
   }
+
+  .p-db .dtab .dtab-full{display:inline}
+  .p-db .dtab .dtab-short{display:none}
 
   @media(min-width:701px) and (max-width:900px){
     .p-db{height:100%;min-height:0;overflow:hidden}
@@ -184,7 +189,8 @@ export function Dashboard() {
             aria-selected={dtab === t.id}
             onClick={() => setDtab(t.id)}
           >
-            {t.label}
+            <span className="dtab-full">{t.label}</span>
+            <span className="dtab-short">{t.short}</span>
           </button>
         ))}
       </div>
