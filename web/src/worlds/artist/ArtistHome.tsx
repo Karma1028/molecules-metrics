@@ -84,7 +84,7 @@ const CSS = String.raw`
   .p-ah2 .kick{display:flex;align-items:center;gap:10px;font:600 10px/1 var(--font-mono);letter-spacing:.26em;
     text-transform:uppercase;color:var(--accent)}
   .p-ah2 .horse{width:30px;aspect-ratio:1/1;flex-shrink:0;background:var(--accent);
-    -webkit-mask:url(/motifs/bankura-horse.png) center / contain no-repeat;mask:url(/motifs/bankura-horse.png) center / contain no-repeat}
+    -webkit-mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;mask:url(/motifs/bankura-horse.webp) center / contain no-repeat}
   .p-ah2 .ttl{font-family:var(--font-display);font-weight:900;line-height:.86;letter-spacing:-.035em;color:var(--ink);
     font-size:clamp(44px,7.2vw,104px);margin:10px 0 4px}
   .p-ah2 .ttl em{font-style:italic;font-weight:500;color:var(--accent)}

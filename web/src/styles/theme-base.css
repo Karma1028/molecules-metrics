@@ -155,8 +155,8 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   position:absolute; top:50%; left:0;
   width:38vmin; aspect-ratio:1/1; translate:0 -50%;
   background:#f4ead9;
-  -webkit-mask:url(/motifs/bankura-horse.png) center / contain no-repeat;
-  mask:url(/motifs/bankura-horse.png) center / contain no-repeat;
+  -webkit-mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;
+  mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;
   will-change:transform;
 }
 
@@ -183,8 +183,8 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
    .stitch       kantha running-stitch inner border (dashed, inset) */
 .horse-glyph{
   display:inline-block; width:26px; aspect-ratio:1/1; flex-shrink:0; background:var(--accent);
-  -webkit-mask:url(/motifs/bankura-horse.png) center / contain no-repeat;
-  mask:url(/motifs/bankura-horse.png) center / contain no-repeat;
+  -webkit-mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;
+  mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;
 }
 .film-mat{
   position:relative; display:block; border-radius:12px; overflow:hidden;
@@ -239,4 +239,15 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
 .log-head .lh-lede .lh-prefix{color:var(--teal);font-weight:600}
 .log-head .lh-lede b{color:var(--ink);font-weight:600}
 .log-head .lh-right{display:flex;flex-direction:column;align-items:flex-end;text-align:right;white-space:nowrap;flex-shrink:0}
+
+@media(prefers-reduced-motion:reduce){
+  *, *::before, *::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+html[data-rm] *, html[data-rm] *::before, html[data-rm] *::after{
+  animation:none!important;
+  transition:none!important;
+}
 

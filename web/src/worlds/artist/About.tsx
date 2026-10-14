@@ -166,7 +166,7 @@ export function About() {
           <motion.div className="tilt" onPointerMove={onMove} onPointerLeave={onLeave} style={{ rotateX: rotX, rotateY: rotY }}>
             <figure className="film-mat" style={{ flex: 1, minHeight: 0 }}>
               <div className="frame">
-                <img src="/me.jpg" alt="Tuhin Bhattacharya" />
+                <img src="/me.jpg" srcSet="/me-800w.webp 800w, /me-1600w.webp 1600w" sizes="(max-width: 768px) 800px, 1600px" alt="Tuhin Bhattacharya" />
               <div className="ribbon" aria-hidden="true">
                 <div className="ribbon-track">
                   {[0, 1].map((k) => (

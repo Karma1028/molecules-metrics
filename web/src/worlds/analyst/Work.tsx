@@ -193,11 +193,12 @@ const CSS = String.raw`
   .p-wk .nav-btn.prev .ic{transform:scaleX(-1)}
 
   @media(max-width:820px){
-    .p-wk .ledger{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:10px}
-    .p-wk .spine{flex-direction:row;overflow-x:auto;flex:0 0 auto;gap:8px;padding-bottom:2px;scrollbar-width:none}
-    .p-wk .spine::-webkit-scrollbar{display:none}
-    .p-wk .idx{flex:0 0 auto;min-width:168px;padding:8px 11px;gap:3px}
-    .p-wk .idx-title{white-space:normal;font-size:12px}
+    .p-wk .ledger{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:8px}
+    .p-wk .spine{flex-direction:row;overflow:hidden;flex:0 0 auto;gap:6px;padding-bottom:0}
+    .p-wk .idx{flex:1 1 0;min-width:0;padding:6px 8px;gap:2px;border-left-width:1px;border-top:2px solid transparent}
+    .p-wk .idx.active{border-left-color:color-mix(in srgb,var(--teal) 35%,var(--rule));border-top-color:var(--teal)}
+    .p-wk .idx-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px}
+    .p-wk .idx-role{display:none}
     .p-wk .mast-right{display:none}
     .p-wk .report{padding:13px}
   }
