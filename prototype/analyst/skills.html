@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-mode="analyst">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Skills — The Analyst</title>
+<meta name="description" content="Transferable rigour with honest proficiency — not a logo wall."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/theme-base.css"><link rel="stylesheet" href="/assets/world-analyst.css">
+<style>
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:30px}
+  .skill{display:flex;flex-direction:column;gap:7px;margin:14px 0}
+  .skill .row{display:flex;justify-content:space-between;align-items:baseline;font:500 12px/1 var(--font-mono);color:var(--ink)}
+  .skill .row .lv{color:var(--muted);letter-spacing:.06em}
+  .transfer{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:8px}
+  .transfer>div{padding:12px 14px} .transfer .from{border-right:1px solid var(--rule);color:var(--muted)}
+  .transfer .lab{font:500 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block}
+  .transfer .to{color:var(--ink)}
+  @media(max-width:520px){.transfer{grid-template-columns:1fr}.transfer .from{border-right:none;border-bottom:1px solid var(--rule)}}
+</style>
+</head>
+<body data-world="analyst" data-page="skills.html">
+  <div class="bg"></div><div class="grain"></div>
+  <main class="page">
+    <div data-rise>
+      <div class="kicker"><svg class="ic"><use href="#i-layers"/></svg>Capability · self-rated, honest</div>
+      <h1 class="display">Skills, <em>instrumented</em>.</h1>
+      <p class="lede">No logo wall. The meters below are self-assessed and the kind I'd defend in an interview. The thesis of this whole side: <b>chemical-engineering rigour transfers</b> — a reactor and a model are both systems you measure, tune and de-bottleneck.</p>
+    </div>
+
+    <div class="grid">
+      <div class="panel" data-rise><div class="head"><svg class="ic"><use href="#i-database"/></svg>data & analysis<span class="dot"></span></div>
+        <div class="body">
+          <div class="skill"><div class="row"><span>Python · pandas / numpy</span><span class="lv">working</span></div><div class="meter"><span style="--v:.78"></span></div></div>
+          <div class="skill"><div class="row"><span>SQL · joins, windows, CTEs</span><span class="lv">working</span></div><div class="meter"><span style="--v:.72"></span></div></div>
+          <div class="skill"><div class="row"><span>Power BI · models, DAX</span><span class="lv">building</span></div><div class="meter"><span style="--v:.68"></span></div></div>
+          <div class="skill"><div class="row"><span>Excel · advanced, pivots</span><span class="lv">strong</span></div><div class="meter"><span style="--v:.86"></span></div></div>
+          <div class="skill"><div class="row"><span>Statistics · inference, regression</span><span class="lv">working</span></div><div class="meter"><span style="--v:.7"></span></div></div>
+        </div></div>
+
+      <div class="panel" data-rise style="--i:1"><div class="head"><svg class="ic"><use href="#i-flask"/></svg>engineering rigour</div>
+        <div class="body">
+          <div class="skill"><div class="row"><span>Mass / energy balances</span><span class="lv">strong</span></div><div class="meter"><span style="--v:.9"></span></div></div>
+          <div class="skill"><div class="row"><span>Process optimization</span><span class="lv">strong</span></div><div class="meter"><span style="--v:.82"></span></div></div>
+          <div class="skill"><div class="row"><span>Root-cause / bottleneck analysis</span><span class="lv">strong</span></div><div class="meter"><span style="--v:.84"></span></div></div>
+          <div class="skill"><div class="row"><span>Design of experiments</span><span class="lv">working</span></div><div class="meter"><span style="--v:.66"></span></div></div>
+        </div></div>
+
+      <div class="panel" data-rise style="--i:2"><div class="head"><svg class="ic"><use href="#i-cpu"/></svg>tooling & delivery</div>
+        <div class="body">
+          <div class="skill"><div class="row"><span>Git · branches, PRs</span><span class="lv">working</span></div><div class="meter"><span style="--v:.64"></span></div></div>
+          <div class="skill"><div class="row"><span>Jupyter / notebooks</span><span class="lv">working</span></div><div class="meter"><span style="--v:.8"></span></div></div>
+          <div class="skill"><div class="row"><span>scikit-learn · core models</span><span class="lv">building</span></div><div class="meter"><span style="--v:.58"></span></div></div>
+          <div class="skill"><div class="row"><span>Technical writing</span><span class="lv">strong</span></div><div class="meter"><span style="--v:.82"></span></div></div>
+        </div></div>
+    </div>
+
+    <section class="band">
+      <h2 class="sec">How the lineage transfers</h2>
+      <div class="sec-kick">reactor → regression</div>
+      <div class="grid">
+        <div class="panel" data-rise><div class="head"><svg class="ic"><use href="#i-scale"/></svg>conservation</div>
+          <div class="transfer"><div class="from"><span class="lab">chem-eng</span>Mass in = mass out. Nothing vanishes.</div><div class="to"><span class="lab">analyst</span>Reconcile before you report. If totals don't tie, the pipeline leaks.</div></div></div>
+        <div class="panel" data-rise style="--i:1"><div class="head"><svg class="ic"><use href="#i-funnel"/></svg>bottleneck</div>
+          <div class="transfer"><div class="from"><span class="lab">chem-eng</span>One unit caps the whole plant's throughput.</div><div class="to"><span class="lab">analyst</span>Fix the slow query / the one broken join. Don't optimise the fast step.</div></div></div>
+        <div class="panel" data-rise style="--i:2"><div class="head"><svg class="ic"><use href="#i-pulse"/></svg>control loops</div>
+          <div class="transfer"><div class="from"><span class="lab">chem-eng</span>Measure, compare to setpoint, correct, repeat.</div><div class="to"><span class="lab">analyst</span>Define the metric, baseline it, ship a change, read the delta. Iterate.</div></div></div>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

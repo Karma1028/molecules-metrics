@@ -1,0 +1,50 @@
+# Bakes slow-moving live data (football / charts / GitHub / Medium) into
+# static JSON under web/public/data/, committed back so the Vite build ships
+# fresh snapshots without a running backend (SCOPE §3.1).
+#
+# Fast/now data (now-playing, music search, contact) stays on Netlify
+# Functions and is NOT baked here.
+#
+# NOTE: assumes web/ is the repo root. If the repo root is molecules-metrics/,
+# add `working-directory: web` to the run steps and adjust paths.
+
+name: Bake data snapshots
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate snapshots
+        env:
+          # Supply these as repo secrets; the generator degrades to the last
+          # committed snapshot (or an empty-state file) when a key is missing.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
+          MEDIUM_HANDLE: ${{ secrets.MEDIUM_HANDLE }}
+        run: node scripts/snapshot.mjs
+
+      - name: Commit refreshed snapshots
+        run: |
+          git config user.name "snapshot-bot"
+          git config user.email "snapshot-bot@users.noreply.github.com"
+          git add public/data
+          if git diff --staged --quiet; then
+            echo "No snapshot changes."
+          else
+            git commit -m "chore: refresh data snapshots"
+            git push
+          fi

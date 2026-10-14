@@ -1,0 +1,43 @@
+/* =====================================================================
+   WORLD: ARTIST — warm field-notebook. Paper + orange, Fraunces + Caveat,
+   photographic, crafted-chaos. Every selector scoped to the artist world
+   so both worlds can coexist in one SPA. data-mode lives on <html>.
+   ===================================================================== */
+:root[data-mode="artist"]{
+  --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#7D7059;
+  --orange:#b85c2e; --pen:#2B4C6F; --teal:#2C9C98; --grid:rgba(90,70,45,.08);
+  --accent:var(--orange);
+  /* Bengal/Bankura terracotta ramp — the one site accent (user-approved 2026-10-14).
+     -500 is the browner Panchmura/Bishnupur terracotta; --orange now tracks it. */
+  --terracotta-50:#f7ece3; --terracotta-200:#e6b89c; --terracotta-400:#cf7d4a;
+  --terracotta-500:#b85c2e; --terracotta-700:#8a3d1c; --alpona:#f4ead9;
+  --font-display:"Fraunces",serif; --font-body:"Inter",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",monospace; --font-hand:"Caveat",cursive;
+  --display-weight:900; --sec-weight:600;
+  --shadow:0 1px 1px rgba(60,40,15,.08), 0 18px 34px -12px rgba(80,55,25,.32);
+  --shadow-sm:0 1px 1px rgba(60,40,15,.08), 0 6px 14px -8px rgba(80,55,25,.3);
+}
+:root[data-mode="artist"][data-theme="dark"]{
+  --paper:#1C1813; --paper2:#15110D; --card:#2A231B; --ink:#EFE7DA; --muted:#A39580;
+  --orange:#d2763d; --pen:#8FB3D6; --teal:#44C0BC; --grid:rgba(255,235,200,.055);
+  /* terracotta ramp — dark tuning; -500 is the dark-readable terracotta, --orange tracks it */
+  --terracotta-50:#2a1d12; --terracotta-200:#7d4a2c; --terracotta-400:#c06b38;
+  --terracotta-500:#d2763d; --terracotta-700:#e6b89c; --alpona:#e9dcc6;
+  --shadow:0 1px 1px rgba(0,0,0,.3), 0 20px 40px -12px rgba(0,0,0,.7);
+  --shadow-sm:0 1px 1px rgba(0,0,0,.3), 0 8px 16px -10px rgba(0,0,0,.65);
+}
+[data-mode="artist"] .bg{background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/30px 30px,
+                linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/30px 30px,
+                radial-gradient(120% 90% at 18% 8%,var(--paper),var(--paper2))}
+
+/* specimen note (hand-annotated) */
+[data-mode="artist"] .specimen{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:10px;
+  box-shadow:var(--shadow-sm);padding:18px 20px;position:relative;transition:border-color .5s,transform .3s,box-shadow .3s}
+[data-mode="artist"] .specimen:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+[data-mode="artist"] .specimen .lbl{font:500 9.5px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px;margin-bottom:9px}
+[data-mode="artist"] .specimen .lbl .ic{width:14px;height:14px;color:var(--accent);transition:color .5s}
+[data-mode="artist"] .specimen h3{font-family:var(--font-display);font-weight:600;font-size:19px;margin-bottom:5px;text-wrap:balance}
+[data-mode="artist"] .specimen p{font-size:14px;color:var(--muted);text-wrap:pretty}
+[data-mode="artist"] .specimen .hand{font-family:var(--font-hand);font-size:17px;color:var(--accent);display:block;margin-top:8px;rotate:-1.2deg;transition:color .5s}
+[data-mode="artist"] .tape{position:absolute;width:62px;height:20px;background:color-mix(in srgb,var(--accent) 24%,var(--card));
+  border:1px dashed color-mix(in srgb,var(--ink) 22%,transparent);opacity:.85;rotate:-5deg}

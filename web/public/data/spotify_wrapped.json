@@ -1,0 +1,294 @@
+{
+ "generatedAt": "2026-10-13T03:45:08Z",
+ "source": "spotify-extended-streaming-history",
+ "span": {
+  "from": "2019-03-16",
+  "to": "2026-04-10",
+  "years": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ]
+ },
+ "lifetime": {
+  "minutes": 56168,
+  "hours": 936,
+  "plays": 15726,
+  "skips": 7813,
+  "skipRate": 0.332,
+  "uniqueTracks": 3755,
+  "uniqueArtists": 1311
+ },
+ "topArtists": [
+  {
+   "name": "Pritam",
+   "minutes": 2871,
+   "plays": 701
+  },
+  {
+   "name": "Shankar-Ehsaan-Loy",
+   "minutes": 1482,
+   "plays": 312
+  },
+  {
+   "name": "A.R. Rahman",
+   "minutes": 1033,
+   "plays": 252
+  },
+  {
+   "name": "Coldplay",
+   "minutes": 1001,
+   "plays": 264
+  },
+  {
+   "name": "HIGHWAY",
+   "minutes": 935,
+   "plays": 184
+  },
+  {
+   "name": "The Local Train",
+   "minutes": 814,
+   "plays": 207
+  },
+  {
+   "name": "Amit Trivedi",
+   "minutes": 717,
+   "plays": 190
+  },
+  {
+   "name": "Vishal-Shekhar",
+   "minutes": 717,
+   "plays": 172
+  },
+  {
+   "name": "Atif Aslam",
+   "minutes": 707,
+   "plays": 159
+  },
+  {
+   "name": "Raghu Dixit",
+   "minutes": 661,
+   "plays": 140
+  },
+  {
+   "name": "Thaikkudam Bridge",
+   "minutes": 649,
+   "plays": 134
+  },
+  {
+   "name": "Fossils",
+   "minutes": 599,
+   "plays": 127
+  }
+ ],
+ "topTracks": [
+  {
+   "track": "Punorjonmo",
+   "artist": "Chondropith",
+   "minutes": 362,
+   "plays": 56
+  },
+  {
+   "track": "Amar Dehokhan (Official)",
+   "artist": "Odd Signature",
+   "minutes": 338,
+   "plays": 60
+  },
+  {
+   "track": "E Hawa",
+   "artist": "Meghdol",
+   "minutes": 320,
+   "plays": 61
+  },
+  {
+   "track": "Ei Obelay",
+   "artist": "Shironamhin",
+   "minutes": 303,
+   "plays": 54
+  },
+  {
+   "track": "December'er Shohorey",
+   "artist": "Sourav Saha",
+   "minutes": 283,
+   "plays": 49
+  },
+  {
+   "track": "Chaudhary",
+   "artist": "Mame Khan",
+   "minutes": 274,
+   "plays": 46
+  },
+  {
+   "track": "Sajdaa",
+   "artist": "Shankar-Ehsaan-Loy",
+   "minutes": 258,
+   "plays": 50
+  },
+  {
+   "track": "Tamakpata",
+   "artist": "Ashes Bangladesh",
+   "minutes": 254,
+   "plays": 57
+  },
+  {
+   "track": "Shada Shada Kala Kala",
+   "artist": "Hawa",
+   "minutes": 241,
+   "plays": 66
+  },
+  {
+   "track": "Bishonno Shundor",
+   "artist": "Popeye Bangladesh",
+   "minutes": 224,
+   "plays": 43
+  },
+  {
+   "track": "Choo Lo",
+   "artist": "The Local Train",
+   "minutes": 216,
+   "plays": 61
+  },
+  {
+   "track": "GhorGari",
+   "artist": "HIGHWAY",
+   "minutes": 212,
+   "plays": 38
+  }
+ ],
+ "topAlbums": [
+  {
+   "album": "Aalas Ka Pedh",
+   "artist": "The Local Train",
+   "minutes": 498
+  },
+  {
+   "album": "Fossils",
+   "artist": "Fossils",
+   "minutes": 449
+  },
+  {
+   "album": "Life In A Metro (Original Motion Picture Soundtrack)",
+   "artist": "Pritam",
+   "minutes": 393
+  },
+  {
+   "album": "Punorjonmo",
+   "artist": "Chondropith",
+   "minutes": 362
+  },
+  {
+   "album": "Amar Dehokhan (Official)",
+   "artist": "Odd Signature",
+   "minutes": 338
+  },
+  {
+   "album": "My Name Is Khan (Original Motion Picture Soundtrack)",
+   "artist": "Shankar-Ehsaan-Loy",
+   "minutes": 325
+  },
+  {
+   "album": "E Hawa",
+   "artist": "Meghdol",
+   "minutes": 320
+  },
+  {
+   "album": "Vaaqif",
+   "artist": "The Local Train",
+   "minutes": 306
+  }
+ ],
+ "perYear": [
+  {
+   "year": 2019,
+   "minutes": 3121,
+   "plays": 885,
+   "topArtist": "Pritam"
+  },
+  {
+   "year": 2020,
+   "minutes": 220,
+   "plays": 65,
+   "topArtist": "Pritam"
+  },
+  {
+   "year": 2021,
+   "minutes": 843,
+   "plays": 258,
+   "topArtist": "Pritam"
+  },
+  {
+   "year": 2022,
+   "minutes": 9546,
+   "plays": 2623,
+   "topArtist": "Pritam"
+  },
+  {
+   "year": 2023,
+   "minutes": 16534,
+   "plays": 4520,
+   "topArtist": "Pritam"
+  },
+  {
+   "year": 2024,
+   "minutes": 10114,
+   "plays": 2989,
+   "topArtist": "HIGHWAY"
+  },
+  {
+   "year": 2025,
+   "minutes": 12077,
+   "plays": 3313,
+   "topArtist": "Pritam"
+  },
+  {
+   "year": 2026,
+   "minutes": 3712,
+   "plays": 1073,
+   "topArtist": "Pritam"
+  }
+ ],
+ "clock": {
+  "byHour": [
+   863,
+   632,
+   381,
+   212,
+   113,
+   51,
+   360,
+   502,
+   596,
+   565,
+   844,
+   1049,
+   783,
+   582,
+   661,
+   795,
+   801,
+   855,
+   922,
+   821,
+   872,
+   793,
+   767,
+   906
+  ],
+  "peakHour": 11,
+  "nightShare": 0.143
+ },
+ "byWeekday": [
+  2215,
+  2536,
+  2585,
+  2121,
+  2021,
+  2162,
+  2086
+ ]
+}

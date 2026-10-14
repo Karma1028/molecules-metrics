@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist-ssr/
+*.log
+*.local
+.env
+.env.*
+!.env.example
+.mcp.json
+.DS_Store
+desktop.ini
+.vite/
+coverage/
+web/qa/**
+!web/qa/**/
+!web/qa/**/results.json

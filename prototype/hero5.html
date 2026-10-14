@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-mode="artist">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Field Notebook — hero v0.6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECE2D0; --paper2:#E4D8C2; --ink:#241E17; --muted:#7D7059;
+    --orange:#E4631F; --orange2:#C1461A; --pen:#2B4C6F; --teal:#2C9C98;
+    --grid:rgba(90,70,45,.08); --glass:rgba(255,251,244,.66); --glassbd:rgba(255,255,255,.72);
+    --shadow:0 16px 36px rgba(80,55,25,.14); --accent:var(--orange);
+  }
+  :root[data-theme="dark"]{
+    --paper:#1C1813; --paper2:#15110D; --ink:#EFE7DA; --muted:#9C8E79;
+    --orange:#FF8A4C; --orange2:#FF6A2B; --pen:#8FB3D6; --teal:#44C0BC;
+    --grid:rgba(255,235,200,.06); --glass:rgba(40,33,26,.6); --glassbd:rgba(255,255,255,.1);
+    --shadow:0 16px 40px rgba(0,0,0,.5);
+  }
+  :root[data-mode="analyst"]{--accent:var(--pen)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--paper); color:var(--ink); font-family:"Inter",system-ui,sans-serif; overflow:hidden;
+    -webkit-font-smoothing:antialiased; transition:background .5s,color .5s}
+  .bg{position:fixed; inset:0; z-index:0;
+    background:
+      linear-gradient(var(--grid) 1px, transparent 1px) 0 0/30px 30px,
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0/30px 30px,
+      radial-gradient(120% 90% at 18% 8%, var(--paper), var(--paper2));
+    transition:background .5s}
+  .grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");}
+
+  .top{position:fixed; z-index:20; inset:0 0 auto 0; display:flex; justify-content:space-between; align-items:center;
+    padding:clamp(16px,3vw,24px) clamp(22px,5vw,56px); font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
+  .top .brand b{color:var(--accent); transition:color .5s}
+
+  .scene{position:fixed; inset:0; z-index:5}
+  /* three disciplined columns: LEAD | CARD GRID | PHOTO — in flow, never overlapping */
+  .stage{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    gap:clamp(26px,3.4vw,58px); padding:72px clamp(24px,5vw,60px) 64px}
+
+  /* ---- LEAD ---- */
+  .lead{flex:1 1 440px; max-width:540px; min-width:0}
+  .issue{font-family:"JetBrains Mono",monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--accent); margin-bottom:16px; transition:color .5s}
+  h1{font-family:"Fraunces",serif; font-weight:900; font-size:clamp(44px,6.4vw,92px); line-height:.92; letter-spacing:-.015em; color:var(--ink)}
+  h1 em{font-style:italic; font-weight:600}
+  h1 .hand{font-family:"Caveat",cursive; font-weight:700; font-style:normal; color:var(--accent); font-size:1.18em; transition:color .5s}
+  .sub{font-size:clamp(14px,1.15vw,16px); color:var(--muted); line-height:1.6; max-width:420px; margin:22px 0 26px; min-height:50px}
+  .sub .s{display:none} :root[data-mode="artist"] .sub .s.artist{display:inline} :root[data-mode="analyst"] .sub .s.analyst{display:inline}
+
+  .switch{display:inline-flex; position:relative; background:var(--glass); border:1px solid var(--glassbd); border-radius:40px;
+    padding:5px; box-shadow:var(--shadow); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); cursor:pointer; user-select:none}
+  .switch .thumb{position:absolute; top:5px; bottom:5px; left:5px; width:calc(50% - 5px); border-radius:34px; background:var(--accent);
+    transition:transform .5s cubic-bezier(.76,0,.24,1), background .5s}
+  :root[data-mode="analyst"] .switch .thumb{transform:translateX(100%)}
+  .switch span.opt{position:relative; z-index:1; flex:1; text-align:center; padding:9px 24px; font-family:"JetBrains Mono",monospace;
+    font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); transition:color .4s; white-space:nowrap}
+  :root[data-mode="artist"] .switch .opt-artist{color:#fff} :root[data-mode="analyst"] .switch .opt-analyst{color:#fff}
+  .hint2{display:block; margin-top:12px; font-family:"Caveat",cursive; font-size:18px; color:var(--muted)}
+  .hint2 b{color:var(--accent); transition:color .5s}
+
+  /* ---- CARD GRID (reserved column, 2x2, no overlap, no scatter) ---- */
+  .cardzone{position:relative; flex:0 0 auto; width:392px; height:372px}
+  .set{position:absolute; inset:0; display:grid; grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(2,1fr);
+    gap:16px; transition:opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)}
+  :root[data-mode="analyst"] .set.artist{opacity:0; pointer-events:none; transform:translateY(8px) scale(.98)}
+  :root[data-mode="artist"] .set.analyst{opacity:0; pointer-events:none; transform:translateY(8px) scale(.98)}
+
+  .card{display:flex; flex-direction:column; background:var(--glass); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid var(--glassbd); border-radius:16px; padding:15px 16px; box-shadow:var(--shadow);
+    transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s}
+  .card:hover{transform:translateY(-4px); box-shadow:0 24px 50px rgba(80,55,25,.24)}
+  .card .k{font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; display:flex; gap:7px; align-items:center}
+  .card .big{font-family:"Fraunces",serif; font-weight:900; font-size:26px; line-height:1; color:var(--ink)}
+  .card .lbl{font-size:11.5px; color:var(--ink); margin-top:5px; font-weight:500; line-height:1.3}
+  .card .wit{font-family:"Caveat",cursive; font-weight:600; font-size:16px; color:var(--accent); margin-top:auto; padding-top:10px; line-height:1.15; transition:color .5s}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px color-mix(in srgb,var(--teal) 25%,transparent); flex:0 0 auto}
+  .dot.live{background:var(--accent);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 40%,transparent)}50%{box-shadow:0 0 0 7px transparent}}
+
+  .bars{display:flex; gap:3px; align-items:flex-end; height:16px; margin-top:8px}
+  .bars i{width:4px; background:var(--accent); border-radius:2px; animation:eq 1s ease-in-out infinite}
+  .bars i:nth-child(2){animation-delay:.2s}.bars i:nth-child(3){animation-delay:.4s}.bars i:nth-child(4){animation-delay:.1s}.bars i:nth-child(5){animation-delay:.3s}.bars i:nth-child(6){animation-delay:.5s}
+  @keyframes eq{0%,100%{height:4px}50%{height:16px}}
+  .np .track{font-family:"Inter";font-weight:600;font-size:13px;color:var(--ink);margin-top:2px}
+  .np .artistname{font-size:11px;color:var(--muted)}
+
+  .shot{position:relative; width:100%; flex:1 1 auto; min-height:70px; border-radius:9px; overflow:hidden; margin-top:4px; background:url("shot-ridge.webp") center/cover}
+
+  .chips{display:flex; flex-wrap:wrap; gap:5px; margin-top:2px}
+  .chip{font-family:"JetBrains Mono",monospace; font-size:10px; padding:4px 8px; border-radius:20px; background:color-mix(in srgb,var(--pen) 12%,transparent); color:var(--ink); border:1px solid color-mix(in srgb,var(--pen) 25%,transparent)}
+
+  .pbars{display:flex; gap:5px; align-items:flex-end; height:30px; margin-top:8px}
+  .pbars i{flex:1; background:var(--pen); border-radius:3px 3px 0 0; opacity:.85}
+
+  /* ---- PHOTO ---- */
+  .photo{flex:0 0 auto; width:clamp(208px,19vw,288px); transform:rotate(1.6deg)}
+  .photo .frame{position:relative; padding:12px 12px 46px; background:#fffdf8; box-shadow:var(--shadow); border-radius:3px}
+  :root[data-theme="dark"] .photo .frame{background:#262019}
+  .photo .pic{position:relative; aspect-ratio:3/4; overflow:hidden; background:#ddd}
+  .photo .pic .base{position:absolute; inset:0; background:url("me.jpg") center/cover; background-position:70% center; transition:opacity .6s}
+  .photo .pic .dbl{position:absolute; inset:0; background:url("shot-ridge.webp") center/cover; mix-blend-mode:screen; opacity:0; transition:opacity .6s ease}
+  :root[data-theme="dark"] .photo .pic .dbl{mix-blend-mode:lighten}
+  :root[data-mode="artist"] .photo .pic .dbl{opacity:.3}
+  .photo:hover .pic .dbl{opacity:.55}
+  .photo .cap{font-family:"Caveat",cursive; font-size:22px; color:var(--ink); position:absolute; left:16px; bottom:11px}
+  .photo .cap::after{content:"the artist"} :root[data-mode="analyst"] .photo .cap::after{content:"the analyst"}
+  .tape{position:absolute; width:78px; height:23px; background:rgba(226,200,150,.5); box-shadow:0 2px 6px rgba(0,0,0,.08); transform:rotate(-6deg)}
+  .tape.t1{top:-9px; left:26px} .tape.t2{bottom:32px; right:-13px; transform:rotate(8deg)}
+
+  /* ---- ECLIPSE THEME TOGGLE ---- */
+  .eclipse{position:fixed; z-index:20; right:clamp(20px,4vw,48px); top:clamp(46px,7vw,60px);
+    width:52px;height:52px;border:none;background:transparent;cursor:pointer;display:grid;place-items:center}
+  .eclipse svg{width:30px;height:30px;overflow:visible; transition:transform .6s ease}
+  .eclipse .core{fill:var(--orange); transition:fill .5s}
+  .eclipse .cut{fill:var(--paper); transform:translateX(26px); transition:transform .55s cubic-bezier(.76,0,.24,1),fill .5s}
+  .eclipse .ray{stroke:var(--orange); stroke-width:2.2; stroke-linecap:round; transform-origin:15px 15px; transition:opacity .4s,transform .55s cubic-bezier(.76,0,.24,1)}
+  :root[data-theme="dark"] .eclipse .core{fill:#D9D7CF}
+  :root[data-theme="dark"] .eclipse .cut{transform:translateX(9px); fill:var(--paper)}
+  :root[data-theme="dark"] .eclipse .ray{opacity:0; transform:scale(.4)}
+  .eclipse:hover svg{transform:rotate(22deg)}
+
+  .foot{position:fixed; z-index:9; left:clamp(24px,5vw,56px); bottom:22px; font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted)}
+  .foot .ar{color:var(--accent); display:inline-block; animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+  ::view-transition-old(root){animation:none}
+  ::view-transition-new(root){animation:ec .6s cubic-bezier(.76,0,.24,1)}
+  @keyframes ec{from{clip-path:circle(0% at var(--cx,92%) var(--cy,8%))}to{clip-path:circle(150% at var(--cx,92%) var(--cy,8%))}}
+
+  /* mid breakpoint: drop photo so 2 cols never crush the grid */
+  @media(max-width:1120px){
+    .photo{display:none}
+    .lead{flex:1 1 400px}
+  }
+  /* mobile: stack, single tidy column */
+  @media(max-width:900px){
+    body{overflow:auto}
+    .scene{position:relative; height:auto}
+    .stage{position:relative; flex-direction:column; align-items:stretch; padding:92px 20px 48px; gap:28px}
+    .lead{flex:none; max-width:none}
+    .cardzone{width:auto; height:auto}
+    .photo{display:block; width:62vw; margin:0 auto; transform:rotate(1.6deg)}
+    .set{position:relative; grid-template-rows:auto}
+    :root[data-mode="artist"] .set.analyst{display:none}
+    :root[data-mode="analyst"] .set.artist{display:none}
+    :root[data-mode="artist"] .set.artist,
+    :root[data-mode="analyst"] .set.analyst{opacity:1!important; transform:none!important; pointer-events:auto!important}
+    .shot{min-height:96px}
+  }
+  @media(max-width:480px){ .set{grid-template-columns:1fr} }
+  @media(prefers-reduced-motion:reduce){ *{animation:none!important} }
+</style>
+</head>
+<body>
+  <div class="bg"></div><div class="grain"></div>
+
+  <header class="top">
+    <div class="brand">Tuhin Bhattacharya <b>·</b> Field Notebook</div>
+    <div>Vol.01 — Molecules → Metrics</div>
+  </header>
+
+  <button class="eclipse" id="eclipse" aria-label="toggle light/dark">
+    <svg viewBox="0 0 30 30">
+      <g class="rays">
+        <line class="ray" x1="15" y1="0" x2="15" y2="4"/><line class="ray" x1="15" y1="26" x2="15" y2="30"/>
+        <line class="ray" x1="0" y1="15" x2="4" y2="15"/><line class="ray" x1="26" y1="15" x2="30" y2="15"/>
+        <line class="ray" x1="4.4" y1="4.4" x2="7.2" y2="7.2"/><line class="ray" x1="22.8" y1="22.8" x2="25.6" y2="25.6"/>
+        <line class="ray" x1="25.6" y1="4.4" x2="22.8" y2="7.2"/><line class="ray" x1="7.2" y1="22.8" x2="4.4" y2="25.6"/>
+      </g>
+      <clipPath id="disc"><circle cx="15" cy="15" r="9"/></clipPath>
+      <g clip-path="url(#disc)"><circle class="core" cx="15" cy="15" r="9"/><circle class="cut" cx="15" cy="15" r="9"/></g>
+    </svg>
+  </button>
+
+  <div class="scene" id="scene">
+    <div class="stage" id="stage">
+
+      <div class="lead">
+        <div class="issue">Issue 01 · Chemical Eng → Data Analyst</div>
+        <h1>From <em>molecules</em><br>to <span class="hand">metrics</span>.</h1>
+        <p class="sub">
+          <span class="s artist">BI analyst who shoots film, lives for matchday, and over-thinks every playlist. The data pays the bills — the rest keeps me human.</span>
+          <span class="s analyst">BI &amp; data analyst. I turn messy, 54-page data into dashboards people actually open — and decisions they actually make.</span>
+        </p>
+        <div class="switch" id="switch" role="button" aria-label="switch side">
+          <span class="thumb"></span>
+          <span class="opt opt-artist">The artist</span>
+          <span class="opt opt-analyst">The analyst</span>
+        </div>
+        <span class="hint2">one toggle, <b>two sides of me</b> ↑</span>
+      </div>
+
+      <!-- CARD GRID: artist + analyst sets share the same 2x2 zone, cross-fade on switch -->
+      <div class="cardzone float" data-depth="0.7">
+
+        <!-- ===== ARTIST SET ===== -->
+        <div class="set artist">
+          <div class="card np">
+            <div class="k"><span class="dot live"></span>now playing · spotify</div>
+            <div class="track" id="np-track">— nothing right now —</div>
+            <div class="artistname" id="np-artist">pick the silence</div>
+            <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="wit">the overthinking has a soundtrack.</div>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot live"></span>matchday</div>
+            <div class="big">90′<span style="font-size:14px;color:var(--muted)"> +stoppage</span></div>
+            <div class="lbl">every single weekend</div>
+            <div class="wit">yells at the TV. tactically.</div>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot"></span>latest frame</div>
+            <div class="shot"></div>
+            <div class="wit">golden hour, Goa — shot it myself.</div>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot live"></span>right now</div>
+            <div class="big" id="mood" style="font-size:19px">the over-thinker</div>
+            <div class="lbl">mood, cycling live</div>
+            <div class="wit">same obsession, different light.</div>
+          </div>
+        </div>
+
+        <!-- ===== ANALYST SET ===== -->
+        <div class="set analyst">
+          <div class="card">
+            <div class="k"><span class="dot"></span>featured · power bi</div>
+            <div class="pbars"><i style="height:40%"></i><i style="height:62%"></i><i style="height:48%"></i><i style="height:80%"></i><i style="height:95%"></i></div>
+            <div class="lbl">SUJAN P&amp;L · 54-page report, Celebal</div>
+            <div class="wit">300+ DAX measures → one dashboard they actually use.</div>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot"></span>toolkit</div>
+            <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">scikit-learn</span></div>
+            <div class="wit">chemical engineer who defected to the data.</div>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot"></span>ml · insurance CLV</div>
+            <div class="big">CLV</div>
+            <div class="lbl">Random Forest + K-Means segments</div>
+            <div class="wit">found the 5% of customers worth most of the value.</div>
+          </div>
+          <div class="card">
+            <div class="k"><span class="dot live"></span>availability</div>
+            <div class="big" style="font-size:22px">Summer ’26</div>
+            <div class="lbl">open to data / BI placement</div>
+            <div class="wit">let’s build something that ships.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- double-exposure taped photo -->
+      <div class="float photo" data-depth="1.2">
+        <span class="tape t1"></span><span class="tape t2"></span>
+        <div class="frame">
+          <div class="pic"><div class="base"></div><div class="dbl"></div></div>
+          <div class="cap"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="foot">scroll to read the notebook <span class="ar">↓</span></div>
+
+<script>
+  const root=document.documentElement, $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // THEME (light/dark)
+  function setTheme(t){root.dataset.theme=t;try{localStorage.setItem('nb-theme',t)}catch(e){}}
+  try{const t=localStorage.getItem('nb-theme');if(t)root.dataset.theme=t;}catch(e){}
+  $('#eclipse').addEventListener('click',()=>{
+    const n=root.dataset.theme==='dark'?'light':'dark';const r=$('#eclipse').getBoundingClientRect();
+    root.style.setProperty('--cx',(r.left+r.width/2)+'px');root.style.setProperty('--cy',(r.top+r.height/2)+'px');
+    if(document.startViewTransition&&!reduce)document.startViewTransition(()=>setTheme(n));else setTheme(n);
+  });
+
+  // MODE (artist/analyst)
+  function setMode(m){root.dataset.mode=m;try{localStorage.setItem('nb-mode',m)}catch(e){}}
+  try{const m=localStorage.getItem('nb-mode');if(m)root.dataset.mode=m;}catch(e){}
+  $('#switch').addEventListener('click',()=>setMode(root.dataset.mode==='artist'?'analyst':'artist'));
+
+  // mood cycler (artist only)
+  (function(){const el=$('#mood');if(!el)return;const m=['the over-thinker','the night owl','the gym rat','the film shooter','the tactician'];let i=0;
+    el.style.transition='opacity .25s';
+    setInterval(()=>{if(root.dataset.mode!=='artist')return;i=(i+1)%m.length;el.style.opacity=0;setTimeout(()=>{el.textContent=m[i];el.style.opacity=1;},250);},2600);})();
+
+  // live Spotify now-playing — wire real endpoint at build; graceful idle fallback
+  async function loadNowPlaying(){
+    try{
+      const r=await fetch('/api/now-playing'); if(!r.ok)return; const d=await r.json();
+      if(d&&d.isPlaying){$('#np-track').textContent=d.title; $('#np-artist').textContent=d.artist;}
+    }catch(e){/* idle: keep "nothing right now" */}
+  }
+  loadNowPlaying();
+
+  // subtle parallax — photo + cardzone only (lead stays put = readable)
+  if(!reduce && matchMedia('(min-width:901px)').matches){
+    const floats=[...$$('.float')];const base=new WeakMap();
+    floats.forEach(f=>base.set(f, getComputedStyle(f).transform==='none'?'':getComputedStyle(f).transform));
+    let tx=0,ty=0,cx=0,cy=0;
+    addEventListener('mousemove',e=>{ tx=(e.clientX/innerWidth-.5); ty=(e.clientY/innerHeight-.5); });
+    (function loop(){ cx+=(tx-cx)*.06; cy+=(ty-cy)*.06;
+      floats.forEach(f=>{const d=+(f.dataset.depth||1); const b=base.get(f);
+        f.style.transform=`${b} translate(${cx*d*-10}px, ${cy*d*-8}px)`; });
+      requestAnimationFrame(loop); })();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/* =====================================================================
+   WORLD: ARTIST — warm field-notebook. Paper + orange, Fraunces + Caveat,
+   photographic, crafted-chaos. Loads AFTER theme-base.css.
+   ===================================================================== */
+:root{
+  --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#7D7059;
+  --orange:#E4631F; --pen:#2B4C6F; --teal:#2C9C98; --grid:rgba(90,70,45,.08);
+  --accent:var(--orange);
+  --font-display:"Fraunces",serif; --font-body:"Inter",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",monospace; --font-hand:"Caveat",cursive;
+  --display-weight:900; --sec-weight:600;
+  --shadow:0 1px 1px rgba(60,40,15,.08), 0 18px 34px -12px rgba(80,55,25,.32);
+  --shadow-sm:0 1px 1px rgba(60,40,15,.08), 0 6px 14px -8px rgba(80,55,25,.3);
+}
+:root[data-theme="dark"]{
+  --paper:#1C1813; --paper2:#15110D; --card:#2A231B; --ink:#EFE7DA; --muted:#A39580;
+  --orange:#FF8A4C; --pen:#8FB3D6; --teal:#44C0BC; --grid:rgba(255,235,200,.055);
+  --shadow:0 1px 1px rgba(0,0,0,.3), 0 20px 40px -12px rgba(0,0,0,.7);
+  --shadow-sm:0 1px 1px rgba(0,0,0,.3), 0 8px 16px -10px rgba(0,0,0,.65);
+}
+.bg{background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/30px 30px,
+                linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/30px 30px,
+                radial-gradient(120% 90% at 18% 8%,var(--paper),var(--paper2))}
+
+/* specimen note (hand-annotated) */
+.specimen{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:10px;
+  box-shadow:var(--shadow-sm);padding:18px 20px;position:relative;transition:border-color .5s,transform .3s,box-shadow .3s}
+.specimen:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.specimen .lbl{font:500 9.5px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.specimen .lbl .ic{width:14px;height:14px;color:var(--accent);transition:color .5s}
+.specimen h3{font-family:var(--font-display);font-weight:600;font-size:19px;margin-bottom:5px;text-wrap:balance}
+.specimen p{font-size:14px;color:var(--muted);text-wrap:pretty}
+.specimen .hand{font-family:var(--font-hand);font-size:17px;color:var(--accent);display:block;margin-top:8px;rotate:-1.2deg;transition:color .5s}
+.tape{position:absolute;width:62px;height:20px;background:color-mix(in srgb,var(--accent) 24%,var(--card));
+  border:1px dashed color-mix(in srgb,var(--ink) 22%,transparent);opacity:.85;rotate:-5deg}
