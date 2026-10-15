@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import type { World } from "../lib/theme"
 import { motionTokens } from "../lib/motion-tokens"
+import { MorphOverlay, morphReady, preloadMorph } from "./morph/MorphOverlay"
 
 /**
  * Signature world-switch moment (GEMINI-EXECUTION-BRIEF §3, §4 R3):
@@ -12,6 +13,8 @@ import { motionTokens } from "../lib/motion-tokens"
  * - Mid-wipe destination label appears in Fraunces (Artist) or JetBrains Mono (Analyst).
  * - Single terracotta thread line lingers on screen for 300ms as the new world lands.
  * - Reduced-motion skips wipe & gallop entirely — the destination simply appears.
+ * When WebGL and the lazy three.js chunk are ready, the molecule -> chart morph
+ * (morph/MorphScene) plays instead; the horse wipe is the fallback.
  */
 let lastWorld: World | null = null
 
@@ -23,6 +26,7 @@ export function WorldTransition({ world }: { world: World }) {
   const reduce = useReducedMotion()
   const loc = useLocation()
   const [play, setPlay] = useState(false)
+  const [morph, setMorph] = useState(false)
   const [lingering, setLingering] = useState(false)
   const [direction, setDirection] = useState<"to-analyst" | "to-artist">("to-analyst")
   const [label, setLabel] = useState<string>("")
@@ -30,6 +34,9 @@ export function WorldTransition({ world }: { world: World }) {
   const lingerTimer = useRef(0)
 
   useEffect(() => () => window.clearTimeout(lingerTimer.current), [])
+  useEffect(() => {
+    if (!reduce) return preloadMorph()
+  }, [reduce])
 
   useEffect(() => {
     const changed = lastWorld !== null && lastWorld !== world
@@ -44,7 +51,8 @@ export function WorldTransition({ world }: { world: World }) {
     setLabel(stateLabel ?? fallbackLabel)
 
     token.current += 1
-    setPlay(true)
+    if (morphReady()) setMorph(true)
+    else setPlay(true)
   }, [world, reduce, loc.state])
 
   const onWipeComplete = () => {
@@ -58,6 +66,15 @@ export function WorldTransition({ world }: { world: World }) {
 
   return (
     <>
+      {morph && (
+        <MorphOverlay
+          key={`morph-${token.current}`}
+          direction={direction}
+          world={world}
+          label={label}
+          onDone={() => setMorph(false)}
+        />
+      )}
       {lingering && (
         <motion.div
           key={`linger-${token.current}`}

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { motion, useMotionValueEvent, useReducedMotion, useSpring } from "motion/react"
+import { motion, useMotionValueEvent, useSpring } from "motion/react"
+import { useReducedMotion } from "../../hooks/useSafeMotion"
+import { LiveWire, WIRE_CSS } from "./home/LiveWire"
 import { WORLDS } from "../../lib/worlds"
 import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
@@ -31,8 +33,12 @@ const DIAL_CX = 100
 const DIAL_CY = 96
 
 const CSS = String.raw`
-  html[data-toc] .page.p-an-toc,.p-an-toc{min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,64px);
-    max-width:1240px;margin:0 auto;width:100%;overflow:hidden;position:relative}
+  html[data-toc] .page.p-an-toc,.p-an-toc{min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:minmax(0,1fr) auto;
+    column-gap:clamp(20px,4vw,64px);row-gap:clamp(10px,2vh,20px);max-width:1240px;margin:0 auto;width:100%;overflow:hidden;position:relative}
+  .p-an-toc .poster{grid-column:1;grid-row:1}
+  .p-an-toc .index{grid-column:2;grid-row:1}
+  .p-an-toc .instrument{grid-column:1;grid-row:2}
+  .p-an-toc .ah-wire{grid-column:2;grid-row:2}
 
   /* material: graph paper, minor 24px + major 120px, faded at the edges */
   .p-an-toc::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -45,7 +51,7 @@ const CSS = String.raw`
   .p-an-toc .poster{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,24px)}
   .p-an-toc .kick{font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
   .p-an-toc .kick .caret{display:inline-block;margin-left:4px;color:var(--teal)}
-  .p-an-toc .big{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,7.6vw,120px);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
+  .p-an-toc .big{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,min(9vw,16vh),140px);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
   .p-an-toc .big em{font-style:normal;color:var(--accent)}
   .p-an-toc .lede{font:500 clamp(12px,1vw,14px)/1.5 var(--font-mono);color:var(--muted);margin:clamp(8px,1.6vh,16px) 0 0;max-width:34ch}
   .p-an-toc .lede b{color:var(--ink);font-weight:600}
@@ -92,7 +98,7 @@ const CSS = String.raw`
   .p-an-toc .row-title{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,min(4.2vw,6.2vh),64px);line-height:1;letter-spacing:-.035em;white-space:nowrap;
     transition:transform .35s var(--ease),color .25s var(--ease)}
   .p-an-toc .row-gloss{font:500 11.5px/1.3 var(--font-mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;
-    opacity:0;transform:translateX(-6px);transition:opacity .25s var(--ease),transform .3s var(--ease)}
+    opacity:.75;transition:opacity .25s var(--ease),transform .3s var(--ease),color .25s var(--ease)}
   .p-an-toc .row-end{display:flex;align-items:center;gap:12px}
   .p-an-toc .row-state{font:600 8.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:6px}
   .p-an-toc .row-state::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
@@ -101,7 +107,7 @@ const CSS = String.raw`
     transition:background .25s var(--ease),color .25s var(--ease),transform .3s var(--ease)}
   .p-an-toc .row-arrow .ic{width:13px;height:13px}
   .p-an-toc .row:hover .row-title,.p-an-toc .row:focus-visible .row-title{transform:translateX(10px);color:var(--accent)}
-  .p-an-toc .row:hover .row-gloss,.p-an-toc .row:focus-visible .row-gloss{opacity:1;transform:none}
+  .p-an-toc .row:hover .row-gloss,.p-an-toc .row:focus-visible .row-gloss{opacity:1;transform:translateX(10px);color:var(--ink)}
   .p-an-toc .row:hover .row-arrow,.p-an-toc .row:focus-visible .row-arrow{background:var(--accent);color:var(--paper);transform:rotate(-45deg)}
   .p-an-toc .row:focus-visible{outline:none}
   .p-an-toc .row:focus-visible .row-num{outline:2px solid var(--accent);outline-offset:4px}
@@ -110,12 +116,15 @@ const CSS = String.raw`
     .p-an-toc .row-gloss{display:none}
   }
   @media(max-width:900px){
-    html[data-toc] .page.p-an-toc,.p-an-toc{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:clamp(10px,2vh,18px)}
+    html[data-toc] .page.p-an-toc,.p-an-toc{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr) auto;gap:clamp(10px,2vh,18px)}
     .p-an-toc .instrument{display:none}
+    .p-an-toc .index{grid-column:1;grid-row:2}
+    .p-an-toc .ah-wire{grid-column:1;grid-row:3}
     .p-an-toc .big{font-size:clamp(44px,13vw,68px)}
     .p-an-toc .lede{margin-top:8px;font-size:12px}
     .p-an-toc .cta-row{margin-top:10px}
     .p-an-toc .cv-alt{display:none}
+    .p-an-toc .kick{letter-spacing:.1em}
     .p-an-toc .row{grid-template-columns:26px minmax(0,1fr) auto}
     .p-an-toc .row-title{font-size:clamp(24px,7.4vw,34px)}
     .p-an-toc .row-state{display:none}
@@ -183,6 +192,8 @@ export function AnalystHome() {
       return { to: n.to, label: n.label, ...meta }
     })
 
+  // a live-wire readout swings the dial to the channel it links to
+  const onChannel = (to: string | null) => setActive(to ? entries.findIndex((e) => e.to === to) : -1)
   const current = active >= 0 ? entries[active] : null
   const built = entries.filter((e) => e.status === "built").length
 
@@ -197,7 +208,7 @@ export function AnalystHome() {
 
   return (
     <main className="page p-an-toc" aria-label="The Analyst: subsystem index">
-      <style>{CSS}</style>
+      <style>{CSS + WIRE_CSS}</style>
 
       <section className="poster">
         <div>
@@ -207,6 +218,8 @@ export function AnalystHome() {
           <h1 className="big">
             The<br />Analyst<em>.</em>
           </h1>
+        </div>
+        <div>
           <p className="lede">
             Aspiring <b>Technology Consultant</b>. Chemical engineer turned analyst. Decisions, not dashboards.
           </p>
@@ -217,22 +230,22 @@ export function AnalystHome() {
             <Link className="cv-alt" to="/analyst/contact">Get in touch</Link>
           </div>
         </div>
+      </section>
 
-        <div className="instrument" aria-live="polite">
-          <Dial active={active} count={entries.length} />
-          <div className="readout">
-            <div className="ro-k">{current ? "Channel selected" : "Standing by"}</div>
-            <div className="ro-ch">
-              {current ? <><span>CH {current.num}</span>{current.label}</> : <><span>CH --</span>Pick a subsystem</>}
-            </div>
-            <div className="ro-gloss">{current ? current.gloss : "Point at any line on the right to read its channel."}</div>
-            <div className="ro-foot">
-              <span>Goa <b>{clock}</b> IST</span>
-              <span><b>{built}/{entries.length}</b> online</span>
-            </div>
+      <div className="instrument" aria-live="polite">
+        <Dial active={active} count={entries.length} />
+        <div className="readout">
+          <div className="ro-k">{current ? "Channel selected" : "Standing by"}</div>
+          <div className="ro-ch">
+            {current ? <><span>CH {current.num}</span>{current.label}</> : <><span>CH --</span>Pick a subsystem</>}
+          </div>
+          <div className="ro-gloss">{current ? current.gloss : "Point at any line or live readout to read its channel."}</div>
+          <div className="ro-foot">
+            <span>Goa <b>{clock}</b> IST</span>
+            <span><b>{built}/{entries.length}</b> online</span>
           </div>
         </div>
-      </section>
+      </div>
 
       <motion.nav
         className="index"
@@ -264,6 +277,8 @@ export function AnalystHome() {
           </motion.div>
         ))}
       </motion.nav>
+
+      <LiveWire onChannel={onChannel} />
     </main>
   )
 }

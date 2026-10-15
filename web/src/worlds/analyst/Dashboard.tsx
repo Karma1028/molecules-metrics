@@ -157,17 +157,17 @@ function useKpis(): Kpi[] {
       story: gym ? `${gym.workouts} sessions logged. Best run: ${gym.bestWeekStreak} weeks straight without missing one.` : DARK_STORY,
     },
     {
-      id: "ai", code: "K6", label: "AI agent orchestration", value: ai ? String(ai.agentCalls) : "off",
-      unit: ai ? `jobs delegated · ${ai.toolCalls.toLocaleString("en-IN")} tool calls` : "feed not baked",
+      id: "ai", code: "K6", label: "Shipped with AI agents", value: ai ? String(ai.commits) : "off",
+      unit: ai ? `commits · ${ai.repos} repos · ${kilo(ai.linesAdded)} lines` : "feed not baked",
       state: ai ? "static" : "off",
-      definition: "Jobs handed to sub-agents while building, from local Claude Code logs. Only counts leave the machine.",
-      why: "Work is moving from typing code to directing agents, and cache reuse keeps it cheap.",
-      lineage: ["Claude Code logs", "bake-ai script", "dedupe by message id", "count"],
+      definition: "Commits in repos built with Claude Code agents, since the first logged session.",
+      why: "Prompting is easy. Shipped, reviewed commits are the proof.",
+      lineage: ["Agent logs", "edit calls", "git log", "count"],
       refresh: ai ? `baked · ${ai.generatedAt?.slice(0, 10) ?? ""}` : "file missing in this build",
-      short: "AGT", measure: "Agent_Jobs",
-      formula: ["Agent_Jobs :=", "CALCULATE (", "    COUNTROWS ( TOOL_CALLS ),", '    TOOL_CALLS[tool] = "Agent"', ")"],
+      short: "AGT", measure: "Commits_Shipped",
+      formula: ["Commits_Shipped :=", "CALCULATE (", "    COUNTROWS ( COMMITS ),", "    REPOS[built_with_agents] = TRUE ()", ")"],
       story: ai
-        ? `${ai.agentCalls} jobs delegated to sub-agents across ${ai.activeDays} build days. ${ai.cacheShare}% of context came from cache, not paid for twice.`
+        ? `${kilo(ai.linesAdded)} lines written by agents I directed. ${ai.commits} commits shipped in ${ai.activeDays} build days.`
         : DARK_STORY,
     },
     {
@@ -256,8 +256,6 @@ function Breakdown({ id }: { id: KpiId }) {
 }
 
 
-/** Bars as a share of the largest row, for the ranked breakdown lists. */
-const share = (v: number, max: number) => ({ ["--w" as string]: `${(v / Math.max(1, max)) * 100}%` })
 
 function GymBreak() {
   const { data, fallback } = useGym()
@@ -273,24 +271,26 @@ function GymBreak() {
   )
 }
 
-const MILLION = 1_000_000
-const AI_MONTHS = 2
+const THOUSAND = 1000
+
+/** 135648 → "135.6k"; small numbers stay whole. */
+function kilo(n: number): string {
+  return n < THOUSAND ? String(n) : `${(n / THOUSAND).toFixed(1)}k`
+}
 
 function AiBreak() {
   const { data, fallback } = useAi()
   if (fallback) return <Offline name="Agent log" />
-  const months = data.months.slice(-AI_MONTHS)
-  const max = Math.max(...months.map((m) => m.output))
-  const label = (m: string) => `${MONTHS[Number(m.slice(5)) - 1]} ${m.slice(2, 4)}`
+  // the funnel: what the agents typed, what it touched, what got shipped
+  const rows: [string, string][] = [
+    ["Written", `${kilo(data.linesAdded)} lines`],
+    ["Touched", `${data.filesTouched.toLocaleString("en-IN")} files`],
+    ["Shipped", `${data.commits} commits · ${data.repos} repos`],
+  ]
   return (
     <ul className="db-list">
-      {months.map((m) => (
-        <li key={m.month} className="rb">
-          <span className="t">{label(m.month)}</span><i style={share(m.output, max)} />
-          <span className="n">{(m.output / MILLION).toFixed(1)}M tokens</span>
-        </li>
-      ))}
-      <li><span className="src">{data.cacheShare}% of context reused from cache. Counts only: no prompts or code leave the machine.</span></li>
+      {rows.map(([k, v]) => <li key={k}><span className="k">{k}</span><span className="t">{v}</span></li>)}
+      <li><span className="src">{data.cacheShare}% of context from cache. Counts only, no code leaves.</span></li>
     </ul>
   )
 }
