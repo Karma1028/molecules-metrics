@@ -331,7 +331,12 @@ const CSS = String.raw`
   @media(max-width:900px){
     .p-md .mh-src{display:none}
     .p-md .mh-title{font-size:clamp(26px,8vw,40px)}
-    .p-md .spread{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(150px,34%) auto minmax(0,1fr);gap:9px}
+    /* header: stack full-width so the title/lede stop wrapping into a 100px column beside the badge */
+    .p-md .plate-head{flex-direction:column;align-items:stretch;gap:4px;margin-bottom:0}
+    .p-md .plate-head .ph-right{align-items:flex-start;text-align:left;white-space:normal}
+    .p-md .plate-head .mh-meta{align-items:flex-start;text-align:left;flex-direction:row;flex-wrap:wrap;gap:4px 10px}
+    .p-md .plate-head .ph-rule{margin:3px 0}
+    .p-md .spread{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(84px,17%) auto minmax(0,1fr);gap:8px}
     .p-md .lead{grid-area:1 / 1}.p-md .lead .print{rotate:0deg}
     .p-md .mtabs{grid-area:2 / 1;display:flex;gap:4px;padding:3px;border-radius:999px;
       background:var(--fz-card);border:1px solid var(--fz-line);backdrop-filter:blur(3px)}
@@ -346,9 +351,35 @@ const CSS = String.raw`
     .p-md .spread[data-tab="rail"] :is(.poster,.stub,.wire){display:none}
     .p-md .poster{justify-content:flex-start}
     .p-md .prow{flex-direction:row;align-items:center}
-    .p-md .radarbox{flex:0 0 min(132px,36%)}
+    .p-md .radarbox{flex:0 0 min(104px,30%)}
+    /* season panel: tight stack so the radar, rows and underlying line each get their own space */
+    .p-md .poster{gap:5px;padding:7px 10px}
+    .p-md .poster .pk{letter-spacing:.02em;font-size:7.5px;gap:4px;flex-wrap:nowrap;white-space:nowrap}
+    .p-md .poster .pk .leg{letter-spacing:.02em;white-space:nowrap;gap:4px;font-size:7px}
+    .p-md .prow{flex:1 1 auto;min-height:0;gap:8px}
+    .p-md .radar .al{font-size:5.5px}
+    .p-md .pstats{gap:3px}
+    .p-md .yhead{gap:8px;flex-wrap:nowrap}
+    .p-md .yh-main b{font-size:28px}
+    .p-md .cmp-row{padding:1.5px 2px;gap:6px}
+    .p-md .cl{font-size:9.5px}
+    .p-md .under{padding-top:4px;gap:3px 8px}
+    .p-md .under .un{display:block}
     .p-md .rail{flex-direction:column}
     .p-md .rail .print{rotate:0deg}
+  }
+  /* short phones (375x667): lead print yields rows to the Season panel so nothing clips or collides */
+  @media(max-width:900px) and (max-height:720px){
+    .p-md .spread{grid-template-rows:minmax(52px,10%) auto minmax(0,1fr);gap:6px}
+    .p-md .poster{gap:3px;padding:5px 10px}
+    .p-md .prow{gap:6px}
+    .p-md .radarbox{flex-basis:min(84px,26%)}
+    .p-md .pstats{gap:2px}
+    .p-md .yh-main b{font-size:24px}
+    .p-md .yh-delta{padding:3px 6px}
+    .p-md .cmp-row{padding:.5px 2px}
+    .p-md .cmp-head{padding-bottom:2px}
+    .p-md .under{padding-top:3px;gap:2px 7px}
   }
   @media(prefers-reduced-motion:reduce){
     .p-md .backdrop .bg,.p-md .backdrop .beam,.p-md .mg-scan,.p-md .mg-glare,

@@ -1,31 +1,59 @@
 import { useState, type CSSProperties } from "react"
+import { AnimatePresence, motion, useReducedMotion } from "motion/react"
+import { motionTokens } from "../../../lib/motion-tokens"
 import { HOSTEL_ROOMS, dialPosition, type HostelRoom } from "./hostel-rooms"
 import { SpotifyGlyph } from "./glyphs"
 
-/** One tuned room: scene photo, a line overheard in it, and its track. */
+/** Full-bleed scene behind the whole page; crossfades when the dial moves. */
+export function RoomScene({ room }: { room: HostelRoom }) {
+  const reduce = useReducedMotion()
+  return (
+    <div className="room-scene" aria-hidden="true">
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={room.id}
+          className="room-scene-img"
+          src={`/hostel/${room.id}.webp`}
+          alt=""
+          decoding="async"
+          initial={{ opacity: 0, scale: reduce ? 1 : 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: reduce ? motionTokens.duration.fast : motionTokens.duration.slow }}
+        />
+      </AnimatePresence>
+      <div className="room-scrim" />
+    </div>
+  )
+}
+
+/** One tuned room: what you overhear in it, and its track. The scene itself is the page. */
 export function HostelRooms({ room, noteIdx, onSearch }: { room: HostelRoom; noteIdx: number; onSearch: () => void }) {
   // the Spotify player only loads after a tap, so the page stays light until asked
   const [playingId, setPlayingId] = useState<string | null>(null)
+  const reduce = useReducedMotion()
   const playing = playingId === room.id
   const note = room.notes[noteIdx % room.notes.length]
 
   return (
     <div className="rooms">
-      <figure className="scene" data-room={room.id}>
-        <img
-          className="scene-img"
-          src={`/hostel/${room.id}.webp`}
-          alt={`${room.name}, a hostel scene`}
-          width={1376}
-          height={768}
-          decoding="async"
-        />
-        <figcaption className="scene-cap">
-          <span className="scene-freq">{room.freq} FM</span>
-          <span className="scene-name">{room.name}</span>
-          <span className="scene-note">"{note}"</span>
-        </figcaption>
-      </figure>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={`${room.id}-${noteIdx}`}
+          className="room-cap"
+          initial={{ opacity: 0, y: reduce ? 0 : 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: reduce ? 0 : -8 }}
+          transition={{ duration: motionTokens.duration.normal }}
+        >
+          <span className="room-freq">
+            <i className="room-led" aria-hidden="true" />
+            {room.freq} FM · now tuned
+          </span>
+          <h2 className="room-name">{room.name}</h2>
+          <p className="room-note">"{note}"</p>
+        </motion.div>
+      </AnimatePresence>
 
       <div className="room-deck">
         {playing ? (
@@ -83,7 +111,8 @@ export function RoomDial({ index, onTune }: { index: number; onTune: (i: number)
           style={{ "--x": `${dialPosition(i) * 100}%` } as CSSProperties}
           onClick={() => onTune(i)}
         >
-          {r.freq}
+          <span className="fp-f">{r.freq}</span>
+          <span className="fp-nm">{r.name}</span>
         </button>
       ))}
     </div>

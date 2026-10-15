@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
+    "snapshot": "node scripts/snapshot.mjs && node scripts/bake-gym.mjs && node scripts/bake-ai.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },

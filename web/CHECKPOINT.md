@@ -26,6 +26,12 @@
 >     - Sound default OFF (opt-in).
 >     - Committed this batch.
 >     - Wants more creative + critical thinking using more refs/skills/plugins.
+>   - ROUND 2 LOCKED (Tuhin, 2026-10-15), see `audit/CREATIVE-DIRECTION-R2.md`:
+>     - companion = chibi Tuhin in a plain blaugrana No.10 shirt (no crest), with props per page; generate via Flow from me-1600w.webp;
+>     - Dashboard = BI work sample (5 KPIs + definition/source/refresh + drill-through, no CGPA, cut the clock/now-playing/Barça);
+>     - Matchday = Messi data portrait from StatsBomb Open Data (attribution required);
+>     - InfoLeap figures are CLEARED (Work note updated).
+>     - Build order: bugs → Dashboard → companion → Matchday portrait → Gallery strip / Journey rail / Sound radio → ball→chart morph.
 >   - Bugs open: Matchday 375 Season panel text overlap; Dashboard mobile lede 1-2 words wide; public/frames dup -1600w (~5 MB).
 >   - Hook noise root cause: pixeltable@inline plugin PostToolUse `validate_antipatterns.py` (Python can't open file in Claude's virtualized AppData). Tuhin should disable Pixeltable plugin in desktop app.
 >   - Cut-outs BLOCKED: Claude-in-Chrome extension disconnected (list_connected_browsers = []), Flow MCP window has no project open. Tuhin approved "I agree" on Flow's "Rights to use this image" dialog for his own photo (me-1600w.webp). Use Nano Banana only (0 credits). Once either is fixed, rerun the 16-asset brief via a Haiku agent:

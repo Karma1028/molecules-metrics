@@ -1,10 +1,16 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react"
+import { createPortal } from "react-dom"
 import { useReducedMotion } from "../../../hooks/useSafeMotion"
 import { useNowPlaying, useMusicSearch, useMusicLyrics, type MusicTrack } from "../../../lib/live"
+import { itunesSearch, linkToTrack, parseMusicLink, type MusicLink } from "../../../lib/music"
 import { parseLrc, activeLine } from "./lrc"
 import { SpotifyGlyph, YouTubeGlyph } from "./glyphs"
-import { HostelRooms, RoomDial } from "./HostelRooms"
+import { HostelRooms, RoomDial, RoomScene } from "./HostelRooms"
 import { HOSTEL_ROOMS } from "./hostel-rooms"
+
+const SWIPE_MIN = 50
+/* Spotify's compact player height */
+const EMBED_H = 80
 
 interface Palette {
   bg: string
@@ -66,14 +72,58 @@ function sampleArt(url: string): Promise<Palette> {
   })
 }
 
+/** A pasted YouTube / Spotify link resolves straight to its embed; title lookup is best effort. */
+function useLinkTrack(link: MusicLink | null): MusicTrack | null {
+  const [track, setTrack] = useState<MusicTrack | null>(null)
+  const key = link ? `${link.source}:${link.kind}:${link.id}` : ""
+  useEffect(() => {
+    setTrack(null)
+    if (!link) return
+    const ctl = new AbortController()
+    linkToTrack(link, ctl.signal).then((t) => !ctl.signal.aborted && setTrack(t))
+    return () => ctl.abort()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key])
+  return track
+}
+
+const norm = (s: string) => s.toLowerCase().replace(/\(.*?\)|\[.*?\]|-.*$/g, "").replace(/[^\p{L}\p{N}]+/gu, " ").trim()
+
+/** Spotify often ships no preview; borrow the matching iTunes 30 s clip so the karaoke still runs. */
+function usePreview(track: MusicTrack): string | null {
+  const [borrowed, setBorrowed] = useState<string | null>(null)
+  const own = track.preview ?? null
+  const need = !own && !track.embed && !!track.title
+  useEffect(() => {
+    setBorrowed(null)
+    if (!need) return
+    const ctl = new AbortController()
+    itunesSearch(`${track.artist} ${track.title}`, ctl.signal)
+      .then((hits) => hits.find((h) => norm(h.title) === norm(track.title) && h.preview))
+      .then((hit) => !ctl.signal.aborted && setBorrowed(hit?.preview ?? null))
+      .catch(() => undefined)
+    return () => ctl.abort()
+  }, [need, track.artist, track.title])
+  return own ?? borrowed
+}
+
+function SourceMark({ source }: { source: MusicTrack["source"] }) {
+  if (source === "youtube") return <YouTubeGlyph size={17} />
+  if (source === "spotify") return <SpotifyGlyph size={15} />
+  return <span className="s-prev">30s</span>
+}
+
 // ── Idle / searching: the void + search field + suggestion lines ──────
 function SearchVoid({ onPick }: { onPick: (t: MusicTrack) => void }) {
   const [query, setQuery] = useState("")
   const [debounced, setDebounced] = useState("")
   const [active, setActive] = useState(0)
   const { data: np } = useNowPlaying()
-  const { data: search, loading, fallback } = useMusicSearch(debounced)
-  const results = search.results
+  const link = useMemo(() => parseMusicLink(query), [query])
+  const linked = useLinkTrack(link)
+  const { data: search, loading: searching, error } = useMusicSearch(link ? "" : debounced)
+  const results = link ? (linked ? [linked] : []) : search.results
+  const loading = link ? !linked : searching
 
   useEffect(() => {
     const id = window.setTimeout(() => setDebounced(query.trim()), 350)
@@ -95,13 +145,13 @@ function SearchVoid({ onPick }: { onPick: (t: MusicTrack) => void }) {
     }
   }
 
-  const typed = debounced.length > 0
+  const typed = debounced.length > 0 || !!link
   return (
     <div className="void">
       {np?.title ? <div className="ghost">{np.title}</div> : null}
       <div className="search">
         <label className="hint" htmlFor="radio-q">
-          type a song.
+          type a song, or paste a YouTube or Spotify link.
         </label>
         <input
           id="radio-q"
@@ -120,10 +170,10 @@ function SearchVoid({ onPick }: { onPick: (t: MusicTrack) => void }) {
       {typed && (
         <ul className="sugg" role="listbox" aria-label="results">
           {loading && results.length === 0 ? (
-            <li className="s-note">searching…</li>
+            <li className="s-note">{link ? "tuning in to that link…" : "searching…"}</li>
           ) : results.length === 0 ? (
             <li className="s-note">
-              {fallback ? "search isn't wired up yet, keys pending." : "nothing found. try another title."}
+              {error ? "search is offline right now. paste a YouTube or Spotify link instead." : "nothing found. try another title."}
             </li>
           ) : (
             results.map((t, i) => (
@@ -137,10 +187,14 @@ function SearchVoid({ onPick }: { onPick: (t: MusicTrack) => void }) {
               >
                 <span className="s-txt">
                   <span className="s-title">{t.title}</span>
-                  <span className="s-sep">·</span>
-                  <span className="s-artist">{t.artist}</span>
+                  {t.artist ? (
+                    <>
+                      <span className="s-sep">·</span>
+                      <span className="s-artist">{t.artist}</span>
+                    </>
+                  ) : null}
                 </span>
-                <span className="s-src">{t.source === "youtube" ? <YouTubeGlyph size={17} /> : <SpotifyGlyph size={15} />}</span>
+                <span className="s-src"><SourceMark source={t.source} /></span>
               </li>
             ))
           )}
@@ -157,7 +211,8 @@ function LyricStage({ track, onExit }: { track: MusicTrack; onExit: () => void }
   const [time, setTime] = useState(0)
   const audioRef = useRef<HTMLAudioElement>(null)
   const lines = useMemo(() => parseLrc(lyr.synced), [lyr.synced])
-  const hasPreview = !!track.preview
+  const preview = usePreview(track)
+  const hasPreview = !!preview
   const idx = hasPreview && lines.length ? activeLine(lines, time) : -1
 
   const center = idx >= 0 ? idx : 0
@@ -189,18 +244,30 @@ function LyricStage({ track, onExit }: { track: MusicTrack; onExit: () => void }
         {track.art ? <img className="stage-art" src={track.art} alt="" crossOrigin="anonymous" /> : null}
         <div>
           <div className="stage-src">
-            <SpotifyGlyph size={13} /> now spinning
+            <SourceMark source={track.source} /> now spinning
           </div>
           <div className="stage-title">{track.title}</div>
-          <div className="stage-artist">{track.artist}</div>
+          {track.artist ? <div className="stage-artist">{track.artist}</div> : null}
         </div>
       </div>
 
-      {track.preview ? (
-        // 30-second Spotify preview drives the karaoke highlight.
+      {track.embed ? (
+        // pasted Spotify link: the official player (full track when signed in, preview otherwise)
+        <iframe
+          className="stage-embed"
+          src={track.embed}
+          title={`${track.title} on Spotify`}
+          height={EMBED_H}
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
+      ) : null}
+
+      {preview ? (
+        // 30-second preview drives the karaoke highlight.
         <audio
           ref={audioRef}
-          src={track.preview}
+          src={preview}
           autoPlay
           onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
         />
@@ -234,7 +301,7 @@ function LyricStage({ track, onExit }: { track: MusicTrack; onExit: () => void }
               <>
                 {" "}
                 <a href={track.url} target="_blank" rel="noopener">
-                  open in Spotify →
+                  open in {track.source === "apple" ? "Apple Music" : "Spotify"} →
                 </a>
               </>
             ) : null}
@@ -242,7 +309,7 @@ function LyricStage({ track, onExit }: { track: MusicTrack; onExit: () => void }
         )}
       </div>
 
-      {!track.preview && track.url ? (
+      {!preview && !track.embed && track.url ? (
         <a className="stage-open" href={track.url} target="_blank" rel="noopener">
           <SpotifyGlyph size={14} /> play the full track on Spotify
         </a>
@@ -258,7 +325,7 @@ function VideoStage({ track, onExit }: { track: MusicTrack; onExit: () => void }
     <div className={`vstage${reduced ? " reduced" : ""}`} role="dialog" aria-label={`${track.title} by ${track.artist}`}>
       <iframe
         className="vframe"
-        src={`https://www.youtube.com/embed/${track.id}?autoplay=1&rel=0`}
+        src={track.embed ?? `https://www.youtube.com/embed/${track.id}?autoplay=1&rel=0`}
         title={track.title}
         allow="autoplay; encrypted-media"
         allowFullScreen
@@ -300,8 +367,25 @@ export function Radio() {
     return () => window.removeEventListener("keydown", onKey)
   }, [picked])
 
+  // swipe across the room to retune, like the original app on a phone
+  const swipeFrom = useRef<{ x: number; y: number } | null>(null)
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (band !== "rooms" || e.pointerType === "mouse") return
+    swipeFrom.current = { x: e.clientX, y: e.clientY }
+  }
+  const onPointerUp = (e: React.PointerEvent) => {
+    const from = swipeFrom.current
+    swipeFrom.current = null
+    if (!from) return
+    const dx = e.clientX - from.x
+    if (Math.abs(dx) < SWIPE_MIN || Math.abs(dx) < Math.abs(e.clientY - from.y)) return
+    const next = Math.max(0, Math.min(HOSTEL_ROOMS.length - 1, roomIdx + (dx < 0 ? 1 : -1)))
+    tune(next)
+  }
+
   return (
-    <div className="radio">
+    <div className="radio" data-band={band} onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
+      {band === "rooms" && !picked ? <RoomScene room={HOSTEL_ROOMS[roomIdx]} /> : null}
       <div className="faceplate">
         <div className="fp-brand">HOSTEL RADIO</div>
         {band === "rooms" ? (
@@ -322,10 +406,14 @@ export function Radio() {
       </div>
 
       {picked ? (
-        picked.source === "youtube" ? (
-          <VideoStage track={picked} onExit={exit} />
-        ) : (
-          <LyricStage track={picked} onExit={exit} />
+        // portal: a transformed page ancestor would otherwise trap the fixed takeover under the site header
+        createPortal(
+          picked.source === "youtube" ? (
+            <VideoStage track={picked} onExit={exit} />
+          ) : (
+            <LyricStage track={picked} onExit={exit} />
+          ),
+          document.body,
         )
       ) : band === "rooms" ? (
         <HostelRooms room={HOSTEL_ROOMS[roomIdx]} noteIdx={tunes} onSearch={() => setBand("search")} />

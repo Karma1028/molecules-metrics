@@ -15,7 +15,7 @@ import { TwinDoor } from "../../components/TwinDoor"
  * empty instrument readouts — the log fills as real work is written up.
  */
 
-type Status = "shipped" | "writeup" | "reserved"
+export type Status = "shipped" | "writeup" | "reserved"
 
 interface Readout {
   v: string
@@ -23,7 +23,7 @@ interface Readout {
   pending?: boolean
 }
 
-interface LogEntry {
+export interface LogEntry {
   id: string
   reg: string
   tag: string
@@ -40,13 +40,13 @@ interface LogEntry {
   reservedNote?: string
 }
 
-const STATUS_LABEL: Record<Status, string> = {
+export const STATUS_LABEL: Record<Status, string> = {
   shipped: "shipped",
   writeup: "in write-up",
   reserved: "reserved",
 }
 
-const ENTRIES: LogEntry[] = [
+export const ENTRIES: LogEntry[] = [
   {
     id: "barca",
     reg: "LOG.01",
@@ -81,7 +81,7 @@ const ENTRIES: LogEntry[] = [
     method:
       "Built an agentic tool with hierarchical LLM orchestration (a planner delegating to code and synthesis) on a strict Fetch-Wide, Process-Local rule: SQL pulls the rows, Python does the maths. Qualitative feedback returns structured JSON so every claim cites its respondent IDs.",
     result:
-      "Internship work, still being written up. Employer-internal figures stay out until they are cleared and verified. The method and my contribution are honest exactly as stated here.",
+      "Internship work, full case study still being written up. Headline figures are cleared and listed on the résumé. The method and my contribution are honest exactly as stated here.",
     readouts: [
       { v: "Agentic", k: "approach" },
       { v: "SQL + Python", k: "split" },

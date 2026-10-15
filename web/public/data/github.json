@@ -1,4 +1,52 @@
 {
-  "configured": false,
-  "fetchedAt": 1791860965600
+  "configured": true,
+  "user": "Karma1028",
+  "repos": [
+    {
+      "name": "Karma1028",
+      "desc": "Profile README",
+      "stars": 0,
+      "lang": "Python",
+      "url": "https://github.com/Karma1028/Karma1028"
+    },
+    {
+      "name": "Stock_App",
+      "desc": "Agentic stock-analysis app: ML models, sentiment data, Tata Motors research report",
+      "stars": 0,
+      "lang": "Jupyter Notebook",
+      "url": "https://github.com/Karma1028/Stock_App"
+    },
+    {
+      "name": "portfolio-online",
+      "desc": "Portfolio site: React, TypeScript, Tailwind, shadcn/ui, Framer Motion",
+      "stars": 0,
+      "lang": "TypeScript",
+      "url": "https://github.com/Karma1028/portfolio-online"
+    },
+    {
+      "name": "hostel-vibes-radio",
+      "desc": "Always-on Hinglish radio for hostel life: room themes, Spotify embeds, live presence via Supabase",
+      "stars": 0,
+      "lang": "TypeScript",
+      "url": "https://github.com/Karma1028/hostel-vibes-radio"
+    },
+    {
+      "name": "Karma-OS",
+      "desc": "Personal AI operating system dashboard: 10 views, React + D3 + Zustand",
+      "stars": 0,
+      "lang": "JavaScript",
+      "url": "https://github.com/Karma1028/Karma-OS"
+    },
+    {
+      "name": "CLV_IBM-project",
+      "desc": "Customer lifetime value on 9,134 customers: XGBoost prediction, segmentation, interactive detective-mode story",
+      "stars": 0,
+      "lang": "Jupyter Notebook",
+      "url": "https://github.com/Karma1028/CLV_IBM-project"
+    }
+  ],
+  "totalStars": 0,
+  "contributions": 137,
+  "fetchedAt": 1792079778,
+  "generatedAt": "2026-10-15T15:56:18.059Z"
 }
