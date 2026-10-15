@@ -22,7 +22,7 @@ const CHANNELS: Channel[] = [
   { id: "instagram", icon: "i-camera", label: "Instagram", handle: "@_threads_of_karma_", href: SOCIAL.instagram, note: "The artist side: photography and frames." },
 ]
 
-const STATUS = [
+export const STATUS = [
   { k: "Looking for", v: "Technology Consultant roles" },
   { k: "Available", v: "2027 full-time · open now to talk" },
   { k: "Based in", v: "Goa, India · IST" },

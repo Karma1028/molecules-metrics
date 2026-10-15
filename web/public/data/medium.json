@@ -1,4 +1,14 @@
 {
-  "configured": false,
-  "fetchedAt": 1791860965603
+  "configured": true,
+  "handle": "tuhin.gim",
+  "posts": [
+    {
+      "title": "Strategic Analysis: The Apple-Google AI Partnership and the Reshaping of the Consumer Tech…",
+      "url": "https://medium.com/@tuhin.gim/strategic-analysis-the-apple-google-ai-partnership-and-the-reshaping-of-the-consumer-tech-69575e9df862?source=rss-87bc89083fd6------2",
+      "published": "Tue, 10 Feb 2026 04:43:07 GMT",
+      "snippet": "How Google Built a Moat Around Apple with Apple’s Own Money !How Google Built a Moat Around Apple with Apple's Own MoneyAfter facing numerous setbacks and delays in the race for artificial intelligence, Apple has finally"
+    }
+  ],
+  "fetchedAt": 1792079778,
+  "generatedAt": "2026-10-15T15:56:18.459Z"
 }

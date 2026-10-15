@@ -206,21 +206,31 @@ const CSS = String.raw`
   .sofme .read{font:500 clamp(14px,1.6vw,18px)/1.4 var(--font-display);color:var(--ink);text-wrap:balance}
   .sofme .read b{color:var(--green);font-weight:600}
 
-  /* ============ MODE B — RADIO ============ */
-  .radio{max-width:760px;margin:0 auto;min-height:60vh;color:#ece7dc}
-  .faceplate{display:flex;align-items:center;gap:16px;padding:12px 18px;border:1px solid #2a2831;border-radius:12px;
-    background:linear-gradient(#1a1920,#121117);box-shadow:inset 0 1px 0 #ffffff10,0 12px 30px -16px #000;margin-bottom:clamp(26px,5vh,52px)}
-  .faceplate .fp-brand{font:800 15px/1 var(--font-display);letter-spacing:.04em;color:#f0ece2;
-    text-transform:uppercase;white-space:nowrap}
-  .faceplate .fp-dial{position:relative;flex:1;height:26px;border-radius:6px;background:
-    repeating-linear-gradient(90deg,#3a3842 0 1px,transparent 1px 11px);border:1px solid #2a2831;overflow:hidden}
-  .faceplate .fp-freq{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;
-    font:600 8px/1 var(--font-mono);letter-spacing:.1em;color:#6f6b7a}
-  .faceplate .fp-needle{position:absolute;top:-2px;bottom:-2px;left:62%;width:2px;background:#1DB954;box-shadow:0 0 8px #1DB954}
-  .faceplate .fp-led{width:9px;height:9px;border-radius:50%;background:#1DB954;box-shadow:0 0 10px #1DB954}
-  @keyframes pulseled{0%,100%{opacity:1}50%{opacity:.4}}
+  /* ============ MODE B: RADIO (full takeover, the room IS the page) ============ */
+  .p-sound>.radio{z-index:auto}
+  .radio{flex:1;min-height:0;width:100%;display:flex;flex-direction:column;gap:clamp(10px,2vh,20px);color:#ece7dc;touch-action:pan-y}
+  .radio>*{position:relative;z-index:1}
+  .radio>.room-scene{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .room-scene-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.92) brightness(.82)}
+  .room-scrim{position:absolute;inset:0;background:
+    linear-gradient(180deg,#07070ae6 0%,#07070a8c 22%,#07070a1f 46%,#07070a59 64%,#07070af2 100%),
+    radial-gradient(120% 80% at 0% 100%,#07070acc,transparent 60%)}
+  .p-sound[data-sound="radio"] .plate-head{margin-bottom:0}
+  .p-sound[data-sound="radio"] .ph-rule{display:none}
+  .p-sound[data-sound="radio"] .ph-title{font-size:clamp(22px,2.4vw,30px);color:#f6f1e7}
+  .p-sound[data-sound="radio"] .ph-note{color:#c9c2b4}
 
-  .void{position:relative;min-height:44vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px}
+  .faceplate{display:flex;align-items:center;gap:16px;padding:10px 16px;border:1px solid #ffffff1f;border-radius:14px;
+    background:#0c0c10a6;backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+    box-shadow:inset 0 1px 0 #ffffff14,0 16px 40px -20px #000}
+  .faceplate .fp-brand{font:800 15px/1 var(--font-display);letter-spacing:.04em;color:#f0ece2;text-transform:uppercase;white-space:nowrap}
+  .faceplate .fp-dial{position:relative;flex:1;height:26px;border-radius:6px;background:
+    repeating-linear-gradient(90deg,#ffffff1c 0 1px,transparent 1px 11px);border:1px solid #ffffff14;overflow:hidden}
+  .faceplate .fp-freq{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font:600 10px/1 var(--font-mono);letter-spacing:.1em;color:#9a95a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+  .faceplate .fp-needle{position:absolute;top:-2px;bottom:-2px;left:62%;width:2px;background:#1DB954;box-shadow:0 0 8px #1DB954}
+
+  .void{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px}
   .void .ghost{position:absolute;top:2vh;left:50%;transform:translateX(-50%);font:700 clamp(40px,10vw,92px)/1 var(--font-display);
     color:#ffffff;opacity:.035;white-space:nowrap;pointer-events:none;max-width:120vw;overflow:hidden}
   .search{position:relative;width:min(560px,92%);text-align:center;margin-top:8vh}
@@ -239,51 +249,64 @@ const CSS = String.raw`
   .s-sep{color:#5f5b53;flex:0 0 auto}
   .s-artist{font:500 12px/1 var(--font-mono);color:#908b80;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .s-src{flex:0 0 auto;display:flex;align-items:center}
-  /* tunable dial: five room stops + a needle that glides between them */
-  .faceplate .fp-dial.tunable{height:30px;overflow:visible}
-  .fp-dial.tunable .fp-needle{left:var(--pos);transform:translateX(-50%);transition:left .45s var(--ease)}
-  .fp-stop{position:absolute;top:50%;left:var(--x);transform:translate(-50%,-50%);background:none;border:none;cursor:pointer;
-    font:600 9px/1 var(--font-mono);letter-spacing:.06em;color:#6f6b7a;padding:8px 4px;border-radius:4px}
-  .fp-stop[aria-checked="true"]{color:#eafbe9}
-  .fp-stop:hover{color:#c9c4b8}
-  .fp-stop:focus-visible{outline:1.5px solid #1DB954;outline-offset:1px}
-  .fp-band{display:flex;border:1px solid #2a2831;border-radius:7px;overflow:hidden;flex:0 0 auto}
-  .fp-band button{background:none;border:none;cursor:pointer;padding:7px 10px;font:600 9.5px/1 var(--font-mono);
-    letter-spacing:.12em;text-transform:uppercase;color:#77727f}
-  .fp-band button[aria-selected="true"]{background:#1DB95422;color:#1DB954}
+  .s-prev{font:600 10px/1 var(--font-mono,ui-monospace,monospace);letter-spacing:.08em;padding:3px 5px;border:1px solid currentColor;border-radius:4px;opacity:.7}
+  .stage-embed{display:block;width:min(100%,520px);border:0;border-radius:12px;margin:10px 0 4px;background:transparent}
 
-  /* rooms: the Hostel Radio scenes, one per frequency */
-  .rooms{display:flex;flex-direction:column;gap:clamp(10px,2vh,16px)}
-  .p-sound[data-sound="radio"] .faceplate{margin-bottom:clamp(12px,2.2vh,22px)}
-  .scene{position:relative;margin:0 auto;border-radius:12px;overflow:hidden;aspect-ratio:1376/768;max-height:40vh;width:100%;
-    border:1px solid #2a2831;box-shadow:0 20px 40px -24px #000;background:#121117}
-  .scene-img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9) brightness(.78)}
-  .scene::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#07070acc)}
-  .scene-cap{position:absolute;left:clamp(14px,2.5vw,24px);right:clamp(14px,2.5vw,24px);bottom:clamp(12px,2.2vh,20px);z-index:1;
-    display:flex;flex-direction:column;gap:5px}
-  .scene-freq{font:600 10px/1 var(--font-mono);letter-spacing:.18em;color:#1DB954}
-  .scene-name{font:700 clamp(20px,3vw,30px)/1.05 var(--font-display);color:#f6f1e7;text-wrap:balance}
-  .scene-note{font-family:var(--font-hand);font-size:clamp(15px,1.8vw,19px);color:#d9d2c4;rotate:-.6deg}
-  .room-deck{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-  .room-play{display:flex;align-items:center;gap:12px;flex:1;min-width:0;background:#16151b;border:1px solid #2a2831;border-radius:10px;
-    padding:10px 14px;cursor:pointer;color:#ece7dc;text-align:left;transition:border-color .2s var(--ease)}
+  /* tunable dial: five room stops + a needle that glides between them */
+  .faceplate .fp-dial.tunable{height:38px;overflow:visible}
+  .fp-dial.tunable .fp-needle{left:var(--pos);top:auto;bottom:-3px;height:9px;border-radius:2px;transform:translateX(-50%);transition:left .45s var(--ease)}
+  .fp-dial.tunable .fp-needle::before{content:"";position:absolute;left:50%;top:-30px;width:1px;height:6px;background:#1DB954;transform:translateX(-50%)}
+  /* the page chrome stays readable on top of the scene */
+  .p-sound[data-sound="radio"] ~ .foot,body:has(.p-sound[data-sound="radio"]) .foot{position:relative;z-index:1;color:#bdb6a8;border-top-color:#ffffff1a}
+  body:has(.p-sound[data-sound="radio"]) .foot a{color:#e6dfd1;border-color:#e6dfd155}
+  .fp-stop{position:absolute;top:50%;left:var(--x);transform:translate(-50%,-50%);background:none;border:none;cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 6px;border-radius:4px;color:#8f8a99;white-space:nowrap}
+  .fp-stop .fp-f{font:700 11px/1 var(--font-mono);letter-spacing:.06em}
+  .fp-stop .fp-nm{font:600 10px/1 var(--font-mono);letter-spacing:.04em;text-transform:uppercase;opacity:.85}
+  .fp-stop[aria-checked="true"]{color:#eafbe9}
+  .fp-stop[aria-checked="true"] .fp-f{color:#1DB954}
+  .fp-stop:hover{color:#d9d4c8}
+  .fp-stop:focus-visible{outline:1.5px solid #1DB954;outline-offset:1px}
+  .fp-band{display:flex;border:1px solid #ffffff1f;border-radius:8px;overflow:hidden;flex:0 0 auto}
+  .fp-band button{background:none;border:none;cursor:pointer;padding:8px 11px;font:600 10px/1 var(--font-mono);
+    letter-spacing:.12em;text-transform:uppercase;color:#9a95a3}
+  .fp-band button[aria-selected="true"]{background:#1DB95429;color:#1DB954}
+
+  /* rooms: caption bottom-left, track bottom-right, the scene behind everything */
+  .rooms{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,400px);align-items:end;
+    gap:clamp(14px,3vw,48px);padding-bottom:clamp(4px,1vh,12px)}
+  .room-cap{display:flex;flex-direction:column;gap:clamp(6px,1.2vh,12px);min-width:0;text-shadow:0 2px 24px #000a}
+  .room-freq{display:inline-flex;align-items:center;gap:8px;font:600 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:#1DB954}
+  .room-led{width:8px;height:8px;border-radius:50%;background:#1DB954;box-shadow:0 0 10px #1DB954}
+  .room-name{margin:0;font:800 clamp(44px,min(8.4vw,15vh),132px)/.9 var(--font-display);letter-spacing:-.035em;color:#f6f1e7;text-wrap:balance}
+  .room-note{margin:0;font-family:var(--font-hand);font-size:clamp(18px,2.2vw,28px);color:#e6dfd1;rotate:-.6deg}
+  .room-deck{display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0}
+  .room-play{display:flex;align-items:center;gap:12px;min-width:0;background:#0c0c10a6;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border:1px solid #ffffff1f;border-radius:14px;padding:12px 14px;cursor:pointer;color:#ece7dc;text-align:left;transition:border-color .2s var(--ease)}
   .room-play:hover,.room-play:focus-visible{border-color:#1DB954}
-  .rp-btn{width:30px;height:30px;border-radius:50%;background:#1DB954;color:#06110a;display:grid;place-items:center;font-size:11px;flex:0 0 auto}
+  .rp-btn{width:36px;height:36px;border-radius:50%;background:#1DB954;color:#06110a;display:grid;place-items:center;font-size:12px;flex:0 0 auto}
   .rp-txt{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
-  .rp-track{font:600 15px/1.15 var(--font-display);color:#f4efe6}
-  .rp-artist{font:500 11px/1.3 var(--font-mono);color:#908b80;overflow-wrap:anywhere}
-  .room-embed{flex:1;min-width:0;width:100%;height:80px;border:none;border-radius:12px}
-  .room-search{background:none;border:none;cursor:pointer;color:#8a857b;font:500 11px/1 var(--font-mono);letter-spacing:.08em;
-    text-decoration:underline;text-underline-offset:3px;padding:8px 0}
+  .rp-track{font:600 16px/1.15 var(--font-display);color:#f4efe6}
+  .rp-artist{font:500 11px/1.35 var(--font-mono);color:#b3ada2;overflow-wrap:anywhere}
+  .room-embed{width:100%;height:80px;border:none;border-radius:12px}
+  .room-search{align-self:flex-end;background:none;border:none;cursor:pointer;color:#cfc8ba;font:500 11px/1 var(--font-mono);letter-spacing:.08em;
+    text-decoration:underline;text-underline-offset:3px;padding:6px 0}
   .room-search:hover{color:#1DB954}
+  @media(max-width:900px){
+    .fp-stop .fp-nm{display:none}
+    .faceplate .fp-dial.tunable{height:30px}
+    .rooms{grid-template-columns:1fr;align-content:end}
+  }
   @media(max-width:560px){
     .p-sound .plate-head{flex-direction:column;align-items:stretch;gap:8px}
     .p-sound .plate-head .ph-right,.sound-right{align-items:stretch;white-space:normal;text-align:left}
     .sound-right .tuner{width:100%}
-    .faceplate{flex-wrap:wrap;gap:10px;padding:10px 12px;margin-bottom:12px}
-    .faceplate .fp-dial.tunable{order:3;flex:1 0 100%}
-    .scene{max-height:28vh}
-    .room-play{padding:8px 10px}
+    .p-sound[data-sound="radio"] .ph-note{display:none}
+    .faceplate{flex-wrap:wrap;gap:8px 10px;padding:9px 12px}
+    .faceplate .fp-dial{order:3;flex:1 0 100%}
+    .room-name{font-size:clamp(40px,12vw,56px)}
+    .room-note{font-size:18px}
+    .room-play{padding:10px 12px}
   }
 
   /* playing: spotify lyric stage (fixed takeover) */

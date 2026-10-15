@@ -1,0 +1,28 @@
+{
+  "configured": true,
+  "activeDays": 27,
+  "sessions": 29,
+  "messages": 15507,
+  "toolCalls": 20259,
+  "agentCalls": 238,
+  "outputTokens": 9630553,
+  "contextTokens": 3756601931,
+  "cacheShare": 98,
+  "months": [
+    {
+      "month": "2026-07",
+      "output": 92067
+    },
+    {
+      "month": "2026-09",
+      "output": 3083355
+    },
+    {
+      "month": "2026-10",
+      "output": 6455131
+    }
+  ],
+  "since": "2026-07-21",
+  "until": "2026-10-15",
+  "generatedAt": "2026-10-15T16:30:55.793Z"
+}

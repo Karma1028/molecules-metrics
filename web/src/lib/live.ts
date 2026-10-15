@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { apiUrl, dataUrl } from "./api"
+import { itunesSearch, lrclibLyrics, type MusicTrack } from "./music"
 
 /** Generic polling fetch to the proxied Python live endpoints. */
 function usePoll<T>(path: string, ms: number): { data: T | null; error: boolean } {
@@ -162,16 +163,7 @@ function useLive<T>(path: string, fallback: T, ms?: number): Live<T> {
 }
 
 // ── MODE B radio: music search (YouTube + Spotify), query-driven ──────
-export interface MusicTrack {
-  id: string
-  title: string
-  artist: string
-  source: "youtube" | "spotify"
-  art?: string
-  url?: string
-  durationMs?: number
-  preview?: string | null
-}
+export type { MusicTrack }
 export interface MusicSearchResp {
   configured: boolean
   query: string
@@ -194,12 +186,18 @@ export function useMusicSearch(query: string): Live<MusicSearchResp> {
       return
     }
     let alive = true
+    const ctl = new AbortController()
     setState((s) => ({ ...s, loading: true }))
-    fetch(`${apiUrl("music/search")}?q=${encodeURIComponent(q)}`, { cache: "no-store" })
+    // proxy first (YouTube + Spotify); keyless iTunes previews when it is down or unkeyed
+    const viaItunes = () =>
+      itunesSearch(q, ctl.signal).then((results) => ({ configured: true, query: q, results }) as MusicSearchResp)
+    fetch(`${apiUrl("music/search")}?q=${encodeURIComponent(q)}`, { cache: "no-store", signal: ctl.signal })
       .then((r) => {
         if (!r.ok) throw new Error(String(r.status))
-        return r.json()
+        return r.json() as Promise<MusicSearchResp>
       })
+      .then((j) => (j.configured === false || !j.results?.length ? viaItunes().catch(() => j) : j))
+      .catch(viaItunes)
       .then((j: MusicSearchResp) => {
         if (alive) setState({ data: j, loading: false, error: false, fallback: j.configured === false })
       })
@@ -208,6 +206,7 @@ export function useMusicSearch(query: string): Live<MusicSearchResp> {
       })
     return () => {
       alive = false
+      ctl.abort()
     }
   }, [query])
   return state
@@ -231,18 +230,22 @@ export function useMusicLyrics(artist: string, title: string): Live<LyricsResp> 
     fallback: true,
   })
   useEffect(() => {
-    if (!artist || !title) {
+    if (!title) {
       setState({ data: LYRICS_FALLBACK, loading: false, error: false, fallback: true })
       return
     }
     let alive = true
     setState((s) => ({ ...s, loading: true }))
     const qs = `artist=${encodeURIComponent(artist)}&title=${encodeURIComponent(title)}`
+    const direct = () =>
+      lrclibLyrics(artist, title).then((l): LyricsResp => (l ? { configured: true, found: true, ...l } : LYRICS_FALLBACK))
     fetch(`${apiUrl("music/lyrics")}?${qs}`, { cache: "no-store" })
       .then((r) => {
         if (!r.ok) throw new Error(String(r.status))
-        return r.json()
+        return r.json() as Promise<LyricsResp>
       })
+      .then((j) => (j.found ? j : direct()))
+      .catch(direct)
       .then((j: LyricsResp) => {
         if (alive) setState({ data: j, loading: false, error: false, fallback: !j.found })
       })
@@ -359,6 +362,34 @@ export interface BarcaAnalytics {
 export const BARCA_ANALYTICS_FALLBACK: BarcaAnalytics = {}
 export const useBarcaAnalytics = () => useLive<BarcaAnalytics>(dataUrl("barca_analytics.json"), BARCA_ANALYTICS_FALLBACK)
 
+// ── Training: two aggregates baked by scripts/bake-gym.mjs (owner-approved).
+//    Nothing else from the fitness log is published.
+export interface GymResp { configured: boolean; workouts: number; bestWeekStreak: number; generatedAt?: string }
+export const GYM_FALLBACK: GymResp = { configured: false, workouts: 0, bestWeekStreak: 0 }
+export const useGym = () => useLive<GymResp>(dataUrl("gym.json"), GYM_FALLBACK)
+
+/** Aggregate AI-agent work, baked by scripts/bake-ai.mjs from local Claude Code logs. Counts only. */
+export interface AiResp {
+  configured: boolean
+  activeDays: number
+  sessions: number
+  messages: number
+  toolCalls: number
+  agentCalls: number
+  outputTokens: number
+  contextTokens: number
+  cacheShare: number
+  months: { month: string; output: number }[]
+  since?: string
+  until?: string
+  generatedAt?: string
+}
+export const AI_FALLBACK: AiResp = {
+  configured: false, activeDays: 0, sessions: 0, messages: 0, toolCalls: 0, agentCalls: 0,
+  outputTokens: 0, contextTokens: 0, cacheShare: 0, months: [],
+}
+export const useAi = () => useLive<AiResp>(dataUrl("ai.json"), AI_FALLBACK)
+
 // ── Mainstream football news: keyless RSS proxied by the Python server ──
 //    (Guardian football RSS). Honest empty-state when the feed is unreachable.
 export interface NewsItem { title: string; url: string; source?: string; published?: string }
@@ -374,15 +405,23 @@ export interface Repo {
   lang?: string
   url: string
 }
+/** Live proxy first; the build-time snapshot (scripts/snapshot.mjs) when the proxy is absent, e.g. on the static host. */
+function preferLive<T>(live: Live<T>, baked: Live<T>): Live<T> {
+  if (!live.fallback || live.loading) return live
+  return baked
+}
+
 export interface GithubResp {
   configured: boolean
+  generatedAt?: string
   user?: string
   repos?: Repo[]
   totalStars?: number
   contributions?: number
 }
 export const GITHUB_FALLBACK: GithubResp = { configured: false }
-export const useGithub = () => useLive<GithubResp>(apiUrl("github"), GITHUB_FALLBACK, 1800000)
+export const useGithub = () =>
+  preferLive(useLive<GithubResp>(apiUrl("github"), GITHUB_FALLBACK, 1800000), useLive<GithubResp>(dataUrl("github.json"), GITHUB_FALLBACK))
 
 // ── Medium writing ─────────────────────────────────────────────────────
 export interface Post {
@@ -394,11 +433,13 @@ export interface Post {
 }
 export interface MediumResp {
   configured: boolean
+  generatedAt?: string
   handle?: string
   posts?: Post[]
 }
 export const MEDIUM_FALLBACK: MediumResp = { configured: false }
-export const useMedium = () => useLive<MediumResp>(apiUrl("medium"), MEDIUM_FALLBACK, 1800000)
+export const useMedium = () =>
+  preferLive(useLive<MediumResp>(apiUrl("medium"), MEDIUM_FALLBACK, 1800000), useLive<MediumResp>(dataUrl("medium.json"), MEDIUM_FALLBACK))
 
 /** Live IST clock (hh:mm:ss, 24h). */
 export function useClock() {

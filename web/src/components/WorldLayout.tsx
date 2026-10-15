@@ -92,7 +92,8 @@ export function WorldLayout({ world }: { world: World }) {
           <NavLink className="wswitch" to={WORLDS[def.other].home}>
             <Icon id={def.otherIcon} />
             <span>
-              the <b>{def.otherLabel}</b>
+              <span className="the">the </span>
+              <b>{def.otherLabel}</b>
             </span>
           </NavLink>
           <Eclipse onToggle={toggle} />

@@ -133,7 +133,14 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   .nav .links a[aria-current="page"]::after{display:none}
   .menu-btn{display:grid}
   .nav .brand .v{display:none}
-  .wswitch b{display:none}
+  .wswitch .the{display:none}
+}
+@media(max-width:420px){
+  .nav{gap:8px}
+  .nav .tools{gap:6px;margin-left:auto}
+  .wswitch{padding:7px 10px;gap:5px;letter-spacing:.06em;white-space:nowrap}
+  .eclipse{width:36px;height:36px}
+  .menu-btn{width:36px;height:36px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}

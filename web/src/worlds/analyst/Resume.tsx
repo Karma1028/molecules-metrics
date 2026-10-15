@@ -22,7 +22,7 @@ const EDU = [
   { t: "Secondary (WBBSE)", p: "Bankura Zilla School", y: "2008 - 16", g: "93.9%" },
 ]
 
-const EXP = [
+export const EXP = [
   {
     role: "Data Science Intern", org: "InfoLeap Research · Remote", when: "Mar - Aug 2026",
     bullets: [
