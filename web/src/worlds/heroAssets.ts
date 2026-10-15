@@ -219,9 +219,16 @@ export const HERO_STYLE = String.raw`
   ::view-transition-old(root){animation:none}
   ::view-transition-new(root){animation:ec .6s cubic-bezier(.76,0,.24,1)}
 
-  .hero-root .scrollcue{position:fixed; z-index:9; left:clamp(22px,5vw,64px); bottom:20px; font:500 10.5px/1 "JetBrains Mono",monospace; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); text-decoration:none}
+  .hero-root .scrollcue{position:fixed; z-index:9; left:clamp(22px,5vw,64px); bottom:clamp(18px,3vh,30px); display:inline-block;
+    padding:10px 12px 10px 16px; border:1px solid color-mix(in srgb,var(--accent) 45%,transparent); border-radius:999px;
+    background:color-mix(in srgb,var(--card) 85%,transparent); backdrop-filter:blur(6px);
+    font:500 11.5px/1 "JetBrains Mono",monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); text-decoration:none;
+    transition:border-color .25s var(--ease), color .25s var(--ease)}
   .hero-root .scrollcue b{color:var(--ink)}
-  .hero-root .scrollcue i{font-style:normal; color:var(--accent); display:inline-block}
+  .hero-root .scrollcue i{font-style:normal; display:inline-grid; place-items:center; width:24px; height:24px; border-radius:50%;
+    background:var(--accent); color:var(--card); font-size:13px; letter-spacing:0; margin-left:10px; vertical-align:middle; transition:transform .25s var(--ease)}
+  .hero-root .scrollcue:hover,.hero-root .scrollcue:focus-visible{border-color:var(--accent); color:var(--ink)}
+  .hero-root .scrollcue:hover i,.hero-root .scrollcue:focus-visible i{transform:translateX(4px)}
 
   .hero-root .k .ic{width:13px; height:13px; color:var(--accent)}
   .hero-root .spot .k .ic{color:var(--orange)}
@@ -364,7 +371,9 @@ export const HERO_STYLE = String.raw`
     .hero-root .pola{right:6px; top:6px; width:110px; scale:.65; transform-origin:top right}
     .hero-root .set.analyst .note{right:6px; bottom:6px; top:auto; left:auto; width:220px}
     .hero-root .leaders,.hero-root .pin,.hero-root .scribble{display:none}
-    .hero-root .scrollcue{display:none}
+    .hero-root .scrollcue{left:50%; translate:-50% 0; bottom:14px; padding:8px 10px 8px 14px; font-size:10px; letter-spacing:.12em; white-space:nowrap;
+      background:var(--card); box-shadow:var(--shadow)}
+    .hero-root .scrollcue i{width:20px; height:20px; font-size:11px}
   }
   @media (prefers-reduced-motion:reduce){.hero-root *,.hero-root *::before,.hero-root *::after{animation:none!important; transition:none!important}}
 `
