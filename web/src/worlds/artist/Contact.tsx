@@ -3,7 +3,6 @@ import { motion, useReducedMotion } from "motion/react"
 import { Icon } from "../../lib/icons"
 import { SOCIAL } from "../../lib/worlds"
 import { motionTokens, springs } from "../../lib/motion-tokens"
-import { PlateHeader } from "../../components/headers/PlateHeader"
 import { useGoaPhrase } from "../../lib/useGoaClock"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { TwinDoor } from "../../components/TwinDoor"
@@ -34,24 +33,25 @@ const CSS = String.raw`
   .p-ac .grid>*{min-width:0;min-height:0}
 
   .p-ac .lead{position:relative;display:flex;flex-direction:column;justify-content:center}
-  .p-ac .ac-kick{display:inline-flex;align-items:center;gap:9px;font:600 10px/1 var(--font-mono);letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
-  .p-ac .ac-title{font-family:var(--font-display);font-weight:900;font-size:clamp(44px,8vw,112px);line-height:.86;letter-spacing:-.04em;color:var(--ink);margin:12px 0 0}
-  .p-ac .ac-hand{font-family:var(--font-hand);font-weight:700;font-size:clamp(28px,4vw,52px);color:var(--accent);rotate:-3deg;display:inline-block;margin-left:.6em;margin-top:-.15em}
+  .p-ac .ac-kick{display:flex;align-items:center;gap:10px;font:600 10px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .p-ac .ac-kick b{color:var(--accent);font-weight:600}
+  .p-ac .ac-title{font-family:var(--font-display);font-weight:900;font-size:clamp(72px,min(10vw,17vh),160px);line-height:.84;letter-spacing:-.045em;color:var(--ink);margin:clamp(8px,1.6vh,18px) 0 0}
+  .p-ac .ac-hand{font-family:var(--font-hand);font-weight:700;font-size:.92em;letter-spacing:0;color:var(--accent);rotate:-4deg;display:inline-block;margin-left:.35em;margin-top:-.08em}
   .p-ac .ac-rule{display:block;width:min(100%,320px);height:12px;color:var(--accent);opacity:.55;margin:10px 0 0}
-  .p-ac .ac-lede{font-size:clamp(13px,1.1vw,16px);color:var(--muted);max-width:36ch;margin-top:14px;text-wrap:pretty}
+  .p-ac .ac-lede{font-size:clamp(14px,1.15vw,16.5px);line-height:1.6;color:var(--muted);max-width:36ch;margin:clamp(12px,2.4vh,24px) 0 0;text-wrap:pretty}
   .p-ac .ac-lede b{color:var(--ink);font-weight:600}
   .p-ac .ac-where{margin-top:14px;display:inline-flex;align-items:center;gap:8px;font:600 10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .p-ac .ac-where .ic{width:13px;height:13px;color:var(--accent)}
   .p-ac .ac-clock{color:var(--ink);font-weight:600}
 
   /* postmark: horse + ring text, inked at an angle */
-  .p-ac .postmark{position:absolute;right:0;top:4%;width:clamp(96px,11vw,150px);aspect-ratio:1/1;color:var(--accent);opacity:.7;rotate:-14deg;pointer-events:none}
+  .p-ac .postmark{position:absolute;right:2%;top:0;width:clamp(110px,12vw,176px);aspect-ratio:1/1;color:var(--accent);opacity:.7;rotate:-14deg;pointer-events:none}
   .p-ac .postmark svg{width:100%;height:100%;overflow:visible}
   .p-ac .postmark .pm-text{font:600 9.5px/1 var(--font-mono);letter-spacing:.32em;text-transform:uppercase;fill:currentColor}
   .p-ac .postmark .horse-glyph{position:absolute;inset:30%;width:auto}
 
   /* channels: perforated stamp-tickets with a kantha stitch */
-  .p-ac .chans{display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);min-height:0}
+  .p-ac .chans{display:flex;flex-direction:column;gap:clamp(14px,2.6vh,28px);min-height:0}
   .p-ac .chan{position:relative;display:block;text-decoration:none;color:inherit;background:var(--card);
     border-radius:4px;box-shadow:var(--shadow-sm);padding:clamp(14px,1.9vw,22px) clamp(16px,2vw,24px) clamp(14px,1.9vw,22px) clamp(26px,2.6vw,34px);
     transition:transform .4s cubic-bezier(.32,.72,0,1),box-shadow .3s;isolation:isolate}
@@ -63,15 +63,15 @@ const CSS = String.raw`
   .p-ac .chan:hover,.p-ac .chan:focus-visible{transform:translateX(-6px) rotate(-.8deg);box-shadow:var(--shadow)}
   .p-ac .chan:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .p-ac .chan-row{display:flex;align-items:center;gap:14px}
-  .p-ac .chan-no{font-family:var(--font-display);font-weight:900;font-size:clamp(26px,3vw,40px);line-height:1;letter-spacing:-.04em;
+  .p-ac .chan-no{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.6vw,52px);line-height:1;letter-spacing:-.04em;
     color:color-mix(in srgb,var(--accent) 30%,transparent);flex:0 0 auto;transition:color .3s}
   .p-ac .chan:hover .chan-no{color:var(--accent)}
   .p-ac .chan-meta{min-width:0;flex:1}
   .p-ac .chan-label{display:inline-flex;align-items:center;gap:6px;font:600 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
   .p-ac .chan-label .ic{width:12px;height:12px;color:var(--accent)}
-  .p-ac .chan-handle{font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,20px);color:var(--ink);line-height:1.1;margin-top:4px;
-    overflow-wrap:anywhere}
-  .p-ac .chan-note{font-size:11.5px;color:var(--muted);margin-top:4px}
+  .p-ac .chan-handle{font-family:var(--font-display);font-weight:700;font-size:clamp(15px,min(1.75vw,3.2vh),26px);color:var(--ink);line-height:1.1;margin-top:5px;
+    overflow-wrap:break-word}
+  .p-ac .chan-note{font-size:clamp(11.5px,1vw,13.5px);color:var(--muted);margin-top:5px}
   .p-ac .chan-hand{position:absolute;top:-13px;right:22px;z-index:2;font-family:var(--font-hand);font-size:clamp(15px,1.5vw,19px);color:var(--accent);
     rotate:-4deg;white-space:nowrap;background:var(--paper);padding:0 6px;border-radius:4px}
   .p-ac .chan-arrow{margin-left:4px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;
@@ -90,7 +90,8 @@ const CSS = String.raw`
 
   @media(max-width:820px){
     .p-ac .grid{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:18px}
-    .p-ac .ac-title{font-size:clamp(44px,15vw,64px)}
+    .p-ac .ac-title{font-size:clamp(52px,16vw,84px)}
+    .p-ac .ac-title br{display:none}
     .p-ac .ac-rule{display:none}
     .p-ac .ac-lede{margin-top:10px;font-size:13px}
     .p-ac .ac-where{margin-top:10px}
@@ -153,13 +154,9 @@ export function Contact() {
             </svg>
             <span className="horse-glyph" />
           </div>
-          <PlateHeader
-            plate="Plate VI"
-            kicker="Open Signals"
-            title={<>Say <span className="ac-hand">hello.</span></>}
-            lede={<>For <b>frames, collaborations</b> and conversations that start with a photo and end up somewhere else. Fastest on Instagram.</>}
-            showRule={true}
-          />
+          <div className="ac-kick"><span className="horse-glyph" aria-hidden="true" /> <b>Plate VI</b> · Open signals</div>
+          <h1 className="ac-title">Say<br /><span className="ac-hand">hello.</span></h1>
+          <p className="ac-lede">For <b>frames, collaborations</b> and conversations that start with a photo and end up somewhere else. Fastest on Instagram.</p>
           <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap", marginTop: 12 }}>
             <span className="ac-where"><Icon id="i-pin" /> Based in Goa · India · <b className="ac-clock">{goaPhrase}</b></span>
             <TwinDoor to="/analyst/contact" label="You've met Karma. Meet Tuhin" world="analyst" />
@@ -180,7 +177,7 @@ export function Contact() {
                 <span className="chan-no" aria-hidden="true">{String(idx + 1).padStart(2, "0")}</span>
                 <div className="chan-meta">
                   <div className="chan-label"><Icon id={c.icon} /> {c.label}</div>
-                  <div className="chan-handle">{c.handle}</div>
+                  <div className="chan-handle">{c.handle.split("@").map((part, i) => (i === 0 ? part : <span key={i}>@<wbr />{part}</span>))}</div>
                   <div className="chan-note">{c.note}</div>
                 </div>
                 <span className="chan-hand">{c.hand}</span>

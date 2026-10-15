@@ -65,7 +65,7 @@ describe("Home IA Chapter Index (TOC) Rebuild per SKILL_SPEC", () => {
       )
 
       expect(screen.getByText(/Instrument Logbook/i)).toBeDefined()
-      expect(screen.getByText("The Analyst")).toBeDefined()
+      expect(screen.getByRole("heading", { level: 1, name: /The\s*Analyst\./i })).toBeDefined()
 
       // Verify all 6 subsystems are present
       expect(screen.getByText("Skills")).toBeDefined()

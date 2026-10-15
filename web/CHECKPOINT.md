@@ -1,5 +1,45 @@
 # Molecules → Metrics — Portfolio Checkpoint
 
+> ## ▶ CURRENT (2026-10-15, end of session 2m) — START HERE
+> - Read `audit/GAP-REPORT-2026-10-15.md` (honest ~35-40% vs asks) + `TOKEN-PROTOCOL.md`. It supersedes MASTER-PLAN/AUDIT ordering. Invoke skill `token-economy` at start.
+> - Pushed `178993e` on `r4-calm-pass` (Hostel Radio rooms, Journey map, audit docs).
+> - **Decisions (Tuhin, 2026-10-15):**
+>   - "No WebGL/3D" rule LIFTED, so heavy three.js is OK;
+>   - the ONE wow = molecule → chart morph on world switch;
+>   - Flow paper cut-outs of Tuhin + props, generated automatically;
+>   - commit and push approved for this baseline (ask again for later pushes).
+> - **Wave A status:**
+>   - `audit/TECHNIQUE-CARDS.md` DONE (6 sites; madebyhart, quangdinh, meermohsin blocked, so ask Tuhin for screenshots).
+>   - Session 2n fixes (uncommitted): AnalystHome cards filled rows (`.entry-cell` wrapper flex + `.entry-card` flex:1, minmax cols, 4-col ≤440px); landing enter cue = pill CTA with filled arrow disc, hover nudge, shown centered on mobile (`heroAssets.ts` .scrollcue). Verified 1440 + 375 shots.
+>   - **Wave B progress:** Analyst Home REBUILT as poster (giant "The Analyst." + huyml-style index of 6 huge-type rows, hover dims others + reveals gloss; graph-paper material; glass instrument = dial whose needle tracks hovered row via spring→state `rotate(a cx cy)`, live Goa clock). Needs `html[data-toc] .page.p-an-toc` to beat theme-base flex. Single column ≤900px. Verified 1440/768/375, no overflow. Shot script: scratchpad/shots/an.cjs.
+>   - Notes REBUILT as poster (giant "Working notebooks." + Caveat note + lede + TwinDoor + dispatch left; right = open notebook spread with spine/ruled lines, 4 torn taped leaves, per-leaf pointer parallax by depth + desk tilt, hover lift). Pattern for poster pages: `html[data-one-screen] .page.p-xx` grid 5fr/7fr, single col ≤900. Verified 1440/768/375 no overflow. Generic shooter: `MSYS_NO_PATHCONV=1 node scratchpad/shots/pg.cjs <route> <prefix> "<item selector>"`.
+>   - DONE 2026-10-15: Skills (lens picker 3x3 + spectrograph meters, "Nine lenses.") and Work (ledger index + case file w/ status stamp; phone ≤600 uses Problem/Approach/Status tabs). GOTCHA: world-analyst.css + theme-base have GLOBAL `.meter .panel .foot` rules; prefix page classes (sk-/wk-).
+>   - DONE: Résumé ("On paper." + clipped CV sheet desk object; edu bottom-left; phone/tablet tabs via main[data-tab]) and analyst Contact ("Let's talk data." + giant channel index, copy-email, Goa clock in kick). motion inline opacity overrides CSS opacity: dim children (`.ch>*`), not the motion element.
+>   - DONE: artist About (giant Fraunces headline + bio + facts ledger left, film-mat photo w/ tags right; ≤900 grid-areas photo|pull; 601-900 bigger tablet sizing).
+>   - DONE: artist Contact (PlateHeader removed → giant "Say / hello." Fraunces+Caveat, bigger postmark + tickets, email breaks after @ via <wbr>).
+>   - Verify tool: scratchpad/shots/pg.cjs (MSYS_NO_PATHCONV=1 node pg.cjs <route> <prefix> "<selector w/ ≥3 matches>"). All 7 rebuilt pages: mainOver 0 at 1440/768/375. Light theme spot-checked on Skills only.
+>   - NEXT pages (Wave B): artist Sound, Matchday, Gallery, Journey polish, Dashboard.
+>   - DECISIONS (Tuhin, 2026-10-15 late), from `audit/CREATIVE-AUDIT-2026-10-15b.md`:
+>     - chem-eng/P&ID drawing language REJECTED.
+>     - Dashboard KEEP, but only very critical, meaningful KPIs, nothing random.
+>     - Companion: explore options, incl. a chibi Messi companion.
+>     - Sound default OFF (opt-in).
+>     - Committed this batch.
+>     - Wants more creative + critical thinking using more refs/skills/plugins.
+>   - Bugs open: Matchday 375 Season panel text overlap; Dashboard mobile lede 1-2 words wide; public/frames dup -1600w (~5 MB).
+>   - Hook noise root cause: pixeltable@inline plugin PostToolUse `validate_antipatterns.py` (Python can't open file in Claude's virtualized AppData). Tuhin should disable Pixeltable plugin in desktop app.
+>   - Cut-outs BLOCKED: Claude-in-Chrome extension disconnected (list_connected_browsers = []), Flow MCP window has no project open. Tuhin approved "I agree" on Flow's "Rights to use this image" dialog for his own photo (me-1600w.webp). Use Nano Banana only (0 credits). Once either is fixed, rerun the 16-asset brief via a Haiku agent:
+>     - cut-me: standing, camera, headphones, laptop;
+>     - prop: radio, ticket, notebook, cassette, film-roll, flask, terracotta-horse, postcard;
+>     - tex: torn-paper, tape;
+>     - guide: artist, analyst.
+>   - Output: `public/cutouts/` + MANIFEST + `_sheet.png`.
+> - **Next = Wave B (Opus):** poster-scale composition pass on all inner pages, with cut-out layers + pointer depth on the artist side and a material on the analyst side. Then:
+>   - Wave C: three.js molecule→chart via @react-three/fiber, lazy, plus CSS-3D page turns;
+>   - Wave D: per-page signatures;
+>   - Wave E: story glue + easter eggs.
+> - Open: Dashboard keep/merge/cut; sound default; world labels (Artist/Analyst vs Karma/Tuhin).
+
 > ## 🔎 GAP AUDIT (2026-10-15) — read `AUDIT-2026-10-15.md` before continuing
 > Revised order R0-R8 replaces MASTER-PLAN P3-P7. Key facts: git now set up (private Karma1028/molecules-metrics, baseline 96b874a); Gemini follows web/GEMINI-EXECUTION-BRIEF.md; cover `/` overflows at
 > 768+375 (both axes); Skills/Work/Journey/Dashboard still have inner scrollers at 375; 26 infinite
