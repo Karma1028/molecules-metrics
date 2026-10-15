@@ -152,7 +152,7 @@ const CSS = String.raw`
     display:flex;flex-direction:column;gap:5px;transition:border-color .3s,box-shadow .3s,transform .3s}
   .p-sk .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--accent),var(--teal));
     transform:scaleY(0);transform-origin:top;transition:transform .35s var(--ease)}
-  .p-sk .card:hover{border-color:color-mix(in srgb,var(--accent) 42%,transparent);box-shadow:var(--glow);transform:translateY(-3px)}
+  .p-sk .card:hover{border-color:color-mix(in srgb,var(--accent) 42%,transparent);box-shadow:var(--glow)}
   .p-sk .card:hover::before{transform:scaleY(1)}
   .p-sk .card .ct{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
   .p-sk .card .cnm{font:600 clamp(12.5px,1.2vw,15px)/1.2 var(--font-display);letter-spacing:-.01em;color:var(--ink)}

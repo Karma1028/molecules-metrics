@@ -24,7 +24,7 @@ const CSS = String.raw`
   .p-gl .gl-lede b{color:var(--ink);font-weight:600}
   .p-gl .gl-src{display:flex;flex-direction:column;gap:5px;align-items:flex-end;text-align:right;white-space:nowrap}
   .p-gl .gl-src .live{display:inline-flex;align-items:center;gap:7px;font:500 10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .p-gl .gl-src .live .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+  .p-gl .gl-src .live .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .p-gl .gl-src .live b{color:var(--ink);font-weight:600}
   .p-gl .gl-src .cue{font:500 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.8}
 

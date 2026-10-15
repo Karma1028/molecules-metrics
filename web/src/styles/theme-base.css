@@ -92,7 +92,7 @@ html[data-one-screen] .foot{height:44px;margin-top:0;padding:8px clamp(16px,4vw,
 .kicker{display:inline-flex;align-items:center;gap:9px;font:500 11px/1 var(--font-mono,"JetBrains Mono",monospace);letter-spacing:.22em;
   text-transform:uppercase;color:var(--accent);transition:color .5s}
 .kicker .ic{width:14px;height:14px}
-.kicker .live{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+.kicker .live{width:7px;height:7px;border-radius:50%;background:var(--accent)}
 .display{font-family:var(--font-display,"Fraunces",serif);font-weight:var(--display-weight,900);line-height:.92;letter-spacing:-.02em;
   font-size:clamp(42px,8vw,104px);text-wrap:balance;margin:16px 0}
 .display em{font-style:italic;font-weight:600}
@@ -282,6 +282,7 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   -webkit-box-decoration-break:clone;box-decoration-break:clone;animation:hl-sweep .9s cubic-bezier(.22,1,.36,1) .35s both}
 @keyframes hl-sweep{from{background-size:0% 100%}to{background-size:100% 100%}}
 @media(prefers-reduced-motion:reduce){.hl{animation:none}}
+html.hl-seen .hl{animation:none}
 
 /* K5 lazy-route fallback (world styled) */
 .route-fallback{min-height:60vh;display:grid;place-items:center;color:var(--muted,currentColor);opacity:.7}

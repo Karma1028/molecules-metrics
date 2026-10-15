@@ -63,7 +63,15 @@ const CSS = String.raw`
   .p-an-toc .mast-title{font-family:var(--font-display);font-size:clamp(24px,3.2vw,38px);font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--ink);margin:4px 0 2px}
   .p-an-toc .mast-sub{font:500 12px/1.4 var(--font-mono);color:var(--muted);letter-spacing:.02em}
   .p-an-toc .mast-sub b{color:var(--teal);font-weight:600}
-  .p-an-toc .mast-stat{font:500 10px/1.4 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .p-an-toc .mast-cta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .p-an-toc .cv-cta{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;background:var(--accent);color:var(--bg);
+    font:600 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:filter .2s var(--ease)}
+  .p-an-toc .cv-cta .ic{width:13px;height:13px}
+  .p-an-toc .cv-cta:hover{filter:brightness(1.08)}
+  .p-an-toc .cv-alt{font:500 11px/1 var(--font-mono);letter-spacing:.08em;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+  .p-an-toc .cv-alt:hover{color:var(--accent)}
+  .p-an-toc .entry-card{transition:border-color .2s var(--ease)}
+  .p-an-toc .entry-card:hover{border-color:var(--accent)}
 
   /* Index Grid */
   .p-an-toc .index-grid{flex:1;min-height:0;display:grid;grid-template-rows:repeat(6,1fr);gap:clamp(6px,1vh,12px);margin:clamp(8px,1.5vh,16px) 0;overflow:hidden}
@@ -84,7 +92,7 @@ const CSS = String.raw`
   .p-an-toc .entry-card:hover .entry-arrow .ic{transform:translateX(3px)}
 
   @media(max-width:760px){
-    .p-an-toc .mast-stat{display:none}
+    .p-an-toc .cv-alt{display:none}
     .p-an-toc .entry-card{grid-template-columns:28px 24px 1.2fr auto auto;gap:10px;padding:0 12px}
     .p-an-toc .entry-gloss{display:none}
   }
@@ -152,11 +160,13 @@ export function AnalystHome() {
         section="INSTRUMENT LOGBOOK"
         tag="subsystems"
         title="The Analyst"
-        lede={<>Six operational subsystems. <b>Decisions, not dashboards.</b></>}
+        lede={<>Aspiring <b>Technology Consultant</b>. Decisions, not dashboards.</>}
         right={
-          <div className="mast-stat">
-            <div>Rigor verified</div>
-            <div>Index</div>
+          <div className="mast-cta">
+            <a className="cv-cta" href="/Tuhin_Bhattacharya_Resume.pdf" download>
+              <Icon id="i-download" /> Résumé PDF
+            </a>
+            <Link className="cv-alt" to="/analyst/contact">Get in touch</Link>
           </div>
         }
       />
@@ -172,15 +182,6 @@ export function AnalystHome() {
           <motion.div
             key={entry.to}
             variants={itemVariants}
-            whileHover={
-              reduce
-                ? undefined
-                : {
-                    scale: motionTokens.scale.pop,
-                    y: -2,
-                    transition: springs.snappy,
-                  }
-            }
             whileTap={reduce ? undefined : { scale: motionTokens.scale.press, transition: springs.snappy }}
           >
             <Link to={entry.to} className="entry-card">

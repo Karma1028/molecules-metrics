@@ -19,8 +19,6 @@ const HERO_BODY = String.raw`
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
   </defs></svg>
 
-  <div class="curtain" id="curtain" aria-hidden="true"><b><span id="curtain-w">Tuhin</span><span class="hw" id="curtain-hw">flip the page</span></b></div>
-
   <header class="top">
     <div>Tuhin Bhattacharya <b>&middot;</b> Field Notebook</div>
     <div class="right">Vol.01 &middot; Molecules &rarr; Metrics</div>
@@ -38,6 +36,10 @@ const HERO_BODY = String.raw`
   </button>
 
   <main class="stage">
+    <svg class="kantha" id="kantha" aria-hidden="true">
+      <defs><mask id="thread-m" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%"><path id="thread-mp"/></mask></defs>
+      <path id="thread-p" mask="url(#thread-m)"/><g id="thread-k"></g>
+    </svg>
     <section class="lead">
       <div class="issue"><span class="live"></span>Issue 01 &middot; Chem Eng &rarr; Data &middot; Goa</div>
       <h1>
@@ -281,7 +283,11 @@ function initHero(spa: (path: string) => void): () => void {
       void pr.offsetWidth
       pr.classList.add("advance")
     }
-    requestAnimationFrame(() => drawLeaders(!first))
+    requestAnimationFrame(() => {
+      drawLeaders(!first)
+      // first visit: stitch once the cover's entrance has placed the photo and objects
+      drawThread(true, first ? THREAD_FIRST_MS : THREAD_SETTLE_MS)
+    })
   }
   try {
     const m = localStorage.getItem("nb-mode")
@@ -298,26 +304,8 @@ function initHero(spa: (path: string) => void): () => void {
     }
   }
   function runSwitch() {
-    const dest = root.dataset.mode === "artist" ? "analyst" : "artist"
-    const cur = $("#curtain")
-    if (reduce || !cur) {
-      setMode(dest)
-      return
-    }
-    cur.dataset.to = dest
-    const w = $("#curtain-w")
-    const hw = $("#curtain-hw")
-    if (w) w.textContent = LABEL[dest]
-    if (hw) hw.textContent = dest === "artist" ? "the creative self" : "the professional self"
-    cur.classList.remove("run")
-    void cur.offsetWidth
-    cur.classList.add("run")
-    window.setTimeout(() => setMode(dest), 330)
+    setMode(root.dataset.mode === "artist" ? "analyst" : "artist")
   }
-  $("#curtain")?.addEventListener("animationend", (e) => {
-    if ((e as AnimationEvent).animationName === "curtain")
-      (e.currentTarget as HTMLElement).classList.remove("run")
-  })
   // SPA-navigate when entering a world (intercept the scrollcue link)
   $("#enter")?.addEventListener("click", (e) => {
     e.preventDefault()
@@ -359,7 +347,95 @@ function initHero(spa: (path: string) => void): () => void {
         p.style.strokeDashoffset = "0"
       })
   }
-  ON("resize", () => drawLeaders(false))
+  ON("resize", () => {
+    drawLeaders(false)
+    drawThread(false)
+  })
+
+  /* The kantha thread: one running stitch from the switch through every
+     object of the current world. Flipping Karma/Tuhin re-stitches it. */
+  const THREAD_MS = 1100
+  const THREAD_SETTLE_MS = 420 // let the set's entrance place the objects first
+  const THREAD_FIRST_MS = 1500
+  const MERGE_PX = 48
+  let threadAnim: Animation | null = null
+  let threadTimer = 0
+  function threadPoints(): Array<[number, number]> {
+    const stage = $(".stage")
+    const sw = $("#switch")
+    if (!stage || !sw) return []
+    const S = stage.getBoundingClientRect()
+    const mid = (r: DOMRect): [number, number] => [r.left + r.width / 2 - S.left, r.top + r.height / 2 - S.top]
+    const sel = root.dataset.mode === "analyst" ? ".set.analyst .note" : ".set.artist .obj"
+    // stacked cards (mobile) share one stitch: drop points closer than MERGE_PX
+    const rest = $$(sel)
+      .map((el) => el.getBoundingClientRect())
+      .filter((r) => r.width > 0 && r.height > 0)
+      .map(mid)
+      .filter(([x, y], i, all) => all.slice(0, i).every(([px, py]) => Math.hypot(x - px, y - py) > MERGE_PX))
+    // greedy nearest-neighbour walk so the thread never doubles back across the photo
+    // stacked layout (switch sits above the photo): start at the photo's top edge so the
+    // thread never crosses the thesis copy
+    const [sx, sy] = mid(sw.getBoundingClientRect())
+    const start: [number, number] = sy < 0 && sx > 0 && sx < S.width ? [sx, 0] : [sx, sy]
+    const path: Array<[number, number]> = [start]
+    while (rest.length) {
+      const [lx, ly] = path[path.length - 1]
+      let best = 0
+      rest.forEach(([x, y], i) => {
+        const [bx, by] = rest[best]
+        if (Math.hypot(x - lx, y - ly) < Math.hypot(bx - lx, by - ly)) best = i
+      })
+      path.push(rest.splice(best, 1)[0])
+    }
+    return path
+  }
+  function smoothPath(p: Array<[number, number]>): string {
+    // Catmull-Rom through the stitch points, as cubic Béziers
+    let d = `M${p[0][0]},${p[0][1]}`
+    for (let i = 0; i < p.length - 1; i++) {
+      const [x0, y0] = p[Math.max(i - 1, 0)]
+      const [x1, y1] = p[i]
+      const [x2, y2] = p[i + 1]
+      const [x3, y3] = p[Math.min(i + 2, p.length - 1)]
+      d += ` C${x1 + (x2 - x0) / 6},${y1 + (y2 - y0) / 6} ${x2 - (x3 - x1) / 6},${y2 - (y3 - y1) / 6} ${x2},${y2}`
+    }
+    return d
+  }
+  function drawThread(animate: boolean, delay = THREAD_SETTLE_MS) {
+    window.clearTimeout(threadTimer)
+    const run = () => {
+      const p = $("#thread-p")
+      const mp = $("#thread-mp") as unknown as SVGPathElement | null
+      const knots = $("#thread-k")
+      if (!p || !mp || !knots) return
+      const pts = threadPoints()
+      if (pts.length < 2) return
+      const d = smoothPath(pts)
+      p.setAttribute("d", d)
+      mp.setAttribute("d", d)
+      knots.innerHTML = pts.slice(1).map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.6"/>`).join("")
+      const L = mp.getTotalLength()
+      mp.style.strokeDasharray = String(L)
+      threadAnim?.cancel()
+      if (!animate || reduce) {
+        mp.style.strokeDashoffset = "0"
+        knots.style.opacity = "1"
+        return
+      }
+      knots.style.opacity = "0"
+      threadAnim = mp.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], {
+        duration: THREAD_MS,
+        easing: "cubic-bezier(.22,1,.36,1)",
+        fill: "forwards",
+      })
+      threadAnim.onfinish = () => {
+        knots.style.opacity = "1"
+      }
+    }
+    if (animate && !reduce) threadTimer = window.setTimeout(run, delay)
+    else run()
+  }
 
   // rotating frames
   const LOCAL_FRAMES = [
@@ -412,6 +488,7 @@ function initHero(spa: (path: string) => void): () => void {
     buildImgs()
     showFrame(fi, false)
     window.clearInterval(frTimer)
+    if (reduce) return // one still frame, no slideshow
     frTimer = window.setInterval(() => {
       if (document.hidden) return
       fi = (fi + 1) % FR.length
@@ -699,6 +776,8 @@ function initHero(spa: (path: string) => void): () => void {
 
   return () => {
     ivs.forEach((id) => clearInterval(id))
+    window.clearTimeout(threadTimer)
+    threadAnim?.cancel()
     wins.forEach(([t, f]) => window.removeEventListener(t, f))
     if (raf) cancelAnimationFrame(raf)
     eclipse?.removeEventListener("click", onEclipse)

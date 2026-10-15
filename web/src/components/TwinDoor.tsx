@@ -2,6 +2,10 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion, useReducedMotion } from "motion/react"
 import type { World } from "../lib/theme"
+import { motionTokens } from "../lib/motion-tokens"
+
+const TIGHTEN = { duration: motionTokens.duration.normal, ease: motionTokens.easing.smooth }
+const NUDGE = { duration: motionTokens.duration.fast, ease: motionTokens.easing.smooth }
 
 export interface TwinDoorProps {
   to: string
@@ -28,6 +32,8 @@ export function TwinDoor({ to, label, world, className = "" }: TwinDoorProps) {
       aria-label={`${label} (switch to ${world} world)`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
     >
       <span className="td-loop" aria-hidden="true">
         <svg viewBox="0 0 26 14" fill="none">
@@ -45,7 +51,7 @@ export function TwinDoor({ to, label, world, className = "" }: TwinDoorProps) {
                 ? { pathLength: 0.88, strokeDashoffset: 4 }
                 : { pathLength: 1, strokeDashoffset: 0 }
             }
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            transition={TIGHTEN}
           />
         </svg>
       </span>
@@ -54,7 +60,7 @@ export function TwinDoor({ to, label, world, className = "" }: TwinDoorProps) {
         className="td-arr"
         aria-hidden="true"
         animate={reduce ? undefined : { x: hovered ? 3 : 0 }}
-        transition={{ duration: 0.2 }}
+        transition={NUDGE}
       >
         →
       </motion.span>

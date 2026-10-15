@@ -23,14 +23,14 @@ const EDU = [
 
 const EXP = [
   {
-    role: "Data Science Intern", org: "InfoLeap Research", when: "Mar - Aug 2026",
+    role: "Data Science Intern", org: "InfoLeap Research · Remote", when: "Mar - Aug 2026",
     bullets: [
       "Self-serve Streamlit MIS over 4,010 respondents, replacing a 5-user PHP dashboard; two-proportion Z-test at 95% in every comparable cell.",
       "Pulse pipeline: 1 LLM call sorts columns into 22 fixed buckets, 6,623 verbatims indexed for BM25, hand-coding cut over 95%.",
     ],
   },
   {
-    role: "Business Intelligence Intern", org: "Celebal Technologies", when: "Jul - Dec 2023",
+    role: "Business Intelligence Intern", org: "Celebal Technologies · Jaipur", when: "Jul - Dec 2023",
     bullets: [
       "Static Excel P&L to live Power BI: 300+ DAX across 54 pages, query load down 60%+, star schema on 35K rows.",
       "Pure Storage: 150+ KPIs in 2 weeks and 50+ SQL/DAX queries documented in one shared metric repository.",
@@ -67,7 +67,7 @@ const CSS = String.raw`
   .p-rs .dl{margin-top:auto;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;
     background:var(--accent);color:#fff;border-radius:30px;padding:9px 9px 9px 16px;font:600 10px/1 var(--font-mono);letter-spacing:.14em;
     text-transform:uppercase;transition:transform .5s cubic-bezier(.32,.72,0,1),filter .3s}
-  .p-rs .dl:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  .p-rs .dl:hover{;filter:brightness(1.08)}
   .p-rs .dl .circ{width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,#000 18%,transparent);display:grid;place-items:center;
     transition:transform .5s cubic-bezier(.32,.72,0,1)}
   .p-rs .dl:hover .circ{transform:translateY(2px)}
@@ -109,9 +109,9 @@ const CSS = String.raw`
 
   @media(max-width:760px){
     .p-rs{height:100%;min-height:0;overflow:hidden}
-    .p-rs .rtabs{display:flex;gap:5px;overflow-x:auto;overflow-y:hidden;padding-bottom:3px;margin-bottom:8px;flex:0 0 auto}
-    .p-rs .rtab{padding:5px 10px;font:600 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;
-      border-radius:20px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;flex:0 0 auto}
+    .p-rs .rtabs{display:grid;grid-template-columns:repeat(3,auto);justify-content:stretch;gap:5px;margin-bottom:8px;flex:0 0 auto}
+    .p-rs .rtab{padding:6px 6px;font:600 9.5px/1.15 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;text-align:center;
+      border-radius:20px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer}
     .p-rs .rtab.on{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
     .p-rs .grid{display:flex;flex-direction:column;gap:8px;flex:1;min-height:0}
     .p-rs .grid .a-id{flex:0 0 auto;min-height:0}
@@ -173,7 +173,7 @@ export function Resume() {
               section="RESUME"
               tag="curriculum-vitae"
               title="Tuhin Bhattacharya"
-              lede={<>BI &amp; Data Analyst · <b>chem-eng to analytics</b></>}
+              lede={<>Aspiring Technology Consultant · <b>chem-eng to analytics</b></>}
               right={
                 <a className="dl" href={PDF} download style={{ marginTop: 0 }}>
                   Download PDF

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react"
+import { motion, useReducedMotion } from "motion/react"
 import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { PlateHeader } from "../../components/headers/PlateHeader"
@@ -25,8 +25,6 @@ const TAGS = [
   { to: "/artist/notes", label: "Field notes", pos: "t4" },
 ]
 const PULL_LEAD = "The analyst and the artist aren’t two people."
-/** Max photo tilt (deg) following the pointer. */
-const TILT_DEG = 7
 
 const CSS = String.raw`
   .p-ab{height:100%;min-height:0;display:flex;flex-direction:column;max-width:1140px;margin:0 auto;width:100%;overflow:hidden}
@@ -64,7 +62,7 @@ const CSS = String.raw`
   .p-ab .tag{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;
     background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow-sm);text-decoration:none;
     font:600 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
-    animation:ab-bob 5s ease-in-out infinite;transition:background .25s,color .25s}
+    transition:background .25s,color .25s}
   .p-ab .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .p-ab .tag:hover,.p-ab .tag:focus-visible{background:var(--accent);color:var(--paper)}
   .p-ab .tag:hover::before{background:var(--paper)}
@@ -128,21 +126,6 @@ export function About() {
 
   useOneScreen()
 
-  // pointer tilt on the photo
-  const mx = useMotionValue(0)
-  const my = useMotionValue(0)
-  const rotY = useSpring(useTransform(mx, [-0.5, 0.5], [-TILT_DEG, TILT_DEG]), springs.gentle)
-  const rotX = useSpring(useTransform(my, [-0.5, 0.5], [TILT_DEG, -TILT_DEG]), springs.gentle)
-  const onMove = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (reduce || e.pointerType !== "mouse") return
-    const r = e.currentTarget.getBoundingClientRect()
-    mx.set((e.clientX - r.left) / r.width - 0.5)
-    my.set((e.clientY - r.top) / r.height - 0.5)
-  }
-  const onLeave = () => {
-    mx.set(0)
-    my.set(0)
-  }
   const words = PULL_LEAD.split(" ")
 
   const container = { hidden: {}, visible: { transition: { staggerChildren: reduce ? 0 : 0.09, delayChildren: reduce ? 0 : 0.05 } } }
@@ -167,7 +150,7 @@ export function About() {
 
       <div className="grid">
         <motion.div className="photo" initial={reduce ? { opacity: 1 } : { opacity: 0, scale: 0.96, rotate: -4 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={springs.gentle}>
-          <motion.div className="tilt" onPointerMove={onMove} onPointerLeave={onLeave} style={{ rotateX: rotX, rotateY: rotY }}>
+          <div className="tilt">
             <figure className="film-mat" style={{ flex: 1, minHeight: 0 }}>
               <div className="frame">
                 <img src="/me.jpg" srcSet="/me-800w.webp 800w, /me-1600w.webp 1600w" sizes="(max-width: 768px) 800px, 1600px" alt="Tuhin Bhattacharya" />
@@ -183,7 +166,7 @@ export function About() {
                 <span className="edge">Fr <i>05</i> / 06</span>
               </div>
             </figure>
-          </motion.div>
+          </div>
           {TAGS.map((t) => (
             <Link key={t.to} to={t.to} className={`tag ${t.pos}`}>
               {t.label}

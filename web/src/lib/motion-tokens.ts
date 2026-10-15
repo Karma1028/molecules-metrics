@@ -16,6 +16,8 @@ export const motionTokens = {
     smooth: [0.22, 1, 0.36, 1] as const, // easeOutExpo-ish
     inOut: [0.65, 0, 0.35, 1] as const,
     out: [0, 0, 0.2, 1] as const,
+    wipe: [0.76, 0, 0.24, 1] as const, // world-switch wipe: hard in, hard out
+    glide: [0.3, 0.1, 0.5, 1] as const, // horse shuttle / thread travel
   },
   distance: {
     xs: 4,

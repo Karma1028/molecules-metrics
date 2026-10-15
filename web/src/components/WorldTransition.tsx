@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import type { World } from "../lib/theme"
+import { motionTokens } from "../lib/motion-tokens"
 
 /**
  * Signature world-switch moment (GEMINI-EXECUTION-BRIEF §3, §4 R3):
@@ -14,7 +15,9 @@ import type { World } from "../lib/theme"
  */
 let lastWorld: World | null = null
 
-const DUR = 1.05
+const DUR = motionTokens.duration.cinematic
+const LINGER = motionTokens.duration.normal
+const { wipe: WIPE_EASE, glide: GLIDE_EASE } = motionTokens.easing
 
 export function WorldTransition({ world }: { world: World }) {
   const reduce = useReducedMotion()
@@ -24,6 +27,9 @@ export function WorldTransition({ world }: { world: World }) {
   const [direction, setDirection] = useState<"to-analyst" | "to-artist">("to-analyst")
   const [label, setLabel] = useState<string>("")
   const token = useRef(0)
+  const lingerTimer = useRef(0)
+
+  useEffect(() => () => window.clearTimeout(lingerTimer.current), [])
 
   useEffect(() => {
     const changed = lastWorld !== null && lastWorld !== world
@@ -44,9 +50,8 @@ export function WorldTransition({ world }: { world: World }) {
   const onWipeComplete = () => {
     setPlay(false)
     setLingering(true)
-    setTimeout(() => {
-      setLingering(false)
-    }, 300)
+    window.clearTimeout(lingerTimer.current)
+    lingerTimer.current = window.setTimeout(() => setLingering(false), LINGER * 1000)
   }
 
   if (reduce) return null
@@ -59,7 +64,7 @@ export function WorldTransition({ world }: { world: World }) {
           className="world-thread-line"
           initial={{ opacity: 0.9 }}
           animate={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: "linear" }}
+          transition={{ duration: LINGER, ease: "linear" }}
           aria-hidden="true"
         />
       )}
@@ -80,7 +85,7 @@ export function WorldTransition({ world }: { world: World }) {
             transition={{
               duration: DUR,
               times: [0, 0.34, 0.6, 1],
-              ease: [0.76, 0, 0.24, 1],
+              ease: WIPE_EASE,
             }}
             onAnimationComplete={onWipeComplete}
           >
@@ -92,7 +97,7 @@ export function WorldTransition({ world }: { world: World }) {
               style={{
                 transformOrigin: direction === "to-analyst" ? "left center" : "right center",
               }}
-              transition={{ duration: DUR, times: [0, 0.34, 0.6, 1], ease: [0.3, 0.1, 0.5, 1] }}
+              transition={{ duration: DUR, times: [0, 0.34, 0.6, 1], ease: GLIDE_EASE }}
             />
 
             {/* Destination label mid-wipe */}
@@ -123,7 +128,7 @@ export function WorldTransition({ world }: { world: World }) {
                 x: direction === "to-analyst" ? "112vw" : "-34vw",
                 scaleX: direction === "to-analyst" ? 1 : -1,
               }}
-              transition={{ duration: DUR, ease: [0.3, 0.1, 0.5, 1] }}
+              transition={{ duration: DUR, ease: GLIDE_EASE }}
             />
           </motion.div>
         )}
