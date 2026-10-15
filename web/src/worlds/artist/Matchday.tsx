@@ -42,26 +42,26 @@ function useCountUp(target: number, reduce: boolean | null, ms = 1000): number {
 /* ── the feature photographs (real, shot in Flow — no IP, no faces) ───── */
 interface Plate { src: string; kicker: string; title: string; note: string }
 const STADIUM: Plate = {
-  src: "/images/matchday/stadium.jpg",
+  src: "/images/matchday/stadium.webp",
   kicker: "The cathedral",
   title: "Floodlights, before anyone arrives",
   note: "Empty stands, full of noise about to happen",
 }
 const PLATES: Plate[] = [
   {
-    src: "/images/matchday/terrace.jpg",
+    src: "/images/matchday/terrace.webp",
     kicker: "The terrace",
     title: "Scarves up, full throat",
     note: "The only ritual that still gathers a crowd on purpose",
   },
   {
-    src: "/images/matchday/boot.jpg",
+    src: "/images/matchday/boot.webp",
     kicker: "The tool",
     title: "One worn boot, wet grass",
     note: "Where every stat in this room actually begins",
   },
   {
-    src: "/images/matchday/scarf.jpg",
+    src: "/images/matchday/scarf.webp",
     kicker: "The colours",
     title: "Knitted scarf, old ticket stub",
     note: "Garnet and blue, kept in a drawer between matches",
@@ -89,7 +89,7 @@ const CSS = String.raw`
     animation:mdKen 42s ease-in-out infinite alternate}
   .p-md .backdrop .beam{position:absolute;inset:0;mix-blend-mode:screen;opacity:.5;
     background:linear-gradient(104deg,transparent 42%,rgba(232,176,75,.26) 50%,transparent 58%);
-    transform:translateX(-60%);animation:mdBeam 11s ease-in-out infinite}
+    transform:translateX(-60%);display:none}
   .p-md .backdrop .scrim{position:absolute;inset:0;
     background:linear-gradient(180deg,rgba(8,6,10,.52) 0%,rgba(8,6,10,.30) 42%,rgba(8,6,10,.72) 100%)}
   :root[data-theme="light"] .p-md .backdrop .bg{filter:saturate(.92) brightness(1.05)}
@@ -146,9 +146,9 @@ const CSS = String.raw`
 
   /* motion-graphic layers painted INSIDE a photo's .img box */
   .p-md .mg-scan{position:absolute;left:0;right:0;top:0;height:2px;z-index:3;mix-blend-mode:screen;opacity:.6;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:mdScan 5s linear infinite}
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);display:none}
   .p-md .mg-glare{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;z-index:3;mix-blend-mode:screen;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:mdGlare 7s ease-in-out infinite}
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);display:none}
   .p-md .mg-grid{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.14;mix-blend-mode:overlay;
     background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
     background-size:28px 28px}
@@ -166,7 +166,7 @@ const CSS = String.raw`
 
   /* tracking reticle over a small photo (the boot) */
   .p-md .retic{position:absolute;inset:18% 20%;z-index:3;pointer-events:none}
-  .p-md .retic span{position:absolute;width:12px;height:12px;border:1.5px solid var(--gold);opacity:.85;animation:mdPulse 2.4s ease-in-out infinite}
+  .p-md .retic span{position:absolute;width:12px;height:12px;border:1.5px solid var(--gold);opacity:.85}
   .p-md .retic span:nth-child(1){top:0;left:0;border-right:none;border-bottom:none}
   .p-md .retic span:nth-child(2){top:0;right:0;border-left:none;border-bottom:none}
   .p-md .retic span:nth-child(3){bottom:0;left:0;border-right:none;border-top:none}
@@ -286,7 +286,7 @@ const CSS = String.raw`
     padding:clamp(9px,1.2vw,14px);display:flex;flex-direction:column;gap:6px;min-height:0}
   .p-md .wire .lab{font:800 8px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--fz-mut);
     display:flex;align-items:center;gap:6px;flex-shrink:0}
-  .p-md .wire .lab .dot{width:6px;height:6px;border-radius:50%;background:var(--garnet);animation:mdPulse 1.6s ease-in-out infinite}
+  .p-md .wire .lab .dot{width:6px;height:6px;border-radius:50%;background:var(--garnet)}
   .p-md .wire .list{display:flex;flex-direction:column;min-height:0;overflow:hidden}
   .p-md .wire .it{text-decoration:none;color:inherit;padding:6px 0;border-top:1px solid var(--fz-line)}
   .p-md .wire .it:first-child{border-top:none}

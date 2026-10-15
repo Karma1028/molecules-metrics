@@ -3,9 +3,8 @@ import { useReducedMotion } from "../../../hooks/useSafeMotion"
 import { useNowPlaying, useMusicSearch, useMusicLyrics, type MusicTrack } from "../../../lib/live"
 import { parseLrc, activeLine } from "./lrc"
 import { SpotifyGlyph, YouTubeGlyph } from "./glyphs"
-
-// Full Hostel Radio (5-room scene player) deploys separately; link in when live.
-const RADIO_FULL_URL = "" // [NEED] production URL of the standalone Hostel Radio
+import { HostelRooms, RoomDial } from "./HostelRooms"
+import { HOSTEL_ROOMS } from "./hostel-rooms"
 
 interface Palette {
   bg: string
@@ -147,20 +146,7 @@ function SearchVoid({ onPick }: { onPick: (t: MusicTrack) => void }) {
           )}
         </ul>
       )}
-
-      <RoomsLink />
     </div>
-  )
-}
-
-function RoomsLink() {
-  if (!RADIO_FULL_URL) {
-    return <div className="rooms-note">the full 5 rooms, deploying separately · corridor · mess · exam night · laundry · power-cut</div>
-  }
-  return (
-    <a className="rooms-note link" href={RADIO_FULL_URL} target="_blank" rel="noopener">
-      step into the full 5 rooms →
-    </a>
   )
 }
 
@@ -292,9 +278,20 @@ function VideoStage({ track, onExit }: { track: MusicTrack; onExit: () => void }
   )
 }
 
+type Band = "rooms" | "search"
+
 export function Radio() {
   const [picked, setPicked] = useState<MusicTrack | null>(null)
+  const [band, setBand] = useState<Band>("rooms")
+  const [roomIdx, setRoomIdx] = useState(0)
+  // each retune overhears a different line from that room
+  const [tunes, setTunes] = useState(0)
   const exit = () => setPicked(null)
+  const tune = (i: number) => {
+    if (i === roomIdx) return
+    setRoomIdx(i)
+    setTunes((n) => n + 1)
+  }
 
   useEffect(() => {
     if (!picked) return
@@ -307,11 +304,21 @@ export function Radio() {
     <div className="radio">
       <div className="faceplate">
         <div className="fp-brand">HOSTEL RADIO</div>
-        <div className="fp-dial" aria-hidden="true">
-          <span className="fp-freq">88 · 93.5 · 98.3 · 104</span>
-          <span className="fp-needle" />
+        {band === "rooms" ? (
+          <RoomDial index={roomIdx} onTune={tune} />
+        ) : (
+          <div className="fp-dial" aria-hidden="true">
+            <span className="fp-freq">search · any song · any station</span>
+          </div>
+        )}
+        <div className="fp-band" role="tablist" aria-label="radio band">
+          <button role="tab" aria-selected={band === "rooms"} onClick={() => setBand("rooms")}>
+            rooms
+          </button>
+          <button role="tab" aria-selected={band === "search"} onClick={() => setBand("search")}>
+            search
+          </button>
         </div>
-        <div className="fp-led" aria-hidden="true" />
       </div>
 
       {picked ? (
@@ -320,6 +327,8 @@ export function Radio() {
         ) : (
           <LyricStage track={picked} onExit={exit} />
         )
+      ) : band === "rooms" ? (
+        <HostelRooms room={HOSTEL_ROOMS[roomIdx]} noteIdx={tunes} onSearch={() => setBand("search")} />
       ) : (
         <SearchVoid onPick={setPicked} />
       )}

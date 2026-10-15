@@ -32,7 +32,7 @@ const CSS = String.raw`
   .p-db .db-kick{display:inline-flex;align-items:center;gap:8px;font:500 10px/1 var(--font-mono);letter-spacing:.26em;
     text-transform:uppercase;color:var(--accent)}
   .p-db .db-kick .ic{width:13px;height:13px}
-  .p-db .db-kick .live{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:pulse 1.8s infinite}
+  .p-db .db-kick .live{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
   .p-db .db-title{font-family:var(--font-display);font-weight:700;font-size:clamp(22px,3vw,36px);line-height:1;letter-spacing:-.02em;color:var(--ink);margin:7px 0 4px}
   .p-db .db-lede{font-size:clamp(11px,1vw,13.5px);color:var(--muted);max-width:52ch}
   .p-db .db-clockbox{text-align:right;white-space:nowrap}
@@ -44,7 +44,7 @@ const CSS = String.raw`
 
   .p-db .pnl{background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid color-mix(in srgb,var(--accent) 16%,var(--rule));
     border-radius:12px;box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,box-shadow .3s,transform .3s}
-  .p-db .pnl:hover{border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--glow);transform:translateY(-2px)}
+  .p-db .pnl:hover{border-color:color-mix(in srgb,var(--accent) 40%,transparent);box-shadow:var(--glow)}
   .p-db .pnl-head{display:flex;align-items:center;gap:8px;padding:9px 13px;border-bottom:1px solid var(--rule);
     font:500 9.5px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);flex:0 0 auto}
   .p-db .pnl-head .ic{width:13px;height:13px;color:var(--accent)}
@@ -103,8 +103,8 @@ const CSS = String.raw`
     .p-db{height:100%;min-height:0;overflow:hidden}
     .p-db .db-clockbox{display:none}
     .p-db .dtabs{display:flex;gap:4px;overflow:hidden;margin-bottom:6px;flex:0 0 auto}
-    .p-db .dtab{flex:1 1 0;min-width:0;padding:6px 2px;font:600 9.5px/1 var(--font-mono);letter-spacing:.04em;text-transform:uppercase;
-      border-radius:14px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+    .p-db .dtab{flex:1 1 0;min-width:0;padding:6px 2px;font:600 9px/1.15 var(--font-mono);letter-spacing:.02em;text-transform:uppercase;overflow-wrap:anywhere;
+      border-radius:14px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer;text-align:center}
     .p-db .dtab .dtab-full{display:none}
     .p-db .dtab .dtab-short{display:inline}
     .p-db .dtab.on{color:var(--accent);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}

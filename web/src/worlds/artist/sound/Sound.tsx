@@ -15,20 +15,26 @@ const CSS = String.raw`
   .void-bg{position:fixed;inset:0;z-index:0;background:
     radial-gradient(120% 90% at 50% 0%,#141217,#0a0a0c 70%)}
   .p-sound>*{position:relative;z-index:1}
+  .p-sound>.void-bg{position:fixed;z-index:0}
+  /* the page's own ink flips light inside the dark room */
+  .p-sound[data-sound="radio"]{--ink:#f2ede3;--muted:#8f8a80;--rule:#2c2a33;--card:#16151a}
+  .sound-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+  .sound-right .tuner-row{margin:0}
 
   /* ---- tuner / band-switch ---- */
-  .tuner{position:relative;display:inline-flex;align-items:stretch;height:46px;width:min(420px,92%);box-sizing:border-box;
-    border:1px solid var(--rule);border-radius:40px;padding:5px;background:var(--card);box-shadow:var(--shadow-sm);
-    font:600 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase}
+  .tuner{position:relative;display:inline-flex;align-items:stretch;height:40px;width:300px;max-width:100%;box-sizing:border-box;
+    border:1px solid var(--rule);border-radius:40px;padding:4px;background:var(--card);box-shadow:var(--shadow-sm);
+    font:600 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
   .p-sound[data-sound="radio"] .tuner{background:#16151a;border-color:#2c2a33;color:#b9b3a6}
-  .tuner .tn{position:relative;z-index:2;flex:1 1 0;background:none;border:none;cursor:pointer;color:var(--muted);
+  .tuner{isolation:isolate}
+  .tuner .tn{position:relative;z-index:2;flex:1 1 0;background:none;border:none;cursor:pointer;color:var(--muted);font:inherit;letter-spacing:inherit;
     padding:11px 10px;border-radius:34px;white-space:nowrap;transition:color .35s;text-align:center}
   .tuner .tn[aria-selected="true"]{color:#fff}
   .tuner .tn-slide{position:absolute;z-index:1;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:34px;
     background:var(--accent);box-shadow:0 2px 10px -2px color-mix(in srgb,var(--accent) 70%,transparent);
     transition:transform .4s var(--spring)}
   .p-sound[data-sound="radio"] .tuner .tn-slide{background:#1DB954;box-shadow:0 2px 12px -2px #1DB95488}
-  .p-sound[data-sound="radio"] .tuner .tn.radio[aria-selected="true"]{color:#06110a}
+  .p-sound[data-sound="radio"] .tuner .tn.tn-radio[aria-selected="true"]{color:#06110a}
   .tuner[data-on="radio"] .tn-slide{transform:translateX(100%)}
   .tuner-row{display:flex;justify-content:center;margin:6px 0 clamp(26px,5vh,54px)}
 
@@ -61,7 +67,7 @@ const CSS = String.raw`
   .onnow .lbl{display:flex;align-items:center;gap:7px;font:600 9px/1 var(--font-mono);letter-spacing:.16em;
     text-transform:uppercase;color:var(--green);margin-bottom:7px}
   .onnow .eq{display:inline-flex;gap:2.5px;align-items:flex-end;height:11px;margin-left:2px}
-  .onnow .eq i{width:3px;background:var(--green);border-radius:2px;animation:eqa 1s ease-in-out infinite}
+  .onnow .eq i{width:3px;background:var(--green);border-radius:2px}
   .onnow .eq i:nth-child(2){animation-delay:.2s}.onnow .eq i:nth-child(3){animation-delay:.4s}
   .onnow .t{font:600 clamp(16px,1.9vw,21px)/1.15 var(--font-display);color:var(--ink);text-wrap:balance}
   .onnow .a{font-size:13px;color:var(--muted);margin-top:3px}
@@ -126,7 +132,8 @@ const CSS = String.raw`
   .no1-hand{position:absolute;top:12px;right:18px;font-family:var(--font-hand);font-size:28px;color:var(--green);rotate:8deg;opacity:.9}
   /* vinyl */
   .vinyl{width:clamp(96px,16vw,150px);height:auto;flex:none;filter:drop-shadow(0 7px 16px rgba(0,0,0,.3))}
-  .vinyl-disc{transform-box:fill-box;transform-origin:center;animation:vspin 18s linear infinite}
+  .vinyl-disc{transform-box:fill-box;transform-origin:center}
+  main:has(.onnow .eq) .vinyl-disc{animation:vspin 18s linear infinite}
   .vinyl-groove{fill:none;stroke:rgba(255,255,255,.055);stroke-width:1}
   .vinyl-sheen{fill:none;stroke:rgba(255,255,255,.09);stroke-width:7;stroke-linecap:round}
   .vinyl-label{fill:var(--green)}
@@ -210,7 +217,7 @@ const CSS = String.raw`
   .faceplate .fp-freq{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-around;
     font:600 8px/1 var(--font-mono);letter-spacing:.1em;color:#6f6b7a}
   .faceplate .fp-needle{position:absolute;top:-2px;bottom:-2px;left:62%;width:2px;background:#1DB954;box-shadow:0 0 8px #1DB954}
-  .faceplate .fp-led{width:9px;height:9px;border-radius:50%;background:#1DB954;box-shadow:0 0 10px #1DB954;animation:pulseled 2.2s infinite}
+  .faceplate .fp-led{width:9px;height:9px;border-radius:50%;background:#1DB954;box-shadow:0 0 10px #1DB954}
   @keyframes pulseled{0%,100%{opacity:1}50%{opacity:.4}}
 
   .void{position:relative;min-height:44vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px}
@@ -232,9 +239,52 @@ const CSS = String.raw`
   .s-sep{color:#5f5b53;flex:0 0 auto}
   .s-artist{font:500 12px/1 var(--font-mono);color:#908b80;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .s-src{flex:0 0 auto;display:flex;align-items:center}
-  .rooms-note{position:absolute;bottom:0;left:50%;transform:translateX(-50%);text-align:center;
-    font:500 9.5px/1.6 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:#5a564e;max-width:92%}
-  a.rooms-note.link{text-decoration:none;color:#1DB954}
+  /* tunable dial: five room stops + a needle that glides between them */
+  .faceplate .fp-dial.tunable{height:30px;overflow:visible}
+  .fp-dial.tunable .fp-needle{left:var(--pos);transform:translateX(-50%);transition:left .45s var(--ease)}
+  .fp-stop{position:absolute;top:50%;left:var(--x);transform:translate(-50%,-50%);background:none;border:none;cursor:pointer;
+    font:600 9px/1 var(--font-mono);letter-spacing:.06em;color:#6f6b7a;padding:8px 4px;border-radius:4px}
+  .fp-stop[aria-checked="true"]{color:#eafbe9}
+  .fp-stop:hover{color:#c9c4b8}
+  .fp-stop:focus-visible{outline:1.5px solid #1DB954;outline-offset:1px}
+  .fp-band{display:flex;border:1px solid #2a2831;border-radius:7px;overflow:hidden;flex:0 0 auto}
+  .fp-band button{background:none;border:none;cursor:pointer;padding:7px 10px;font:600 9.5px/1 var(--font-mono);
+    letter-spacing:.12em;text-transform:uppercase;color:#77727f}
+  .fp-band button[aria-selected="true"]{background:#1DB95422;color:#1DB954}
+
+  /* rooms: the Hostel Radio scenes, one per frequency */
+  .rooms{display:flex;flex-direction:column;gap:clamp(10px,2vh,16px)}
+  .p-sound[data-sound="radio"] .faceplate{margin-bottom:clamp(12px,2.2vh,22px)}
+  .scene{position:relative;margin:0 auto;border-radius:12px;overflow:hidden;aspect-ratio:1376/768;max-height:40vh;width:100%;
+    border:1px solid #2a2831;box-shadow:0 20px 40px -24px #000;background:#121117}
+  .scene-img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9) brightness(.78)}
+  .scene::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,#07070acc)}
+  .scene-cap{position:absolute;left:clamp(14px,2.5vw,24px);right:clamp(14px,2.5vw,24px);bottom:clamp(12px,2.2vh,20px);z-index:1;
+    display:flex;flex-direction:column;gap:5px}
+  .scene-freq{font:600 10px/1 var(--font-mono);letter-spacing:.18em;color:#1DB954}
+  .scene-name{font:700 clamp(20px,3vw,30px)/1.05 var(--font-display);color:#f6f1e7;text-wrap:balance}
+  .scene-note{font-family:var(--font-hand);font-size:clamp(15px,1.8vw,19px);color:#d9d2c4;rotate:-.6deg}
+  .room-deck{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .room-play{display:flex;align-items:center;gap:12px;flex:1;min-width:0;background:#16151b;border:1px solid #2a2831;border-radius:10px;
+    padding:10px 14px;cursor:pointer;color:#ece7dc;text-align:left;transition:border-color .2s var(--ease)}
+  .room-play:hover,.room-play:focus-visible{border-color:#1DB954}
+  .rp-btn{width:30px;height:30px;border-radius:50%;background:#1DB954;color:#06110a;display:grid;place-items:center;font-size:11px;flex:0 0 auto}
+  .rp-txt{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+  .rp-track{font:600 15px/1.15 var(--font-display);color:#f4efe6}
+  .rp-artist{font:500 11px/1.3 var(--font-mono);color:#908b80;overflow-wrap:anywhere}
+  .room-embed{flex:1;min-width:0;width:100%;height:80px;border:none;border-radius:12px}
+  .room-search{background:none;border:none;cursor:pointer;color:#8a857b;font:500 11px/1 var(--font-mono);letter-spacing:.08em;
+    text-decoration:underline;text-underline-offset:3px;padding:8px 0}
+  .room-search:hover{color:#1DB954}
+  @media(max-width:560px){
+    .p-sound .plate-head{flex-direction:column;align-items:stretch;gap:8px}
+    .p-sound .plate-head .ph-right,.sound-right{align-items:stretch;white-space:normal;text-align:left}
+    .sound-right .tuner{width:100%}
+    .faceplate{flex-wrap:wrap;gap:10px;padding:10px 12px;margin-bottom:12px}
+    .faceplate .fp-dial.tunable{order:3;flex:1 0 100%}
+    .scene{max-height:28vh}
+    .room-play{padding:8px 10px}
+  }
 
   /* playing: spotify lyric stage (fixed takeover) */
   .stage{position:fixed;inset:0;z-index:120;display:flex;flex-direction:column;align-items:center;
@@ -262,7 +312,7 @@ const CSS = String.raw`
   /* playing: youtube video stage */
   .vstage{position:fixed;inset:0;z-index:120;background:#000;overflow:hidden}
   .vframe{position:absolute;inset:-6%;width:112%;height:112%;border:none;filter:blur(6px) saturate(.6) brightness(.5);
-    animation:kb 30s ease-in-out infinite alternate}
+    }
   .vstage.reduced .vframe{filter:saturate(.7) brightness(.55);animation:none;inset:0;width:100%;height:100%}
   .vscrim{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 60%,transparent,#000 85%)}
   .voverlay{position:absolute;left:0;right:0;bottom:12vh;text-align:center;color:#f4efe6;z-index:2}
@@ -275,6 +325,7 @@ const CSS = String.raw`
     .cd-fill,.cd.in .cd-fill{transform:none}.era-fill{height:var(--w,0%)}
     .clk-spoke{opacity:1;transform:none}
     .tuner .tn-slide{transition:none}
+    .fp-dial.tunable .fp-needle{transition:none}
     .vframe{animation:none}
     .ly-line{transition:opacity .08s}
   }
@@ -317,12 +368,12 @@ export function Sound() {
         title={<>Eight years of <em className="hl">listening</em>.</>}
         note={mode === "me" ? "~ my sound" : "~ apna gaana bajao"}
         right={
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
+          <div className="sound-right">
             <TwinDoor to="/analyst/dashboard" label="The numbers behind the playlist" world="analyst" />
-            <div className="tuner-row" style={{ margin: 0 }}>
+            <div className="tuner-row">
               <div className="tuner" data-on={mode} role="tablist" aria-label="sound mode">
                 <button
-                  className="tn me"
+                  className="tn tn-me"
                   role="tab"
                   aria-selected={mode === "me"}
                   onClick={() => setMode("me")}
@@ -330,7 +381,7 @@ export function Sound() {
                   Me · My Sound
                 </button>
                 <button
-                  className="tn radio"
+                  className="tn tn-radio"
                   role="tab"
                   aria-selected={mode === "radio"}
                   onClick={() => setMode("radio")}

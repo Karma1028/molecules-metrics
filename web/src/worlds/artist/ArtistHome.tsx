@@ -40,7 +40,7 @@ const SPREADS: Spread[] = [
   {
     to: "/artist/matchday", num: "03", label: "Matchday", icon: "i-ball",
     gloss: "Camp Nou, from the terrace.",
-    img: "/images/matchday/terrace.jpg",
+    img: "/images/matchday/terrace.webp",
     caption: "Scarves up on the terrace. Barça, measured.",
   },
   {
@@ -52,7 +52,7 @@ const SPREADS: Spread[] = [
   {
     to: "/artist/about", num: "05", label: "About", icon: "i-user",
     gloss: "Origins, in ink.",
-    img: "/me.jpg",
+    img: "/me-1600w.webp",
     caption: "The person behind the roll.",
   },
   {
@@ -152,7 +152,7 @@ const CSS = String.raw`
   .p-ah2 .stage-foot b{color:var(--ink);font-weight:600}
   .p-ah2 .stage-foot .live{display:inline-flex;align-items:center;gap:6px}
   .p-ah2 .stage-foot .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);
-    animation:ah-pulse 2.4s ease-in-out infinite}
+    }
   @keyframes ah-pulse{50%{opacity:.25}}
 
   /* big frame counter (huyml-style): blurs in on every step */

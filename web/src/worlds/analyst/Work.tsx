@@ -74,7 +74,7 @@ const ENTRIES: LogEntry[] = [
     reg: "LOG.02",
     tag: "INTERNSHIP",
     title: "InfoLeap · Survey Intelligence (LENS)",
-    role: "data + AI intern",
+    role: "Data Science Intern",
     icon: "i-cpu",
     status: "writeup",
     problem:

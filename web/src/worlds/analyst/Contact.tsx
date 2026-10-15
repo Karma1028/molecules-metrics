@@ -21,7 +21,7 @@ const CHANNELS: Channel[] = [
 ]
 
 const STATUS = [
-  { k: "Looking for", v: "Data Analyst / BI roles" },
+  { k: "Looking for", v: "Technology Consultant roles" },
   { k: "Available", v: "2027 full-time · open now to talk" },
   { k: "Based in", v: "Goa, India · IST" },
   { k: "Program", v: "PGDM Big Data Analytics, GIM" },
@@ -36,7 +36,7 @@ const CSS = String.raw`
   .p-ct .lead{display:flex;flex-direction:column;min-height:0}
   .p-ct .ct-kick{display:inline-flex;align-items:center;gap:8px;font:500 10px/1 var(--font-mono);letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
   .p-ct .ct-kick .ic{width:13px;height:13px}
-  .p-ct .ct-kick .live{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:pulse 1.8s infinite}
+  .p-ct .ct-kick .live{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
   .p-ct .ct-title{font-family:var(--font-display);font-weight:700;font-size:clamp(30px,4.6vw,60px);line-height:.98;letter-spacing:-.025em;color:var(--ink);margin:12px 0 10px}
   .p-ct .ct-title em{font-style:normal;color:var(--accent)}
   .p-ct .ct-lede{font-size:clamp(13px,1.1vw,15px);color:var(--muted);max-width:40ch;text-wrap:pretty}
@@ -53,7 +53,7 @@ const CSS = String.raw`
     background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid color-mix(in srgb,var(--accent) 16%,var(--rule));
     border-radius:12px;box-shadow:var(--shadow-sm);padding:clamp(12px,1.5vw,18px);position:relative;overflow:hidden;
     transition:border-color .3s,box-shadow .3s,transform .3s}
-  .p-ct .chan:hover{border-color:color-mix(in srgb,var(--accent) 42%,transparent);box-shadow:var(--glow);transform:translateY(-2px)}
+  .p-ct .chan:hover{border-color:color-mix(in srgb,var(--accent) 42%,transparent);box-shadow:var(--glow)}
   .p-ct .chan-top{display:flex;align-items:center;gap:10px}
   .p-ct .chan-ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 12%,transparent);flex:0 0 auto}
   .p-ct .chan-ic .ic{width:16px;height:16px;color:var(--accent)}
@@ -114,7 +114,7 @@ export function Contact() {
               section="CONTACT"
               tag="uplink-terminal"
               title="Let's talk data."
-              lede={<>Open to <b>analyst and BI conversations</b>, collaborations and the occasional football argument. Fastest on email.</>}
+              lede={<>Open to <b>technology consulting conversations</b>, collaborations and the occasional football argument. Fastest on email.</>}
               right={
                 <TwinDoor to="/artist/contact" label="You've met Tuhin. Meet Karma" world="artist" />
               }
