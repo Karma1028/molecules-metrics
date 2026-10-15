@@ -373,6 +373,13 @@ export interface AiResp {
   configured: boolean
   activeDays: number
   sessions: number
+  projects: number
+  repos: number
+  commits: number
+  edits: number
+  filesTouched: number
+  linesAdded: number
+  linesRemoved: number
   messages: number
   toolCalls: number
   agentCalls: number
@@ -385,7 +392,8 @@ export interface AiResp {
   generatedAt?: string
 }
 export const AI_FALLBACK: AiResp = {
-  configured: false, activeDays: 0, sessions: 0, messages: 0, toolCalls: 0, agentCalls: 0,
+  configured: false, activeDays: 0, sessions: 0, projects: 0, repos: 0, commits: 0, edits: 0,
+  filesTouched: 0, linesAdded: 0, linesRemoved: 0, messages: 0, toolCalls: 0, agentCalls: 0,
   outputTokens: 0, contextTokens: 0, cacheShare: 0, months: [],
 }
 export const useAi = () => useLive<AiResp>(dataUrl("ai.json"), AI_FALLBACK)
