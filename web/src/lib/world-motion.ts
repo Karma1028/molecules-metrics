@@ -127,43 +127,25 @@ function flipVariants(): Variants {
 }
 
 /**
- * Same-world travel is a fly-through (components/deck/DeckTunnel draws the
- * corridor). Forward: the camera dives through the page (it swells past the
- * lens and dissolves) and the next section arrives from deep in the corridor.
- * Back: the camera pulls out, the page shrinks into the distance and the
- * previous section comes in over the shoulder. Artist pages keep a whisper of
- * paper roll; analyst pages stay axis-true.
+ * Same-world step. The 3D fly-through (whole page scaled .42 -> 1.75 under
+ * perspective, plus a corridor of frames) was dropped 2026-10-19: scaling a
+ * full page of photos and glass cards re-rasterises every frame and stuttered.
+ * Both steps below animate only opacity, a few px of translate, or clip-path.
+ * Artist: the next sheet is laid down (lifts a few px into place).
+ * Analyst: the scan wipe, the instrument redrawing top to bottom.
  */
-function flyVariants(world: World): Variants {
-  const roll = world === "artist" ? deck.roll * 3 : 0
-  const size = (dir: number, side: 1 | -1) => (dir * side > 0 ? deck.far : side > 0 ? deck.nearIn : deck.near)
-  return {
-    hidden: (t: Travel = still) => ({ scale: size(t.dir, 1), rotateZ: -t.dir * roll, opacity: 0, x: "0vw", y: "0vh", rotateX: 0, rotateY: 0 }),
-    visible: (t: Travel = still) => ({
-      scale: [size(t.dir, 1), 1],
-      rotateZ: [-t.dir * roll, 0],
-      opacity: [0, 1],
-      x: "0vw",
-      y: "0vh",
-      rotateX: 0,
-      rotateY: 0,
-      transition: { duration: deck.flyEnter, ease: easing.smooth, opacity: { duration: deck.flyEnter * 0.5, ease: easing.out } },
-    }),
-    exit: (t: Travel = still) => ({
-      scale: [1, size(t.dir, -1)],
-      rotateZ: [0, t.dir * roll],
-      opacity: [1, 0],
-      transition: { duration: deck.flyExit, ease: easing.depart },
-    }),
-  }
+const leaf: Variants = {
+  hidden: { opacity: 0, y: distance.sm, x: "0vw", scale: 1, rotateX: 0, rotateY: 0, rotateZ: 0 },
+  visible: { opacity: 1, y: 0, transition: { duration: duration.normal, ease: easing.smooth } },
+  exit: { opacity: 0, y: -distance.xs, transition: { duration: duration.fast, ease: easing.out } },
 }
 
-/** Picks fly-through or cube swing from the Travel handed to each variant. */
+/** Picks the world's same-world step, or the card flip across worlds. */
 export function deckVariants(world: World): Variants {
-  const fly = flyVariants(world)
+  const step = world === "artist" ? leaf : scan
   const swing = flipVariants()
   const pick = (k: "hidden" | "visible" | "exit") => (t: Travel = still) => {
-    const v = (t.cross ? swing : fly)[k]
+    const v = (t.cross ? swing : step)[k]
     return typeof v === "function" ? v(t, {}, {}) : v
   }
   return { hidden: pick("hidden"), visible: pick("visible"), exit: pick("exit") }

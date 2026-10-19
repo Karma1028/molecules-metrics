@@ -1,5 +1,4 @@
 import { describe, it, expect } from "vitest"
-import { motionTokens } from "./motion-tokens"
 import { paperTilt, preset, reducedFade, routeVariants, worldMotion } from "./world-motion"
 
 describe("world-motion", () => {
@@ -22,16 +21,16 @@ describe("world-motion", () => {
     expect(preset(worldMotion.analyst.lock, false)).toBe(worldMotion.analyst.lock)
   })
 
-  it("route variants fly through in-world and swing across worlds", () => {
+  it("route variants never scale a page in-world, and swing across worlds", () => {
     type F = (t: unknown) => Record<string, unknown>
-    const v = routeVariants("analyst", false)
     const down = { dir: 1, cross: false }
-    const up = { dir: -1, cross: false }
-    expect((v.hidden as F)(down).scale).toBe(motionTokens.deck.far)
-    expect((v.hidden as F)(up).scale).toBe(motionTokens.deck.nearIn)
-    expect(((v.exit as F)(down).scale as number[]).at(-1)).toBe(motionTokens.deck.near)
-    expect(((v.visible as F)(down).scale as number[]).at(-1)).toBe(1)
-    expect((v.hidden as F)(down).rotateZ).toBe(-0)
+    for (const world of ["artist", "analyst"] as const) {
+      const v = routeVariants(world, false)
+      expect((v.hidden as F)(down).scale ?? 1).toBe(1)
+      expect((v.exit as F)(down).scale).toBeUndefined()
+    }
+    expect(((routeVariants("analyst", false).hidden as F)(down).clipPath)).toContain("100%")
+    const v = routeVariants("analyst", false)
     expect((v.hidden as F)({ dir: -1, cross: true }).rotateY).toBe(90)
     expect(((v.exit as F)({ dir: 1, cross: true }).rotateY as number[]).at(-1)).toBe(90)
     expect(routeVariants("artist", true)).toBe(reducedFade)

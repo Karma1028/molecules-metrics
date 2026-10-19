@@ -87,7 +87,8 @@ export const motionTokens = {
    * tight dot ~60 ms → 0.016; magnet pulls 0.2 of the offset toward a hovered target.
    */
   pointer: {
-    ring: 0.006,
+    /** ball follow: a touch quicker than inkwell (.006) so the dribble reads as play, not lag */
+    ring: 0.009,
     dot: 0.016,
     magnet: 0.2,
     /** artist ball: radius (px), gap it rests below a hovered link, speed (px/ms) where speed lines are full */
