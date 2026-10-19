@@ -1,0 +1,109 @@
+{
+ "slug": "peppa",
+ "url": "https://www.peppasauce.love/",
+ "fp": {
+  "title": "Mama Joyce Peppa Sauce - Fiery Blasian Hot Sauce",
+  "globals": [
+   "Webflow",
+   "jQuery"
+  ],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "d3e54v103j8qbb.cloudfront.net",
+   "www.peppasauce.love"
+  ],
+  "counts": {
+   "canvas": 1,
+   "video": 0,
+   "svg": 12,
+   "img": 205,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 8,
+   "splitChars": 11
+  },
+  "pageHeightVh": 8.6,
+  "body": {
+   "bg": "rgb(20, 19, 41)",
+   "color": "rgb(51, 51, 51)",
+   "ff": "Arial"
+  },
+  "h1": {
+   "ff": "Obviously",
+   "fs": "50.4px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "THE JOY OF\nPEPPA SAUCE"
+  },
+  "h2": {
+   "ff": "Obviously",
+   "fs": "50.4px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "THE JOY OF PEPPA SAUCE"
+  },
+  "p": {
+   "ff": "Obviously",
+   "fs": "50.4px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "BUY NOW"
+  },
+  "fontsLoaded": [
+   "Obviously",
+   "Vulf Sans",
+   "Obviously Demo"
+  ],
+  "topFonts": [
+   [
+    "Vulf Sans 400",
+    154
+   ],
+   [
+    "Obviously 400",
+    104
+   ],
+   [
+    "Obviously 700",
+    13
+   ],
+   [
+    "Arial 400",
+    2
+   ],
+   [
+    "Obviously Demo 400",
+    1
+   ],
+   [
+    "Obviously Demo 700",
+    1
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(254, 238, 226)",
+    10
+   ],
+   [
+    "rgb(21, 19, 41)",
+    1
+   ]
+  ],
+  "css": {
+   "sticky": 5,
+   "will-change": 211,
+   "fixed": 10,
+   "clip-path": 78,
+   "mask": 11
+  }
+ },
+ "finalUrl": "https://www.peppasauce.love/"
+}

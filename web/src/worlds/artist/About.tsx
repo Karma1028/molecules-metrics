@@ -4,6 +4,7 @@ import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { TwinDoor } from "../../components/TwinDoor"
+import { Headline } from "../../components/headline/Headline"
 
 // Facts sourced from the real CV + the Gallery/Sound/Matchday pages. No invented
 // biography: only what the portfolio itself already evidences.
@@ -145,7 +146,7 @@ export function About() {
       <div className="ab-copy">
         <header className="ab-head">
           <div className="ab-kick"><span className="horse-glyph" aria-hidden="true" /><b>Plate V</b> · Biography</div>
-          <h1 className="ab-big">The person behind<br /> the <em className="hl">frames</em>.</h1>
+          <Headline world="artist" className="ab-big">The person behind<br /> the <em className="hl">frames</em>.</Headline>
           <span className="ab-hand">~ origins, in ink</span>
           <div className="ab-door"><TwinDoor to="/analyst/journey" label="Bankura to Goa, mapped" world="analyst" /></div>
         </header>

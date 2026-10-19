@@ -16,6 +16,13 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Function names cannot contain "/", so nested API paths get an explicit rewrite
+# first (query strings pass through). Needs YOUTUBE_API_KEY in the site env.
+[[redirects]]
+  from = "/api/music/search"
+  to = "/.netlify/functions/music-search"
+  status = 200
+
 # Live API → serverless functions (same public path the dev proxy uses).
 [[redirects]]
   from = "/api/*"

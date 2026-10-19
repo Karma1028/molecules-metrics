@@ -4,6 +4,7 @@ import { Icon } from "../../lib/icons"
 import { springs, motionTokens } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { TwinDoor } from "../../components/TwinDoor"
+import { Headline } from "../../components/headline/Headline"
 
 type Level = "exploring" | "building" | "working" | "strong"
 interface Item { name: string; note: string; lv: Level }
@@ -287,7 +288,7 @@ export function Skills() {
       <section className="poster">
         <div>
           <span className="kick"><Icon id="i-grid" /> Log.01 · Capability map</span>
-          <h1 className="big">{COUNT_WORD[n] ?? n}<br /> <em>lenses.</em></h1>
+          <Headline world="analyst" className="big">{COUNT_WORD[n] ?? n}<br /> <em>lenses.</em></Headline>
           <p className="lede">
             Not a scorecard. Lenses on the same person: the <b>technical toolkit</b>, the <b>engineering rigour</b> under it,
             the <b>AI stack</b>, research, design and scoping. Pick a lens.

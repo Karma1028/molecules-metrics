@@ -1,0 +1,126 @@
+{
+ "slug": "zighead",
+ "url": "https://www.headfonts.com/p/zighead-font/",
+ "fp": {
+  "title": "Zighead | Liquid Display Serif Font with Wavy, Psychedelic Art Nouveau Style for Logos, Be",
+  "globals": [
+   "jQuery"
+  ],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.google-analytics.com",
+   "www.googletagmanager.com",
+   "connect.facebook.net",
+   "googleads.g.doubleclick.net",
+   "assets.sellfy.store"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 9,
+   "img": 13,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 42,
+   "splitChars": 0
+  },
+  "pageHeightVh": 2.5,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(102, 102, 102)",
+   "ff": "\"Times New Roman\""
+  },
+  "h1": {
+   "ff": "Syne",
+   "fs": "35px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Zighead | Liquid Display Serif Font"
+  },
+  "h2": {
+   "ff": "Syne",
+   "fs": "29.75px",
+   "fw": "600",
+   "ls": "normal",
+   "tt": "none",
+   "text": "More products"
+  },
+  "p": {
+   "ff": "Poppins",
+   "fs": "16px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Your shopping cart is empty."
+  },
+  "fontsLoaded": [
+   "dripicons-v2",
+   "Poppins",
+   "Syne"
+  ],
+  "topFonts": [
+   [
+    "Poppins 400",
+    64
+   ],
+   [
+    "Times New Roman 400",
+    18
+   ],
+   [
+    "Poppins 700",
+    3
+   ],
+   [
+    "Syne 700",
+    2
+   ],
+   [
+    "Syne 400",
+    1
+   ],
+   [
+    "Syne 600",
+    1
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    14
+   ],
+   [
+    "rgb(198, 244, 213)",
+    6
+   ],
+   [
+    "rgb(0, 0, 0)",
+    4
+   ],
+   [
+    "rgb(102, 102, 102)",
+    2
+   ],
+   [
+    "rgb(0, 31, 0)",
+    1
+   ],
+   [
+    "rgb(214, 155, 81)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 3,
+   "backdrop-filter": 4,
+   "sticky": 2,
+   "will-change": 4,
+   "filter": 1
+  }
+ },
+ "finalUrl": "https://www.headfonts.com/p/zighead-font/"
+}

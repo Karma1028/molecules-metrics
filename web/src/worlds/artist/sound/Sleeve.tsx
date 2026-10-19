@@ -19,6 +19,8 @@ export interface Row {
 
 const SIDES = "ABCDEFGHIJKL"
 const MAX_COLS = 2
+/** fewer row-heights than this and the liner sentence moves to its own side */
+const NOTE_INLINE_ROWS = 6
 /** below this height the crate stops showing cover tiles and becomes a list */
 const CRATE_GRID_MIN_H = 230
 
@@ -78,27 +80,37 @@ function LinerRow({ r, n }: { r: Row; n: number }) {
   )
 }
 
-/** Tracklist / credits: numbered rows with dotted leaders, flowing down then across. */
+/** Tracklist / credits: numbered rows with dotted leaders, flowing down then across.
+    On a short sleeve the liner sentence gets a side of its own instead of crushing the list. */
 export function LinerList({ rows, note }: { rows: Row[]; note?: ReactNode }) {
+  const outer = useBox()
   const box = useBox()
+  const noteSide = Boolean(note) && outer.h > 0 && outer.h / outer.rowH < NOTE_INLINE_ROWS
   const cols = Math.max(1, Math.min(MAX_COLS, Math.floor(box.w / box.colMin)))
   const fitRows = Math.max(1, Math.floor(box.h / box.rowH))
   const perCol = Math.min(fitRows, Math.ceil(rows.length / cols))
   const per = perCol * cols
-  const pages = Math.max(1, Math.ceil(rows.length / per))
+  const lead = noteSide ? 1 : 0
+  const pages = Math.max(1, Math.ceil(rows.length / per)) + lead
   const [page, setPage] = useState(0)
   useEffect(() => setPage((p) => Math.min(p, pages - 1)), [pages])
-  const shown = rows.slice(page * per, page * per + per)
+  const onNote = noteSide && page === 0
+  const listPage = page - lead
+  const shown = onNote ? [] : rows.slice(listPage * per, listPage * per + per)
   const grid = { "--cols": cols, "--rows": perCol } as CSSProperties
   return (
-    <div className="liner">
-      {note ? <p className="liner-note">{note}</p> : null}
+    <div className="liner" ref={outer.ref}>
+      {note && !noteSide ? <p className="liner-note">{note}</p> : null}
       <div className="liner-fit" ref={box.ref}>
-        <ol className="liner-list" style={grid}>
-          {shown.map((r, i) => (
-            <LinerRow key={r.k} r={r} n={page * per + i + 1} />
-          ))}
-        </ol>
+        {onNote ? (
+          <p className="liner-note liner-note-side">{note}</p>
+        ) : (
+          <ol className="liner-list" style={grid}>
+            {shown.map((r, i) => (
+              <LinerRow key={r.k} r={r} n={listPage * per + i + 1} />
+            ))}
+          </ol>
+        )}
       </div>
       <Pager page={page} pages={pages} onFlip={setPage} />
     </div>

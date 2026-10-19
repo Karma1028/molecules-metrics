@@ -3,8 +3,8 @@ import { createPortal } from "react-dom"
 import { useNowPlaying, useMusicSearch, type MusicTrack } from "../../../lib/live"
 import { linkToTrack, parseMusicLink, type MusicLink } from "../../../lib/music"
 import { HostelRooms, RoomDial, RoomScene } from "./HostelRooms"
-import { HOSTEL_ROOMS } from "./hostel-rooms"
-import { LyricStage, SourceMark, VideoStage } from "./Stage"
+import { HOSTEL_ROOMS, roomTrack } from "./hostel-rooms"
+import { SourceMark, Stage } from "./Stage"
 
 const SWIPE_MIN = 50
 
@@ -176,16 +176,15 @@ export function Radio() {
 
       {picked ? (
         // portal: a transformed page ancestor would otherwise trap the fixed takeover under the site header
-        createPortal(
-          picked.source === "youtube" ? (
-            <VideoStage track={picked} onExit={exit} />
-          ) : (
-            <LyricStage track={picked} onExit={exit} />
-          ),
-          document.body,
-        )
+        createPortal(<Stage track={picked} onExit={exit} />, document.body)
       ) : band === "rooms" ? (
-        <HostelRooms room={HOSTEL_ROOMS[roomIdx]} noteIdx={tunes} onSearch={() => setBand("search")} />
+        <HostelRooms
+          room={HOSTEL_ROOMS[roomIdx]}
+          noteIdx={tunes}
+          onNote={() => setTunes((n) => n + 1)}
+          onPlay={() => setPicked(roomTrack(HOSTEL_ROOMS[roomIdx]))}
+          onSearch={() => setBand("search")}
+        />
       ) : (
         <SearchVoid onPick={setPicked} />
       )}

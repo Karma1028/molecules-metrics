@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import type { World } from "../lib/theme"
 import { motionTokens } from "../lib/motion-tokens"
 import { MorphOverlay, morphReady, preloadMorph } from "./morph/MorphOverlay"
+import { isTransiting } from "./transit/state"
 
 /**
  * Signature world-switch moment (GEMINI-EXECUTION-BRIEF §3, §4 R3):
@@ -41,7 +42,8 @@ export function WorldTransition({ world }: { world: World }) {
   useEffect(() => {
     const changed = lastWorld !== null && lastWorld !== world
     lastWorld = world
-    if (!changed || reduce) return
+    // a 3D transit (components/transit) already carried the switch
+    if (!changed || reduce || isTransiting()) return
 
     const dir = world === "analyst" ? "to-analyst" : "to-artist"
     setDirection(dir)

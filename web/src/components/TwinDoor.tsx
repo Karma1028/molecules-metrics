@@ -18,7 +18,7 @@ export interface TwinDoorProps {
  * TwinDoor (GEMINI-EXECUTION-BRIEF §3, §4 R3):
  * The "pulled thread" crossover link connecting paired pages across worlds.
  * Carries the Bankura terracotta thread into either world, tightening on hover.
- * Passes the door label through router state to WorldTransition for mid-wipe display.
+ * Passes the door label through router state (no reader since the world-switch overlay was archived).
  */
 export function TwinDoor({ to, label, world, className = "" }: TwinDoorProps) {
   const reduce = useReducedMotion()

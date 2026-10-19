@@ -1,0 +1,119 @@
+{
+ "slug": "gucci",
+ "url": "https://www.gucci.com/#/en/",
+ "fp": {
+  "title": "GUCCI® Official | Select Your Local Country",
+  "globals": [],
+  "libHints": [
+   "three",
+   "react",
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "www.gucci.com",
+   "cdn-pci.optimizely.com",
+   "cdn.speedcurve.com",
+   "p11.techlab-cdn.com",
+   "s2.go-mpulse.net",
+   "cdn.cookielaw.org"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 51,
+   "img": 2,
+   "iframe": 2,
+   "audio": 0,
+   "sections": 4,
+   "links": 48,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(0, 0, 0)",
+   "color": "rgb(255, 255, 255)",
+   "ff": "\"Gucci Sans Pro\""
+  },
+  "h1": {
+   "ff": "Gucci Sans Pro",
+   "fs": "32px",
+   "fw": "100",
+   "ls": "-0.96px",
+   "tt": "none",
+   "text": "Welcome to Gucci"
+  },
+  "h2": {
+   "ff": "Gucci Sans Pro",
+   "fs": "14px",
+   "fw": "600",
+   "ls": "normal",
+   "tt": "none",
+   "text": "We Use Cookies"
+  },
+  "p": {
+   "ff": "Gucci Sans Pro",
+   "fs": "12.992px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "These cookies are necessary for the website to function and cannot be switched o"
+  },
+  "fontsLoaded": [
+   "Gucci Sans Pro"
+  ],
+  "topFonts": [
+   [
+    "Gucci Sans Pro 400",
+    88
+   ],
+   [
+    "Gucci Sans Pro 500",
+    44
+   ],
+   [
+    "Gucci Sans Pro 700",
+    12
+   ],
+   [
+    "Gucci Sans Pro 600",
+    8
+   ],
+   [
+    "Gucci Sans Pro 100",
+    2
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    14
+   ],
+   [
+    "rgb(39, 69, 92)",
+    12
+   ],
+   [
+    "rgb(118, 118, 118)",
+    6
+   ],
+   [
+    "rgb(0, 0, 0)",
+    5
+   ],
+   [
+    "color(srgb 0 0 0 / 0.1)",
+    1
+   ],
+   [
+    "rgba(0, 0, 0, 0.5)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 3,
+   "sticky": 1
+  }
+ },
+ "finalUrl": "https://www.gucci.com/#/en/"
+}

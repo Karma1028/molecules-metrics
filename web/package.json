@@ -13,12 +13,10 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@types/three": "0.184.0",
     "motion": "^14.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.4",
-    "three": "0.184.0"
+    "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.2",

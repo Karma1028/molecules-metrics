@@ -144,6 +144,9 @@ export const SOUND_ME_CSS = String.raw`
   .liner{flex:1;min-height:0;display:flex;flex-direction:column}
   .liner-note{margin:0 0 4px;font:500 clamp(14px,1.3vw,17px)/1.25 var(--font-hand);color:var(--muted)}
   .liner-note b{color:var(--green-ink);font-weight:700}
+  .liner-fit:has(.liner-note-side){display:flex;align-items:center;justify-content:center}
+  .liner-note-side{display:block;margin:0;text-align:center;padding:0 6%;max-width:46ch;
+    font-size:clamp(13px,min(4.4cqw,12cqh),22px) !important;line-height:1.3 !important;color:var(--ink)}
   .liner-fit{flex:1;min-height:0;--row-h:clamp(36px,5.4cqh,44px);--col-min:230px}
   .liner-list{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;column-gap:clamp(18px,2.4vw,36px);
     grid-template-columns:repeat(var(--cols),minmax(0,1fr));grid-template-rows:repeat(var(--rows),var(--row-h))}
@@ -276,7 +279,10 @@ export const SOUND_ME_CSS = String.raw`
     .key-lbl-l{display:none}.key-lbl-s{display:inline}
     .key[aria-selected="true"]{transform:translateY(2px)}
     .sleeve{padding:8px 12px 10px}
-    .sl-head{display:none}
+    .sl-head{padding-bottom:4px;margin-bottom:5px;gap:8px}
+    .sleeve:has(.sl-pager) .sl-head{padding-right:0}
+    .sl-title{font-size:13px}
+    .sl-kick{font-size:9.5px;letter-spacing:.1em}
     .sl-pager{position:static;padding-top:4px;height:auto}
     .liner-note{font-size:13px;line-height:1.15}
     .dial-read{font-size:14px}
@@ -286,9 +292,9 @@ export const SOUND_ME_CSS = String.raw`
     .sp-unit{display:none}
     .sp-min{font-size:9px;letter-spacing:-.02em}
   }
-  /* very short sleeves: the liner sentence gives way so the credits list stays readable */
+  /* very short sleeves: the liner sentence tightens; the list pages into more sides instead of losing it */
   @container (max-height:220px){
-    .liner-note{display:none}
+    .liner-note{font-size:12px;line-height:1.15;margin-bottom:3px}
   }
   @media (prefers-reduced-motion:reduce){
     .tt-rec.spin{animation:none}

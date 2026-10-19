@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest"
+import { motionTokens } from "./motion-tokens"
 import { paperTilt, preset, reducedFade, routeVariants, worldMotion } from "./world-motion"
 
 describe("world-motion", () => {
@@ -21,11 +22,19 @@ describe("world-motion", () => {
     expect(preset(worldMotion.analyst.lock, false)).toBe(worldMotion.analyst.lock)
   })
 
-  it("route variants use per-world physics (turn vs scan)", () => {
-    expect(routeVariants("artist", false)).toBe(worldMotion.artist.turn)
-    expect(routeVariants("analyst", false)).toBe(worldMotion.analyst.scan)
+  it("route variants fly through in-world and swing across worlds", () => {
+    type F = (t: unknown) => Record<string, unknown>
+    const v = routeVariants("analyst", false)
+    const down = { dir: 1, cross: false }
+    const up = { dir: -1, cross: false }
+    expect((v.hidden as F)(down).scale).toBe(motionTokens.deck.far)
+    expect((v.hidden as F)(up).scale).toBe(motionTokens.deck.nearIn)
+    expect(((v.exit as F)(down).scale as number[]).at(-1)).toBe(motionTokens.deck.near)
+    expect(((v.visible as F)(down).scale as number[]).at(-1)).toBe(1)
+    expect((v.hidden as F)(down).rotateZ).toBe(-0)
+    expect((v.hidden as F)({ dir: -1, cross: true }).rotateY).toBe(90)
+    expect(((v.exit as F)({ dir: 1, cross: true }).rotateY as number[]).at(-1)).toBe(90)
     expect(routeVariants("artist", true)).toBe(reducedFade)
-    expect(routeVariants("analyst", true)).toBe(reducedFade)
   })
 
   it("analyst lock never rotates", () => {

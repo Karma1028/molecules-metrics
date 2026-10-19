@@ -1,0 +1,131 @@
+{
+ "slug": "frost",
+ "url": "https://www.frostype.xyz/typeface/system-blank",
+ "fp": {
+  "title": "FROST | System Blank",
+  "globals": [
+   "__NUXT__"
+  ],
+  "libHints": [
+   "nuxt",
+   "ogl"
+  ],
+  "hosts": [
+   "cdn.snipcart.com",
+   "www.googletagmanager.com",
+   "www.frostype.xyz"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 0,
+   "img": 144,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 57,
+   "splitChars": 623
+  },
+  "pageHeightVh": 16.9,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "\"FT NotDef\""
+  },
+  "h1": {
+   "ff": "FT System Blank Medium",
+   "fs": "29.9952px",
+   "fw": "500",
+   "ls": "-0.449928px",
+   "tt": "none",
+   "text": "HOUR"
+  },
+  "h2": {
+   "ff": "FT System Blank Black",
+   "fs": "60.0048px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Exhibitions in 1962 announced Andy Warhol’s dramatic entry into the art world. I"
+  },
+  "p": {
+   "ff": "FT NotDef",
+   "fs": "17px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "NotDef"
+  },
+  "fontsLoaded": [
+   "FT NotDef",
+   "FT System Blank Black",
+   "FT System Blank Black Italic",
+   "FT System Blank Heavy",
+   "FT System Blank Heavy Italic",
+   "FT System Blank Bold",
+   "FT System Blank Bold Italic",
+   "FT System Blank Semibold",
+   "FT System Blank Semibold Italic",
+   "FT System Blank Medium"
+  ],
+  "topFonts": [
+   [
+    "FT System Blank Medium 500",
+    1053
+   ],
+   [
+    "FT System Blank Semibold 500",
+    11
+   ],
+   [
+    "FT System Blank Regular 500",
+    10
+   ],
+   [
+    "FT System Blank Hairline 500",
+    7
+   ],
+   [
+    "FT System Blank Bold 500",
+    7
+   ],
+   [
+    "FT System Blank Book 500",
+    7
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    39
+   ],
+   [
+    "rgb(0, 0, 0)",
+    22
+   ],
+   [
+    "rgb(255, 0, 255)",
+    12
+   ],
+   [
+    "rgba(255, 255, 255, 0)",
+    10
+   ],
+   [
+    "rgb(247, 245, 243)",
+    6
+   ],
+   [
+    "rgba(0, 0, 0, 0.3)",
+    6
+   ]
+  ],
+  "css": {
+   "fixed": 16,
+   "clip-path": 2,
+   "cursor:none": 6,
+   "sticky": 13
+  }
+ },
+ "finalUrl": "https://www.frostype.xyz/typeface/system-blank"
+}

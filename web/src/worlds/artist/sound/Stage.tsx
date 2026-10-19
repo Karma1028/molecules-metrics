@@ -2,15 +2,26 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties, type RefObjec
 import { useReducedMotion } from "../../../hooks/useSafeMotion"
 import { useMusicLyrics, type MusicTrack } from "../../../lib/live"
 import { itunesSearch } from "../../../lib/music"
+import {
+  canResolve,
+  directPlan,
+  displayTitle,
+  loadYouTubeApi,
+  lyricLookup,
+  resolveYouTube,
+  type PlayPlan,
+  type YTPlayer,
+} from "../../../lib/youtube"
 import { parseLrc, activeLine, type LrcLine } from "./lrc"
 import { SpotifyGlyph, YouTubeGlyph } from "./glyphs"
 import { getVoidPalette, sampleArt, type Palette } from "./art-palette"
 import { STAGE_CSS } from "./stage.css"
 
-/* The playing stages. Spotify / iTunes picks get the now-playing room: the cover
-   blurred into the walls, the record sliding out of its sleeve, a transport
-   driven by the real audio element, and the lyric sheet beside it. YouTube
-   picks get the dimmed video room. */
+/* The playing stage. Every pick lands in the now-playing room: the cover blurred
+   into the walls, a framed YouTube screen (the official IFrame player, so songs
+   run full length) over the album sleeve, a transport driven by that player, and
+   the synced lyric sheet beside it. With no YouTube match the room falls back to
+   the record + 30 s preview (or the Spotify embed for pasted Spotify links). */
 
 /* Spotify's compact player height */
 const EMBED_H = 80
@@ -23,7 +34,7 @@ const norm = (s: string) => s.toLowerCase().replace(/\(.*?\)|\[.*?\]|-.*$/g, "")
 function usePreview(track: MusicTrack): string | null {
   const [borrowed, setBorrowed] = useState<string | null>(null)
   const own = track.preview ?? null
-  const need = !own && !track.embed && !!track.title
+  const need = !own && !track.embed && !!track.title && track.source !== "youtube"
   useEffect(() => {
     setBorrowed(null)
     if (!need) return
@@ -54,17 +65,16 @@ interface AudioState {
   playing: boolean
 }
 
-function Transport({ audio, st }: { audio: RefObject<HTMLAudioElement | null>; st: AudioState }) {
+interface Controls {
+  toggle: () => void
+  seek: (t: number) => void
+}
+
+function Transport({ st, ctl }: { st: AudioState; ctl: Controls }) {
   const pct = st.dur ? Math.min(100, (st.time / st.dur) * 100) : 0
-  const toggle = () => {
-    const a = audio.current
-    if (!a) return
-    if (a.paused) a.play().catch(() => undefined)
-    else a.pause()
-  }
   return (
     <div className="st-transport">
-      <button className="st-play" onClick={toggle} aria-label={st.playing ? "pause" : "play"}>
+      <button className="st-play" onClick={ctl.toggle} aria-label={st.playing ? "pause" : "play"}>
         <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
           {st.playing ? <path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" /> : <path d="M8 5.5v13l11-6.5z" />}
         </svg>
@@ -76,12 +86,10 @@ function Transport({ audio, st }: { audio: RefObject<HTMLAudioElement | null>; s
         min={0}
         max={st.dur || 30}
         step={0.1}
-        value={st.time}
+        value={Math.min(st.time, st.dur || 30)}
         aria-label="seek"
         style={{ "--pct": `${pct}%` } as CSSProperties}
-        onChange={(e) => {
-          if (audio.current) audio.current.currentTime = Number(e.target.value)
-        }}
+        onChange={(e) => ctl.seek(Number(e.target.value))}
       />
       <span className="st-time">{mmss(st.dur)}</span>
     </div>
@@ -101,7 +109,7 @@ function LyricSheet({ lines, idx, timed, plain, loading, track }: {
           <>
             {" "}
             <a href={track.url} target="_blank" rel="noopener">
-              open in {track.source === "apple" ? "Apple Music" : "Spotify"} →
+              open in {track.source === "apple" ? "Apple Music" : track.source === "youtube" ? "YouTube" : "Spotify"} →
             </a>
           </>
         ) : null}
@@ -142,7 +150,18 @@ function useAudioState(preview: string | null) {
     onPause: () => setSt((s) => ({ ...s, playing: false })),
     onEnded: () => setSt((s) => ({ ...s, playing: false })),
   }
-  return { ref, st, handlers }
+  const ctl: Controls = {
+    toggle: () => {
+      const a = ref.current
+      if (!a) return
+      if (a.paused) a.play().catch(() => undefined)
+      else a.pause()
+    },
+    seek: (t) => {
+      if (ref.current) ref.current.currentTime = t
+    },
+  }
+  return { ref, st, handlers, ctl }
 }
 
 function usePalette(art?: string) {
@@ -169,35 +188,197 @@ function Cover({ art, spinning }: { art?: string; spinning: boolean }) {
   )
 }
 
-// ── Playing (Spotify / iTunes pick): album-recoloured room + synced lyrics ──
-export function LyricStage({ track, onExit }: { track: MusicTrack; onExit: () => void }) {
-  const { data: lyr, loading } = useMusicLyrics(track.artist, track.title)
+/** Plays YouTube picks directly; looks up a full-length upload for everything else. */
+function usePlan(track: MusicTrack): PlayPlan {
+  const direct = useMemo(() => directPlan(track), [track])
+  const [resolved, setResolved] = useState<PlayPlan | null>(null)
+  useEffect(() => {
+    setResolved(null)
+    if (direct) return
+    if (!canResolve(track)) {
+      setResolved({ kind: "fallback", tried: false })
+      return
+    }
+    const ctl = new AbortController()
+    const settle = (id: string | null) => {
+      if (!ctl.signal.aborted) setResolved(id ? { kind: "yt", videoId: id, start: 0 } : { kind: "fallback", tried: true })
+    }
+    resolveYouTube(track, ctl.signal).then(settle, () => settle(null))
+    return () => ctl.abort()
+  }, [track, direct])
+  return direct ?? resolved ?? { kind: "resolving" }
+}
+
+const TIME_EPSILON = 0.05
+
+/** The official IFrame player mounted inside `host`; time polled with rAF only while playing. */
+function useYouTubePlayer(host: RefObject<HTMLDivElement | null>, plan: PlayPlan) {
+  const videoId = plan.kind === "yt" ? plan.videoId : undefined
+  const list = plan.kind === "yt" ? plan.list : undefined
+  const start = plan.kind === "yt" ? plan.start : 0
+  const player = useRef<YTPlayer | null>(null)
+  const [st, setSt] = useState<AudioState>({ time: 0, dur: 0, playing: false })
+  const [failed, setFailed] = useState(false)
+
+  useEffect(() => {
+    const el = host.current
+    if (!el || (!videoId && !list)) return
+    let alive = true
+    let raf = 0
+    setSt({ time: start, dur: 0, playing: false })
+    setFailed(false)
+    const stopLoop = () => {
+      cancelAnimationFrame(raf)
+      raf = 0
+    }
+    const tick = () => {
+      const p = player.current
+      if (!alive || !p) return
+      const t = p.getCurrentTime()
+      const d = p.getDuration()
+      setSt((s) => (Math.abs(s.time - t) < TIME_EPSILON && s.dur === d ? s : { ...s, time: t, dur: d || s.dur }))
+      raf = requestAnimationFrame(tick)
+    }
+    // the API replaces its target node, so hand it one React does not own
+    const mount = document.createElement("div")
+    el.appendChild(mount)
+    loadYouTubeApi()
+      .then((YT) => {
+        if (!alive) return
+        player.current = new YT.Player(mount, {
+          width: "100%",
+          height: "100%",
+          videoId,
+          playerVars: {
+            autoplay: 1,
+            playsinline: 1,
+            rel: 0,
+            start: start || undefined,
+            ...(list ? { listType: "playlist", list } : {}),
+          },
+          events: {
+            onReady: (e) => {
+              if (!alive) return
+              setSt((s) => ({ ...s, dur: e.target.getDuration() || s.dur }))
+              e.target.playVideo()
+            },
+            onStateChange: (e) => {
+              if (!alive) return
+              const playing = e.data === YT.PlayerState.PLAYING
+              const p = e.target
+              setSt((s) => ({ time: p.getCurrentTime(), dur: p.getDuration() || s.dur, playing }))
+              stopLoop()
+              if (playing) raf = requestAnimationFrame(tick)
+            },
+            onError: () => {
+              if (alive) setFailed(true)
+            },
+          },
+        })
+        if (import.meta.env.DEV) (window as Window & { __radioYT?: YTPlayer | null }).__radioYT = player.current
+      })
+      .catch(() => {
+        if (alive) setFailed(true)
+      })
+    return () => {
+      alive = false
+      stopLoop()
+      player.current?.destroy()
+      player.current = null
+      el.replaceChildren()
+    }
+  }, [host, videoId, list, start])
+
+  const ctl: Controls = {
+    toggle: () => {
+      const p = player.current
+      if (!p) return
+      if (st.playing) p.pauseVideo()
+      else p.playVideo()
+    },
+    seek: (t) => {
+      const p = player.current
+      if (!p) return
+      p.seekTo(t, true)
+      setSt((s) => ({ ...s, time: t }))
+    },
+  }
+  return { st, ctl, failed }
+}
+
+/** The framed YouTube screen, sat over the album sleeve. Never covered, never under 200 x 200. */
+function Screen({ host, art, resolving }: { host: RefObject<HTMLDivElement | null>; art?: string; resolving: boolean }) {
+  return (
+    <div className="st-screen-wrap">
+      {art ? <img className="st-screen-sleeve" src={art} alt="" aria-hidden="true" /> : null}
+      <div className="st-screen">
+        {resolving ? (
+          <div className="st-screen-ph">
+            {art ? <img src={art} alt="" aria-hidden="true" /> : null}
+            <span>finding the full song…</span>
+          </div>
+        ) : null}
+        <div className="st-screen-host" ref={host} />
+      </div>
+    </div>
+  )
+}
+
+const FALLBACK_NOTE = "30 s preview, full song needs the YouTube search key"
+
+// ── Playing: album-recoloured room, YouTube screen (or preview fallback) + synced lyrics ──
+export function Stage({ track, onExit }: { track: MusicTrack; onExit: () => void }) {
+  const lookup = useMemo(() => lyricLookup(track), [track])
+  const { data: lyr, loading } = useMusicLyrics(lookup.artist, lookup.title)
   const reduced = useReducedMotion()
   const pal = usePalette(track.art)
   const lines = useMemo(() => parseLrc(lyr.synced), [lyr.synced])
+  const plan = usePlan(track)
+  const host = useRef<HTMLDivElement>(null)
+  const yt = useYouTubePlayer(host, plan)
   const preview = usePreview(track)
-  const { ref: audioRef, st, handlers } = useAudioState(preview)
-  const idx = preview && lines.length ? activeLine(lines, st.time) : -1
+  const fallback = plan.kind === "fallback"
+  const audioSrc = fallback ? preview : null
+  const audio = useAudioState(audioSrc)
+  const onScreen = !fallback
+  const st = onScreen ? yt.st : audio.st
+  const timed = onScreen ? plan.kind === "yt" && !yt.failed : !!audioSrc
+  const idx = timed && lines.length ? activeLine(lines, st.time) : -1
   const style = { "--pal-bg": pal.bg, "--pal-fg": pal.fg, "--pal-accent": pal.accent } as CSSProperties
+  const title = displayTitle(track)
+  const artist = track.artist && track.artist !== "pasted link" ? track.artist : ""
+  const ytUrl =
+    plan.kind === "yt" && plan.videoId
+      ? `https://www.youtube.com/watch?v=${plan.videoId}`
+      : track.source === "youtube"
+        ? track.url
+        : undefined
 
   return (
-    <div className="stage" style={style} role="dialog" aria-label={`${track.title} by ${track.artist}`}>
+    <div className="stage" style={style} role="dialog" aria-label={`${title}${artist ? ` by ${artist}` : ""}`} data-plan={plan.kind}>
       <style>{STAGE_CSS}</style>
       {track.art ? <img className="st-bg" src={track.art} alt="" aria-hidden="true" /> : null}
       <div className="st-veil" aria-hidden="true" />
       <button className="exit" onClick={onExit} aria-label="power off">⏻ power off</button>
 
       <div className="st-grid">
-        <div className="st-left">
-          <Cover art={track.art} spinning={st.playing && !reduced} />
+        <div className={`st-left${onScreen ? " on-screen" : ""}`}>
+          {onScreen ? (
+            <Screen host={host} art={track.art} resolving={plan.kind === "resolving"} />
+          ) : (
+            <Cover art={track.art} spinning={st.playing && !reduced} />
+          )}
           <div className="stage-head">
-            <div className="stage-src"><SourceMark source={track.source} /> now spinning</div>
-            <div className="stage-title">{track.title}</div>
-            {track.artist ? <div className="stage-artist">{track.artist}</div> : null}
+            <div className="stage-src">
+              <SourceMark source={onScreen ? "youtube" : track.source} /> {onScreen ? "now playing" : "now spinning"}
+            </div>
+            <div className="stage-title">{title}</div>
+            {artist ? <div className="stage-artist">{artist}</div> : null}
           </div>
-          {preview ? <Transport audio={audioRef} st={st} /> : null}
-          {track.embed ? (
-            // pasted Spotify link: the official player (full track when signed in, preview otherwise)
+          {plan.kind === "yt" && !yt.failed ? <Transport st={yt.st} ctl={yt.ctl} /> : null}
+          {audioSrc ? <Transport st={audio.st} ctl={audio.ctl} /> : null}
+          {fallback && track.embed && track.source === "spotify" ? (
+            // pasted Spotify link with no YouTube match: the official player (full track only for Premium listeners)
             <iframe
               className="stage-embed"
               src={track.embed}
@@ -207,42 +388,28 @@ export function LyricStage({ track, onExit }: { track: MusicTrack; onExit: () =>
               loading="lazy"
             />
           ) : null}
-          {!preview && !track.embed && track.url ? (
+          {fallback && !audioSrc && !track.embed && track.url ? (
             <a className="stage-open" href={track.url} target="_blank" rel="noopener">
               <SpotifyGlyph size={14} /> play the full track on Spotify
             </a>
           ) : null}
+          {fallback && plan.tried ? <p className="st-note">{FALLBACK_NOTE}</p> : null}
+          {yt.failed && ytUrl ? (
+            <p className="st-note">
+              this one will not play here.{" "}
+              <a href={ytUrl} target="_blank" rel="noopener">
+                open it on YouTube
+              </a>
+            </p>
+          ) : null}
         </div>
-        <div className="lyrics-wrap">
-          <LyricSheet lines={lines} idx={idx} timed={!!preview} plain={lyr.plain ?? null} loading={loading} track={track} />
+        <div className="lyrics-wrap" data-line={idx}>
+          <LyricSheet lines={lines} idx={idx} timed={timed} plain={lyr.plain ?? null} loading={loading} track={track} />
         </div>
       </div>
 
-      {preview ? <audio ref={audioRef} src={preview} autoPlay {...handlers} /> : null}
+      {audioSrc ? <audio ref={audio.ref} src={audioSrc} autoPlay {...audio.handlers} /> : null}
     </div>
   )
 }
 
-// ── Playing (YouTube pick): dimmed background video + overlay ─────────
-export function VideoStage({ track, onExit }: { track: MusicTrack; onExit: () => void }) {
-  const reduced = useReducedMotion()
-  return (
-    <div className={`vstage${reduced ? " reduced" : ""}`} role="dialog" aria-label={`${track.title} by ${track.artist}`}>
-      <style>{STAGE_CSS}</style>
-      <iframe
-        className="vframe"
-        src={track.embed ?? `https://www.youtube.com/embed/${track.id}?autoplay=1&rel=0`}
-        title={track.title}
-        allow="autoplay; encrypted-media"
-        allowFullScreen
-      />
-      <div className="vscrim" />
-      <button className="exit" onClick={onExit} aria-label="power off">⏻ power off</button>
-      <div className="voverlay">
-        <div className="stage-src"><YouTubeGlyph size={16} /> now playing</div>
-        <div className="stage-title">{track.title}</div>
-        {track.artist ? <div className="stage-artist">{track.artist}</div> : null}
-      </div>
-    </div>
-  )
-}

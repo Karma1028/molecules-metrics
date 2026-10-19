@@ -1,0 +1,127 @@
+{
+ "slug": "telekom",
+ "url": "https://www.telekom.de/start",
+ "fp": {
+  "title": "Telekom | Mobilfunk, Festnetz & Internet und TV",
+  "globals": [
+   "Flickity",
+   "jQuery"
+  ],
+  "libHints": [
+   "react"
+  ],
+  "hosts": [
+   "ebs01.telekom.de",
+   "onebot-webfrontend.oneai.yo-digital.com",
+   "www.telekom.de",
+   "tags-eu.tiqcdn.com",
+   "visitor-service-eu-central-1.tealiumiq.com",
+   "www2.telekom.de"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 24,
+   "img": 65,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 9,
+   "links": 153,
+   "splitChars": 55
+  },
+  "pageHeightVh": 8,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(56, 56, 56)",
+   "ff": "TeleNeo"
+  },
+  "h1": {
+   "ff": "TeleNeo",
+   "fs": "36px",
+   "fw": "800",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Mobilfunk, Internet, TV und mehr – alle Telekom Angebote entdecken"
+  },
+  "h2": {
+   "ff": "TeleNeo",
+   "fs": "48px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Mobilfunk"
+  },
+  "p": {
+   "ff": "TeleNeo",
+   "fs": "15px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Mobilfunk"
+  },
+  "fontsLoaded": [
+   "TeleNeo",
+   "Consent-TeleNeo"
+  ],
+  "topFonts": [
+   [
+    "TeleNeo 400",
+    109
+   ],
+   [
+    "TeleNeo 700",
+    86
+   ],
+   [
+    "TeleNeo 500",
+    21
+   ],
+   [
+    "TeleNeo 800",
+    14
+   ],
+   [
+    "Consent-TeleNeo 655",
+    11
+   ],
+   [
+    "Consent-TeleNeo 400",
+    8
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    15
+   ],
+   [
+    "rgb(226, 0, 116)",
+    9
+   ],
+   [
+    "rgba(255, 255, 255, 0.4)",
+    6
+   ],
+   [
+    "rgb(208, 208, 208)",
+    5
+   ],
+   [
+    "rgb(38, 38, 38)",
+    5
+   ],
+   [
+    "rgb(237, 237, 237)",
+    5
+   ]
+  ],
+  "css": {
+   "fixed": 6,
+   "filter": 3,
+   "sticky": 1,
+   "clip-path": 2,
+   "will-change": 1
+  }
+ },
+ "finalUrl": "https://www.telekom.de/start"
+}

@@ -94,9 +94,10 @@ const CSS = String.raw`
   .p-gl .cell .slotmark .sn{font:700 clamp(13px,1.5vw,18px)/1 var(--font-mono);letter-spacing:.06em}
   .p-gl .cell .slotmark .sl{font:600 6.5px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;opacity:.8}
 
-  .p-gl .empty{flex:0 0 auto;margin-top:10px;display:flex;align-items:center;gap:10px;font:500 11px/1.4 var(--font-mono);color:var(--muted)}
-  .p-gl .empty a{color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor;padding-bottom:2px}
-  .p-gl .empty a .ic{width:12px;height:12px}
+  .p-gl .gl-drop{color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor;padding-bottom:2px}
+  .p-gl .gl-drop{font:500 10.5px/1.4 var(--font-mono);align-self:flex-end}
+  .p-gl .gl-drop .ic{width:12px;height:12px}
+  .p-gl .st-drop{display:none;color:var(--accent);text-decoration:underline;text-underline-offset:2px}
 
   /* lightbox v2 — immersive darkroom print */
   .p-gl-lb{position:fixed;inset:0;z-index:1000;background:color-mix(in srgb,#120f0b 90%,var(--paper));backdrop-filter:blur(12px);
@@ -161,6 +162,7 @@ const CSS = String.raw`
   @media(max-width:760px){
     .p-gl{height:100%;min-height:0;overflow:hidden}
     .p-gl .gl-src{display:none}
+    .p-gl .st-drop{display:inline}
     .p-gl .gl-lede{font-size:11px;line-height:1.35}
     .p-gl .stage{display:flex;flex-direction:column;gap:6px;flex:1;min-height:0}
     .p-gl .deck{flex:1;min-height:0}
@@ -173,7 +175,6 @@ const CSS = String.raw`
     .p-gl .cell{aspect-ratio:1/1}
     .p-gl .cell .cno{display:none}
     .p-gl .cell .slotmark .sl{display:none}
-    .p-gl .empty{margin-top:4px;font-size:9.5px;flex-wrap:wrap;gap:4px 8px}
     .p-gl-lb .lb-frame{display:block;--gut:0px;padding:64px 0}
     .p-gl-lb .lb-stage,.p-gl-lb .lb-stage img{max-height:54vh}
     .p-gl-lb .lb-note.s-sm,.p-gl-lb .lb-note.s-md,.p-gl-lb .lb-note.s-lg{font-size:clamp(15px,4.4vw,19px)}
@@ -280,7 +281,12 @@ export function Gallery() {
         right={
           <div className="gl-src">
             <TwinDoor to="/analyst/work" label="Pull the thread: how I work" world="analyst" />
-            <span className="live"><span className="dot" /> <b>{n}</b> frames · {live ? "live from Drive" : "local set"}</span>
+            <span className="live"><span className="dot" /> <b>{n}</b> frames · {live ? "live from Drive" : "local set, live folder empty"}</span>
+            {!live && (
+              <a className="gl-drop" href={DRIVE_FOLDER} target="_blank" rel="noopener">
+                <Icon id="i-download" /> Drop photos into the live folder
+              </a>
+            )}
           </div>
         }
       />
@@ -343,7 +349,14 @@ export function Gallery() {
         <div className="sheet">
           <div className="sheet-top">
             <span className="st">Roll · <b>{String(n).padStart(2, "0")}</b> exposures</span>
-            <span className="st">{live ? "live" : "local"}</span>
+            <span className="st">
+              {live ? "live" : "local"}
+              {!live && (
+                <a className="st-drop" href={DRIVE_FOLDER} target="_blank" rel="noopener">
+                  {" "}· add to live folder
+                </a>
+              )}
+            </span>
           </div>
           <div className="film-mat roll">
           <div
@@ -386,15 +399,6 @@ export function Gallery() {
           </div>
         </div>
       </div>
-
-      {!live && (
-        <div className="empty">
-          No frames in the live folder yet, showing the local set.
-          <a href={DRIVE_FOLDER} target="_blank" rel="noopener">
-            <Icon id="i-download" /> Drop photos into the live folder
-          </a>
-        </div>
-      )}
 
       {open && (
         <GalleryLightbox

@@ -8,6 +8,7 @@ import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { useGoaClock } from "../../lib/useGoaClock"
+import { Headline } from "../../components/headline/Headline"
 
 interface SubsystemMeta {
   to: string
@@ -215,9 +216,9 @@ export function AnalystHome() {
           <div className="kick">
             LOG.00 / Instrument logbook / Subsystems<span className="caret" aria-hidden="true">▍</span>
           </div>
-          <h1 className="big">
+          <Headline world="analyst" className="big">
             The<br />Analyst<em>.</em>
-          </h1>
+          </Headline>
         </div>
         <div>
           <p className="lede">

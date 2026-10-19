@@ -6,6 +6,7 @@ import { motionTokens } from "../../lib/motion-tokens"
 import { AlponaCorner, AlponaRule } from "../../components/motifs/Alpona"
 import { useGoaPhrase } from "../../lib/useGoaClock"
 import { useOneScreen } from "../../hooks/useOneScreen"
+import { Headline } from "../../components/headline/Headline"
 
 /**
  * Artist home v2 — "The Masthead". Editorial split: a magazine-style masthead +
@@ -264,9 +265,9 @@ export function ArtistHome() {
             <span className="horse" aria-hidden="true" />
             Field Notebook · Goa
           </div>
-          <h1 className="ttl">
+          <Headline world="artist" className="ttl">
             The <em className="hl">Artist</em>
-          </h1>
+          </Headline>
           <AlponaRule className="rule" />
           <p className="state">Six spreads, logged in warm light. Pick one.</p>
 

@@ -1,0 +1,76 @@
+{
+ "slug": "duhaihang",
+ "url": "https://duhaihang.com/",
+ "fp": {
+  "title": "Du Haihang",
+  "globals": [
+   "gsap"
+  ],
+  "libHints": [],
+  "hosts": [
+   "duhaihang.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 2,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 5,
+   "splitChars": 3
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(47, 47, 47)",
+   "ff": "ApercuProMono"
+  },
+  "h1": {
+   "ff": "ApercuBold",
+   "fs": "126px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Los Angeles\nShanghai.\nA coding skin with a design soul, in the digital age."
+  },
+  "h2": {
+   "ff": "ApercuProMono",
+   "fs": "30px",
+   "fw": "400",
+   "ls": "0.5px",
+   "tt": "none",
+   "text": "Hi, there. I have been creating digital design over past 10 years. My work spans"
+  },
+  "p": null,
+  "fontsLoaded": [
+   "ApercuBold",
+   "ApercuProMono"
+  ],
+  "topFonts": [
+   [
+    "ApercuProMono 400",
+    98
+   ],
+   [
+    "Arial 400",
+    38
+   ],
+   [
+    "ApercuBold 400",
+    5
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(47, 47, 47)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 4
+  }
+ },
+ "finalUrl": "https://duhaihang.com/"
+}

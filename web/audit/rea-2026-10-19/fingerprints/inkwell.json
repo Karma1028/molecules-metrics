@@ -1,0 +1,113 @@
+{
+ "slug": "inkwell",
+ "url": "https://inkwell.tech/",
+ "fp": {
+  "title": "Inkwell — the Intelligence Layer that optimizes processes, reduces costs and fuels creativ",
+  "globals": [
+   "__NUXT__"
+  ],
+  "libHints": [
+   "nuxt"
+  ],
+  "hosts": [
+   "inkwell.tech"
+  ],
+  "counts": {
+   "canvas": 1,
+   "video": 0,
+   "svg": 12,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 2,
+   "splitChars": 890
+  },
+  "pageHeightVh": 32.4,
+  "body": {
+   "bg": "rgb(246, 248, 250)",
+   "color": "rgb(30, 39, 45)",
+   "ff": "\"FK Grotesk\""
+  },
+  "h1": null,
+  "h2": {
+   "ff": "FK Grotesk",
+   "fs": "26px",
+   "fw": "300",
+   "ls": "-0.252px",
+   "tt": "none",
+   "text": "Bespoke AI and human ingenuity come together to radically transform your busines"
+  },
+  "p": {
+   "ff": "FK Grotesk Mono",
+   "fs": "8.1px",
+   "fw": "400",
+   "ls": "-0.081px",
+   "tt": "uppercase",
+   "text": "Effective Date: April 08, 2025"
+  },
+  "fontsLoaded": [
+   "FK Grotesk Mono",
+   "FK Grotesk"
+  ],
+  "topFonts": [
+   [
+    "FK Grotesk 400",
+    589
+   ],
+   [
+    "FK Grotesk 300",
+    158
+   ],
+   [
+    "FK Grotesk Mono 400",
+    93
+   ],
+   [
+    "FK Grotesk 200",
+    17
+   ],
+   [
+    "Roboto Mono 500",
+    7
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgba(187, 188, 196, 0.1)",
+    8
+   ],
+   [
+    "rgb(255, 255, 255)",
+    4
+   ],
+   [
+    "rgb(187, 188, 196)",
+    4
+   ],
+   [
+    "rgb(30, 39, 45)",
+    3
+   ],
+   [
+    "rgba(255, 255, 255, 0.08)",
+    3
+   ],
+   [
+    "rgba(30, 39, 45, 0.02)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 40,
+   "cursor:none": 1391,
+   "will-change": 757,
+   "backdrop-filter": 3,
+   "mask": 15,
+   "sticky": 1,
+   "clip-path": 4,
+   "filter": 97
+  }
+ },
+ "finalUrl": "https://inkwell.tech/"
+}

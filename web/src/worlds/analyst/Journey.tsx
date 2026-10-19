@@ -1,13 +1,23 @@
-import { useState } from "react"
-import { AnimatePresence, motion, useReducedMotion } from "motion/react"
+import { useRef, useState } from "react"
+import { motion, useReducedMotion } from "motion/react"
 import { Icon } from "../../lib/icons"
 import { motionTokens } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { LogHeader } from "../../components/headers/LogHeader"
 import { TwinDoor } from "../../components/TwinDoor"
-import { MAP, PINS, STATIONS, cameraBox, graticule, project, routePath } from "./journey-stations"
+import { MAP, PINS, STATIONS, graticule, project, routePath } from "./journey-stations"
+import { DetailCard } from "./journey/DetailCard"
+import { Scrubber } from "./journey/Scrubber"
+import { PANEL_CSS, SCRUB_CSS } from "./journey/journey-css"
+import { SPANS, T0, stationAt } from "./journey/timeline"
+import { camera } from "./journey/camera"
+import { useBoxSize } from "./journey/useFitScale"
 
 const GRID = graticule()
+const LON_GAP = GRID.lons[1].x - GRID.lons[0].x
+// map text never renders below these pixel sizes, whatever the map's size on screen
+const GRID_PX = 10.5
+const PIN_PX = 11
 const ROUTE = routePath()
 const PIN_XY = PINS.map(project)
 // a pin takes the colour of the first era that stood on it
@@ -29,7 +39,9 @@ const CSS = String.raw`
   .p-jn .jn-arc .flow b{color:var(--ink)} .p-jn .jn-arc .flow .a{color:var(--accent)}
   .p-jn .jn-arc .flow .ic{width:12px;height:12px;color:var(--accent)}
 
-  .p-jn .jgrid{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,1fr);gap:clamp(14px,2vw,28px)}
+  .p-jn .jgrid{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,1fr);
+    grid-template-rows:minmax(0,1fr) auto;gap:clamp(10px,1.6vh,16px) clamp(14px,2vw,28px)}
+  .p-jn .jscrub{grid-column:1 / -1}
   .p-jn .pen{color:var(--pen)} .p-jn .teal{color:var(--teal)} .p-jn .orange{color:var(--orange)}
 
   /* the plot: a lat/long frame, a route that draws itself, pins you can press */
@@ -43,13 +55,13 @@ const CSS = String.raw`
   .p-jn .carve{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
   .p-jn .signal{fill:none;stroke:var(--muted);stroke-width:1.6;stroke-dasharray:4 6;stroke-linecap:round}
   /* pins stand on a stem; the head lifts on hover with a spring overshoot */
-  .p-jn .pin{cursor:pointer;outline:none;transition:opacity .5s var(--ease)}
+  .p-jn .pin{cursor:pointer;outline:none;transition:opacity ${motionTokens.duration.normal}s var(--ease)}
   .p-jn .pin .foot{fill:currentColor;opacity:.5}
   .p-jn .pin .stem{stroke:currentColor;stroke-width:2;transform-box:fill-box;transform-origin:50% 100%;
-    transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
-  .p-jn .pin .head{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+    transition:transform ${motionTokens.duration.normal}s var(--spring)}
+  .p-jn .pin .head{transition:transform ${motionTokens.duration.normal}s var(--spring)}
   .p-jn .pin .dot{fill:var(--card);stroke:currentColor;stroke-width:2.4}
-  .p-jn .pin .halo{fill:currentColor;opacity:0;transition:opacity .25s var(--ease)}
+  .p-jn .pin .halo{fill:currentColor;opacity:0;transition:opacity ${motionTokens.duration.fast}s var(--ease)}
   .p-jn .pin:hover .head,.p-jn .pin.on .head{transform:translateY(-6px)}
   .p-jn .pin:hover .stem,.p-jn .pin.on .stem{transform:scaleY(1.375)}
   .p-jn .pin.on .dot{fill:currentColor}
@@ -63,51 +75,28 @@ const CSS = String.raw`
   .p-jn .overview{position:absolute;top:10px;right:10px;background:var(--card);border:1px solid var(--rule);border-radius:16px;
     padding:5px 10px;font:600 9.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer}
   .p-jn .overview:hover{color:var(--accent);border-color:var(--accent)}
-  .p-jn .map-cap{position:absolute;left:14px;bottom:10px;font:500 9px/1 var(--font-mono);letter-spacing:.14em;
+  .p-jn .map-cap{position:absolute;left:14px;bottom:10px;font:500 10px/1 var(--font-mono);letter-spacing:.14em;
     text-transform:uppercase;color:var(--muted)}
 
-  /* the station card + stepper */
-  .p-jn .jside{min-height:0;display:flex;flex-direction:column;gap:clamp(10px,1.6vh,16px)}
-  .p-jn .jcard{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:8px;
-    background:var(--card);border:1px solid var(--rule);border-left:3px solid currentColor;border-radius:12px;
-    box-shadow:var(--shadow-sm);padding:clamp(14px,2.4vh,26px) clamp(16px,1.8vw,24px)}
-  .p-jn .jc-top{display:flex;align-items:center;gap:10px}
-  .p-jn .jc-ic{width:18px;height:18px}
-  .p-jn .jc-era{font:600 10px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase}
-  .p-jn .jc-per{margin-left:auto;font:500 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .p-jn .jc-title{font:700 clamp(19px,2.1vw,27px)/1.1 var(--font-display);color:var(--ink);letter-spacing:-.015em;margin:2px 0 0;text-wrap:balance}
-  .p-jn .jc-place{font:600 12px/1.35 var(--font-mono);color:var(--muted)}
-  .p-jn .jc-metric{align-self:flex-start;font:700 clamp(20px,2.4vw,30px)/1 var(--font-mono);font-variant-numeric:tabular-nums;color:currentColor}
-  .p-jn .jc-note{font-size:13px;line-height:1.45;color:var(--muted);text-wrap:pretty;margin:0}
-  .p-jn .jc-nav{display:flex;gap:8px;margin-top:4px}
-  .p-jn .jc-nav button{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--rule);border-radius:20px;
-    padding:6px 12px;font:600 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);cursor:pointer}
-  .p-jn .jc-nav button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
-  .p-jn .jc-nav button:disabled{opacity:.35;cursor:default}
-  .p-jn .jc-nav .ic{width:11px;height:11px}
-  .p-jn .jc-nav .prev .ic{transform:scaleX(-1)}
-
-  .p-jn .jsteps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
-  .p-jn .jstep{display:flex;flex-direction:column;gap:5px;width:100%;background:none;border:none;border-top:2px solid var(--rule);
-    padding:7px 2px 0;cursor:pointer;text-align:left;color:var(--muted)}
-  .p-jn .jstep .y{font:600 10px/1 var(--font-mono);font-variant-numeric:tabular-nums}
-  .p-jn .jstep .t{font:500 10px/1.25 var(--font-body);overflow-wrap:anywhere}
-  .p-jn .jstep.on{border-top-color:currentColor}
-  .p-jn .jstep.on .y,.p-jn .jstep.on .t{color:var(--ink)}
-  .p-jn .jstep:focus-visible{outline:1.5px solid var(--accent);outline-offset:2px}
-
   @media(max-width:760px){
-    .p-jn .jn-arc{display:none}
-    .p-jn .jgrid{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto auto;gap:10px}
-    .p-jn .jmap{min-height:150px}
-    .p-jn .jside{display:contents}
-    .p-jn .jcard{flex:0 0 auto;gap:5px;padding:12px 14px}
-    .p-jn .jc-note{font-size:12px}
-    .p-jn .jstep .t{display:none}
+    .p-jn .log-head{flex-wrap:wrap;row-gap:5px;margin-bottom:6px;padding-bottom:6px}
+    .p-jn .log-head .lh-mono{margin-bottom:4px}
+    .p-jn .log-head .lh-lede{margin-top:4px}
+    .p-jn .log-head .lh-lede{font-size:10.5px;line-height:1.3}
+    .p-jn .log-head .lh-right{width:100%}
+    .p-jn .jn-arc{flex-direction:row;align-items:center;justify-content:space-between;gap:8px;width:100%}
+    .p-jn .jn-arc .td-label,.p-jn .jn-arc .td-arr{font-size:10px;letter-spacing:.06em}
+    .p-jn .jn-arc .flow{letter-spacing:.04em;gap:4px}
+    .p-jn .jgrid{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto auto;gap:6px}
+    .p-jn .jcard{padding:8px 12px}
+    .p-jn .overview{top:auto;bottom:6px;right:6px}
+    .p-jn .map-cap{left:10px;bottom:9px;letter-spacing:.04em}
   }
   @media(prefers-reduced-motion:reduce){
     .p-jn .pin,.p-jn .pin .halo,.p-jn .pin .head,.p-jn .pin .stem{transition:none}
   }
+${PANEL_CSS}
+${SCRUB_CSS}
 `
 
 function stationsOn(pin: number): number[] {
@@ -116,17 +105,22 @@ function stationsOn(pin: number): number[] {
 
 export function Journey() {
   const reduce = useReducedMotion()
-  const [sel, setSel] = useState(0)
+  // the scrubber holds a point in time; the live step is whatever spans it
+  const [t, setT] = useState(T0)
   // the map opens on the whole route; the camera only moves once a stop is chosen
   const [focus, setFocus] = useState(false)
+  const sel = stationAt(t)
   const station = STATIONS[sel]
+  const mapRef = useRef<HTMLElement>(null)
+  const box = useBoxSize(mapRef)
 
   useOneScreen()
 
-  const choose = (i: number) => {
-    setSel(i)
+  const scrub = (next: number) => {
+    setT(next)
     setFocus(true)
   }
+  const choose = (i: number) => scrub(SPANS[i].start)
   // a pin with two stations (Bankura) steps between them on repeat presses
   const pressPin = (p: number) => {
     const on = stationsOn(p)
@@ -134,7 +128,13 @@ export function Journey() {
     choose(at === -1 ? on[0] : on[(at + 1) % on.length])
   }
   const step = (d: number) => choose(Math.max(0, Math.min(LAST, sel + d)))
-  const camera = cameraBox(focus && !reduce ? PIN_XY[station.pin] : null)
+  const cam = camera(box, focus && !reduce ? PIN_XY[station.pin] : null)
+  // user units per screen pixel at the current camera, so labels stay legible
+  const unit = 1 / Math.max(0.01, cam.ppu)
+  const gridFont = GRID_PX * unit
+  const pinFont = Math.max(PIN_PX, PIN_PX * unit)
+  // on a very small map, label every other meridian so the numbers never collide
+  const lonEvery = gridFont * 2.9 + 8 > LON_GAP ? 2 : 1
   const onKey = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowRight" || e.key === "ArrowDown") {
       e.preventDefault()
@@ -151,14 +151,6 @@ export function Journey() {
         initial: { pathLength: 0 },
         animate: { pathLength: 1 },
         transition: { duration: DRAW, ease: motionTokens.easing.glide },
-      }
-  const swap = reduce
-    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: motionTokens.duration.fast } }
-    : {
-        initial: { opacity: 0, y: motionTokens.distance.sm, filter: "blur(4px)" },
-        animate: { opacity: 1, y: 0, filter: "blur(0px)" },
-        exit: { opacity: 0, y: -motionTokens.distance.sm, filter: "blur(4px)" },
-        transition: { duration: motionTokens.duration.normal, ease: motionTokens.easing.smooth },
       }
 
   return (
@@ -182,26 +174,28 @@ export function Journey() {
       />
 
       <div className="jgrid">
-        <figure className={`jmap${focus ? " focus" : ""}`} aria-label="Route map: Bankura, Kolkata, Jaipur, Goa, then remote from home in Bankura">
+        <figure ref={mapRef} className={`jmap${focus ? " focus" : ""}`} aria-label="Route map: Bankura, Kolkata, Jaipur, Goa, then remote from home in Bankura">
           <motion.svg
             initial={false}
-            animate={{ viewBox: camera }}
-            transition={{ duration: motionTokens.duration.slow * 1.4, ease: motionTokens.easing.smooth }}
+            animate={{ viewBox: cam.viewBox }}
+            transition={{ duration: motionTokens.duration.cinematic, ease: motionTokens.easing.smooth }}
             preserveAspectRatio="xMidYMid meet"
             role="group"
             aria-label="stations"
           >
             <g aria-hidden="true">
-              {GRID.lons.map((g) => (
+              {GRID.lons.map((g, k) => (
                 <g key={g.label}>
                   <line className="g-line" x1={g.x} x2={g.x} y1={MAP.pad.y} y2={MAP.h - MAP.pad.y} />
-                  <text className="g-lab" x={g.x + 4} y={MAP.pad.y - 10}>{g.label}</text>
+                  {k % lonEvery === 0 && (
+                    <text className="g-lab" x={g.x + 4} y={MAP.pad.y - 8} style={{ fontSize: gridFont }}>{g.label}</text>
+                  )}
                 </g>
               ))}
               {GRID.lats.map((g) => (
                 <g key={g.label}>
                   <line className="g-line" x1={MAP.pad.x} x2={MAP.w - MAP.pad.x} y1={g.y} y2={g.y} />
-                  <text className="g-lab" x={6} y={g.y + 3}>{g.label}</text>
+                  <text className="g-lab" x={6} y={g.y + gridFont / 3} style={{ fontSize: gridFont }}>{g.label}</text>
                 </g>
               ))}
               <motion.path className="casing" d={ROUTE.travel} {...draw} />
@@ -244,7 +238,7 @@ export function Journey() {
                     <circle className="halo" cx={x} cy={y - STEM} r={18} />
                     <circle className="dot" cx={x} cy={y - STEM} r={6.5} />
                   </g>
-                  <text className="pin-lab" x={lab.x} y={lab.y} textAnchor={lab.anchor}>
+                  <text className="pin-lab" x={lab.x} y={lab.y} textAnchor={lab.anchor} style={{ fontSize: pinFont }}>
                     {pin.label}
                   </text>
                 </motion.g>
@@ -259,44 +253,8 @@ export function Journey() {
           <figcaption className="map-cap">plotted on lat/long · not to scale</figcaption>
         </figure>
 
-        <div className="jside">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.article key={sel} className={`jcard ${station.accent}`} aria-live="polite" {...swap}>
-              <div className="jc-top">
-                <Icon id={station.icon} className="ic jc-ic" />
-                <span className="jc-era">{station.era}</span>
-                <span className="jc-per">{station.period}</span>
-              </div>
-              <h2 className="jc-title">{station.title}</h2>
-              <div className="jc-place">{station.place}</div>
-              <div className="jc-metric">{station.metric}</div>
-              <p className="jc-note">{station.note}</p>
-              <div className="jc-nav">
-                <button className="prev" onClick={() => step(-1)} disabled={sel === 0} aria-label="previous station">
-                  <Icon id="i-arrow" /> prev
-                </button>
-                <button onClick={() => step(1)} disabled={sel === LAST} aria-label="next station">
-                  next <Icon id="i-arrow" />
-                </button>
-              </div>
-            </motion.article>
-          </AnimatePresence>
-
-          <ol className="jsteps" aria-label="stations in order">
-            {STATIONS.map((s, i) => (
-              <li key={s.title}>
-                <button
-                  className={`jstep ${s.accent}${i === sel ? " on" : ""}`}
-                  aria-current={i === sel ? "step" : undefined}
-                  onClick={() => choose(i)}
-                >
-                  <span className="y">{s.period.slice(0, 4)}</span>
-                  <span className="t">{s.title}</span>
-                </button>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <DetailCard sel={sel} />
+        <Scrubber t={t} sel={sel} onScrub={scrub} onStep={step} onJump={choose} />
       </div>
     </main>
   )

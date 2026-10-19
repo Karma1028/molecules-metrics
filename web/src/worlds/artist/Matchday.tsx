@@ -86,7 +86,7 @@ const CSS = String.raw`
   .p-md .backdrop{position:absolute;inset:0;z-index:0;overflow:hidden}
   .p-md .backdrop .bg{position:absolute;inset:-6%;background-size:cover;background-position:center 30%;
     background-image:var(--bg);filter:saturate(.9);transform-origin:60% 40%;
-    animation:mdKen 42s ease-in-out infinite alternate}
+    animation:mdKen 42s ease-out both}
   .p-md .backdrop .beam{position:absolute;inset:0;mix-blend-mode:screen;opacity:.5;
     background:linear-gradient(104deg,transparent 42%,rgba(232,176,75,.26) 50%,transparent 58%);
     transform:translateX(-60%);display:none}
