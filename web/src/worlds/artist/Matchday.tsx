@@ -120,7 +120,7 @@ const CSS = String.raw`
   .p-md .mh-sub{font-family:var(--font-hand);font-size:clamp(13px,1.3vw,18px);color:var(--fz-mut);rotate:-.6deg}
   .p-md .mh-meta{text-align:right;display:flex;flex-direction:column;gap:3px;align-items:flex-end}
   .p-md .mh-iss{font:800 10px/1 var(--font-display);letter-spacing:.04em;color:var(--fz-ink);text-transform:uppercase}
-  .p-md .mh-src{font:600 8.5px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);max-width:24ch}
+  .p-md .mh-src{font:600 8.5px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);max-width:24ch;white-space:normal}
 
   /* ── the spread grid ── */
   .p-md .spread{flex:1;min-height:0;display:grid;gap:clamp(9px,1.1vw,15px);

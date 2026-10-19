@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import { motionTokens } from "../../lib/motion-tokens"
 import { damp, settled } from "../../lib/damp"
 import { feetAim, rollDegrees, speedAmount } from "./pointer-math"
-import { isTextField, listenAll, pointerMemory, targetOf, translate } from "./pointer-shared"
+import { BALL_SEAM, isTextField, listenAll, pointerMemory, targetOf, translate } from "./pointer-shared"
 
 const P = motionTokens.pointer
 
@@ -99,7 +99,7 @@ export function InkPointer({ reduced, handoff }: { reduced: boolean; handoff: bo
         <span className="ptr-ball">
           <svg ref={spinRef} viewBox="-10 -10 20 20" width="100%" height="100%">
             <circle r="9" className="ptr-ball-skin" />
-            <path className="ptr-ball-seam" d="M0-3.6 3.4-1.1 2.1 2.9H-2.1L-3.4-1.1Z M0-3.6V-9 M3.4-1.1 8.6-2.8 M2.1 2.9 5.3 7.3 M-2.1 2.9-5.3 7.3 M-3.4-1.1-8.6-2.8" />
+            <path className="ptr-ball-seam" d={BALL_SEAM} />
           </svg>
         </span>
       </span>
