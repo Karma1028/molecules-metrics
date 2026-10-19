@@ -75,3 +75,6 @@ export function countSeen(key: string): number {
 }
 
 export const translate = (x: number, y: number) => `translate3d(${x}px, ${y}px, 0)`
+
+/** the football's panel seams, drawn in a -10..10 box (artist pointer, landing intro) */
+export const BALL_SEAM = "M0-3.6 3.4-1.1 2.1 2.9H-2.1L-3.4-1.1Z M0-3.6V-9 M3.4-1.1 8.6-2.8 M2.1 2.9 5.3 7.3 M-2.1 2.9-5.3 7.3 M-3.4-1.1-8.6-2.8"

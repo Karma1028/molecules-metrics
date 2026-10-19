@@ -64,6 +64,24 @@ export const motionTokens = {
     fallbackMs: 1500,
   },
   /**
+   * Landing intro (components/intro): a keepy-uppy count, once per session.
+   * Loader length is still Tuhin's call; every beat is here so it is one edit.
+   */
+  intro: {
+    /** touches counted before the kick */
+    touches: 6,
+    /** ms per touch (ball up and back to the foot) */
+    beatMs: 140,
+    /** ms the last kick takes to leave the frame */
+    kickMs: 420,
+    /** ms after the kick before "Then he counted." starts counting in */
+    countDelayMs: 260,
+    /** ms the finished line holds before the page lifts */
+    holdMs: 520,
+    /** ms the overlay takes to lift off the landing */
+    exitMs: 560,
+  },
+  /**
    * Pointers (components/pointer). lambda = damping per ms for lib/damp.ts.
    * Measured refs (audit/rea-2026-10-19 §2b/§2d): inkwell ring 0.006 (t63 ~167 ms),
    * tight dot ~60 ms → 0.016; magnet pulls 0.2 of the offset toward a hovered target.

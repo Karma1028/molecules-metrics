@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { HERO_STYLE } from "./heroAssets"
+import { KeepyUppy } from "../components/intro/KeepyUppy"
 
 const HERO_BODY = String.raw`
   <div class="bg"></div><div class="halftone" aria-hidden="true"></div><div class="grain"></div>
@@ -817,5 +818,10 @@ export function Landing() {
     }
   }, [])
 
-  return <div className="hero-root" ref={hostRef} />
+  return (
+    <>
+      <KeepyUppy />
+      <div className="hero-root" ref={hostRef} />
+    </>
+  )
 }

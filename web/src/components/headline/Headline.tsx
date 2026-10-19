@@ -19,7 +19,7 @@ export function Headline({ world, className, children }: { world: World; classNa
   const reduced = useReducedMotion() ?? false
   const [shown, setShown] = useState(false)
   const counted = world === "analyst"
-  const nodes = useMemo(() => splitHeadline(children, { chars: counted }).nodes, [children, counted])
+  const { nodes, words } = useMemo(() => splitHeadline(children, { chars: counted }), [children, counted])
   const label = useMemo(() => textOf(children), [children])
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export function Headline({ world, className, children }: { world: World; classNa
   }, [counted, reduced])
 
   return (
-    <h1 ref={ref} className={`hl-${counted ? "count" : "write"}${className ? ` ${className}` : ""}${shown ? " in" : ""}`} aria-label={label} style={{ ["--hs" as string]: `${H.stagger}s` }}>
+    <h1 ref={ref} className={`hl-${counted ? "count" : "write"}${className ? ` ${className}` : ""}${shown ? " in" : ""}`} aria-label={label} style={{ ["--hs" as string]: `${H.stagger}s`, ["--hn" as string]: words }}>
       {nodes}
     </h1>
   )
