@@ -7,7 +7,6 @@ import { Icon, SpriteMount } from "../lib/icons"
 import { routeVariants } from "../lib/world-motion"
 import { deckIndex, travelBetween, type Travel } from "../lib/deck"
 import { DeckRail } from "./deck/DeckRail"
-import { DeckTunnel } from "./deck/DeckTunnel"
 import { DeckSeam } from "./deck/DeckSeam"
 import { useDeckScroll } from "./deck/useDeckScroll"
 import { AlponaCorner } from "./motifs/Alpona"
@@ -70,7 +69,8 @@ export function WorldLayout({ world }: { world: World }) {
   if (lastPath !== loc.pathname) {
     setTravel(travelBetween(lastPath, loc.pathname))
     setHop((h) => h + 1)
-    setMoving(true)
+    // perspective is only needed for the cross-world card flip
+    setMoving(travelBetween(lastPath, loc.pathname).cross)
     setLastPath(loc.pathname)
     setMenuOpen(false)
   }
@@ -131,9 +131,6 @@ export function WorldLayout({ world }: { world: World }) {
         </div>
       </header>
 
-      {hop > 0 && !reduce && !travel.cross && deckIndex(loc.pathname) >= 0 && (
-        <DeckTunnel key={hop} world={world} nav={WORLDS[world].nav} dest={deckIndex(loc.pathname)} dir={travel.dir} />
-      )}
       {hop > 0 && !reduce && travel.cross && <DeckSeam key={hop} />}
       <div className="deck-stage" data-moving={moving || undefined}>
         <AnimatePresence mode="wait" custom={travel} onExitComplete={() => setShown(world)}>

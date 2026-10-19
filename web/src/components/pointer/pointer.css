@@ -11,14 +11,15 @@
 /* ---------- artist: ink nib + the ball he watched ---------- */
 .ptr-dot, .ptr-ball, .ptr-lines { position: absolute; translate: -50% -50%; }
 .ptr-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); transition: scale .32s cubic-bezier(.19,1,.22,1); }
-.ptr-ball { width: 15px; height: 15px; color: var(--ink); filter: drop-shadow(1px 2px 0 color-mix(in srgb, var(--ink) 18%, transparent));
-  transition: scale .32s cubic-bezier(.19,1,.22,1); }
-.ptr-ball svg { display: block; overflow: visible; }
+.ptr-ball { width: 15px; height: 15px; color: var(--ink); transition: scale .32s cubic-bezier(.19,1,.22,1); }
+/* static shadow disc: a drop-shadow filter on the spinning svg re-rasterised every frame */
+.ptr-ball-sh { position: absolute; inset: 0; translate: 1px 2px; border-radius: 50%; background: color-mix(in srgb, var(--ink) 18%, transparent); }
+.ptr-ball svg { position: relative; display: block; overflow: visible; will-change: transform; }
 .ptr-ball-skin { fill: var(--card); stroke: currentColor; stroke-width: 1.4; }
 .ptr-ball-seam { fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linejoin: round; }
 .ptr-ball-seam { fill-rule: evenodd; }
 /* speed lines trail opposite the travel direction; rotation set per frame */
-.ptr-lines { width: 30px; height: 11px; translate: -100% -50%; transform-origin: 100% 50%; opacity: 0;
+.ptr-lines { will-change: transform, opacity; width: 30px; height: 11px; translate: -100% -50%; transform-origin: 100% 50%; opacity: 0;
   background: repeating-linear-gradient(180deg, transparent 0 2px, var(--accent) 2px 3.5px, transparent 3.5px 4px);
   -webkit-mask: linear-gradient(90deg, transparent, #000); mask: linear-gradient(90deg, transparent, #000); }
 .ptr-ink[data-hover="true"] .ptr-ball { scale: 1.2; color: var(--accent); }
