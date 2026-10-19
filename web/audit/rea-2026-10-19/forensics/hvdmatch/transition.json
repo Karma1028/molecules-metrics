@@ -1,0 +1,222 @@
+{
+ "slug": "hvdmatch",
+ "url": "https://www.hvdfonts.com/fonts/match",
+ "phases": {
+  "loaded": 1097
+ },
+ "anims": {
+  "load@600": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@1500": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@5000": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "afterNav": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ]
+ },
+ "transition": {
+  "href": "https://www.hvdfonts.com/shop/cart",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 9190,
+  "urlFrames": [
+   [
+    "/fonts/match",
+    13452
+   ],
+   [
+    "/fonts/match",
+    13704
+   ],
+   [
+    "/fonts/match",
+    13955
+   ],
+   [
+    "/fonts/match",
+    14210
+   ],
+   [
+    "/fonts/match",
+    14461
+   ],
+   [
+    "/fonts/match",
+    14714
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 0
+ }
+}

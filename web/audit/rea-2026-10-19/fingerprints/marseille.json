@@ -1,0 +1,68 @@
+{
+ "slug": "marseille",
+ "url": "https://marseille.laphase5.com/en",
+ "fp": {
+  "title": "Marseille 2021 by La Phase 5",
+  "globals": [
+   "Howl"
+  ],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "marseille.laphase5.com"
+  ],
+  "counts": {
+   "canvas": 1,
+   "video": 0,
+   "svg": 0,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 0,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(15, 40, 47)",
+   "ff": "AntarcticaBetaMedium"
+  },
+  "h1": null,
+  "h2": null,
+  "p": {
+   "ff": "AntarcticaBeta",
+   "fs": "40px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": "WHAT IF YOU DISCOVERED MARSEILLE DIFFERENTLY THIS YEAR?"
+  },
+  "fontsLoaded": [
+   "AntarcticaBetaMedium",
+   "AntarcticaBeta"
+  ],
+  "topFonts": [
+   [
+    "AntarcticaBeta 400",
+    8
+   ],
+   [
+    "AntarcticaBetaMedium 400",
+    1
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 3
+  }
+ },
+ "finalUrl": "https://marseille.laphase5.com/en"
+}

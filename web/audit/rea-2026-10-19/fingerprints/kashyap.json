@@ -1,0 +1,130 @@
+{
+ "slug": "kashyap",
+ "url": "https://kashyaprayas.com/",
+ "fp": {
+  "title": "Kashyap Rayas — Product Designer & Creative Engineer",
+  "globals": [
+   "Howl"
+  ],
+  "libHints": [
+   "rive"
+  ],
+  "hosts": [
+   "kashyaprayas.com"
+  ],
+  "counts": {
+   "canvas": 7,
+   "video": 0,
+   "svg": 105,
+   "img": 59,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 5,
+   "links": 11,
+   "splitChars": 179
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(194, 233, 231)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "Stara"
+  },
+  "h1": {
+   "ff": "Stara",
+   "fs": "42px",
+   "fw": "600",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Unconventional ideas, minimalist execution."
+  },
+  "h2": {
+   "ff": "Stara",
+   "fs": "18px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Well hello there! I'm Kashyap Rayas. I architect 0‑1 products that are intuitive"
+  },
+  "p": {
+   "ff": "Stara",
+   "fs": "15px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Studio-grade film reviews, without booking a theatre"
+  },
+  "fontsLoaded": [
+   "Lora",
+   "Abril Fatface",
+   "Lobster",
+   "Merriweather",
+   "Montserrat",
+   "Oswald",
+   "Pacifico",
+   "Roboto Flex",
+   "Stara"
+  ],
+  "topFonts": [
+   [
+    "Stara 600",
+    121
+   ],
+   [
+    "Stara 400",
+    97
+   ],
+   [
+    "Lora 600",
+    47
+   ],
+   [
+    "Stara 700",
+    7
+   ],
+   [
+    "Stara 800",
+    5
+   ],
+   [
+    "Stara 200",
+    3
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(251, 255, 253)",
+    53
+   ],
+   [
+    "rgb(236, 248, 245)",
+    36
+   ],
+   [
+    "rgb(194, 233, 231)",
+    10
+   ],
+   [
+    "rgb(18, 19, 18)",
+    6
+   ],
+   [
+    "rgb(0, 160, 132)",
+    4
+   ],
+   [
+    "rgb(0, 99, 82)",
+    2
+   ]
+  ],
+  "css": {
+   "fixed": 2,
+   "clip-path": 7,
+   "will-change": 137,
+   "blend:overlay": 7,
+   "mask": 6,
+   "sticky": 2,
+   "filter": 2
+  }
+ },
+ "finalUrl": "https://kashyaprayas.com/"
+}

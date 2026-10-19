@@ -1,0 +1,119 @@
+{
+ "slug": "hvdmatch",
+ "url": "https://www.hvdfonts.com/fonts/match",
+ "fp": {
+  "title": "Match | HvD Fonts",
+  "globals": [
+   "jQuery"
+  ],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "www.hvdfonts.com",
+   "static.cloudflareinsights.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 2,
+   "svg": 3,
+   "img": 215,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 39,
+   "links": 70,
+   "splitChars": 416
+  },
+  "pageHeightVh": 38,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "Brix"
+  },
+  "h1": {
+   "ff": "pluto-sans-extra-light",
+   "fs": "86px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Pluto Sans"
+  },
+  "h2": {
+   "ff": "Brix",
+   "fs": "36px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Licensing & Buying Choices"
+  },
+  "p": {
+   "ff": "Brix",
+   "fs": "22px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Self-confidence is an attitude about your skills and abilities. It is something "
+  },
+  "fontsLoaded": [
+   "Brix"
+  ],
+  "topFonts": [
+   [
+    "Brix 400",
+    817
+   ],
+   [
+    "Brix 700",
+    308
+   ],
+   [
+    "match-bold 400",
+    16
+   ],
+   [
+    "match-light 400",
+    13
+   ],
+   [
+    "match-thin 400",
+    12
+   ],
+   [
+    "match-extra-light 400",
+    12
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(27, 193, 139)",
+    72
+   ],
+   [
+    "rgb(243, 251, 246)",
+    68
+   ],
+   [
+    "rgb(255, 255, 255)",
+    22
+   ],
+   [
+    "rgb(0, 0, 0)",
+    17
+   ],
+   [
+    "rgb(251, 248, 246)",
+    17
+   ],
+   [
+    "rgb(244, 240, 238)",
+    9
+   ]
+  ],
+  "css": {
+   "fixed": 2,
+   "will-change": 2
+  }
+ },
+ "finalUrl": "https://www.hvdfonts.com/fonts/match"
+}

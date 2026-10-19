@@ -34,38 +34,38 @@ export const CAMERA_ZOOM = 1.35
 
 export const STATIONS: readonly Station[] = [
   {
-    icon: "i-award", period: "2008 – 2016", title: "Secondary (WBBSE)",
+    icon: "i-award", period: "2008 to 2016", title: "Secondary (WBBSE)",
     place: "Bankura Zilla School", metric: "93.85%", note: "Bankura, West Bengal.",
     era: "Foundations", accent: "pen", pin: 0,
   },
   {
-    icon: "i-award", period: "2016 – 2018", title: "Higher Secondary, Science",
+    icon: "i-award", period: "2016 to 2018", title: "Higher Secondary, Science",
     place: "Bankura Banga Vidyalaya", metric: "90.00%", note: "Physics, chemistry, maths.",
     era: "Foundations", accent: "pen", pin: 0,
   },
   {
-    icon: "i-flask", period: "2019 – 2023", title: "B.E. Chemical Engineering",
+    icon: "i-flask", period: "2019 to 2023", title: "B.E. Chemical Engineering",
     place: "Jadavpur University", metric: "8.32 CGPA", note: "Mass balances, process optimization, DoE.",
     era: "Engineering", accent: "teal", pin: 1,
   },
   {
-    icon: "i-chart", period: "Jul – Dec 2023", title: "Business Intelligence Intern",
+    icon: "i-chart", period: "Jul to Dec 2023", title: "Business Intelligence Intern",
     place: "Celebal Technologies · Jaipur", metric: "6 months", note: "Power BI P&L, 300+ DAX, star schema.",
     era: "Engineering", accent: "teal", pin: 2,
   },
   {
-    icon: "i-database", period: "2025 - 2027", title: "PGDM, Big Data Analytics",
+    icon: "i-database", period: "2025 to 2027", title: "PGDM, Big Data Analytics",
     place: "Goa Institute of Management", metric: "5.23 CGPA", note: "Minor: IT & Ops. In progress.",
     era: "Analytics", accent: "orange", pin: 3,
   },
   {
-    icon: "i-route", period: "Mar - Aug 2026", title: "Data Science Intern",
+    icon: "i-route", period: "Mar to Aug 2026", title: "Data Science Intern",
     place: "InfoLeap Research · Remote, from Bankura", metric: "6 months", note: "Streamlit MIS, GenAI survey pipelines.",
     era: "Analytics", accent: "orange", pin: 0,
   },
 ]
 
-// Plot frame: an equirectangular slice of India, 72–90°E × 14.5–27.5°N.
+// Plot frame: an equirectangular slice of India, 72 to 90°E × 14.5 to 27.5°N.
 export const MAP = { w: 600, h: 440, pad: { x: 46, y: 34 }, lon: [72, 90], lat: [14.5, 27.5] } as const
 
 export function project(pin: Pin): [number, number] {

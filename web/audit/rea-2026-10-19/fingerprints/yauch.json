@@ -1,0 +1,108 @@
+{
+ "slug": "yauch",
+ "url": "https://yauch.oscilloscope.net/panorama/main_01",
+ "fp": {
+  "title": "Oscilloscope - Panorama",
+  "globals": [
+   "lottie",
+   "bodymovin",
+   "jQuery"
+  ],
+  "libHints": [
+   "lottie"
+  ],
+  "hosts": [
+   "yauch.oscilloscope.net",
+   "connect.facebook.net",
+   "www.youtube.com"
+  ],
+  "counts": {
+   "canvas": 2,
+   "video": 0,
+   "svg": 60,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 4,
+   "splitChars": 128
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "sans-serif"
+  },
+  "h1": {
+   "ff": "sans-serif",
+   "fs": "32px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Site Title"
+  },
+  "h2": {
+   "ff": "Helvetica Neue Bold",
+   "fs": "69.12px",
+   "fw": "700",
+   "ls": "-4px",
+   "tt": "none",
+   "text": ""
+  },
+  "p": {
+   "ff": "Helvetica Neue Bold",
+   "fs": "14px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "-\n                loading\n                /"
+  },
+  "fontsLoaded": [],
+  "topFonts": [
+   [
+    "Helvetica Neue Regular 400",
+    89
+   ],
+   [
+    "Helvetica Neue Bold 700",
+    22
+   ],
+   [
+    "sans-serif 400",
+    8
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 206, 0)",
+    26
+   ],
+   [
+    "rgb(255, 255, 255)",
+    8
+   ],
+   [
+    "rgb(28, 28, 28)",
+    3
+   ],
+   [
+    "rgb(58, 52, 25)",
+    2
+   ],
+   [
+    "rgba(0, 0, 0, 0.75)",
+    1
+   ],
+   [
+    "rgba(0, 0, 0, 0.5)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 3,
+   "filter": 6,
+   "clip-path": 1
+  }
+ },
+ "finalUrl": "https://yauch.oscilloscope.net/panorama/main_01"
+}

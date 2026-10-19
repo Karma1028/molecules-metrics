@@ -1,0 +1,132 @@
+{
+ "slug": "analytical",
+ "url": "https://analytical-group.com/it",
+ "fp": {
+  "title": "Analytical Group - Test di Laboratorio per Aziende",
+  "globals": [
+   "Swiper",
+   "jQuery"
+  ],
+  "libHints": [
+   "ogl",
+   "wp-content"
+  ],
+  "hosts": [
+   "js-eu1.hubspot.com",
+   "js-eu1.hs-banner.com",
+   "js-eu1.hsadspixel.net",
+   "js-eu1.hs-analytics.net",
+   "consent.cookiebot.com",
+   "consentcdn.cookiebot.com",
+   "js.hs-scripts.com",
+   "analytical-group.com",
+   "assets.apollo.io",
+   "www.googletagmanager.com",
+   "googleads.g.doubleclick.net",
+   "js.hsforms.net"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 98,
+   "img": 19,
+   "iframe": 3,
+   "audio": 0,
+   "sections": 0,
+   "links": 185,
+   "splitChars": 1
+  },
+  "pageHeightVh": 8.1,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(51, 51, 51)",
+   "ff": "-apple-system"
+  },
+  "h1": {
+   "ff": "Graphik",
+   "fs": "25px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Test e qualifica delle apparecchiature ferroviarie"
+  },
+  "h2": {
+   "ff": "Graphik",
+   "fs": "25px",
+   "fw": "600",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Prodotti di consumo"
+  },
+  "p": {
+   "ff": "sans-serif",
+   "fs": "15px",
+   "fw": "400",
+   "ls": "0.1px",
+   "tt": "none",
+   "text": "Alcuni dei dati raccolti da questo fornitore vengono utilizzati per finalità di "
+  },
+  "fontsLoaded": [
+   "Graphik",
+   "eicons",
+   "Font Awesome 5 Free"
+  ],
+  "topFonts": [
+   [
+    "sans-serif 700",
+    227
+   ],
+   [
+    "sans-serif 400",
+    205
+   ],
+   [
+    "Graphik 400",
+    147
+   ],
+   [
+    "sans-serif 600",
+    23
+   ],
+   [
+    "Graphik 600",
+    21
+   ],
+   [
+    "Graphik 700",
+    14
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(244, 244, 244)",
+    60
+   ],
+   [
+    "rgb(255, 255, 255)",
+    51
+   ],
+   [
+    "rgb(46, 46, 46)",
+    29
+   ],
+   [
+    "rgb(214, 214, 214)",
+    22
+   ],
+   [
+    "rgb(230, 230, 230)",
+    16
+   ],
+   [
+    "rgb(0, 0, 0)",
+    14
+   ]
+  ],
+  "css": {
+   "fixed": 9,
+   "will-change": 4
+  }
+ },
+ "finalUrl": "https://analytical-group.com/it"
+}

@@ -10,6 +10,7 @@ import { useGoaClock } from "../../lib/useGoaClock"
 import { EXP } from "./Resume"
 import { ENTRIES, STATUS_LABEL } from "./Work"
 import { STATUS } from "./Contact"
+import { Headline } from "../../components/headline/Headline"
 
 /* Dashboard as a work sample: a BI scorecard about the person who builds
    BI scorecards. Every tile derives from a source already on the site
@@ -452,7 +453,7 @@ export function Dashboard() {
       <header className="db-head">
         <div>
           <span className="kick"><Icon id="i-chart" /> Log.04 · Scorecard · work sample</span>
-          <h1 className="big">The <em>scorecard.</em></h1>
+          <Headline world="analyst" className="big">The <em>scorecard.</em></Headline>
         </div>
         <div className="db-meta">
           <p className="lede">
@@ -496,6 +497,7 @@ export function Dashboard() {
         </aside>
 
         <section id="db-console" className="mc" role="tabpanel" aria-label={`${cur.label}, measure and result`}>
+          <p className="mc-story">{cur.story}</p>
           <div className="mc-bar">
             <span className="dots" aria-hidden="true"><i /><i /><i /></span>
             <span className="file"><span className="path">model / measures / </span><b>{cur.measure}.dax</b></span>
@@ -565,7 +567,7 @@ const CSS = String.raw`
     box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 12%,transparent),0 20px 50px -30px #000}
   .p-db .pc::after{content:"";position:absolute;inset:6px;border-radius:15px;border:1px dashed color-mix(in srgb,var(--accent) 28%,transparent);pointer-events:none}
   .p-db .pc-top{display:flex;align-items:flex-start;gap:10px;position:relative;z-index:1}
-  .p-db .pc-no{font:800 clamp(44px,min(5vw,8vh),72px)/.8 var(--font-display);letter-spacing:-.05em;color:var(--accent)}
+  .p-db .pc-no{font:800 clamp(44px,min(5vw,8vh),72px)/.8 var(--font-display);letter-spacing:-.05em;color:var(--accent);margin-right:.08em}
   .p-db .pc-pos{font:700 11px/1.15 var(--font-mono);letter-spacing:.16em;color:var(--ink);padding-top:4px}
   .p-db .pc-face{position:absolute;inset:0 0 auto 0;width:100%;height:74%;object-fit:cover;object-position:50% 18%;pointer-events:none;
     filter:saturate(.9) contrast(1.05);
@@ -617,8 +619,7 @@ const CSS = String.raw`
   .p-db .mc-code .tb{color:var(--ink);font-weight:700}
   .p-db .mc-code .col{color:#3ecf8e}
   .p-db .mc-code .sq{color:#e8b04b}
-  .p-db .caret{display:inline-block;width:.55em;height:1.1em;vertical-align:-.2em;margin-left:1px;background:var(--accent);animation:dbblink 1s steps(1) infinite}
-  @keyframes dbblink{50%{opacity:0}}
+  .p-db .caret{display:inline-block;width:.55em;height:1.1em;vertical-align:-.2em;margin-left:1px;background:var(--accent)}
   .p-db .mc-run{grid-area:run;display:flex;flex-direction:column;gap:5px;padding:10px 14px;border-top:1px solid var(--line);border-right:1px solid var(--line);
     background:color-mix(in srgb,var(--ink) 3%,transparent);font:600 10.5px/1.4 var(--font-mono);color:var(--muted)}
   .p-db .mc-run .go{display:inline-flex;align-items:center;gap:6px;color:#3ecf8e;letter-spacing:.14em;text-transform:uppercase}
@@ -670,7 +671,13 @@ const CSS = String.raw`
 
   /* ---- ≤900: card becomes a strip, console shows one view at a time ---- */
   .p-db .db-seg{display:none}
+  .p-db .mc-story{display:none}
   @media (max-width:900px){
+    /* the story leads on small screens, above the view tabs, so every view keeps it */
+    .p-db .mc-story{display:block;margin:0;padding:10px 14px 9px;border-bottom:1px solid var(--line);
+      font:600 clamp(13px,3.6vw,16px)/1.35 var(--font-display);color:var(--ink);text-wrap:balance}
+    .p-db .mc-out .story{display:none}
+    .p-db .pc-top{gap:12px}
     .p-db .db-head{grid-template-columns:1fr;gap:8px}
     .p-db .db-body{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
     .p-db .pc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"no name face" "stats stats stats";gap:8px 12px;padding:12px 14px}

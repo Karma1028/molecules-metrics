@@ -1,0 +1,111 @@
+{
+ "slug": "vana",
+ "url": "https://vana.org/",
+ "fp": {
+  "title": "Vana, open data infrastructure for human-grounded AI",
+  "globals": [],
+  "libHints": [
+   "next",
+   "react"
+  ],
+  "hosts": [
+   "vana.org"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 1,
+   "svg": 14,
+   "img": 7,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 3,
+   "links": 32,
+   "splitChars": 31
+  },
+  "pageHeightVh": 2.6,
+  "body": {
+   "bg": "rgb(252, 252, 250)",
+   "color": "rgb(17, 17, 17)",
+   "ff": "Onest"
+  },
+  "h1": {
+   "ff": "Onest",
+   "fs": "108px",
+   "fw": "500",
+   "ls": "-5.4px",
+   "tt": "none",
+   "text": "Your data should be yours"
+  },
+  "h2": {
+   "ff": "Onest",
+   "fs": "15px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Updates"
+  },
+  "p": {
+   "ff": "Onest",
+   "fs": "25px",
+   "fw": "400",
+   "ls": "-0.375px",
+   "tt": "none",
+   "text": "Vana is open data infrastructure for human-grounded AI.\nControl the data you cre"
+  },
+  "fontsLoaded": [
+   "Onest",
+   "JetBrains Mono"
+  ],
+  "topFonts": [
+   [
+    "Onest 400",
+    61
+   ],
+   [
+    "JetBrains Mono 400",
+    30
+   ],
+   [
+    "Onest 600",
+    8
+   ],
+   [
+    "Onest 500",
+    7
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(65, 65, 252)",
+    6
+   ],
+   [
+    "rgb(255, 255, 255)",
+    5
+   ],
+   [
+    "lab(87.5772 5.35378 -18.3081)",
+    2
+   ],
+   [
+    "rgb(252, 252, 250)",
+    1
+   ],
+   [
+    "rgb(236, 233, 251)",
+    1
+   ],
+   [
+    "lab(94.5524 -0.552237 7.65597)",
+    1
+   ]
+  ],
+  "css": {
+   "sticky": 1,
+   "blend:": 2,
+   "filter": 3,
+   "fixed": 1
+  }
+ },
+ "finalUrl": "https://vana.org/"
+}

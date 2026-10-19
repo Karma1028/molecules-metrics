@@ -1,0 +1,271 @@
+{
+ "slug": "loiseau",
+ "url": "https://loiseau.framer.website/",
+ "phases": {
+  "loaded": 205,
+  "gateClick": 8270,
+  "hover": 12324,
+  "cursorStep": 16721,
+  "scroll": 17927,
+  "end": 30286
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterGate": [],
+  "hover0": [],
+  "hover1": [],
+  "hover2": [],
+  "hover3": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   887,
+   "webgl",
+   "1440x900"
+  ],
+  [
+   957,
+   "2d",
+   "4320x2700"
+  ],
+  [
+   1028,
+   "2d",
+   "4320x2700"
+  ],
+  [
+   1065,
+   "webgl",
+   "1440x900"
+  ],
+  [
+   1141,
+   "2d",
+   "4320x2700"
+  ],
+  [
+   8967,
+   "webgl2",
+   "300x150"
+  ],
+  [
+   18324,
+   "webgl2",
+   "300x150"
+  ]
+ ],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [
+  {
+   "el": "ul",
+   "prop": "transform.x",
+   "start": 959,
+   "dur": 7379,
+   "from": -454,
+   "to": -360.32,
+   "n": 1016,
+   "ease": "circ-out(.075,.82,.165,1)",
+   "rmse": 2.358
+  },
+  {
+   "el": "a.framer-6jWyo.framer-n0ccwk",
+   "prop": "transform.y",
+   "start": 2155,
+   "dur": 333,
+   "from": 9.982,
+   "to": 0.025,
+   "n": 98,
+   "ease": "css ease",
+   "rmse": 0.011
+  },
+  {
+   "el": "a.framer-6jWyo.framer-n0ccwk",
+   "prop": "opacity",
+   "start": 2155,
+   "dur": 604,
+   "from": 0.003,
+   "to": 1,
+   "n": 166,
+   "ease": "power3.out",
+   "rmse": 0.048
+  },
+  {
+   "el": "div.framer-yu0ah1",
+   "prop": "--extracted-r6o4lv",
+   "start": 12374,
+   "dur": 322,
+   "from": 12,
+   "to": 195,
+   "n": 33,
+   "ease": "power4.out",
+   "rmse": 0.027
+  },
+  {
+   "el": "svg.framer-O0XeT.framer-oes2ju",
+   "prop": "--21h8s6",
+   "start": 12374,
+   "dur": 322,
+   "from": 12,
+   "to": 195,
+   "n": 33,
+   "ease": "power4.out",
+   "rmse": 0.027
+  },
+  {
+   "el": "div.framer-yu0ah1",
+   "prop": "--extracted-r6o4lv",
+   "start": 13281,
+   "dur": 186,
+   "from": 195,
+   "to": 0,
+   "n": 27,
+   "ease": "linear",
+   "rmse": 0.034
+  },
+  {
+   "el": "svg.framer-O0XeT.framer-oes2ju",
+   "prop": "--21h8s6",
+   "start": 13281,
+   "dur": 186,
+   "from": 195,
+   "to": 0,
+   "n": 27,
+   "ease": "linear",
+   "rmse": 0.034
+  },
+  {
+   "el": "div.framer-31ste8",
+   "prop": "transform.s",
+   "start": 13281,
+   "dur": 402,
+   "from": 1,
+   "to": 1.05,
+   "n": 58,
+   "ease": "css ease-in-out",
+   "rmse": 0.015
+  },
+  {
+   "el": "div.framer-31ste8",
+   "prop": "transform.s",
+   "start": 14166,
+   "dur": 391,
+   "from": 1.05,
+   "to": 1,
+   "n": 59,
+   "ease": "css ease-in-out",
+   "rmse": 0.005
+  },
+  {
+   "el": "div.framer-31ste8",
+   "prop": "transform.s",
+   "start": 14169,
+   "dur": 395,
+   "from": 1,
+   "to": 1.05,
+   "n": 58,
+   "ease": "css ease-in-out",
+   "rmse": 0.01
+  },
+  {
+   "el": "div.framer-31ste8",
+   "prop": "transform.s",
+   "start": 15047,
+   "dur": 392,
+   "from": 1.05,
+   "to": 1,
+   "n": 59,
+   "ease": "css ease-in-out",
+   "rmse": 0.005
+  },
+  {
+   "el": "div.framer-31ste8",
+   "prop": "transform.s",
+   "start": 15051,
+   "dur": 395,
+   "from": 1,
+   "to": 1.05,
+   "n": 58,
+   "ease": "css ease-in-out",
+   "rmse": 0.011
+  },
+  {
+   "el": "div.framer-31ste8",
+   "prop": "transform.s",
+   "start": 15921,
+   "dur": 393,
+   "from": 1.05,
+   "to": 1,
+   "n": 59,
+   "ease": "css ease-in-out",
+   "rmse": 0.006
+  }
+ ],
+ "mutationCount": 2153,
+ "assets": [
+  [
+   "css",
+   "FTSHS4ARTRNRQISSAA/3CIP5EBHRRHE5FVQU3VFROPUERNDSTDF/JTSL5QESUXATU47LCPUNHZQBDDIWDOSW.woff2",
+   15
+  ],
+  [
+   "css",
+   "R7JQ4CAOJPZ7KWKNY7/ODD5YJNDLHZZB2MIT3DPVH4EIHAMZ34D/BSY64LPTT3OPLVKAZKL3AHKRWZ3D74AC.woff2",
+   15
+  ],
+  [
+   "css",
+   "https://framerusercontent.com/assets/8mwKwShtYEXIZ5diRBT74yn9jdQ.woff2",
+   29
+  ],
+  [
+   "css",
+   "https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+   27
+  ]
+ ],
+ "css": {
+  "cssBytes": 0,
+  "keyframes": [],
+  "beziers": [],
+  "durations": [],
+  "transitions": [],
+  "customProps": [],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 0,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 1417318,
+ "jsLibs": [
+  "react",
+  "Lenis"
+ ]
+}

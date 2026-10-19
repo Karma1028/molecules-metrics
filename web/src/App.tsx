@@ -1,25 +1,70 @@
-import { lazy, Suspense } from "react"
-import { Routes, Route, Navigate } from "react-router-dom"
-import { WorldLayout } from "./components/WorldLayout"
+import { lazy, Suspense, useEffect, type ComponentType } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { WorldLayout } from "./components/WorldLayout";
 
-// K5: one chunk per page. Pages use named exports, so map them to default.
-const Landing = lazy(() => import("./worlds/Landing").then((m) => ({ default: m.Landing })))
-const ArtistHome = lazy(() => import("./worlds/artist/ArtistHome").then((m) => ({ default: m.ArtistHome })))
-const Gallery = lazy(() => import("./worlds/artist/Gallery").then((m) => ({ default: m.Gallery })))
-const Sound = lazy(() => import("./worlds/artist/sound/Sound").then((m) => ({ default: m.Sound })))
-const Matchday = lazy(() => import("./worlds/artist/Matchday").then((m) => ({ default: m.Matchday })))
-const Notes = lazy(() => import("./worlds/artist/Notes").then((m) => ({ default: m.Notes })))
-const About = lazy(() => import("./worlds/artist/About").then((m) => ({ default: m.About })))
-const ArtistContact = lazy(() => import("./worlds/artist/Contact").then((m) => ({ default: m.Contact })))
-const AnalystHome = lazy(() => import("./worlds/analyst/AnalystHome").then((m) => ({ default: m.AnalystHome })))
-const Skills = lazy(() => import("./worlds/analyst/Skills").then((m) => ({ default: m.Skills })))
-const Work = lazy(() => import("./worlds/analyst/Work").then((m) => ({ default: m.Work })))
-const Journey = lazy(() => import("./worlds/analyst/Journey").then((m) => ({ default: m.Journey })))
-const Dashboard = lazy(() => import("./worlds/analyst/Dashboard").then((m) => ({ default: m.Dashboard })))
-const Resume = lazy(() => import("./worlds/analyst/Resume").then((m) => ({ default: m.Resume })))
-const AnalystContact = lazy(() => import("./worlds/analyst/Contact").then((m) => ({ default: m.Contact })))
+// K5: one chunk per page. Deck travel animates the arriving page as it mounts,
+// so every chunk is also fetched on idle after first paint, and a page whose
+// module is already in renders directly instead of suspending (React.lazy would
+// still show the fallback for a beat, mid-travel).
+type Loader = () => Promise<Record<string, unknown>>;
+const loaders: (() => Promise<unknown>)[] = [];
+
+function page(load: Loader, name: string): ComponentType {
+  let ready: ComponentType | null = null;
+  const fetch = () =>
+    load().then((m) => {
+      ready = m[name] as ComponentType;
+      return { default: ready };
+    });
+  loaders.push(fetch);
+  const Lazy = lazy(fetch);
+  return function Page() {
+    const C = ready;
+    return C ? <C /> : <Lazy />;
+  };
+}
+
+const PREFETCH_DELAY_MS = 2500;
+
+function usePrefetchPages() {
+  useEffect(() => {
+    const run = () => loaders.forEach((load) => load().catch(() => {}));
+    const id = window.setTimeout(() => {
+      if (typeof window.requestIdleCallback === "function")
+        window.requestIdleCallback(run, { timeout: 3000 });
+      else run();
+    }, PREFETCH_DELAY_MS);
+    return () => window.clearTimeout(id);
+  }, []);
+}
+
+const Landing = page(() => import("./worlds/Landing"), "Landing");
+const ArtistHome = page(
+  () => import("./worlds/artist/ArtistHome"),
+  "ArtistHome",
+);
+const Gallery = page(() => import("./worlds/artist/Gallery"), "Gallery");
+const Sound = page(() => import("./worlds/artist/sound/Sound"), "Sound");
+const Matchday = page(() => import("./worlds/artist/Matchday"), "Matchday");
+const Notes = page(() => import("./worlds/artist/Notes"), "Notes");
+const About = page(() => import("./worlds/artist/About"), "About");
+const ArtistContact = page(() => import("./worlds/artist/Contact"), "Contact");
+const AnalystHome = page(
+  () => import("./worlds/analyst/AnalystHome"),
+  "AnalystHome",
+);
+const Skills = page(() => import("./worlds/analyst/Skills"), "Skills");
+const Work = page(() => import("./worlds/analyst/Work"), "Work");
+const Journey = page(() => import("./worlds/analyst/Journey"), "Journey");
+const Dashboard = page(() => import("./worlds/analyst/Dashboard"), "Dashboard");
+const Resume = page(() => import("./worlds/analyst/Resume"), "Resume");
+const AnalystContact = page(
+  () => import("./worlds/analyst/Contact"),
+  "Contact",
+);
 
 export default function App() {
+  usePrefetchPages();
   return (
     <Routes>
       <Route
@@ -53,5 +98,5 @@ export default function App() {
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  )
+  );
 }

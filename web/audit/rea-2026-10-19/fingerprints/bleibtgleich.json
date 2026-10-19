@@ -1,0 +1,101 @@
+{
+ "slug": "bleibtgleich",
+ "url": "https://www.bleibtgleich.com/",
+ "fp": {
+  "title": "Bleibt Gleich — Unterhaltung mit Haltung – immer auf Kurs",
+  "globals": [],
+  "libHints": [
+   "next"
+  ],
+  "hosts": [
+   "static.cloudflareinsights.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 0,
+   "img": 7,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 1,
+   "links": 8,
+   "splitChars": 0
+  },
+  "pageHeightVh": 3.1,
+  "body": {
+   "bg": "rgb(26, 26, 46)",
+   "color": "rgb(237, 237, 237)",
+   "ff": "Barlow"
+  },
+  "h1": {
+   "ff": "Bebas Neue",
+   "fs": "88px",
+   "fw": "700",
+   "ls": "5.28px",
+   "tt": "none",
+   "text": "Bleibt Gleich"
+  },
+  "h2": {
+   "ff": "Bebas Neue",
+   "fs": "22.4px",
+   "fw": "700",
+   "ls": "1.792px",
+   "tt": "uppercase",
+   "text": "LATEST ARTICLES"
+  },
+  "p": {
+   "ff": "Barlow",
+   "fs": "16.8px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Unterhaltung mit Haltung – immer auf Kurs"
+  },
+  "fontsLoaded": [
+   "Barlow",
+   "Bebas Neue"
+  ],
+  "topFonts": [
+   [
+    "Barlow 400",
+    11
+   ],
+   [
+    "Bebas Neue 400",
+    8
+   ],
+   [
+    "Barlow 500",
+    8
+   ],
+   [
+    "Barlow 700",
+    7
+   ],
+   [
+    "Bebas Neue 700",
+    2
+   ]
+  ],
+  "topBgs": [
+   [
+    "color(srgb 0.135059 0.135059 0.210353)",
+    7
+   ],
+   [
+    "color(srgb 0.151608 0.151608 0.225333)",
+    7
+   ],
+   [
+    "color(srgb 0.960784 0.784314 0.258824 / 0.15)",
+    7
+   ],
+   [
+    "color(srgb 0.929412 0.929412 0.929412 / 0.12)",
+    1
+   ]
+  ],
+  "css": {}
+ },
+ "finalUrl": "https://www.bleibtgleich.com/"
+}

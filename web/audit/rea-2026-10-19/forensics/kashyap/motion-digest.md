@@ -1,0 +1,94 @@
+# kashyap — https://kashyaprayas.com/
+- libs (bundle regex): gsap, ScrollTrigger, Lenis, howler, react · JS 685 KB · CSS 145 KB · style mutations 60020
+- smooth scroll: native (no lerp detected on window scroll)
+- canvas contexts: 2d 300x150@8097ms, 2d 300x150@8097ms, 2d 300x150@8097ms, 2d 300x150@8097ms, 2d 300x150@8097ms, 2d 300x150@8097ms, 2d 300x150@8098ms, 2d 300x150@8098ms, 2d 11x9@8098ms, 2d 296x221@8148ms, 2d 296x221@8149ms, 2d 296x221@8150ms, 2d 590x447@8151ms, 2d 20x15@8163ms, 2d 590x447@8264ms, 2d 590x447@8268ms, 2d 300x150@8331ms, 2d 180x255@8429ms, 2d 10x15@8429ms, 2d 180x255@8439ms, 2d 10x15@8439ms, 2d 180x255@8448ms, 2d 10x15@8448ms, 2d 180x255@8467ms, 2d 10x15@8468ms, 2d 180x255@8486ms, 2d 10x15@8486ms, 2d 180x255@8501ms, 2d 10x15@8501ms, 2d 180x255@8504ms, 2d 10x15@8504ms, 2d 180x255@8516ms, 2d 10x15@8516ms, 2d 590x447@9912ms, 2d 590x447@9912ms, 2d 296x221@10008ms, 2d 296x221@10008ms, 2d 296x221@10008ms
+- audio/media: AudioContext | AudioContext
+- CSS easings: cubic-bezier(.4,0,.2,1)×4
+- CSS durations: 3s×29, 2s×8, 1s×7, 15s×6, 35s×4, 05s×3, 12s×3, 001ms×2
+- CSS keyframes (8): _midTopBlink_1t41k_1 {0%,to{opacity:1}50%{opacity:0}} | _midTopBlink_1efqu_1 {0%,to{opacity:1}50%{opacity:0}} | _marquee_r5sym_1 {0%{transform:translate(0)}to{transform:translate(-100%)}} | _colonBlink_1up28_189 {0%{opacity:1}35%{opacity:.15}70%{opacity:1}to{opacity:1}} | yarl__delayed_fadein {0%{opacity:0}80%{opacity:0}to{opacity:1}} | yarl__stroke_opacity {0%{stroke-opacity:1}to{stroke-opacity:.125}} | e4-shake-kf {0%,to{transform:translate(0)}15%{transform:translate(-7px)}35%{transform:translate(6px)}55} | e4-fade-in {0%{opacity:0}to{opacity:1}}
+- CSS features: mix-blend-mode×2, clip-path×4, perspective×5, preserve-3d×5
+- top transitions: all .3s ease-in-out×26 | all .2s ease-in-out×7 | all .15s ease-in-out×4 | all .3s linear×1 | all 1s ease-in-out×1
+
+## Running CSS/WAAPI animations (16 unique)
+- [load@8000] CSSAnimation _marquee_r5sym_1 on div._cursorMarqueeTrack_r5sym_62: 9000ms linear delay 0 iter null kf [{"offset":"0","easing":"linear","transform":"translate(0px)"},{"offset":"1","easing":"linear","transform":"translate(-100%)"}]
+- [load@8000] CSSAnimation _colonBlink_1up28_189 on rect._colonDotTop_1up28_189: 1000ms linear delay 0 iter 1 kf [{"offset":"0","easing":"ease-in-out","opacity":"1"},{"offset":"0.35","easing":"ease-in-out","opacity":"0.15"},{"offset":"0.7","easing":"ease-in-out","opacity":
+- [load@8000] CSSAnimation _colonBlink_1up28_189 on rect._colonDotBottom_1up28_190: 1000ms linear delay 120 iter 1 kf [{"offset":"0","easing":"ease-in-out","opacity":"1"},{"offset":"0.35","easing":"ease-in-out","opacity":"0.15"},{"offset":"0.7","easing":"ease-in-out","opacity":
+- [hover1] CSSTransition transform on div._homeCardInner_173bt_601: 700ms cubic-bezier(0.23, 1, 0.32, 1) delay 0 iter 1 kf [{"offset":"0","easing":"linear","transform":"translate3d(0px, 0px, 0px)"},{"offset":"1","easing":"linear","transform":"perspective(1000px) rotateY(0deg) rotate
+- [hover1] CSSTransition transform on svg: 500ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","transform":"rotate(275.294deg)"},{"offset":"1","easing":"linear","transform":"rotate(0deg)"}]
+- [hover1] CSSTransition color on svg: 400ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","color":"rgb(236, 248, 245)"},{"offset":"1","easing":"linear","color":"rgb(194, 233, 231)"}]
+- [hover1] CSSTransition background-color on h2._heading_2p1ya_217._headingActive_2p1ya_252: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","backgroundColor":"rgb(236, 248, 245)"},{"offset":"1","easing":"linear","backgroundColor":"rgb(251, 255, 253)"}]
+- [hover1] CSSTransition color on h2._heading_2p1ya_217._headingActive_2p1ya_252: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","color":"rgb(0, 160, 132)"},{"offset":"1","easing":"linear","color":"rgb(18, 19, 18)"}]
+- [hover1] CSSTransition opacity on span._headingBracket_2p1ya_245: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","opacity":"0"},{"offset":"1","easing":"linear","opacity":"1"}]
+- [hover1] CSSTransition background-color on a._second_2p1ya_62: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","backgroundColor":"rgb(236, 248, 245)"},{"offset":"1","easing":"linear","backgroundColor":"rgb(251, 255, 253)"}]
+- [hover2] CSSTransition background-color on h2._heading_2p1ya_217: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","backgroundColor":"rgb(251, 255, 253)"},{"offset":"1","easing":"linear","backgroundColor":"rgb(236, 248, 245)"}]
+- [hover2] CSSTransition color on h2._heading_2p1ya_217: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","color":"rgb(18, 19, 18)"},{"offset":"1","easing":"linear","color":"rgb(0, 160, 132)"}]
+- [hover2] CSSTransition background-color on h2._heading_196h0_40._headingActive_196h0_72: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","backgroundColor":"rgb(236, 248, 245)"},{"offset":"1","easing":"linear","backgroundColor":"rgb(251, 255, 253)"}]
+- [hover2] CSSTransition color on h2._heading_196h0_40._headingActive_196h0_72: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","color":"rgb(0, 160, 132)"},{"offset":"1","easing":"linear","color":"rgb(18, 19, 18)"}]
+- [hover2] CSSTransition opacity on span._headingBracket_196h0_65: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","opacity":"0"},{"offset":"1","easing":"linear","opacity":"1"}]
+- [hover2] CSSTransition background-color on a._second_196h0_131: 300ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","backgroundColor":"rgb(236, 248, 245)"},{"offset":"1","easing":"linear","backgroundColor":"rgb(251, 255, 253)"}]
+
+## JS-driven tween clusters (660 tweens → 146 groups; times ms from navigation; phases {"loaded":1659,"hover":9712,"cursorStep":13467,"scroll":14673,"end":26203})
+- [load @1652] span.mobile-word · transform.y 120→0 · 550ms · power3.out (rmse 0.056)
+- [load @1652] span.mobile-word · opacity 0→1 · 550ms · power3.out (rmse 0.056)
+- [load @1652] span.mobile-word · transform.y 120→0 · 650ms · power2.out (rmse 0.054)
+- [load @1652] span.mobile-word · opacity 0→1 · 650ms · power2.out (rmse 0.054)
+- [load @1652] span.mobile-word · transform.y 120→0 · 700ms · css ease (rmse 0.047)
+- [load @1652] span.mobile-word · opacity 0→1 · 700ms · css ease (rmse 0.047)
+- [load @1652] span.bottom-word · transform.y 120→0 · 650ms · css ease (rmse 0.028)
+- [load @1652] span.bottom-word · opacity 0→1 · 650ms · css ease (rmse 0.028)
+- [load @1653] div.preloader-box · transform.r -5.999→0 · 950ms · power2.inOut (rmse 0.014)
+- [load @1783] span.bottom-word · transform.y 118.209→0 · 600ms · power2.out (rmse 0.003) · ×4, stagger ~63ms
+- [load @1783] span.bottom-word · opacity 0.015→1 · 600ms · power2.out (rmse 0.003) · ×4, stagger ~63ms
+- [load @1804] span.mobile-word · transform.y 118.209→0 · 600ms · power2.out (rmse 0.002)
+- [load @1804] span.mobile-word · opacity 0.015→1 · 600ms · power2.out (rmse 0.002)
+- [load @2623] div.counter-text · transform.y 201.94→0 · 600ms · power2.out (rmse 0.001)
+- [load @3984] div.counter-text · transform.y 0→-205 · 600ms · power2.in (rmse 0.014)
+- [load @4583] span.word-anim.span-1 · transform.y 152.112→0 · 800ms · power2.out (rmse 0.003) · ×4, stagger ~26ms
+- [load @4637] span.word-anim.span-2 · transform.y 152.687→0 · 800ms · power2.out (rmse 0.002) · ×6, stagger ~28ms
+- [load @6984] span.word-anim.span-2 · transform.y 0→155 · 800ms · power2.in (rmse 0.007) · ×6, stagger ~0ms
+- [load @7130] span.word-anim.span-1 · transform.y 0→155 · 800ms · power2.in (rmse 0.003) · ×4, stagger ~0ms
+- [load @8304] rect · opacity 0.957→1 · 200ms · power2.out (rmse 0.017) · ×2, stagger ~0ms
+- [load @8304] rect · opacity 0.867→1 · 250ms · power2.out (rmse 0.019) · ×2, stagger ~0ms
+- [load @8304] rect · opacity 0.144→1 · 350ms · css ease (rmse 0.013)
+- [load @8304] rect · opacity 0.02→1 · 400ms · power2.inOut (rmse 0.127) · ×2, stagger ~1039ms
+- [load @8304] rect · opacity 0→1 · 500ms · power2.inOut (rmse 0.007) · ×10, stagger ~83ms
+- [load @8304] path · opacity 0.255→1 · 250ms · power2.out (rmse 0.009) · ×23, stagger ~0ms
+- [load @8304] div.preloader-box · widthPct 22.557→99.944 · 1450ms · power3.inOut (rmse 0.048)
+- [load @8304] path · opacity 0.079→1 · 750ms · css ease (rmse 0.029)
+- [load @8304] path · opacity 0.02→1 · 800ms · css ease-out (rmse 0.087)
+- [load @8304] path · opacity 0.001→1 · 900ms · power2.inOut (rmse 0.063) · ×2, stagger ~535ms
+- [load @8304] rect · opacity 0.699→1 · 300ms · power2.out (rmse 0.01)
+- [load @8304] img · transform.r 4.27→333.357 · 1450ms · power2.in (rmse 0.134)
+- [load @8304] rect · opacity 0.428→1 · 400ms · power2.out (rmse 0.01)
+- [load @8304] rect · opacity 0.03→1 · 500ms · power2.out (rmse 0.008) · ×10, stagger ~83ms
+- [load @8329] path · opacity 0.03→1 · 300ms · power2.out (rmse 0.008) · ×76, stagger ~0ms
+- [load @8329] svg · transform.r 0.029→247.046 · 1400ms · power2.in (rmse 0.026)
+- [load @8329] span._cursor_173bt_293 · opacity 0.13→1 · 100ms · linear (rmse 0.016)
+- [load @8329] span.narrator-word · opacity 0.02→1 · 150ms · linear (rmse 0.019) · ×7, stagger ~98ms
+- [load @8336] path · opacity 0→1 · 1000ms · power2.inOut (rmse 0.013) · ×4, stagger ~103ms
+- [load @8392] rect · opacity 0→1 · 450ms · power2.inOut (rmse 0.028) · ×3, stagger ~558ms
+- [load @8392] rect · opacity 0.137→1 · 450ms · power2.out (rmse 0.009) · ×3, stagger ~558ms
+- [load @8446] path · opacity 0→1 · 950ms · power2.inOut (rmse 0.005)
+- [load @8839] img · transform.r 0.013→69.923 · 900ms · power2.in (rmse 0.046)
+- [load @8936] path · opacity 0→0.969 · 800ms · css ease-in-out (rmse 0.13)
+- [load @9041] path · opacity 0→0.894 · 700ms · power2.in (rmse 0.115)
+- [load @9263] g#Fisherman with Boat · transform.y -0.013→-0.221 · 450ms · linear (rmse 0.103)
+
+## Notable assets
+- fetch https://kashyaprayas.com/data/projects.json 1KB
+- fetch https://kashyaprayas.com/data/project_data/movie_colab_vr.json 4KB
+- fetch https://kashyaprayas.com/data/project_data/savvywise.json 2KB
+- fetch https://kashyaprayas.com/data/project_data/movie_colab.json 2KB
+- fetch https://kashyaprayas.com/data/project_data/sync_space.json 2KB
+- fetch https://kashyaprayas.com/data/project_data/table_read.json 2KB
+- fetch https://kashyaprayas.com/data/project_data/nothing_challenge.json 1KB
+- img https://kashyaprayas.com/tap_01.wav 1KB
+- img https://kashyaprayas.com/tap_02.wav 1KB
+- img https://kashyaprayas.com/tap_03.wav 1KB
+- img https://kashyaprayas.com/tap_04.wav 1KB
+- img https://kashyaprayas.com/tap_05.wav 1KB
+- fetch https://kashyaprayas.com/data/cards.json 1KB
+- fetch https://kashyaprayas.com/data/projects.json 0KB
+- fetch https://kashyaprayas.com/data/projects.json 0KB
+
+Raw: forensics/kashyap/ (forensics.json, source.css, source.js.txt, *.webm video of the run)

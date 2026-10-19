@@ -16,6 +16,10 @@ export interface MusicTrack {
   preview?: string | null
   /** official embed player URL, set when the track came from a pasted link */
   embed?: string
+  /** link kind for pasted links: "video" / "playlist" (YouTube), "track" / "album" / ... (Spotify) */
+  kind?: string
+  /** start offset in seconds from a pasted link's t= / start= */
+  start?: number
 }
 
 export interface MusicLink {
@@ -24,6 +28,8 @@ export interface MusicLink {
   id: string
   embed: string
   url: string
+  /** start offset in seconds (YouTube t= / start=), 0 when absent */
+  start?: number
 }
 
 const YT_ID = /^[\w-]{11}$/
@@ -53,6 +59,7 @@ function youtubeVideo(id: string, u: URL): MusicLink {
     id,
     embed: `https://www.youtube.com/embed/${id}?autoplay=1&rel=0${start ? `&start=${start}` : ""}`,
     url: `https://www.youtube.com/watch?v=${id}`,
+    start,
   }
 }
 
@@ -127,6 +134,8 @@ export async function linkToTrack(link: MusicLink, signal?: AbortSignal): Promis
     artist: "pasted link",
     url: link.url,
     embed: link.embed,
+    kind: link.kind,
+    start: link.start,
   }
   const endpoint =
     link.source === "youtube"

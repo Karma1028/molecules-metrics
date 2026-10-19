@@ -1,0 +1,215 @@
+{
+ "slug": "gucci",
+ "url": "https://www.gucci.com/#/en/",
+ "phases": {
+  "loaded": 1115
+ },
+ "anims": {
+  "load@600": [
+   {
+    "type": "CSSAnimation",
+    "name": "_loading_11iuc_1",
+    "target": "svg._loading_11iuc_1",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "rotate(0deg)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "rotate(360deg)"
+     }
+    ]
+   }
+  ],
+  "load@1500": [
+   {
+    "type": "CSSAnimation",
+    "name": "_loading_11iuc_1",
+    "target": "svg._loading_11iuc_1",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "rotate(0deg)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "rotate(360deg)"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "onetrust-fade-in",
+    "target": "div.onetrust-pc-dark-filter.ot-fade-in",
+    "duration": 400,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSAnimation",
+    "name": "_loading_11iuc_1",
+    "target": "svg._loading_11iuc_1",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "rotate(0deg)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "rotate(360deg)"
+     }
+    ]
+   }
+  ],
+  "load@5000": [
+   {
+    "type": "CSSAnimation",
+    "name": "_loading_11iuc_1",
+    "target": "svg._loading_11iuc_1",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "rotate(0deg)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "rotate(360deg)"
+     }
+    ]
+   }
+  ],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "_loading_11iuc_1",
+    "target": "svg._loading_11iuc_1",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "rotate(0deg)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "rotate(360deg)"
+     }
+    ]
+   }
+  ],
+  "afterNav": [
+   {
+    "type": "CSSAnimation",
+    "name": "_loading_11iuc_1",
+    "target": "svg._loading_11iuc_1",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "rotate(0deg)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "rotate(360deg)"
+     }
+    ]
+   }
+  ]
+ },
+ "transition": {
+  "href": "/au/en_au/",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 9481,
+  "urlFrames": [
+   [
+    "/",
+    13740
+   ],
+   [
+    "/",
+    13997
+   ],
+   [
+    "/",
+    14250
+   ],
+   [
+    "/",
+    14501
+   ],
+   [
+    "/",
+    14754
+   ],
+   [
+    "/",
+    15006
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 0
+ }
+}

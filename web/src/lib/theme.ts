@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useLayoutEffect, useState } from "react"
 
 export type World = "artist" | "analyst"
 export type Theme = "light" | "dark"
@@ -26,14 +26,16 @@ export function initialTheme(world: World): Theme {
  */
 export function useWorldTheme(world: World) {
   const [theme, setTheme] = useState<Theme>(() => initialTheme(world))
-
-  // the layout can be reused across worlds; re-read that world's own choice
-  useEffect(() => {
+  // the layout can be reused across worlds; re-read that world's own choice in
+  // the same render, so the new world never paints a frame in the old theme
+  const [themeWorld, setThemeWorld] = useState(world)
+  if (themeWorld !== world) {
+    setThemeWorld(world)
     setTheme(initialTheme(world))
-  }, [world])
+  }
 
-  // keep <html> attributes in sync
-  useEffect(() => {
+  // keep <html> attributes in sync before paint
+  useLayoutEffect(() => {
     const root = document.documentElement
     root.dataset.world = world
     root.dataset.mode = world

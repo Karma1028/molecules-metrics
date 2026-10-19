@@ -1,0 +1,105 @@
+{
+ "url": "https://inkwell.tech/",
+ "followers": [
+  {
+   "tag": "DIV",
+   "cls": "glass",
+   "bg": "rgba(30, 39, 45, 0.02)",
+   "border": "0px rgb(30, 39, 45)",
+   "blend": "normal",
+   "radius": "50%",
+   "transition": "transform 1s cubic-bezier(0.19, 1, 0.22, 1), background 0.4s cubic-bezier(0.39, ",
+   "size": 17,
+   "t63": 218,
+   "t95": 552,
+   "overshootPct": 0
+  },
+  {
+   "tag": "DIV",
+   "cls": "cursor-glass-background",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "2px rgba(0, 0, 0, 0)",
+   "blend": "normal",
+   "radius": "50%",
+   "transition": "opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1)",
+   "size": 11,
+   "t63": 218,
+   "t95": 552,
+   "overshootPct": 0
+  },
+  {
+   "tag": "DIV",
+   "cls": "cursor-glass-background-dark",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "2px rgba(0, 0, 0, 0)",
+   "blend": "normal",
+   "radius": "50%",
+   "transition": "opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1)",
+   "size": 11,
+   "t63": 218,
+   "t95": 552,
+   "overshootPct": 0
+  },
+  {
+   "tag": "DIV",
+   "cls": "dot-cursor theme-dark",
+   "bg": "rgb(0, 0, 0)",
+   "border": "0px rgb(30, 39, 45)",
+   "blend": "normal",
+   "radius": "999px",
+   "transition": "background 0.2s cubic-bezier(0.39, 0.575, 0.565, 1), opacity 0.2s cubic-bezier(0",
+   "size": 6,
+   "t63": 59,
+   "t95": 59,
+   "overshootPct": 0
+  }
+ ]
+}
+{
+ "url": "https://www.moonsafari.archi/",
+ "followers": []
+}
+{
+ "url": "https://the3key.com/",
+ "followers": [
+  {
+   "tag": "DIV",
+   "cls": "gsap-cursor",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(8, 38, 32)",
+   "blend": "normal",
+   "radius": "0px",
+   "transition": "all",
+   "size": 48,
+   "t63": 61,
+   "t95": 61,
+   "overshootPct": 0
+  },
+  {
+   "tag": "DIV",
+   "cls": "gsap-cursor__item cursor-default",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(8, 38, 32)",
+   "blend": "normal",
+   "radius": "0px",
+   "transition": "all",
+   "size": 48,
+   "t63": 61,
+   "t95": 61,
+   "overshootPct": 0
+  },
+  {
+   "tag": "DIV",
+   "cls": "gsap-cursor__item cursor-active",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(8, 38, 32)",
+   "blend": "normal",
+   "radius": "0px",
+   "transition": "all",
+   "size": 38,
+   "t63": 61,
+   "t95": 61,
+   "overshootPct": 0
+  }
+ ]
+}

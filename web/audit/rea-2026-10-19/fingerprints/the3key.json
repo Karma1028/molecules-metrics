@@ -1,0 +1,118 @@
+{
+ "slug": "the3key",
+ "url": "https://the3key.com/",
+ "fp": {
+  "title": "Accounting for Creatives - The3Key",
+  "globals": [
+   "jQuery"
+  ],
+  "libHints": [
+   "ogl",
+   "wordpress",
+   "wp-content"
+  ],
+  "hosts": [
+   "scripts.clarity.ms",
+   "www.clarity.ms",
+   "the3key.com",
+   "www.googletagmanager.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 49,
+   "img": 1,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 9,
+   "links": 64,
+   "splitChars": 6
+  },
+  "pageHeightVh": 13.2,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(8, 38, 32)",
+   "ff": "Inter"
+  },
+  "h1": {
+   "ff": "Anton",
+   "fs": "18px",
+   "fw": "400",
+   "ls": "0.342857px",
+   "tt": "uppercase",
+   "text": "ACCOUNTING FOR CREATIVES"
+  },
+  "h2": {
+   "ff": "Anton",
+   "fs": "128px",
+   "fw": "400",
+   "ls": "-1.21905px",
+   "tt": "uppercase",
+   "text": "CREATIVES, TACKLE THE TAX MAN TOGETHER"
+  },
+  "p": {
+   "ff": "Inter",
+   "fs": "12px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Even accountants use cookies. They keep things running and show us what’s workin"
+  },
+  "fontsLoaded": [
+   "dashicons",
+   "Font Awesome 6 Brands",
+   "Font Awesome 6 Free",
+   "Anton",
+   "Inter"
+  ],
+  "topFonts": [
+   [
+    "Inter 500",
+    70
+   ],
+   [
+    "Anton 400",
+    62
+   ],
+   [
+    "Inter 400",
+    40
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    24
+   ],
+   [
+    "rgb(8, 38, 32)",
+    15
+   ],
+   [
+    "rgb(226, 255, 239)",
+    14
+   ],
+   [
+    "rgb(254, 249, 242)",
+    12
+   ],
+   [
+    "rgb(255, 235, 241)",
+    8
+   ],
+   [
+    "rgb(33, 60, 54)",
+    6
+   ]
+  ],
+  "css": {
+   "fixed": 4,
+   "sticky": 1,
+   "mask": 8,
+   "clip-path": 12,
+   "cursor:none": 1079,
+   "will-change": 12
+  }
+ },
+ "finalUrl": "https://the3key.com/"
+}

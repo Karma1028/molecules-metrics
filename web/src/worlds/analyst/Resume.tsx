@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react"
 import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
+import { Headline } from "../../components/headline/Headline"
 
 // Content lifted verbatim from the real CV (public/Tuhin_Bhattacharya_Resume.pdf).
 const PDF = "/Tuhin_Bhattacharya_Resume.pdf"
@@ -34,10 +35,13 @@ export const EXP = [
     role: "Business Intelligence Intern", org: "Celebal Technologies · Jaipur", when: "Jul - Dec 2023",
     bullets: [
       "Static Excel P&L to live Power BI: 300+ DAX across 54 pages, query load down 60%+, star schema on 35K rows.",
-      "Pure Storage: 150+ KPIs in 2 weeks and 50+ SQL/DAX queries documented in one shared metric repository.",
+      "Pure Storage: 150+ KPIs in 2 weeks and 200+ SQL/DAX queries documented in one shared metric repository.",
     ],
   },
 ]
+
+/** A grade only gets a bar when its own string states the scale (a percentage). CGPA scales are not on the CV, so none is assumed. */
+const pctOf = (g: string): number | null => (g.endsWith("%") ? Number.parseFloat(g) / 100 : null)
 
 const PROJECTS = [
   { t: "Give Goa · Tourism Water-Stress", d: "501 respondents, 21 zones, 86.43% water-stress signal, filterable Power BI." },
@@ -46,7 +50,6 @@ const PROJECTS = [
 
 const SKILLS = ["Power BI", "DAX", "SQL", "Python", "Pandas", "Streamlit", "Plotly", "LLM APIs", "Supabase", "GCP", "CI/CD", "Z-test", "ANOVA", "Logistic Reg."]
 
-const SHEET_TILT = -0.8
 const STAGGER_S = 0.07
 
 const CSS = String.raw`
@@ -71,59 +74,70 @@ const CSS = String.raw`
   .p-rs .rs-lede b{color:var(--ink);font-weight:600}
   .p-rs .rs-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:clamp(10px,1.8vh,18px)}
   .p-rs .rs-dl{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:var(--accent);color:var(--paper);border-radius:30px;
-    padding:8px 8px 8px 16px;font:600 10.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;transition:filter .3s var(--ease)}
+    padding:8px 8px 8px 16px;font:600 10.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;transition:filter ${motionTokens.duration.normal}s var(--ease)}
   .p-rs .rs-dl:hover{filter:brightness(1.08)}
-  .p-rs .rs-dl .circ{width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,#000 18%,transparent);display:grid;place-items:center;transition:transform .4s var(--ease)}
+  .p-rs .rs-dl .circ{width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,#000 18%,transparent);display:grid;place-items:center;transition:transform ${motionTokens.duration.normal}s var(--ease)}
   .p-rs .rs-dl:hover .circ{transform:translateY(2px)}
   .p-rs .rs-dl .ic{width:13px;height:13px}
   .p-rs .rs-alt{font:500 11px/1 var(--font-mono);letter-spacing:.08em;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
   .p-rs .rs-alt:hover{color:var(--accent)}
 
-  /* left bottom: academic record */
+  /* left bottom: academic record, each grade read out on its own gauge */
   .p-rs .rs-edu{grid-area:edu;min-height:0;display:flex;flex-direction:column;justify-content:flex-end}
   .p-rs .rs-h{display:flex;align-items:center;gap:7px;font:700 9px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal);
     padding-bottom:8px;border-bottom:1px solid var(--rule)}
   .p-rs .rs-h .ic{width:12px;height:12px}
-  .p-rs .edu-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;column-gap:12px;align-items:center;padding:clamp(5px,1vh,10px) 0;border-bottom:1px solid var(--rule)}
+  .p-rs .rs-h .sc{margin-left:auto;color:var(--muted);letter-spacing:.12em}
+  .p-rs .edu-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;column-gap:12px;row-gap:3px;align-items:center;
+    padding:clamp(5px,.9vh,9px) 0;border-bottom:1px dashed color-mix(in srgb,var(--ink) 12%,transparent)}
   .p-rs .edu-t{font:600 clamp(12.5px,1.1vw,15px)/1.15 var(--font-display);color:var(--ink)}
   .p-rs .edu-p{font:500 10px/1.3 var(--font-mono);color:var(--muted);grid-column:1}
   .p-rs .edu-y{font:500 9px/1 var(--font-mono);letter-spacing:.1em;color:var(--muted);grid-row:1 / 3;grid-column:2;white-space:nowrap}
   .p-rs .edu-g{font:700 clamp(13px,1.2vw,17px)/1 var(--font-mono);color:var(--teal);font-variant-numeric:tabular-nums;grid-row:1 / 3;grid-column:3;text-align:right;min-width:4.2ch}
+  .p-rs .edu-g small{display:block;font:600 7.5px/1 var(--font-mono);letter-spacing:.14em;color:var(--muted);margin-top:3px}
+  .p-rs .edu-bar{grid-column:1 / -1;position:relative;height:5px;border-radius:3px;overflow:hidden;margin-top:3px;
+    background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--ink) 9%,transparent) 0 calc(10% - 2px),transparent calc(10% - 2px) 10%)}
+  .p-rs .edu-bar i{position:absolute;inset:0;transform-origin:left center;border-radius:inherit;background:linear-gradient(90deg,var(--teal),var(--accent))}
 
-  /* right: the CV sheet, a document on the desk */
-  .p-rs .rs-desk{grid-area:sheet;min-height:0;display:flex;padding:clamp(10px,2vh,22px) clamp(4px,1vw,14px)}
-  .p-rs .rs-sheet{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(8px,1.6vh,16px);
-    padding:clamp(18px,3.2vh,34px) clamp(18px,2.4vw,36px) clamp(14px,2.4vh,26px);border-radius:4px;
-    background:
-      repeating-linear-gradient(transparent 0 27px,color-mix(in srgb,var(--teal) 6%,transparent) 27px 28px),
-      linear-gradient(170deg,color-mix(in srgb,var(--card) 96%,#fff 4%),var(--card));
-    border:1px solid color-mix(in srgb,var(--ink) 10%,transparent);
-    box-shadow:0 1px 0 color-mix(in srgb,#fff 6%,transparent) inset,0 22px 50px -18px rgba(0,0,0,.55),0 3px 10px -4px rgba(0,0,0,.35)}
-  .p-rs .rs-sheet::before{content:"";position:absolute;left:50%;top:-11px;translate:-50% 0;width:74px;height:22px;border-radius:5px 5px 3px 3px;
-    background:linear-gradient(var(--muted),color-mix(in srgb,var(--muted) 60%,#000));box-shadow:0 2px 4px rgba(0,0,0,.4)}
-  .p-rs .rs-sheet::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
-    background:linear-gradient(115deg,color-mix(in srgb,#fff 5%,transparent) 0 22%,transparent 22.5%)}
-  .p-rs .sh-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:8px}
-  .p-rs .sh-name{font:700 clamp(15px,1.5vw,20px)/1 var(--font-display);letter-spacing:-.01em;color:var(--ink)}
-  .p-rs .sh-meta{font:500 9.5px/1.3 var(--font-mono);letter-spacing:.08em;color:var(--muted);text-align:right}
+  /* right: the CV as an instrument panel, same frame as the Skills lens */
+  .p-rs .rs-desk{grid-area:sheet;min-height:0;display:flex}
+  .p-rs .rs-sheet{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(8px,1.5vh,14px);overflow:hidden;
+    padding:clamp(14px,2.4vh,26px) clamp(16px,2vw,30px);border-radius:16px;
+    background:linear-gradient(140deg,color-mix(in srgb,var(--card) 74%,transparent),color-mix(in srgb,var(--card) 38%,transparent));
+    border:1px solid color-mix(in srgb,var(--teal) 22%,var(--rule));backdrop-filter:blur(10px);
+    box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 8%,transparent),var(--shadow-sm)}
+  .p-rs .rs-sheet::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(115deg,color-mix(in srgb,#fff 6%,transparent) 0 26%,transparent 26.5%)}
+  .p-rs .sh-head{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--rule);padding-bottom:clamp(8px,1.4vh,12px)}
+  .p-rs .sh-name{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.3 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .p-rs .sh-name .live{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
+  .p-rs .sh-meta{font:600 8.5px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:right;
+    padding:5px 8px;border:1px solid var(--rule);border-radius:20px;white-space:nowrap}
 
-  .p-rs .exp{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:clamp(8px,1.6vh,16px)}
-  .p-rs .job{display:flex;flex-direction:column;border-left:2px solid var(--accent);padding-left:12px}
-  .p-rs .job-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-  .p-rs .job-role{font:600 clamp(15px,1.75vw,24px)/1.1 var(--font-display);color:var(--ink)}
-  .p-rs .job-org{font:600 11px/1 var(--font-mono);color:var(--accent)}
-  .p-rs .job-when{margin-left:auto;font:500 9.5px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .p-rs .job ul{list-style:none;margin:clamp(6px,1.2vh,12px) 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
-  .p-rs .job li{position:relative;padding-left:13px;font-size:clamp(12px,min(1.05vw,2vh),15px);line-height:1.5;color:color-mix(in srgb,var(--ink) 82%,var(--muted));text-wrap:pretty}
-  .p-rs .job li::before{content:"";position:absolute;left:0;top:.6em;width:4px;height:4px;border-radius:50%;background:var(--accent)}
+  .p-rs .exp{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:clamp(8px,1.4vh,14px)}
+  .p-rs .job{position:relative;display:flex;flex-direction:column;padding-left:14px}
+  .p-rs .job::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:3px;border-radius:2px;background:linear-gradient(var(--accent),var(--teal))}
+  .p-rs .job-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;column-gap:12px;row-gap:4px}
+  .p-rs .job-role{font:600 clamp(16px,1.75vw,24px)/1.1 var(--font-display);letter-spacing:-.015em;color:var(--ink)}
+  .p-rs .job-org{grid-row:2;font:600 10.5px/1.2 var(--font-mono);letter-spacing:.06em;color:var(--teal)}
+  .p-rs .job-when{grid-row:1 / 3;grid-column:2;align-self:center;font:700 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink);padding:6px 9px;border:1px solid color-mix(in srgb,var(--teal) 34%,transparent);border-radius:6px;white-space:nowrap;
+    background:color-mix(in srgb,var(--teal) 8%,transparent);font-variant-numeric:tabular-nums}
+  .p-rs .job ul{list-style:none;margin:clamp(6px,1.1vh,10px) 0 0;padding:0;display:flex;flex-direction:column}
+  .p-rs .job li{position:relative;padding:clamp(4px,.8vh,7px) 0 clamp(4px,.8vh,7px) 16px;font-size:clamp(12px,min(1vw,1.9vh),14.5px);line-height:1.5;
+    color:color-mix(in srgb,var(--ink) 86%,var(--muted));text-wrap:pretty;border-top:1px dashed color-mix(in srgb,var(--ink) 12%,transparent)}
+  .p-rs .job li::before{content:"";position:absolute;left:1px;top:calc(clamp(4px,.8vh,7px) + .55em);width:6px;height:6px;border-radius:1px;background:var(--teal)}
 
-  .p-rs .side{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px);padding-top:clamp(8px,1.4vh,14px);border-top:1px dashed color-mix(in srgb,var(--ink) 16%,transparent)}
-  .p-rs .side h3{font:700 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
-  .p-rs .chips{display:flex;flex-wrap:wrap;gap:5px;align-content:flex-start}
-  .p-rs .chips span{font:600 9.5px/1 var(--font-mono);color:var(--ink);background:color-mix(in srgb,var(--ink) 5%,transparent);border:1px solid var(--rule);border-radius:20px;padding:5px 9px}
-  .p-rs .projs{display:flex;flex-direction:column;gap:9px}
+  .p-rs .side{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px);padding-top:clamp(8px,1.4vh,14px);border-top:1px solid var(--rule)}
+  .p-rs .side h3{display:flex;justify-content:space-between;font:700 8.5px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .p-rs .side h3 b{color:var(--teal);font-variant-numeric:tabular-nums}
+  .p-rs .chips{display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start}
+  .p-rs .chips span{font:600 9.5px/1 var(--font-mono);color:var(--ink);background:color-mix(in srgb,var(--teal) 7%,transparent);
+    border:1px solid color-mix(in srgb,var(--teal) 26%,transparent);border-radius:4px;padding:5px 7px}
+  .p-rs .projs{display:flex;flex-direction:column;gap:8px}
+  .p-rs .proj{padding-left:10px;border-left:2px solid color-mix(in srgb,var(--teal) 50%,transparent)}
   .p-rs .proj .pt{font:600 12.5px/1.15 var(--font-display);color:var(--ink)}
-  .p-rs .proj .pd{font-size:11px;line-height:1.35;color:var(--muted);margin-top:2px}
+  .p-rs .proj .pd{font:500 10.5px/1.4 var(--font-mono);color:var(--muted);margin-top:3px}
 
   .p-rs .rtabs{display:none}
 
@@ -143,13 +157,12 @@ const CSS = String.raw`
     .p-rs .rs-edu{grid-area:sheet;justify-content:flex-start;display:none}
     .p-rs[data-tab="edu"] .rs-edu{display:flex}
     .p-rs[data-tab="edu"] .rs-desk{display:none}
-    .p-rs .rs-desk{padding:12px 2px 2px}
-    .p-rs .rs-sheet{padding:18px 14px 12px}
+    .p-rs .rs-sheet{padding:12px 14px}
     
     .p-rs[data-tab="side"] .exp{display:none}
     .p-rs .side{grid-template-columns:1fr;border-top:0;padding-top:0;gap:14px}
-    .p-rs .job li{font-size:12px;line-height:1.4}
-    .p-rs .job-when{margin-left:0}
+    .p-rs .job li{font-size:12px;line-height:1.4;padding-top:4px;padding-bottom:4px}
+    .p-rs .job li::before{top:calc(4px + .5em)}
     .p-rs .edu-row{padding:10px 0}
   }
   @media(max-width:600px){
@@ -181,7 +194,7 @@ export function Resume() {
 
       <section className="rs-poster">
         <span className="rs-kick"><Icon id="i-award" /> Log.05 · Curriculum vitae</span>
-        <h1 className="rs-big">On<br /> <em>paper.</em></h1>
+        <Headline world="analyst" className="rs-big">On<br /> <em>paper.</em></Headline>
         <p className="rs-lede">
           <b>Tuhin Bhattacharya.</b> Aspiring Technology Consultant, <b>chem-eng to analytics</b>. The one-page version, verbatim from the PDF.
         </p>
@@ -210,27 +223,39 @@ export function Resume() {
       </div>
 
       <motion.section className="rs-edu" aria-label="Academic record" {...lift(1)}>
-        <div className="rs-h"><Icon id="i-award" /> Academic record</div>
-        {EDU.map((e) => (
-          <div className="edu-row" key={e.t}>
-            <div className="edu-t">{e.t}</div>
-            <span className="edu-y">{e.y}</span>
-            <span className="edu-g">{e.g}</span>
-            <div className="edu-p">{e.p}</div>
-          </div>
-        ))}
+        <div className="rs-h"><Icon id="i-award" /> Academic record <span className="sc">{EDU.length} entries</span></div>
+        {EDU.map((e, k) => {
+          const pct = pctOf(e.g)
+          return (
+            <div className="edu-row" key={e.t}>
+              <div className="edu-t">{e.t}</div>
+              <span className="edu-y">{e.y}</span>
+              <span className="edu-g">{e.g}{pct === null && <small>CGPA</small>}</span>
+              <div className="edu-p">{e.p}</div>
+              {pct !== null && (
+                <span className="edu-bar" role="meter" aria-label={`${e.t} score`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct * 100}>
+                  <motion.i
+                    initial={reduce ? false : { scaleX: 0 }}
+                    animate={{ scaleX: pct }}
+                    transition={reduce ? { duration: 0 } : { ...springs.gentle, delay: motionTokens.duration.normal + k * STAGGER_S }}
+                  />
+                </span>
+              )}
+            </div>
+          )
+        })}
       </motion.section>
 
       <div className="rs-desk">
         <motion.article
           className="rs-sheet"
           aria-label="Experience, stack and projects"
-          initial={reduce ? { opacity: 1, rotate: SHEET_TILT } : { opacity: 0, y: motionTokens.distance.xl, rotate: SHEET_TILT * 4 }}
-          animate={{ opacity: 1, y: 0, rotate: SHEET_TILT }}
+          initial={reduce ? { opacity: 1 } : { opacity: 0, y: motionTokens.distance.md }}
+          animate={{ opacity: 1, y: 0 }}
           transition={reduce ? { duration: 0 } : springs.gentle}
         >
           <header className="sh-head">
-            <span className="sh-name">Tuhin Bhattacharya</span>
+            <span className="sh-name"><span className="live" aria-hidden="true" />Tuhin Bhattacharya</span>
             <span className="sh-meta">Experience · 12 months</span>
           </header>
 
@@ -249,11 +274,11 @@ export function Resume() {
 
           <motion.div className="side" {...lift(4)}>
             <div>
-              <h3>Core stack</h3>
+              <h3>Core stack <b>{SKILLS.length}</b></h3>
               <div className="chips">{SKILLS.map((s) => <span key={s}>{s}</span>)}</div>
             </div>
             <div className="projs">
-              <h3>Selected projects</h3>
+              <h3>Selected projects <b>{PROJECTS.length}</b></h3>
               {PROJECTS.map((p) => (
                 <div className="proj" key={p.t}>
                   <div className="pt">{p.t}</div>

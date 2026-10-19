@@ -1,0 +1,156 @@
+{
+ "slug": "pencilvania",
+ "url": "https://pencilvania.stutpak.com/",
+ "phases": {
+  "loaded": 775,
+  "hover": 8832,
+  "cursorStep": 12410,
+  "scroll": 13626,
+  "end": 25131
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "hover0": [],
+  "hover1": [],
+  "hover2": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   768,
+   "2d",
+   "300x150"
+  ]
+ ],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [],
+ "mutationCount": 0,
+ "assets": [
+  [
+   "css",
+   "https://pencilvania.stutpak.com/fonts/laila.woff2",
+   11
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/1.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/2.mp3",
+   4
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/3.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/4.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/5.mp3",
+   4
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/6.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/7.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/8.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/9.mp3",
+   6
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/10.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/11.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/12.mp3",
+   6
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/13.mp3",
+   7
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/14.mp3",
+   4
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/15.mp3",
+   3
+  ],
+  [
+   "audio",
+   "https://pencilvania.stutpak.com/sounds/16.mp3",
+   3
+  ]
+ ],
+ "css": {
+  "cssBytes": 0,
+  "keyframes": [],
+  "beziers": [],
+  "durations": [],
+  "transitions": [],
+  "customProps": [],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 0,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 43133,
+ "jsLibs": []
+}

@@ -1,0 +1,59 @@
+/* Custom pointers (components/pointer). Positions are written per frame as
+   translate3d on .ptr-pos / hairlines / corners; CSS only styles and eases
+   opacity + scale of the inner marks. */
+:root[data-pointer], :root[data-pointer] * { cursor: none !important; }
+:root[data-pointer] :is(input:not([type="range"]):not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="true"]) { cursor: text !important; }
+
+.ptr { position: fixed; inset: 0; pointer-events: none; z-index: 9999; transition: opacity .2s var(--ease, ease); }
+.ptr[data-hidden="true"] { opacity: 0; }
+.ptr-pos, .ptr-hair, .ptr-read, .ptr-lock i { position: absolute; top: 0; left: 0; will-change: transform; }
+
+/* ---------- artist: ink nib + the ball he watched ---------- */
+.ptr-dot, .ptr-ball, .ptr-lines { position: absolute; translate: -50% -50%; }
+.ptr-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); transition: scale .32s cubic-bezier(.19,1,.22,1); }
+.ptr-ball { width: 15px; height: 15px; color: var(--ink); filter: drop-shadow(1px 2px 0 color-mix(in srgb, var(--ink) 18%, transparent));
+  transition: scale .32s cubic-bezier(.19,1,.22,1); }
+.ptr-ball svg { display: block; overflow: visible; }
+.ptr-ball-skin { fill: var(--card); stroke: currentColor; stroke-width: 1.4; }
+.ptr-ball-seam { fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linejoin: round; }
+.ptr-ball-seam { fill-rule: evenodd; }
+/* speed lines trail opposite the travel direction; rotation set per frame */
+.ptr-lines { width: 30px; height: 11px; translate: -100% -50%; transform-origin: 100% 50%; opacity: 0;
+  background: repeating-linear-gradient(180deg, transparent 0 2px, var(--accent) 2px 3.5px, transparent 3.5px 4px);
+  -webkit-mask: linear-gradient(90deg, transparent, #000); mask: linear-gradient(90deg, transparent, #000); }
+.ptr-ink[data-hover="true"] .ptr-ball { scale: 1.2; color: var(--accent); }
+.ptr-ink[data-hover="true"] .ptr-dot { scale: .6; }
+.ptr-ink[data-press="true"] .ptr-ball { scale: 1.25 .8; }
+
+/* ---------- analyst: hairlines + readout + lock bracket ---------- */
+.ptr-hair { background: color-mix(in srgb, var(--accent) 32%, transparent); }
+.ptr-hair-h { width: 100vw; height: 1px; }
+.ptr-hair-v { width: 1px; height: 100vh; }
+.ptr-cross[data-hover="true"] .ptr-hair { opacity: .45; }
+/* sample size is lowercase n (stats convention); the label is uppercased in JS */
+/* the catalyst point: the ball, reduced to a data point (orange never leaves) */
+.ptr-point { position: absolute; width: 5px; height: 5px; border-radius: 50%; translate: -50% -50%; background: var(--orange, #E0662F);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--orange, #E0662F) 22%, transparent); }
+.ptr-read { font: 600 10px/1 var(--font-mono, monospace); letter-spacing: .08em; white-space: pre;
+  color: var(--accent); padding: 4px 6px; border-radius: 4px; background: color-mix(in srgb, var(--paper) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); font-variant-numeric: tabular-nums; }
+.ptr-read[data-flip-x="true"] { translate: -100% 0; }
+.ptr-lock { opacity: 0; transition: opacity .18s; }
+.ptr-cross[data-hover="true"] .ptr-lock { opacity: 1; }
+.ptr-lock i { width: 9px; height: 9px; border: 0 solid var(--accent); }
+.ptr-lock i[data-c="tl"] { border-top-width: 1.5px; border-left-width: 1.5px; }
+.ptr-lock i[data-c="tr"] { border-top-width: 1.5px; border-right-width: 1.5px; translate: -100% 0; }
+.ptr-lock i[data-c="bl"] { border-bottom-width: 1.5px; border-left-width: 1.5px; translate: 0 -100%; }
+.ptr-lock i[data-c="br"] { border-bottom-width: 1.5px; border-right-width: 1.5px; translate: -100% -100%; }
+
+/* world switch hand-off: ball shrinks into the point, the point swells into the ball */
+.ptr-cross[data-handoff="true"] .ptr-point { animation: ptr-ball-to-point var(--handoff, .6s) cubic-bezier(.19,1,.22,1) backwards; }
+/* backwards fill only: after landing, hover/press scale must win again */
+.ptr-ink[data-handoff="true"] .ptr-ball { animation: ptr-point-to-ball var(--handoff, .6s) cubic-bezier(.19,1,.22,1) backwards; }
+@keyframes ptr-ball-to-point { from { scale: 3; background: var(--card); outline: 1.4px solid var(--orange, #E0662F); } to { scale: 1; } }
+@keyframes ptr-point-to-ball { from { scale: .33; opacity: .6; } to { scale: 1; opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ptr-dot, .ptr-ball, .ptr-lock { transition: opacity .15s; }
+  .ptr-cross[data-handoff="true"] .ptr-point, .ptr-ink[data-handoff="true"] .ptr-ball { animation: none; }
+}

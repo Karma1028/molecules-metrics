@@ -1,0 +1,75 @@
+# peppa — https://www.peppasauce.love/
+- libs (bundle regex): lottie, webflow-ix2 · JS 1097 KB · CSS 28 KB · style mutations 9290
+- smooth scroll: native (no lerp detected on window scroll)
+- canvas contexts: 2d 1x1@742ms, 2d 300x150@744ms, 2d 300x150@1252ms, 2d 300x150@1348ms
+- CSS easings: none
+- CSS durations: 
+- CSS keyframes (0): 
+- CSS features: 
+- top transitions: 
+
+## JS-driven tween clusters (374 tweens → 80 groups; times ms from navigation; phases {"loaded":822,"hover":9290,"cursorStep":15894,"scroll":17108,"end":28577})
+- [load @1065] div.text-container · transform.y -8.081→-42.42 · 300ms · power4.out (rmse 0.05) · ×3, stagger ~0ms
+- [load @1065] div.scrolling-text · transform.x -3.644→-17.581 · 300ms · power4.out (rmse 0.05) · ×7, stagger ~0ms
+- [load @1065] div.scrolling-text-right · transform.x 0.074→0.148 · 100ms · power4.out (rmse 0.01)
+- [load @1065] div.scrolling-text-right · transform.x 4→19.296 · 300ms · power4.out (rmse 0.05) · ×4, stagger ~0ms
+- [load @1065] div.scrolling-text · transform.x -10→-19.999 · 200ms · circ-out(.075,.82,.165,1) (rmse 0.068)
+- [load @1065] div.scrolling-text-right · transform.x 10→19.999 · 200ms · circ-out(.075,.82,.165,1) (rmse 0.068)
+- [load @1065] img.star · transform.r 360→719.957 · 200ms · circ-out(.075,.82,.165,1) (rmse 0.068) · ×74, stagger ~0ms
+- [load @1065] img.star · transform.r 2.678→5.321 · 100ms · power4.out (rmse 0.01) · ×6, stagger ~0ms
+- [load @1065] img.star · transform.r 71.194→142.315 · 150ms · circ-out(.075,.82,.165,1) (rmse 0.032) · ×2, stagger ~0ms
+- [load @1908] div.text-container · transform.y -11.029→-11.199 · 150ms · power2.out (rmse 0.031)
+- [load @1908] div.scrolling-text · transform.x -8.252→-8.371 · 200ms · power2.out (rmse 0.022) · ×3, stagger ~0ms
+- [load @1908] div.scrolling-text-right · transform.x 19.712→19.998 · 200ms · power3.out (rmse 0.028) · ×4, stagger ~0ms
+- [load @1908] div.scrolling-text · transform.x -19.712→-19.998 · 200ms · power3.out (rmse 0.028) · ×4, stagger ~0ms
+- [load @1908] div.text-container · transform.y -43.353→-43.996 · 200ms · power3.out (rmse 0.028) · ×2, stagger ~0ms
+- [load @5977] div.page-cover · opacity 1→0 · 1000ms · power4.out (rmse 0.034)
+- [hover @9414] div.text-container · transform.y -8.78→-4.176 · 450ms · circ-out(.075,.82,.165,1) (rmse 0.48)
+- [hover @9414] div.scrolling-text · transform.x -6.696→-4.456 · 500ms · circ-out(.075,.82,.165,1) (rmse 0.888) · ×3, stagger ~0ms
+- [hover @9414] div.scrolling-text-right · transform.x 13.349→10.209 · 500ms · circ-out(.075,.82,.165,1) (rmse 1.259)
+- [hover @9414] div.scrolling-text · transform.x -18.385→-19.998 · 450ms · power1.out (rmse 0.058)
+- [hover @9414] img.star · transform.r 313.589→367.488 · 300ms · power2.in (rmse 3.31) · ×16, stagger ~0ms
+- [hover @9414] img.star · transform.r 457.769→624.442 · 300ms · expo.inOut (rmse 1.025)
+- [hover @9414] img.star · transform.r 191.894→154.764 · 300ms · circ-out(.075,.82,.165,1) (rmse 2.886) · ×2, stagger ~0ms
+- [hover @9414] img.star · transform.r 187.164→6.883 · 100ms · circ-out(.075,.82,.165,1) (rmse 0.028) · ×19, stagger ~0ms
+- [hover @9414] img.star · transform.r 672.178→719.942 · 250ms · css ease-out (rmse 0.073) · ×7, stagger ~0ms
+- [hover @9414] div.bottle · transform.x 0.464→28.416 · 450ms · power2.inOut (rmse 0.123)
+- [hover @9414] div.bottle · transform.r 0.07→4.262 · 450ms · power2.inOut (rmse 0.123)
+- [hover @9414] div.cursor-learn-more.move · transform.x -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @9414] div.cursor-learn-more.move · transform.y -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @9414] div.cursor-check-out.move · transform.x -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @9414] div.cursor-check-out.move · transform.y -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @9414] div.cursor-close.move · transform.x -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @9414] div.cursor-close.move · transform.y -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @9414] div.cursor.move · transform.x -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @9414] div.cursor.move · transform.y -5→-50 · 750ms · expo.out (rmse 0.012)
+- [hover @10275] div.scrolling-text · transform.x -3.565→0 · 300ms · expo.out (rmse 0.01) · ×3, stagger ~0ms
+- [hover @10275] div.scrolling-text-right · transform.x 8.197→0.151 · 300ms · expo.out (rmse 0.011)
+- [hover @10275] div.scrolling-text · transform.x -19.643→-18.224 · 250ms · power4.out (rmse 0.018)
+- [hover @10275] img.star · transform.r 77.386→0 · 100ms · quart-out(.19,1,.22,1) (rmse 0.017) · ×2, stagger ~0ms
+- [hover @10275] img.star · transform.r 687.974→656.064 · 100ms · expo.out (rmse 0.015) · ×7, stagger ~0ms
+- [hover @10275] div.bottle · transform.x 22.732→0 · 250ms · power4.out (rmse 0.019)
+- [hover @10275] div.bottle · transform.r 3.41→0 · 250ms · power4.out (rmse 0.019)
+- [hover @11772] div.text-container · transform.y -8.081→-43.996 · 700ms · power3.out (rmse 0.016) · ×2, stagger ~0ms
+- [hover @11772] div.scrolling-text · transform.x -4→-19.998 · 700ms · power3.out (rmse 0.016) · ×6, stagger ~0ms
+- [hover @11772] div.scrolling-text-right · transform.x 10→19.999 · 350ms · expo.out (rmse 0.015) · ×2, stagger ~0ms
+- [hover @11772] div.scrolling-text-right · transform.x 4→19.998 · 700ms · power3.out (rmse 0.016) · ×10, stagger ~0ms
+
+## Notable assets
+- xmlhttprequest https://www.peppasauce.love/documents/fire.json 671KB
+- xmlhttprequest https://www.peppasauce.love/documents/webp-sequence2.json 1457KB
+- xmlhttprequest https://www.peppasauce.love/documents/snake.json 5KB
+- xmlhttprequest https://www.peppasauce.love/documents/cereal.json 2KB
+- xmlhttprequest https://www.peppasauce.love/documents/cereal.json 0KB
+- xmlhttprequest https://www.peppasauce.love/documents/cereal.json 0KB
+- xmlhttprequest https://www.peppasauce.love/documents/mama-joyce-wink.json 19KB
+- xmlhttprequest https://www.peppasauce.love/documents/mama-joyce-wink.json 0KB
+- xmlhttprequest https://www.peppasauce.love/documents/snake.json 0KB
+- xmlhttprequest https://www.peppasauce.love/documents/mint.json 3KB
+- xmlhttprequest https://www.peppasauce.love/documents/mint.json 0KB
+- xmlhttprequest https://www.peppasauce.love/documents/mint.json 0KB
+- xmlhttprequest https://www.peppasauce.love/documents/steak.json 2KB
+- xmlhttprequest https://www.peppasauce.love/documents/steak.json 0KB
+- xmlhttprequest https://www.peppasauce.love/documents/steak.json 0KB
+
+Raw: forensics/peppa/ (forensics.json, source.css, source.js.txt, *.webm video of the run)

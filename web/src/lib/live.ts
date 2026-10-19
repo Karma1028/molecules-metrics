@@ -244,7 +244,8 @@ export function useMusicLyrics(artist: string, title: string): Live<LyricsResp> 
         if (!r.ok) throw new Error(String(r.status))
         return r.json() as Promise<LyricsResp>
       })
-      .then((j) => (j.found ? j : direct()))
+      // the proxy does an exact match only; a hit with no synced lines still deserves the fuzzy search
+      .then((j) => (j.found && j.synced ? j : direct().then((d) => (d.found ? d : j))))
       .catch(direct)
       .then((j: LyricsResp) => {
         if (alive) setState({ data: j, loading: false, error: false, fallback: !j.found })

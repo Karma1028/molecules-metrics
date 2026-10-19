@@ -1,0 +1,229 @@
+{
+ "slug": "vana",
+ "url": "https://vana.org/",
+ "phases": {
+  "loaded": 390,
+  "hover": 9267,
+  "cursorStep": 13580,
+  "scroll": 14782,
+  "end": 25962
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "hover0": [],
+  "hover1": [],
+  "hover2": [],
+  "hover3": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [],
+ "mutationCount": 0,
+ "assets": [
+  [
+   "link",
+   "https://vana.org/_next/static/media/70bc3e132a0a741e-s.p.3t6q91iet4nsy.woff2",
+   40
+  ],
+  [
+   "link",
+   "https://vana.org/_next/static/media/8800dfc60902df36-s.p.2sla2yow9-9p_.woff2",
+   33
+  ],
+  [
+   "video",
+   "https://vana.org/hero.webm",
+   2095
+  ],
+  [
+   "other",
+   "https://vana.org/assets/logos/vana-asterisk-data-signal.svg",
+   1
+  ]
+ ],
+ "css": {
+  "cssBytes": 77761,
+  "keyframes": [
+   {
+    "name": "settleUp",
+    "body": "0%{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}"
+   },
+   {
+    "name": "spin",
+    "body": "to{transform:rotate(360deg)}"
+   }
+  ],
+  "beziers": [
+   [
+    "cubic-bezier(.4, 0, .2, 1)",
+    2
+   ],
+   [
+    "cubic-bezier(.2, 0, 0, 1)",
+    1
+   ]
+  ],
+  "durations": [
+   [
+    "15s",
+    5
+   ],
+   [
+    "0s",
+    3
+   ],
+   [
+    "5s",
+    3
+   ],
+   [
+    "2s",
+    2
+   ],
+   [
+    "6s",
+    2
+   ],
+   [
+    "18s",
+    2
+   ],
+   [
+    "24s",
+    2
+   ],
+   [
+    "001ms",
+    2
+   ],
+   [
+    "1s",
+    1
+   ],
+   [
+    "28s",
+    1
+   ],
+   [
+    "56s",
+    1
+   ],
+   [
+    "32s",
+    1
+   ],
+   [
+    "3s",
+    1
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:text-decoration-color .15s var(--ease-standard)",
+    2
+   ],
+   [
+    "transition:color var(--motion-large) var(--ease-standard), opacity var(--motion-large) var(--ease-sta",
+    1
+   ]
+  ],
+  "customProps": [
+   [
+    "--font-sans",
+    16
+   ],
+   [
+    "--tw-font-weight",
+    10
+   ],
+   [
+    "--tw-translate-y",
+    8
+   ],
+   [
+    "--tw-tracking",
+    7
+   ],
+   [
+    "--tw-shadow",
+    7
+   ],
+   [
+    "--font-mono",
+    6
+   ],
+   [
+    "--tw-translate-x",
+    5
+   ],
+   [
+    "--tw-space-y-reverse",
+    5
+   ],
+   [
+    "--tw-duration",
+    5
+   ],
+   [
+    "--door-color-delay",
+    5
+   ],
+   [
+    "--tw-leading",
+    4
+   ],
+   [
+    "--tw-ring-shadow",
+    4
+   ],
+   [
+    "--tw-grayscale",
+    4
+   ],
+   [
+    "--text-hero--letter-spacing",
+    4
+   ],
+   [
+    "--tw-ring-color",
+    3
+   ]
+  ],
+  "features": {
+   "@property": 81,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 1,
+   "mix-blend-mode": 0,
+   "clip-path": 1,
+   "mask": 2,
+   "backdrop-filter": 8,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 2,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 630052,
+ "jsLibs": [
+  "react"
+ ]
+}

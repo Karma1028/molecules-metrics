@@ -1,0 +1,71 @@
+{
+ "slug": "bleibtgleich",
+ "url": "https://www.bleibtgleich.com/",
+ "phases": {
+  "loaded": 541,
+  "hover": 8582,
+  "cursorStep": 13472,
+  "scroll": 14677,
+  "end": 25760
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "hover0": [],
+  "hover1": [],
+  "hover2": [],
+  "hover3": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [],
+ "mutationCount": 8,
+ "assets": [
+  [
+   "other",
+   "https://www.bleibtgleich.com/favicon.svg",
+   0
+  ]
+ ],
+ "css": {
+  "cssBytes": 5776,
+  "keyframes": [],
+  "beziers": [],
+  "durations": [],
+  "transitions": [],
+  "customProps": [],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 0,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 31853,
+ "jsLibs": []
+}

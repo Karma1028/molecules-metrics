@@ -1,0 +1,185 @@
+{
+ "slug": "onelastbeat",
+ "url": "http://onelastbeat.com/",
+ "phases": {
+  "loaded": 1838,
+  "gateClick": 9893,
+  "gateDone": 27918,
+  "hover": 27920,
+  "cursorStep": 28737,
+  "scroll": 29941,
+  "end": 40926
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterGate": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   1563,
+   "webgl",
+   "300x150"
+  ],
+  [
+   1565,
+   "2d",
+   "300x150"
+  ],
+  [
+   1668,
+   "2d",
+   "10x10"
+  ],
+  [
+   1669,
+   "2d",
+   "6x1"
+  ],
+  [
+   1669,
+   "2d",
+   "6x1"
+  ],
+  [
+   1669,
+   "2d",
+   "6x1"
+  ],
+  [
+   1703,
+   "2d",
+   "10x10"
+  ],
+  [
+   1711,
+   "webgl",
+   "300x150"
+  ],
+  [
+   1713,
+   "2d",
+   "300x150"
+  ]
+ ],
+ "audio": [
+  [
+   1565,
+   "AudioContext"
+  ],
+  [
+   1713,
+   "AudioContext"
+  ]
+ ],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [
+  {
+   "el": "div#use-fking-headphones",
+   "prop": "opacity",
+   "start": 1830,
+   "dur": 395,
+   "from": 0.02,
+   "to": 1,
+   "n": 58,
+   "ease": "power1.out",
+   "rmse": 0.002
+  }
+ ],
+ "mutationCount": 58,
+ "assets": [
+  [
+   "css",
+   "http://onelastbeat.com/static/fonts/olbmini-webfont.woff",
+   16
+  ]
+ ],
+ "css": {
+  "cssBytes": 25437,
+  "keyframes": [],
+  "beziers": [],
+  "durations": [
+   [
+    "0.3s",
+    60
+   ],
+   [
+    "0.1s",
+    5
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:color 0.3s",
+    15
+   ],
+   [
+    "transition:fill,0.3s",
+    10
+   ],
+   [
+    "transition:stroke 0.3s",
+    10
+   ],
+   [
+    "transition:transform 0.3s,stroke 0.3s",
+    5
+   ],
+   [
+    "transition:transform 0.3s",
+    5
+   ],
+   [
+    "transition:background-color 0.3s",
+    5
+   ],
+   [
+    "transition:all 0.3s",
+    5
+   ],
+   [
+    "transition:top 0.1s ease-out",
+    5
+   ]
+  ],
+  "customProps": [],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 1,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 1860064,
+ "jsLibs": [
+  "gsap",
+  "three",
+  "pixi",
+  "howler",
+  "webflow-ix2"
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "slug": "zighead",
+ "url": "https://www.headfonts.com/p/zighead-font/",
+ "phases": {
+  "loaded": 1896
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterNav": []
+ },
+ "transition": {
+  "href": "https://www.headfonts.com/checkout/",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 9967,
+  "urlFrames": [
+   [
+    "/p/zighead-font/",
+    10245
+   ],
+   [
+    "/p/zighead-font/",
+    10497
+   ],
+   [
+    "/p/zighead-font/",
+    10750
+   ],
+   [
+    "/p/zighead-font/",
+    11010
+   ],
+   [
+    "/p/zighead-font/",
+    11263
+   ],
+   [
+    "/p/zighead-font/",
+    11514
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 20
+ }
+}

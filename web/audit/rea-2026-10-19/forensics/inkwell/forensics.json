@@ -1,0 +1,1197 @@
+{
+ "slug": "inkwell",
+ "url": "https://inkwell.tech/",
+ "phases": {
+  "loaded": 3647,
+  "hover": 12550,
+  "cursorStep": 18076,
+  "scroll": 19291,
+  "end": 30888
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "hover0": [],
+  "hover1": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   4261,
+   "webgl",
+   "300x150"
+  ],
+  [
+   4990,
+   "webgl2",
+   "300x150"
+  ]
+ ],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [
+  {
+   "el": "div.cursor__wrapper.theme-dark",
+   "prop": "--v10789d65",
+   "start": 5032,
+   "dur": 403,
+   "from": 90,
+   "to": 122,
+   "n": 26,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.577
+  },
+  {
+   "el": "div.dot-cursor.theme-dark",
+   "prop": "--v10789d65",
+   "start": 5032,
+   "dur": 403,
+   "from": 90,
+   "to": 122,
+   "n": 26,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.577
+  },
+  {
+   "el": "div.text-indicator.--behind",
+   "prop": "opacity",
+   "start": 5671,
+   "dur": 1271,
+   "from": 0.012,
+   "to": 0.943,
+   "n": 185,
+   "ease": "power1.out",
+   "rmse": 0.05
+  },
+  {
+   "el": "div.text-indicator",
+   "prop": "opacity",
+   "start": 5671,
+   "dur": 1271,
+   "from": 0.012,
+   "to": 0.943,
+   "n": 185,
+   "ease": "power1.out",
+   "rmse": 0.05
+  },
+  {
+   "el": "div.text-indicator.--behind",
+   "prop": "opacity",
+   "start": 7354,
+   "dur": 1243,
+   "from": 0.944,
+   "to": 1,
+   "n": 107,
+   "ease": "circ-out(.075,.82,.165,1)",
+   "rmse": 0.169
+  },
+  {
+   "el": "div.text-indicator",
+   "prop": "opacity",
+   "start": 7354,
+   "dur": 1243,
+   "from": 0.944,
+   "to": 1,
+   "n": 107,
+   "ease": "circ-out(.075,.82,.165,1)",
+   "rmse": 0.169
+  },
+  {
+   "el": "div.cursor__wrapper.theme-dark",
+   "prop": "--v10789d65",
+   "start": 11736,
+   "dur": 1992,
+   "from": 122,
+   "to": 60,
+   "n": 321,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.034
+  },
+  {
+   "el": "div.dot-cursor.theme-dark",
+   "prop": "--v10789d65",
+   "start": 11736,
+   "dur": 707,
+   "from": 122,
+   "to": 61,
+   "n": 48,
+   "ease": "power1.out",
+   "rmse": 0.032
+  },
+  {
+   "el": "div.cursor__wrapper.theme-dark",
+   "prop": "transform.x",
+   "start": 11736,
+   "dur": 1992,
+   "from": 4.118,
+   "to": 103,
+   "n": 321,
+   "ease": "circ-out(.075,.82,.165,1)",
+   "rmse": 0.066
+  },
+  {
+   "el": "div.cursor__wrapper.theme-dark",
+   "prop": "transform.y",
+   "start": 11736,
+   "dur": 1992,
+   "from": 32.263,
+   "to": 807,
+   "n": 321,
+   "ease": "circ-out(.075,.82,.165,1)",
+   "rmse": 0.066
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 12520,
+   "dur": 999,
+   "from": 100,
+   "to": 0,
+   "n": 145,
+   "ease": "power2.inOut",
+   "rmse": 0.006
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 12526,
+   "dur": 1000,
+   "from": 100,
+   "to": 0,
+   "n": 145,
+   "ease": "power2.inOut",
+   "rmse": 0.001
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 12540,
+   "dur": 1000,
+   "from": 100,
+   "to": 0,
+   "n": 145,
+   "ease": "power2.inOut",
+   "rmse": 0.007
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 12549,
+   "dur": 998,
+   "from": 100,
+   "to": 0,
+   "n": 145,
+   "ease": "power2.inOut",
+   "rmse": 0.004
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 12561,
+   "dur": 1001,
+   "from": 100,
+   "to": 0,
+   "n": 145,
+   "ease": "power2.inOut",
+   "rmse": 0.009
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 12568,
+   "dur": 1000,
+   "from": 100,
+   "to": 0,
+   "n": 145,
+   "ease": "power2.inOut",
+   "rmse": 0.004
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 12582,
+   "dur": 1000,
+   "from": 100,
+   "to": 0,
+   "n": 145,
+   "ease": "power2.inOut",
+   "rmse": 0.009
+  },
+  {
+   "el": "div.indicator-wrapper",
+   "prop": "transform.x",
+   "start": 14040,
+   "dur": 500,
+   "from": -17.262,
+   "to": -78.305,
+   "n": 73,
+   "ease": "power2.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "div.indicator-wrapper",
+   "prop": "transform.x",
+   "start": 14040,
+   "dur": 500,
+   "from": -17.262,
+   "to": -78.305,
+   "n": 73,
+   "ease": "power2.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "p.scroll-1",
+   "prop": "opacity",
+   "start": 14318,
+   "dur": 1541,
+   "from": 0.011,
+   "to": 1,
+   "n": 190,
+   "ease": "expo.out",
+   "rmse": 0.009
+  },
+  {
+   "el": "div.cursor__wrapper.theme-dark",
+   "prop": "--v10789d65",
+   "start": 17276,
+   "dur": 2772,
+   "from": 60,
+   "to": -90,
+   "n": 447,
+   "ease": "power3.inOut",
+   "rmse": 0.228
+  },
+  {
+   "el": "div.dot-cursor.theme-dark",
+   "prop": "--v10789d65",
+   "start": 17276,
+   "dur": 674,
+   "from": 60,
+   "to": 89,
+   "n": 29,
+   "ease": "css ease-out",
+   "rmse": 0.033
+  },
+  {
+   "el": "div.cursor__wrapper.theme-dark",
+   "prop": "transform.x",
+   "start": 17276,
+   "dur": 2772,
+   "from": 111.103,
+   "to": 1100,
+   "n": 447,
+   "ease": "css ease",
+   "rmse": 0.12
+  },
+  {
+   "el": "div.cursor__wrapper.theme-dark",
+   "prop": "transform.y",
+   "start": 17276,
+   "dur": 2772,
+   "from": 792.317,
+   "to": 450,
+   "n": 447,
+   "ease": "circ-out(.075,.82,.165,1)",
+   "rmse": 0.1
+  },
+  {
+   "el": "div.dot-cursor.theme-dark",
+   "prop": "--v10789d65",
+   "start": 18088,
+   "dur": 667,
+   "from": 89,
+   "to": -90,
+   "n": 50,
+   "ease": "css ease-in-out",
+   "rmse": 0.106
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 19325,
+   "dur": 132,
+   "from": -3.998,
+   "to": -120,
+   "n": 20,
+   "ease": "css ease-out",
+   "rmse": 0.035
+  },
+  {
+   "el": "p.scroll-1",
+   "prop": "transform.y",
+   "start": 19325,
+   "dur": 132,
+   "from": -3.36,
+   "to": -200,
+   "n": 23,
+   "ease": "linear",
+   "rmse": 0.068
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 19331,
+   "dur": 132,
+   "from": -1.722,
+   "to": -120,
+   "n": 20,
+   "ease": "css ease-out",
+   "rmse": 0.044
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 19331,
+   "dur": 132,
+   "from": -6.439,
+   "to": -120,
+   "n": 20,
+   "ease": "css ease-out",
+   "rmse": 0.038
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 19331,
+   "dur": 132,
+   "from": -11.061,
+   "to": -120,
+   "n": 20,
+   "ease": "css ease-out",
+   "rmse": 0.033
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 19338,
+   "dur": 132,
+   "from": -2.863,
+   "to": -120,
+   "n": 20,
+   "ease": "css ease-out",
+   "rmse": 0.042
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 19338,
+   "dur": 132,
+   "from": -7.557,
+   "to": -120,
+   "n": 20,
+   "ease": "css ease-out",
+   "rmse": 0.037
+  },
+  {
+   "el": "span.--word",
+   "prop": "transform.y",
+   "start": 19346,
+   "dur": 124,
+   "from": -8.669,
+   "to": -120,
+   "n": 19,
+   "ease": "css ease-out",
+   "rmse": 0.05
+  },
+  {
+   "el": "div.info-scrub",
+   "prop": "transform.y",
+   "start": 19346,
+   "dur": 166,
+   "from": 91.271,
+   "to": 0,
+   "n": 51,
+   "ease": "power4.out",
+   "rmse": 0.029
+  },
+  {
+   "el": "div.info-scrub",
+   "prop": "opacity",
+   "start": 19346,
+   "dur": 166,
+   "from": 0.013,
+   "to": 1,
+   "n": 51,
+   "ease": "linear",
+   "rmse": 0.048
+  },
+  {
+   "el": "div.varying-scrub",
+   "prop": "transform.y",
+   "start": 19346,
+   "dur": 174,
+   "from": 100,
+   "to": 0,
+   "n": 49,
+   "ease": "power2.out",
+   "rmse": 0.079
+  },
+  {
+   "el": "div.varying-scrub",
+   "prop": "opacity",
+   "start": 19346,
+   "dur": 174,
+   "from": 0.013,
+   "to": 1,
+   "n": 49,
+   "ease": "sine.inOut",
+   "rmse": 0.034
+  },
+  {
+   "el": "div.info-scrub",
+   "prop": "transform.y",
+   "start": 19346,
+   "dur": 166,
+   "from": 91.271,
+   "to": 0,
+   "n": 51,
+   "ease": "power4.out",
+   "rmse": 0.029
+  },
+  {
+   "el": "div.info-scrub",
+   "prop": "opacity",
+   "start": 19346,
+   "dur": 166,
+   "from": 0.013,
+   "to": 1,
+   "n": 51,
+   "ease": "linear",
+   "rmse": 0.048
+  },
+  {
+   "el": "div.varying-scrub",
+   "prop": "transform.y",
+   "start": 19346,
+   "dur": 174,
+   "from": 100,
+   "to": 0,
+   "n": 49,
+   "ease": "power2.out",
+   "rmse": 0.079
+  },
+  {
+   "el": "div.varying-scrub",
+   "prop": "opacity",
+   "start": 19346,
+   "dur": 174,
+   "from": 0.013,
+   "to": 1,
+   "n": 49,
+   "ease": "sine.inOut",
+   "rmse": 0.034
+  },
+  {
+   "el": "span.varying",
+   "prop": "transform.y",
+   "start": 24000,
+   "dur": 2192,
+   "from": -5.374,
+   "to": -250,
+   "n": 320,
+   "ease": "expo.out",
+   "rmse": 0.005
+  },
+  {
+   "el": "p.faded.info",
+   "prop": "transform.y",
+   "start": 24000,
+   "dur": 2192,
+   "from": -5.374,
+   "to": -250,
+   "n": 392,
+   "ease": "expo.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "p.faded.info",
+   "prop": "opacity",
+   "start": 24000,
+   "dur": 2192,
+   "from": 0.986,
+   "to": 0,
+   "n": 392,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.06
+  },
+  {
+   "el": "span.varying",
+   "prop": "transform.y",
+   "start": 24000,
+   "dur": 2192,
+   "from": -5.374,
+   "to": -250,
+   "n": 322,
+   "ease": "expo.out",
+   "rmse": 0.005
+  },
+  {
+   "el": "p.faded.info",
+   "prop": "transform.y",
+   "start": 24000,
+   "dur": 2192,
+   "from": -6.449,
+   "to": -300,
+   "n": 394,
+   "ease": "expo.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "p.faded.info",
+   "prop": "opacity",
+   "start": 24000,
+   "dur": 2192,
+   "from": 0.986,
+   "to": 0,
+   "n": 394,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.059
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "transform.y",
+   "start": 24048,
+   "dur": 2200,
+   "from": 296.565,
+   "to": 100,
+   "n": 392,
+   "ease": "expo.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "transform.y",
+   "start": 24048,
+   "dur": 2200,
+   "from": 96.565,
+   "to": -100,
+   "n": 392,
+   "ease": "expo.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "opacity",
+   "start": 24048,
+   "dur": 2200,
+   "from": 0.011,
+   "to": 1,
+   "n": 392,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.06
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "opacity",
+   "start": 24048,
+   "dur": 2200,
+   "from": 0.011,
+   "to": 1,
+   "n": 392,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.06
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "transform.y",
+   "start": 27644,
+   "dur": 2194,
+   "from": 104.299,
+   "to": 300,
+   "n": 389,
+   "ease": "expo.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "transform.y",
+   "start": 27644,
+   "dur": 2194,
+   "from": -91.401,
+   "to": 300,
+   "n": 389,
+   "ease": "expo.out",
+   "rmse": 0.004
+  },
+  {
+   "el": "span.varying",
+   "prop": "transform.y",
+   "start": 27644,
+   "dur": 2194,
+   "from": -253.224,
+   "to": -400,
+   "n": 316,
+   "ease": "expo.out",
+   "rmse": 0.005
+  },
+  {
+   "el": "span.varying",
+   "prop": "transform.y",
+   "start": 27644,
+   "dur": 2194,
+   "from": -245.701,
+   "to": -50,
+   "n": 316,
+   "ease": "expo.out",
+   "rmse": 0.005
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "opacity",
+   "start": 27644,
+   "dur": 2194,
+   "from": 0.986,
+   "to": 0,
+   "n": 389,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.061
+  },
+  {
+   "el": "p.faded.info2",
+   "prop": "opacity",
+   "start": 27644,
+   "dur": 2194,
+   "from": 0.986,
+   "to": 0,
+   "n": 389,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.061
+  },
+  {
+   "el": "div.indicator-wrapper",
+   "prop": "transform.x",
+   "start": 27810,
+   "dur": 493,
+   "from": -81.692,
+   "to": -162.461,
+   "n": 72,
+   "ease": "power2.out",
+   "rmse": 0.001
+  },
+  {
+   "el": "div.indicator-wrapper",
+   "prop": "transform.x",
+   "start": 27810,
+   "dur": 493,
+   "from": -81.692,
+   "to": -162.461,
+   "n": 72,
+   "ease": "power2.out",
+   "rmse": 0.001
+  }
+ ],
+ "mutationCount": 25621,
+ "assets": [
+  [
+   "link",
+   "https://inkwell.tech/static/fonts/FKGrotesk-Regular.woff2",
+   45
+  ],
+  [
+   "link",
+   "https://inkwell.tech/static/fonts/FKGrotesk-Light.woff2",
+   44
+  ],
+  [
+   "link",
+   "https://inkwell.tech/static/fonts/FKGroteskMono-Regular.woff2",
+   32
+  ],
+  [
+   "link",
+   "https://inkwell.tech/_payload.json",
+   0
+  ],
+  [
+   "link",
+   "https://inkwell.tech/_nuxt/rapier_wasm3d_bg.F-GQkyDT.wasm",
+   1534
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/_nuxt/rapier_wasm3d_bg.F-GQkyDT.wasm",
+   0
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/card-uv-compress.glb",
+   7
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/logo.glb",
+   16
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/_nuxt/builds/meta/da30904f-80ad-4271-8624-43459ecf3667.json",
+   0
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/logo-v3-compress.glb",
+   428
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Pre-Design.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Aerospace.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Marketing.ktx2",
+   26
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Healthcare.ktx2",
+   19
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Gaming.ktx2",
+   30
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Urban%20Planning.ktx2",
+   29
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Supply%20Chain.ktx2",
+   19
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Energy.ktx2",
+   19
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Transportation.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/image.ktx2",
+   26
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Retail.ktx2",
+   21
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Cybersecurity.ktx2",
+   24
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Creative%20Industries.ktx2",
+   30
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Pharmaceuticals.ktx2",
+   6
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Travel.ktx2",
+   27
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Automotive.ktx2",
+   19
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Education.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Finance.ktx2",
+   25
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Client%20Consultation.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Fashion.ktx2",
+   19
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Architecture.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Agriculture.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Media%20production.ktx2",
+   21
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Real%20Estate%20Development.ktx2",
+   19
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Legal.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/industries/Entertainment.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Site%20Analysis.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Budgeting.ktx2",
+   21
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Concept%20Development.ktx2",
+   20
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Schematic%20Design.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Site%20Plan%20Review.ktx2",
+   25
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Design%20Refinement.ktx2",
+   24
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Materials%20&%203D.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Design%20Development.ktx2",
+   26
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Cost%20&%20Drawings.ktx2",
+   21
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Specifications%20&%20Coordination.ktx2",
+   27
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Documentation%20&%20Permitting.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Compliance%20&%20Submission.ktx2",
+   22
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Approvals.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Procurement.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Bidding%20&%20Negotiation.ktx2",
+   20
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Construction%20Oversight.ktx2",
+   24
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Site%20Meetings.ktx2",
+   28
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Quality%20Control.ktx2",
+   26
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Handover.ktx2",
+   26
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Inspections%20&%20Punch%20List.ktx2",
+   29
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Occupancy%20&%20Training.ktx2",
+   21
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Post-Occupancy.ktx2",
+   15
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/cards/architecture/Warranty%20&%20Final%20Touches.ktx2",
+   23
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/industries-blob/site-feasibility.ktx2",
+   55
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/industries-blob/entrepreneurship.ktx2",
+   39
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/industries-blob/fashion.ktx2",
+   38
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/industries-blob/ethic.ktx2",
+   26
+  ],
+  [
+   "fetch",
+   "https://inkwell.tech/static/industries-blob/art.ktx2",
+   58
+  ]
+ ],
+ "css": {
+  "cssBytes": 38420,
+  "keyframes": [],
+  "beziers": [
+   [
+    "cubic-bezier(.39,.575,.565,1)",
+    29
+   ],
+   [
+    "cubic-bezier(.19,1,.22,1)",
+    5
+   ],
+   [
+    "cubic-bezier(.075,.82,.165,1)",
+    3
+   ],
+   [
+    "cubic-bezier(.52,0,0,1)",
+    3
+   ],
+   [
+    "cubic-bezier(.85,0,.15,1)",
+    1
+   ]
+  ],
+  "durations": [
+   [
+    "2s",
+    19
+   ],
+   [
+    "1s",
+    6
+   ],
+   [
+    "5s",
+    6
+   ],
+   [
+    "0s",
+    4
+   ],
+   [
+    "3s",
+    3
+   ],
+   [
+    "4s",
+    3
+   ],
+   [
+    "6s",
+    2
+   ],
+   [
+    "7s",
+    2
+   ],
+   [
+    "8s",
+    1
+   ],
+   [
+    "1.2s",
+    1
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:opacity .2s cubic-bezier(.39,.575,.565,1) 0s",
+    3
+   ],
+   [
+    "transition:color .2s cubic-bezier(.39,.575,.565,1)",
+    2
+   ],
+   [
+    "transition:opacity .7s cubic-bezier(.52,0,0,1)",
+    2
+   ],
+   [
+    "transition:opacity .2s cubic-bezier(.39,.575,.565,1)",
+    2
+   ],
+   [
+    "transition:border .2s cubic-bezier(.39,.575,.565,1),transform 1s cubic-bezier(.19,1,.22,1)",
+    2
+   ],
+   [
+    "transition:opacity .3s cubic-bezier(.39,.575,.565,1)",
+    2
+   ],
+   [
+    "transition:opacity .2s cubic-bezier(.39,.575,.565,1),color .2s cubic-bezier(.39,.575,.565,1)",
+    2
+   ],
+   [
+    "transition:opacity .5s",
+    2
+   ],
+   [
+    "transition:opacity 1s cubic-bezier(.39,.575,.565,1)",
+    1
+   ],
+   [
+    "transition:opacity 0s cubic-bezier(.39,.575,.565,1)",
+    1
+   ],
+   [
+    "transition:stroke .2s cubic-bezier(.39,.575,.565,1)",
+    1
+   ],
+   [
+    "transition:fill .2s cubic-bezier(.39,.575,.565,1),transform .5s cubic-bezier(.075,.82,.165,1)",
+    1
+   ]
+  ],
+  "customProps": [
+   [
+    "--scale",
+    5
+   ],
+   [
+    "--padding-gradient",
+    2
+   ],
+   [
+    "--round-gradient",
+    2
+   ],
+   [
+    "--font-size",
+    2
+   ],
+   [
+    "--radius",
+    2
+   ],
+   [
+    "--gap",
+    1
+   ],
+   [
+    "--line-height",
+    1
+   ],
+   [
+    "--input-height",
+    1
+   ],
+   [
+    "--unit-scale",
+    1
+   ]
+  ],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 11,
+   "mask": 26,
+   "backdrop-filter": 2,
+   "perspective": 2,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 2479322,
+ "jsLibs": [
+  "Lenis",
+  "ogl",
+  "vue"
+ ]
+}

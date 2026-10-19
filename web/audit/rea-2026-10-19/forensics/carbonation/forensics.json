@@ -1,0 +1,61 @@
+{
+ "slug": "carbonation",
+ "url": "https://thecarbonation.com/",
+ "phases": {
+  "loaded": 2541,
+  "hover": 10621,
+  "cursorStep": 11445,
+  "scroll": 12651,
+  "end": 24103
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [],
+ "mutationCount": 0,
+ "assets": [],
+ "css": {
+  "cssBytes": 0,
+  "keyframes": [],
+  "beziers": [],
+  "durations": [],
+  "transitions": [],
+  "customProps": [],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 0,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 0,
+ "jsLibs": []
+}

@@ -1,0 +1,125 @@
+{
+ "slug": "pienso",
+ "url": "https://pienso.com/",
+ "fp": {
+  "title": "Pienso | AI-Powered Document Intelligence Tool | Explore, Train, and Deploy AI Models with",
+  "globals": [],
+  "libHints": [
+   "spline",
+   "next",
+   "react",
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "pienso.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 1,
+   "svg": 22,
+   "img": 73,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 15,
+   "links": 59,
+   "splitChars": 0
+  },
+  "pageHeightVh": 20.8,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "\"Times New Roman\""
+  },
+  "h1": {
+   "ff": "__fontHeading_691388",
+   "fs": "101px",
+   "fw": "500",
+   "ls": "-3.03px",
+   "tt": "none",
+   "text": "For anyone with a data set and a question."
+  },
+  "h2": {
+   "ff": "__fontHeading_691388",
+   "fs": "32px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Built for serious\nbusiness."
+  },
+  "p": {
+   "ff": "__fontHeading_691388",
+   "fs": "32px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Discover what Pienso has to offer your company"
+  },
+  "fontsLoaded": [
+   "__fontHeading_691388",
+   "__fontBody_2ca7e9"
+  ],
+  "topFonts": [
+   [
+    "__fontBody_2ca7e9 500",
+    107
+   ],
+   [
+    "__fontHeading_691388 500",
+    34
+   ],
+   [
+    "Times New Roman 400",
+    31
+   ],
+   [
+    "__fontHeading_691388 700",
+    20
+   ],
+   [
+    "__fontBody_2ca7e9 400",
+    20
+   ],
+   [
+    "__fontBody_2ca7e9 700",
+    3
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(242, 242, 242)",
+    7
+   ],
+   [
+    "rgb(255, 255, 255)",
+    6
+   ],
+   [
+    "rgb(2, 187, 97)",
+    5
+   ],
+   [
+    "rgb(217, 217, 217)",
+    5
+   ],
+   [
+    "rgb(248, 248, 248)",
+    4
+   ],
+   [
+    "rgb(230, 230, 230)",
+    4
+   ]
+  ],
+  "css": {
+   "fixed": 4,
+   "blend:lighten": 1,
+   "mask": 1,
+   "sticky": 1,
+   "will-change": 15,
+   "filter": 5,
+   "scroll-snap": 1
+  }
+ },
+ "finalUrl": "https://pienso.com/"
+}

@@ -1,0 +1,49 @@
+{
+ "slug": "gallipoli",
+ "url": "https://sonsofgallipoli.com/",
+ "fp": {
+  "title": "Sons of Gallipoli",
+  "globals": [],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "www.google-analytics.com",
+   "use.typekit.net",
+   "static.sonsofgallipoli.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 0,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 0,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(121, 145, 162)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "sans-serif"
+  },
+  "h1": null,
+  "h2": null,
+  "p": null,
+  "fontsLoaded": [
+   "europa"
+  ],
+  "topFonts": [
+   [
+    "sans-serif 400",
+    1
+   ]
+  ],
+  "topBgs": [],
+  "css": {}
+ },
+ "finalUrl": "https://sonsofgallipoli.com/"
+}

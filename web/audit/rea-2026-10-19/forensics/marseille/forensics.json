@@ -1,0 +1,507 @@
+{
+ "slug": "marseille",
+ "url": "https://marseille.laphase5.com/en",
+ "phases": {
+  "loaded": 2330,
+  "gateClick": 10380,
+  "gateDone": 34421,
+  "hover": 34423,
+  "cursorStep": 35239,
+  "scroll": 36444,
+  "end": 47511
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   }
+  ],
+  "load@5000": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   }
+  ],
+  "load@8000": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "span.odometer-ribbon-inner",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "none"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translateY(-100%)"
+     }
+    ]
+   }
+  ],
+  "afterGate": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   2226,
+   "2d",
+   "300x150"
+  ],
+  [
+   2233,
+   "experimental-webgl",
+   "300x150"
+  ],
+  [
+   3133,
+   "webgl2",
+   "300x150"
+  ],
+  [
+   3538,
+   "2d",
+   "512x512"
+  ]
+ ],
+ "audio": [
+  [
+   3031,
+   "AudioContext"
+  ],
+  [
+   3110,
+   "AudioContext"
+  ]
+ ],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [
+  {
+   "el": "div.Preload-numbers",
+   "prop": "transform.s",
+   "start": 3546,
+   "dur": 8572,
+   "from": 0.7,
+   "to": 1.2,
+   "n": 1213,
+   "ease": "linear",
+   "rmse": 0.052
+  },
+  {
+   "el": "span.odometer-digit",
+   "prop": "transform.x",
+   "start": 13021,
+   "dur": 498,
+   "from": 0.716,
+   "to": 45,
+   "n": 73,
+   "ease": "power3.out",
+   "rmse": 0.004
+  }
+ ],
+ "mutationCount": 1442,
+ "assets": [
+  [
+   "css",
+   "https://marseille.laphase5.com/assets/fonts/AntarcticaBeta-Medium.woff2",
+   14
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/intro.mp3",
+   257
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/map.mp3",
+   259
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/pin_over.mp3",
+   14
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/pin_out.mp3",
+   14
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/zoom.mp3",
+   22
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/btn_click.mp3",
+   3
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/btn_over.mp3",
+   3
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/360_enterprise.mp3",
+   251
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/360_enterprise.mp3",
+   0
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/360_culture.mp3",
+   251
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/assets/sounds/360_outdoor.mp3",
+   269
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/models/water.glb",
+   1037
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/models/terrain.glb",
+   2350
+  ],
+  [
+   "xmlhttprequest",
+   "https://marseille.laphase5.com/models/pin4.glb",
+   108
+  ]
+ ],
+ "css": {
+  "cssBytes": 184286,
+  "keyframes": [],
+  "beziers": [
+   [
+    "cubic-bezier(.16,1,.3,1)",
+    1241
+   ],
+   [
+    "cubic-bezier(.165,.84,.44,1)",
+    136
+   ],
+   [
+    "cubic-bezier(.64,0,.78,0)",
+    38
+   ],
+   [
+    "cubic-bezier(.83,0,.17,1)",
+    5
+   ]
+  ],
+  "durations": [
+   [
+    "6s",
+    574
+   ],
+   [
+    "1s",
+    457
+   ],
+   [
+    "5s",
+    316
+   ],
+   [
+    "0s",
+    267
+   ],
+   [
+    "3s",
+    264
+   ],
+   [
+    "4s",
+    147
+   ],
+   [
+    "8s",
+    119
+   ],
+   [
+    "2s",
+    95
+   ],
+   [
+    "7s",
+    18
+   ],
+   [
+    "1.1s",
+    13
+   ],
+   [
+    "1.2s",
+    9
+   ],
+   [
+    "25s",
+    6
+   ],
+   [
+    "15s",
+    5
+   ],
+   [
+    "10s",
+    2
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:opacity .6s cubic-bezier(.16,1,.3,1) .1s,-webkit-transform .6s cubic-bezier(.16,1,.3,1) .1",
+    44
+   ],
+   [
+    "transition:opacity .6s cubic-bezier(.16,1,.3,1) 0s,-webkit-transform .6s cubic-bezier(.16,1,.3,1) 0s",
+    40
+   ],
+   [
+    "transition:opacity .3s cubic-bezier(.16,1,.3,1),-webkit-transform .3s cubic-bezier(.16,1,.3,1)",
+    38
+   ],
+   [
+    "transition:color .5s cubic-bezier(.16,1,.3,1)",
+    36
+   ],
+   [
+    "transition:stroke .5s cubic-bezier(.16,1,.3,1)",
+    36
+   ],
+   [
+    "transition:opacity .5s cubic-bezier(.16,1,.3,1),-webkit-transform .5s cubic-bezier(.16,1,.3,1)",
+    36
+   ],
+   [
+    "transition:transform .6s cubic-bezier(.16,1,.3,1) .1s,opacity .6s cubic-bezier(.16,1,.3,1) .1s",
+    19
+   ],
+   [
+    "transition:transform .6s cubic-bezier(.16,1,.3,1) .1s,opacity .6s cubic-bezier(.16,1,.3,1) .1s,-webki",
+    19
+   ],
+   [
+    "transition:transform .6s cubic-bezier(.16,1,.3,1) 0s,opacity .6s cubic-bezier(.16,1,.3,1) 0s",
+    19
+   ],
+   [
+    "transition:transform .6s cubic-bezier(.16,1,.3,1) 0s,opacity .6s cubic-bezier(.16,1,.3,1) 0s,-webkit-",
+    19
+   ],
+   [
+    "transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .3s cubic-bezier(.16,1,.3,1)",
+    18
+   ],
+   [
+    "transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .3s cubic-bezier(.16,1,.3,1),-webkit-transf",
+    18
+   ]
+  ],
+  "customProps": [],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 0,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 2
+  }
+ },
+ "jsBytes": 3247564,
+ "jsLibs": [
+  "howler",
+  "three"
+ ]
+}

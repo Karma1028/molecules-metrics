@@ -1,0 +1,96 @@
+{
+ "slug": "poltronafrau",
+ "url": "https://www.poltronafrau.com/it/it.html",
+ "phases": {
+  "loaded": 1429
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "div.cmp-carousel__content.swiper-wrapper",
+    "duration": 300,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate3d(0px, 0px, 0px)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate3d(-1440px, 0px, 0px)"
+     }
+    ]
+   }
+  ],
+  "load@5000": [],
+  "load@8000": [],
+  "afterNav": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "div.cmp-carousel__content.swiper-wrapper",
+    "duration": 300,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate3d(-5760px, 0px, 0px)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate3d(-7200px, 0px, 0px)"
+     }
+    ]
+   }
+  ]
+ },
+ "transition": {
+  "href": "https://www.poltronafrau.com/it/it/newsletter.html",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 9707,
+  "urlFrames": [
+   [
+    "/it/it.html",
+    13966
+   ],
+   [
+    "/it/it.html",
+    14219
+   ],
+   [
+    "/it/it.html",
+    14471
+   ],
+   [
+    "/it/it.html",
+    14732
+   ],
+   [
+    "/it/it.html",
+    14987
+   ],
+   [
+    "/it/it.html",
+    15243
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 78
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "slug": "pencilvania",
+ "url": "https://pencilvania.stutpak.com/",
+ "fp": {
+  "title": "Pencilvania 🐕",
+  "globals": [],
+  "libHints": [],
+  "hosts": [
+   "pencilvania.stutpak.com",
+   "cdn.usefathom.com"
+  ],
+  "counts": {
+   "canvas": 1,
+   "video": 0,
+   "svg": 2,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 4,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(255, 255, 255)",
+   "ff": "ui-sans-serif"
+  },
+  "h1": {
+   "ff": "ui-sans-serif",
+   "fs": "20px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Welcome to Pencilvania!"
+  },
+  "h2": null,
+  "p": {
+   "ff": "ui-sans-serif",
+   "fs": "14px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Visit the website on a computer for the full experience."
+  },
+  "fontsLoaded": [],
+  "topFonts": [
+   [
+    "ui-sans-serif 400",
+    16
+   ],
+   [
+    "ui-sans-serif 700",
+    2
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgba(20, 10, 50, 0.8)",
+    2
+   ]
+  ],
+  "css": {
+   "fixed": 3
+  }
+ },
+ "finalUrl": "https://pencilvania.stutpak.com/"
+}

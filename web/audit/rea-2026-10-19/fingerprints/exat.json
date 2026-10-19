@@ -1,0 +1,112 @@
+{
+ "slug": "exat",
+ "url": "https://exat.hottype.co/",
+ "fp": {
+  "title": "Exat - Hot Type",
+  "globals": [
+   "gsap",
+   "ScrollTrigger",
+   "Lenis"
+  ],
+  "libHints": [
+   "gsap",
+   "lenis",
+   "split",
+   "wp-content"
+  ],
+  "hosts": [
+   "da226de6.delivery.rocketcdn.me"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 9,
+   "svg": 52,
+   "img": 228,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 10,
+   "links": 13,
+   "splitChars": 327
+  },
+  "pageHeightVh": 33.4,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "Exat"
+  },
+  "h1": null,
+  "h2": {
+   "ff": "Exat",
+   "fs": "105.993px",
+   "fw": "500",
+   "ls": "-2.11986px",
+   "tt": "none",
+   "text": "Exat strikes a balance\nbetween form and\nfunction, neutrality\nand character."
+  },
+  "p": null,
+  "fontsLoaded": [
+   "Exat Variable",
+   "Exat",
+   "Exat Condensed",
+   "Exat Wide"
+  ],
+  "topFonts": [
+   [
+    "Exat 500",
+    1189
+   ],
+   [
+    "Exat Variable 42",
+    240
+   ],
+   [
+    "Exat 400",
+    50
+   ],
+   [
+    "Exat 700",
+    15
+   ],
+   [
+    "Arial 400",
+    10
+   ],
+   [
+    "Exat Condensed 200",
+    7
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(28, 29, 30)",
+    166
+   ],
+   [
+    "rgb(238, 239, 235)",
+    16
+   ],
+   [
+    "rgb(255, 98, 0)",
+    9
+   ],
+   [
+    "rgb(255, 255, 255)",
+    5
+   ],
+   [
+    "rgb(255, 206, 46)",
+    3
+   ],
+   [
+    "rgb(28, 117, 17)",
+    3
+   ]
+  ],
+  "css": {
+   "fixed": 3,
+   "clip-path": 17,
+   "blend:": 9
+  }
+ },
+ "finalUrl": "https://exat.hottype.co/"
+}

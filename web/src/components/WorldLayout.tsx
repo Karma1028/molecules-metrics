@@ -1,12 +1,17 @@
 import { Suspense, useState } from "react"
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom"
+import { Link, NavLink, useLocation, useOutlet } from "react-router-dom"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { useWorldTheme, type World } from "../lib/theme"
 import { WORLDS, SOCIAL } from "../lib/worlds"
 import { Icon, SpriteMount } from "../lib/icons"
 import { routeVariants } from "../lib/world-motion"
-import { WorldTransition } from "./WorldTransition"
+import { deckIndex, travelBetween, type Travel } from "../lib/deck"
+import { DeckRail } from "./deck/DeckRail"
+import { DeckTunnel } from "./deck/DeckTunnel"
+import { DeckSeam } from "./deck/DeckSeam"
+import { useDeckScroll } from "./deck/useDeckScroll"
 import { AlponaCorner } from "./motifs/Alpona"
+import { Pointer } from "./pointer/Pointer"
 
 /** Shown while a lazy page chunk loads (K5). Artist = hand note, analyst = mono readout. */
 function RouteFallback({ world }: { world: World }) {
@@ -46,19 +51,38 @@ function Eclipse({ onToggle }: { onToggle: (o: { x: number; y: number }) => void
 }
 
 export function WorldLayout({ world }: { world: World }) {
-  const { toggle } = useWorldTheme(world)
-  const def = WORLDS[world]
+  // A world switch reuses this layout: the leaving page finishes its exit in the
+  // old world's skin, and only then do theme, header and backdrop flip over.
+  const [shown, setShown] = useState<World>(world)
+  const { toggle } = useWorldTheme(shown)
+  const def = WORLDS[shown]
   const [menuOpen, setMenuOpen] = useState(false)
   const loc = useLocation()
+  const outlet = useOutlet()
   const reduce = useReducedMotion()
+  // each navigation closes the phone drawer and sets which way the deck travels
+  const [lastPath, setLastPath] = useState(loc.pathname)
+  const [travel, setTravel] = useState<Travel>({ dir: 1, cross: false })
+  const [hop, setHop] = useState(0)
+  // perspective makes .deck-stage the box for position:fixed children, so it is
+  // only switched on while a move plays; at rest full-bleed scenes reach the footer
+  const [moving, setMoving] = useState(false)
+  if (lastPath !== loc.pathname) {
+    setTravel(travelBetween(lastPath, loc.pathname))
+    setHop((h) => h + 1)
+    setMoving(true)
+    setLastPath(loc.pathname)
+    setMenuOpen(false)
+  }
+  useDeckScroll(!menuOpen)
 
   return (
     <>
       <SpriteMount />
-      <WorldTransition world={world} />
       <div className="bg" />
       <div className="grain" />
-      {world === "artist" && (
+      <Pointer world={shown} />
+      {shown === "artist" && (
         <>
           <AlponaCorner className="alpona-flourish tl" />
           <AlponaCorner className="alpona-flourish br" />
@@ -68,7 +92,7 @@ export function WorldLayout({ world }: { world: World }) {
       <header className="nav">
         <NavLink to={def.home} className="brand" end>
           tuhin<b>.</b>
-          <span className="v">/{world}</span>
+          <span className="v">/{shown}</span>
         </NavLink>
 
         <nav className={`links${menuOpen ? " open" : ""}`}>
@@ -107,19 +131,27 @@ export function WorldLayout({ world }: { world: World }) {
         </div>
       </header>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={loc.pathname}
-          variants={routeVariants(world, reduce)}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-        >
-          <Suspense fallback={<RouteFallback world={world} />}>
-            <Outlet />
-          </Suspense>
-        </motion.div>
-      </AnimatePresence>
+      {hop > 0 && !reduce && !travel.cross && deckIndex(loc.pathname) >= 0 && (
+        <DeckTunnel key={hop} world={world} nav={WORLDS[world].nav} dest={deckIndex(loc.pathname)} dir={travel.dir} />
+      )}
+      {hop > 0 && !reduce && travel.cross && <DeckSeam key={hop} />}
+      <div className="deck-stage" data-moving={moving || undefined}>
+        <AnimatePresence mode="wait" custom={travel} onExitComplete={() => setShown(world)}>
+          <motion.div
+            key={loc.pathname}
+            className="deck-page"
+            custom={travel}
+            variants={routeVariants(shown, reduce)}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            onAnimationComplete={(def) => def === "visible" && setMoving(false)}
+          >
+            <Suspense fallback={<RouteFallback world={world} />}>{outlet}</Suspense>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+      <DeckRail nav={WORLDS[world].nav} index={deckIndex(loc.pathname)} />
 
       <footer className="foot">
         <span>

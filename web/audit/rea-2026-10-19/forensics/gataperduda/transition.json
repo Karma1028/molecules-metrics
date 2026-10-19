@@ -1,0 +1,106 @@
+{
+ "slug": "gataperduda",
+ "url": "https://lagataperduda.com/en/mapa/",
+ "phases": {
+  "loaded": 677
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterNav": [
+   {
+    "type": "CSSTransition",
+    "name": "width",
+    "target": "div.nuxt-progress",
+    "duration": 100,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "width": "73.9991%"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "width": "76%"
+     }
+    ]
+   }
+  ]
+ },
+ "transition": {
+  "href": "/mapa",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 8760,
+  "urlFrames": [
+   [
+    "/en/mapa/",
+    9038
+   ],
+   [
+    "/en/mapa/",
+    9291
+   ],
+   [
+    "/en/mapa/",
+    9550
+   ],
+   [
+    "/en/mapa/",
+    9806
+   ],
+   [
+    "/en/mapa/",
+    10059
+   ],
+   [
+    "/en/mapa/",
+    10311
+   ]
+  ],
+  "tweens": [
+   {
+    "el": "svg.cursor",
+    "prop": "opacity",
+    "start": 8783,
+    "dur": 823,
+    "from": 0,
+    "to": 1,
+    "n": 115,
+    "ease": "power3.out",
+    "rmse": 0.017
+   },
+   {
+    "el": "div#intro-lang-container.flex.w-full",
+    "prop": "opacity",
+    "start": 8783,
+    "dur": 392,
+    "from": 1,
+    "to": 0,
+    "n": 58,
+    "ease": "css ease-in-out",
+    "rmse": 0.006
+   },
+   {
+    "el": "div.nuxt-progress",
+    "prop": "widthPct",
+    "start": 9083,
+    "dur": 3698,
+    "from": 2,
+    "to": 76,
+    "n": 38,
+    "ease": "linear",
+    "rmse": 0.001
+   }
+  ],
+  "mutationCount": 211
+ }
+}

@@ -11,11 +11,11 @@ export const STAGE_CSS = String.raw`
   .st-veil{position:absolute;inset:0;pointer-events:none;background:${GRAIN},
     linear-gradient(100deg,color-mix(in srgb,var(--pal-bg,#0b0b0d) 55%,transparent) 0%,color-mix(in srgb,var(--pal-bg,#0b0b0d) 30%,transparent) 45%,#000000a6 100%),
     radial-gradient(90% 70% at 50% 110%,#000c,transparent 70%)}
-  .stage .exit,.vstage .exit{position:absolute;top:18px;right:20px;z-index:3;background:#ffffff14;border:1px solid #ffffff26;
+  .stage .exit{position:absolute;top:18px;right:20px;z-index:3;background:#ffffff14;border:1px solid #ffffff26;
     color:inherit;cursor:pointer;border-radius:30px;padding:8px 14px;font:600 10px/1 var(--font-mono);letter-spacing:.12em;
     text-transform:uppercase;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-  .stage .exit:hover,.vstage .exit:hover{background:#ffffff2b}
-  .stage .exit:focus-visible,.vstage .exit:focus-visible{outline:2px solid var(--pal-accent,#1DB954);outline-offset:2px}
+  .stage .exit:hover{background:#ffffff2b}
+  .stage .exit:focus-visible{outline:2px solid var(--pal-accent,#1DB954);outline-offset:2px}
 
   .st-grid{position:relative;z-index:1;height:100%;box-sizing:border-box;display:grid;
     grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,5vw,80px);align-items:center;
@@ -36,6 +36,23 @@ export const STAGE_CSS = String.raw`
   .st-disc-label{position:absolute;inset:32%;border-radius:50%;overflow:hidden;background:var(--pal-accent,#1DB954)}
   .st-disc-label img{width:100%;height:100%;object-fit:cover;display:block}
   @keyframes stspin{to{transform:rotate(360deg)}}
+
+  /* the YouTube screen: official player, framed like a small CRT over the sleeve.
+     YouTube ToS: always visible, never covered, never below 200 x 200. */
+  .st-screen-wrap{--cv:min(44vh,30vw,400px);position:relative;flex:none;width:min(100%,calc(var(--cv) * 1.3));min-width:216px;
+    margin-top:clamp(6px,2vh,22px)}
+  .st-screen-sleeve{position:absolute;z-index:0;top:calc(clamp(6px,2vh,22px) * -1 - 4%);right:-7%;width:46%;aspect-ratio:1;
+    object-fit:cover;border-radius:6px;transform:rotate(5deg);box-shadow:0 24px 44px -18px #000,0 0 0 1px #ffffff14;pointer-events:none}
+  .st-screen{position:relative;z-index:1;width:100%;aspect-ratio:16/9;min-height:216px;box-sizing:border-box;padding:8px;border-radius:14px;
+    background:linear-gradient(160deg,#232327,#0b0b0d 70%);
+    box-shadow:0 30px 60px -20px #000,0 0 0 1px #ffffff1f,inset 0 1px 0 #ffffff1a}
+  .st-screen-host,.st-screen-ph{position:absolute;inset:8px;border-radius:8px;overflow:hidden;background:#000}
+  .st-screen-host iframe{display:block;width:100%;height:100%;border:0}
+  .st-screen-ph{display:grid;place-items:center;z-index:1}
+  .st-screen-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(18px) brightness(.5)}
+  .st-screen-ph span{position:relative;font:600 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+  .st-note{margin:0;font:500 11px/1.45 var(--font-mono);letter-spacing:.02em;opacity:.78;max-width:46ch}
+  .st-note a{color:var(--pal-accent,#1DB954)}
 
   .stage-head{display:flex;flex-direction:column;gap:6px;min-width:0;max-width:100%}
   .stage-src{display:flex;align-items:center;gap:8px;font:600 10px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;opacity:.8}
@@ -85,7 +102,10 @@ export const STAGE_CSS = String.raw`
     .st-left{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:16px;row-gap:12px;align-items:center}
     .st-cover-wrap{--cv:min(26vw,120px);margin-right:calc(var(--cv) * .22)}
     .st-disc{left:22%}
-    .st-transport,.stage-embed,.stage-open{grid-column:1 / -1}
+    .st-transport,.stage-embed,.stage-open,.st-note{grid-column:1 / -1}
+    .st-left.on-screen{display:flex;flex-direction:column;align-items:stretch;row-gap:10px}
+    .st-screen-wrap{width:100%;min-width:0;margin-top:0}
+    .st-screen-sleeve{display:none}
     .st-transport,.stage-embed{width:100%}
     .stage-title{font-size:clamp(20px,5.6vw,28px)}
     .lyrics-wrap{max-height:none;justify-content:flex-start;padding-top:8px}
@@ -97,15 +117,6 @@ export const STAGE_CSS = String.raw`
     .stage-embed{height:80px}
   }
 
-  /* playing: youtube video stage */
-  .vstage{position:fixed;inset:0;z-index:120;background:#000;overflow:hidden;color:#f4efe6}
-  .vframe{position:absolute;inset:-6%;width:112%;height:112%;border:none;filter:blur(6px) saturate(.6) brightness(.5)}
-  .vstage.reduced .vframe{filter:saturate(.7) brightness(.55);inset:0;width:100%;height:100%}
-  .vscrim{position:absolute;inset:0;pointer-events:none;background:${GRAIN},
-    linear-gradient(0deg,#000000e6 0%,#00000080 30%,transparent 60%),radial-gradient(120% 90% at 50% 40%,transparent,#000c 90%)}
-  .voverlay{position:absolute;left:clamp(20px,6vw,96px);right:clamp(20px,6vw,96px);bottom:clamp(28px,10vh,110px);z-index:2;
-    display:flex;flex-direction:column;gap:8px;pointer-events:none}
-  .voverlay .stage-title{font-size:clamp(28px,5vw,64px);max-width:18ch}
 
   @media (prefers-reduced-motion:reduce){
     .st-disc.spin{animation:none}

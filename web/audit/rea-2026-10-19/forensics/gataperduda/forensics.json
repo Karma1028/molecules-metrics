@@ -1,0 +1,224 @@
+{
+ "slug": "gataperduda",
+ "url": "https://lagataperduda.com/en/mapa/",
+ "phases": {
+  "loaded": 2060,
+  "hover": 10206,
+  "cursorStep": 17483,
+  "scroll": 18692,
+  "end": 30152
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "hover0": [],
+  "hover1": [],
+  "hover2": [],
+  "hover3": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   2013,
+   "webgl",
+   "1440x900"
+  ],
+  [
+   2511,
+   "2d",
+   "300x150"
+  ]
+ ],
+ "audio": [
+  [
+   1939,
+   "AudioContext"
+  ],
+  [
+   1973,
+   "AudioContext"
+  ]
+ ],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [
+  {
+   "el": "svg.cursor",
+   "prop": "transform.y",
+   "start": 1993,
+   "dur": 648,
+   "from": -8.8,
+   "to": -108.56,
+   "n": 53,
+   "ease": "power2.out",
+   "rmse": 0.064
+  },
+  {
+   "el": "div.main-container.opacity-0",
+   "prop": "opacity",
+   "start": 2176,
+   "dur": 465,
+   "from": 0.024,
+   "to": 0.997,
+   "n": 43,
+   "ease": "power1.out",
+   "rmse": 0.014
+  },
+  {
+   "el": "svg.cursor",
+   "prop": "transform.y",
+   "start": 2766,
+   "dur": 1611,
+   "from": -108.675,
+   "to": -110,
+   "n": 179,
+   "ease": "quart-out(.19,1,.22,1)",
+   "rmse": 0.043
+  },
+  {
+   "el": "div#intro-lang-container.flex.w-full",
+   "prop": "opacity",
+   "start": 2766,
+   "dur": 2048,
+   "from": 0.009,
+   "to": 1,
+   "n": 255,
+   "ease": "css ease-in-out",
+   "rmse": 0.037
+  },
+  {
+   "el": "svg.cursor",
+   "prop": "transform.y",
+   "start": 10232,
+   "dur": 2589,
+   "from": 571.11,
+   "to": 648.88,
+   "n": 343,
+   "ease": "css ease",
+   "rmse": 0.193
+  },
+  {
+   "el": "svg.cursor",
+   "prop": "opacity",
+   "start": 10232,
+   "dur": 2589,
+   "from": 0,
+   "to": 1,
+   "n": 343,
+   "ease": "circ-out(.075,.82,.165,1)",
+   "rmse": 0.087
+  },
+  {
+   "el": "svg.cursor",
+   "prop": "transform.y",
+   "start": 16682,
+   "dur": 2702,
+   "from": 612.17,
+   "to": 990,
+   "n": 370,
+   "ease": "power3.inOut",
+   "rmse": 0.654
+  }
+ ],
+ "mutationCount": 1567,
+ "assets": [
+  [
+   "css",
+   "https://lagataperduda.com/fonts/GT-America-Mono-Light.woff2",
+   45
+  ],
+  [
+   "css",
+   "https://lagataperduda.com/fonts/GT-America-Mono-Regular.woff2",
+   61
+  ],
+  [
+   "xmlhttprequest",
+   "https://lagataperduda.com/sounds/ambient_raval.mp3",
+   17026
+  ],
+  [
+   "xmlhttprequest",
+   "https://lagataperduda.com/sounds/idle.mp3",
+   6759
+  ],
+  [
+   "xmlhttprequest",
+   "https://lagataperduda.com/sounds/idle.mp3",
+   6759
+  ],
+  [
+   "css",
+   "https://lagataperduda.com/images/plus.svg",
+   0
+  ],
+  [
+   "css",
+   "https://lagataperduda.com/images/minus.svg",
+   0
+  ],
+  [
+   "fetch",
+   "https://api.mapbox.com/v4/mapbox.mapbox-traffic-v1.json",
+   1
+  ],
+  [
+   "fetch",
+   "/mapbox.mapbox-streets-v8,mapbox.mapbox-terrain-v2,danieverano.55hiywuc,fgtl.2c7xxyg7.json",
+   5
+  ],
+  [
+   "fetch",
+   ".mapbox.com/styles/v1/fgtl/cm69ig6vc001r01pbemul9gq3/5x5x54uofv8dm46i84wvfkh3g/sprite.json",
+   4
+  ],
+  [
+   "css",
+   "https://lagataperduda.com/images/Logo_Liceu.svg",
+   1
+  ]
+ ],
+ "css": {
+  "cssBytes": 0,
+  "keyframes": [],
+  "beziers": [],
+  "durations": [],
+  "transitions": [],
+  "customProps": [],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 0,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 3461958,
+ "jsLibs": [
+  "howler",
+  "vue",
+  "gsap",
+  "ScrollTrigger"
+ ]
+}

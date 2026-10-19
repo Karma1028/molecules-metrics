@@ -1,0 +1,89 @@
+{
+ "slug": "moonsafari",
+ "url": "https://www.moonsafari.archi/",
+ "fp": {
+  "title": "Moon Safari – Page Array – Agence d'architecture à Bordeaux, Lyon, Anglet. Architectectes ",
+  "globals": [],
+  "libHints": [
+   "ogl",
+   "wp-content"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "www.moonsafari.archi"
+  ],
+  "counts": {
+   "canvas": 4,
+   "video": 0,
+   "svg": 7,
+   "img": 10,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 1,
+   "links": 21,
+   "splitChars": 3
+  },
+  "pageHeightVh": 6,
+  "body": {
+   "bg": "rgb(0, 0, 0)",
+   "color": "rgb(255, 255, 255)",
+   "ff": "nimbus-sans-extended"
+  },
+  "h1": null,
+  "h2": null,
+  "p": {
+   "ff": "nimbus-sans-extended",
+   "fs": "40px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Moon Safari –\narchitecture et\nurbanisme"
+  },
+  "fontsLoaded": [
+   "nimbus-sans",
+   "nimbus-sans-extended"
+  ],
+  "topFonts": [
+   [
+    "nimbus-sans-extended 400",
+    31
+   ],
+   [
+    "nimbus-sans-extended 700",
+    19
+   ],
+   [
+    "nimbus-sans-extended 900",
+    11
+   ],
+   [
+    "nimbus-sans 700",
+    5
+   ],
+   [
+    "nimbus-sans 400",
+    2
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgba(136, 136, 136, 0)",
+    10
+   ],
+   [
+    "rgb(0, 0, 0)",
+    9
+   ],
+   [
+    "rgb(255, 255, 255)",
+    1
+   ]
+  ],
+  "css": {
+   "cursor:none": 284,
+   "fixed": 11,
+   "will-change": 12
+  }
+ },
+ "finalUrl": "https://www.moonsafari.archi/"
+}
