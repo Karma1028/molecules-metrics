@@ -19,10 +19,10 @@ export function gaitFor(v: number): Gait {
 }
 
 /** One physics step toward a target x. Settles inside ARRIVE_PX with v = 0. */
-export function stepWalker(s: Walker, target: number, dt: number): Walker {
+export function stepWalker(s: Walker, target: number, dt: number, maxV: number = MAX_V): Walker {
   const dist = target - s.x
   if (Math.abs(dist) <= ARRIVE_PX && Math.abs(s.v) < 30) return { x: Math.abs(dist) < 1 ? s.x : s.x + dist, v: 0 }
-  const want = Math.sign(dist) * Math.min(MAX_V, Math.sqrt(2 * ACCEL * BRAKE * Math.abs(dist)))
+  const want = Math.sign(dist) * Math.min(maxV, Math.sqrt(2 * ACCEL * BRAKE * Math.abs(dist)))
   const dv = Math.max(-ACCEL * dt, Math.min(ACCEL * dt, want - s.v))
   const v = s.v + dv
   return { x: s.x + v * dt, v }
@@ -47,4 +47,23 @@ export function errandPick(spots: { x: number }[], fromX: number, n: number): nu
   if (!spots.length) return -1
   const order = spots.map((s, i) => ({ i, d: Math.abs(s.x - fromX) })).sort((a, b) => a.d - b.d)
   return order[((n % order.length) + order.length) % order.length].i
+}
+
+/** Constant slow stroll, px/s: a walk, never a gallop. */
+export const STROLL_PX_S = 38
+
+export type Stroller = { x: number; dir: 1 | -1 }
+
+/** One step of the endless stroll along [0, maxX], turning at the walls. */
+export function strollStep(s: Stroller, dt: number, maxX: number): Stroller {
+  let x = s.x + s.dir * STROLL_PX_S * dt
+  let dir = s.dir
+  if (x >= maxX) {
+    x = maxX
+    dir = -1
+  } else if (x <= 0) {
+    x = 0
+    dir = 1
+  }
+  return { x, dir }
 }

@@ -3,12 +3,14 @@ import { useLocation } from "react-router-dom"
 import { useReducedMotion } from "motion/react"
 import { feedLine } from "../../lib/feed-health"
 import { SLEEP_MS, lineFor, lookAt } from "./mascot-logic"
-import { errandPick, gaitFor, stepWalker, strideFor, wanderTarget, type Gait, type Walker } from "./walk"
+import { errandPick, gaitFor, stepWalker, strideFor, strollStep, type Gait } from "./walk"
 import "./mascot.css"
 
 const BUBBLE_MS = 3600
 const HOP_MS = 560
-const FOLLOW_MS = 5000 // follows the pointer this long after it last moved
+const ERRAND_MAX_V = 170 // a trot at most; the horse never sprints
+const ERRAND_PAUSE_MS = 2600
+const STROLL_PRINT_GAP = 2 // fewer prints while strolling
 const MAX_PRINTS = 12
 
 /**
@@ -34,6 +36,7 @@ export function Mascot() {
     const el = root.current
     if (!el) return
     const fine = window.matchMedia?.("(pointer: fine)").matches ?? true
+    const strolls = fine && !reduce
     let raf = 0
     let sleepTimer = 0
     let last: PointerEvent | null = null
@@ -41,7 +44,7 @@ export function Mascot() {
     const wake = () => {
       setAsleep((a) => (a ? false : a))
       window.clearTimeout(sleepTimer)
-      sleepTimer = window.setTimeout(() => setAsleep(true), SLEEP_MS)
+      if (!strolls) sleepTimer = window.setTimeout(() => setAsleep(true), SLEEP_MS) // a strolling horse never dozes
     }
     const aim = () => {
       raf = 0
@@ -70,7 +73,9 @@ export function Mascot() {
     }
   }, [reduce])
 
-  // roam: trot after the pointer, amble about when left alone, leave hoofprints
+  // stroll: an endless slow walk across the screen. Position is written as one compositor-only
+  // transform per frame (no CSS variable, so the SVG is never restyled). A poke errand trots to a
+  // spot, pauses, then the stroll resumes.
   useEffect(() => {
     const el = root.current
     const layer = prints.current
@@ -78,16 +83,17 @@ export function Mascot() {
     if (!el || !layer || reduce || !fine) return
     const width = () => el.getBoundingClientRect().width
     const maxX = () => Math.max(0, window.innerWidth - width() - 16)
-    let w: Walker = { x: 0, v: 0 }
-    let target = 0
-    let raf = 0
-    let prev = 0
+    let x = 16
+    let dir: 1 | -1 = 1
+    let v = 0 // only used during an errand
+    let errandTo: number | null = null
+    let pauseUntil = 0
     let gait: Gait = "idle"
     let sincePrint = 0
-    let lastMove = 0
-    let nextWander = performance.now() + 6000
+    let raf = 0
+    let prev = performance.now()
 
-    const stamp = (x: number) => {
+    const stamp = () => {
       const dot = document.createElement("i")
       dot.className = "m-print"
       dot.style.left = `${x + width() * 0.55}px`
@@ -95,59 +101,56 @@ export function Mascot() {
       layer.appendChild(dot)
       if (layer.childElementCount > MAX_PRINTS) layer.firstElementChild?.remove()
     }
+    const setGait = (g: Gait) => {
+      if (g === gait) return
+      gait = g
+      el.dataset.gait = g
+    }
+    const face = (d: 1 | -1) => el.style.setProperty("--face", String(d))
+
     const frame = (now: number) => {
       const dt = Math.min(0.05, (now - prev) / 1000)
       prev = now
-      const before = w.x
-      w = stepWalker(w, target, dt)
-      el.style.setProperty("--x", `${w.x.toFixed(1)}px`)
-      if (Math.abs(w.v) > 8) el.style.setProperty("--face", w.v < 0 ? "-1" : "1")
-      const g = gaitFor(w.v)
-      if (g !== gait) {
-        gait = g
-        el.dataset.gait = g
+      const before = x
+      if (errandTo != null) {
+        const s = stepWalker({ x, v }, errandTo, dt, ERRAND_MAX_V)
+        x = s.x
+        v = s.v
+        if (Math.abs(v) > 8) face(v < 0 ? -1 : 1)
+        setGait(gaitFor(v))
+        if (gaitFor(v) === "idle" && Math.abs(errandTo - x) < 1) {
+          errandTo = null
+          v = 0
+          pauseUntil = now + ERRAND_PAUSE_MS
+        }
+      } else if (now < pauseUntil || el.dataset.asleep) {
+        setGait("idle")
+      } else {
+        const s = strollStep({ x, dir }, dt, maxX())
+        if (s.dir !== dir) face(s.dir)
+        x = s.x
+        dir = s.dir
+        setGait("walk")
       }
-      sincePrint += Math.abs(w.x - before)
-      const stride = strideFor(g)
-      if (stride && sincePrint >= stride) {
+      if (x !== before) el.style.transform = `translate3d(${x.toFixed(1)}px,0,0)`
+      const side = x > window.innerWidth * 0.5 ? "r" : "l"
+      if (el.dataset.side !== side) el.dataset.side = side // keeps the speech bubble on screen
+      sincePrint += Math.abs(x - before)
+      const stride = strideFor(gait)
+      if (stride && sincePrint >= stride * STROLL_PRINT_GAP) {
         sincePrint = 0
-        stamp(w.x)
-      }
-      if (g === "idle" && Math.abs(target - w.x) < 1) {
-        raf = 0
-        return
+        stamp()
       }
       raf = requestAnimationFrame(frame)
     }
-    const go = (t: number) => {
-      target = Math.max(0, Math.min(maxX(), t))
-      if (!raf) {
-        prev = performance.now()
-        raf = requestAnimationFrame(frame)
-      }
+    runTo.current = (target) => {
+      errandTo = Math.max(0, Math.min(maxX(), target))
     }
-    runTo.current = (x) => {
-      lastMove = performance.now()
-      nextWander = lastMove + FOLLOW_MS + 4000
-      go(x)
-    }
-    const onMove = (e: PointerEvent) => {
-      lastMove = performance.now()
-      nextWander = lastMove + FOLLOW_MS + 4000
-      go(e.clientX - width() / 2)
-    }
-    const wander = window.setInterval(() => {
-      const now = performance.now()
-      if (now - lastMove < FOLLOW_MS || now < nextWander || el.dataset.asleep) return
-      nextWander = now + 7000 + Math.random() * 6000
-      go(wanderTarget(w.x, maxX(), Math.random()))
-    }, 1000)
-    window.addEventListener("pointermove", onMove, { passive: true })
+    face(1)
+    raf = requestAnimationFrame(frame)
     return () => {
       runTo.current = null
-      window.removeEventListener("pointermove", onMove)
-      window.clearInterval(wander)
-      if (raf) cancelAnimationFrame(raf)
+      cancelAnimationFrame(raf)
     }
   }, [reduce])
 

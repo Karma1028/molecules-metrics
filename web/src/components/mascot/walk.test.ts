@@ -71,3 +71,35 @@ describe("errandPick", () => {
     expect(errandPick([], 0, 0)).toBe(-1)
   })
 })
+
+import { strollStep, STROLL_PX_S } from "./walk"
+
+describe("strollStep", () => {
+  it("walks at a slow constant speed", () => {
+    const s = strollStep({ x: 100, dir: 1 }, 1, 1000)
+    expect(s.x).toBeCloseTo(100 + STROLL_PX_S)
+    expect(STROLL_PX_S).toBeLessThan(60)
+    expect(gaitFor(STROLL_PX_S)).toBe("walk")
+  })
+  it("turns around at the right wall and the left wall", () => {
+    const r = strollStep({ x: 995, dir: 1 }, 1, 1000)
+    expect(r.dir).toBe(-1)
+    expect(r.x).toBeLessThanOrEqual(1000)
+    const l = strollStep({ x: 3, dir: -1 }, 1, 1000)
+    expect(l.dir).toBe(1)
+    expect(l.x).toBeGreaterThanOrEqual(0)
+  })
+  it("never leaves the track even on a long frame", () => {
+    const s = strollStep({ x: 500, dir: 1 }, 100, 1000)
+    expect(s.x).toBeGreaterThanOrEqual(0)
+    expect(s.x).toBeLessThanOrEqual(1000)
+  })
+})
+
+describe("stepWalker speed cap", () => {
+  it("honours a lower max speed", () => {
+    let s = { x: 0, v: 0 }
+    for (let i = 0; i < 300; i++) s = stepWalker(s, 5000, 1 / 60, 150)
+    expect(Math.abs(s.v)).toBeLessThanOrEqual(150 + 1e-6)
+  })
+})
