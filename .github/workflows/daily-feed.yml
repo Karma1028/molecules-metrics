@@ -1,0 +1,30 @@
+name: daily-feed
+# Refreshes Field Notes papers + wire once a day. The commit triggers the Netlify build.
+on:
+  schedule:
+    - cron: "30 0 * * *" # 06:00 IST
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: daily-feed
+  cancel-in-progress: true
+jobs:
+  bake:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Bake feed.json
+        run: node scripts/bake-feed.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name "feed-bot"
+          git config user.email "feed-bot@users.noreply.github.com"
+          git add public/data/feed.json
+          git diff --cached --quiet || (git commit -m "chore: daily feed refresh" && git push)

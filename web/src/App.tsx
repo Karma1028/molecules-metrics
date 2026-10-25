@@ -47,6 +47,7 @@ const Gallery = page(() => import("./worlds/artist/Gallery"), "Gallery");
 const Sound = page(() => import("./worlds/artist/sound/Sound"), "Sound");
 const Matchday = page(() => import("./worlds/artist/Matchday"), "Matchday");
 const Notes = page(() => import("./worlds/artist/Notes"), "Notes");
+const NoteReader = page(() => import("./worlds/artist/notes/NoteReader"), "NoteReader");
 const About = page(() => import("./worlds/artist/About"), "About");
 const ArtistContact = page(() => import("./worlds/artist/Contact"), "Contact");
 const AnalystHome = page(
@@ -82,6 +83,7 @@ export default function App() {
         <Route path="sound" element={<Sound />} />
         <Route path="matchday" element={<Matchday />} />
         <Route path="notes" element={<Notes />} />
+        <Route path="notes/:slug" element={<NoteReader />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<ArtistContact />} />
       </Route>

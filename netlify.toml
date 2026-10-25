@@ -1,0 +1,42 @@
+# Netlify deploy config for the Molecules → Metrics portfolio.
+# Repo root is molecules-metrics/; base = "web" below points the build at the site (
+# no UI base-dir setting needed).
+#
+# Hosting model (SCOPE §3.1): static Vite build + Netlify Functions for the
+# live `/api/*` paths. Slow data is baked to /data/*.json by a GitHub Action
+# (see .github/workflows/snapshots.yml). To instead point at a standalone
+# Python host, set the VITE_API_BASE build env var and the /api redirect
+# below becomes a no-op (calls go straight to that origin).
+
+[build]
+  base = "web"
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Function names cannot contain "/", so nested API paths get an explicit rewrite
+# first (query strings pass through). Needs YOUTUBE_API_KEY in the site env.
+[[redirects]]
+  from = "/api/music/search"
+  to = "/.netlify/functions/music-search"
+  status = 200
+
+# Live API → serverless functions (same public path the dev proxy uses).
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback — every other route renders index.html (client router).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, stale-while-revalidate=3600"

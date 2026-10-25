@@ -202,9 +202,9 @@ export const HERO_STYLE = String.raw`
   .hero-root .note p{font-size:12px; line-height:1.4; color:var(--muted); margin-top:4px}
   .hero-root .note .from{font:600 15px/1 "Caveat",cursive; color:var(--pen); margin-top:6px}
   .hero-root .n1{left:-46px; top:33%; --r:-1.5deg; --d:.5}
-  .hero-root .n2{right:-52px; top:6%;  --r:1.2deg; --d:.62}
-  .hero-root .n3{right:-56px; top:37%; --r:-1deg; --d:.74}
-  .hero-root .n4{right:-40px; top:63%; --r:1.6deg; --d:.86}
+  .hero-root .n2{right:-34px; top:6%;  --r:1.2deg; --d:.62}
+  .hero-root .n3{right:-34px; top:37%; --r:-1deg; --d:.74}
+  .hero-root .n4{right:-30px; top:63%; --r:1.6deg; --d:.86}
   .hero-root .n5{left:-34px; bottom:calc(3vh + 5%); --r:-1.2deg; --d:.98}
 
   .hero-root .eclipse{position:fixed; z-index:31; right:clamp(16px,4vw,52px); top:10px; width:52px; height:52px; border:none; background:transparent; cursor:pointer; display:grid; place-items:center}
@@ -307,12 +307,21 @@ export const HERO_STYLE = String.raw`
   @keyframes filmadv{0%{transform:translateY(-6%) scale(1.05)}60%{transform:translateY(1%) scale(1.01)}100%{transform:translateY(0) scale(1)}}
 
   /* kantha thread: a running stitch from the switch through the current world's objects */
-  .hero-root .kantha{position:absolute; inset:0; width:100%; height:100%; z-index:7; pointer-events:none; overflow:visible}
-  .hero-root .kantha #thread-p{fill:none; stroke:var(--accent); stroke-width:2.2; stroke-linecap:round; stroke-dasharray:8 6;
-    filter:drop-shadow(0 0 1.5px rgba(255,248,236,.95)) drop-shadow(0 1px 2px rgba(0,0,0,.25))}
+  /* below the cards (they are z 2) so the thread tucks under each one and comes out the other side */
+  .hero-root .kantha{position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; overflow:visible}
+  .hero-root .obj{z-index:2}
+  .hero-root .kantha #thread-p{fill:none; stroke:var(--accent); stroke-width:2.6; stroke-linecap:round; stroke-dasharray:11 8;
+    filter:drop-shadow(0 0 1.2px rgba(255,248,236,.95)) drop-shadow(0 1.5px 1.5px rgba(40,20,5,.28))}
+  /* the stitches' underside: shorter, fainter, half a beat out of step, like real running stitch */
+  .hero-root .kantha #thread-u{fill:none; stroke:var(--accent); stroke-width:1.2; stroke-linecap:round; stroke-dasharray:5 14; stroke-dashoffset:-11; opacity:.45; translate:0 3px}
   .hero-root .kantha #thread-mp{fill:none; stroke:#fff; stroke-width:8}
   .hero-root .kantha #thread-k circle{fill:var(--accent); stroke:rgba(255,248,236,.95); stroke-width:1.5}
+  .hero-root .kantha #thread-k circle.ring{fill:none; stroke:var(--accent); stroke-width:1; opacity:.55}
   .hero-root .kantha #thread-k{transition:opacity .35s var(--ease)}
+  .hero-root .kantha #thread-n{opacity:0; offset-rotate:auto; transition:opacity .25s var(--ease); filter:drop-shadow(0 1px 1px rgba(40,20,5,.35))}
+  .hero-root .kantha #thread-n .nd{stroke:#5b5348; stroke-width:2; stroke-linecap:round}
+  .hero-root .kantha #thread-n .eye{fill:var(--card,#fff8ec); stroke:#5b5348; stroke-width:.6}
+  .hero-root .kantha #thread-n .tl{fill:none; stroke:var(--accent); stroke-width:1.6; stroke-linecap:round}
 
   @keyframes rise{from{translate:0 105%}to{translate:0 0}}
   @keyframes fadein{from{opacity:0}to{opacity:1}}

@@ -8,11 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "snapshot": "node scripts/snapshot.mjs && node scripts/bake-gym.mjs && node scripts/bake-ai.mjs",
+    "snapshot": "node scripts/snapshot.mjs && node scripts/bake-gym.mjs && node scripts/bake-ai.mjs && node scripts/bake-feed.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },
   "dependencies": {
+    "marked": "^18.1.1",
     "motion": "^14.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

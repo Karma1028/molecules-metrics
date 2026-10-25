@@ -1,0 +1,61 @@
+/* The Bankura horse mascot. Terracotta from the shared tokens, so it follows light/dark and both worlds. */
+.mascot{position:fixed;z-index:26;left:clamp(8px,1.6vw,22px);bottom:clamp(38px,5.4vh,54px);width:clamp(54px,5.4vw,74px);
+  --face:1;--tilt:0deg;pointer-events:none}
+.mascot-btn{all:unset;display:block;width:100%;cursor:pointer;pointer-events:auto;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.mascot-btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.mascot-svg{display:block;width:100%;height:auto;overflow:visible;transform:scaleX(var(--face));transform-origin:50% 100%;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+
+.mascot-svg{--clay:var(--orange,#c2562a);--clay-d:color-mix(in srgb,var(--orange,#c2562a) 68%,#2a1208);--paper-c:var(--paper,#f4ead8)}
+.mascot-svg .m-body path:first-child,.mascot-svg .m-head>path:first-child,.mascot-svg .m-tail path,.mascot-svg .m-leg rect:first-child{fill:var(--clay)}
+.mascot-svg .m-mane,.mascot-svg .m-band{fill:var(--clay-d)}
+.mascot-svg .m-ear{fill:var(--clay-d)}
+.mascot-svg .m-ear-b{opacity:.75}
+.mascot-svg .m-leg-b rect:first-child,.mascot-svg .m-leg-f2 rect:first-child{fill:var(--clay-d)}
+.mascot-svg .m-hoof{fill:var(--ink,#2a1d14)}
+.mascot-svg .m-dot,.mascot-svg .m-dot-p{fill:var(--paper-c);stroke:var(--paper-c)}
+.mascot-svg .m-ring{fill:none;stroke:var(--paper-c);stroke-width:1.2;stroke-dasharray:2 2.4}
+.mascot-svg .m-eye{fill:var(--ink,#2a1d14)}
+.mascot-svg .m-nostril{fill:var(--clay-d)}
+.mascot-svg .m-lid{fill:none;stroke:var(--ink,#2a1d14);stroke-width:1.6;stroke-linecap:round;opacity:0}
+.mascot-svg .m-shadow{fill:var(--ink,#2a1d14);opacity:.14}
+.mascot-svg .m-z{opacity:0;fill:var(--muted,#8a7a66);font:700 7px var(--font-mono,monospace)}
+
+/* parts rotate about their own joints */
+.mascot-svg .m-head,.mascot-svg .m-tail,.mascot-svg .m-body,.mascot-svg .m-ear,.mascot-svg .m-eye{transform-box:fill-box}
+.mascot-svg .m-head{transform-origin:25% 90%;transform:rotate(var(--tilt));transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.mascot-svg .m-tail{transform-origin:95% 10%;animation:m-swish 3.2s ease-in-out infinite}
+.mascot-svg .m-body{transform-origin:50% 100%;animation:m-breathe 3.6s ease-in-out infinite}
+.mascot-svg .m-ear{transform-origin:50% 100%;animation:m-flick 7s ease-in-out infinite}
+.mascot-svg .m-ear-b{animation-delay:-3.4s}
+.mascot-svg .m-eye{transform-origin:50% 50%;animation:m-blink 5.2s infinite}
+
+@keyframes m-swish{0%,100%{rotate:-7deg}50%{rotate:9deg}}
+@keyframes m-breathe{0%,100%{scale:1 1}50%{scale:1 1.025}}
+@keyframes m-flick{0%,90%,100%{rotate:0deg}93%{rotate:-14deg}96%{rotate:6deg}}
+@keyframes m-blink{0%,93%,100%{scale:1 1}95.5%{scale:1 .1}}
+
+/* click: a little hop */
+.mascot[data-hop] .mascot-svg{animation:m-hop .56s cubic-bezier(.34,1.56,.64,1)}
+@keyframes m-hop{0%{translate:0 0}35%{translate:0 -16px}70%{translate:0 0}85%{translate:0 -4px}100%{translate:0 0}}
+
+/* asleep: head down, eye shut, slower breath, drifting z */
+.mascot[data-asleep] .m-head{transform:rotate(26deg)}
+.mascot[data-asleep] .m-eye{animation:none;opacity:0}
+.mascot[data-asleep] .m-lid{opacity:1}
+.mascot[data-asleep] .m-body{animation-duration:6s}
+.mascot[data-asleep] .m-z{opacity:1;animation:m-zz 3s ease-in-out infinite}
+@keyframes m-zz{0%{translate:0 4px;opacity:0}30%{opacity:1}100%{translate:3px -6px;opacity:0}}
+
+/* speech bubble: sits above, never mirrored */
+.mascot-bubble{position:absolute;left:8px;bottom:calc(100% + 2px);width:max-content;max-width:min(230px,60vw);padding:7px 11px;border-radius:12px 12px 12px 3px;
+  background:var(--card,#fff8ec);color:var(--ink,#2a1d14);border:1px solid color-mix(in srgb,var(--ink,#2a1d14) 22%,transparent);
+  box-shadow:var(--shadow-sm,0 6px 16px -8px rgba(0,0,0,.4));font:600 10.5px/1.35 var(--font-mono,monospace);letter-spacing:.02em;
+  opacity:0;translate:0 6px;transition:opacity .25s ease,translate .3s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.mascot-bubble:not(:empty){opacity:1;translate:0 0}
+
+@media (prefers-reduced-motion:reduce){
+  .mascot-svg,.mascot-svg *{animation:none!important;transition:none!important}
+  .mascot-bubble{transition:none}
+}
+@media (max-width:600px){.mascot{width:46px;bottom:34px}.mascot-bubble{font-size:10px;max-width:56vw}}

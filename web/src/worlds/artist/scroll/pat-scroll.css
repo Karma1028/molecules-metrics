@@ -1,0 +1,50 @@
+/* Artist home pat scroll (PAT-SCROLL-SPEC). One transformed strip, no native scroll. */
+.ps{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px;width:100%}
+.ps-view{position:relative;flex:1;min-height:0;overflow:hidden;touch-action:pan-y;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);
+  mask:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.ps-strip{position:relative;display:flex;align-items:stretch;height:100%;width:max-content;
+  gap:clamp(6px,.8vw,12px);padding:22px clamp(16px,3vw,40px);will-change:transform}
+
+/* painted border bands of the scroll, top and bottom, carried with the strip */
+.ps-strip::before,.ps-strip::after{content:"";position:absolute;left:0;right:0;height:10px;pointer-events:none;
+  background:
+    radial-gradient(circle at 8px 5px,color-mix(in srgb,var(--accent) 70%,transparent) 1.8px,transparent 2.4px) 0 0/16px 10px repeat-x,
+    linear-gradient(var(--rule),var(--rule)) 0 0/100% 1px no-repeat,
+    linear-gradient(var(--rule),var(--rule)) 0 100%/100% 1px no-repeat}
+.ps-strip::before{top:4px}
+.ps-strip::after{bottom:4px}
+
+/* opening cartouche */
+.ps-open{flex:none;width:clamp(300px,34vw,520px);display:flex;flex-direction:column;justify-content:center;gap:6px}
+
+/* a panel: drawing over caption */
+.ps-panel{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  text-decoration:none;color:inherit;outline:none}
+.ps-art{position:relative;height:min(82%,calc(100% - 84px));aspect-ratio:3/4;
+  transition:transform .45s cubic-bezier(.32,.72,0,1)}
+.ps-art::after{content:"";position:absolute;left:8%;right:8%;bottom:-14px;height:18px;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--ink) 22%,transparent),transparent);
+  opacity:0;transition:opacity .45s}
+.ps-pencil,.ps-ink{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:3px}
+/* the underdrawing: the same painting, drained to graphite */
+.ps-pencil{object-fit:cover;filter:grayscale(1) contrast(1.35) brightness(1.18);opacity:.5;user-select:none;-webkit-user-drag:none}
+.ps-panel:hover .ps-art,.ps-panel:focus-visible .ps-art{transform:translateY(-6px) rotate(-1.5deg)}
+.ps-panel:hover .ps-art::after,.ps-panel:focus-visible .ps-art::after{opacity:1}
+
+.ps-cap{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center}
+.ps-num{font:600 10px/1 var(--font-mono);letter-spacing:.18em;color:var(--accent)}
+.ps-name{font-family:var(--font-display);font-weight:800;font-size:clamp(18px,2vw,26px);letter-spacing:-.02em;
+  line-height:1;color:var(--ink);transition:color .3s}
+.ps-gloss{font-family:var(--font-hand);font-size:clamp(14px,1.3vw,17px);color:var(--muted);max-width:22ch}
+.ps-panel:hover .ps-name,.ps-panel:focus-visible .ps-name{color:var(--accent);font-style:italic}
+.ps-panel:focus-visible .ps-cap{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+
+/* how much scroll is left */
+.ps-track{position:relative;height:2px;margin:0 clamp(16px,3vw,40px);background:var(--rule);border-radius:2px;overflow:hidden}
+.ps-thumb{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:2px;will-change:transform}
+
+@media (prefers-reduced-motion:reduce){
+  .ps-art,.ps-art::after{transition:none}
+  .ps-panel:hover .ps-art{transform:none}
+}

@@ -92,7 +92,7 @@ export const SOUND_ME_CSS = String.raw`
   .odo-col{display:flex;flex-direction:column;will-change:transform}
   .odo-n{height:1em;line-height:1;display:block;text-align:center}
 
-  .now{display:flex;align-items:center;gap:9px;padding:8px 12px;min-width:0;border-top:1px solid #ffffff0f;
+  .now{display:flex;align-items:center;gap:9px;padding:8px 12px;min-width:0;max-width:100%;overflow:hidden;box-sizing:border-box;border-top:1px solid #ffffff0f;
     font:500 10.5px/1.2 var(--font-mono)}
   .now-art{width:26px;height:26px;border-radius:3px;object-fit:cover;flex:none;background:#ffffff10}
   .now-led{width:6px;height:6px;border-radius:50%;flex:none;background:#2f4a3b}
@@ -167,9 +167,16 @@ export const SOUND_ME_CSS = String.raw`
   .ln-m small{font-size:9px;opacity:.85}
   .sl-pager{position:absolute;right:0;top:calc(-1 * clamp(6px,1vh,10px) - 30px);height:24px;display:flex;justify-content:flex-end;align-items:center;gap:4px}
   .sleeve:has(.sl-pager) .sl-head{padding-right:150px}
-  .sl-flip{width:26px;height:22px;border-radius:12px;cursor:pointer;background:none;color:var(--ink);
-    border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);font:600 14px/1 var(--font-mono)}
-  .sl-flip:hover{background:var(--ink);color:var(--paper)}
+  .sl-flip{width:30px;height:26px;border-radius:12px;cursor:pointer;background:none;color:var(--ink);
+    border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);display:grid;place-items:center;
+    transition:background .25s var(--ease),color .25s var(--ease),scale .25s var(--ease)}
+  .sl-flip .ic{width:12px;height:12px;transition:translate .25s var(--ease)}
+  .sl-prev .ic{transform:rotate(180deg)}
+  .sl-flip:hover{background:var(--ink);color:var(--paper);scale:1.06}
+  .sl-flip:active{scale:.96}
+  .sl-flip:hover .ic{translate:2px 0}
+  .sl-prev:hover .ic{translate:-2px 0}
+  .sl-flip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .sl-side{min-width:82px;text-align:center;font:600 9.5px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
   .sl-side small{font-size:9px;color:var(--muted);letter-spacing:.08em}
 

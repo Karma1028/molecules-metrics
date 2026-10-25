@@ -1,0 +1,661 @@
+{
+  "generatedAt": "2026-10-25T17:34:50.693Z",
+  "interests": [
+    {
+      "id": "football",
+      "label": "Football"
+    },
+    {
+      "id": "data",
+      "label": "Data"
+    },
+    {
+      "id": "ai",
+      "label": "AI"
+    },
+    {
+      "id": "photo",
+      "label": "Photography"
+    },
+    {
+      "id": "music",
+      "label": "Music"
+    },
+    {
+      "id": "chem",
+      "label": "Chemistry"
+    }
+  ],
+  "papers": [
+    {
+      "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
+      "link": "https://arxiv.org/abs/2610.31670v1",
+      "date": "2026-10-22T17:59:51.000Z",
+      "summary": "Robotic foundation models are typically evaluated through costly closed-loop rollouts, which motivates cheap offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, different modalities such as vision and langua…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Phase Transition from Random Features to Fully Trainable Networks",
+      "link": "https://arxiv.org/abs/2610.31663v1",
+      "date": "2026-10-22T17:59:29.000Z",
+      "summary": "Constructing accurate and computationally tractable approximation spaces is a fundamental task in scientific computing. Partially trainable neural networks bridge fixed random features and fully adaptive representations. This paper quantifies a phase transition pattern in approxi…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "Reliable AI-Assisted Decisions via Selective Auditing",
+      "link": "https://arxiv.org/abs/2610.31662v1",
+      "date": "2026-10-22T17:59:22.000Z",
+      "summary": "We consider online monitoring of an AI system that produces a sequence of decisions. At each round, the system outputs a proposed decision together with a confidence score estimating the trustworthiness of the decision. The decision and confidence score need not be produced by th…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "SpectralCanary: Embarrassingly Simple Low-Frequency Traces for T2I Dataset-Use Auditing",
+      "link": "https://arxiv.org/abs/2610.31659v1",
+      "date": "2026-10-22T17:59:03.000Z",
+      "summary": "Auditing whether a text-to-image (T2I) model was fine-tuned on a particular image collection is difficult: a model can absorb collection-level visual characteristics without reproducing training images. Proactive dataset-use auditing plants a shared signal in a dataset before rel…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Cost-Aware Abstention for LLM-Based IT Ticket Classification",
+      "link": "https://arxiv.org/abs/2610.31657v1",
+      "date": "2026-10-22T17:58:52.000Z",
+      "summary": "Wrong automatic routing of an IT support ticket can cost more than human triage. We evaluate cost-aware abstention as an offline, cost-conditional readiness assessment: select a routing policy on calibration data under explicit costs, then evaluate that frozen policy once on held…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data",
+        "ai"
+      ]
+    },
+    {
+      "title": "METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning",
+      "link": "https://arxiv.org/abs/2610.31656v1",
+      "date": "2026-10-22T17:58:27.000Z",
+      "summary": "Meta-reinforcement learning aims to train agents that adapt quickly to unseen tasks from limited interaction, but this requires representing task evidence over long interaction histories. Classical recurrent agents compress experience into hidden states, while transformer-based a…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence",
+      "link": "https://arxiv.org/abs/2610.31650v1",
+      "date": "2026-10-22T17:57:04.000Z",
+      "summary": "Tool-using language model agents rely on environmental facts to decide whether an action is permitted. When a tool response omits a safety-relevant fact, an agent may carry out a prohibited action even though the user request is benign and every returned statement is true. We int…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "A Fix for Softmax and Cross-Entropy",
+      "link": "https://arxiv.org/abs/2610.31642v1",
+      "date": "2026-10-22T17:54:56.000Z",
+      "summary": "Standard implementations of softmax, log-softmax, and cross-entropy have two numerical bugs. The first bug, Softmax Collapse, rounds the target logit's gradient to zero if that one logit is much larger than the others, resulting in gradients that no longer sum to zero. The second…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Causal Chain of Thought: Mitigating Attention Leakage via Context Isolation",
+      "link": "https://arxiv.org/abs/2610.31639v1",
+      "date": "2026-10-22T17:52:56.000Z",
+      "summary": "Chain-of-thought (CoT) prompting elicits step-by-step rationales that appear to explain model predictions, but there is no guarantee these steps causally drive the final answer. In standard autoregressive generation, dense attention allows each reasoning step to attend to the ful…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "BeNice! Closing Looping's Inference-Memory Gap via KV-Sharing",
+      "link": "https://arxiv.org/abs/2610.31633v1",
+      "date": "2026-10-22T17:49:44.000Z",
+      "summary": "Looped architectures scale quality while keeping parameter count fixed by repeatedly passing activations through the same block of layers. During inference, each recurrence generates independent KV-caches, causing memory to grow linearly. To address this challenge, prior work has…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Questioning Instrumental Convergence in RLVR: Checkpoint Evidence from OLMo-3",
+      "link": "https://arxiv.org/abs/2610.31624v1",
+      "date": "2026-10-22T17:44:41.000Z",
+      "summary": "Instrumental convergence is often invoked as a general reason to expect capable agents to acquire or express power-seeking subgoals: self-preservation, resource acquisition, deception, or resistance to oversight which poses an important threat to the society. For LLMs, reinforcem…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "OP-Print: Tracing Membership Imprints in On-Policy Self-Distillation",
+      "link": "https://arxiv.org/abs/2610.31616v1",
+      "date": "2026-10-22T17:41:04.000Z",
+      "summary": "On-policy distillation has been widely adopted for alleviating the distribution mismatch of off-policy distillation. Self-distillation further removes the need for an external teacher by using the student's own outputs, enhanced with extra context or demonstrations, as supervisio…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Efficient and Optimal Learning of Discrete Distributions with Person-Level Privacy",
+      "link": "https://arxiv.org/abs/2610.31612v1",
+      "date": "2026-10-22T17:40:13.000Z",
+      "summary": "We study learning a discrete distribution under person-level differential privacy in the batched setting. Given $n$ users, each contributing $m$ i.i.d. samples from an unknown distribution $μ$ over $[k]$, we seek an estimate of $μ$ with total-variation error $α$. We give polynomi…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "SympFormer: Inertial Attention Blocks from Damped Hamiltonian Dynamics on Spaces of Probability Measures",
+      "link": "https://arxiv.org/abs/2610.31600v1",
+      "date": "2026-10-22T17:32:11.000Z",
+      "summary": "The attention mechanism underpins modern large language models, yet their dynamics remain only partially understood. Recent perspectives interpret attention blocks as interacting particle systems, whose mean-field limits correspond to gradient flows of energy functionals on space…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Different Tasks, Different Timesteps: Temporal Task-Aware Quantization for Diffusion Language Models",
+      "link": "https://huggingface.co/papers/2610.31198",
+      "date": "2026-10-22T00:00:00.000Z",
+      "summary": "Diffusion Language Models (DLMs) introduce unique quantization challenges due to their iterative denoising process. In this work, we reveal that quantization sensitivity is both taskand time-dependent, with different downstream tasks exhibiting distinct precision requirements acr…",
+      "score": 23,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "BrickWright: Agentic Creation of Physically Feasible Brick Builds",
+      "link": "https://huggingface.co/papers/2610.31651",
+      "date": "2026-10-22T00:00:00.000Z",
+      "summary": "Frontier coding agents are becoming increasingly adept at 3D modeling. Yet, they still face challenges when building objects meant to be assembled in the physical world, often creating invalid assemblies with floating, colliding, or disconnected parts. We argue that providing age…",
+      "score": 13,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
+      "link": "https://huggingface.co/papers/2610.30753",
+      "date": "2026-10-22T00:00:00.000Z",
+      "summary": "Complex camera motion is central to visual storytelling, yet translating cinematographic intent into controllable, executable camera trajectories remains challenging. We introduce FilmFlow, an agentic framework that converts natural-language instructions or reference videos into…",
+      "score": 31,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "RIDAR: Safeguarding Research Integrity in Autonomous Research Agents via Automated Detection and Runtime Intervention",
+      "link": "https://huggingface.co/papers/2610.31372",
+      "date": "2026-10-22T00:00:00.000Z",
+      "summary": "Autonomous research agents are increasingly used to automate large portions of scientific research, yet they are prone to research integrity violations (RIVs): behaviors that compromise the validity, reproducibility, or faithfulness of the research process. We present RIDAR, a fr…",
+      "score": 14,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+      "link": "https://huggingface.co/papers/2610.30949",
+      "date": "2026-10-22T00:00:00.000Z",
+      "summary": "We present IQuest-Q1, a sparse Mixture-of-Experts (MoE) agentic foundation model with 320B total parameters (15B activated). IQuest-Q1 is developed through a three-stage process: (1) stable and efficient pre-training, combining Stable SplitNorm, Muon, and muP with a two-stage cur…",
+      "score": 97,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "WeVisOne-VL: Unified Visual Perception from Objects to Pixels",
+      "link": "https://huggingface.co/papers/2610.31329",
+      "date": "2026-10-22T00:00:00.000Z",
+      "summary": "Existing vision-language models (VLMs) remain unreliable for fine-grained visual perception. In this report, we present WeVisOne-VL (WeChat Vision All-in-One), a powerful VLM that unifies object-level and pixel-level perception through structured next-token prediction. It support…",
+      "score": 242,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "What Makes a Good Unmasking Policy? A Controlled Study of Learned Unmasking in Diffusion Language Models",
+      "link": "https://huggingface.co/papers/2610.31576",
+      "date": "2026-10-22T00:00:00.000Z",
+      "summary": "Masked diffusion language models generate tokens in parallel, but their efficiency depends on which predictions are committed. Learned unmasking policies improve the speed--accuracy trade-off, yet differ in supervision, inputs, and capacity, obscuring which choices matter. We vie…",
+      "score": 11,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "TARSphere: A Robot-Oriented Full-Stack Framework for Long-Horizon Embodied Agents in Evolving Physical and Social Environments",
+      "link": "https://huggingface.co/papers/2610.30043",
+      "date": "2026-10-21T00:00:00.000Z",
+      "summary": "Robots must act under physical and social constraints while adapting to changes in their environment and human needs. Existing embodied-agent systems often focus on specified goals or abstract execution into symbolic actions, limiting evaluation in an evolving world. We introduce…",
+      "score": 8,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Agent Mosaic: Recognizing Confidentiality Leaks in Agentic LLM Systems",
+      "link": "https://huggingface.co/papers/2610.30418",
+      "date": "2026-10-21T00:00:00.000Z",
+      "summary": "Modern LLM agents can retrieve information from accessible documents, and then disclose a sensitive conclusion assembled from them. This mosaic effect creates a critical risk for agents operating over confidential data. We quantify its realization with 30 synthetic cybersecurity,…",
+      "score": 22,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "data",
+        "ai"
+      ]
+    },
+    {
+      "title": "SplatLab: Autonomous Scientific Discovery for 3DGS Research",
+      "link": "https://huggingface.co/papers/2610.30468",
+      "date": "2026-10-21T00:00:00.000Z",
+      "summary": "Reproducing a published 3DGS paper takes weeks of expert engineering before any extension can be proposed. Prior autonomous-research systems read papers, draft hypotheses, and write code, but are limited by short fixed templates, low executability, and weak traceability, and none…",
+      "score": 8,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "HyperDrone: Simulation-to-Reality Transfer at Millions of Frames per Second",
+      "link": "https://huggingface.co/papers/2610.28950",
+      "date": "2026-10-20T00:00:00.000Z",
+      "summary": "We present HyperDrone, an extremely fast quadrotor simulator focused on high-performance batch rendering that is more than 20x faster than existing state-of-the-art batch quadrotor simulators. HyperDrone combines highly optimized multirotor dynamics with HyperLux, a new ray-traci…",
+      "score": 9,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "RLSplat: Resource-Linear Budget Control for Feed-forward 3D Gaussian Splatting",
+      "link": "https://huggingface.co/papers/2610.27712",
+      "date": "2026-10-20T00:00:00.000Z",
+      "summary": "Feed-forward 3D Gaussian Splatting (FF3DGS) reconstructs 3D scenes from images in a single forward pass, making it well-suited to applications that must operate within limited resource budgets. To further improve its practicality, recent budget-controllable FF3DGS methods allow t…",
+      "score": 23,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "Diffusion Language Models Change Speed Across Tasks and Languages",
+      "link": "https://huggingface.co/papers/2610.25835",
+      "date": "2026-10-19T05:47:58.000Z",
+      "summary": "Diffusion language models can write several tokens in one forward pass, and they decide during generation how many passes to spend. Two outputs of the same token length can therefore vary a lot in cost. To understand the underlying factors of this cost variation, we analyze two d…",
+      "score": 9,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Who Takes the Lead? Model Ability and Task-Conditioned Collaboration with Humans",
+      "link": "https://huggingface.co/papers/2610.27148",
+      "date": "2026-10-19T00:00:00.000Z",
+      "summary": "As language-model agents grow more capable, they can carry more of a task without asking anyone for help. Falling reliance on a human partner is easy to read as a failure of collaboration when it may instead be a correct division of labor, and the rate of human involvement alone…",
+      "score": 10,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "RouteWeaver: Weaving Mode Selection and Execution into Unified LLM Routing",
+      "link": "https://huggingface.co/papers/2610.19705",
+      "date": "2026-10-19T00:00:00.000Z",
+      "summary": "LLM routing dynamically selects and coordinates heterogeneous language models across diverse tasks. However, existing approaches are largely built around a predefined execution paradigm, such as single-round, multi-round, or agentic routing, which fixes how model calls are organi…",
+      "score": 24,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "TILDE: Teacher-in-the-Loop Distillation from Embodied Foundation Models",
+      "link": "https://huggingface.co/papers/2610.25376",
+      "date": "2026-10-18T00:00:00.000Z",
+      "summary": "Large-scale action pretraining equips Embodied Foundation Models (EFMs) with strong manipulation capabilities, with particular strengths in generalization and closed-loop robustness, but reproducing such pretraining requires substantial robot data and computation. To transfer the…",
+      "score": 9,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "data"
+      ]
+    }
+  ],
+  "news": [
+    {
+      "title": "After 15 minutes: injury nightmare continues to haunt former Barcelona star - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQNkV2VC1INGZCb1JUMzRaVWtoVDdUblpVd0NiN1JNb1lmd0kzXzVvMVJXeVRUby1YS0pzWHBRbWRwenVzbWpFRldGZDhiUzR0NjdOajM2ZW9reFh5RTNVZWstaU1STTNuOXhVb2RJZUtzNDNDbjNYcGo2VjgzbHdpYmFqVWhFeW1NRWR0Q2lNN1BEM0JCa2F6WjdkV3dhQWNBbjJTUXFDb2JhX2NPLVRlQ0lCU0haNEhoakMyWlZ4b0FMeFBQ?oc=5",
+      "date": "2026-10-25T17:15:02.000Z",
+      "summary": "After 15 minutes: injury nightmare continues to haunt former Barcelona star&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Watch Jay-Z Bring Out Dr. Dre and Snoop Dogg at LA Tour Closer",
+      "link": "https://pitchfork.com/story/watch-jay-z-bring-out-dr-dre-and-snoop-dogg-at-la-tour-closer/",
+      "date": "2026-10-25T16:57:49.000Z",
+      "summary": "Too $hort, John Legend, Scarface, and Blue Ivy Carter also joined the final Jay-Z 30 shows at SoFi Stadium",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "LIVE | UE Olot v Barça Atlètic - Official FC Barcelona Website",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE96cGRWcXAycllmQkdGajl0azFuLUZWbkdyTlFoUmIzOVRiaGd6NG1TLTJtRzlwXzkwN2xjWDZYN1pMT1ViaUlYa2NiRHc3RTJzUWZHTTVvUF9tbFpIWWpINW41T1d1aGdRQ3hUZ0R1ZDFsWEtkOEp6d0ZodGlRUQ?oc=5",
+      "date": "2026-10-25T16:17:26.000Z",
+      "summary": "LIVE | UE Olot v Barça Atlètic&nbsp;&nbsp;Official FC Barcelona Website",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "4 Cameras, 7 Lenses: What It Takes to Cover the Commonwealth Games",
+      "link": "https://petapixel.com/2026/10/25/4-cameras-7-lenses-what-it-takes-to-cover-the-commonwealth-games/",
+      "date": "2026-10-25T15:30:53.000Z",
+      "summary": "Four cameras, seven lenses, and one Commonwealth Games. That was the equipment I brought to Glasgow 2026. Most days, however, only three cameras came with me to the competition venues. The fourth stayed at the hotel as a backup, unless I planned to use it as a remote camera. [Rea…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "The Empty Gesture of Smiling for Photographs",
+      "link": "https://petapixel.com/2026/10/25/the-empty-gesture-of-smiling-for-photographs/",
+      "date": "2026-10-25T15:00:02.000Z",
+      "summary": "We are all familiar with the social mandate of smiling for photographs. Every time someone points a lens at our mug, we are expected to give a wide, toothy smile. If you don’t comply, the photographer will quickly remind you with a religious “say cheese!”. Many years ago, it occu…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Turnstile Pack Out Washington Monument for Palestine, Sudan, and Lebanon Benefit Show",
+      "link": "https://pitchfork.com/story/turnstile-pack-out-washington-monument-for-palestine-sudan-and-lebanon-benefit-show/",
+      "date": "2026-10-25T14:34:59.000Z",
+      "summary": "The Baltimore hardcore band raised over $220,000 for Human Concern International’s relief efforts in the three regions",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Magnum’s ‘Fact/Fiction’ Square Print Sale Lets You Buy Signed Prints From Famous Photographers",
+      "link": "https://petapixel.com/2026/10/25/magnums-fact-fiction-square-print-sale-lets-you-buy-signed-prints-from-famous-photographers/",
+      "date": "2026-10-25T14:00:13.000Z",
+      "summary": "Magnum has announced its newest Square Print Sale, celebrating the best photos that explore the sometimes very fine line between fact and fiction. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "How to Watch the Barcelona vs. Real Madrid El Clásico For Free - PCMag",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNnpBLVZSYzFDdkxPdTYwM2VrUDk3VHFpcldvTWlISXI5bzFuOXZSeWhfa2hUdW5PVWR2b0FGSEFqcEFNcWUtR3NlUXlpYVRScGNmYjZkZXNxRllUTTdUdTNnWGUyWUtJZ0pfY2hiSlZWdGpGWEVabHRrdDFHR2d4SFlmNmNyNWRmQjR5T1dhbVl3M28?oc=5",
+      "date": "2026-10-25T12:57:08.000Z",
+      "summary": "How to Watch the Barcelona vs. Real Madrid El Clásico For Free&nbsp;&nbsp;PCMag PREVIEW | FC Barcelona v Real Madrid&nbsp;&nbsp;Official FC Barcelona Website Video: the war began before the opening whistle: a fiery reception for Real Madrid in Barcelona&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "BREAKING: Courtois out against Barcelona - Managing Madrid",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBESmh1YTNLbVBSRU4yZ042RzNfZVYwVTVUaXI3U1o5aDNfZUdlTUFyZGg2eWxGZlR0NTZwMlhNYmVuYjllN2NrSVl6LW9lR1NJNFh0bG40V1lqVU9nS1RMb01wNGRtLXQyVXZkaW9yZUE2bzA2X2tN?oc=5",
+      "date": "2026-10-25T10:21:56.000Z",
+      "summary": "BREAKING: Courtois out against Barcelona&nbsp;&nbsp;Managing Madrid",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Alvarez apologises to Atletico fans for Barcelona comments after scoring winner - Rediff",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTUpfVENmOVVxOXQ1cXc3dFNtX3NBemhhY0hhRGsydGRXVnFoeTJtSEk0OUhuT0tsRWtZemVoa0dkb1ktOFQ2ejY4X0VlZTN0S3FpTGl0am5yWVNYSl9tNERCdldJdjV4MVNyQ3N5UHlpZUZMbUxRcHh1ZGtCOTdGcFY5c2xxSXhWLTdJbUNsVXZSOGZPcVdFcTVtcUk2aXJSWi1QRXAzQURiV05RXzQzZ2xFZ3BtcTVKQWZVadIBvwFBVV95cUxQZ2Z1emdkVkNJMkpPY1JpSUwta1FEbGNhZ3c4MGNaSVViSGFDd1F5QjZQaGJUMkliT3NPT1pxbERDUHNHUEN0LURBdVN6MEQ1NTdwaWtxUEpRNGQ1MGI4a1BGVFkyQU1VeFVjSEVsWU9qLXBDN2NCc3Z5ZXgxQVE0YTZ0Q0tEMjQwWHZxRExfUldaOWd0RFdLMFVqRVJVbmVwX2c1eXVOUlhkNmdUbWY2QTBoUlNTUFd0aERQNWJqSQ?oc=5",
+      "date": "2026-10-25T08:32:21.000Z",
+      "summary": "Alvarez apologises to Atletico fans for Barcelona comments after scoring winner&nbsp;&nbsp;Rediff",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "El Clasico awaits a Yamal vs Mbappe showdown on Mourinho’s return to La Liga - Al Jazeera",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQYTRLTUo4bHBzb0tFOFNQS2FValBxMTd3TEliUWZIZmtDU0lrQVoxRXVTRTR5R2d6Rm4wbGtDVGVQZ2xIa2xBeklOWlFKSTZqM0V1LVY1X19ES0Y4enIxdDBTQkZFajdrTDQ1UXFmUVNIbExzWVRnY3o4Q1hxa1gtbmVRQ2tQc1JwZ05sY3otN254U04yMjYzd3U4OXU3cDBhYkdBLWZvM2RqamV2R1ZNZUxiZG5lVDBHbWFF0gHAAUFVX3lxTE9fOWtDdW9NaVdMaVFmWi11UUF0MW9SZEZuSjlUY0RYS2FNbnp5UVBYd2ZhS1JqU2h6UTFwbzMwSzNkUGoyR3d4aWh5cldXWUdPa0dKMmExc1NMT2xnR0EtVlFNdllFazJOVFluMDMxejVhT3lkQk8xSlV2a2RscmFpRDZUbk5UUFE2OS1NeWFRUHl1RVFvQUJUa3J0M3RmdlQwRlVNTElDdEo1QXlxSVI1QnBab01ZNTk1YzZsQ21tRw?oc=5",
+      "date": "2026-10-25T03:55:05.000Z",
+      "summary": "El Clasico awaits a Yamal vs Mbappe showdown on Mourinho’s return to La Liga&nbsp;&nbsp;Al Jazeera",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Photographer Captures Ghostly Face in the Waves on Deadly Beach",
+      "link": "https://petapixel.com/2026/10/24/photographer-captures-ghostly-face-in-the-waves-on-deadly-beach/",
+      "date": "2026-10-24T15:00:34.000Z",
+      "summary": "Photographer Vilhelm Gunnarsson has been shooting the south coast of Iceland, showing a landscape that is battered by the relentless forces of the Atlantic Ocean. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Revisiting Zeiss ZM Lenses Part 1: I’ve Always Wanted to Do This",
+      "link": "https://petapixel.com/2026/10/24/revisiting-zeiss-zm-lenses-part-1-ive-always-wanted-to-do-this/",
+      "date": "2026-10-24T14:01:56.000Z",
+      "summary": "A few months ago on the PetaPixel Podcast, we did a lens draft where we had to pick our favorite lenses from a whole selection of choices. Naturally, this came with a lot of research, and as we delved deeper into reviews and ratings, we found that the Zeiss ZM lenses were some of…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "And It Was All Yellow: Photographers Capture Golden Moments Around the World",
+      "link": "https://petapixel.com/2026/10/24/and-it-was-all-yellow-photographers-capture-golden-moments-around-the-world/",
+      "date": "2026-10-24T13:00:48.000Z",
+      "summary": "Bright and joyful, energetic and optimistic, but also a sign of caution. Bold monochromes and subtle glows, conceptual pieces and documentary moments; yellow is a warning sign, a memory, a burst of light. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Tintype Photographer Uses Mobile Darkroom to Create Handcrafted Images of Memory and Time",
+      "link": "https://petapixel.com/2026/10/24/tintype-photographer-uses-mobile-darkroom-to-create-handcrafted-images-of-memory-and-time/",
+      "date": "2026-10-24T13:00:46.000Z",
+      "summary": "Photographer Lara Porzak, who has spent more than three decades using analog techniques to create photographs that function as both images and physical artifacts, has published her first book. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Photographer Spends Ten Years Capturing Black Cowboys and Cowgirls Across America",
+      "link": "https://petapixel.com/2026/10/24/photographer-spends-ten-years-capturing-black-cowboys-and-cowgirls-across-america/",
+      "date": "2026-10-24T11:00:48.000Z",
+      "summary": "A photographer spent over a decade living with Black cowboys and cowgirls in the U.S., capturing a culture that is often overlooked. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Slayyyter Cancels Remaining UK and European Tour Dates",
+      "link": "https://pitchfork.com/story/slayyyter-cancels-remaining-uk-and-european-tour-dates/",
+      "date": "2026-10-23T17:50:01.000Z",
+      "summary": "Laryngitis and vocal cord tears are forcing the singer “to go on medication and full vocal rest for at least two weeks”",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Noel Gallagher Talks Vegans, Macca, Underwear on Chicken Shop Date",
+      "link": "https://pitchfork.com/story/noel-gallagher-talks-vegans-macca-underwear-on-chicken-shop-date/",
+      "date": "2026-10-23T17:35:39.000Z",
+      "summary": "“Do you know what’s not a high-flying bird? A chicken.”",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Chappell Roan Duets With Caroline Polachek, PinkPantheress, and Lola Young",
+      "link": "https://pitchfork.com/story/chappell-roan-duets-with-caroline-polachek-pinkpantheress-and-lola-young/",
+      "date": "2026-10-23T15:07:56.000Z",
+      "summary": "All on the closing night of Roan’s Los Angeles pop extravaganza, the Super Graphic Spectacular",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Haywire Set Jam-Packed 2027 Tour",
+      "link": "https://pitchfork.com/story/haywire-set-jam-packed-2027-tour/",
+      "date": "2026-10-23T14:44:40.000Z",
+      "summary": "The Boston hardcore outfit will play a whopping 80 shows between January and April",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "10 New Albums You Should Listen to Now: Alchemical Sisters, Fine, Shabazz Palaces, and More",
+      "link": "https://pitchfork.com/story/10-new-albums-you-should-listen-to-now-alchemical-sisters-fine-shabazz-palaces/",
+      "date": "2026-10-23T14:17:39.000Z",
+      "summary": "Stream new releases from Alchemical Sisters, Fine, Shabazz Palaces, and Josh Johnson",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Ryan Gosling’s Band Dead Man’s Bones Tease Return",
+      "link": "https://pitchfork.com/story/ryan-goslings-band-dead-mans-bones-tease-return/",
+      "date": "2026-10-23T13:24:50.000Z",
+      "summary": "Gosling’s duo with Zach Shields appears to be preparing its first music in 17 years",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "A tiny defect in a crystal reveals a big quantum surprise",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261022081302.htm",
+      "date": "2026-10-23T10:22:55.000Z",
+      "summary": "Researchers have solved a long-standing challenge in understanding how tiny defects in materials like diamond and silicon carbide behave when exposed to light. Their new computational method revealed a surprisingly important energy-loss mechanism in silicon carbide that scientist…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
+      "title": "A revolutionary new microscope could reveal the hidden machinery of life",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261021231230.htm",
+      "date": "2026-10-22T11:30:49.000Z",
+      "summary": "Researchers have developed a revolutionary microscope that uses an incredibly powerful laser to make previously invisible cellular structures easier to see. The technology dramatically improves image clarity, allowing scientists to examine small proteins that conventional electro…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
+      "title": "AI reveals a hidden chemical shortcut that could turn CO2 into fuel",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261013015758.htm",
+      "date": "2026-10-14T00:01:11.000Z",
+      "summary": "Scientists used artificial intelligence to uncover nearly 10,000 chemical reactions involved in transforming carbon dioxide into fuels and chemicals, revealing crucial pathways that traditional models had missed. The discovery dramatically improved predictions of CO2 conversion a…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "ai",
+        "chem"
+      ]
+    },
+    {
+      "title": "Gordon scores as Barcelona beat Galatasaray - BBC",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5aQUhTTWIwRjF3RmF2N3RKMk5jQTFDaUJtUEYwcjBMc2Z3cEJKa09sTVhnTC1CVzBLNHdGbkVyQmJ2WEdDa0p3UWltY0VvWndPUHlQSzdTdFFKclNUUFRQQ2k3Yw?oc=5",
+      "date": "2026-10-13T07:00:00.000Z",
+      "summary": "Gordon scores as Barcelona beat Galatasaray&nbsp;&nbsp;BBC",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Scientists discover a hidden factor that can make or break chemical reactions",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261008005244.htm",
+      "date": "2026-10-12T06:24:46.000Z",
+      "summary": "Researchers discovered a hidden factor that can determine whether chemical reactions succeed or fail, and then used it to boost the proportion of the desired product from 16% to 97%. By controlling acidity near electrodes, they developed a promising way to manufacture chemicals f…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
+      "title": "Scientists may have found a shortcut to fusion energy",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261008005242.htm",
+      "date": "2026-10-10T18:57:27.000Z",
+      "summary": "Princeton Plasma Physics Laboratory may have found a dramatically more efficient route to fusion energy by reversing the traditional approach: heating plasma first, then increasing its density. Their calculations could help future reactors reach self-sustaining fusion with far le…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
+      "title": "Physicists just found the ‘ghost’ of superconductivity",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261005071517.htm",
+      "date": "2026-10-07T12:34:39.000Z",
+      "summary": "Physicists have found striking evidence for an unusual form of superconducting behavior in uranium ditelluride, where electron pairs organize into rippling patterns called pair density waves. Even more surprisingly, these patterns appear to survive after ordinary superconductivit…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
+      "title": "Scientists finally see how nature moves energy so efficiently",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261004001841.htm",
+      "date": "2026-10-06T07:49:51.000Z",
+      "summary": "Researchers have captured key steps in a chemical reaction that helps nature transfer energy with remarkable efficiency. Ultrafast X-rays revealed how changes involving electrons and protons are closely linked to the rearrangement of surrounding water molecules. Because similar r…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
+      "title": "Scientists just found a new way to make hydrogen from water",
+      "link": "https://www.sciencedaily.com/releases/2026/10/261001214017.htm",
+      "date": "2026-10-04T11:11:24.000Z",
+      "summary": "A new light-activated material can efficiently produce hydrogen from water without requiring an additional expensive metal catalyst. Researchers say its unusual sulfur-based chemistry could point toward cheaper and more practical ways to turn sunlight into clean fuel.",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
+      "title": "FC Barcelona vs Real Madrid live score, H2H and lineups - Sofascore",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE90cTZnQTVwSHlXNURvNVBlcm9LS1lMNVhYOWt2a0V6X29YWGFJXzNuNXFNMW54RWZ3YUFsSW8zbXBPaGstcVc4amk1TTU1Zld4ZXp2VW9Nb2ZPTGlhRVVqTTZvU2JKZy03c3M0NGlLdFVyOXBSejRWbTBqU2dydw?oc=5",
+      "date": "2026-04-13T03:07:30.000Z",
+      "summary": "FC Barcelona vs Real Madrid live score, H2H and lineups&nbsp;&nbsp;Sofascore",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    }
+  ]
+}

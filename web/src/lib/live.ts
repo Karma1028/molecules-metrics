@@ -406,6 +406,25 @@ export interface FootballNewsResp { configured: boolean; items?: NewsItem[] }
 export const FOOTBALL_NEWS_FALLBACK: FootballNewsResp = { configured: false }
 export const useFootballNews = () => useLive<FootballNewsResp>(apiUrl("football-news"), FOOTBALL_NEWS_FALLBACK, 1800000)
 
+// ── Field Notes wire: daily papers + interest news, baked by scripts/bake-feed.mjs ──
+export interface FeedItem {
+  title: string
+  link: string
+  date: string
+  summary: string
+  source?: string
+  score?: number
+  tags: string[]
+}
+export interface FeedResp {
+  generatedAt?: string
+  interests?: { id: string; label: string }[]
+  papers?: FeedItem[]
+  news?: FeedItem[]
+}
+export const FEED_FALLBACK: FeedResp = {}
+export const useFeed = () => useLive<FeedResp>(dataUrl("feed.json"), FEED_FALLBACK)
+
 // ── GitHub activity ────────────────────────────────────────────────────
 export interface Repo {
   name: string

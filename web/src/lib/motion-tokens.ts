@@ -109,6 +109,23 @@ export const motionTokens = {
     maxDtMs: 64,
     firstDtMs: 16,
   },
+  /** Artist home pat scroll (worlds/artist/scroll, PAT-SCROLL-SPEC). lambda per ms. */
+  scroll: {
+    /** camera follow along the strip */
+    camLambda: 0.007,
+    /** wheel px to strip px */
+    wheelGain: 1.1,
+    /** ms without wheel input before the camera settles on the nearest panel */
+    snapIdleMs: 220,
+    /** brush radius (px) of the reveal under the pointer */
+    brushR: 52,
+    /** brush stamps per radius along a fast stroke */
+    stampStep: 0.35,
+    /** ms an object takes to ink in fully once hovered or focused */
+    bloomMs: 600,
+    /** backing-store pixel ratio cap for the ink canvases */
+    inkDpr: 1.5,
+  },
   scale: {
     press: 0.97,
     subtle: 0.98,
