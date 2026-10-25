@@ -167,6 +167,9 @@ const CSS = String.raw`
   .p-gl-lb .lb-btn .ic{width:16px;height:16px}
   .p-gl-lb .lb-btn.x{top:18px;right:18px;font:400 20px/1 var(--font-mono)}
   .p-gl-lb .lb-btn.snd{top:18px;right:70px}
+  .p-gl-lb .lb-btn.lamp{top:18px;right:122px}
+  .p-gl-lb .lb-btn.lamp[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .p-gl-lb .lb-lantern{position:absolute;inset:0;z-index:3;pointer-events:none;transition:background .08s linear}
   .p-gl-lb .lb-btn:hover{background:var(--accent);color:#fff;transform:scale(1.06)}
   .p-gl-lb .lbnav{position:fixed;top:50%;translate:0 -50%;z-index:4;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule);
     background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-sm);transition:background .3s,transform .3s}

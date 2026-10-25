@@ -6,6 +6,7 @@ import type { Frame } from "../../lib/live"
 import { metaForUrl, type FrameExif, type FramePin } from "../../lib/gallery-meta"
 import { shutterOpen, advanceTick, penScratch, isMuted, setMuted, primeDefault } from "../../lib/shutter"
 import { motionTokens, springs } from "../../lib/motion-tokens"
+import { lanternMask, pointInBox } from "../../lib/lantern"
 import { arrowPaths, jit, shaftPath } from "./lb-geometry"
 
 const DEVELOP = motionTokens.duration.slow // seconds — the print resolving from negative to positive
@@ -180,6 +181,8 @@ export function GalleryLightbox({
   const [box, setBox] = useState<ImgBox | null>(null)
   const firstOpen = useRef(true)
   const frameRef = useRef<HTMLDivElement>(null)
+  const [lantern, setLantern] = useState(false)
+  const lampRef = useRef<HTMLDivElement>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const imgRef = useRef<HTMLImageElement>(null)
 
@@ -280,12 +283,27 @@ export function GalleryLightbox({
       <button className="lb-btn snd" aria-label={muted ? "Unmute shutter sound" : "Mute shutter sound"} aria-pressed={!muted} onClick={toggleSound}>
         <Icon id={muted ? "i-pulse" : "i-headphone"} />
       </button>
+      <button className="lb-btn lamp" aria-label={lantern ? "Turn the lantern off" : "Turn the lantern on: light the photo with your cursor"} aria-pressed={lantern} onClick={() => setLantern((l) => !l)}>
+        <svg viewBox="0 0 24 24" className="ic" aria-hidden="true"><path d="M9 3h6M10 3v3h4V3M8 6h8l1 11H7zM9 20h6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      </button>
       <button className="lbnav prev" aria-label="Previous frame" onClick={() => onStep(-1)}><Icon id="i-arrow" /></button>
       <button className="lbnav next" aria-label="Next frame" onClick={() => onStep(1)}><Icon id="i-arrow" /></button>
 
       <figure onPointerDown={onSwipeDown} onPointerUp={onSwipeUp}>
         <div className="lb-frame" ref={frameRef}>
-          <div className="lb-stage" ref={stageRef}>
+          <div
+            className="lb-stage"
+            ref={stageRef}
+            onPointerMove={(e) => {
+              const lamp = lampRef.current
+              const st = stageRef.current
+              if (!lantern || !lamp || !st) return
+              const r = st.getBoundingClientRect()
+              const p = pointInBox(e.clientX, e.clientY, r)
+              lamp.style.background = lanternMask(p.x, p.y)
+            }}
+          >
+            {lantern && <div className="lb-lantern" ref={lampRef} style={{ background: "rgba(8,6,5,.94)" }} aria-hidden="true" />}
             <motion.img
               ref={imgRef}
               key={`lb-${f.url}`}
