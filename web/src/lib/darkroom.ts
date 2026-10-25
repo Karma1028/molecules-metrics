@@ -37,3 +37,31 @@ export function printLook(p: number): { opacity: number; brightness: number; con
     contrast: Math.max(0.35, 1.05 - over * 0.7),
   }
 }
+
+/* ---- the full process: develop -> stop bath -> fixer -> dry -> lights on ---- */
+
+export type Stage = "develop" | "stop" | "fix" | "dry" | "lights"
+export const STAGES: Stage[] = ["develop", "stop", "fix", "dry", "lights"]
+export const STAGE_MS = { stop: 1500, fix: 3000, dry: 4000 } as const
+
+export const nextStage = (s: Stage): Stage => STAGES[Math.min(STAGES.length - 1, STAGES.indexOf(s) + 1)]
+
+export const stagePct = (elapsedMs: number, needMs: number): number => Math.min(1, Math.max(0, elapsedMs / needMs))
+
+export type FixOutcome = "stable" | "fogs" | "fades"
+const FULL = 0.95
+
+/** Skipping the stop bath lets developer carry on (fogs); a short fix leaves silver that fades. */
+export function fixOutcome(stopPct: number, fixPct: number): FixOutcome {
+  if (stopPct < FULL) return "fogs"
+  if (fixPct < FULL) return "fades"
+  return "stable"
+}
+
+/** What the print looks like once the lights come on. */
+export function finalLook(devProgress: number, outcome: FixOutcome): { opacity: number; brightness: number; contrast: number } {
+  const base = printLook(devProgress)
+  if (outcome === "fogs") return { ...base, brightness: base.brightness * 0.55, contrast: base.contrast * 0.8 }
+  if (outcome === "fades") return { ...base, opacity: base.opacity * 0.55 }
+  return base
+}
