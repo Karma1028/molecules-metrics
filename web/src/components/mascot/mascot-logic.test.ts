@@ -36,7 +36,7 @@ describe("lineFor", () => {
     const b = lineFor("/artist/gallery", 1)
     expect(a.length).toBeGreaterThan(0)
     expect(a).not.toBe(b)
-    expect(lineFor("/artist/gallery", 2)).toBe(a)
+    expect(lineFor("/artist/gallery", 3)).toBe(a)
   })
   it("falls back to a default for unknown routes and keeps lines short", () => {
     expect(lineFor("/nope/never", 0).length).toBeGreaterThan(0)
