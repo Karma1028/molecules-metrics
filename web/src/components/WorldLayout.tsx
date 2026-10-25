@@ -12,6 +12,7 @@ import { useDeckScroll } from "./deck/useDeckScroll"
 import { AlponaCorner } from "./motifs/Alpona"
 import { Pointer } from "./pointer/Pointer"
 import { Mascot } from "./mascot/Mascot"
+import { KanthaThread } from "./thread/KanthaThread"
 import { loaderLine } from "../lib/loader-line"
 
 /** Shown while a lazy page chunk loads (K5). Artist = hand note, analyst = mono readout. */
@@ -86,6 +87,7 @@ export function WorldLayout({ world }: { world: World }) {
       <div className="grain" />
       <Pointer world={shown} />
       <Mascot />
+      <KanthaThread />
       {shown === "artist" && (
         <>
           <AlponaCorner className="alpona-flourish tl" />

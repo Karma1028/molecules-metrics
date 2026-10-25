@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { useReducedMotion } from "motion/react"
+import { feedLine } from "../../lib/feed-health"
 import { SLEEP_MS, lineFor, lookAt } from "./mascot-logic"
 import "./mascot.css"
 
@@ -85,7 +86,7 @@ export function Mascot() {
   const poke = () => {
     setAsleep(false)
     setHop(true)
-    setLine(lineFor(pathname, said))
+    setLine(said % 3 === 2 ? feedLine() ?? lineFor(pathname, said) : lineFor(pathname, said))
     setSaid((n) => n + 1)
   }
 
