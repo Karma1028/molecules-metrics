@@ -1,5 +1,5 @@
-import { Suspense, useState } from "react"
-import { Link, NavLink, useLocation, useOutlet } from "react-router-dom"
+import { Suspense, useEffect, useState } from "react"
+import { Link, NavLink, useLocation, useNavigate, useOutlet } from "react-router-dom"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { useWorldTheme, type World } from "../lib/theme"
 import { WORLDS, SOCIAL } from "../lib/worlds"
@@ -13,6 +13,7 @@ import { AlponaCorner } from "./motifs/Alpona"
 import { Pointer } from "./pointer/Pointer"
 import { Mascot } from "./mascot/Mascot"
 import { KanthaThread } from "./thread/KanthaThread"
+import { createKonami } from "../lib/konami"
 import { loaderLine } from "../lib/loader-line"
 
 /** Shown while a lazy page chunk loads (K5). Artist = hand note, analyst = mono readout. */
@@ -60,6 +61,20 @@ export function WorldLayout({ world }: { world: World }) {
   const def = WORLDS[shown]
   const [menuOpen, setMenuOpen] = useState(false)
   const loc = useLocation()
+  const navigate = useNavigate()
+  const otherHome = WORLDS[def.other].home
+
+  // up up down down left right left right b a: hop to the other world
+  useEffect(() => {
+    const code = createKonami()
+    const onKey = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement | null
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return
+      if (code.push(e.key)) navigate(otherHome)
+    }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [navigate, otherHome])
   const outlet = useOutlet()
   const reduce = useReducedMotion()
   // each navigation closes the phone drawer and sets which way the deck travels
