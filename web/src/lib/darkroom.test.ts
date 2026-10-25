@@ -45,3 +45,44 @@ describe("printLook", () => {
     expect(printLook(1.6).contrast).toBeLessThan(printLook(1).contrast)
   })
 })
+
+import { STAGES, STAGE_MS, stagePct, nextStage, fixOutcome, finalLook } from "./darkroom"
+
+describe("stages", () => {
+  it("runs develop, stop, fix, dry, then lights on", () => {
+    expect(STAGES).toEqual(["develop", "stop", "fix", "dry", "lights"])
+    expect(nextStage("develop")).toBe("stop")
+    expect(nextStage("dry")).toBe("lights")
+    expect(nextStage("lights")).toBe("lights")
+  })
+  it("stop bath is quicker than fixer", () => {
+    expect(STAGE_MS.stop).toBeLessThan(STAGE_MS.fix)
+  })
+})
+
+describe("stagePct", () => {
+  it("clamps 0..1", () => {
+    expect(stagePct(0, 1000)).toBe(0)
+    expect(stagePct(500, 1000)).toBe(0.5)
+    expect(stagePct(9999, 1000)).toBe(1)
+  })
+})
+
+describe("fixOutcome", () => {
+  it("is stable only when both baths got their full time", () => {
+    expect(fixOutcome(1, 1)).toBe("stable")
+    expect(fixOutcome(0.4, 1)).toBe("fogs")
+    expect(fixOutcome(1, 0.5)).toBe("fades")
+  })
+})
+
+describe("finalLook", () => {
+  it("under white light an unfixed print darkens, a half-fixed one fades", () => {
+    const ok = finalLook(1, "stable")
+    expect(finalLook(1, "fogs").brightness).toBeLessThan(ok.brightness)
+    expect(finalLook(1, "fades").opacity).toBeLessThan(ok.opacity)
+  })
+  it("a stable print keeps the develop look", () => {
+    expect(finalLook(1, "stable").opacity).toBeCloseTo(1)
+  })
+})
