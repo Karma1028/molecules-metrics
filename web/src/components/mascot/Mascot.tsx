@@ -3,10 +3,13 @@ import { useLocation } from "react-router-dom"
 import { useReducedMotion } from "motion/react"
 import { feedLine } from "../../lib/feed-health"
 import { SLEEP_MS, lineFor, lookAt } from "./mascot-logic"
+import { gaitFor, stepWalker, strideFor, wanderTarget, type Gait, type Walker } from "./walk"
 import "./mascot.css"
 
 const BUBBLE_MS = 3600
 const HOP_MS = 560
+const FOLLOW_MS = 5000 // follows the pointer this long after it last moved
+const MAX_PRINTS = 12
 
 /**
  * The Bankura horse: a small terracotta mascot that stands in the corner of every page.
@@ -18,6 +21,7 @@ export function Mascot() {
   const { pathname } = useLocation()
   const reduce = useReducedMotion()
   const root = useRef<HTMLDivElement>(null)
+  const prints = useRef<HTMLDivElement>(null)
   const [said, setSaid] = useState(0)
   const [line, setLine] = useState<string | null>(null)
   const [hop, setHop] = useState(false)
@@ -64,6 +68,81 @@ export function Mascot() {
     }
   }, [reduce])
 
+  // roam: trot after the pointer, amble about when left alone, leave hoofprints
+  useEffect(() => {
+    const el = root.current
+    const layer = prints.current
+    const fine = window.matchMedia?.("(pointer: fine)").matches ?? true
+    if (!el || !layer || reduce || !fine) return
+    const width = () => el.getBoundingClientRect().width
+    const maxX = () => Math.max(0, window.innerWidth - width() - 16)
+    let w: Walker = { x: 0, v: 0 }
+    let target = 0
+    let raf = 0
+    let prev = 0
+    let gait: Gait = "idle"
+    let sincePrint = 0
+    let lastMove = 0
+    let nextWander = performance.now() + 6000
+
+    const stamp = (x: number) => {
+      const dot = document.createElement("i")
+      dot.className = "m-print"
+      dot.style.left = `${x + width() * 0.55}px`
+      dot.addEventListener("animationend", () => dot.remove())
+      layer.appendChild(dot)
+      if (layer.childElementCount > MAX_PRINTS) layer.firstElementChild?.remove()
+    }
+    const frame = (now: number) => {
+      const dt = Math.min(0.05, (now - prev) / 1000)
+      prev = now
+      const before = w.x
+      w = stepWalker(w, target, dt)
+      el.style.setProperty("--x", `${w.x.toFixed(1)}px`)
+      if (Math.abs(w.v) > 8) el.style.setProperty("--face", w.v < 0 ? "-1" : "1")
+      const g = gaitFor(w.v)
+      if (g !== gait) {
+        gait = g
+        el.dataset.gait = g
+      }
+      sincePrint += Math.abs(w.x - before)
+      const stride = strideFor(g)
+      if (stride && sincePrint >= stride) {
+        sincePrint = 0
+        stamp(w.x)
+      }
+      if (g === "idle" && Math.abs(target - w.x) < 1) {
+        raf = 0
+        return
+      }
+      raf = requestAnimationFrame(frame)
+    }
+    const go = (t: number) => {
+      target = Math.max(0, Math.min(maxX(), t))
+      if (!raf) {
+        prev = performance.now()
+        raf = requestAnimationFrame(frame)
+      }
+    }
+    const onMove = (e: PointerEvent) => {
+      lastMove = performance.now()
+      nextWander = lastMove + FOLLOW_MS + 4000
+      go(e.clientX - width() / 2)
+    }
+    const wander = window.setInterval(() => {
+      const now = performance.now()
+      if (now - lastMove < FOLLOW_MS || now < nextWander || el.dataset.asleep) return
+      nextWander = now + 7000 + Math.random() * 6000
+      go(wanderTarget(w.x, maxX(), Math.random()))
+    }, 1000)
+    window.addEventListener("pointermove", onMove, { passive: true })
+    return () => {
+      window.removeEventListener("pointermove", onMove)
+      window.clearInterval(wander)
+      if (raf) cancelAnimationFrame(raf)
+    }
+  }, [reduce])
+
   // a new page, a fresh line
   useEffect(() => {
     setSaid(0)
@@ -91,6 +170,8 @@ export function Mascot() {
   }
 
   return (
+    <>
+    <div ref={prints} className="m-prints" aria-hidden="true" />
     <div ref={root} className="mascot" data-asleep={asleep || undefined} data-hop={hop || undefined}>
       <div className="mascot-bubble" role="status" aria-live="polite">
         {asleep ? "zzz" : line}
@@ -124,5 +205,6 @@ export function Mascot() {
         </svg>
       </button>
     </div>
+    </>
   )
 }
