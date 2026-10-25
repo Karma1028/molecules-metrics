@@ -10,7 +10,6 @@ const BUBBLE_MS = 3600
 const HOP_MS = 560
 const ERRAND_MAX_V = 170 // a trot at most; the horse never sprints
 const ERRAND_PAUSE_MS = 2600
-const FRAME_MS = 1000 / 30
 const STROLL_PRINT_GAP = 2 // fewer prints while strolling
 const MAX_PRINTS = 12
 
@@ -122,8 +121,7 @@ export function Mascot() {
 
     const frame = (now: number) => {
       raf = requestAnimationFrame(frame)
-      if (now - prev < FRAME_MS) return // 30 fps is plenty for a 38 px/s walk
-      const dt = Math.min(0.1, (now - prev) / 1000)
+      const dt = Math.min(0.05, (now - prev) / 1000)
       prev = now
       const before = x
       if (errandTo != null) {
@@ -235,8 +233,20 @@ export function Mascot() {
         <svg className="mascot-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
           <ellipse className="m-shadow" cx="52" cy="94" rx="30" ry="3.2" />
           <g className="m-tail"><path d="M31 54 C20 52 15 62 17 76 C18 80 21 80 21 76 C20 68 23 60 31 60Z" /></g>
-          <g className="m-leg m-leg-b"><rect x="35" y="68" width="6" height="24" rx="2.5" /><rect className="m-hoof" x="34.5" y="88" width="7" height="5" rx="2" /></g>
-          <g className="m-leg"><rect x="43" y="70" width="6" height="22" rx="2.5" /><rect className="m-hoof" x="42.5" y="88" width="7" height="5" rx="2" /></g>
+          <g className="m-leg m-leg-b">
+            <rect x="35" y="68" width="6" height="13" rx="2.5" />
+            <g className="m-shin">
+              <rect x="35.5" y="80" width="5" height="12" rx="2" />
+              <rect className="m-hoof" x="34.5" y="88" width="7" height="5" rx="2" />
+            </g>
+          </g>
+          <g className="m-leg">
+            <rect x="43" y="70" width="6" height="13" rx="2.5" />
+            <g className="m-shin">
+              <rect x="43.5" y="82" width="5" height="10" rx="2" />
+              <rect className="m-hoof" x="42.5" y="88" width="7" height="5" rx="2" />
+            </g>
+          </g>
           <g className="m-body">
             <path d="M28 58 C28 45 42 41 57 43 C72 45 80 51 80 61 C80 71 71 75 56 75 C41 75 28 71 28 58Z" />
             <path className="m-band" d="M44 44 C46 52 46 66 44 74 L50 75 C52 66 52 52 50 43Z" />
@@ -244,8 +254,20 @@ export function Mascot() {
             <circle className="m-dot" cx="66" cy="62" r="1.8" />
             <circle className="m-ring" cx="58" cy="56" r="6.2" />
           </g>
-          <g className="m-leg m-leg-f"><rect x="63" y="70" width="6" height="22" rx="2.5" /><rect className="m-hoof" x="62.5" y="88" width="7" height="5" rx="2" /></g>
-          <g className="m-leg m-leg-f2"><rect x="71" y="68" width="6" height="24" rx="2.5" /><rect className="m-hoof" x="70.5" y="88" width="7" height="5" rx="2" /></g>
+          <g className="m-leg m-leg-f">
+            <rect x="63" y="70" width="6" height="13" rx="2.5" />
+            <g className="m-shin">
+              <rect x="63.5" y="82" width="5" height="10" rx="2" />
+              <rect className="m-hoof" x="62.5" y="88" width="7" height="5" rx="2" />
+            </g>
+          </g>
+          <g className="m-leg m-leg-f2">
+            <rect x="71" y="68" width="6" height="13" rx="2.5" />
+            <g className="m-shin">
+              <rect x="71.5" y="80" width="5" height="12" rx="2" />
+              <rect className="m-hoof" x="70.5" y="88" width="7" height="5" rx="2" />
+            </g>
+          </g>
           <g className="m-head">
             <path d="M62 54 C61 40 64 27 70 19 L83 14 C88 13 92 17 91 22 L88 29 C86 33 81 33 78 33 C76 38 75 46 77 56Z" />
             <path className="m-mane" d="M62 52 C60 44 61 34 65 24 L69 22 C65 32 65 42 68 52Z" />
