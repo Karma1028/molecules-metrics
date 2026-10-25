@@ -39,6 +39,7 @@ function usePrefetchPages() {
 }
 
 const NotFound = lazy(() => import("./worlds/NotFound"));
+const Replay = lazy(() => import("./worlds/Replay"));
 const Landing = page(() => import("./worlds/Landing"), "Landing");
 const ArtistHome = page(
   () => import("./worlds/artist/ArtistHome"),
@@ -99,6 +100,7 @@ export default function App() {
         <Route path="contact" element={<AnalystContact />} />
       </Route>
 
+      <Route path="/replay" element={<Replay />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
