@@ -3,13 +3,14 @@ import { useLocation } from "react-router-dom"
 import { useReducedMotion } from "motion/react"
 import { feedLine } from "../../lib/feed-health"
 import { SLEEP_MS, lineFor, lookAt } from "./mascot-logic"
-import { errandPick, gaitFor, stepWalker, strideFor, strollStep, type Gait } from "./walk"
+import { errandPick, gaitFor, grazeDelay, grazeLength, stepWalker, strideFor, strollStep, type Gait } from "./walk"
 import "./mascot.css"
 
 const BUBBLE_MS = 3600
 const HOP_MS = 560
 const ERRAND_MAX_V = 170 // a trot at most; the horse never sprints
 const ERRAND_PAUSE_MS = 2600
+const FRAME_MS = 1000 / 30
 const STROLL_PRINT_GAP = 2 // fewer prints while strolling
 const MAX_PRINTS = 12
 
@@ -80,14 +81,25 @@ export function Mascot() {
     const el = root.current
     const layer = prints.current
     const fine = window.matchMedia?.("(pointer: fine)").matches ?? true
-    if (!el || !layer || reduce || !fine) return
-    const width = () => el.getBoundingClientRect().width
-    const maxX = () => Math.max(0, window.innerWidth - width() - 16)
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData
+    if (!el || !layer || reduce || !fine || saveData) return
+    // layout is read once and on resize, never per frame
+    let w = el.getBoundingClientRect().width
+    let limit = Math.max(0, window.innerWidth - w - 16)
+    const measure = () => {
+      w = el.getBoundingClientRect().width
+      limit = Math.max(0, window.innerWidth - w - 16)
+    }
+    window.addEventListener("resize", measure, { passive: true })
+    const width = () => w
+    const maxX = () => limit
     let x = 16
     let dir: 1 | -1 = 1
     let v = 0 // only used during an errand
     let errandTo: number | null = null
     let pauseUntil = 0
+    let grazeUntil = 0
+    let nextGraze = performance.now() + grazeDelay(Math.random())
     let gait: Gait = "idle"
     let sincePrint = 0
     let raf = 0
@@ -109,7 +121,9 @@ export function Mascot() {
     const face = (d: 1 | -1) => el.style.setProperty("--face", String(d))
 
     const frame = (now: number) => {
-      const dt = Math.min(0.05, (now - prev) / 1000)
+      raf = requestAnimationFrame(frame)
+      if (now - prev < FRAME_MS) return // 30 fps is plenty for a 38 px/s walk
+      const dt = Math.min(0.1, (now - prev) / 1000)
       prev = now
       const before = x
       if (errandTo != null) {
@@ -125,7 +139,16 @@ export function Mascot() {
         }
       } else if (now < pauseUntil || el.dataset.asleep) {
         setGait("idle")
+      } else if (now < grazeUntil) {
+        setGait("idle")
       } else {
+        if (now >= nextGraze) {
+          // stop and graze for a few seconds, head down, then carry on
+          grazeUntil = now + grazeLength(Math.random())
+          nextGraze = grazeUntil + grazeDelay(Math.random())
+          el.dataset.graze = "1"
+          return
+        }
         const s = strollStep({ x, dir }, dt, maxX())
         if (s.dir !== dir) face(s.dir)
         x = s.x
@@ -133,6 +156,7 @@ export function Mascot() {
         setGait("walk")
       }
       if (x !== before) el.style.transform = `translate3d(${x.toFixed(1)}px,0,0)`
+      if (el.dataset.graze && now >= grazeUntil) delete el.dataset.graze
       const side = x > window.innerWidth * 0.5 ? "r" : "l"
       if (el.dataset.side !== side) el.dataset.side = side // keeps the speech bubble on screen
       sincePrint += Math.abs(x - before)
@@ -141,7 +165,6 @@ export function Mascot() {
         sincePrint = 0
         stamp()
       }
-      raf = requestAnimationFrame(frame)
     }
     runTo.current = (target) => {
       errandTo = Math.max(0, Math.min(maxX(), target))
@@ -150,6 +173,7 @@ export function Mascot() {
     raf = requestAnimationFrame(frame)
     return () => {
       runTo.current = null
+      window.removeEventListener("resize", measure)
       cancelAnimationFrame(raf)
     }
   }, [reduce])

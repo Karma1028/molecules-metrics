@@ -7,7 +7,7 @@
 
 export const HERO_STYLE = String.raw`
   :root{
-    --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#7D7059;
+    --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#6A5E49;
     --orange:#E4631F; --pen:#2B4C6F; --teal:#2C9C98; --grid:rgba(90,70,45,.08);
     --blau:#004D98; --grana:#A50044;
     --shadow:0 1px 1px rgba(60,40,15,.08), 0 18px 34px -12px rgba(80,55,25,.32);

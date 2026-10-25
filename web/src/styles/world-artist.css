@@ -4,7 +4,7 @@
    so both worlds can coexist in one SPA. data-mode lives on <html>.
    ===================================================================== */
 :root[data-mode="artist"]{
-  --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#7D7059;
+  --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#6A5E49;
   --orange:#b85c2e; --pen:#2B4C6F; --teal:#2C9C98; --grid:rgba(90,70,45,.08);
   --accent:var(--orange);
   /* Bengal/Bankura terracotta ramp — the one site accent (user-approved 2026-10-14).

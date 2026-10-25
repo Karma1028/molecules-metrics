@@ -103,3 +103,18 @@ describe("stepWalker speed cap", () => {
     expect(Math.abs(s.v)).toBeLessThanOrEqual(150 + 1e-6)
   })
 })
+
+import { grazeDelay, grazeLength, GRAZE_EVERY_MS, GRAZE_FOR_MS } from "./walk"
+
+describe("grazing", () => {
+  it("waits a varied time between graze stops, inside the range", () => {
+    expect(grazeDelay(0)).toBe(GRAZE_EVERY_MS[0])
+    expect(grazeDelay(0.999)).toBeLessThanOrEqual(GRAZE_EVERY_MS[1])
+    expect(grazeDelay(0.5)).toBeGreaterThan(grazeDelay(0.1))
+  })
+  it("grazes for a short, varied moment", () => {
+    expect(grazeLength(0)).toBe(GRAZE_FOR_MS[0])
+    expect(grazeLength(0.999)).toBeLessThanOrEqual(GRAZE_FOR_MS[1])
+    expect(GRAZE_FOR_MS[1]).toBeLessThan(GRAZE_EVERY_MS[0])
+  })
+})
