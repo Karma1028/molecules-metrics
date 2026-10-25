@@ -1,19 +1,20 @@
-96b874a|2026-10-15T00:35:55+05:30|chore: baseline snapshot of Molecules -> Metrics portfolio
-8e0b70f|2026-10-15T00:36:16+05:30|docs: note repo + Gemini brief in checkpoint
-bdb3a1d|2026-10-15T00:49:21+05:30|test: add Playwright QA sweep harness and record baseline failures
-76f5bb5|2026-10-15T01:11:03+05:30|fix: resolve cover overflow, eliminate inner scrollbars, optimize horse mask and responsive images
-8e2ccaa|2026-10-15T01:27:32+05:30|feat(bridge): implement pulled-thread twin doors and directional horse transition
-178993e|2026-10-15T13:20:13+05:30|feat: calm pass, Hostel Radio rooms, Journey route map, audit baseline
-c2064ea|2026-10-15T19:42:19+05:30|feat: poster-scale pass on analyst Skills/Work/Resume/Contact and artist About/Contact
-0f190d9|2026-10-15T22:37:13+05:30|feat: personal KPI scorecard, working radio links, Matchday mobile fix
-17c5356|2026-10-15T23:35:56+05:30|feat: molecule-to-chart world switch, Analyst Home live wire, hi-fi Sound deck
-21fdfdf|2026-10-19T17:40:46+05:30|feat: story pointers and written/counted headlines, 3D deck travel, REA audit
-ac8c89b|2026-10-19T18:53:11+05:30|feat: keepy-uppy landing intro, story entrance on header titles, highlighter after hand word
-d223a08|2026-10-19T21:40:40+05:30|perf: drop deck fly-through, leaf/scan in-world travel, instant pointer nib
-e166c43|2026-10-25T23:52:07+05:30|feat: field notes blog + daily feed, gallery lightbox/scatter, sky transition, mascot, perf pass
-afa327d|2026-10-25T23:53:02+05:30|docs: references benchmark and idea status
-e50aeea|2026-10-25T23:56:20+05:30|feat: kantha route thread and honest feed status on the mascot
-cc09f8b|2026-10-26T00:01:51+05:30|feat: through-ball navigation on the analyst index
-040983c|2026-10-26T00:23:15+05:30|feat: penalty-shootout 404 page and crazy ideas list
-eaed3b6|2026-10-26T00:25:46+05:30|feat: lantern mode in the gallery lightbox, crazy ideas batch 2
-4fbebf5|2026-10-26T00:28:22+05:30|feat: konami code hops to the other world
+96b874a|2026-10-15T00:35:55+05:30|208|23080|0|chore: baseline snapshot of Molecules -> Metrics portfolio
+8e0b70f|2026-10-15T00:36:16+05:30|1|1|1|docs: note repo + Gemini brief in checkpoint
+bdb3a1d|2026-10-15T00:49:21+05:30|4|2543|0|test: add Playwright QA sweep harness and record baseline failures
+76f5bb5|2026-10-15T01:11:03+05:30|101|2277|238|fix: resolve cover overflow, eliminate inner scrollbars, optimize horse mask and responsive images
+8e2ccaa|2026-10-15T01:27:32+05:30|18|2619|69|feat(bridge): implement pulled-thread twin doors and directional horse transition
+178993e|2026-10-15T13:20:13+05:30|74|7958|336|feat: calm pass, Hostel Radio rooms, Journey route map, audit baseline
+c2064ea|2026-10-15T19:42:19+05:30|14|1793|1082|feat: poster-scale pass on analyst Skills/Work/Resume/Contact and artist About/Contact
+0f190d9|2026-10-15T22:37:13+05:30|26|2269|408|feat: personal KPI scorecard, working radio links, Matchday mobile fix
+17c5356|2026-10-15T23:35:56+05:30|26|2326|904|feat: molecule-to-chart world switch, Analyst Home live wire, hi-fi Sound deck
+21fdfdf|2026-10-19T17:40:46+05:30|306|111634|924|feat: story pointers and written/counted headlines, 3D deck travel, REA audit
+ac8c89b|2026-10-19T18:53:11+05:30|17|329|11|feat: keepy-uppy landing intro, story entrance on header titles, highlighter after hand word
+d223a08|2026-10-19T21:40:40+05:30|9|129|57|perf: drop deck fly-through, leaf/scan in-world travel, instant pointer nib
+e166c43|2026-10-25T23:52:07+05:30|84|5026|568|feat: field notes blog + daily feed, gallery lightbox/scatter, sky transition, mascot, perf pass
+afa327d|2026-10-25T23:53:02+05:30|1|64|0|docs: references benchmark and idea status
+e50aeea|2026-10-25T23:56:20+05:30|10|189|1|feat: kantha route thread and honest feed status on the mascot
+cc09f8b|2026-10-26T00:01:51+05:30|4|186|1|feat: through-ball navigation on the analyst index
+040983c|2026-10-26T00:23:15+05:30|5|199|2|feat: penalty-shootout 404 page and crazy ideas list
+eaed3b6|2026-10-26T00:25:46+05:30|5|91|1|feat: lantern mode in the gallery lightbox, crazy ideas batch 2
+4fbebf5|2026-10-26T00:28:22+05:30|3|68|2|feat: konami code hops to the other world
+edeb168|2026-10-26T00:32:31+05:30|7|180|0|feat: /replay page replays the repo's real git history
