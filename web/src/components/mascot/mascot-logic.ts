@@ -34,7 +34,7 @@ const LINES: Array<[prefix: string, lines: string[]]> = [
   ["/analyst/work", ["Four pipelines, one per row.", "Open a row for the numbers."]],
   ["/analyst/skills", ["Hover a skill to see it work.", "Mass balance to regression."]],
   ["/analyst", ["Point at a line. The dial follows.", "Six subsystems, all online."]],
-  ["/", ["Hi. Click me.", "Karma or Tuhin? Both.", "Try /kickoff. Bring boots."]],
+  ["/", ["Hi. Click me.", "Karma or Tuhin? Both.", "Try /kickoff. Bring boots.", "Or /orbit. Pages are planets."]],
 ]
 const DEFAULT_LINES = ["Hi. Click me.", "Neigh."]
 

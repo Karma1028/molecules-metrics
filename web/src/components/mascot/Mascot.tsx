@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom"
 import { useReducedMotion } from "motion/react"
 import { feedLine } from "../../lib/feed-health"
 import { SLEEP_MS, lineFor, lookAt } from "./mascot-logic"
-import { gaitFor, stepWalker, strideFor, wanderTarget, type Gait, type Walker } from "./walk"
+import { errandPick, gaitFor, stepWalker, strideFor, wanderTarget, type Gait, type Walker } from "./walk"
 import "./mascot.css"
 
 const BUBBLE_MS = 3600
@@ -22,6 +22,8 @@ export function Mascot() {
   const reduce = useReducedMotion()
   const root = useRef<HTMLDivElement>(null)
   const prints = useRef<HTMLDivElement>(null)
+  const runTo = useRef<((x: number) => void) | null>(null)
+  const errands = useRef(0)
   const [said, setSaid] = useState(0)
   const [line, setLine] = useState<string | null>(null)
   const [hop, setHop] = useState(false)
@@ -124,6 +126,11 @@ export function Mascot() {
         raf = requestAnimationFrame(frame)
       }
     }
+    runTo.current = (x) => {
+      lastMove = performance.now()
+      nextWander = lastMove + FOLLOW_MS + 4000
+      go(x)
+    }
     const onMove = (e: PointerEvent) => {
       lastMove = performance.now()
       nextWander = lastMove + FOLLOW_MS + 4000
@@ -137,6 +144,7 @@ export function Mascot() {
     }, 1000)
     window.addEventListener("pointermove", onMove, { passive: true })
     return () => {
+      runTo.current = null
       window.removeEventListener("pointermove", onMove)
       window.clearInterval(wander)
       if (raf) cancelAnimationFrame(raf)
@@ -162,10 +170,30 @@ export function Mascot() {
     return () => window.clearTimeout(t)
   }, [hop])
 
+  // errand: every few pokes, run to a marked spot on the page and point at it
+  const errand = (): string | null => {
+    const go = runTo.current
+    const el = root.current
+    if (!go || !el) return null
+    const spots = [...document.querySelectorAll<HTMLElement>("[data-horse-spot]")].map((node) => {
+      const r = node.getBoundingClientRect()
+      return { node, x: r.left + r.width / 2 }
+    })
+    const k = errandPick(spots, el.getBoundingClientRect().left, errands.current)
+    if (k < 0) return null
+    errands.current += 1
+    const { node, x } = spots[k]
+    go(x - el.getBoundingClientRect().width / 2)
+    node.classList.add("horse-pointed")
+    window.setTimeout(() => node.classList.remove("horse-pointed"), 2600)
+    return node.dataset.horseSpot ?? null
+  }
+
   const poke = () => {
     setAsleep(false)
     setHop(true)
-    setLine(said % 3 === 2 ? feedLine() ?? lineFor(pathname, said) : lineFor(pathname, said))
+    const said2 = said % 3 === 1 ? errand() : null
+    setLine(said2 ?? (said % 3 === 2 ? feedLine() ?? lineFor(pathname, said) : lineFor(pathname, said)))
     setSaid((n) => n + 1)
   }
 

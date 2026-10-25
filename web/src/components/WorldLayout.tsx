@@ -122,6 +122,7 @@ export function WorldLayout({ world }: { world: World }) {
               key={n.to}
               to={n.to}
               end={n.end}
+              data-horse-spot={`${n.label} is up here`}
               onClick={() => setMenuOpen(false)}
             >
               {n.label}
@@ -134,7 +135,7 @@ export function WorldLayout({ world }: { world: World }) {
             <Icon id="i-home" />
             <span>cover</span>
           </Link>
-          <NavLink className="wswitch" to={WORLDS[def.other].home}>
+          <NavLink className="wswitch" to={WORLDS[def.other].home} data-horse-spot={`The ${def.otherLabel} is that way`}>
             <Icon id={def.otherIcon} />
             <span>
               <span className="the">the </span>
