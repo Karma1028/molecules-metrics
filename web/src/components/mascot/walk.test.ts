@@ -56,3 +56,18 @@ describe("strideFor", () => {
     expect(strideFor("gallop")).toBeGreaterThan(strideFor("walk"))
   })
 })
+
+import { errandPick } from "./walk"
+
+describe("errandPick", () => {
+  const spots = [{ x: 100 }, { x: 400 }, { x: 900 }]
+  it("starts with the nearest spot, then works outward and wraps", () => {
+    expect(errandPick(spots, 350, 0)).toBe(1)
+    expect(errandPick(spots, 350, 1)).toBe(0)
+    expect(errandPick(spots, 350, 2)).toBe(2)
+    expect(errandPick(spots, 350, 3)).toBe(1)
+  })
+  it("answers -1 when there is nowhere to go", () => {
+    expect(errandPick([], 0, 0)).toBe(-1)
+  })
+})

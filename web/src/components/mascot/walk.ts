@@ -41,3 +41,10 @@ export function wanderTarget(x: number, maxX: number, r: number): number {
 export function strideFor(g: Gait): number {
   return g === "gallop" ? 78 : g === "trot" ? 54 : g === "walk" ? 34 : 0
 }
+
+/** Which spot to run to on the n-th poke: nearest first, then outward, wrapping. Index into spots, -1 if none. */
+export function errandPick(spots: { x: number }[], fromX: number, n: number): number {
+  if (!spots.length) return -1
+  const order = spots.map((s, i) => ({ i, d: Math.abs(s.x - fromX) })).sort((a, b) => a.d - b.d)
+  return order[((n % order.length) + order.length) % order.length].i
+}
