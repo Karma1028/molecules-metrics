@@ -54,19 +54,34 @@
   opacity:0;translate:0 6px;transition:opacity .25s ease,translate .3s cubic-bezier(.22,1,.36,1);pointer-events:none}
 .mascot-bubble:not(:empty){opacity:1;translate:0 0}
 
-/* gaits: diagonal pairs swing about the hip; body bobs; faster gait = quicker, wider */
-.mascot-svg .m-leg{transform-box:fill-box;transform-origin:50% 0}
-.mascot[data-gait="walk"] .m-leg{animation:m-step 1.1s ease-in-out infinite}
-.mascot[data-gait="trot"] .m-leg{animation:m-step .42s ease-in-out infinite;--sw:30deg}
-.mascot[data-gait="gallop"] .m-leg{animation:m-step .26s ease-in-out infinite;--sw:46deg}
-.mascot[data-gait] .m-leg-b,.mascot[data-gait] .m-leg-f2{animation-direction:reverse}
-.mascot[data-gait="walk"] .m-body{animation:m-bob 1.1s ease-in-out infinite}
-.mascot[data-gait="trot"] .m-body{animation:m-bob .42s ease-in-out infinite}
-.mascot[data-gait="gallop"] .m-body{animation:m-bob .26s ease-in-out infinite}
-.mascot[data-gait="gallop"] .m-tail{animation-duration:.5s}
+/* gaits: two-segment legs (thigh at the hip, shin at the knee), real footfall order, cycle tied to ground speed */
+.mascot-svg .m-leg,.mascot-svg .m-shin{transform-box:fill-box;transform-origin:50% 0}
+.mascot{--T:1.5s;--reach:17deg;--knee:42deg}
+.mascot[data-gait="walk"]{--T:1.5s;--reach:17deg;--knee:42deg}
+.mascot[data-gait="trot"]{--T:.56s;--reach:28deg;--knee:58deg}
+.mascot[data-gait="gallop"]{--T:.32s;--reach:40deg;--knee:70deg}
+.mascot[data-gait] .m-leg{animation:m-thigh var(--T) linear infinite}
+.mascot[data-gait] .m-shin{animation:m-shin var(--T) linear infinite;animation-delay:inherit}
+.mascot[data-gait="idle"] .m-leg,.mascot[data-gait="idle"] .m-shin{animation:none}
+/* walk is a four-beat lateral sequence: hind near, front near, hind far, front far */
+.mascot[data-gait="walk"] .m-leg{animation-delay:0s}
+.mascot[data-gait="walk"] .m-leg-f{animation-delay:calc(var(--T) * -.25)}
+.mascot[data-gait="walk"] .m-leg-b{animation-delay:calc(var(--T) * -.5)}
+.mascot[data-gait="walk"] .m-leg-f2{animation-delay:calc(var(--T) * -.75)}
+/* trot and gallop move diagonal pairs together */
+.mascot[data-gait="trot"] .m-leg,.mascot[data-gait="trot"] .m-leg-f2,.mascot[data-gait="gallop"] .m-leg,.mascot[data-gait="gallop"] .m-leg-f2{animation-delay:0s}
+.mascot[data-gait="trot"] .m-leg-f,.mascot[data-gait="trot"] .m-leg-b,.mascot[data-gait="gallop"] .m-leg-f,.mascot[data-gait="gallop"] .m-leg-b{animation-delay:calc(var(--T) * -.5)}
+/* stance is slow (foot travels back along the ground), swing is quick with the knee folding */
+@keyframes m-thigh{0%{rotate:calc(var(--reach) * -1)}58%{rotate:var(--reach)}100%{rotate:calc(var(--reach) * -1)}}
+@keyframes m-shin{0%,56%{rotate:0deg}72%{rotate:var(--knee)}90%{rotate:calc(var(--knee) * .25)}100%{rotate:0deg}}
+/* body dips on each footfall pair, head nods once a stride against the body, tail follows */
+.mascot[data-gait="walk"] .m-body{animation:m-bob calc(var(--T) / 2) ease-in-out infinite}
+.mascot[data-gait="trot"] .m-body,.mascot[data-gait="gallop"] .m-body{animation:m-bob calc(var(--T) / 2) ease-in-out infinite}
+.mascot[data-gait="walk"] .m-head{animation:m-nod var(--T) ease-in-out infinite}
 .mascot[data-gait="gallop"] .m-head{transform:rotate(calc(var(--tilt) - 8deg))}
-@keyframes m-step{0%,100%{rotate:calc(var(--sw,20deg) * -1)}50%{rotate:var(--sw,20deg)}}
-@keyframes m-bob{0%,100%{translate:0 0}50%{translate:0 -3px}}
+.mascot[data-gait="gallop"] .m-tail{animation-duration:.5s}
+@keyframes m-bob{0%,100%{translate:0 0}50%{translate:0 -2.2px}}
+@keyframes m-nod{0%,100%{rotate:-2deg}50%{rotate:3deg}}
 .m-prints{position:fixed;left:0;right:0;bottom:calc(clamp(38px,5.4vh,54px) + 1px);height:0;z-index:25;pointer-events:none}
 .m-print{position:absolute;bottom:0;width:7px;height:5px;border-radius:50% 50% 45% 45%;background:var(--orange,#c2562a);opacity:0;
   animation:m-print 2.6s ease-out forwards}
