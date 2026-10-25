@@ -1,5 +1,5 @@
 /* The Bankura horse mascot. Terracotta from the shared tokens, so it follows light/dark and both worlds. */
-.mascot{position:fixed;z-index:26;left:clamp(8px,1.6vw,22px);bottom:clamp(38px,5.4vh,54px);width:clamp(54px,5.4vw,74px);
+.mascot{position:fixed;z-index:26;left:clamp(8px,1.6vw,22px);bottom:clamp(38px,5.4vh,54px);width:clamp(34px,3.2vw,46px);
   --face:1;--tilt:0deg;pointer-events:none;will-change:transform}
 .mascot-btn{all:unset;display:block;width:100%;cursor:pointer;pointer-events:auto;border-radius:50%;-webkit-tap-highlight-color:transparent}
 .mascot-btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
@@ -48,7 +48,7 @@
 @keyframes m-zz{0%{translate:0 4px;opacity:0}30%{opacity:1}100%{translate:3px -6px;opacity:0}}
 
 /* speech bubble: sits above, never mirrored */
-.mascot-bubble{position:absolute;left:8px;bottom:calc(100% + 2px);width:max-content;max-width:min(230px,60vw);padding:7px 11px;border-radius:12px 12px 12px 3px;
+.mascot-bubble{position:absolute;left:8px;bottom:calc(100% + 2px);width:max-content;max-width:min(200px,60vw);padding:7px 11px;border-radius:12px 12px 12px 3px;
   background:var(--card,#fff8ec);color:var(--ink,#2a1d14);border:1px solid color-mix(in srgb,var(--ink,#2a1d14) 22%,transparent);
   box-shadow:var(--shadow-sm,0 6px 16px -8px rgba(0,0,0,.4));font:600 10.5px/1.35 var(--font-mono,monospace);letter-spacing:.02em;
   opacity:0;translate:0 6px;transition:opacity .25s ease,translate .3s cubic-bezier(.22,1,.36,1);pointer-events:none}
@@ -56,8 +56,8 @@
 
 /* gaits: two-segment legs (thigh at the hip, shin at the knee), real footfall order, cycle tied to ground speed */
 .mascot-svg .m-leg,.mascot-svg .m-shin{transform-box:fill-box;transform-origin:50% 0}
-.mascot{--T:1.5s;--reach:17deg;--knee:42deg}
-.mascot[data-gait="walk"]{--T:1.5s;--reach:17deg;--knee:42deg}
+.mascot{--T:1.3s;--reach:17deg;--knee:42deg}
+.mascot[data-gait="walk"]{--T:1.3s;--reach:17deg;--knee:42deg}
 .mascot[data-gait="trot"]{--T:.56s;--reach:28deg;--knee:58deg}
 .mascot[data-gait="gallop"]{--T:.32s;--reach:40deg;--knee:70deg}
 .mascot[data-gait] .m-leg{animation:m-thigh var(--T) linear infinite}
@@ -92,7 +92,7 @@
   .mascot-svg,.mascot-svg *{animation:none!important;transition:none!important}
   .mascot-bubble{transition:none}
 }
-@media (max-width:600px){.mascot{width:46px;bottom:34px}.mascot-bubble{font-size:10px;max-width:56vw}}
+@media (max-width:600px){.mascot{width:32px;bottom:34px}.mascot-bubble{font-size:10px;max-width:56vw}}
 
 /* errand: the thing the horse ran to point at */
 .horse-pointed{outline:2px solid var(--orange,#c2562a);outline-offset:4px;border-radius:6px;animation:horse-ping 1.3s ease-out 2}
