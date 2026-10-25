@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, type ComponentType } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { WorldLayout } from "./components/WorldLayout";
 
 // K5: one chunk per page. Deck travel animates the arriving page as it mounts,
@@ -38,6 +38,7 @@ function usePrefetchPages() {
   }, []);
 }
 
+const NotFound = lazy(() => import("./worlds/NotFound"));
 const Landing = page(() => import("./worlds/Landing"), "Landing");
 const ArtistHome = page(
   () => import("./worlds/artist/ArtistHome"),
@@ -98,7 +99,7 @@ export default function App() {
         <Route path="contact" element={<AnalystContact />} />
       </Route>
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
