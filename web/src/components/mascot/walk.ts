@@ -67,3 +67,11 @@ export function strollStep(s: Stroller, dt: number, maxX: number): Stroller {
   }
   return { x, dir }
 }
+
+/** Between graze stops while strolling, and how long a stop lasts (ms). r in [0,1). */
+export const GRAZE_EVERY_MS: [number, number] = [9000, 16000]
+export const GRAZE_FOR_MS: [number, number] = [2800, 4500]
+
+const between = ([lo, hi]: [number, number], r: number) => lo + r * (hi - lo)
+export const grazeDelay = (r: number): number => between(GRAZE_EVERY_MS, r)
+export const grazeLength = (r: number): number => between(GRAZE_FOR_MS, r)

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { blockOf, entryText, frameAt, parseLog, type Entry, type Kind } from "../lib/replay"
 
@@ -18,6 +18,7 @@ const SPEED = 1
 export default function Replay() {
   const [entries, setEntries] = useState<Entry[] | null>(null)
   const [t, setT] = useState(0)
+  const shown = useRef("")
 
   useEffect(() => {
     fetch("/data/history.txt")
@@ -36,8 +37,14 @@ export default function Replay() {
     let raf = 0
     const tick = (now: number) => {
       const el = (now - start) * SPEED
-      setT(el)
-      if (!frameAt(entries, el).finished) raf = requestAnimationFrame(tick)
+      const f = frameAt(entries, el)
+      // re-render only when something visible changed (a typed character or a finished line)
+      const key = `${f.done.length}:${f.typing.length}`
+      if (key !== shown.current) {
+        shown.current = key
+        setT(el)
+      }
+      if (!f.finished) raf = requestAnimationFrame(tick)
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)

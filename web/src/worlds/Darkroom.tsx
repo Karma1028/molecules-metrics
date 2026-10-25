@@ -73,7 +73,7 @@ export default function Darkroom() {
     const tick = (now: number) => {
       if (startAt.current == null) return
       const v = progressFor(s, now - startAt.current)
-      setP(v)
+      setP((old) => (Math.abs(v - old) >= 0.01 || v >= 1 ? v : old)) // ~100 renders per hold, not 60 per second
       if (s !== "develop" && v >= 1) return finish(s, 1)
       raf.current = requestAnimationFrame(tick)
     }
