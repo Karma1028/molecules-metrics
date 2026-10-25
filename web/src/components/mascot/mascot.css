@@ -1,6 +1,6 @@
 /* The Bankura horse mascot. Terracotta from the shared tokens, so it follows light/dark and both worlds. */
 .mascot{position:fixed;z-index:26;left:clamp(8px,1.6vw,22px);bottom:clamp(38px,5.4vh,54px);width:clamp(54px,5.4vw,74px);
-  --face:1;--tilt:0deg;--x:0px;transform:translateX(var(--x));pointer-events:none;will-change:transform}
+  --face:1;--tilt:0deg;pointer-events:none;will-change:transform}
 .mascot-btn{all:unset;display:block;width:100%;cursor:pointer;pointer-events:auto;border-radius:50%;-webkit-tap-highlight-color:transparent}
 .mascot-btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .mascot-svg{display:block;width:100%;height:auto;overflow:visible;transform:scaleX(var(--face));transform-origin:50% 100%;
@@ -56,11 +56,12 @@
 
 /* gaits: diagonal pairs swing about the hip; body bobs; faster gait = quicker, wider */
 .mascot-svg .m-leg{transform-box:fill-box;transform-origin:50% 0}
-.mascot[data-gait="walk"] .m-leg{animation:m-step .72s ease-in-out infinite}
+.mascot[data-gait="walk"] .m-leg{animation:m-step 1.1s ease-in-out infinite}
 .mascot[data-gait="trot"] .m-leg{animation:m-step .42s ease-in-out infinite;--sw:30deg}
 .mascot[data-gait="gallop"] .m-leg{animation:m-step .26s ease-in-out infinite;--sw:46deg}
 .mascot[data-gait] .m-leg-b,.mascot[data-gait] .m-leg-f2{animation-direction:reverse}
-.mascot[data-gait="trot"] .m-body,.mascot[data-gait="walk"] .m-body{animation:m-bob .42s ease-in-out infinite}
+.mascot[data-gait="walk"] .m-body{animation:m-bob 1.1s ease-in-out infinite}
+.mascot[data-gait="trot"] .m-body{animation:m-bob .42s ease-in-out infinite}
 .mascot[data-gait="gallop"] .m-body{animation:m-bob .26s ease-in-out infinite}
 .mascot[data-gait="gallop"] .m-tail{animation-duration:.5s}
 .mascot[data-gait="gallop"] .m-head{transform:rotate(calc(var(--tilt) - 8deg))}
@@ -82,3 +83,4 @@
 .horse-pointed{outline:2px solid var(--orange,#c2562a);outline-offset:4px;border-radius:6px;animation:horse-ping 1.3s ease-out 2}
 @keyframes horse-ping{0%{outline-offset:2px;outline-color:var(--orange,#c2562a)}100%{outline-offset:12px;outline-color:transparent}}
 @media (prefers-reduced-motion:reduce){.horse-pointed{animation:none}}
+.mascot[data-side="r"] .mascot-bubble{left:auto;right:8px;border-radius:12px 12px 3px 12px}
