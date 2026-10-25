@@ -1,3 +1,4 @@
+import { FlickBall } from "./home/FlickBall"
 import { echoLine, getWatched } from "../../lib/last-watched"
 import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
@@ -43,6 +44,12 @@ const CSS = String.raw`
   .p-an-toc .poster{grid-column:1;grid-row:1}
   .p-an-toc .index{grid-column:2;grid-row:1}
   .p-an-toc .instrument{grid-column:1;grid-row:2}
+  .p-an-toc .flick-ball{position:absolute;right:10px;top:50%;margin-top:-9px;width:18px;height:18px;border-radius:50%;border:0;padding:0;cursor:grab;touch-action:none;z-index:6;
+    background:radial-gradient(circle at 35% 30%,#ffb27a,var(--orange) 55%,#a63f12);box-shadow:0 3px 8px -2px rgba(0,0,0,.45)}
+  .p-an-toc .flick-ball:active{cursor:grabbing}
+  .p-an-toc .flick-ball:focus-visible{outline:2px solid var(--accent,var(--orange));outline-offset:3px}
+  .flick-line{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+  .flick-line path{fill:none;stroke:var(--orange);stroke-width:2;stroke-dasharray:6 7;stroke-linecap:round;opacity:.85}
   .p-an-toc .ah-wire{grid-column:2;grid-row:2}
 
   /* material: graph paper, minor 24px + major 120px, faded at the edges */
@@ -211,6 +218,7 @@ export function AnalystHome() {
   const reduce = useReducedMotion()
   const clock = useGoaClock()
   const [active, setActive] = useState(-1)
+  const [hint, setHint] = useState<string | null>(null)
 
   useOneScreen("toc")
 
@@ -269,12 +277,13 @@ export function AnalystHome() {
 
       <div className="instrument" aria-live="polite">
         <Dial active={active} count={entries.length} />
+        <FlickBall rowSelector=".p-an-toc .index a.row" onHint={setHint} />
         <div className="readout">
           <div className="ro-k">{current ? "Channel selected" : "Standing by"}</div>
           <div className="ro-ch">
             {current ? <><span>CH {current.num}</span>{current.label}</> : <><span>CH --</span>Pick a subsystem</>}
           </div>
-          <div className="ro-gloss">{current ? current.gloss : getWatched() ? echoLine(getWatched()) : "Point at any line or live readout to read its channel."}</div>
+          <div className="ro-gloss">{hint ?? (current ? current.gloss : getWatched() ? echoLine(getWatched()) : "Point at any line or live readout to read its channel.")}</div>
           <div className="ro-foot">
             <span>Goa <b>{clock}</b> IST</span>
             <span><b>{built}/{entries.length}</b> online</span>
