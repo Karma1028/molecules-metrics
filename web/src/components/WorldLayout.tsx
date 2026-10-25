@@ -11,12 +11,14 @@ import { DeckSeam } from "./deck/DeckSeam"
 import { useDeckScroll } from "./deck/useDeckScroll"
 import { AlponaCorner } from "./motifs/Alpona"
 import { Pointer } from "./pointer/Pointer"
+import { Mascot } from "./mascot/Mascot"
+import { loaderLine } from "../lib/loader-line"
 
 /** Shown while a lazy page chunk loads (K5). Artist = hand note, analyst = mono readout. */
-function RouteFallback({ world }: { world: World }) {
+function RouteFallback({ world, path }: { world: World; path: string }) {
   return (
     <div className={`route-fallback rf-${world}`} role="status" aria-live="polite">
-      {world === "artist" ? "turning the page" : "> loading module"}
+      {loaderLine(world, path)}
     </div>
   )
 }
@@ -74,7 +76,8 @@ export function WorldLayout({ world }: { world: World }) {
     setLastPath(loc.pathname)
     setMenuOpen(false)
   }
-  useDeckScroll(!menuOpen)
+  // analyst wheel steps tabs; in the artist world the wheel moves along the scroll
+  useDeckScroll(!menuOpen && world === "analyst")
 
   return (
     <>
@@ -82,6 +85,7 @@ export function WorldLayout({ world }: { world: World }) {
       <div className="bg" />
       <div className="grain" />
       <Pointer world={shown} />
+      <Mascot />
       {shown === "artist" && (
         <>
           <AlponaCorner className="alpona-flourish tl" />
@@ -144,7 +148,7 @@ export function WorldLayout({ world }: { world: World }) {
             exit="exit"
             onAnimationComplete={(def) => def === "visible" && setMoving(false)}
           >
-            <Suspense fallback={<RouteFallback world={world} />}>{outlet}</Suspense>
+            <Suspense fallback={<RouteFallback world={world} path={loc.pathname} />}>{outlet}</Suspense>
           </motion.div>
         </AnimatePresence>
       </div>

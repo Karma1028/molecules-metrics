@@ -440,10 +440,11 @@ export function Dashboard() {
   const swap = reduce
     ? { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: motionTokens.duration.fast } }
     : {
-        initial: { opacity: 0, y: motionTokens.distance.sm },
-        animate: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: -motionTokens.distance.sm },
-        transition: springs.gentle,
+        // instrument physics: the old readout drops out, the new one is scanned in top to bottom
+        initial: { opacity: 1, clipPath: "inset(0% 0% 100% 0%)" },
+        animate: { opacity: 1, clipPath: "inset(0% 0% 0% 0%)" },
+        exit: { opacity: 0, transition: { duration: motionTokens.duration.fast } },
+        transition: { duration: motionTokens.duration.normal, ease: motionTokens.easing.smooth },
       }
 
   return (

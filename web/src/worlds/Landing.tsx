@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { HERO_STYLE } from "./heroAssets"
+import { skyShift } from "../lib/sky-shift"
 import { KeepyUppy } from "../components/intro/KeepyUppy"
 
 const HERO_BODY = String.raw`
@@ -37,10 +38,6 @@ const HERO_BODY = String.raw`
   </button>
 
   <main class="stage">
-    <svg class="kantha" id="kantha" aria-hidden="true">
-      <defs><mask id="thread-m" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%"><path id="thread-mp"/></mask></defs>
-      <path id="thread-p" mask="url(#thread-m)"/><g id="thread-k"></g>
-    </svg>
     <section class="lead">
       <div class="issue"><span class="live"></span>Issue 01 &middot; Chem Eng &rarr; Data &middot; Goa</div>
       <h1>
@@ -82,6 +79,11 @@ const HERO_BODY = String.raw`
         <span class="figcap"></span>
       </div>
 
+      <svg class="kantha" id="kantha" aria-hidden="true">
+        <defs><mask id="thread-m" maskUnits="userSpaceOnUse" x="-2000" y="-2000" width="6000" height="6000"><path id="thread-mp"/></mask></defs>
+        <path id="thread-u" mask="url(#thread-m)"/><path id="thread-p" mask="url(#thread-m)"/><g id="thread-k"></g>
+        <g id="thread-n"><path d="M-9,0 L11,0" class="nd"/><ellipse cx="-6" cy="0" rx="2.2" ry="1.1" class="eye"/><path d="M-9,0 C-18,-3 -24,3 -34,0" class="tl"/></g>
+      </svg>
       <svg class="leaders" id="leaders" aria-hidden="true"></svg>
       <span class="pin" data-for="n1" style="--x:41;--y:23">1</span>
       <span class="pin" data-for="n2" style="--x:56;--y:13">2</span>
@@ -249,12 +251,7 @@ function initHero(spa: (path: string) => void): () => void {
   const eclipse = $("#eclipse")
   const onEclipse = () => {
     const n = root.dataset.theme === "dark" ? "light" : "dark"
-    const r = eclipse!.getBoundingClientRect()
-    root.style.setProperty("--cx", r.left + r.width / 2 + "px")
-    root.style.setProperty("--cy", r.top + r.height / 2 + "px")
-    const doc = document as Document & { startViewTransition?: (cb: () => void) => void }
-    if (doc.startViewTransition && !reduce) doc.startViewTransition(() => setTheme(n))
-    else setTheme(n)
+    skyShift({ toDark: n === "dark", reduce, flip: () => setTheme(n) })
   }
   eclipse?.addEventListener("click", onEclipse)
 
@@ -264,6 +261,8 @@ function initHero(spa: (path: string) => void): () => void {
     void set.offsetWidth
     set.classList.add("in")
   }
+  const LEADER_SETTLE_MS = 1500
+  let leaderTimer = 0
   function setMode(m: string, first?: boolean) {
     root.dataset.mode = m
     try {
@@ -284,6 +283,9 @@ function initHero(spa: (path: string) => void): () => void {
       void pr.offsetWidth
       pr.classList.add("advance")
     }
+    window.clearTimeout(leaderTimer)
+    // the cards slap in with a transform; measure them again once they have landed
+    leaderTimer = window.setTimeout(() => drawLeaders(false), LEADER_SETTLE_MS)
     requestAnimationFrame(() => {
       drawLeaders(!first)
       // first visit: stitch once the cover's entrance has placed the photo and objects
@@ -360,36 +362,57 @@ function initHero(spa: (path: string) => void): () => void {
   const THREAD_FIRST_MS = 1500
   const MERGE_PX = 48
   let threadAnim: Animation | null = null
+  let needleAnim: Animation | null = null
   let threadTimer = 0
   function threadPoints(): Array<[number, number]> {
     const stage = $(".stage")
     const sw = $("#switch")
-    if (!stage || !sw) return []
+    const portrait = $("#portrait")
+    if (!stage || !sw || !portrait) return []
     const S = stage.getBoundingClientRect()
+    const P = portrait.getBoundingClientRect()
     const mid = (r: DOMRect): [number, number] => [r.left + r.width / 2 - S.left, r.top + r.height / 2 - S.top]
-    const sel = root.dataset.mode === "analyst" ? ".set.analyst .note" : ".set.artist .obj"
-    // stacked cards (mobile) share one stitch: drop points closer than MERGE_PX
-    const rest = $$(sel)
+    const analyst = root.dataset.mode === "analyst"
+    // analyst stitches the numbered pins in order (they sit on the photo, never on card text);
+    // artist stitches the collage cards, taken clockwise round the portrait so it never doubles back
+    const live = (r: DOMRect) => r.width > 0 && r.height > 0
+    const rest = $$(analyst ? ".pin" : ".set.artist .obj")
       .map((el) => el.getBoundingClientRect())
-      .filter((r) => r.width > 0 && r.height > 0)
+      .filter(live)
       .map(mid)
       .filter(([x, y], i, all) => all.slice(0, i).every(([px, py]) => Math.hypot(x - px, y - py) > MERGE_PX))
-    // greedy nearest-neighbour walk so the thread never doubles back across the photo
-    // stacked layout (switch sits above the photo): start at the photo's top edge so the
-    // thread never crosses the thesis copy
-    const [sx, sy] = mid(sw.getBoundingClientRect())
-    const start: [number, number] = sy < 0 && sx > 0 && sx < S.width ? [sx, 0] : [sx, sy]
-    const path: Array<[number, number]> = [start]
-    while (rest.length) {
-      const [lx, ly] = path[path.length - 1]
-      let best = 0
-      rest.forEach(([x, y], i) => {
-        const [bx, by] = rest[best]
-        if (Math.hypot(x - lx, y - ly) < Math.hypot(bx - lx, by - ly)) best = i
-      })
-      path.push(rest.splice(best, 1)[0])
+    const sr = sw.getBoundingClientRect()
+    const [cx, cy] = mid(P)
+    const side = sr.right + 24 < P.left // wide layout: the switch sits left of the photo
+    let path: Array<[number, number]>
+    if (side) {
+      // leave the switch along the empty band beside it, then enter the photo at the same height
+      const y = sr.top + sr.height / 2 - S.top
+      // the "one switch, two sides" hint sits right of the switch: start the stitch after it, not through it
+      const hint = $(".hint")?.getBoundingClientRect()
+      const startX = Math.max(sr.right, hint && hint.width > 0 ? hint.right + 10 : 0)
+      path = [[startX - S.left, y], [(startX + P.left) / 2 - S.left, y], [P.left - S.left + 14, y]]
+      if (!analyst) {
+        const ang = ([x, y2]: [number, number]) => (Math.atan2(y2 - cy, x - cx) - Math.PI + 2 * Math.PI) % (2 * Math.PI)
+        rest.sort((a2, b2) => ang(a2) - ang(b2))
+      }
+      path.push(...rest)
+    } else {
+      // stacked layout (switch above the photo): start at the photo's top edge, nearest-neighbour walk
+      const [sx, sy] = mid(sr)
+      path = [sy < 0 && sx > 0 && sx < S.width ? [sx, 0] : [sx, sy]]
+      while (rest.length) {
+        const [lx, ly] = path[path.length - 1]
+        let best = 0
+        rest.forEach(([x, y], i) => {
+          const [bx, by] = rest[best]
+          if (Math.hypot(x - lx, y - ly) < Math.hypot(bx - lx, by - ly)) best = i
+        })
+        path.push(rest.splice(best, 1)[0])
+      }
     }
-    return path
+    // the thread lives inside the photo box, so express every stitch relative to it
+    return path.map(([x, y]) => [x - (P.left - S.left), y - (P.top - S.top)] as [number, number])
   }
   function smoothPath(p: Array<[number, number]>): string {
     // Catmull-Rom through the stitch points, as cubic Béziers
@@ -407,31 +430,42 @@ function initHero(spa: (path: string) => void): () => void {
     window.clearTimeout(threadTimer)
     const run = () => {
       const p = $("#thread-p")
+      const u = $("#thread-u")
       const mp = $("#thread-mp") as unknown as SVGPathElement | null
       const knots = $("#thread-k")
-      if (!p || !mp || !knots) return
+      const needle = $("#thread-n") as unknown as SVGGElement | null
+      if (!p || !u || !mp || !knots || !needle) return
       const pts = threadPoints()
       if (pts.length < 2) return
       const d = smoothPath(pts)
       p.setAttribute("d", d)
+      u.setAttribute("d", d)
       mp.setAttribute("d", d)
-      knots.innerHTML = pts.slice(1).map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.6"/>`).join("")
+      // a French knot at every card: ring, then a fat bead
+      knots.innerHTML = pts
+        .slice(1)
+        .map(([x, y]) => `<circle class="ring" cx="${x}" cy="${y}" r="5.2"/><circle cx="${x}" cy="${y}" r="3.1"/>`)
+        .join("")
       const L = mp.getTotalLength()
       mp.style.strokeDasharray = String(L)
+      needleAnim?.cancel()
       threadAnim?.cancel()
+      needle.style.offsetPath = `path("${d}")`
       if (!animate || reduce) {
         mp.style.strokeDashoffset = "0"
         knots.style.opacity = "1"
+        needle.style.opacity = "0"
         return
       }
       knots.style.opacity = "0"
-      threadAnim = mp.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], {
-        duration: THREAD_MS,
-        easing: "cubic-bezier(.22,1,.36,1)",
-        fill: "forwards",
-      })
+      needle.style.opacity = "1"
+      const timing = { duration: THREAD_MS, easing: "cubic-bezier(.22,1,.36,1)", fill: "forwards" as const }
+      threadAnim = mp.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], timing)
+      // the needle rides the stitch it is drawing, then lifts away
+      needleAnim = needle.animate([{ offsetDistance: "0%" }, { offsetDistance: "100%" }], timing)
       threadAnim.onfinish = () => {
         knots.style.opacity = "1"
+        needle.style.opacity = "0"
       }
     }
     if (animate && !reduce) threadTimer = window.setTimeout(run, delay)
@@ -778,6 +812,7 @@ function initHero(spa: (path: string) => void): () => void {
   return () => {
     ivs.forEach((id) => clearInterval(id))
     window.clearTimeout(threadTimer)
+    window.clearTimeout(leaderTimer)
     threadAnim?.cancel()
     wins.forEach(([t, f]) => window.removeEventListener(t, f))
     if (raf) cancelAnimationFrame(raf)

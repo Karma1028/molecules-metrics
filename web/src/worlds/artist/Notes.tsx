@@ -1,15 +1,16 @@
 import { useReducedMotion } from "motion/react"
 import { Icon } from "../../lib/icons"
-import { SOCIAL } from "../../lib/worlds"
 import { useMedium } from "../../lib/live"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { TwinDoor } from "../../components/TwinDoor"
-import { Desk } from "./notes/Desk"
-import { DESK_CSS } from "./notes/desk-css"
+import { NotesPanel } from "./notes/NotesPanel"
+import { PANEL_CSS } from "./notes/panel-css"
 import { Headline } from "../../components/headline/Headline"
 
+const MEDIUM_PROFILE = "https://medium.com/@tuhin.gim"
+
 const CSS = String.raw`
-  html[data-one-screen] .page.p-nt,.p-nt{min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,60px);
+  html[data-one-screen] .page.p-nt,.p-nt{min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:minmax(0,1fr);gap:clamp(20px,4vw,60px);
     max-width:1240px;margin:0 auto;width:100%;overflow:hidden}
 
   /* left: poster headline */
@@ -64,7 +65,7 @@ export function Notes() {
 
   return (
     <main className="page p-nt" aria-label="Field notes">
-      <style>{CSS + DESK_CSS}</style>
+      <style>{CSS + PANEL_CSS}</style>
 
       <section className="poster">
         <div>
@@ -73,14 +74,14 @@ export function Notes() {
             <b>Plate IV</b> · Field Notes
           </div>
           <Headline world="artist" className="big">
-            Working<br /><em>notebooks</em>.
+            Field<br /><em>notes</em>.
           </Headline>
-          <span className="hand">~ more, in longhand, soon</span>
+          <span className="hand">~ written, read, watched</span>
           <p className="lede">
-            Threads I keep coming back to. Pull a leaf from the book: each opens the page where the <i>thinking actually lives</i>.
+            What I write, and what I read to keep up. Posts live here, Medium <i>mirrors in on its own</i>, and papers and news from my interests refresh every day.
           </p>
           <div className="door">
-            <TwinDoor to="/analyst/skills" label="Notebooks into toolkit" world="analyst" />
+            <TwinDoor to="/analyst/skills" label="Notes into toolkit" world="analyst" />
           </div>
         </div>
 
@@ -88,16 +89,16 @@ export function Notes() {
           <Icon id="i-pulse" />
           <span className="txt">
             {hasPosts
-              ? <>Published dispatches · <b>{posts.length} live</b> on Medium.</>
-              : <>Published longform is still in transcription. <b>No dispatches live yet</b>, and not pretending otherwise.</>}
+              ? <>Medium mirror · <b>{posts.length} {posts.length === 1 ? "post" : "posts"}</b> synced, one way, automatically.</>
+              : <>Medium mirror · <b>syncs automatically</b> whenever a post goes live there.</>}
           </span>
-          <a href={SOCIAL.instagram} target="_blank" rel="noopener">
-            Follow along <Icon id="i-arrow" />
+          <a href={MEDIUM_PROFILE} target="_blank" rel="noopener noreferrer">
+            Read on Medium <Icon id="i-arrow" />
           </a>
         </div>
       </section>
 
-      <Desk reduce={reduce} />
+      <NotesPanel reduce={reduce} />
     </main>
   )
 }

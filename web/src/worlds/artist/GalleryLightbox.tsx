@@ -6,12 +6,14 @@ import type { Frame } from "../../lib/live"
 import { metaForUrl, type FrameExif, type FramePin } from "../../lib/gallery-meta"
 import { shutterOpen, advanceTick, penScratch, isMuted, setMuted, primeDefault } from "../../lib/shutter"
 import { motionTokens, springs } from "../../lib/motion-tokens"
+import { arrowPaths, jit, shaftPath } from "./lb-geometry"
 
 const DEVELOP = motionTokens.duration.slow // seconds — the print resolving from negative to positive
 const TILE_COLS = 6
 const TILE_ROWS = 4
 const DRAW = motionTokens.duration.slow // seconds — one marker drawing itself in
 const STEP = motionTokens.duration.normal // seconds — stagger between successive markers
+const SWIPE_PX = 48 // horizontal travel that counts as a swipe
 
 /** A small Alpona-style line flourish (terracotta). */
 function Alpona({ className }: { className: string }) {
@@ -24,6 +26,19 @@ function Alpona({ className }: { className: string }) {
       <circle cx="30" cy="30" r="3.2" fill="currentColor" opacity=".7" />
       <path d="M30 20v-7M30 47v-7M20 30h-7M47 30h-7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity=".5" />
     </svg>
+  )
+}
+
+/** One stroke drawn twice (offset ink-twin behind + crisp main on top). Module-level so a
+ *  re-measure of the frame never remounts it and replays the drawing. */
+function Stroke({ d, dd, dl, reduce }: { d: string; dd: number; dl: number; reduce: boolean }) {
+  const t = reduce ? { duration: 0 } : { duration: dd, delay: dl, ease: motionTokens.easing.inOut }
+  const from = reduce ? false : { pathLength: 0, opacity: 0 }
+  return (
+    <g>
+      <motion.path className="ink-twin" d={d} initial={from} animate={{ pathLength: 1, opacity: 0.4 }} transition={t} />
+      <motion.path d={d} initial={from} animate={{ pathLength: 1, opacity: 1 }} transition={t} />
+    </g>
   )
 }
 
@@ -42,50 +57,6 @@ interface ImgBox { left: number; top: number; w: number; h: number; sw: number; 
 const SIDE_GUTTER_MIN = 124
 const NOTE_GAP = 54 // min vertical spacing between stacked side notes
 
-/** Deterministic pseudo-random in -1..1 from an integer seed (stable per frame,
- *  so the hand-drawn wobble never reflows between renders). */
-function jit(seed: number): number {
-  const s = Math.sin(seed * 127.1 + 311.7) * 43758.5453
-  return (s - Math.floor(s)) * 2 - 1
-}
-
-/** A wobbly, hand-drawn arrow shaft from (ax,ay) toward (tx,ty), stopping
- *  `gap` px short of the target. `seed` perturbs the bow so no two match. */
-function shaftPath(ax: number, ay: number, tx: number, ty: number, seed: number, gap = 3): string {
-  const dx = tx - ax
-  const dy = ty - ay
-  const L = Math.hypot(dx, dy) || 1
-  const px = -dy / L // unit perpendicular
-  const py = dx / L
-  const bow = (Math.min(30, L * 0.2)) * (jit(seed) > 0 ? 1 : -1) // which way it bows
-  const w1 = bow * (0.9 + jit(seed + 1) * 0.3)
-  const w2 = bow * (0.3 + jit(seed + 2) * 0.25)
-  const c1x = ax + dx * 0.33 + px * w1
-  const c1y = ay + dy * 0.33 + py * w1
-  const c2x = ax + dx * 0.66 + px * w2
-  const c2y = ay + dy * 0.66 + py * w2
-  const tipx = tx - (dx / L) * gap
-  const tipy = ty - (dy / L) * gap
-  return `M ${ax.toFixed(1)} ${ay.toFixed(1)} C ${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${tipx.toFixed(1)} ${tipy.toFixed(1)}`
-}
-
-/** Two short strokes forming an open arrowhead at (tx,ty). */
-function headPath(ax: number, ay: number, tx: number, ty: number): string {
-  const dx = tx - ax
-  const dy = ty - ay
-  const L = Math.hypot(dx, dy) || 1
-  const ux = dx / L
-  const uy = dy / L
-  const len = 13
-  const s = 0.45 // spread angle
-  const cos1 = Math.cos(s)
-  const sin1 = Math.sin(s)
-  const a1x = tx - (ux * cos1 - uy * sin1) * len
-  const a1y = ty - (uy * cos1 + ux * sin1) * len
-  const a2x = tx - (ux * cos1 + uy * sin1) * len
-  const a2y = ty - (uy * cos1 - ux * sin1) * len
-  return `M ${a1x.toFixed(1)} ${a1y.toFixed(1)} L ${tx.toFixed(1)} ${ty.toFixed(1)} L ${a2x.toFixed(1)} ${a2y.toFixed(1)}`
-}
 
 /** A hand-drawn open ellipse ringing (cx,cy) — overshoots where it closes. */
 function circlePath(cx: number, cy: number, rx: number, ry: number, seed: number): string {
@@ -188,12 +159,14 @@ export function GalleryLightbox({
   index,
   onClose,
   onStep,
+  onJump,
   reduce,
 }: {
   frames: Frame[]
   index: number
   onClose: () => void
   onStep: (dir: number) => void
+  onJump?: (i: number) => void
   reduce: boolean
 }) {
   const n = frames.length
@@ -264,6 +237,26 @@ export function GalleryLightbox({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index, reduce, pins.length])
 
+  // keep the current thumbnail centred in the strip
+  const stripRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const cur = stripRef.current?.querySelector<HTMLElement>('[aria-current="true"]')
+    cur?.scrollIntoView({ inline: "center", block: "nearest", behavior: reduce ? "auto" : "smooth" })
+  }, [index, reduce])
+
+  // horizontal swipe on touch: left = next, right = previous
+  const swipe = useRef<{ x: number; y: number } | null>(null)
+  const onSwipeDown = (e: React.PointerEvent) => {
+    swipe.current = { x: e.clientX, y: e.clientY }
+  }
+  const onSwipeUp = (e: React.PointerEvent) => {
+    const s = swipe.current
+    swipe.current = null
+    if (!s) return
+    const dx = e.clientX - s.x
+    if (Math.abs(dx) > SWIPE_PX && Math.abs(dx) > Math.abs(e.clientY - s.y) * 1.5) onStep(dx < 0 ? 1 : -1)
+  }
+
   const toggleSound = () => {
     const next = !muted
     setMuted(next)
@@ -290,7 +283,7 @@ export function GalleryLightbox({
       <button className="lbnav prev" aria-label="Previous frame" onClick={() => onStep(-1)}><Icon id="i-arrow" /></button>
       <button className="lbnav next" aria-label="Next frame" onClick={() => onStep(1)}><Icon id="i-arrow" /></button>
 
-      <figure>
+      <figure onPointerDown={onSwipeDown} onPointerUp={onSwipeUp}>
         <div className="lb-frame" ref={frameRef}>
           <div className="lb-stage" ref={stageRef}>
             <motion.img
@@ -341,24 +334,7 @@ export function GalleryLightbox({
                   const delay = i * STEP
                   const rpx = ((p.r ?? 8) / 100) * box.w
 
-                  // one stroke drawn twice (offset ink-twin behind + crisp main on top)
-                  const Stroke = ({ d, dd = DRAW, dl = delay }: { d: string; dd?: number; dl?: number }) => (
-                    <g>
-                      <motion.path
-                        className="ink-twin"
-                        d={d}
-                        initial={reduce ? false : { pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 0.4 }}
-                        transition={reduce ? { duration: 0 } : { duration: dd, delay: dl, ease: motionTokens.easing.inOut }}
-                      />
-                      <motion.path
-                        d={d}
-                        initial={reduce ? false : { pathLength: 0, opacity: 0 }}
-                        animate={{ pathLength: 1, opacity: 1 }}
-                        transition={reduce ? { duration: 0 } : { duration: dd, delay: dl, ease: motionTokens.easing.inOut }}
-                      />
-                    </g>
-                  )
+                  const arrow = kind === "arrow" ? arrowPaths(tail.x, tail.y, tip.x, tip.y, seed) : null
 
                   // leader stops at the marker's edge for ringed/boxed/bracketed subjects
                   const dir = { x: tail.x - tip.x, y: tail.y - tip.y }
@@ -367,11 +343,11 @@ export function GalleryLightbox({
 
                   return (
                     <g key={`mk-${f.url}-${i}`}>
-                      {kind === "arrow" && (
+                      {arrow && (
                         <>
-                          <Stroke d={shaftPath(tail.x, tail.y, tip.x, tip.y, seed)} />
+                          <Stroke d={arrow.shaft} dd={DRAW} dl={delay} reduce={reduce} />
                           <motion.path
-                            d={headPath(tail.x, tail.y, tip.x, tip.y)}
+                            d={arrow.head}
                             initial={reduce ? false : { pathLength: 0, opacity: 0 }}
                             animate={{ pathLength: 1, opacity: 1 }}
                             transition={reduce ? { duration: 0 } : { duration: motionTokens.duration.fast, delay: delay + DRAW * 0.8, ease: motionTokens.easing.out }}
@@ -388,8 +364,8 @@ export function GalleryLightbox({
 
                       {kind === "circle" && (
                         <>
-                          <Stroke d={shaftPath(tail.x, tail.y, edge.x, edge.y, seed, 0)} dd={DRAW * 0.6} />
-                          <Stroke d={circlePath(tip.x, tip.y, rpx, rpx * 0.82, seed + 4)} dl={delay + DRAW * 0.45} />
+                          <Stroke d={shaftPath(tail.x, tail.y, edge.x, edge.y, seed, 0)} dd={DRAW * 0.6} dl={delay} reduce={reduce} />
+                          <Stroke d={circlePath(tip.x, tip.y, rpx, rpx * 0.82, seed + 4)} dd={DRAW} dl={delay + DRAW * 0.45} reduce={reduce} />
                         </>
                       )}
 
@@ -464,6 +440,24 @@ export function GalleryLightbox({
           )}
         </figcaption>
       </figure>
+
+      {onJump && (
+        <div className="lb-strip" ref={stripRef} role="tablist" aria-label="Jump to a frame">
+          {frames.map((fr, i) => (
+            <button
+              key={fr.url}
+              type="button"
+              role="tab"
+              aria-selected={i === index}
+              aria-current={i === index}
+              aria-label={`${fr.name}, frame ${i + 1} of ${n}`}
+              onClick={() => onJump(i)}
+            >
+              <img src={fr.url} alt="" loading="lazy" decoding="async" draggable={false} />
+            </button>
+          ))}
+        </div>
+      )}
     </div>,
     document.body,
   )

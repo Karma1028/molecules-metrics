@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { echoLine, getWatched } from "../../lib/last-watched"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { motion, useMotionValueEvent, useSpring } from "motion/react"
 import { useReducedMotion } from "../../hooks/useSafeMotion"
@@ -32,6 +33,9 @@ const DIAL_SWEEP = 180
 const DIAL_R = 78
 const DIAL_CX = 100
 const DIAL_CY = 96
+// self-test timing: starts once the page has locked in, one sweep each way
+const BOOT_START_MS = 900
+const BOOT_SWEEP_MS = 700
 
 const CSS = String.raw`
   html[data-toc] .page.p-an-toc,.p-an-toc{min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:minmax(0,1fr) auto;
@@ -110,6 +114,12 @@ const CSS = String.raw`
   .p-an-toc .row:hover .row-title,.p-an-toc .row:focus-visible .row-title{transform:translateX(10px);color:var(--accent)}
   .p-an-toc .row:hover .row-gloss,.p-an-toc .row:focus-visible .row-gloss{opacity:1;transform:translateX(10px);color:var(--ink)}
   .p-an-toc .row:hover .row-arrow,.p-an-toc .row:focus-visible .row-arrow{background:var(--accent);color:var(--paper);transform:rotate(-45deg)}
+  /* the active line is underscored by a rule that draws in from the left and leaves to the right */
+  .p-an-toc .row::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);
+    transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+  .p-an-toc .row:hover::after,.p-an-toc .row:focus-visible::after{transform:scaleX(1);transform-origin:left}
+  .p-an-toc .row-state::before{animation:an-blink 2.4s ease-in-out infinite}
+  @keyframes an-blink{0%,100%{opacity:1}50%{opacity:.35}}
   .p-an-toc .row:focus-visible{outline:none}
   .p-an-toc .row:focus-visible .row-num{outline:2px solid var(--accent);outline-offset:4px}
 
@@ -133,6 +143,8 @@ const CSS = String.raw`
   }
   @media(prefers-reduced-motion:reduce){
     .p-an-toc .row-title,.p-an-toc .row-gloss,.p-an-toc .row-arrow{transition:none;transform:none!important}
+    .p-an-toc .row::after{transition:none}
+    .p-an-toc .row-state::before{animation:none}
   }
 `
 
@@ -150,6 +162,20 @@ function Dial({ active, count }: { active: number; count: number }) {
   // SVG rotate(a cx cy) pivots on the hub; motion won't drive a <g> transform attribute, so mirror the spring into state
   const [needle, setNeedle] = useState(angle)
   useMotionValueEvent(rot, "change", setNeedle)
+  // power-on self-test: sweep to full scale and back, lighting each tick on the way, then idle
+  const [booting, setBooting] = useState(!reduce)
+  const idle = useRef(true) // a hover takes the needle over from the self-test
+  idle.current = active < 0
+  useEffect(() => {
+    if (reduce) return
+    const t1 = window.setTimeout(() => idle.current && rot.set(90), BOOT_START_MS)
+    const t2 = window.setTimeout(() => idle.current && rot.set(-90), BOOT_START_MS + BOOT_SWEEP_MS)
+    const t3 = window.setTimeout(() => setBooting(false), BOOT_START_MS + BOOT_SWEEP_MS * 2)
+    return () => [t1, t2, t3].forEach(window.clearTimeout)
+  }, [reduce, rot])
+  useEffect(() => {
+    if (active >= 0) setBooting(false)
+  }, [active])
   const ticks = Array.from({ length: count }, (_, i) => {
     const a = ((-180 + step * (i + 0.5)) * Math.PI) / 180
     const x1 = DIAL_CX + Math.cos(a) * (DIAL_R - 8)
@@ -164,12 +190,15 @@ function Dial({ active, count }: { active: number; count: number }) {
     <svg className="dial" viewBox="0 0 200 110" aria-hidden="true">
       <path className="arc" d={`M ${DIAL_CX - DIAL_R} ${DIAL_CY} A ${DIAL_R} ${DIAL_R} 0 0 1 ${DIAL_CX + DIAL_R} ${DIAL_CY}`} fill="none" strokeWidth="1.2" />
       <path className="arc" d={`M ${DIAL_CX - DIAL_R + 14} ${DIAL_CY} A ${DIAL_R - 14} ${DIAL_R - 14} 0 0 1 ${DIAL_CX + DIAL_R - 14} ${DIAL_CY}`} fill="none" strokeWidth=".6" strokeDasharray="1.5 3.5" />
-      {ticks.map((t) => (
-        <g key={t.i}>
-          <line className={`tick${t.i === active ? " on" : ""}`} x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} strokeWidth="1.6" />
-          <text className={`tlabel${t.i === active ? " on" : ""}`} x={t.lx} y={t.ly + 3} textAnchor="middle">{String(t.i + 1).padStart(2, "0")}</text>
-        </g>
-      ))}
+      {ticks.map((t) => {
+        const lit = booting ? needle >= -90 + step * (t.i + 0.5) - 4 : t.i === active
+        return (
+          <g key={t.i}>
+            <line className={`tick${lit ? " on" : ""}`} x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} strokeWidth="1.6" />
+            <text className={`tlabel${lit ? " on" : ""}`} x={t.lx} y={t.ly + 3} textAnchor="middle">{String(t.i + 1).padStart(2, "0")}</text>
+          </g>
+        )
+      })}
       <g transform={`rotate(${needle} ${DIAL_CX} ${DIAL_CY})`}>
         <line className="needle" x1={DIAL_CX} y1={DIAL_CY + 8} x2={DIAL_CX} y2={DIAL_CY - DIAL_R + 12} />
       </g>
@@ -202,9 +231,14 @@ export function AnalystHome() {
     hidden: { opacity: reduce ? 1 : 0 },
     visible: { opacity: 1, transition: { staggerChildren: reduce ? 0 : 0.06, delayChildren: reduce ? 0 : 0.12 } },
   }
+  // instrument physics: each line is locked in by a clip wipe (no travel, no tilt), its rule drawn after
   const rowVariants = {
-    hidden: reduce ? { opacity: 1 } : { opacity: 0, y: motionTokens.distance.lg },
-    visible: { opacity: 1, y: 0, transition: springs.gentle },
+    hidden: reduce ? { opacity: 1 } : { opacity: 0, clipPath: "inset(0% 100% 0% 0%)" },
+    visible: {
+      opacity: 1,
+      clipPath: "inset(0% 0% 0% 0%)",
+      transition: { duration: motionTokens.duration.slow, ease: motionTokens.easing.smooth },
+    },
   }
 
   return (
@@ -240,7 +274,7 @@ export function AnalystHome() {
           <div className="ro-ch">
             {current ? <><span>CH {current.num}</span>{current.label}</> : <><span>CH --</span>Pick a subsystem</>}
           </div>
-          <div className="ro-gloss">{current ? current.gloss : "Point at any line or live readout to read its channel."}</div>
+          <div className="ro-gloss">{current ? current.gloss : getWatched() ? echoLine(getWatched()) : "Point at any line or live readout to read its channel."}</div>
           <div className="ro-foot">
             <span>Goa <b>{clock}</b> IST</span>
             <span><b>{built}/{entries.length}</b> online</span>

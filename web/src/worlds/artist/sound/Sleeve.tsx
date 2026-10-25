@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react"
 import type { WrappedAlbum, WrappedYear } from "../../../lib/live"
 import { fmt } from "./Readout"
+import { Icon } from "../../../lib/icons"
 
 /* The back of the record sleeve: every listening view is printed here as
    liner notes. Lists measure the space they are given and turn into sides
@@ -52,9 +53,9 @@ function Pager({ page, pages, onFlip }: { page: number; pages: number; onFlip: (
   if (pages < 2) return null
   return (
     <div className="sl-pager" role="group" aria-label="sides">
-      <button className="sl-flip" onClick={() => onFlip((page - 1 + pages) % pages)} aria-label="previous side">‹</button>
+      <button type="button" className="sl-flip sl-prev" onClick={() => onFlip((page - 1 + pages) % pages)} aria-label="previous side"><Icon id="i-arrow" /></button>
       <span className="sl-side" aria-live="polite">side {SIDES[page]} <small>of {pages}</small></span>
-      <button className="sl-flip" onClick={() => onFlip((page + 1) % pages)} aria-label="next side">›</button>
+      <button type="button" className="sl-flip" onClick={() => onFlip((page + 1) % pages)} aria-label="next side"><Icon id="i-arrow" /></button>
     </div>
   )
 }

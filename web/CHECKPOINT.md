@@ -703,3 +703,16 @@ so links/numbers are real. Full cross-world QA, present for sign-off.
 > ### (prev, session 2b) unique-motion queue on `/artist/sound?mode=me` — mostly DONE
 > StatBig odometer ✅, Countdown stagger+bar-wipe ✅ (both QA'd). Only `#3 next page` (Football Room
 > `/artist/matchday` or Field Notes `/artist/notes`) was left of that queue — folded into step (4) above.
+
+## v7 (2026-10-19): element re-study + pat scroll Home prototype
+- Research gap found: most links were Awwwards element clips, not homepages. Re-studied all 17 pairs: audit/rea-2026-10-19/FINDINGS-v7.md.
+- Committed d223a08: deck fly-through dropped (DeckTunnel archived), leaf/scan in-world travel, pointer perf. Tab p95 48.6 -> 14.0 ms.
+- Decisions with Tuhin (5 question rounds): artist world = Bengal pat scroll that inks in where the pointer looks. No geography on the artist side. Plain click + glide, then ink wipe. Wheel: analyst steps tabs, artist pans the scroll. Art: SVG plus 1-2 Flow plates. Spec: PAT-SCROLL-SPEC.md.
+- Slice 1 BUILT, UNCOMMITTED:
+  - Files: worlds/artist/scroll/{PatScroll.tsx, pat-art.tsx, ink-reveal.ts, pat-scroll.css}.
+  - ArtistHome v3 uses it; the old masthead home is at archive/artist-home/.
+  - Artist wheel no longer navigates tabs (WorldLayout).
+  - Tokens: motionTokens.scroll.
+- Probe (tools/scrollprobe.cjs): p95 7.1 ms, 0 janky frames, both themes. Shots: ui-qa-v8/.
+- Next slices: ink wipe + sheet + hand menu, remove artist tab bar, script labels, About chapters, dither bridge, analyst modules, Flow plates.
+- Open: panels still read as separate cards. Consider making them contiguous so the scroll reads as one strip.
