@@ -22,7 +22,7 @@ export function moodFor(idleMs: number): Mood {
 
 /** UI hints only: no claims about the owner. Longest matching route prefix wins. */
 const LINES: Array<[prefix: string, lines: string[]]> = [
-  ["/artist/gallery", ["Press → to print the next negative.", "Click the big print to open it."]],
+  ["/artist/gallery", ["Press → to print the next negative.", "Click the big print to open it.", "Try /darkroom. Red light only."]],
   ["/artist/sound", ["Turn the dial. It's a radio.", "Try the hostel rooms."]],
   ["/artist/matchday", ["Visca Barça.", "Numbers first, then feelings."]],
   ["/artist/notes", ["Papers refresh every day.", "Medium posts mirror in on their own."]],

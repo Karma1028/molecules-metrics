@@ -41,6 +41,7 @@ function usePrefetchPages() {
 const NotFound = lazy(() => import("./worlds/NotFound"));
 const Replay = lazy(() => import("./worlds/Replay"));
 const Kickoff = lazy(() => import("./worlds/Kickoff"));
+const Darkroom = lazy(() => import("./worlds/Darkroom"));
 const Landing = page(() => import("./worlds/Landing"), "Landing");
 const ArtistHome = page(
   () => import("./worlds/artist/ArtistHome"),
@@ -103,6 +104,7 @@ export default function App() {
 
       <Route path="/replay" element={<Replay />} />
       <Route path="/kickoff" element={<Kickoff />} />
+      <Route path="/darkroom" element={<Darkroom />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
