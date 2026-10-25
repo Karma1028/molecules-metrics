@@ -1,3 +1,4 @@
+import { reportFeed } from "./feed-health"
 import { useEffect, useRef, useState } from "react"
 import { apiUrl, dataUrl } from "./api"
 import { itunesSearch, lrclibLyrics, type MusicTrack } from "./music"
@@ -145,9 +146,11 @@ function useLive<T>(path: string, fallback: T, ms?: number): Live<T> {
         .then((j: T & { configured?: boolean }) => {
           if (!alive) return
           const notConfigured = j != null && j.configured === false
+          reportFeed(path, notConfigured ? "asleep" : path.includes("/data/") ? "snapshot" : "live")
           setState({ data: j as T, loading: false, error: false, fallback: !!notConfigured })
         })
         .catch(() => {
+          reportFeed(path, "asleep")
           if (alive) setState({ data: fallback, loading: false, error: true, fallback: true })
         })
     }
