@@ -22,9 +22,16 @@ jobs:
           node-version: 22
       - name: Bake feed.json
         run: node scripts/bake-feed.mjs
+      - name: Bake spotify_recent.json
+        run: node scripts/bake-spotify.mjs
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
       - name: Commit if changed
         run: |
           git config user.name "feed-bot"
           git config user.email "feed-bot@users.noreply.github.com"
           git add public/data/feed.json
+          git add public/data/spotify_recent.json 2>/dev/null || true
           git diff --cached --quiet || (git commit -m "chore: daily feed refresh" && git push)

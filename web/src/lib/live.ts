@@ -281,7 +281,12 @@ export interface SpotifyStatsResp {
   aura?: SpotifyAura | null
 }
 export const SPOTIFY_STATS_FALLBACK: SpotifyStatsResp = { configured: false }
-export const useSpotifyStats = () => useLive<SpotifyStatsResp>(apiUrl("spotify/stats"), SPOTIFY_STATS_FALLBACK, 300000)
+/** Live proxy first; the daily-baked snapshot (scripts/bake-spotify.mjs) when the proxy is absent. */
+export function useSpotifyStats(): Live<SpotifyStatsResp> {
+  const live = useLive<SpotifyStatsResp>(apiUrl("spotify/stats"), SPOTIFY_STATS_FALLBACK, 300000)
+  const baked = useLive<SpotifyStatsResp>(dataUrl("spotify_recent.json"), SPOTIFY_STATS_FALLBACK)
+  return !live.fallback || baked.fallback ? live : baked
+}
 
 // ── MODE A: lifetime "Wrapped" from his extended streaming-history export.
 //    Baked at build time into /public/data/spotify_wrapped.json (anonymized —
