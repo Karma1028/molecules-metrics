@@ -13,7 +13,7 @@ export const CONSOLE_CSS = String.raw`
 
   /* left: poster + status sheet */
   .p-ct .ct-poster{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,22px)}
-  .p-ct .ct-kick{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
+  .p-ct .ct-kick{display:inline-flex;align-items:center;gap:8px;font:600 11px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
   .p-ct .ct-kick .live{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
   .p-ct .ct-big{font-family:var(--font-display);font-weight:700;font-size:clamp(48px,min(6.4vw,11vh),104px);line-height:.88;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
   .p-ct .ct-big em{font-style:normal;color:var(--accent-ink)}
@@ -21,16 +21,16 @@ export const CONSOLE_CSS = String.raw`
   .p-ct .ct-lede b{color:var(--ink);font-weight:600}
   .p-ct .ct-spec{display:grid;grid-template-columns:auto minmax(0,1fr);border-top:1px solid var(--rule);margin:0}
   .p-ct .ct-spec dt,.p-ct .ct-spec dd{margin:0;padding:clamp(5px,1vh,10px) 0;border-bottom:1px solid var(--rule)}
-  .p-ct .ct-spec dt{font:600 9.5px/1.6 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-right:16px}
+  .p-ct .ct-spec dt{font:600 11px/1.6 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-right:16px}
   .p-ct .ct-spec dd{font:600 clamp(12.5px,1.1vw,15px)/1.3 var(--font-display);color:var(--ink)}
-  .p-ct .ct-foot{display:flex;align-items:center;justify-content:space-between;gap:6px 10px;flex-wrap:wrap;font:500 10px/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+  .p-ct .ct-foot{display:flex;align-items:center;justify-content:space-between;gap:6px 10px;flex-wrap:wrap;font:500 11px/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
   .p-ct .ct-foot b{color:var(--teal-ink);font-weight:600}
 
   /* right: the console */
   .p-ct .qc{min-height:0;display:flex;flex-direction:column;border:1px solid color-mix(in srgb,var(--accent) 22%,var(--rule));border-radius:10px;
     background:color-mix(in srgb,var(--card) 94%,transparent);box-shadow:var(--shadow);overflow:hidden}
   .p-ct .qc-bar{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;border-bottom:1px solid var(--rule);
-    font:600 10px/1.2 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:color-mix(in srgb,var(--paper) 50%,var(--card))}
+    font:600 11px/1.2 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:color-mix(in srgb,var(--paper) 50%,var(--card))}
   .p-ct .qc-db{display:inline-flex;align-items:center;gap:7px;color:var(--teal-ink)}
   .p-ct .qc-db .ic{width:13px;height:13px}
   .p-ct .qc-body{flex:1;min-height:0;display:flex;flex-direction:column;padding:clamp(12px,2vh,20px) clamp(14px,1.6vw,22px) clamp(10px,1.6vh,16px);gap:clamp(8px,1.4vh,14px)}
@@ -44,7 +44,7 @@ export const CONSOLE_CSS = String.raw`
   /* result set: one shared column template for head + rows */
   .p-ct .qc-head,.p-ct .qr{display:grid;grid-template-columns:minmax(0,1fr) 96px;align-items:center}
   .p-ct .qc-head{grid-template-columns:2.6em minmax(0,1fr) minmax(0,1.2fr) 32px 96px;column-gap:14px;padding:0 0 6px 10px;border-bottom:1px dashed var(--rule);
-    font:600 9.5px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+    font:600 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .p-ct .qc-rows{list-style:none;margin:0;padding:0;flex:1;min-height:0;display:grid;grid-template-rows:repeat(3,minmax(0,1fr))}
   .p-ct .qr{position:relative;min-height:0;column-gap:14px;border-bottom:1px solid var(--rule)}
   .p-ct .qr-a{min-width:0;height:100%;display:grid;grid-template-columns:2.6em minmax(0,1fr) minmax(0,1.2fr) 32px;
@@ -64,12 +64,12 @@ export const CONSOLE_CSS = String.raw`
   .p-ct .qr-go .ic{width:13px;height:13px}
   .p-ct .qr-a:hover .qr-go,.p-ct .qr-a:focus-visible .qr-go{background:var(--accent);color:var(--paper);transform:rotate(-45deg)}
   .p-ct .qr-copy{justify-self:end;display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border-radius:30px;border:1px solid var(--rule);
-    background:color-mix(in srgb,var(--card) 80%,transparent);font:600 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);cursor:pointer;
+    background:color-mix(in srgb,var(--card) 80%,transparent);font:600 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);cursor:pointer;
     transition:border-color .2s var(--ease),color .2s var(--ease)}
   .p-ct .qr-copy:hover,.p-ct .qr-copy[data-done="true"]{border-color:var(--teal);color:var(--teal-ink)}
   .p-ct .qr-copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .p-ct .qr-copy .ic{width:12px;height:12px}
-  .p-ct .qc-foot{margin:0;font:500 10px/1.4 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+  .p-ct .qc-foot{margin:0;font:500 11px/1.4 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
   .p-ct .qc-foot b{color:var(--teal-ink);font-weight:600}
 
   @media(max-width:900px){
@@ -83,7 +83,7 @@ export const CONSOLE_CSS = String.raw`
     .p-ct .ct-spec dd{font-size:12px}
     .p-ct .qc-bar{padding:5px 10px}
     .p-ct .qc-body{padding:6px 10px;gap:4px}
-    .p-ct .qc-q{font-size:10.5px;line-height:1.4;min-height:0}
+    .p-ct .qc-q{font-size:11px;line-height:1.4;min-height:0}
     .p-ct .qc-head{display:flex;padding:0 6px 3px}
     .p-ct .qc-head span:first-child{flex:0 0 2.2em}
     .p-ct .qc-head span:nth-child(3)::before{content:"\a0\b7\a0"}
@@ -94,11 +94,11 @@ export const CONSOLE_CSS = String.raw`
     .p-ct .qr-a{grid-template-columns:2.2em minmax(0,1fr) 28px;grid-template-areas:"n ch go" "n h go" "n note go";row-gap:1px;padding:4px 6px}
     .p-ct .qr-ch{gap:7px}
     .p-ct .qr-t{font-size:clamp(17px,5vw,30px)}
-    .p-ct .qr-h{align-self:start;font-size:10.5px}
-    .p-ct .qr-note{font-size:10.5px;line-height:1.3}
+    .p-ct .qr-h{align-self:start;font-size:11px}
+    .p-ct .qr-note{font-size:11px;line-height:1.3}
     .p-ct .qr-go{width:26px;height:26px}
     .p-ct .qr-copy{padding:3px 8px}
-    .p-ct .twin-door{font-size:9.5px}
+    .p-ct .twin-door{font-size:11px}
   }
   @media(max-width:900px) and (min-height:900px){
     .p-ct .qr-a{row-gap:4px;padding:10px 8px}

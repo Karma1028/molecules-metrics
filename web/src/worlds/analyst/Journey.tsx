@@ -34,7 +34,7 @@ function labelAt(side: "left" | "right" | "below", x: number, y: number) {
 const CSS = String.raw`
   .p-jn{height:100%;min-height:0;display:flex;flex-direction:column;max-width:1200px;margin:0 auto;width:100%;overflow:hidden}
   .p-jn .jn-arc{display:flex;flex-direction:column;gap:4px;align-items:flex-end;text-align:right;white-space:nowrap}
-  .p-jn .jn-arc .flow{font:600 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  .p-jn .jn-arc .flow{font:600 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
     display:inline-flex;align-items:center;gap:8px}
   .p-jn .jn-arc .flow b{color:var(--ink)} .p-jn .jn-arc .flow .a{color:var(--accent-ink)}
   .p-jn .jn-arc .flow .ic{width:12px;height:12px;color:var(--accent-ink)}
@@ -49,7 +49,7 @@ const CSS = String.raw`
     box-shadow:var(--shadow-sm);overflow:hidden}
   .p-jn .jmap svg{width:100%;height:100%;display:block}
   .p-jn .g-line{stroke:var(--rule);stroke-width:1}
-  .p-jn .g-lab{font:500 9px var(--font-mono);fill:var(--muted);letter-spacing:.06em}
+  .p-jn .g-lab{font:500 11px var(--font-mono);fill:var(--muted);letter-spacing:.06em}
   /* road: a dark casing under a bright carve, like a drawn route on a map */
   .p-jn .casing{fill:none;stroke:color-mix(in srgb,var(--accent) 45%,var(--ink));stroke-width:6.5;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
   .p-jn .carve{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
@@ -73,19 +73,19 @@ const CSS = String.raw`
   .p-jn .jmap.focus .pin:not(.on){opacity:.4}
   .p-jn .jmap.focus .pin:not(.on) text{opacity:0}
   .p-jn .overview{position:absolute;top:10px;right:10px;background:var(--card);border:1px solid var(--rule);border-radius:16px;
-    padding:5px 10px;font:600 9.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+    padding:5px 10px;font:600 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer}
   .p-jn .overview:hover{color:var(--accent-ink);border-color:var(--accent)}
-  .p-jn .map-cap{position:absolute;left:14px;bottom:10px;font:500 10px/1 var(--font-mono);letter-spacing:.14em;
+  .p-jn .map-cap{position:absolute;left:14px;bottom:10px;font:500 11px/1 var(--font-mono);letter-spacing:.14em;
     text-transform:uppercase;color:var(--muted)}
 
   @media(max-width:760px){
     .p-jn .log-head{flex-wrap:wrap;row-gap:5px;margin-bottom:6px;padding-bottom:6px}
     .p-jn .log-head .lh-mono{margin-bottom:4px}
     .p-jn .log-head .lh-lede{margin-top:4px}
-    .p-jn .log-head .lh-lede{font-size:10.5px;line-height:1.3}
+    .p-jn .log-head .lh-lede{font-size:11px;line-height:1.3}
     .p-jn .log-head .lh-right{width:100%}
     .p-jn .jn-arc{flex-direction:row;align-items:center;justify-content:space-between;gap:8px;width:100%}
-    .p-jn .jn-arc .td-label,.p-jn .jn-arc .td-arr{font-size:10px;letter-spacing:.06em}
+    .p-jn .jn-arc .td-label,.p-jn .jn-arc .td-arr{font-size:11px;letter-spacing:.06em}
     .p-jn .jn-arc .flow{letter-spacing:.04em;gap:4px}
     .p-jn .jgrid{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto auto;gap:6px}
     .p-jn .jcard{padding:8px 12px}

@@ -21,7 +21,7 @@ export const WIRE_CSS = String.raw`
     background:linear-gradient(140deg,color-mix(in srgb,var(--card) 70%,transparent),color-mix(in srgb,var(--card) 35%,transparent));
     border:1px solid color-mix(in srgb,var(--teal) 22%,var(--rule));backdrop-filter:blur(10px);
     box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 8%,transparent),var(--shadow-sm)}
-  .ah-wire-hd{display:flex;align-items:center;gap:10px;min-width:0;font:600 10px/1.2 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .ah-wire-hd{display:flex;align-items:center;gap:10px;min-width:0;font:600 11px/1.2 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .ah-wire-hd b{color:var(--teal-ink);font-weight:700}
   .ah-dot{width:7px;height:7px;flex:none;border-radius:50%;background:var(--grana);box-shadow:0 0 8px var(--grana)}
   .ah-asof{margin-left:auto;white-space:nowrap;letter-spacing:.12em}
@@ -34,16 +34,16 @@ export const WIRE_CSS = String.raw`
   .ah-cell:first-child{border-left:0;padding-left:0}
   .ah-cell:hover,.ah-cell:focus-visible{background:color-mix(in srgb,var(--teal) 7%,transparent);outline:none}
   .ah-cell:focus-visible .ah-k{outline:2px solid var(--accent);outline-offset:3px}
-  .ah-k{font:600 9.5px/1.2 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ah-k{font:600 11px/1.2 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .ah-v{display:flex;align-items:baseline;gap:6px;font:700 clamp(22px,min(2.3vw,4vh),34px)/1 var(--font-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-  .ah-v small{display:none;font:600 9.5px/1 var(--font-mono);letter-spacing:.04em;color:var(--teal-ink)}
+  .ah-v small{display:none;font:600 11px/1 var(--font-mono);letter-spacing:.04em;color:var(--teal-ink)}
   .ah-v.off{color:var(--muted);font-size:clamp(16px,1.6vw,22px)}
-  .ah-sub{font:500 10px/1.35 var(--font-mono);color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ah-sub{font:500 11px/1.35 var(--font-mono);color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .ah-row{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;min-width:0}
   .ah-bars{display:flex;align-items:flex-end;gap:4px;height:34px;flex:none}
   .ah-bar{display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end;width:22px}
   .ah-bar span{display:block;width:10px;border-radius:2px 2px 0 0;background:linear-gradient(180deg,var(--teal),color-mix(in srgb,var(--accent) 70%,transparent));transform-origin:bottom}
-  .ah-bar em{font:600 9.5px/1 var(--font-mono);font-style:normal;color:var(--muted);text-transform:uppercase}
+  .ah-bar em{font:600 11px/1 var(--font-mono);font-style:normal;color:var(--muted);text-transform:uppercase}
   .ah-title{font:600 clamp(12px,1vw,14px)/1.25 var(--font-display);color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .ah-cell:hover .ah-title{color:var(--accent-ink)}
   @media(max-width:1100px){.ah-sub.opt{display:none}}

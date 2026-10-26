@@ -30,7 +30,7 @@ const CSS = String.raw`
   html[data-one-screen] .page.p-ab,html[data-toc] .page.p-ab,.p-ab{min-height:0;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);
     gap:clamp(20px,4vw,64px);max-width:1240px;margin:0 auto;width:100%;overflow:hidden}
   .p-ab .ab-copy{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,22px)}
-  .p-ab .ab-kick{display:flex;align-items:center;gap:10px;font:600 10px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .p-ab .ab-kick{display:flex;align-items:center;gap:10px;font:600 11px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
   .p-ab .ab-kick b{color:var(--accent-ink);font-weight:600}
   .p-ab .ab-big{font-family:var(--font-display);font-weight:900;font-size:clamp(40px,min(4.9vw,7.2vh),84px);line-height:.9;letter-spacing:-.04em;color:var(--ink);margin:clamp(8px,1.4vh,16px) 0 0}
   .p-ab .ab-big em{font-style:italic;font-weight:400;color:var(--accent-ink)}
@@ -44,7 +44,7 @@ const CSS = String.raw`
   .p-ab .film-mat{flex:1;min-height:0;rotate:-.8deg}
   .p-ab .frame{position:relative;height:100%;border-radius:4px;overflow:hidden;background:#0c0a08}
   .p-ab .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-  .p-ab .frame .edge{z-index:2;position:absolute;left:12px;top:10px;font:600 9.5px/1 var(--font-mono);letter-spacing:.22em;color:#f4ead9;opacity:.85;
+  .p-ab .frame .edge{z-index:2;position:absolute;left:12px;top:10px;font:600 11px/1 var(--font-mono);letter-spacing:.22em;color:#f4ead9;opacity:.85;
     text-transform:uppercase;text-shadow:0 1px 6px rgba(0,0,0,.55)}
   .p-ab .frame .edge i{font-style:normal;color:var(--accent-ink)}
   .p-ab .cap{margin-top:10px;font-family:var(--font-hand);font-size:clamp(16px,1.6vw,20px);color:var(--accent-ink);rotate:-1deg;text-align:center}
@@ -62,7 +62,7 @@ const CSS = String.raw`
   /* floating section tags */
   .p-ab .tag{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;
     background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow-sm);text-decoration:none;
-    font:600 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+    font:600 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
     transition:background .25s,color .25s}
   .p-ab .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .p-ab .tag:hover,.p-ab .tag:focus-visible{background:var(--accent);color:var(--paper)}
@@ -89,7 +89,7 @@ const CSS = String.raw`
   /* facts: a ledger strip, not cards */
   .p-ab .facts{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule)}
   .p-ab .fact{display:flex;flex-direction:column;gap:4px;padding:clamp(7px,1.2vh,12px) 10px clamp(7px,1.2vh,12px) 0;border-bottom:1px solid var(--rule)}
-  .p-ab .fact .k{display:inline-flex;align-items:center;gap:6px;font:600 8.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .p-ab .fact .k{display:inline-flex;align-items:center;gap:6px;font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .p-ab .fact .k .ic{width:12px;height:12px;color:var(--accent-ink)}
   .p-ab .fact .k .horse-glyph{width:15px}
   .p-ab .fact .v{font-family:var(--font-display);font-weight:600;font-size:clamp(12px,1.15vw,15.5px);color:var(--ink);line-height:1.15}

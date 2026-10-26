@@ -547,14 +547,14 @@ const CSS = String.raw`
 
   /* ---- head ---- */
   .p-db .db-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(16px,3vw,48px);align-items:end}
-  .p-db .kick{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
+  .p-db .kick{display:inline-flex;align-items:center;gap:8px;font:600 11px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
   .p-db .kick .ic{width:13px;height:13px}
   .p-db .big{font-family:var(--font-display);font-weight:700;font-size:clamp(44px,min(5.6vw,9.5vh),88px);line-height:.88;letter-spacing:-.045em;color:var(--ink);margin:clamp(4px,1vh,10px) 0 0}
   .p-db .big em{font-style:normal;color:var(--accent-ink)}
   .p-db .lede{font:500 clamp(12px,1vw,14px)/1.5 var(--font-mono);color:var(--muted);margin:0;max-width:52ch}
   .p-db .lede b{color:var(--ink);font-weight:600}
   .p-db .db-stamp{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;
-    font:600 10px/1.4 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    font:600 11px/1.4 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
   .p-db .db-body{min-height:0;display:grid;grid-template-columns:minmax(230px,.62fr) minmax(0,2fr);gap:clamp(12px,1.6vw,22px)}
 
@@ -576,7 +576,7 @@ const CSS = String.raw`
   .p-db .pc-top{text-shadow:0 2px 18px #0009}
   .p-db .pc-name{margin-top:auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:2px}
   .p-db .pc-name b{font:800 clamp(20px,1.9vw,28px)/1 var(--font-display);letter-spacing:-.02em;color:var(--ink);text-transform:uppercase}
-  .p-db .pc-name span{font:600 10.5px/1.3 var(--font-mono);letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+  .p-db .pc-name span{font:600 11px/1.3 var(--font-mono);letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
   .p-db .pc-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;
     border-top:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));padding-top:8px}
   .p-db .pc-stat{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;padding:8px 2px 7px;border:0;border-radius:10px;
@@ -584,10 +584,10 @@ const CSS = String.raw`
   .p-db .pc-stat .ind{position:absolute;inset:0;border-radius:inherit;background:color-mix(in srgb,var(--accent) 16%,transparent);border:1px solid var(--accent)}
   .p-db .pc-stat b{position:relative;font:800 clamp(17px,1.5vw,22px)/1 var(--font-display);letter-spacing:-.03em;white-space:nowrap}
   .p-db .pc-stat.off b{color:var(--muted);font-size:clamp(14px,1.2vw,17px)}
-  .p-db .pc-stat>span{position:relative;display:inline-flex;align-items:center;gap:4px;font:700 10px/1 var(--font-mono);letter-spacing:.12em;color:var(--teal-ink)}
+  .p-db .pc-stat>span{position:relative;display:inline-flex;align-items:center;gap:4px;font:700 11px/1 var(--font-mono);letter-spacing:.12em;color:var(--teal-ink)}
   .p-db .pc-stat:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .p-db .pc-stat:hover b{color:var(--accent-ink)}
-  .p-db .pc-note{position:relative;z-index:1;margin:0;font:500 10.5px/1.4 var(--font-mono);color:var(--muted)}
+  .p-db .pc-note{position:relative;z-index:1;margin:0;font:500 11px/1.4 var(--font-mono);color:var(--muted)}
   .p-db .st{width:6px;height:6px;border-radius:50%;display:inline-block}
   .p-db .st.static{background:var(--teal)}
   .p-db .st.live{background:#3ecf8e;box-shadow:0 0 0 3px color-mix(in srgb,#3ecf8e 25%,transparent)}
@@ -603,7 +603,7 @@ const CSS = String.raw`
   .p-db .mc-bar .dots i:first-child{background:var(--accent)}
   .p-db .mc-bar .file{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .p-db .mc-bar .file b{color:var(--ink)}
-  .p-db .chip{font:700 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;border-radius:99px;border:1px solid var(--line);color:var(--teal-ink)}
+  .p-db .chip{font:700 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;border-radius:99px;border:1px solid var(--line);color:var(--teal-ink)}
   .p-db .chip.live{color:#3ecf8e;border-color:color-mix(in srgb,#3ecf8e 45%,transparent)}
   .p-db .chip.off{color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
   .p-db .mc-grid{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
@@ -622,13 +622,13 @@ const CSS = String.raw`
   .p-db .mc-code .sq{color:#e8b04b}
   .p-db .caret{display:inline-block;width:.55em;height:1.1em;vertical-align:-.2em;margin-left:1px;background:var(--accent)}
   .p-db .mc-run{grid-area:run;display:flex;flex-direction:column;gap:5px;padding:10px 14px;border-top:1px solid var(--line);border-right:1px solid var(--line);
-    background:color-mix(in srgb,var(--ink) 3%,transparent);font:600 10.5px/1.4 var(--font-mono);color:var(--muted)}
+    background:color-mix(in srgb,var(--ink) 3%,transparent);font:600 11px/1.4 var(--font-mono);color:var(--muted)}
   .p-db .mc-run .go{display:inline-flex;align-items:center;gap:6px;color:#3ecf8e;letter-spacing:.14em;text-transform:uppercase}
   .p-db .mc-run .go .ic{width:11px;height:11px}
   .p-db .mc-run .lin{color:var(--ink)}
   .p-db .mc-run .fresh.off{color:var(--accent-ink)}
   .p-db .mc-out{grid-area:out;min-width:0;min-height:0;display:flex;flex-direction:column;gap:clamp(6px,1.2vh,12px);padding:clamp(12px,2vh,20px) clamp(14px,1.6vw,22px);overflow:hidden}
-  .p-db .mc-out .h{font:700 10px/1.3 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink)}
+  .p-db .mc-out .h{font:700 11px/1.3 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink)}
   .p-db .num{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
   .p-db .roll{display:inline-flex;font:800 clamp(56px,min(6.4vw,11vh),104px)/1 var(--font-display);letter-spacing:-.05em;color:var(--ink)}
   .p-db .roll.text{color:var(--muted)}
@@ -642,9 +642,9 @@ const CSS = String.raw`
   .p-db .db-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
   .p-db .db-list li{display:flex;align-items:center;gap:10px;padding:clamp(6px,1vh,9px) 0;border-bottom:1px solid var(--line);min-width:0}
   .p-db .db-list .t{flex:1;min-width:0;font:600 clamp(12.5px,1vw,14px)/1.3 var(--font-display);color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
-  .p-db .db-list .k{flex:0 0 32%;font:600 10.5px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .p-db .db-list .k{flex:0 0 32%;font:600 11px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
   .p-db .db-list .n{font:600 11px/1 var(--font-mono);color:var(--muted)}
-  .p-db .db-list .pill{font:700 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;border-radius:99px;
+  .p-db .db-list .pill{font:700 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;border-radius:99px;
     border:1px solid var(--line);color:var(--muted)}
   .p-db .db-list .pill.shipped{color:#3ecf8e;border-color:color-mix(in srgb,#3ecf8e 45%,transparent)}
   .p-db .db-list .pill.writeup{color:var(--accent-ink);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
@@ -654,14 +654,14 @@ const CSS = String.raw`
   .p-db .db-list .go .ic{width:12px;height:12px}
   .p-db .db-list .weeks{flex:1;display:flex;gap:3px;flex-wrap:wrap}
   .p-db .db-list .weeks i{width:14px;height:14px;border-radius:3px;background:var(--teal)}
-  .p-db .db-list .src{font:500 10.5px/1.4 var(--font-mono);color:var(--muted)}
+  .p-db .db-list .src{font:500 11px/1.4 var(--font-mono);color:var(--muted)}
   .p-db .db-off{display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:12px;border:1px dashed color-mix(in srgb,var(--accent) 45%,transparent);
     font:500 12.5px/1.45 var(--font-display);color:var(--muted)}
   .p-db .db-off b{color:var(--ink);font-weight:600}
 
   .p-db .db-gantt{position:relative;display:flex;flex-direction:column;gap:clamp(8px,1.6vh,14px);padding-top:22px}
   .p-db .db-gantt .axis{position:absolute;inset:0 0 auto 0;height:16px;border-bottom:1px solid var(--line)}
-  .p-db .db-gantt .axis span{position:absolute;top:0;transform:translateX(-50%);font:600 10px/1 var(--font-mono);color:var(--muted)}
+  .p-db .db-gantt .axis span{position:absolute;top:0;transform:translateX(-50%);font:600 11px/1 var(--font-mono);color:var(--muted)}
   .p-db .db-gantt .axis span:first-child{transform:none}
   .p-db .db-gantt .axis span:last-child{transform:translateX(-100%)}
   .p-db .db-gantt .lane{position:relative;padding-top:16px}
@@ -694,7 +694,7 @@ const CSS = String.raw`
     .p-db .mc-bar .chip{display:none}
     .p-db .db-seg{display:flex;flex:0 0 auto;gap:2px;padding:2px;border-radius:99px;border:1px solid var(--line)}
     .p-db .db-seg button{border:0;background:transparent;color:var(--muted);cursor:pointer;padding:7px 10px;border-radius:99px;
-      font:700 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
+      font:700 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
     .p-db .db-seg button.on{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--ink)}
     .p-db .db-seg button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
     /* one view at a time: Result = number + story, Detail = breakdown + lineage, Measure = the DAX */
@@ -745,7 +745,7 @@ const CSS = String.raw`
     .p-db .pc-stats{padding-top:5px}
     .p-db .pc-stat{padding:5px 1px;gap:2px}
     .p-db .roll{font-size:52px}
-    .p-db .mc-code{font-size:10.5px;line-height:1.2;padding:4px 0}
+    .p-db .mc-code{font-size:11px;line-height:1.2;padding:4px 0}
     .p-db .db-list li{padding:4px 0}
     .p-db .db-list .t{font-size:12px}
     .p-db .db-off{padding:8px 10px;gap:3px;font-size:11.5px;line-height:1.35}
@@ -763,7 +763,7 @@ const CSS = String.raw`
     .p-db .mc-out{padding:8px 11px;gap:4px}
     .p-db .story{font-size:13px}
     .p-db .db-list li{padding:3px 0}
-    .p-db .mc-code{font-size:10px;line-height:1.1;padding:1px 0}
+    .p-db .mc-code{font-size:11px;line-height:1.1;padding:1px 0}
     .p-db .lede{line-height:1.3}
     .p-db .pc-name span{display:none}
     .p-db .db-gantt{gap:3px}
