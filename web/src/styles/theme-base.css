@@ -129,7 +129,7 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   .nav .links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;gap:0;margin:0;padding:8px;
     background:var(--paper);border-bottom:1px solid var(--rule);transform:translateY(-130%);transition:transform .4s var(--ease)}
   .nav .links.open{transform:none;box-shadow:var(--shadow)}
-  .nav .links a{padding:13px;border-radius:10px}
+  .nav .links a{padding:13px;min-height:44px;box-sizing:border-box;display:flex;align-items:center;border-radius:10px}
   .nav .links a[aria-current="page"]::after{display:none}
   .menu-btn{display:grid}
   .nav .brand .v{display:none}

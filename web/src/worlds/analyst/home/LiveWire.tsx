@@ -34,11 +34,11 @@ export const WIRE_CSS = String.raw`
   .ah-cell:first-child{border-left:0;padding-left:0}
   .ah-cell:hover,.ah-cell:focus-visible{background:color-mix(in srgb,var(--teal) 7%,transparent);outline:none}
   .ah-cell:focus-visible .ah-k{outline:2px solid var(--accent);outline-offset:3px}
-  .ah-k{font:600 9.5px/1.2 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ah-k{font:600 9.5px/1.2 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .ah-v{display:flex;align-items:baseline;gap:6px;font:700 clamp(22px,min(2.3vw,4vh),34px)/1 var(--font-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
   .ah-v small{display:none;font:600 9.5px/1 var(--font-mono);letter-spacing:.04em;color:var(--teal)}
   .ah-v.off{color:var(--muted);font-size:clamp(16px,1.6vw,22px)}
-  .ah-sub{font:500 10.5px/1.35 var(--font-mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ah-sub{font:500 10px/1.35 var(--font-mono);color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .ah-row{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;min-width:0}
   .ah-bars{display:flex;align-items:flex-end;gap:4px;height:34px;flex:none}
   .ah-bar{display:flex;flex-direction:column;align-items:center;gap:3px;height:100%;justify-content:flex-end;width:22px}
