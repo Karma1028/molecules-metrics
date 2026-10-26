@@ -146,6 +146,7 @@ export function WorldLayout({ world }: { world: World }) {
           <button
             className="menu-btn"
             aria-label="menu"
+            aria-expanded={menuOpen}
             onClick={() => setMenuOpen((o) => !o)}
           >
             <Icon id="i-menu" />
