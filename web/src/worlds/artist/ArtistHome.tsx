@@ -20,7 +20,7 @@ const PANELS: ScrollPanel[] = [
 
 const CSS = String.raw`
   .p-ah3{flex:1;min-height:0;display:flex;width:100%;overflow:hidden}
-  .p-ah3 .kick{display:flex;align-items:center;gap:10px;font:600 10px/1 var(--font-mono);letter-spacing:.26em;
+  .p-ah3 .kick{display:flex;align-items:center;gap:10px;font:600 11px/1 var(--font-mono);letter-spacing:.26em;
     text-transform:uppercase;color:var(--accent-ink)}
   .p-ah3 .horse{width:30px;aspect-ratio:1/1;flex-shrink:0;background:var(--accent);
     -webkit-mask:url(/motifs/bankura-horse.webp) center / contain no-repeat;mask:url(/motifs/bankura-horse.webp) center / contain no-repeat}
@@ -31,7 +31,7 @@ const CSS = String.raw`
   .p-ah3 .rule{display:block;width:min(100%,320px);height:14px;color:var(--accent-ink);opacity:.55;margin:4px 0 6px}
   .p-ah3 .state{font-family:var(--font-hand);font-size:clamp(16px,1.6vw,21px);color:var(--muted);rotate:-.6deg;max-width:30ch;margin:0}
   .p-ah3 .goa{font:500 11px/1.3 var(--font-mono);letter-spacing:.04em;color:var(--muted);margin-top:8px}
-  .p-ah3 .hint{font:600 10px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink);margin-top:14px}
+  .p-ah3 .hint{font:600 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink);margin-top:14px}
 `
 
 export function ArtistHome() {

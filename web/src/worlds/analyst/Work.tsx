@@ -138,7 +138,7 @@ const CSS = String.raw`
 
   /* left: poster + ledger index */
   .p-wk .wk-poster{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,22px)}
-  .p-wk .wk-kick{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
+  .p-wk .wk-kick{display:inline-flex;align-items:center;gap:8px;font:600 11px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
   .p-wk .wk-kick .live{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
   .p-wk .wk-big{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,min(7.6vw,13vh),120px);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
   .p-wk .wk-big em{font-style:normal;color:var(--accent-ink)}
@@ -155,12 +155,12 @@ const CSS = String.raw`
   .p-wk .wk-row .rn{font:700 clamp(20px,2.2vw,30px)/1 var(--font-mono);letter-spacing:-.02em;color:color-mix(in srgb,var(--teal) 70%,var(--muted))}
   .p-wk .wk-row.on .rn{color:var(--teal-ink)}
   .p-wk .wk-row .rt{font:600 clamp(14px,1.35vw,18px)/1.2 var(--font-display);letter-spacing:-.01em;text-wrap:balance}
-  .p-wk .wk-row .rs{font:700 8px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:20px;white-space:nowrap;
+  .p-wk .wk-row .rs{font:700 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:20px;white-space:nowrap;
     color:var(--teal-ink);border:1px solid color-mix(in srgb,var(--teal) 30%,transparent)}
   .p-wk .wk-row .rs[data-s="writeup"]{color:var(--orange-ink);border-color:color-mix(in srgb,var(--orange) 34%,transparent)}
   .p-wk .wk-row .rs[data-s="reserved"]{color:var(--muted);border-color:var(--rule)}
   .p-wk .wk-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-    font:500 10px/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+    font:500 11px/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
   .p-wk .wk-foot b{color:var(--teal-ink);font-weight:600}
   .p-wk .wk-foot .n{color:var(--ink);font-weight:700}
 
@@ -176,9 +176,9 @@ const CSS = String.raw`
     color:color-mix(in srgb,var(--teal) 8%,transparent);pointer-events:none;user-select:none}
   .p-wk .wk-case{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;gap:clamp(8px,1.3vh,14px)}
   .p-wk .wk-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-  .p-wk .wk-reg{display:inline-flex;align-items:center;gap:7px;font:600 10px/1.3 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink)}
+  .p-wk .wk-reg{display:inline-flex;align-items:center;gap:7px;font:600 11px/1.3 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink)}
   .p-wk .wk-reg .ic{width:14px;height:14px}
-  .p-wk .wk-role{display:block;font:500 10.5px/1.3 var(--font-mono);letter-spacing:.06em;color:var(--muted);margin-top:5px}
+  .p-wk .wk-role{display:block;font:500 11px/1.3 var(--font-mono);letter-spacing:.06em;color:var(--muted);margin-top:5px}
   .p-wk .wk-stamp{flex:0 0 auto;font:800 clamp(11px,1vw,14px)/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;padding:7px 11px;
     border:2px solid currentColor;border-radius:6px;color:var(--teal-ink);box-shadow:inset 0 0 0 2px color-mix(in srgb,currentColor 18%,transparent)}
   .p-wk .wk-stamp[data-s="writeup"]{color:var(--orange-ink)}
@@ -190,7 +190,7 @@ const CSS = String.raw`
   .p-wk .wk-ro:first-child{padding-left:0}
   .p-wk .wk-ro:last-child{border-right:0}
   .p-wk .wk-ro .v{font:600 clamp(13px,1.3vw,19px)/1.1 var(--font-display);letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
-  .p-wk .wk-ro .k{font:600 8.5px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+  .p-wk .wk-ro .k{font:600 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:5px}
   .p-wk .wk-ro.pending .v{color:var(--orange-ink);font-style:italic}
 
   .p-wk .wk-tabs{display:none}
@@ -198,7 +198,7 @@ const CSS = String.raw`
   .p-wk .wk-step{display:grid;grid-template-columns:clamp(92px,8vw,112px) minmax(0,1fr);gap:clamp(10px,1.2vw,18px);align-items:baseline;
     padding:clamp(6px,1vh,10px) 0;border-top:1px dashed color-mix(in srgb,var(--ink) 12%,transparent)}
   .p-wk .wk-step:first-child{border-top:0}
-  .p-wk .wk-lab{display:inline-flex;align-items:center;gap:6px;font:700 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--teal-ink)}
+  .p-wk .wk-lab{display:inline-flex;align-items:center;gap:6px;font:700 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--teal-ink)}
   .p-wk .wk-lab b{font-weight:700;color:var(--muted);letter-spacing:.04em;font-variant-numeric:tabular-nums}
   .p-wk .wk-lab .ic{width:12px;height:12px}
   .p-wk .wk-p{margin:0;font-size:clamp(12px,min(.98vw,1.8vh),14px);line-height:1.5;color:color-mix(in srgb,var(--ink) 86%,var(--muted));text-wrap:pretty}
@@ -207,7 +207,7 @@ const CSS = String.raw`
   .p-wk .wk-meters{margin-top:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);
     padding-top:clamp(8px,1.4vh,14px);border-top:1px solid var(--rule)}
   .p-wk .wk-mt{display:flex;flex-direction:column;gap:6px;min-width:0}
-  .p-wk .wk-mk{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font:600 8.5px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .p-wk .wk-mk{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font:600 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
   .p-wk .wk-mk b{font:700 clamp(12px,1.1vw,15px)/1 var(--font-mono);letter-spacing:0;color:var(--teal-ink);font-variant-numeric:tabular-nums}
   .p-wk .wk-segs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:4px}
   .p-wk .wk-seg{position:relative;height:clamp(8px,1.2vh,12px);border-radius:3px;overflow:hidden;background:color-mix(in srgb,var(--ink) 8%,transparent)}
@@ -215,16 +215,16 @@ const CSS = String.raw`
   .p-wk .wk-seg i[data-s="writeup"],.p-wk .wk-seg i[data-s="pending"]{background:var(--orange)}
   .p-wk .wk-seg i[data-s="reserved"]{background:var(--muted)}
   .p-wk .wk-seg.on{box-shadow:0 0 0 1.5px var(--ink)}
-  .p-wk .wk-ml{display:flex;justify-content:space-between;gap:6px;font:500 8.5px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .p-wk .wk-ml{display:flex;justify-content:space-between;gap:6px;font:500 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
   .p-wk .wk-ml span{white-space:nowrap}
   .p-wk .wk-reserved{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px}
   .p-wk .wk-reserved p{margin:0;font-size:14px;line-height:1.5;color:var(--muted);max-width:52ch}
 
   .p-wk .wk-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex:0 0 auto;padding-top:clamp(8px,1.4vh,14px)}
-  .p-wk .wk-keys{font:500 9.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .p-wk .wk-keys{font:500 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .p-wk .wk-btns{display:flex;gap:6px}
   .p-wk .wk-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:8px;border:1px solid var(--rule);background:transparent;
-    font:600 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:border-color ${motionTokens.duration.fast}s var(--ease),color ${motionTokens.duration.fast}s var(--ease)}
+    font:600 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:border-color ${motionTokens.duration.fast}s var(--ease),color ${motionTokens.duration.fast}s var(--ease)}
   .p-wk .wk-btn:hover{border-color:var(--accent);color:var(--accent-ink)}
   .p-wk .wk-btn .ic{width:12px;height:12px}
   .p-wk .wk-btn.prev .ic{transform:scaleX(-1)}
@@ -240,27 +240,27 @@ const CSS = String.raw`
     .p-wk .wk-row .bar{top:auto;left:8px;right:8px;bottom:-1px;width:auto;height:2px}
     .p-wk .wk-row .rn{font-size:15px}
     .p-wk .wk-row{align-items:start}
-    .p-wk .wk-row .rt{font-size:10.5px;line-height:1.15;text-wrap:balance}
+    .p-wk .wk-row .rt{font-size:11px;line-height:1.15;text-wrap:balance}
     .p-wk .wk-row .rs{display:none}
     .p-wk .wk-foot .fn{display:none}
     .p-wk .wk-file{padding:12px 14px;border-radius:12px}
     .p-wk .wk-ghost{font-size:96px;bottom:48px}
     .p-wk .wk-case{gap:8px}
-    .p-wk .wk-stamp{font-size:9.5px;padding:5px 8px}
+    .p-wk .wk-stamp{font-size:11px;padding:5px 8px}
     .p-wk .wk-h{font-size:clamp(19px,5.4vw,26px)}
     .p-wk .wk-ro{padding:6px 6px}
     .p-wk .wk-ro .v{font-size:12.5px}
-    .p-wk .wk-ro .k{font-size:7px;letter-spacing:.1em}
+    .p-wk .wk-ro .k{font-size:11px;letter-spacing:.1em}
     .p-wk .wk-step{grid-template-columns:clamp(84px,13vw,104px) minmax(0,1fr)}
     .p-wk .wk-p{font-size:12.5px}
     .p-wk .wk-meters{gap:12px;padding-top:8px}
-    .p-wk .wk-ml{font-size:7.5px;letter-spacing:.04em}
+    .p-wk .wk-ml{font-size:11px;letter-spacing:.04em}
     .p-wk .wk-keys{display:none}
   }
   @media(max-width:600px){
     .p-wk .wk-tabs{display:flex;gap:4px;flex:0 0 auto}
     .p-wk .wk-tab{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:6px 4px;border-radius:7px;border:1px solid var(--rule);
-      background:transparent;font:700 9px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+      background:transparent;font:700 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);cursor:pointer}
     .p-wk .wk-tab .ic{width:11px;height:11px}
     .p-wk .wk-tab.on{color:var(--teal-ink);border-color:color-mix(in srgb,var(--teal) 45%,transparent);background:color-mix(in srgb,var(--teal) 10%,transparent)}
     .p-wk .wk-step{display:none;grid-template-columns:1fr}

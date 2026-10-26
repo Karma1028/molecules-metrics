@@ -30,14 +30,14 @@ export const SOUND_ME_CSS = String.raw`
   .hifi>*{min-width:0;min-height:0}
 
   .hifi-badge{grid-area:badge;display:flex;align-items:baseline;justify-content:space-between;gap:6px 16px;flex-wrap:wrap}
-  .hb-brand{display:inline-flex;align-items:center;gap:7px;font:600 10px/1 var(--font-mono);letter-spacing:.2em;
+  .hb-brand{display:inline-flex;align-items:center;gap:7px;font:600 11px/1 var(--font-mono);letter-spacing:.2em;
     text-transform:uppercase;color:var(--green-ink)}
   .hb-title{margin:0;font:600 clamp(14px,1.45vw,19px)/1.1 var(--font-display);color:var(--ink);letter-spacing:-.01em}
 
   /* ---- platter bay ---- */
   .bay{grid-area:bay;display:flex;flex-direction:column;gap:10px}
   .bay-cap{display:flex;flex-direction:column;gap:3px;padding:0 4px}
-  .bay-k{font:600 9.5px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .bay-k{font:600 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
   .bay-cap b{font:700 clamp(16px,1.6vw,22px)/1.1 var(--font-display);color:var(--ink);letter-spacing:-.01em}
   .bay-cap span:last-child{font-size:12px;color:var(--muted)}
 
@@ -56,7 +56,7 @@ export const SOUND_ME_CSS = String.raw`
   .tt-label{position:absolute;inset:31%;border-radius:50%;overflow:hidden;background:var(--art);
     box-shadow:0 0 0 2px #000a;display:grid;place-items:center}
   .tt-label img{width:100%;height:100%;object-fit:cover;display:block}
-  .tt-label-ph{font:700 10px/1.15 var(--font-display);color:#fff;text-align:center;padding:12%}
+  .tt-label-ph{font:700 11px/1.15 var(--font-display);color:#fff;text-align:center;padding:12%}
   .tt-sheen{position:absolute;inset:2.4%;border-radius:50%;pointer-events:none;
     background:conic-gradient(from 25deg,#fff0 0deg,#ffffff2e 28deg,#fff0 58deg,#fff0 185deg,#ffffff1c 212deg,#fff0 242deg);
     -webkit-mask:radial-gradient(circle,#0000 0 31%,#000 31.6%);mask:radial-gradient(circle,#0000 0 31%,#000 31.6%)}
@@ -82,10 +82,10 @@ export const SOUND_ME_CSS = String.raw`
   .vfd-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
   .vfd-cell{display:flex;flex-direction:column;gap:5px;padding:clamp(9px,1.4vh,13px) 14px;min-width:0}
   .vfd-cell+.vfd-cell{border-left:1px solid #ffffff0f}
-  .vfd-k{font:600 9.5px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:#64957a}
+  .vfd-k{font:600 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:#64957a}
   .vfd-v{font:600 clamp(19px,min(2.3vw,3.6vh),31px)/1 var(--font-mono);color:#46f293;letter-spacing:-.02em;
     text-shadow:0 0 10px #1db95499,0 0 2px #46f29380}
-  .vfd-n{font:500 9.5px/1.2 var(--font-mono);color:#5c8a70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .vfd-n{font:500 11px/1.2 var(--font-mono);color:#5c8a70;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .odo{display:inline-flex;line-height:1;font-variant-numeric:tabular-nums}
   .odo-row{display:inline-flex;line-height:1}
   .odo-d{display:inline-block;height:1em;line-height:1;overflow:hidden}
@@ -93,17 +93,17 @@ export const SOUND_ME_CSS = String.raw`
   .odo-n{height:1em;line-height:1;display:block;text-align:center}
 
   .now{display:flex;align-items:center;gap:9px;padding:8px 12px;min-width:0;max-width:100%;overflow:hidden;box-sizing:border-box;border-top:1px solid #ffffff0f;
-    font:500 10.5px/1.2 var(--font-mono)}
+    font:500 11px/1.2 var(--font-mono)}
   .now-art{width:26px;height:26px;border-radius:3px;object-fit:cover;flex:none;background:#ffffff10}
   .now-led{width:6px;height:6px;border-radius:50%;flex:none;background:#2f4a3b}
   .now.live .now-led{background:#46f293;box-shadow:0 0 8px #46f293}
-  .now-k{flex:none;font-weight:600;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#64957a}
+  .now-k{flex:none;font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#64957a}
   .now-t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .now-t b{font:600 12.5px/1.2 var(--font-body);color:#eafff2}
   .now-t i{font-style:normal;color:#86b89b;margin-left:8px}
-  .now-when{flex:none;color:#5c8a70;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase}
+  .now-when{flex:none;color:#5c8a70;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   .now-open{flex:none;display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:#0a1a10;background:#1DB954;
-    border-radius:20px;padding:4px 9px 4px 5px;font:700 9.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;
+    border-radius:20px;padding:4px 9px 4px 5px;font:700 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;
     transition:filter .2s}
   .now-open:hover{filter:brightness(1.12)}
 
@@ -112,7 +112,7 @@ export const SOUND_ME_CSS = String.raw`
     padding:7px 4px 8px;border-radius:7px;border:1px solid var(--key-edge);color:var(--ink);
     background:linear-gradient(180deg,var(--key-a),var(--key-b));
     box-shadow:0 3px 0 var(--key-drop),0 5px 8px -4px #0005,inset 0 1px 0 #ffffff90;
-    font:600 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;
+    font:600 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;
     transition:transform .12s var(--ease),box-shadow .12s var(--ease)}
   :root[data-theme="dark"] .key{box-shadow:0 3px 0 var(--key-drop),0 5px 8px -4px #000,inset 0 1px 0 #ffffff14}
   .key:hover{color:var(--green-ink)}
@@ -134,7 +134,7 @@ export const SOUND_ME_CSS = String.raw`
   .sl-head{position:relative;display:flex;align-items:baseline;gap:12px;padding-bottom:7px;margin-bottom:clamp(6px,1vh,10px);
     border-bottom:1px dashed color-mix(in srgb,var(--ink) 18%,transparent)}
   .sl-title{font:700 clamp(14px,1.3vw,17px)/1 var(--font-display);color:var(--ink)}
-  .sl-kick{font:500 9.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  .sl-kick{font:500 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
   .sl-body{position:relative;flex:1;min-height:0;container-type:size}
   .sl-view{position:absolute;inset:0;display:flex;flex-direction:column}
@@ -151,20 +151,20 @@ export const SOUND_ME_CSS = String.raw`
   .liner-list{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;column-gap:clamp(18px,2.4vw,36px);
     grid-template-columns:repeat(var(--cols),minmax(0,1fr));grid-template-rows:repeat(var(--rows),var(--row-h))}
   .ln{display:flex;align-items:center;gap:10px;min-width:0;border-bottom:1px solid color-mix(in srgb,var(--ink) 7%,transparent)}
-  .ln-no{flex:none;width:20px;font:700 10.5px/1 var(--font-mono);color:var(--green-ink)}
+  .ln-no{flex:none;width:20px;font:700 11px/1 var(--font-mono);color:var(--green-ink)}
   .ln-img{flex:none;width:calc(var(--row-h) - 10px);aspect-ratio:1;border-radius:2px;overflow:hidden;
     background:color-mix(in srgb,var(--art) 35%,#2a2119);box-shadow:0 3px 6px -3px #0008}
   .ln-img img{width:100%;height:100%;object-fit:cover;display:block}
   .ln-t{flex:0 1 auto;min-width:0;display:flex;flex-direction:column;gap:3px}
   .ln-t b,.ln-t i{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .ln-t b{font:600 clamp(13px,1.15vw,15px)/1.15 var(--font-display);color:var(--ink)}
-  .ln-t i{font:500 10px/1.1 var(--font-mono);font-style:normal;color:var(--muted)}
-  .ln-tag{font:700 9px/1 var(--font-mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:#06110a;
+  .ln-t i{font:500 11px/1.1 var(--font-mono);font-style:normal;color:var(--muted)}
+  .ln-tag{font:700 11px/1 var(--font-mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:#06110a;
     background:#1DB954;border-radius:10px;padding:3px 7px;margin-left:8px;vertical-align:2px}
   .ln-lead{flex:1 1 6px;min-width:6px;height:0;align-self:center;margin-top:8px;border-bottom:1.5px dotted color-mix(in srgb,var(--ink) 25%,transparent)}
-  .ln-m{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:3px;font:500 10px/1 var(--font-mono);color:var(--muted)}
+  .ln-m{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:3px;font:500 11px/1 var(--font-mono);color:var(--muted)}
   .ln-m b{font-size:12.5px;color:var(--ink);font-weight:600}
-  .ln-m small{font-size:9px;opacity:.85}
+  .ln-m small{font-size:11px;opacity:.85}
   .sl-pager{position:absolute;right:0;top:calc(-1 * clamp(6px,1vh,10px) - 30px);height:24px;display:flex;justify-content:flex-end;align-items:center;gap:4px}
   .sleeve:has(.sl-pager) .sl-head{padding-right:150px}
   .sl-flip{width:30px;height:26px;border-radius:12px;cursor:pointer;background:none;color:var(--ink);
@@ -177,8 +177,8 @@ export const SOUND_ME_CSS = String.raw`
   .sl-flip:hover .ic{translate:2px 0}
   .sl-prev:hover .ic{translate:-2px 0}
   .sl-flip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sl-side{min-width:82px;text-align:center;font:600 9.5px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
-  .sl-side small{font-size:9px;color:var(--muted);letter-spacing:.08em}
+  .sl-side{min-width:82px;text-align:center;font:600 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+  .sl-side small{font-size:11px;color:var(--muted);letter-spacing:.08em}
 
   /* crate: real covers, flat on the sleeve */
   .crate-box{flex:1;min-height:0;display:flex;flex-direction:column}
@@ -193,7 +193,7 @@ export const SOUND_ME_CSS = String.raw`
   .cv-type{font:700 11px/1.1 var(--font-display);color:#fbf4e6;text-align:center;padding:10%}
   .cv figcaption{width:100%;text-align:center;display:flex;flex-direction:column;gap:2px;min-width:0}
   .cv figcaption b{font:600 12px/1.15 var(--font-display);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .cv figcaption span{font:500 9.5px/1.1 var(--font-mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cv figcaption span{font:500 11px/1.1 var(--font-mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   /* eras: a shelf of dated sleeves */
   .shelf{flex:1;min-height:0;display:flex;flex-direction:column;container-type:size}
@@ -206,10 +206,10 @@ export const SOUND_ME_CSS = String.raw`
   .sp-col:nth-child(3n+2) .sp{background:linear-gradient(90deg,#ffffff1a,#0000 30%,#0000 70%,#00000033),#2b241d}
   .sp-col:nth-child(3n) .sp{background:linear-gradient(90deg,#ffffff4d,#0000 30%,#0000 70%,#0000001f),color-mix(in srgb,var(--art) 22%,#efe6d4);color:#2a2017}
   .sp.peak{background:linear-gradient(90deg,#ffffff40,#0000 30%,#0000 70%,#00000026),#1DB954 !important;color:#06110a !important}
-  .sp-artist{writing-mode:vertical-rl;rotate:180deg;font:600 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+  .sp-artist{writing-mode:vertical-rl;rotate:180deg;font:600 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
   .sp-col>.sp-artist{color:var(--muted)}
   .sp-year{font:700 clamp(12px,1.1vw,14px)/1 var(--font-display);color:var(--ink);padding-top:4px}
-  .sp-min{font:500 9.5px/1 var(--font-mono);color:var(--muted)}
+  .sp-min{font:500 11px/1 var(--font-mono);color:var(--muted)}
   .shelf-row{border-bottom:0}
   .sp-col .sp{border-bottom:5px solid #5a391f}
 
@@ -222,7 +222,7 @@ export const SOUND_ME_CSS = String.raw`
   .dial-spoke.peak{stroke:#1DB954;stroke-width:6.5}
   .dial-tick{fill:var(--muted);font:500 11px/1 var(--font-mono);text-anchor:middle;dominant-baseline:middle}
   .dial-core{fill:var(--ink);font:700 28px/1 var(--font-display);text-anchor:middle;dominant-baseline:middle}
-  .dial-core-sub{fill:var(--muted);font:500 9.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;text-anchor:middle;dominant-baseline:middle}
+  .dial-core-sub{fill:var(--muted);font:500 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;text-anchor:middle;dominant-baseline:middle}
   .dial-read{margin:0;max-width:22ch;font:500 clamp(16px,1.6vw,21px)/1.3 var(--font-hand);color:var(--muted)}
   .dial-read b{color:var(--green-ink);font-weight:700}
 
@@ -231,7 +231,7 @@ export const SOUND_ME_CSS = String.raw`
     grid-template-rows:repeat(2,minmax(0,1fr));gap:8px 14px}
   .lt{margin:0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:5px}
   .lt img,.lt-ph{width:min(100%,calc(50cqh - 26px));aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;background:var(--paper2)}
-  .lt figcaption{max-width:100%;font:500 10.5px/1.2 var(--font-mono);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lt figcaption{max-width:100%;font:500 11px/1.2 var(--font-mono);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   /* short sleeves: liner rows collapse to one line each */
   @container (max-height:190px){
@@ -244,7 +244,7 @@ export const SOUND_ME_CSS = String.raw`
   @container (max-height:200px){
     .sp-col>.sp-artist{display:none}
     .sp{height:calc(var(--p) * (100cqh - 34px))}
-    .sp-artist{font-size:9px}
+    .sp-artist{font-size:11px}
   }
 
   /* ---- narrow: the display sits beside the platter, keys and sleeve run full width ---- */
@@ -271,7 +271,7 @@ export const SOUND_ME_CSS = String.raw`
     .bay-k{display:none}
     .bay-cap{padding:0;gap:1px}
     .bay-cap b{font-size:12px}
-    .bay-cap span:last-child{font-size:9.5px;line-height:1.2}
+    .bay-cap span:last-child{font-size:11px;line-height:1.2}
     .vfd-cell{padding:6px 8px;gap:3px}
     .vfd-v{font-size:17px}
     .now{padding:6px 8px;gap:6px}
@@ -281,7 +281,7 @@ export const SOUND_ME_CSS = String.raw`
     .now-open span{display:none}
     .now-open{padding:3px}
     .keys{gap:4px}
-    .key{position:relative;padding:9px 2px;font-size:9.5px;letter-spacing:.04em}
+    .key{position:relative;padding:9px 2px;font-size:11px;letter-spacing:.04em}
     .key-led{position:absolute;top:3px;left:50%;translate:-50% 0;width:12px;height:2px}
     .key-lbl-l{display:none}.key-lbl-s{display:inline}
     .key[aria-selected="true"]{transform:translateY(2px)}
@@ -289,15 +289,15 @@ export const SOUND_ME_CSS = String.raw`
     .sl-head{padding-bottom:4px;margin-bottom:5px;gap:8px}
     .sleeve:has(.sl-pager) .sl-head{padding-right:0}
     .sl-title{font-size:13px}
-    .sl-kick{font-size:9.5px;letter-spacing:.1em}
+    .sl-kick{font-size:11px;letter-spacing:.1em}
     .sl-pager{position:static;padding-top:4px;height:auto}
     .liner-note{font-size:13px;line-height:1.15}
     .dial-read{font-size:14px}
     .cv-art{width:min(100%,calc(50cqh - 30px))}
-    .vfd-n{white-space:normal;font-size:9px;line-height:1.1}
+    .vfd-n{white-space:normal;font-size:11px;line-height:1.1}
     .ln-tag{flex-shrink:0}
     .sp-unit{display:none}
-    .sp-min{font-size:9px;letter-spacing:-.02em}
+    .sp-min{font-size:11px;letter-spacing:-.02em}
   }
   /* very short sleeves: the liner sentence tightens; the list pages into more sides instead of losing it */
   @container (max-height:220px){

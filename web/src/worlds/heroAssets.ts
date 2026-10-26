@@ -90,8 +90,8 @@ export const HERO_STYLE = String.raw`
   .hero-root .hint{display:inline-block; font:600 18px/1 "Caveat",cursive; color:var(--muted); rotate:-4deg}
   .hero-root .hint b{color:var(--accent-ink); transition:color .5s}
   .hero-root .thesis-line{font:400 12px/1.45 "Fraunces",serif; font-style:italic; color:var(--muted); max-width:48ch; margin:0 0 14px}
-  .hero-root .thesis-line .thread{color:var(--accent-ink); font-style:normal; font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; display:inline-block; margin-left:6px; font-weight:600}
-  .hero-root .elsewhere{margin-top:20px; font:500 10.5px/1.9 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .hero-root .thesis-line .thread{color:var(--accent-ink); font-style:normal; font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; display:inline-block; margin-left:6px; font-weight:600}
+  .hero-root .elsewhere{margin-top:20px; font:500 11px/1.9 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   .hero-root .elsewhere a{color:var(--ink); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,transparent); margin-right:14px; transition:color .3s}
   .hero-root .elsewhere a:hover{color:var(--accent-ink)}
   .hero-root .elsewhere a[hidden]{display:none}
@@ -110,7 +110,7 @@ export const HERO_STYLE = String.raw`
     background:linear-gradient(color-mix(in srgb,#fff 22%,transparent) 1px,transparent 1px) 0 0/24px 24px,
                linear-gradient(90deg,color-mix(in srgb,#fff 22%,transparent) 1px,transparent 1px) 0 0/24px 24px}
   :root[data-mode="analyst"] .hero-root .ph.plot{opacity:.55}
-  .hero-root .figcap{position:absolute; left:14px; bottom:calc(3vh + 12px); z-index:2; font:500 10px/1 "JetBrains Mono",monospace; letter-spacing:.16em;
+  .hero-root .figcap{position:absolute; left:14px; bottom:calc(3vh + 12px); z-index:2; font:500 11px/1 "JetBrains Mono",monospace; letter-spacing:.16em;
     text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.5)}
   .hero-root .figcap::after{content:"fig.1 · the artist, Goa"} :root[data-mode="analyst"] .hero-root .figcap::after{content:"fig.1 · specimen: analyst (chem-eng lineage)"}
 
@@ -125,7 +125,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .obj{position:absolute; pointer-events:auto; rotate:var(--r,0deg); transition:opacity .35s var(--ease), scale .35s var(--ease)}
   .hero-root .set.in .obj{animation:slap .75s var(--spring) both; animation-delay:calc(var(--d,0) * 1s)}
   :root[data-mode="analyst"] .hero-root .set.artist .obj, :root[data-mode="artist"] .hero-root .set.analyst .obj{animation:none; opacity:0; scale:.9; pointer-events:none}
-  .hero-root .k{font:500 9.5px/1 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); display:flex; gap:7px; align-items:center}
+  .hero-root .k{font:500 11px/1 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); display:flex; gap:7px; align-items:center}
   .hero-root .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex:0 0 auto}
   .hero-root .dot.live{background:var(--accent);animation:pulse 1.4s infinite}
   .hero-root .tape{position:absolute; width:74px; height:22px; background:rgba(232,210,160,.62); box-shadow:0 1px 3px rgba(0,0,0,.08); z-index:2}
@@ -139,7 +139,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .spot::after{content:""; position:absolute; left:-30%; top:-60%; width:160%; height:120%; pointer-events:none;
     background:radial-gradient(60% 60% at 18% 20%, rgba(29,185,84,.22), transparent 70%)}
   .hero-root .spot>*{position:relative; z-index:1}
-  .hero-root .spot .k{color:#b7a98f; font-size:10px; letter-spacing:.18em}
+  .hero-root .spot .k{color:#b7a98f; font-size:11px; letter-spacing:.18em}
   .hero-root .spot .k .ic{color:#1DB954!important}
   .hero-root .spot .row{display:flex; gap:13px; align-items:center; margin-top:12px; text-decoration:none}
   .hero-root .spot .art{width:62px; height:62px; border-radius:5px; flex:0 0 auto; background:#2c2620 center/cover; display:grid; place-items:center;
@@ -155,24 +155,24 @@ export const HERO_STYLE = String.raw`
   .hero-root .mood{left:-50px; top:31%; width:132px; height:132px; --r:-8deg; --d:1.05; border-radius:50%; background:var(--orange); color:#1d1712;
     display:grid; place-items:center; text-align:center; box-shadow:var(--shadow)}
   .hero-root .mood>svg{position:absolute; inset:0; width:100%; height:100%}
-  .hero-root .mood>svg text{font:500 8.4px "JetBrains Mono",monospace; letter-spacing:.22em; fill:#1d1712; text-transform:uppercase}
+  .hero-root .mood>svg text{font:500 11px "JetBrains Mono",monospace; letter-spacing:.22em; fill:#1d1712; text-transform:uppercase}
   .hero-root .mood>div{display:flex; flex-direction:column; align-items:center; justify-content:center; width:82px; gap:1px}
   .hero-root .mood-ic{width:19px!important; height:19px!important; margin:0 0 3px!important; color:#1d1712; opacity:.9}
   .hero-root .mood .w{font:700 19px/.92 "Caveat",cursive; max-width:78px; text-wrap:balance}
-  .hero-root .mood .sig{font:500 7px/1.15 "JetBrains Mono",monospace; letter-spacing:.06em; text-transform:uppercase; margin-top:4px; opacity:.72; max-width:84px}
+  .hero-root .mood .sig{font:500 11px/1.15 "JetBrains Mono",monospace; letter-spacing:.06em; text-transform:uppercase; margin-top:4px; opacity:.72; max-width:84px}
 
   .hero-root a.obj{text-decoration:none; color:inherit}
   .hero-root .barca{left:-34px; bottom:calc(3vh + 7%); width:272px; --r:-3deg; --d:1.2; display:flex; background:var(--card); border-radius:6px; box-shadow:var(--shadow); color:var(--ink)}
   .hero-root .barca .stub{width:34px; flex:0 0 auto; border-radius:6px 0 0 6px; background:repeating-linear-gradient(90deg,var(--blau) 0 8.5px,var(--grana) 8.5px 17px);
     display:grid; place-items:center}
-  .hero-root .barca .stub span{writing-mode:vertical-rl; rotate:180deg; font:500 9px/1 "JetBrains Mono",monospace; letter-spacing:.24em; color:#fff; text-transform:uppercase}
+  .hero-root .barca .stub span{writing-mode:vertical-rl; rotate:180deg; font:500 11px/1 "JetBrains Mono",monospace; letter-spacing:.24em; color:#fff; text-transform:uppercase}
   .hero-root .barca .body{flex:1; padding:12px 14px 12px 14px; border-left:2px dashed color-mix(in srgb,var(--ink) 18%,transparent)}
   .hero-root .barca .vs{font:900 19px/1.1 "Fraunces",serif; margin-top:8px}
   .hero-root .barca .when{font-size:11.5px; color:var(--muted); margin-top:3px}
   .hero-root .barca .cd{font:500 11px/1 "JetBrains Mono",monospace; color:var(--grana); margin-top:8px; letter-spacing:.04em}
   :root[data-theme="dark"] .hero-root .barca .cd{color:#ff6fa8}
   .hero-root .barca .last{margin-top:9px; padding-top:8px; border-top:1px solid color-mix(in srgb,var(--ink) 10%,transparent); font-size:11.5px; display:flex; gap:7px; align-items:center}
-  .hero-root .res{font:500 9.5px/1 "JetBrains Mono",monospace; padding:3px 5px; border-radius:3px; color:#fff; background:var(--muted)}
+  .hero-root .res{font:500 11px/1 "JetBrains Mono",monospace; padding:3px 5px; border-radius:3px; color:#fff; background:var(--muted)}
   .hero-root .res.W{background:#2f8a4e} .hero-root .res.L{background:#b23a3a} .hero-root .res.D{background:#8a7a2f}
   .hero-root .barca .tape{top:-10px; right:22px; rotate:7deg}
 
@@ -185,7 +185,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .pola.snap .shutter{animation:shutter .5s cubic-bezier(.76,0,.24,1)}
   .hero-root .pola .cap{position:absolute; left:11px; right:11px; bottom:8px; display:flex; justify-content:space-between; align-items:baseline; color:var(--ink)}
   .hero-root .pola .cap b{font:700 17px/1 "Caveat",cursive}
-  .hero-root .pola .cap span{font:500 8.5px/1 "JetBrains Mono",monospace; letter-spacing:.1em; color:var(--muted)}
+  .hero-root .pola .cap span{font:500 11px/1 "JetBrains Mono",monospace; letter-spacing:.1em; color:var(--muted)}
   .hero-root .pola .tape{top:-11px; left:50%; translate:-50% 0; rotate:-4deg}
 
   .hero-root .leaders{position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; z-index:3}
@@ -195,7 +195,7 @@ export const HERO_STYLE = String.raw`
   :root[data-theme="light"] .hero-root .leaders circle{fill:#fff}
   :root[data-mode="artist"] .hero-root .leaders{opacity:0; transition:opacity .2s}
   .hero-root .pin{position:absolute; left:calc(var(--x)*1%); top:calc(var(--y)*1%); width:20px; height:20px; translate:-50% -50%; border-radius:50%; z-index:4;
-    background:var(--pen); color:#fff; font:500 9.5px/20px "JetBrains Mono",monospace; text-align:center; box-shadow:0 0 0 3px color-mix(in srgb,#fff 55%,transparent);
+    background:var(--pen); color:#fff; font:500 11px/20px "JetBrains Mono",monospace; text-align:center; box-shadow:0 0 0 3px color-mix(in srgb,#fff 55%,transparent);
     transition:scale .45s var(--spring), opacity .3s; pointer-events:none}
   :root[data-theme="dark"] .hero-root .pin{color:#14202c}
   :root[data-mode="artist"] .hero-root .pin{scale:0; opacity:0}
@@ -295,7 +295,7 @@ export const HERO_STYLE = String.raw`
   :root[data-mode="artist"] .hero-root .set.in .scribble path{stroke-dashoffset:0}
   .hero-root .stamp{position:absolute; right:7px; top:7px; width:42px; height:42px; rotate:-13deg; opacity:.46; color:var(--grana); pointer-events:none}
   :root[data-theme="dark"] .hero-root .stamp{color:#ff6fa8; opacity:.5}
-  .hero-root .stamp text{font:700 7px "JetBrains Mono",monospace; letter-spacing:.14em; fill:currentColor}
+  .hero-root .stamp text{font:700 11px "JetBrains Mono",monospace; letter-spacing:.14em; fill:currentColor}
   .hero-root .stamp .ring{fill:none; stroke:currentColor; stroke-width:1.4}
   .hero-root .pola .sprocket{position:absolute; left:0; right:0; height:7px; display:flex; gap:4px; justify-content:center; z-index:3; pointer-events:none}
   .hero-root .pola .sprocket.t{top:2px} .hero-root .pola .sprocket.b{bottom:30px}
@@ -364,16 +364,16 @@ export const HERO_STYLE = String.raw`
     .hero-root .switch-row{margin:4px 0 2px; gap:8px}
     .hero-root .switch{padding:3px; border-radius:24px}
     .hero-root .switch .thumb{border-radius:20px}
-    .hero-root .switch .opt{padding:6px 14px; font-size:10px; letter-spacing:.08em}
+    .hero-root .switch .opt{padding:6px 14px; font-size:11px; letter-spacing:.08em}
     .hero-root .hint{font-size:14px; margin-left:6px}
-    .hero-root .thesis-line{font-size:10px; line-height:1.25; margin:2px 0 4px; max-width:100%}
-    .hero-root .thesis-line .thread{font-size:8.5px; margin-left:4px}
-    .hero-root .elsewhere{margin-top:6px; font-size:8.5px; line-height:1.4}
+    .hero-root .thesis-line{font-size:11px; line-height:1.25; margin:2px 0 4px; max-width:100%}
+    .hero-root .thesis-line .thread{font-size:11px; margin-left:4px}
+    .hero-root .elsewhere{margin-top:6px; font-size:11px; line-height:1.4}
     .hero-root .elsewhere a{margin-right:10px}
     .hero-root .portrait{position:relative; right:auto; top:auto; bottom:auto; width:100%; flex:1; min-height:0; margin-top:6px;
       overflow:hidden; border-radius:10px; box-shadow:var(--shadow)}
     .hero-root .print{position:absolute; inset:0; width:100%; height:100%; max-height:none; aspect-ratio:auto; border-radius:10px}
-    .hero-root .figcap{bottom:6px; left:8px; font-size:8px}
+    .hero-root .figcap{bottom:6px; left:8px; font-size:11px}
     .hero-root .disc{display:none}
     .hero-root .set{position:absolute; inset:0; overflow:hidden}
     .hero-root .obj{--ps:.7; scale:var(--ps); transform-origin:bottom right}
@@ -384,7 +384,7 @@ export const HERO_STYLE = String.raw`
     .hero-root .pola{right:6px; top:6px; width:110px; --ps:.65; transform-origin:top right}
     .hero-root .set.analyst .note{right:6px; bottom:6px; top:auto; left:auto; width:220px}
     .hero-root .leaders,.hero-root .pin,.hero-root .scribble{display:none}
-    .hero-root .scrollcue{left:50%; translate:-50% 0; bottom:14px; padding:8px 10px 8px 14px; font-size:10px; letter-spacing:.12em; white-space:nowrap;
+    .hero-root .scrollcue{left:50%; translate:-50% 0; bottom:14px; padding:8px 10px 8px 14px; font-size:11px; letter-spacing:.12em; white-space:nowrap;
       background:var(--card); box-shadow:var(--shadow)}
     .hero-root .scrollcue i{width:20px; height:20px; font-size:11px}
   }

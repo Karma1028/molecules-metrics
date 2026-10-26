@@ -35,7 +35,7 @@
 /* the catalyst point: the ball, reduced to a data point (orange never leaves) */
 .ptr-point { position: absolute; width: 5px; height: 5px; border-radius: 50%; translate: -50% -50%; background: var(--orange, #E0662F);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--orange, #E0662F) 22%, transparent); }
-.ptr-read { font: 600 10px/1 var(--font-mono, monospace); letter-spacing: .08em; white-space: pre;
+.ptr-read { font: 600 11px/1 var(--font-mono, monospace); letter-spacing: .08em; white-space: pre;
   color: var(--accent-ink); padding: 4px 6px; border-radius: 4px; background: color-mix(in srgb, var(--paper) 82%, transparent);
   border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); font-variant-numeric: tabular-nums; }
 .ptr-read[data-flip-x="true"] { translate: -100% 0; }

@@ -38,7 +38,7 @@
 [data-mode="artist"] .specimen{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:10px;
   box-shadow:var(--shadow-sm);padding:18px 20px;position:relative;transition:border-color .5s,transform .3s,box-shadow .3s}
 [data-mode="artist"] .specimen:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-[data-mode="artist"] .specimen .lbl{font:500 9.5px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px;margin-bottom:9px}
+[data-mode="artist"] .specimen .lbl{font:500 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:7px;margin-bottom:9px}
 [data-mode="artist"] .specimen .lbl .ic{width:14px;height:14px;color:var(--accent-ink);transition:color .5s}
 [data-mode="artist"] .specimen h3{font-family:var(--font-display);font-weight:600;font-size:19px;margin-bottom:5px;text-wrap:balance}
 [data-mode="artist"] .specimen p{font-size:14px;color:var(--muted);text-wrap:pretty}

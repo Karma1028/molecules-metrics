@@ -61,7 +61,7 @@ const CSS = String.raw`
 
   /* left column: poster headline + instrument */
   .p-an-toc .poster{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,24px)}
-  .p-an-toc .kick{font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
+  .p-an-toc .kick{font:600 11px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
   .p-an-toc .kick .caret{display:inline-block;margin-left:4px;color:var(--teal-ink)}
   .p-an-toc .big{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,min(9vw,16vh),140px);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
   .p-an-toc .big em{font-style:normal;color:var(--accent-ink)}
@@ -87,16 +87,16 @@ const CSS = String.raw`
   .p-an-toc .dial .arc{stroke:color-mix(in srgb,var(--ink) 18%,transparent)}
   .p-an-toc .dial .tick{stroke:color-mix(in srgb,var(--ink) 35%,transparent)}
   .p-an-toc .dial .tick.on{stroke:var(--teal)}
-  .p-an-toc .dial .tlabel{font:600 8px var(--font-mono);fill:var(--muted)}
+  .p-an-toc .dial .tlabel{font:600 11px var(--font-mono);fill:var(--muted)}
   .p-an-toc .dial .tlabel.on{fill:var(--teal)}
   .p-an-toc .dial .needle{stroke:var(--grana);stroke-width:2.2;stroke-linecap:round}
   .p-an-toc .dial .hub{fill:var(--card);stroke:var(--grana);stroke-width:2}
   .p-an-toc .readout{min-width:0;font-family:var(--font-mono)}
-  .p-an-toc .ro-k{font:600 9px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .p-an-toc .ro-k{font:600 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .p-an-toc .ro-ch{font:700 clamp(15px,1.4vw,19px)/1.2 var(--font-display);color:var(--ink);margin:6px 0 4px;letter-spacing:-.01em}
   .p-an-toc .ro-ch span{color:var(--teal-ink);font-family:var(--font-mono);font-size:.72em;margin-right:8px}
   .p-an-toc .ro-gloss{font:500 11.5px/1.45 var(--font-mono);color:var(--muted);min-height:2.9em}
-  .p-an-toc .ro-foot{display:flex;gap:12px;margin-top:8px;font:600 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .p-an-toc .ro-foot{display:flex;gap:12px;margin-top:8px;font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .p-an-toc .ro-foot b{color:var(--teal-ink);font-weight:600}
 
   /* right column: poster-scale index */
@@ -112,7 +112,7 @@ const CSS = String.raw`
   .p-an-toc .row-gloss{font:500 11.5px/1.3 var(--font-mono);color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0;max-width:36ch;
     opacity:.75;transition:opacity .25s var(--ease),transform .3s var(--ease),color .25s var(--ease)}
   .p-an-toc .row-end{display:flex;align-items:center;gap:12px}
-  .p-an-toc .row-state{font:600 8.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink);display:flex;align-items:center;gap:6px}
+  .p-an-toc .row-state{font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink);display:flex;align-items:center;gap:6px}
   .p-an-toc .row-state::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
   .p-an-toc .row-state.in-progress{color:var(--orange-ink)}
   .p-an-toc .row-arrow{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);color:var(--accent-ink);

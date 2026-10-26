@@ -9,8 +9,8 @@ export const PANEL_CSS = String.raw`
   .p-jn .dc-where{display:flex;flex-direction:column;gap:clamp(4px,1vh,10px);margin-top:clamp(-10px,-.8vh,-4px)}
   .p-jn .jc-top{display:flex;align-items:center;gap:10px}
   .p-jn .jc-ic{width:18px;height:18px}
-  .p-jn .jc-era{font:600 10px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase}
-  .p-jn .jc-per{margin-left:auto;font:500 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  .p-jn .jc-era{font:600 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase}
+  .p-jn .jc-per{margin-left:auto;font:500 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
     font-variant-numeric:tabular-nums}
   .p-jn .jc-title{font:700 clamp(19px,2.2vw,30px)/1.1 var(--font-display);color:var(--ink);letter-spacing:-.015em;margin:0;text-wrap:balance}
   .p-jn .jc-place{font:600 clamp(12px,1vw,13.5px)/1.35 var(--font-mono);color:var(--muted)}
@@ -19,12 +19,12 @@ export const PANEL_CSS = String.raw`
   .p-jn .dc-facts{display:grid;grid-template-columns:auto auto minmax(0,1fr);margin:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
   .p-jn .dc-facts>div{padding:clamp(6px,1.6vh,14px) clamp(10px,1.4vw,22px) clamp(6px,1.6vh,14px) 0;min-width:0}
   .p-jn .dc-facts>div+div{padding-left:clamp(10px,1.4vw,22px);border-left:1px solid var(--rule)}
-  .p-jn .dc-facts dt{font:600 9.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .p-jn .dc-facts dt{font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
   .p-jn .dc-facts dd{margin:0;font:600 clamp(12px,1.05vw,15px)/1.25 var(--font-mono);color:var(--ink);font-variant-numeric:tabular-nums}
-  .p-jn .dc-facts dd small{display:block;font:500 10px/1.3 var(--font-mono);color:var(--muted);margin-top:3px;letter-spacing:.04em}
+  .p-jn .dc-facts dd small{display:block;font:500 11px/1.3 var(--font-mono);color:var(--muted);margin-top:3px;letter-spacing:.04em}
   .p-jn .dc-facts .dc-metric{font:700 clamp(18px,1.9vw,26px)/1 var(--font-mono);color:currentColor;white-space:nowrap}
 
-  .p-jn .dc-block h3{font:600 9.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .p-jn .dc-block h3{font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
   .p-jn .dc-changes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
   .p-jn .dc-changes li{display:flex;align-items:baseline;gap:8px;font-size:clamp(12px,1vw,14px);line-height:1.35;color:var(--ink)}
   .p-jn .dc-changes .ic{width:10px;height:10px;flex:0 0 auto;color:currentColor;transform:translateY(1px)}
@@ -33,7 +33,7 @@ export const PANEL_CSS = String.raw`
   .p-jn .dc-read{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr);
     gap:clamp(10px,1.4vw,20px);padding-top:clamp(8px,1.4vh,14px);border-top:1px solid var(--rule)}
   .p-jn .rd-cell{display:flex;flex-direction:column;gap:6px;min-width:0}
-  .p-jn .rd-k{display:flex;justify-content:space-between;gap:6px;font:600 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .p-jn .rd-k{display:flex;justify-content:space-between;gap:6px;font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .p-jn .rd-k b{color:currentColor;font-weight:700;letter-spacing:.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
   .p-jn .rd-segs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:3px}
   .p-jn .rd-segs i{height:clamp(8px,1.5vh,14px);border-radius:2px;border:1px solid currentColor;opacity:.45}
@@ -41,8 +41,8 @@ export const PANEL_CSS = String.raw`
   .p-jn .rd-segs i.now{background:currentColor;opacity:1}
   .p-jn .rd-track{position:relative;height:clamp(8px,1.5vh,14px);border-radius:3px;background:color-mix(in srgb,var(--ink) 8%,transparent)}
   .p-jn .rd-track i{position:absolute;top:0;bottom:0;border-radius:3px;background:currentColor}
-  .p-jn .rd-ends{display:flex;justify-content:space-between;font:500 9px/1 var(--font-mono);color:var(--muted);font-variant-numeric:tabular-nums}
-  .p-jn .rd-eras{display:flex;flex-direction:column;gap:3px;font:600 9.5px/1.15 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .p-jn .rd-ends{display:flex;justify-content:space-between;font:500 11px/1 var(--font-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+  .p-jn .rd-eras{display:flex;flex-direction:column;gap:3px;font:600 11px/1.15 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
   .p-jn .rd-eras span{padding-left:8px;border-left:2px solid var(--rule)}
   .p-jn .rd-eras .on{color:currentColor;border-left-color:currentColor}
 
@@ -90,7 +90,7 @@ export const SCRUB_CSS = String.raw`
   .p-jn .sc-btn .ic{width:12px;height:12px}
   .p-jn .sc-btn.prev .ic{transform:scaleX(-1)}
   .p-jn .sc-lanes{display:grid;grid-template-rows:14px 14px;row-gap:6px;padding-bottom:18px;
-    font:600 10px/14px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    font:600 11px/14px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
   .p-jn .sc-track{position:relative;padding-top:22px;cursor:ew-resize;touch-action:none;outline:none;border-radius:6px}
   .p-jn .sc-track:focus-visible{box-shadow:0 0 0 1.5px var(--accent)}
@@ -102,7 +102,7 @@ export const SCRUB_CSS = String.raw`
   .p-jn .sc-axis{position:relative;height:18px}
   .p-jn .sc-tick{position:absolute;top:0;width:1px;height:4px;background:var(--muted);opacity:.6}
   .p-jn .sc-tick.lab{height:6px;opacity:1}
-  .p-jn .sc-tick b{position:absolute;top:7px;left:0;transform:translateX(-50%);font:600 10px/1 var(--font-mono);
+  .p-jn .sc-tick b{position:absolute;top:7px;left:0;transform:translateX(-50%);font:600 11px/1 var(--font-mono);
     color:var(--muted);font-variant-numeric:tabular-nums}
   .p-jn .sc-tick b.l{transform:none}
   .p-jn .sc-tick b.r{transform:translateX(-100%)}
@@ -112,7 +112,7 @@ export const SCRUB_CSS = String.raw`
   .p-jn .sc-knob{position:absolute;left:-6px;top:33px;width:12px;height:12px;border-radius:50%;background:currentColor;
     box-shadow:0 0 0 3px var(--card)}
   .p-jn .sc-read{position:absolute;top:0;left:0;transform:translateX(-50%);white-space:nowrap;
-    font:700 10px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:currentColor;
+    font:700 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:currentColor;
     font-variant-numeric:tabular-nums}
   .p-jn .sc-read.l{transform:translateX(-4px)}
   .p-jn .sc-read.r{transform:translateX(calc(-100% + 4px))}

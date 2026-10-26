@@ -66,7 +66,7 @@ const CSS = String.raw`
 
   /* left top: poster */
   .p-rs .rs-poster{grid-area:poster;min-width:0}
-  .p-rs .rs-kick{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
+  .p-rs .rs-kick{display:inline-flex;align-items:center;gap:8px;font:600 11px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
   .p-rs .rs-kick .ic{width:13px;height:13px}
   .p-rs .rs-big{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,min(7.6vw,12vh),120px);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
   .p-rs .rs-big em{font-style:normal;color:var(--accent-ink)}
@@ -74,7 +74,7 @@ const CSS = String.raw`
   .p-rs .rs-lede b{color:var(--ink);font-weight:600}
   .p-rs .rs-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:clamp(10px,1.8vh,18px)}
   .p-rs .rs-dl{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:var(--accent);color:var(--paper);border-radius:30px;
-    padding:8px 8px 8px 16px;font:600 10.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;transition:filter ${motionTokens.duration.normal}s var(--ease)}
+    padding:8px 8px 8px 16px;font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;transition:filter ${motionTokens.duration.normal}s var(--ease)}
   .p-rs .rs-dl:hover{filter:brightness(1.08)}
   .p-rs .rs-dl .circ{width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,#000 18%,transparent);display:grid;place-items:center;transition:transform ${motionTokens.duration.normal}s var(--ease)}
   .p-rs .rs-dl:hover .circ{transform:translateY(2px)}
@@ -84,17 +84,17 @@ const CSS = String.raw`
 
   /* left bottom: academic record, each grade read out on its own gauge */
   .p-rs .rs-edu{grid-area:edu;min-height:0;display:flex;flex-direction:column;justify-content:flex-end}
-  .p-rs .rs-h{display:flex;align-items:center;gap:7px;font:700 9px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink);
+  .p-rs .rs-h{display:flex;align-items:center;gap:7px;font:700 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink);
     padding-bottom:8px;border-bottom:1px solid var(--rule)}
   .p-rs .rs-h .ic{width:12px;height:12px}
   .p-rs .rs-h .sc{margin-left:auto;color:var(--muted);letter-spacing:.12em}
   .p-rs .edu-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;column-gap:12px;row-gap:3px;align-items:center;
     padding:clamp(5px,.9vh,9px) 0;border-bottom:1px dashed color-mix(in srgb,var(--ink) 12%,transparent)}
   .p-rs .edu-t{font:600 clamp(12.5px,1.1vw,15px)/1.15 var(--font-display);color:var(--ink)}
-  .p-rs .edu-p{font:500 10px/1.3 var(--font-mono);color:var(--muted);grid-column:1}
-  .p-rs .edu-y{font:500 9px/1 var(--font-mono);letter-spacing:.1em;color:var(--muted);grid-row:1 / 3;grid-column:2;white-space:nowrap}
+  .p-rs .edu-p{font:500 11px/1.3 var(--font-mono);color:var(--muted);grid-column:1}
+  .p-rs .edu-y{font:500 11px/1 var(--font-mono);letter-spacing:.1em;color:var(--muted);grid-row:1 / 3;grid-column:2;white-space:nowrap}
   .p-rs .edu-g{font:700 clamp(13px,1.2vw,17px)/1 var(--font-mono);color:var(--teal-ink);font-variant-numeric:tabular-nums;grid-row:1 / 3;grid-column:3;text-align:right;min-width:4.2ch}
-  .p-rs .edu-g small{display:block;font:600 7.5px/1 var(--font-mono);letter-spacing:.14em;color:var(--muted);margin-top:3px}
+  .p-rs .edu-g small{display:block;font:600 11px/1 var(--font-mono);letter-spacing:.14em;color:var(--muted);margin-top:3px}
   .p-rs .edu-bar{grid-column:1 / -1;position:relative;height:5px;border-radius:3px;overflow:hidden;margin-top:3px;
     background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--ink) 9%,transparent) 0 calc(10% - 2px),transparent calc(10% - 2px) 10%)}
   .p-rs .edu-bar i{position:absolute;inset:0;transform-origin:left center;border-radius:inherit;background:linear-gradient(90deg,var(--teal),var(--accent))}
@@ -109,9 +109,9 @@ const CSS = String.raw`
   .p-rs .rs-sheet::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
     background:linear-gradient(115deg,color-mix(in srgb,#fff 6%,transparent) 0 26%,transparent 26.5%)}
   .p-rs .sh-head{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--rule);padding-bottom:clamp(8px,1.4vh,12px)}
-  .p-rs .sh-name{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.3 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink)}
+  .p-rs .sh-name{display:inline-flex;align-items:center;gap:8px;font:600 11px/1.3 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink)}
   .p-rs .sh-name .live{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
-  .p-rs .sh-meta{font:600 8.5px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:right;
+  .p-rs .sh-meta{font:600 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:right;
     padding:5px 8px;border:1px solid var(--rule);border-radius:20px;white-space:nowrap}
 
   .p-rs .exp{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:clamp(8px,1.4vh,14px)}
@@ -119,8 +119,8 @@ const CSS = String.raw`
   .p-rs .job::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:3px;border-radius:2px;background:linear-gradient(var(--accent),var(--teal))}
   .p-rs .job-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;column-gap:12px;row-gap:4px}
   .p-rs .job-role{font:600 clamp(16px,1.75vw,24px)/1.1 var(--font-display);letter-spacing:-.015em;color:var(--ink)}
-  .p-rs .job-org{grid-row:2;font:600 10.5px/1.2 var(--font-mono);letter-spacing:.06em;color:var(--teal-ink)}
-  .p-rs .job-when{grid-row:1 / 3;grid-column:2;align-self:center;font:700 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;
+  .p-rs .job-org{grid-row:2;font:600 11px/1.2 var(--font-mono);letter-spacing:.06em;color:var(--teal-ink)}
+  .p-rs .job-when{grid-row:1 / 3;grid-column:2;align-self:center;font:700 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;
     color:var(--ink);padding:6px 9px;border:1px solid color-mix(in srgb,var(--teal) 34%,transparent);border-radius:6px;white-space:nowrap;
     background:color-mix(in srgb,var(--teal) 8%,transparent);font-variant-numeric:tabular-nums}
   .p-rs .job ul{list-style:none;margin:clamp(6px,1.1vh,10px) 0 0;padding:0;display:flex;flex-direction:column}
@@ -129,15 +129,15 @@ const CSS = String.raw`
   .p-rs .job li::before{content:"";position:absolute;left:1px;top:calc(clamp(4px,.8vh,7px) + .55em);width:6px;height:6px;border-radius:1px;background:var(--teal)}
 
   .p-rs .side{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px);padding-top:clamp(8px,1.4vh,14px);border-top:1px solid var(--rule)}
-  .p-rs .side h3{display:flex;justify-content:space-between;font:700 8.5px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .p-rs .side h3{display:flex;justify-content:space-between;font:700 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
   .p-rs .side h3 b{color:var(--teal-ink);font-variant-numeric:tabular-nums}
   .p-rs .chips{display:flex;flex-wrap:wrap;gap:4px;align-content:flex-start}
-  .p-rs .chips span{font:600 9.5px/1 var(--font-mono);color:var(--ink);background:color-mix(in srgb,var(--teal) 7%,transparent);
+  .p-rs .chips span{font:600 11px/1 var(--font-mono);color:var(--ink);background:color-mix(in srgb,var(--teal) 7%,transparent);
     border:1px solid color-mix(in srgb,var(--teal) 26%,transparent);border-radius:4px;padding:5px 7px}
   .p-rs .projs{display:flex;flex-direction:column;gap:8px}
   .p-rs .proj{padding-left:10px;border-left:2px solid color-mix(in srgb,var(--teal) 50%,transparent)}
   .p-rs .proj .pt{font:600 12.5px/1.15 var(--font-display);color:var(--ink)}
-  .p-rs .proj .pd{font:500 10.5px/1.4 var(--font-mono);color:var(--muted);margin-top:3px}
+  .p-rs .proj .pd{font:500 11px/1.4 var(--font-mono);color:var(--muted);margin-top:3px}
 
   .p-rs .rtabs{display:none}
 
@@ -148,10 +148,10 @@ const CSS = String.raw`
     .p-rs .rs-big br{display:none}
     .p-rs .rs-lede{font-size:11px;margin-top:5px;max-width:none}
     .p-rs .rs-cta{margin-top:8px}
-    .p-rs .rs-dl{padding:6px 6px 6px 12px;font-size:9.5px}
+    .p-rs .rs-dl{padding:6px 6px 6px 12px;font-size:11px}
     .p-rs .rs-dl .circ{width:24px;height:24px}
     .p-rs .rtabs{grid-area:tabs;display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
-    .p-rs .rtab{padding:7px 6px;font:600 9.5px/1.15 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;text-align:center;
+    .p-rs .rtab{padding:7px 6px;font:600 11px/1.15 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;text-align:center;
       border-radius:20px;border:1px solid var(--rule);background:transparent;color:var(--muted);cursor:pointer}
     .p-rs .rtab.on{color:var(--accent-ink);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
     .p-rs .rs-edu{grid-area:sheet;justify-content:flex-start;display:none}
