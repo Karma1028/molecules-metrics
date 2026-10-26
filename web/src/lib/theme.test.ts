@@ -39,3 +39,15 @@ describe("per-world theme (C1)", () => {
     expect(initialTheme("analyst")).toBe("dark")
   })
 })
+
+describe("rememberTheme (landing → world hand-off)", () => {
+  it("stores the choice under the world's own key so entering that world keeps it", async () => {
+    const { rememberTheme } = await import("./theme")
+    rememberTheme("artist", "dark")
+    expect(initialTheme("artist")).toBe("dark")
+    expect(initialTheme("analyst")).toBe("dark")
+    rememberTheme("analyst", "light")
+    expect(initialTheme("analyst")).toBe("light")
+    expect(initialTheme("artist")).toBe("dark")
+  })
+})

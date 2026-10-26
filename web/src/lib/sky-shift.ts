@@ -47,7 +47,10 @@ function disc(kind: "sun" | "moon"): HTMLElement {
 }
 
 export function skyShift({ toDark, reduce, flip }: SkyOpts): void {
-  if (reduce || typeof document === "undefined" || !document.body.animate || running) {
+  // a tap while the sky is still running is dropped: flipping early desynced the
+  // overlay from the page, so a double-tap landed on the wrong theme
+  if (running) return
+  if (reduce || typeof document === "undefined" || !document.body.animate) {
     flip()
     return
   }
