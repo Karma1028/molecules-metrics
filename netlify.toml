@@ -24,6 +24,11 @@
   to = "/.netlify/functions/music-search"
   status = 200
 
+[[redirects]]
+  from = "/api/spotify/stats"
+  to = "/.netlify/functions/spotify-stats"
+  status = 200
+
 # Live API → serverless functions (same public path the dev proxy uses).
 [[redirects]]
   from = "/api/*"

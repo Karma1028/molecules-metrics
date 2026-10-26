@@ -106,10 +106,10 @@ const CSS = String.raw`
     transition:opacity .25s var(--ease)}
   .p-an-toc .index:hover .row:not(:hover),.p-an-toc .index:focus-within .row:not(:focus-visible){opacity:.38}
   .p-an-toc .row-num{font:700 11px/1 var(--font-mono);color:var(--teal);letter-spacing:.08em;align-self:center}
-  .p-an-toc .row-main{min-width:0;display:flex;align-items:baseline;gap:clamp(10px,1.6vw,22px)}
+  .p-an-toc .row-main{min-width:0;display:flex;align-items:center;gap:clamp(10px,1.6vw,22px)}
   .p-an-toc .row-title{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,min(4.2vw,6.2vh),64px);line-height:1;letter-spacing:-.035em;white-space:nowrap;
     transition:transform .35s var(--ease),color .25s var(--ease)}
-  .p-an-toc .row-gloss{font:500 11.5px/1.3 var(--font-mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;
+  .p-an-toc .row-gloss{font:500 11.5px/1.3 var(--font-mono);color:var(--muted);white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-width:0;max-width:36ch;
     opacity:.75;transition:opacity .25s var(--ease),transform .3s var(--ease),color .25s var(--ease)}
   .p-an-toc .row-end{display:flex;align-items:center;gap:12px}
   .p-an-toc .row-state{font:600 8.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:6px}
