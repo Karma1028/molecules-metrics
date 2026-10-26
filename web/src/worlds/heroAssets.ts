@@ -12,13 +12,15 @@ export const HERO_STYLE = String.raw`
     --blau:#004D98; --grana:#A50044;
     --shadow:0 1px 1px rgba(60,40,15,.08), 0 18px 34px -12px rgba(80,55,25,.32);
     --accent:var(--orange); --ease:cubic-bezier(.22,1,.36,1); --spring:cubic-bezier(.34,1.56,.64,1);
+    --accent-ink:#8a3d1c; --orange-ink:#8a3d1c; --teal-ink:#0f6a64;
   }
   :root[data-theme="dark"]{
     --paper:#1C1813; --paper2:#15110D; --card:#2A231B; --ink:#EFE7DA; --muted:#A39580;
     --orange:#FF8A4C; --pen:#8FB3D6; --teal:#44C0BC; --grid:rgba(255,235,200,.055);
+    --accent-ink:#FF8A4C; --orange-ink:#FF8A4C; --teal-ink:#44C0BC;
     --shadow:0 1px 1px rgba(0,0,0,.3), 0 20px 40px -12px rgba(0,0,0,.7);
   }
-  :root[data-mode="analyst"]{--accent:var(--pen)}
+  :root[data-mode="analyst"]{--accent:var(--pen); --accent-ink:var(--pen)}
   html[data-hero],html[data-hero] body{height:100%}
   html[data-hero] body{background:var(--paper); color:var(--ink); font-family:"Inter",system-ui,sans-serif; overflow:hidden;
     -webkit-font-smoothing:antialiased; transition:background .5s,color .5s}
@@ -58,18 +60,18 @@ export const HERO_STYLE = String.raw`
 
   .hero-root .top{position:fixed; z-index:30; inset:0 0 auto 0; display:flex; justify-content:space-between; align-items:center;
     padding:22px clamp(22px,5vw,64px); font:500 11px/1 "JetBrains Mono",monospace; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
-  .hero-root .top b{color:var(--accent); transition:color .5s}
+  .hero-root .top b{color:var(--accent-ink); transition:color .5s}
   .hero-root .top .right{margin-right:58px}
 
   .hero-root .stage{position:fixed; inset:0; z-index:5}
   .hero-root .lead{position:absolute; z-index:8; left:clamp(22px,5vw,64px); top:50%; translate:0 -46%; width:min(40vw,520px)}
-  .hero-root .issue{font:500 11.5px/1 "JetBrains Mono",monospace; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:18px; transition:color .5s; display:flex; gap:10px; align-items:center}
+  .hero-root .issue{font:500 11.5px/1 "JetBrains Mono",monospace; letter-spacing:.22em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:18px; transition:color .5s; display:flex; gap:10px; align-items:center}
   .hero-root .issue .live{width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .hero-root h1{font-family:"Fraunces",serif; font-weight:900; font-size:min(7vw,12.4vh,112px); line-height:.9; letter-spacing:-.02em}
   .hero-root h1 .ln{display:block; overflow:hidden; padding-bottom:.06em; margin-bottom:-.06em}
   .hero-root h1 .ln>span{display:inline-block; animation:rise 1s var(--ease) both; animation-delay:calc(.15s + var(--i)*.09s)}
   .hero-root h1 em{font-style:italic; font-weight:600}
-  .hero-root h1 .hand{font-family:"Caveat",cursive; font-weight:700; color:var(--accent); font-size:1.2em; line-height:.7; transition:color .5s}
+  .hero-root h1 .hand{font-family:"Caveat",cursive; font-weight:700; color:var(--accent-ink); font-size:1.2em; line-height:.7; transition:color .5s}
   .hero-root .sub{font-size:clamp(14px,1.1vw,16px); color:var(--muted); line-height:1.6; max-width:430px; margin:22px 0 24px; min-height:76px}
   .hero-root .sub b{color:var(--ink); font-weight:600}
   .hero-root .sub .s{display:none} :root[data-mode="artist"] .hero-root .sub .s.artist, :root[data-mode="analyst"] .hero-root .sub .s.analyst{display:inline; animation:fadein .5s var(--ease)}
@@ -86,12 +88,12 @@ export const HERO_STYLE = String.raw`
   :root[data-theme="dark"][data-mode="analyst"] .hero-root .opt-analyst{color:#14202c}
   .hero-root .switch-row{display:flex; align-items:center; gap:14px; margin:14px 0 8px}
   .hero-root .hint{display:inline-block; font:600 18px/1 "Caveat",cursive; color:var(--muted); rotate:-4deg}
-  .hero-root .hint b{color:var(--accent); transition:color .5s}
+  .hero-root .hint b{color:var(--accent-ink); transition:color .5s}
   .hero-root .thesis-line{font:400 12px/1.45 "Fraunces",serif; font-style:italic; color:var(--muted); max-width:48ch; margin:0 0 14px}
-  .hero-root .thesis-line .thread{color:var(--accent); font-style:normal; font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; display:inline-block; margin-left:6px; font-weight:600}
+  .hero-root .thesis-line .thread{color:var(--accent-ink); font-style:normal; font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; display:inline-block; margin-left:6px; font-weight:600}
   .hero-root .elsewhere{margin-top:20px; font:500 10.5px/1.9 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   .hero-root .elsewhere a{color:var(--ink); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,transparent); margin-right:14px; transition:color .3s}
-  .hero-root .elsewhere a:hover{color:var(--accent)}
+  .hero-root .elsewhere a:hover{color:var(--accent-ink)}
   .hero-root .elsewhere a[hidden]{display:none}
 
   .hero-root .portrait{position:absolute; z-index:6; right:clamp(24px,4vw,64px); top:76px; bottom:-3vh; width:min(46vw,700px)}
@@ -231,13 +233,13 @@ export const HERO_STYLE = String.raw`
   .hero-root .scrollcue:hover,.hero-root .scrollcue:focus-visible{border-color:var(--accent); color:var(--ink)}
   .hero-root .scrollcue:hover i,.hero-root .scrollcue:focus-visible i{transform:translateX(4px)}
 
-  .hero-root .k .ic{width:13px; height:13px; color:var(--accent)}
-  .hero-root .spot .k .ic{color:var(--orange)}
+  .hero-root .k .ic{width:13px; height:13px; color:var(--accent-ink)}
+  .hero-root .spot .k .ic{color:var(--orange-ink)}
   .hero-root .mood-ic{width:22px; height:22px; display:block; margin:0 auto 4px; color:#1d1712}
   .hero-root .pola .cap .pn{display:inline-flex; gap:4px; align-items:center}
   .hero-root .pola .cap .ic{width:12px; height:12px; color:var(--muted)}
   .hero-root .note .k .ic{width:13px; height:13px; color:var(--pen)}
-  .hero-root .elsewhere a .ic,.hero-root .elsewhere .ic{width:11px;height:11px;color:var(--accent)}
+  .hero-root .elsewhere a .ic,.hero-root .elsewhere .ic{width:11px;height:11px;color:var(--accent-ink)}
 
   .hero-root h1{text-wrap:balance}
   .hero-root .note h3{text-wrap:pretty}
@@ -286,8 +288,8 @@ export const HERO_STYLE = String.raw`
   @keyframes flow{to{stroke-dashoffset:-16}}
 
   .hero-root .scribble{position:absolute; left:-30px; top:4%; z-index:4; width:116px; --r:-6deg; --d:.8; rotate:var(--r);
-    font:600 17px/1.04 "Caveat",cursive; color:var(--accent); text-align:center; pointer-events:none}
-  .hero-root .scribble svg{width:52px; height:30px; display:block; margin:3px auto 0; color:var(--accent); stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+    font:600 17px/1.04 "Caveat",cursive; color:var(--accent-ink); text-align:center; pointer-events:none}
+  .hero-root .scribble svg{width:52px; height:30px; display:block; margin:3px auto 0; color:var(--accent-ink); stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
   :root[data-mode="analyst"] .hero-root .scribble{opacity:0; transition:opacity .2s}
   .hero-root .scribble path{stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset .8s var(--ease) .5s}
   :root[data-mode="artist"] .hero-root .set.in .scribble path{stroke-dashoffset:0}

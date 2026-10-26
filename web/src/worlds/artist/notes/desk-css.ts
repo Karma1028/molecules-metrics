@@ -46,17 +46,17 @@ export const DESK_CSS = String.raw`
 
   /* content */
   .p-nt .lf-top{display:flex;align-items:center;gap:10px;min-height:30px}
-  .p-nt .lf-ic{width:30px;height:30px;flex:none;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+  .p-nt .lf-ic{width:30px;height:30px;flex:none;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-ink)}
   .p-nt .lf-ic .ic{width:15px;height:15px}
-  .p-nt .lf-route{flex:1;min-width:0;font:500 clamp(14px,1.15vw,17px)/1 var(--font-hand);color:var(--accent);white-space:nowrap;rotate:-2deg}
+  .p-nt .lf-route{flex:1;min-width:0;font:500 clamp(14px,1.15vw,17px)/1 var(--font-hand);color:var(--accent-ink);white-space:nowrap;rotate:-2deg}
   .p-nt .lf-no{position:relative;flex:none;font:600 10px/1 var(--font-mono);letter-spacing:.16em;color:var(--muted);padding:6px 8px}
-  .p-nt .lf-no svg{position:absolute;inset:-2px -4px;width:calc(100% + 8px);height:calc(100% + 4px);overflow:visible;color:var(--accent);pointer-events:none}
-  .p-nt .lf-count{position:absolute;right:-4px;top:-14px;font:500 15px/1 var(--font-hand);color:var(--accent);letter-spacing:0;rotate:8deg}
+  .p-nt .lf-no svg{position:absolute;inset:-2px -4px;width:calc(100% + 8px);height:calc(100% + 4px);overflow:visible;color:var(--accent-ink);pointer-events:none}
+  .p-nt .lf-count{position:absolute;right:-4px;top:-14px;font:500 15px/1 var(--font-hand);color:var(--accent-ink);letter-spacing:0;rotate:8deg}
   .p-nt .lf-title{font-family:var(--font-display);font-weight:700;font-size:clamp(19px,2vw,30px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
   .p-nt .lf-gloss{font:400 clamp(12.5px,1.05vw,15px)/1.55 var(--font-body);color:var(--muted);margin:0;text-wrap:pretty}
   .p-nt .mk{color:var(--ink);padding-bottom:1px;-webkit-box-decoration-break:clone;box-decoration-break:clone;
     background:linear-gradient(color-mix(in srgb,var(--accent) 85%,transparent),color-mix(in srgb,var(--accent) 85%,transparent)) no-repeat 0 100%/0% 1.5px}
-  .p-nt .lf-read{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-family:var(--font-hand);font-size:clamp(16px,1.3vw,19px);color:var(--accent)}
+  .p-nt .lf-read{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-family:var(--font-hand);font-size:clamp(16px,1.3vw,19px);color:var(--accent-ink)}
   .p-nt .lf-read .ic{width:12px;height:12px;transition:transform .25s var(--ease)}
   .p-nt .leaf.is-on .lf-read .ic{transform:translateX(4px)}
 

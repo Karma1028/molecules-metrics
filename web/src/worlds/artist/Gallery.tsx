@@ -13,7 +13,7 @@ import { TwinDoor } from "../../components/TwinDoor"
 
 
 const CSS = String.raw`
-  .p-gl .plot-toggle{font:600 9px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:none;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:999px;padding:5px 10px;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease)}
+  .p-gl .plot-toggle{font:600 9px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink);background:none;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:999px;padding:5px 10px;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease)}
   .p-gl .plot-toggle:hover,.p-gl .plot-toggle[aria-pressed="true"]{background:var(--accent);color:#fff}
   .p-gl .plot-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .p-gl .cells{transition:opacity .35s var(--ease)}
@@ -36,10 +36,10 @@ const CSS = String.raw`
   /* masthead — compact editorial, matches the field-notebook system */
   .p-gl .gl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;
     padding-bottom:clamp(6px,1.1vh,12px);margin-bottom:clamp(8px,1.4vh,16px);border-bottom:1px dashed color-mix(in srgb,var(--accent) 40%,transparent)}
-  .p-gl .gl-kick{display:inline-flex;align-items:center;gap:9px;font:600 10px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .p-gl .gl-kick{display:inline-flex;align-items:center;gap:9px;font:600 10px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent-ink)}
   .p-gl .gl-kick .ic{width:14px;height:14px}
   .p-gl .gl-title{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3.6vw,44px);line-height:.95;letter-spacing:-.025em;color:var(--ink);margin:6px 0 3px}
-  .p-gl .gl-title em{font-style:italic;font-weight:500;color:var(--accent)}
+  .p-gl .gl-title em{font-style:italic;font-weight:500;color:var(--accent-ink)}
   .p-gl .gl-lede{font-size:clamp(11.5px,1vw,14px);color:var(--muted);max-width:52ch;text-wrap:pretty}
   .p-gl .gl-lede b{color:var(--ink);font-weight:600}
   .p-gl .gl-src{display:flex;flex-direction:column;gap:5px;align-items:flex-end;text-align:right;white-space:nowrap}
@@ -153,13 +153,13 @@ const CSS = String.raw`
   .p-gl-lb .lb-meta{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;max-width:72ch}
   .p-gl-lb .lb-nm{display:flex;align-items:baseline;gap:14px}
   .p-gl-lb .lb-nm .nm{font-family:var(--font-display);font-weight:700;font-size:clamp(18px,2.4vw,30px);line-height:1;color:#f6efe4}
-  .p-gl-lb .lb-nm .no{font:600 11px/1 var(--font-mono);letter-spacing:.16em;color:var(--accent)}
+  .p-gl-lb .lb-nm .no{font:600 11px/1 var(--font-mono);letter-spacing:.16em;color:var(--accent-ink)}
   .p-gl-lb .lb-exif{display:flex;flex-wrap:wrap;justify-content:center;font:500 10px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(246,239,228,.72)}
   .p-gl-lb .lb-exif .ex{padding:0 11px;border-right:1px solid rgba(246,239,228,.28)}
   .p-gl-lb .lb-exif .ex:last-child{border-right:0}
 
   /* corner motif + controls */
-  .p-gl-lb .lb-alpona{position:fixed;width:clamp(40px,6vw,72px);height:clamp(40px,6vw,72px);color:var(--accent);opacity:.45;pointer-events:none;z-index:1}
+  .p-gl-lb .lb-alpona{position:fixed;width:clamp(40px,6vw,72px);height:clamp(40px,6vw,72px);color:var(--accent-ink);opacity:.45;pointer-events:none;z-index:1}
   .p-gl-lb .lb-alpona.tl{top:clamp(14px,3vh,30px);left:clamp(14px,3vw,30px)}
   .p-gl-lb .lb-alpona.br{bottom:clamp(14px,3vh,30px);right:clamp(14px,3vw,30px);transform:rotate(180deg)}
   .p-gl-lb .lb-btn{position:fixed;z-index:4;width:42px;height:42px;border-radius:50%;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer;

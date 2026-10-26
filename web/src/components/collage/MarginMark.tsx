@@ -31,7 +31,7 @@ export function MarginMark({
         width: 128,
         rotate: `${rotate}deg`,
         font: '600 17px/1.05 "Caveat", cursive',
-        color: "var(--accent)",
+        color: "var(--accent-ink)",
         textAlign: "center",
         pointerEvents: "none",
       }}
@@ -40,7 +40,7 @@ export function MarginMark({
       <svg
         viewBox="0 0 52 30"
         aria-hidden="true"
-        style={{ width: 52, height: 30, display: "block", margin: "3px auto 0", color: "var(--accent)" }}
+        style={{ width: 52, height: 30, display: "block", margin: "3px auto 0", color: "var(--accent-ink)" }}
       >
         <motion.path
           d={d}

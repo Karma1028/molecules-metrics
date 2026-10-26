@@ -36,13 +36,13 @@ const CSS = String.raw`
   .p-jn .jn-arc{display:flex;flex-direction:column;gap:4px;align-items:flex-end;text-align:right;white-space:nowrap}
   .p-jn .jn-arc .flow{font:600 10px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
     display:inline-flex;align-items:center;gap:8px}
-  .p-jn .jn-arc .flow b{color:var(--ink)} .p-jn .jn-arc .flow .a{color:var(--accent)}
-  .p-jn .jn-arc .flow .ic{width:12px;height:12px;color:var(--accent)}
+  .p-jn .jn-arc .flow b{color:var(--ink)} .p-jn .jn-arc .flow .a{color:var(--accent-ink)}
+  .p-jn .jn-arc .flow .ic{width:12px;height:12px;color:var(--accent-ink)}
 
   .p-jn .jgrid{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,1fr);
     grid-template-rows:minmax(0,1fr) auto;gap:clamp(10px,1.6vh,16px) clamp(14px,2vw,28px)}
   .p-jn .jscrub{grid-column:1 / -1}
-  .p-jn .pen{color:var(--pen)} .p-jn .teal{color:var(--teal)} .p-jn .orange{color:var(--orange)}
+  .p-jn .pen{color:var(--pen)} .p-jn .teal{color:var(--teal-ink)} .p-jn .orange{color:var(--orange-ink)}
 
   /* the plot: a lat/long frame, a route that draws itself, pins you can press */
   .p-jn .jmap{position:relative;min-height:0;border:1px solid var(--rule);border-radius:12px;background:var(--card);
@@ -74,7 +74,7 @@ const CSS = String.raw`
   .p-jn .jmap.focus .pin:not(.on) text{opacity:0}
   .p-jn .overview{position:absolute;top:10px;right:10px;background:var(--card);border:1px solid var(--rule);border-radius:16px;
     padding:5px 10px;font:600 9.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer}
-  .p-jn .overview:hover{color:var(--accent);border-color:var(--accent)}
+  .p-jn .overview:hover{color:var(--accent-ink);border-color:var(--accent)}
   .p-jn .map-cap{position:absolute;left:14px;bottom:10px;font:500 10px/1 var(--font-mono);letter-spacing:.14em;
     text-transform:uppercase;color:var(--muted)}
 
