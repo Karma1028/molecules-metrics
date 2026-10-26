@@ -88,8 +88,21 @@ export function Mascot() {
     const measure = () => {
       w = el.getBoundingClientRect().width
       limit = Math.max(0, window.innerWidth - w - 16)
+      // walk on the footer's top edge instead of over its text
+      const foot = document.querySelector("footer.foot")
+      if (foot) {
+        const ground = window.innerHeight - foot.getBoundingClientRect().top
+        el.style.bottom = `${Math.max(0, ground) + 1}px`
+        layer.style.bottom = `${Math.max(0, ground) + 2}px`
+      }
     }
+    measure()
     window.addEventListener("resize", measure, { passive: true })
+    // layout settles after fonts and images; re-measure when the page or footer changes size
+    const ro = typeof ResizeObserver === "function" ? new ResizeObserver(measure) : null
+    ro?.observe(document.body)
+    const foot = document.querySelector("footer.foot")
+    if (foot) ro?.observe(foot)
     const width = () => w
     const maxX = () => limit
     let x = 16
@@ -172,6 +185,7 @@ export function Mascot() {
     return () => {
       runTo.current = null
       window.removeEventListener("resize", measure)
+      ro?.disconnect()
       cancelAnimationFrame(raf)
     }
   }, [reduce])
