@@ -37,11 +37,17 @@ const mount = () =>
 describe("NotesPanel", () => {
   it("lists the Medium mirror under Writing with an external link and a Medium badge", () => {
     mount()
+    fireEvent.click(screen.getByRole("tab", { name: /Writing/ }))
     const link = screen.getByRole("link", { name: /A Medium essay/ })
     expect(link.getAttribute("href")).toBe("https://medium.com/@x/essay?source=rss")
     expect(link.getAttribute("target")).toBe("_blank")
     expect(link.getAttribute("rel")).toContain("noopener")
     expect(screen.getAllByText("Medium").length).toBeGreaterThan(0)
+  })
+
+  it("opens on Papers when Writing has fewer than three posts", () => {
+    mount()
+    expect(screen.getByRole("tab", { name: /Papers/ }).getAttribute("aria-selected")).toBe("true")
   })
 
   it("shows a count on every tab", () => {

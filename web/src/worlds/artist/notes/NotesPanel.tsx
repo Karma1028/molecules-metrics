@@ -85,7 +85,7 @@ export function NotesPanel({ reduce }: { reduce: boolean }) {
   const md = useMedium()
   const feed = useFeed()
   const per = useRows()
-  const [tab, setTab] = useState<Tab>("writing")
+  const [picked, setPicked] = useState<Tab | null>(null)
   const [tag, setTag] = useState("all")
   const [page, setPage] = useState(0)
 
@@ -106,11 +106,13 @@ export function NotesPanel({ reduce }: { reduce: boolean }) {
     [mediumPosts, feed.data.papers, feed.data.news],
   )
 
+  // Writing is mostly empty (few posts), so open on the tab with real content until the reader picks one
+  const tab: Tab = picked ?? (all.writing.length < 3 && all.papers.length ? "papers" : "writing")
   const rows = filterByTag(all[tab], tag)
   const view = paginate(rows, page, per)
   const tags = useMemo(() => [...new Set(all[tab].flatMap((r) => r.tags))].filter((t) => labels[t] || tab === "writing"), [all, tab, labels])
 
-  const go = (t: Tab) => { setTab(t); setTag("all"); setPage(0) }
+  const go = (t: Tab) => { setPicked(t); setTag("all"); setPage(0) }
   const pick = (t: string) => { setTag(t); setPage(0) }
   const step = (d: number) => setPage(Math.min(view.pages - 1, Math.max(0, view.page + d)))
 
