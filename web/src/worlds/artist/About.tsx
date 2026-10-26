@@ -32,7 +32,7 @@ const CSS = String.raw`
   .p-ab .ab-copy{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,22px)}
   .p-ab .ab-kick{display:flex;align-items:center;gap:10px;font:600 10px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
   .p-ab .ab-kick b{color:var(--accent);font-weight:600}
-  .p-ab .ab-big{font-family:var(--font-display);font-weight:900;font-size:clamp(44px,min(4.9vw,8.6vh),84px);line-height:.9;letter-spacing:-.04em;color:var(--ink);margin:clamp(8px,1.4vh,16px) 0 0}
+  .p-ab .ab-big{font-family:var(--font-display);font-weight:900;font-size:clamp(40px,min(4.9vw,7.2vh),84px);line-height:.9;letter-spacing:-.04em;color:var(--ink);margin:clamp(8px,1.4vh,16px) 0 0}
   .p-ab .ab-big em{font-style:italic;font-weight:400;color:var(--accent)}
   .p-ab .ab-hand{font-family:var(--font-hand);font-size:clamp(17px,1.5vw,22px);color:var(--accent);rotate:-2deg;display:inline-block;margin:6px 0 0 6px}
   .p-ab .ab-door{margin-top:clamp(6px,1.2vh,12px)}
