@@ -88,7 +88,7 @@ export default function Kickoff() {
   return (
     <main className="ko">
       <header>
-        <Link to="/">leave the pitch</Link>
+        <Link to="/" className="tap">leave the pitch</Link>
         <b aria-live="off">{String(left).padStart(2, "0")}s</b>
       </header>
       <p className="hint">Pull the ball back, let go. Score in a goal to go there.</p>
