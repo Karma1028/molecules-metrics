@@ -4,7 +4,9 @@
    Structural only: reset, backdrop, nav shell, page scaffold, reveals, footer.
    ===================================================================== */
 :root{
-  --ease:cubic-bezier(.22,1,.36,1); --spring:cubic-bezier(.34,1.56,.64,1);
+  --ease:cubic-bezier(.22,1,.36,1);
+  /* --spring was an overshoot (bounce) curve; it now aliases ease-out expo (motion-tokens easing.expoOut) */
+  --ease-expo:cubic-bezier(.16,1,.3,1); --spring:var(--ease-expo);
   /* text-colour tokens: default to the fill tokens; worlds override with AA-safe inks */
   --accent-ink:var(--accent); --orange-ink:var(--orange); --teal-ink:var(--teal);
   --nav-h:62px; --rule:color-mix(in srgb,var(--ink) 12%,transparent);
@@ -204,11 +206,13 @@ section.band{padding:clamp(40px,7vh,88px) 0;border-top:1px solid var(--rule)}
   display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-family:var(--font-mono,"JetBrains Mono",ui-monospace,monospace);
   font-size:11px;letter-spacing:.08em;color:var(--muted);pointer-events:none}
 .deck-rail ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;align-items:flex-end}
-.deck-rail a{position:relative;display:block;width:14px;height:2px;border-radius:2px;background:color-mix(in srgb,var(--ink) 28%,transparent);
-  pointer-events:auto;transition:width .35s var(--ease,ease),background-color .35s}
+/* the bar is ::after and scales (transform) instead of animating width: no layout per frame */
+.deck-rail a{position:relative;display:block;width:30px;height:2px;border-radius:2px;pointer-events:auto}
 .deck-rail a::before{content:"";position:absolute;inset:-6px -4px}
-.deck-rail a:hover,.deck-rail a:focus-visible{width:22px;background:var(--ink)}
-.deck-rail a.on{width:30px;background:var(--accent)}
+.deck-rail a::after{content:"";position:absolute;inset:0;border-radius:2px;background:color-mix(in srgb,var(--ink) 28%,transparent);
+  transform:scaleX(.467);transform-origin:100% 50%;transition:transform .35s var(--ease,ease),background-color .35s}
+.deck-rail a:hover::after,.deck-rail a:focus-visible::after{transform:scaleX(.733);background:var(--ink)}
+.deck-rail a.on::after{transform:scaleX(1);background:var(--accent)}
 .deck-tip{position:absolute;right:calc(100% + 10px);top:50%;transform:translate(6px,-50%);opacity:0;white-space:nowrap;
   color:var(--ink);transition:opacity .2s,transform .2s;pointer-events:none}
 .deck-rail a:hover .deck-tip,.deck-rail a:focus-visible .deck-tip{opacity:1;transform:translate(0,-50%)}

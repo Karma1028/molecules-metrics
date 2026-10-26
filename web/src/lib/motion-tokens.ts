@@ -14,6 +14,10 @@ export const motionTokens = {
   easing: {
     // cubic-bezier arrays usable by `motion`
     smooth: [0.22, 1, 0.36, 1] as const, // easeOutExpo-ish
+    /** ease-out expo: entrances, pops and the old `--spring` slot (no overshoot) */
+    expoOut: [0.16, 1, 0.3, 1] as const,
+    /** ease-out quart: small settles and hover lifts */
+    quartOut: [0.25, 1, 0.5, 1] as const,
     inOut: [0.65, 0, 0.35, 1] as const,
     out: [0, 0, 0.2, 1] as const,
     wipe: [0.76, 0, 0.24, 1] as const, // world-switch wipe: hard in, hard out
