@@ -11,7 +11,7 @@ export const HERO_STYLE = String.raw`
     --orange:#E4631F; --pen:#2B4C6F; --teal:#2C9C98; --grid:rgba(90,70,45,.08);
     --blau:#004D98; --grana:#A50044;
     --shadow:0 1px 1px rgba(60,40,15,.08), 0 18px 34px -12px rgba(80,55,25,.32);
-    --accent:var(--orange); --ease:cubic-bezier(.22,1,.36,1); --spring:cubic-bezier(.34,1.56,.64,1);
+    --accent:var(--orange); --ease:cubic-bezier(.22,1,.36,1); --spring:cubic-bezier(.16,1,.3,1);
     --accent-ink:#8a3d1c; --orange-ink:#8a3d1c; --teal-ink:#0f6a64;
   }
   :root[data-theme="dark"]{

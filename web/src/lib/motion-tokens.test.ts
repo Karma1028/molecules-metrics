@@ -19,6 +19,21 @@ describe('motionTokens', () => {
     expect(motionTokens.scale.pop).toBeGreaterThan(1)
   })
 
+  it('exposes ease-out expo and quart tokens for entrances', () => {
+    expect(motionTokens.easing.expoOut).toEqual([0.16, 1, 0.3, 1])
+    expect(motionTokens.easing.quartOut).toEqual([0.25, 1, 0.5, 1])
+  })
+
+  it('no easing overshoots or bounces (control points y stay in 0..1)', () => {
+    for (const [name, curve] of Object.entries(motionTokens.easing)) {
+      const [, y1, , y2] = curve
+      expect(y1, name).toBeGreaterThanOrEqual(0)
+      expect(y1, name).toBeLessThanOrEqual(1)
+      expect(y2, name).toBeGreaterThanOrEqual(0)
+      expect(y2, name).toBeLessThanOrEqual(1)
+    }
+  })
+
   it('springs use the spring type', () => {
     for (const s of Object.values(springs)) {
       expect(s.type).toBe('spring')
