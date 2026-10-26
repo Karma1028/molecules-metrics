@@ -4,6 +4,7 @@
 const BASE = "https://www.thesportsdb.com/api/v1/json/123/"
 const BARCA_ID = "133739"
 const LALIGA_ID = "4335"
+const TIMEOUT_MS = 8000 // upstream hang must not eat the whole function budget
 const FIELDS = ["strTimestamp", "strHomeTeam", "strAwayTeam", "intHomeScore", "intAwayScore", "strLeague", "intRound", "strStatus", "strVenue"]
 
 export const slim = (e) => (e ? Object.fromEntries(FIELDS.map((k) => [k, e[k] ?? null])) : null)
@@ -27,7 +28,7 @@ export function formFrom(results) {
 
 async function getJson(fetchFn, url) {
   try {
-    const r = await fetchFn(url)
+    const r = await fetchFn(url, { signal: AbortSignal.timeout(TIMEOUT_MS) })
     return r.ok ? await r.json() : null
   } catch {
     return null
@@ -68,7 +69,7 @@ export async function getFootball(fetchFn = fetch, now = new Date()) {
 
 export async function getNews(fetchFn = fetch) {
   try {
-    const r = await fetchFn("https://www.theguardian.com/football/rss")
+    const r = await fetchFn("https://www.theguardian.com/football/rss", { signal: AbortSignal.timeout(TIMEOUT_MS) })
     if (!r.ok) return { configured: true, items: [] }
     const xml = await r.text()
     const tag = (s, t) => (s.match(new RegExp(`<${t}>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?</${t}>`)) ?? [])[1]?.trim() ?? ""

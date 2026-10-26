@@ -21,6 +21,15 @@ export function initialTheme(world: World): Theme {
   return defaultTheme(world)
 }
 
+/** Persist a world's theme choice (used by the landing page so entering a world keeps it). */
+export function rememberTheme(world: World, theme: Theme): void {
+  try {
+    localStorage.setItem(themeKey(world), theme)
+  } catch {
+    /* storage blocked — the choice just won't persist */
+  }
+}
+
 /**
  * Drives <html> data-world / data-mode / data-theme and owns the eclipse
  * toggle. data-mode mirrors the world so the scoped world CSS applies.
