@@ -1,0 +1,20 @@
+{
+  "team": "FC Barcelona",
+  "competition": "La Liga",
+  "season": "2025-26",
+  "champions": true,
+  "played": 38,
+  "win": 31,
+  "draw": 1,
+  "loss": 6,
+  "points": 94,
+  "goals": 95,
+  "conceded": 36,
+  "gd": 59,
+  "xG": 99.67,
+  "xGA": 50.71,
+  "cleanSheets": 15,
+  "possession": 68.9,
+  "source": "computed from local FBref schedule + Understat match files (D:/football data-analysis)",
+  "note": "Previous completed season. Baked at build time; refresh after each season ends."
+}
