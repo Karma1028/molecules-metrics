@@ -159,6 +159,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .mood .w{font:700 19px/.92 "Caveat",cursive; max-width:78px; text-wrap:balance}
   .hero-root .mood .sig{font:500 7px/1.15 "JetBrains Mono",monospace; letter-spacing:.06em; text-transform:uppercase; margin-top:4px; opacity:.72; max-width:84px}
 
+  .hero-root a.obj{text-decoration:none; color:inherit}
   .hero-root .barca{left:-34px; bottom:calc(3vh + 7%); width:272px; --r:-3deg; --d:1.2; display:flex; background:var(--card); border-radius:6px; box-shadow:var(--shadow); color:var(--ink)}
   .hero-root .barca .stub{width:34px; flex:0 0 auto; border-radius:6px 0 0 6px; background:repeating-linear-gradient(90deg,var(--blau) 0 8.5px,var(--grana) 8.5px 17px);
     display:grid; place-items:center}

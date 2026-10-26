@@ -95,7 +95,7 @@ const HERO_BODY = String.raw`
         <div class="scribble" aria-hidden="true">every bit, live
           <svg viewBox="0 0 52 30"><path d="M3 6 C18 2 30 10 44 20"/><path d="M44 20 L35 19 M44 20 L42 11"/></svg>
         </div>
-        <a class="obj spot" id="spot" target="_blank" rel="noopener" data-depth="1.4">
+        <a class="obj spot" id="spot" href="/artist/sound" data-depth="1.4" aria-label="music room">
           <div class="k"><svg class="ic"><use href="#i-music"/></svg><span class="dot" id="np-dot"></span><span id="np-k">spotify &middot; checking&hellip;</span></div>
           <div class="row">
             <div class="art" id="np-art">&#9834;</div>
@@ -111,7 +111,7 @@ const HERO_BODY = String.raw`
           <div><svg class="ic mood-ic" id="mood-ic"><use href="#i-headphone"/></svg><div class="w" id="mood-w">&hellip;</div><div class="sig" id="mood-sig">reading signals</div></div>
         </div>
 
-        <div class="obj barca" id="barca" data-depth="1.1">
+        <a class="obj barca" id="barca" href="/artist/matchday" data-depth="1.1" aria-label="matchday room">
           <span class="tape"></span>
           <svg class="stamp" viewBox="0 0 42 42" aria-hidden="true">
             <circle class="ring" cx="21" cy="21" r="19"/><circle class="ring" cx="21" cy="21" r="15"/>
@@ -126,9 +126,9 @@ const HERO_BODY = String.raw`
             <div class="cd" id="fx-cd">&nbsp;</div>
             <div class="last"><span class="res" id="fx-res">&middot;</span><span id="fx-last">last result loading</span></div>
           </div>
-        </div>
+        </a>
 
-        <a class="obj pola" id="pola" href="https://www.instagram.com/_threads_of_karma_/" target="_blank" rel="noopener" data-depth="1.6" aria-label="my photographs, rotating">
+        <a class="obj pola" id="pola" href="/artist/gallery" data-depth="1.6" aria-label="my photographs, rotating">
           <span class="tape"></span>
           <div class="sprocket t"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <div class="win" id="win"><div class="shutter"></div></div>
@@ -573,7 +573,8 @@ function initHero(spa: (path: string) => void): () => void {
         setTxt("#np-t", "awaiting the token")
         setTxt("#np-a", "last-played feed wires in here")
         setTxt("#np-foot", "")
-        spot?.removeAttribute("href")
+        spot?.setAttribute("href", "/artist/sound")
+        spot?.removeAttribute("target")
         spot?.classList.remove("playing")
         return
       }
@@ -594,7 +595,10 @@ function initHero(spa: (path: string) => void): () => void {
         art.style.backgroundImage = `url(${d.art})`
         art.textContent = ""
       }
-      if (d.url && spot) spot.href = d.url
+      if (d.url && spot) {
+        spot.href = d.url
+        spot.target = "_blank"
+      }
       setTxt("#np-foot", d.isPlaying ? "on repeat, probably." : "")
     } catch {
       S.np = { state: "off" }
@@ -616,7 +620,7 @@ function initHero(spa: (path: string) => void): () => void {
     } catch {
       /* fall through */
     }
-    const base = "https://www.thesportsdb.com/api/v1/json/3/"
+    const base = "https://www.thesportsdb.com/api/v1/json/123/"
     const id = 133739
     const [l, n] = await Promise.all([
       fetch(base + "eventslast.php?id=" + id).then((r) => r.json()),
