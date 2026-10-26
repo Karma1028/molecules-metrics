@@ -7,7 +7,7 @@ import type { Mode } from "../lib/mode"
 // Every element sits at the origin and is placed by transform, so the morph
 // animates transform and opacity and nothing that triggers layout.
 
-const BOX = { w: 600, h: 360, pad: 56, base: 300 }
+const BOX = { w: 600, h: 300, pad: 56, base: 248 }
 
 export function Morph({ seasons, mode }: { seasons: readonly SeasonPoint[]; mode: Mode }) {
   const frames = useMemo(() => buildMorph(seasons, BOX), [seasons])
@@ -57,7 +57,7 @@ export function Morph({ seasons, mode }: { seasons: readonly SeasonPoint[]; mode
           )
         })}
       </svg>
-      <table className="sr-only">
+      <div className="sr-only"><table>
         <caption>Barcelona goals and xG by season, source: personal analytics file</caption>
         <thead>
           <tr>
@@ -75,7 +75,7 @@ export function Morph({ seasons, mode }: { seasons: readonly SeasonPoint[]; mode
             </tr>
           ))}
         </tbody>
-      </table>
+      </table></div>
       <span className="sr-only">Tallest season: {maxGoals} goals.</span>
     </figure>
   )

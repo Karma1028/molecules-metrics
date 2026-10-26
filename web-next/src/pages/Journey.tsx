@@ -1,6 +1,8 @@
 import type { MouseEvent } from "react"
 import { ANALYTICS_GENERATED, SOURCE_NOTE } from "../lib/barca"
 import { STATIONS, findGaps, monthIndex, type Gap, type Station } from "../lib/journey"
+import { ModeToggle } from "../components/ModeToggle"
+import type { Mode } from "../lib/mode"
 
 const GAPS = findGaps(STATIONS)
 
@@ -12,18 +14,25 @@ function gapAfter(station: Station): Gap | undefined {
 
 export function Journey({
   go,
+  mode,
+  onMode,
 }: {
   go: (to: string) => (e: MouseEvent<HTMLAnchorElement>) => void
+  mode: Mode
+  onMode: (m: Mode) => void
 }) {
   return (
     <div className="journey">
       <section className="container j-intro" aria-labelledby="j-title">
-        <a className="back" href="/" onClick={go("/")}>Back to the pitch</a>
-        <h1 id="j-title">Each station is a pass.</h1>
-        <p className="lede">
-          From Bankura to Goa, one pass at a time. The stretch in the middle is not on record yet, and
-          it stays blank rather than invented.
-        </p>
+        <div className="j-copy">
+          <a className="back" href="/" onClick={go("/")}>Back to the pitch</a>
+          <h1 id="j-title">Each station is a pass.</h1>
+          <p className="lede">
+            From Bankura to Goa, one pass at a time. The stretch in the middle is not on record yet, and
+            it stays blank rather than invented.
+          </p>
+          <ModeToggle mode={mode} onChange={onMode} />
+        </div>
         <img
           className="j-photo"
           src="/img/lake-800w.webp"

@@ -1,7 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react"
 import { Home } from "./pages/Home"
 import { Journey } from "./pages/Journey"
-import { ModeToggle } from "./components/ModeToggle"
 import { readStoredMode, writeStoredMode, type Mode } from "./lib/mode"
 
 // Two routes, no router dependency: the site is two pages and a toggle.
@@ -43,11 +42,14 @@ export function App() {
               Journey
             </a>
           </nav>
-          <ModeToggle mode={mode} onChange={setMode} />
         </div>
       </header>
       <main id="main">
-        {path === "/journey" ? <Journey go={go} /> : <Home go={go} mode={mode} />}
+        {path === "/journey" ? (
+          <Journey go={go} mode={mode} onMode={setMode} />
+        ) : (
+          <Home go={go} mode={mode} onMode={setMode} />
+        )}
       </main>
     </>
   )
