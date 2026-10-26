@@ -33,11 +33,11 @@
 .ps-panel:hover .ps-art::after,.ps-panel:focus-visible .ps-art::after{opacity:1}
 
 .ps-cap{display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center}
-.ps-num{font:600 10px/1 var(--font-mono);letter-spacing:.18em;color:var(--accent)}
+.ps-num{font:600 10px/1 var(--font-mono);letter-spacing:.18em;color:var(--accent-ink)}
 .ps-name{font-family:var(--font-display);font-weight:800;font-size:clamp(18px,2vw,26px);letter-spacing:-.02em;
   line-height:1;color:var(--ink);transition:color .3s}
 .ps-gloss{font-family:var(--font-hand);font-size:clamp(14px,1.3vw,17px);color:var(--muted);max-width:22ch}
-.ps-panel:hover .ps-name,.ps-panel:focus-visible .ps-name{color:var(--accent);font-style:italic}
+.ps-panel:hover .ps-name,.ps-panel:focus-visible .ps-name{color:var(--accent-ink);font-style:italic}
 .ps-panel:focus-visible .ps-cap{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
 
 /* how much scroll is left */

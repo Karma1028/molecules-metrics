@@ -85,7 +85,7 @@ export const SCRUB_CSS = String.raw`
     padding:8px 12px 6px;border:1px solid var(--rule);border-radius:12px;background:var(--card);box-shadow:var(--shadow-sm)}
   .p-jn .sc-btn{align-self:center;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:none;
     border:1px solid var(--rule);color:var(--ink);cursor:pointer}
-  .p-jn .sc-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+  .p-jn .sc-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent-ink)}
   .p-jn .sc-btn:disabled{opacity:.35;cursor:default}
   .p-jn .sc-btn .ic{width:12px;height:12px}
   .p-jn .sc-btn.prev .ic{transform:scaleX(-1)}
