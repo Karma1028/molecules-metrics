@@ -159,6 +159,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .mood .w{font:700 19px/.92 "Caveat",cursive; max-width:78px; text-wrap:balance}
   .hero-root .mood .sig{font:500 7px/1.15 "JetBrains Mono",monospace; letter-spacing:.06em; text-transform:uppercase; margin-top:4px; opacity:.72; max-width:84px}
 
+  .hero-root a.obj{text-decoration:none; color:inherit}
   .hero-root .barca{left:-34px; bottom:calc(3vh + 7%); width:272px; --r:-3deg; --d:1.2; display:flex; background:var(--card); border-radius:6px; box-shadow:var(--shadow); color:var(--ink)}
   .hero-root .barca .stub{width:34px; flex:0 0 auto; border-radius:6px 0 0 6px; background:repeating-linear-gradient(90deg,var(--blau) 0 8.5px,var(--grana) 8.5px 17px);
     display:grid; place-items:center}
@@ -350,7 +351,7 @@ export const HERO_STYLE = String.raw`
     html[data-hero], html[data-hero] body{height:100%!important; width:100%!important; overflow:hidden!important}
     .hero-root{width:100%; height:100%; overflow:hidden}
     .hero-root .stage{position:fixed; inset:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between;
-      padding:clamp(40px,7vh,50px) 16px 12px; box-sizing:border-box}
+      padding:clamp(40px,7vh,50px) 16px 64px; box-sizing:border-box}
     .hero-root .top{position:absolute; inset:0 0 auto 0; padding:10px 16px}
     .hero-root .top .right{display:none}
     .hero-root .eclipse{position:absolute; top:8px; right:12px}
@@ -373,16 +374,18 @@ export const HERO_STYLE = String.raw`
     .hero-root .figcap{bottom:6px; left:8px; font-size:8px}
     .hero-root .disc{display:none}
     .hero-root .set{position:absolute; inset:0; overflow:hidden}
-    .hero-root .obj{scale:.7; transform-origin:bottom right}
+    .hero-root .obj{--ps:.7; scale:var(--ps); transform-origin:bottom right}
+    .hero-root .set.in .obj{animation-name:slapP}
     .hero-root .spot{right:6px; bottom:6px; top:auto; left:auto; width:220px}
-    .hero-root .barca{left:6px; bottom:6px; top:auto; right:auto; width:150px; scale:.68; transform-origin:bottom left}
-    .hero-root .mood{left:6px; top:6px; width:72px; height:72px; scale:.7; transform-origin:top left}
-    .hero-root .pola{right:6px; top:6px; width:110px; scale:.65; transform-origin:top right}
+    .hero-root .barca{left:6px; bottom:6px; top:auto; right:auto; width:150px; --ps:.68; transform-origin:bottom left}
+    .hero-root .mood{left:6px; top:6px; width:72px; height:72px; --ps:.7; transform-origin:top left}
+    .hero-root .pola{right:6px; top:6px; width:110px; --ps:.65; transform-origin:top right}
     .hero-root .set.analyst .note{right:6px; bottom:6px; top:auto; left:auto; width:220px}
     .hero-root .leaders,.hero-root .pin,.hero-root .scribble{display:none}
     .hero-root .scrollcue{left:50%; translate:-50% 0; bottom:14px; padding:8px 10px 8px 14px; font-size:10px; letter-spacing:.12em; white-space:nowrap;
       background:var(--card); box-shadow:var(--shadow)}
     .hero-root .scrollcue i{width:20px; height:20px; font-size:11px}
   }
+  @keyframes slapP{0%{opacity:0; scale:calc(var(--ps,.7) * 1.35); rotate:calc(var(--r,0deg) + 14deg)}100%{opacity:1; scale:var(--ps,.7); rotate:var(--r,0deg)}}
   @media (prefers-reduced-motion:reduce){.hero-root *,.hero-root *::before,.hero-root *::after{animation:none!important; transition:none!important}}
 `
