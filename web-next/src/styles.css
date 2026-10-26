@@ -1,0 +1,547 @@
+/* Tokens. Day is Karma (chalk pitch, one terracotta-red signal). Night is
+   Tuhin (instrument dark, one teal signal). One accent per mode, no second. */
+:root {
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --size-body: 1.0625rem;
+  --size-small: 0.8125rem;
+  --size-h1: clamp(2.75rem, 7.4vw, 6.25rem);
+  --size-h2: clamp(1.5rem, 3vw, 2.25rem);
+  --size-metric: clamp(2rem, 4vw, 2.75rem);
+
+  --gutter: 16px;
+  --measure: 62ch;
+  --radius: 10px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --morph-ms: 900ms;
+}
+
+:root,
+:root[data-mode="day"] {
+  --ground: #eef3ea;
+  --surface: #f8fbf5;
+  --ink: #142016;
+  --muted: #3f4f43;
+  --line: rgba(20, 32, 22, 0.16);
+  --accent: #b8402a;
+  --accent-ink: #ffffff;
+  --pitch: #2f6b3f;
+}
+
+:root[data-mode="night"] {
+  --ground: #0c1215;
+  --surface: #131d22;
+  --ink: #e6eee9;
+  --muted: #a9bab2;
+  --line: rgba(230, 238, 233, 0.16);
+  --accent: #5fd3c2;
+  --accent-ink: #061012;
+  --pitch: #5fd3c2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode="day"]) {
+    color-scheme: dark;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: clip;
+  margin: 0;
+}
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: 1.5;
+  transition: background-color 600ms var(--ease), color 600ms var(--ease);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  line-height: 1.04;
+  margin: 0;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--size-h1);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: var(--size-h2);
+  margin-bottom: 24px;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  transition: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@media (min-width: 720px) {
+  :root {
+    --gutter: 40px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.skip:focus-visible {
+  top: 8px;
+}
+
+/* Navigation: wordmark, one page link, the day/night toggle. */
+.site-nav {
+  border-bottom: 1px solid var(--line);
+  background: var(--ground);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  flex-wrap: wrap;
+  padding-block: 8px;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  text-decoration: none;
+  margin-right: auto;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-nav nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 12px;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.site-nav nav a[aria-current="page"] {
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.mode-toggle {
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.mode-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  transition: background-color 400ms var(--ease), color 400ms var(--ease);
+}
+
+.mode-toggle button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.mt-word {
+  font-weight: 800;
+  font-size: var(--size-small);
+}
+
+.mt-who {
+  font-size: 0.75rem;
+}
+
+/* Home hero: copy and the morph side by side on desktop, stacked on phone. */
+.hero {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+  padding-block: 24px 32px;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 48px;
+    min-height: calc(100dvh - 60px);
+    padding-block: 32px;
+  }
+}
+
+.hero-copy {
+  display: grid;
+  gap: 16px;
+  align-content: center;
+  min-width: 0;
+}
+
+.hero-kicker {
+  margin: 0;
+  font-size: var(--size-small);
+  color: var(--muted);
+}
+
+.lede {
+  margin: 0;
+  max-width: var(--measure);
+  color: var(--muted);
+}
+
+.caption {
+  margin: 0;
+  min-height: 3em;
+  font-weight: 600;
+}
+
+.cta {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 300ms var(--ease);
+}
+
+.cta:hover {
+  transform: translateX(4px);
+}
+
+.cta-arrow {
+  font-size: 1.125rem;
+}
+
+.morph {
+  margin: 0;
+  width: 100%;
+}
+
+.morph svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 360;
+  overflow: visible;
+}
+
+.morph .pitch rect,
+.morph .pitch line,
+.morph .pitch circle {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2;
+  transition: opacity 700ms var(--ease);
+}
+
+.morph .route {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 4 6;
+}
+
+.morph .pitch {
+  transition: opacity 700ms var(--ease);
+}
+
+.morph .axis {
+  stroke: var(--line);
+  stroke-width: 2;
+  transition: opacity 700ms var(--ease);
+}
+
+/* The morph: every element is placed by transform, origin at 0,0 of the viewBox. */
+.morph .bar,
+.morph .tick,
+.morph .dot,
+.morph .label {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  transition: transform var(--morph-ms) var(--ease), opacity 700ms var(--ease);
+}
+
+.morph .bar {
+  fill: var(--accent);
+}
+
+.morph .tick {
+  fill: var(--ink);
+}
+
+.morph .dot {
+  fill: var(--accent);
+  stroke: var(--ground);
+  stroke-width: 2;
+}
+
+.morph .label {
+  fill: var(--ink);
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.source {
+  margin: 12px 0 0;
+  font-size: var(--size-small);
+  color: var(--muted);
+}
+
+/* Journey page. */
+.journey {
+  padding-bottom: 48px;
+}
+
+.j-intro {
+  display: grid;
+  gap: 20px;
+  padding-block: 24px 40px;
+}
+
+@media (min-width: 900px) {
+  .j-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    align-items: end;
+  }
+}
+
+.back {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.j-photo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px var(--line);
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+  min-width: 0;
+}
+
+.chain {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.pass {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: inset 0 0 0 1px var(--line);
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.pass-no,
+.pass-period,
+.pass-place,
+.pass-note {
+  margin: 0;
+  font-size: var(--size-small);
+  color: var(--muted);
+}
+
+.pass-metric {
+  margin: 8px 0 0;
+  font-family: var(--font-display);
+  font-size: var(--size-metric);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.pass h3 {
+  font-size: 1.25rem;
+  margin-top: 4px;
+}
+
+.gap {
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  color: var(--muted);
+}
+
+.gap p {
+  margin: 0;
+}
+
+.gap-range {
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.diagram-sec {
+  padding-top: 48px;
+}
+
+.flow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+@media (min-width: 900px) {
+  .flow {
+    grid-template-columns: 1.1fr 1fr 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+.flow-col {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: inset 0 0 0 1px var(--line);
+  min-width: 0;
+}
+
+.flow-end {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.flow-title {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+
+.flow-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--size-small);
+}
+
+.flow-sources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.flow-sources li {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  padding-inline: 8px;
+  border-radius: 6px;
+  background: var(--ground);
+  font-size: var(--size-small);
+  overflow-wrap: anywhere;
+}
+
+.flow-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border-left: 4px solid var(--accent);
+  background: var(--surface);
+  border-radius: 6px;
+  color: var(--ink);
+}
+
+.j-foot {
+  padding-top: 40px;
+  color: var(--muted);
+  font-size: var(--size-small);
+}
+
+/* Motion: the morph and colours settle instantly for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+
+  .cta:hover {
+    transform: none;
+  }
+}
