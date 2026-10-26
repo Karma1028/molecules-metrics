@@ -1,0 +1,48 @@
+{
+ "slug": "vana",
+ "url": "https://vana.org/",
+ "phases": {
+  "loaded": 332
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterNav": []
+ },
+ "transition": {
+  "href": "/use",
+  "kind": "in-document (SPA/Barba/swup)",
+  "clickAt": 9236,
+  "urlFrames": [
+   [
+    "/use",
+    9511
+   ],
+   [
+    "/use",
+    9762
+   ],
+   [
+    "/use",
+    10041
+   ],
+   [
+    "/use",
+    10303
+   ],
+   [
+    "/use",
+    10555
+   ],
+   [
+    "/use",
+    10810
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 0
+ }
+}

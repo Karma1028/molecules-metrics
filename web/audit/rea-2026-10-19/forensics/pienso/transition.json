@@ -1,0 +1,152 @@
+{
+ "slug": "pienso",
+ "url": "https://pienso.com/",
+ "phases": {
+  "loaded": 1542
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [
+   {
+    "type": "CSSAnimation",
+    "name": "cookieBannerSlideIn",
+    "target": "div",
+    "duration": 250,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(96px)",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(0px)",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSAnimation",
+    "name": "cookieBannerSlideIn",
+    "target": "div",
+    "duration": 250,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(96px)",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(0px)",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@5000": [
+   {
+    "type": "CSSAnimation",
+    "name": "cookieBannerSlideIn",
+    "target": "div",
+    "duration": 250,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(96px)",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(0px)",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "cookieBannerSlideIn",
+    "target": "div",
+    "duration": 250,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(96px)",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+      "transform": "translateY(0px)",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "afterNav": []
+ },
+ "transition": {
+  "href": "/platform",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 10417,
+  "urlFrames": [
+   [
+    "/",
+    14676
+   ],
+   [
+    "/",
+    14928
+   ],
+   [
+    "/",
+    15182
+   ],
+   [
+    "/",
+    15434
+   ],
+   [
+    "/",
+    15696
+   ],
+   [
+    "/",
+    15952
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 0
+ }
+}

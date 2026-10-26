@@ -1,0 +1,97 @@
+{
+ "slug": "stripedev",
+ "url": "https://stripe.dev/blog",
+ "fp": {
+  "title": "Stripe | Dev Blog",
+  "globals": [
+   "Howl",
+   "__NEXT_DATA__"
+  ],
+  "libHints": [
+   "next"
+  ],
+  "hosts": [
+   "stripe.dev"
+  ],
+  "counts": {
+   "canvas": 3,
+   "video": 0,
+   "svg": 309,
+   "img": 0,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 2,
+   "links": 265,
+   "splitChars": 2
+  },
+  "pageHeightVh": 9.3,
+  "body": {
+   "bg": "rgb(232, 232, 232)",
+   "color": "rgb(30, 30, 30)",
+   "ff": "sohne-var"
+  },
+  "h1": null,
+  "h2": {
+   "ff": "sohne-var",
+   "fs": "101.085px",
+   "fw": "300",
+   "ls": "-6.06512px",
+   "tt": "none",
+   "text": "Blog\n(123)"
+  },
+  "p": {
+   "ff": "sohne-var",
+   "fs": "19.4932px",
+   "fw": "300",
+   "ls": "-0.584797px",
+   "tt": "none",
+   "text": "Stripe Workflows already could react to events and run on demand. Now, it can st"
+  },
+  "fontsLoaded": [
+   "sohne-var",
+   "sohne-mono"
+  ],
+  "topFonts": [
+   [
+    "sohne-mono 300",
+    647
+   ],
+   [
+    "sohne-var 300",
+    420
+   ],
+   [
+    "sohne-var 500",
+    102
+   ],
+   [
+    "Arial 400",
+    1
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(30, 30, 30)",
+    104
+   ],
+   [
+    "rgba(30, 30, 30, 0.067)",
+    8
+   ],
+   [
+    "rgb(233, 233, 233)",
+    4
+   ],
+   [
+    "rgb(1, 22, 39)",
+    2
+   ]
+  ],
+  "css": {
+   "fixed": 1,
+   "backdrop-filter": 9,
+   "sticky": 1
+  }
+ },
+ "finalUrl": "https://stripe.dev/blog"
+}

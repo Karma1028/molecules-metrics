@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { Headline } from "../headline/Headline"
 
 export interface LogHeaderProps {
   log?: string
@@ -34,7 +35,7 @@ export function LogHeader({
           <span className="lh-id">{monoId}</span>
           <span className="lh-caret" aria-hidden="true">▍</span>
         </div>
-        <h1 className="lh-title">{title}</h1>
+        <Headline world="analyst" className="lh-title">{title}</Headline>
         {lede && (
           <p className="lh-lede">
             <span className="lh-prefix">// </span>

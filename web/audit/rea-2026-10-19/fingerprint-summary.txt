@@ -1,0 +1,35 @@
+analytical | Swiper+jQuery+ogl+wp-content | cv0 vid0 svg98 split1 | h8.1 | rgb(255, 255, 255) | Graphik 25px | Graphik/eicons/Font Awesome 5 Free | 
+bleibtgleich | next | cv0 vid0 svg0 split0 | h3.1 | rgb(26, 26, 46) | Bebas Neue 88px | Barlow/Bebas Neue | 
+crumbskees | Howl+ogl | cv0 vid1 svg1 split0 | h1 | rgba(0, 0, 0, 0) | Ginto Nord 52px | Fakt/Ginto Nord | clip-path1
+duhaihang | gsap | cv0 vid0 svg2 split3 | h1 | rgb(255, 255, 255) | ApercuBold 126px | ApercuBold/ApercuProMono | 
+eisenberger | jQuery+ogl | cv0 vid0 svg5 split1 | h3.8 | rgba(0, 0, 0, 0) | Yoga-Sans-Hairline 88px | Yoga-Sans-Thin/Yoga-Sans-Hairline | 
+frost | __NUXT__+nuxt+ogl | cv0 vid0 svg0 split623 | h16.9 | rgba(0, 0, 0, 0) | FT System Blank Medium 29.9952px | FT NotDef/FT System Blank Black/FT System Blank Black Italic | clip-path2,cursor:none6,sticky13
+gallipoli | ogl | cv0 vid0 svg0 split0 | h1 | rgb(121, 145, 162) | noh1 | europa | 
+gataperduda | Howl+__NUXT__+nuxt+mapbox | cv1 vid0 svg9 split16 | h1 | rgb(0, 0, 0) | noh1 | GT America Mono | 
+gcloud | ogl | cv0 vid0 svg2 split0 | h6.2 | rgb(255, 255, 255) | Google Sans 36px | Google Sans Text/Roboto/Material Icons Extended | sticky1
+gucci | three+react+ogl | cv0 vid0 svg51 split0 | h1 | rgb(0, 0, 0) | Gucci Sans Pro 32px | Gucci Sans Pro | sticky1
+guess | ogl | cv0 vid0 svg12 split3 | h6 | rgb(238, 237, 235) | Roboto Mono 61.2px | Roboto Mono/squarespace-ui-font | sticky1,mask1
+inkwell | __NUXT__+nuxt | cv1 vid0 svg12 split890 | h32.4 | rgb(246, 248, 250) | noh1 | FK Grotesk Mono/FK Grotesk | cursor:none1391,backdrop-filter3,mask15,sticky1,clip-path4
+inmyworld | wordpress | cv0 vid0 svg0 split0 | h1 | rgb(255, 255, 255) | -apple-system 24px |  | 
+kashyap | Howl+rive | cv7 vid0 svg105 split179 | h1 | rgb(194, 233, 231) | Stara 42px | Lora/Abril Fatface/Lobster | clip-path7,blend:overlay7,mask6,sticky2
+lemkus | Shopify+ogl+shopify | cv0 vid0 svg33 split3 | h2.5 | rgb(255, 255, 255) | noh1 | cofo-sans-mono-variable/Greed Standard/Greed Condensed | clip-path8,sticky1
+localstudio | three+lenis+barba | cv3 vid0 svg16 split633 | h1 | rgb(255, 255, 255) | Roc Grotesk Condensed 1323.81px | Times Now/Roc Grotesk Condensed | blend:difference3,mask6,clip-path2
+loiseau | __framer_importFromPackage+framer | cv3 vid0 svg11 split0 | h10.2 | rgb(255, 255, 255) | Clash Display 195.593px | Inter/Clash Display/Inter Placeholder | sticky5,mask3
+marseille | Howl+ogl | cv1 vid0 svg0 split0 | h1 | rgba(0, 0, 0, 0) | noh1 | AntarcticaBetaMedium/AntarcticaBeta | 
+monogrid | lenis+three+ogl | cv1 vid7 svg29 split101 | h13 | rgb(0, 0, 0) | HelveticaNeueLTPro 62.0001px | HelveticaNeueLTPro/Space Mono | sticky8,blend:7,clip-path3
+moonsafari | ogl+wp-content | cv4 vid0 svg7 split3 | h6 | rgb(0, 0, 0) | noh1 | nimbus-sans/nimbus-sans-extended | cursor:none284
+onelastbeat | PIXI+Howl+ogl | cv0 vid0 svg0 split0 | h1 | rgb(0, 0, 0) | noh1 | olbminiregular | 
+patronus | __NEXT_DATA__+three+next+ogl | cv0 vid0 svg6 split7 | h1.2 | rgb(16, 20, 27) | Harry Beast Regular 40px | Sofia Pro/Harry Beast Regular/Harry Beast Display | sticky1
+pencilvania | - | cv1 vid0 svg2 split0 | h1 | rgba(0, 0, 0, 0) | ui-sans-serif 20px |  | 
+peppa | Webflow+jQuery+ogl | cv1 vid0 svg12 split11 | h8.6 | rgb(20, 19, 41) | Obviously 50.4px | Obviously/Vulf Sans/Obviously Demo | sticky5,clip-path78,mask11
+pienso | spline+next+react+ogl | cv0 vid1 svg22 split0 | h20.8 | rgb(255, 255, 255) | __fontHeading_691388 101px | __fontHeading_691388/__fontBody_2ca7e9 | blend:lighten1,mask1,sticky1,scroll-snap1
+poltronafrau | ogl | cv0 vid1 svg11 split4 | h8.1 | rgb(250, 248, 246) | SangBleu 60px | Executive/SangBleu | blend:1
+rxk | __NUXT__+lenis+nuxt | cv0 vid10 svg5 split63 | h4 | rgb(244, 243, 237) | NeueMontreal 21.888px | NeueMontreal | clip-path14,mask7
+stripedev | Howl+__NEXT_DATA__+next | cv3 vid0 svg309 split2 | h9.3 | rgb(232, 232, 232) | noh1 | sohne-var/sohne-mono | backdrop-filter9,sticky1
+telekom | Flickity+jQuery+react | cv0 vid0 svg24 split55 | h8 | rgba(0, 0, 0, 0) | TeleNeo 36px | TeleNeo/Consent-TeleNeo | sticky1,clip-path2
+teletech | gsap+ScrollTrigger+THREE+Lenis+SplitType+Swiper+Webflow+jQuery+three+lenis+split+webflow | cv1 vid2 svg1 split141 | h62.1 | rgb(4, 4, 4) | Lomocopyltstd 43.056px | Protomono/Lomocopyltstd | blend:4,backdrop-filter3,blend:difference63,blend:lighten1,clip-path8,sticky2
+the3key | jQuery+ogl+wordpress+wp-content | cv0 vid0 svg49 split6 | h13.2 | rgb(255, 255, 255) | Anton 18px | dashicons/Font Awesome 6 Brands/Font Awesome 6 Free | sticky1,mask8,clip-path12,cursor:none1079
+vana | next+react | cv0 vid1 svg14 split31 | h2.6 | rgb(252, 252, 250) | Onest 108px | Onest/JetBrains Mono | sticky1,blend:2
+yauch | lottie+bodymovin+jQuery | cv2 vid0 svg60 split128 | h1 | rgba(0, 0, 0, 0) | sans-serif 32px |  | clip-path1
+zaft | jQuery | cv0 vid0 svg8 split3 | h1 | rgb(255, 255, 255) | WT Main 16px | WT Main | sticky2
+zighead | jQuery+ogl | cv0 vid0 svg9 split0 | h2.5 | rgba(0, 0, 0, 0) | Syne 35px | dripicons-v2/Poppins/Syne | backdrop-filter4,sticky2

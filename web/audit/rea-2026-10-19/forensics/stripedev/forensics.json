@@ -1,0 +1,1628 @@
+{
+ "slug": "stripedev",
+ "url": "https://stripe.dev/blog",
+ "phases": {
+  "loaded": 388,
+  "hover": 8456,
+  "cursorStep": 12862,
+  "scroll": 14077,
+  "end": 25326
+ },
+ "anims": {
+  "load@600": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@1500": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@5000": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "hover0": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "hover1": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "hover2": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "hover3": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "scroll0": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "scroll1": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "scroll2": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "scroll3": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "scroll4": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "scroll5": [
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_Art.pvIv2W_Art",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "QRr6PW_fadein",
+    "target": "div.QRr6PW_canvasContainer",
+    "duration": 300,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ]
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   370,
+   "2d",
+   "300x150"
+  ],
+  [
+   376,
+   "2d",
+   "42x42"
+  ],
+  [
+   376,
+   "2d",
+   "300x150"
+  ],
+  [
+   384,
+   "2d",
+   "170x141"
+  ],
+  [
+   384,
+   "2d",
+   "42x42"
+  ],
+  [
+   430,
+   "2d",
+   "42x42"
+  ],
+  [
+   445,
+   "2d",
+   "42x42"
+  ],
+  [
+   470,
+   "2d",
+   "42x42"
+  ],
+  [
+   496,
+   "2d",
+   "42x42"
+  ],
+  [
+   524,
+   "2d",
+   "42x42"
+  ],
+  [
+   557,
+   "2d",
+   "42x42"
+  ],
+  [
+   582,
+   "2d",
+   "42x42"
+  ],
+  [
+   609,
+   "2d",
+   "42x42"
+  ],
+  [
+   635,
+   "2d",
+   "42x42"
+  ],
+  [
+   671,
+   "2d",
+   "42x42"
+  ],
+  [
+   735,
+   "2d",
+   "42x42"
+  ],
+  [
+   753,
+   "2d",
+   "42x42"
+  ],
+  [
+   781,
+   "2d",
+   "42x42"
+  ],
+  [
+   809,
+   "2d",
+   "42x42"
+  ],
+  [
+   836,
+   "2d",
+   "42x42"
+  ],
+  [
+   864,
+   "2d",
+   "42x42"
+  ],
+  [
+   892,
+   "2d",
+   "42x42"
+  ],
+  [
+   920,
+   "2d",
+   "42x42"
+  ],
+  [
+   947,
+   "2d",
+   "42x42"
+  ],
+  [
+   975,
+   "2d",
+   "42x42"
+  ],
+  [
+   1003,
+   "2d",
+   "42x42"
+  ],
+  [
+   1031,
+   "2d",
+   "42x42"
+  ],
+  [
+   1058,
+   "2d",
+   "42x42"
+  ],
+  [
+   1086,
+   "2d",
+   "42x42"
+  ],
+  [
+   1114,
+   "2d",
+   "42x42"
+  ],
+  [
+   1142,
+   "2d",
+   "42x42"
+  ],
+  [
+   1170,
+   "2d",
+   "42x42"
+  ],
+  [
+   1198,
+   "2d",
+   "42x42"
+  ],
+  [
+   1225,
+   "2d",
+   "42x42"
+  ],
+  [
+   1253,
+   "2d",
+   "42x42"
+  ],
+  [
+   1281,
+   "2d",
+   "42x42"
+  ],
+  [
+   1309,
+   "2d",
+   "42x42"
+  ],
+  [
+   1336,
+   "2d",
+   "42x42"
+  ],
+  [
+   1364,
+   "2d",
+   "42x42"
+  ],
+  [
+   1397,
+   "2d",
+   "42x42"
+  ],
+  [
+   1420,
+   "2d",
+   "42x42"
+  ],
+  [
+   1447,
+   "2d",
+   "42x42"
+  ],
+  [
+   1475,
+   "2d",
+   "42x42"
+  ],
+  [
+   1503,
+   "2d",
+   "42x42"
+  ],
+  [
+   1531,
+   "2d",
+   "42x42"
+  ],
+  [
+   1559,
+   "2d",
+   "42x42"
+  ],
+  [
+   1586,
+   "2d",
+   "42x42"
+  ],
+  [
+   1614,
+   "2d",
+   "42x42"
+  ],
+  [
+   1642,
+   "2d",
+   "42x42"
+  ],
+  [
+   1670,
+   "2d",
+   "42x42"
+  ]
+ ],
+ "audio": [
+  [
+   23468,
+   "AudioContext"
+  ],
+  [
+   23525,
+   "AudioContext"
+  ]
+ ],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [],
+ "mutationCount": 869,
+ "assets": [
+  [
+   "link",
+   "https://stripe.dev/fonts/Sohne.woff2",
+   58
+  ],
+  [
+   "css",
+   "https://stripe.dev/fonts/SohneMono-Buch.woff2",
+   27
+  ],
+  [
+   "fetch",
+   "https://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/index.json",
+   8
+  ],
+  [
+   "fetch",
+   "https://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog.json",
+   39
+  ],
+  [
+   "fetch",
+   "https://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/events.json",
+   3
+  ],
+  [
+   "fetch",
+   "ripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/run-recurring-jobs-on-stripe-workflows.json",
+   6
+  ],
+  [
+   "fetch",
+   "://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/training-llms-for-risk-assessment.json",
+   6
+  ],
+  [
+   "fetch",
+   "-XM/blog/creating-a-whitelabeled-connected-account-dashboard-with-embedded-components.json",
+   6
+  ],
+  [
+   "fetch",
+   "/stripes-payment-method-factory-orchestrating-agents-for-repeated-custom-integrations.json",
+   8
+  ],
+  [
+   "fetch",
+   "/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/how-stripe-is-designing-checkout-for-ai-agents.json",
+   8
+  ],
+  [
+   "fetch",
+   "Qxkz7KJCIe9qP--XM/blog/building-custom-financial-reconciliation-workflows-with-stripe.json",
+   6
+  ],
+  [
+   "fetch",
+   "dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/harbor-stripes-ai-assisted-prototyping-tool.json",
+   14
+  ],
+  [
+   "fetch",
+   "/data/KYc_Qxkz7KJCIe9qP--XM/blog/what-if-stripe-could-work-the-way-your-business-does.json",
+   10
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/ai-didnt-write-our-sdk-it-changed-how-we-built-it.json",
+   7
+  ],
+  [
+   "fetch",
+   "log/building-a-data-plane-from-scratch-stripes-own-high-performance-distributed-proxy.json",
+   7
+  ],
+  [
+   "fetch",
+   "xkz7KJCIe9qP--XM/blog/helping-ai-built-payment-integration-understand-business-intent.json",
+   7
+  ],
+  [
+   "fetch",
+   "v/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/pass-network-costs-to-your-connected-accounts.json",
+   6
+  ],
+  [
+   "fetch",
+   "://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/agentic-payments-for-marketplaces.json",
+   9
+  ],
+  [
+   "fetch",
+   "//stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/meet-stripes-knowledge-ai-platform.json",
+   8
+  ],
+  [
+   "fetch",
+   "stripe-uses-graph-search-and-state-machines-to-auto-remediate-a-global-database-fleet.json",
+   10
+  ],
+  [
+   "fetch",
+   "ps://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/fund-segregation-stripe-connect.json",
+   7
+  ],
+  [
+   "fetch",
+   "ipe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/event-notification-handlers-thin-events.json",
+   6
+  ],
+  [
+   "fetch",
+   ".dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/extending-stripes-network-with-stablecoins.json",
+   8
+  ],
+  [
+   "fetch",
+   "next/data/KYc_Qxkz7KJCIe9qP--XM/blog/integrating-services-with-agents-stripe-projects.json",
+   7
+  ],
+  [
+   "fetch",
+   "https://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog.json",
+   0
+  ],
+  [
+   "fetch",
+   "https://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/events.json",
+   0
+  ],
+  [
+   "fetch",
+   "/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/how-stripe-is-designing-checkout-for-ai-agents.json",
+   0
+  ],
+  [
+   "fetch",
+   "log/building-a-data-plane-from-scratch-stripes-own-high-performance-distributed-proxy.json",
+   0
+  ],
+  [
+   "fetch",
+   "/data/KYc_Qxkz7KJCIe9qP--XM/blog/how-api-changes-flow-into-stripes-developer-products.json",
+   9
+  ],
+  [
+   "fetch",
+   "v/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/microservice-testing-with-apache-spark-part-2.json",
+   6
+  ],
+  [
+   "fetch",
+   "ripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/microservice-testing-with-apache-spark.json",
+   7
+  ],
+  [
+   "fetch",
+   "ttps://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/tax-id-validation-at-checkout.json",
+   8
+  ],
+  [
+   "fetch",
+   "stripe-uses-graph-search-and-state-machines-to-auto-remediate-a-global-database-fleet.json",
+   0
+  ],
+  [
+   "fetch",
+   "/data/KYc_Qxkz7KJCIe9qP--XM/blog/modern-java-at-stripe-language-upgrades-as-a-service.json",
+   7
+  ],
+  [
+   "fetch",
+   "https://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/ai-steering-experiments.json",
+   12
+  ],
+  [
+   "fetch",
+   "next/data/KYc_Qxkz7KJCIe9qP--XM/blog/what-it-feels-like-building-with-stripe-projects.json",
+   11
+  ],
+  [
+   "fetch",
+   "t/data/KYc_Qxkz7KJCIe9qP--XM/blog/learnings-from-building-with-agents-stripe-projects.json",
+   6
+  ],
+  [
+   "fetch",
+   "stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/building-with-agents-stripe-projects.json",
+   9
+  ],
+  [
+   "fetch",
+   "/data/KYc_Qxkz7KJCIe9qP--XM/blog/how-api-changes-flow-into-stripes-developer-products.json",
+   0
+  ],
+  [
+   "fetch",
+   "qP--XM/blog/formatting-an-entire-25-million-line-codebase-overnight-the-rubyfmt-story.json",
+   10
+  ],
+  [
+   "fetch",
+   "ta/KYc_Qxkz7KJCIe9qP--XM/blog/build-stripe-salesforce-integrations-faster-with-agents.json",
+   8
+  ],
+  [
+   "fetch",
+   "blog/how-we-built-stripe-credits-a-programmable-auditable-way-to-pay-your-stripe-fees.json",
+   9
+  ],
+  [
+   "fetch",
+   "pe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/production-ready-dev-stack-from-terminal.json",
+   5
+  ],
+  [
+   "fetch",
+   "e9qP--XM/blog/selective-test-execution-at-stripe-fast-ci-for-a-50m-line-ruby-monorepo.json",
+   8
+  ],
+  [
+   "fetch",
+   "next/data/KYc_Qxkz7KJCIe9qP--XM/blog/what-it-feels-like-building-with-stripe-projects.json",
+   0
+  ],
+  [
+   "fetch",
+   "ata/KYc_Qxkz7KJCIe9qP--XM/blog/designing-flexible-payment-flows-with-checkoutsessions.json",
+   6
+  ],
+  [
+   "fetch",
+   "a/KYc_Qxkz7KJCIe9qP--XM/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2.json",
+   8
+  ],
+  [
+   "fetch",
+   "dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/building-a-mental-model-for-stripe-payments.json",
+   6
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/minions-stripes-one-shot-end-to-end-coding-agents.json",
+   6
+  ],
+  [
+   "fetch",
+   "e.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/ai-agents-terraform-stripe-infrastructure.json",
+   6
+  ],
+  [
+   "fetch",
+   "blog/how-we-built-stripe-credits-a-programmable-auditable-way-to-pay-your-stripe-fees.json",
+   0
+  ],
+  [
+   "fetch",
+   "dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/introducing-versioning-for-stripe-workflows.json",
+   6
+  ],
+  [
+   "fetch",
+   "KYc_Qxkz7KJCIe9qP--XM/blog/building-production-ready-stripe-subscriptions-kiro-powers.json",
+   7
+  ],
+  [
+   "fetch",
+   "/data/KYc_Qxkz7KJCIe9qP--XM/blog/using-stripe-stablecoin-payments-no-crypto-knowledge.json",
+   8
+  ],
+  [
+   "fetch",
+   "/stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/web-pos-mobile-terminal-integration.json",
+   6
+  ],
+  [
+   "fetch",
+   "ata/KYc_Qxkz7KJCIe9qP--XM/blog/how-we-built-it-real-time-analytics-for-stripe-billing.json",
+   6
+  ],
+  [
+   "fetch",
+   "a/KYc_Qxkz7KJCIe9qP--XM/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2.json",
+   0
+  ],
+  [
+   "fetch",
+   "pe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/workflows-automate-compliance-safeguards.json",
+   4
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/seamlessly-connect-stripe-events-to-your-frontend.json",
+   8
+  ],
+  [
+   "fetch",
+   "stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/marketplace-monetization-with-stripe.json",
+   7
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/database-reconciliation-growing-businesses-part-3.json",
+   12
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/database-reconciliation-growing-businesses-part-2.json",
+   12
+  ],
+  [
+   "fetch",
+   "KYc_Qxkz7KJCIe9qP--XM/blog/building-production-ready-stripe-subscriptions-kiro-powers.json",
+   0
+  ],
+  [
+   "fetch",
+   "dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/gating-entrances-with-stripe-and-nfc-passes.json",
+   6
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/database-reconciliation-growing-businesses-part-1.json",
+   11
+  ],
+  [
+   "fetch",
+   "data/KYc_Qxkz7KJCIe9qP--XM/blog/building-financial-operations-agents-hypermode-stripe.json",
+   6
+  ],
+  [
+   "fetch",
+   "KYc_Qxkz7KJCIe9qP--XM/blog/guardrails-money-movement-integrating-stripe-mcp-portia-ai.json",
+   6
+  ],
+  [
+   "fetch",
+   "stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/workflows-customize-objects-metadata.json",
+   4
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/seamlessly-connect-stripe-events-to-your-frontend.json",
+   0
+  ],
+  [
+   "fetch",
+   "_Qxkz7KJCIe9qP--XM/blog/workflows-creating-early-fraud-alerts-for-streamlined-refunds.json",
+   4
+  ],
+  [
+   "fetch",
+   "/KYc_Qxkz7KJCIe9qP--XM/blog/stripe-marketplaces-mapping-commercial-relationships-code.json",
+   9
+  ],
+  [
+   "fetch",
+   "ata/KYc_Qxkz7KJCIe9qP--XM/blog/how-we-built-it-jurisdiction-resolution-for-stripe-tax.json",
+   7
+  ],
+  [
+   "fetch",
+   "Ie9qP--XM/blog/stay-within-limits-api-rate-limit-friendly-pattern-for-stripe-webhooks.json",
+   8
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/connect-embedded-components-streamline-onboarding.json",
+   7
+  ],
+  [
+   "fetch",
+   "mplementing-scalable-metered-billing-with-stripe-how-edgee-handles-billions-of-events.json",
+   6
+  ],
+  [
+   "fetch",
+   ".dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/stripe-terminal-on-screen-input-collection.json",
+   8
+  ],
+  [
+   "fetch",
+   "a/KYc_Qxkz7KJCIe9qP--XM/blog/docusign-stripe-integration-automating-billing-workflows.json",
+   7
+  ],
+  [
+   "fetch",
+   "://stripe.dev/_next/data/KYc_Qxkz7KJCIe9qP--XM/blog/sessions-2025-dev-track-resources.json",
+   11
+  ],
+  [
+   "fetch",
+   "ata/KYc_Qxkz7KJCIe9qP--XM/blog/introducing-stripes-new-public-preview-release-channel.json",
+   5
+  ],
+  [
+   "fetch",
+   "ext/data/KYc_Qxkz7KJCIe9qP--XM/blog/database-reconciliation-growing-businesses-part-1.json",
+   0
+  ]
+ ],
+ "css": {
+  "cssBytes": 100417,
+  "keyframes": [
+   {
+    "name": "_6k8RLW_ticker",
+    "body": "0%{transform:translate(0%)}to{transform:translate(-33.3333%)}"
+   },
+   {
+    "name": "QRr6PW_fadein",
+    "body": "0%{opacity:0}to{opacity:1}"
+   },
+   {
+    "name": "Q--LXW_marquee-left",
+    "body": "0%{transform:translate(0)}to{transform:translate(-100%)}"
+   },
+   {
+    "name": "Q--LXW_marquee-right",
+    "body": "0%{transform:translate(0)}to{transform:translate(100%)}"
+   },
+   {
+    "name": "_9p67Hq_lineMovement",
+    "body": "0%{transform:translateY(0)}to{transform:translateY(4px)}"
+   },
+   {
+    "name": "D6Rhmq_vibes-blink",
+    "body": "0%,50%{opacity:1}51%,to{opacity:0}"
+   },
+   {
+    "name": "D6Rhmq_vibes-flash",
+    "body": "0%{color:#f0f}33%{color:#0ff}66%{color:#ff0}to{color:#f0f}"
+   }
+  ],
+  "beziers": [
+   [
+    "cubic-bezier(.19,1,.22,1)",
+    2
+   ]
+  ],
+  "durations": [
+   [
+    "1s",
+    5
+   ],
+   [
+    "15s",
+    5
+   ],
+   [
+    "8s",
+    3
+   ],
+   [
+    "3s",
+    3
+   ],
+   [
+    "5s",
+    3
+   ],
+   [
+    "90s",
+    2
+   ],
+   [
+    "1.2s",
+    2
+   ],
+   [
+    "80ms",
+    1
+   ],
+   [
+    "25s",
+    1
+   ],
+   [
+    "6s",
+    1
+   ],
+   [
+    "16s",
+    1
+   ],
+   [
+    "2.5s",
+    1
+   ],
+   [
+    "1.4s",
+    1
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:opacity .15s",
+    4
+   ],
+   [
+    "transition:background .1s",
+    3
+   ],
+   [
+    "transition:all 80ms ease-in-out",
+    1
+   ],
+   [
+    "transition:opacity .8s linear",
+    1
+   ],
+   [
+    "transition:transform .6s cubic-bezier(.19,1,.22,1)",
+    1
+   ],
+   [
+    "transition:opacity .5s",
+    1
+   ],
+   [
+    "transition:transform .3s cubic-bezier(.19,1,.22,1)",
+    1
+   ],
+   [
+    "transition:transform .8s linear,fill 1.2s 2.5s",
+    1
+   ],
+   [
+    "transition:transform .8s linear,fill",
+    1
+   ],
+   [
+    "transition:opacity .15s linear",
+    1
+   ],
+   [
+    "transition:background-color .1s linear",
+    1
+   ]
+  ],
+  "customProps": [
+   [
+    "--highlightFill",
+    6
+   ],
+   [
+    "--squareTextColor",
+    4
+   ],
+   [
+    "--iconWidth",
+    4
+   ],
+   [
+    "--screenWidth",
+    1
+   ],
+   [
+    "--screenHeight",
+    1
+   ],
+   [
+    "--accentColor",
+    1
+   ],
+   [
+    "--fontColorStatic",
+    1
+   ],
+   [
+    "--fontColor",
+    1
+   ],
+   [
+    "--fontInvertColor",
+    1
+   ],
+   [
+    "--buttonColor",
+    1
+   ],
+   [
+    "--borderColorLight",
+    1
+   ],
+   [
+    "--inactiveColor",
+    1
+   ],
+   [
+    "--backgroundColor",
+    1
+   ],
+   [
+    "--middleColor",
+    1
+   ],
+   [
+    "--highlightColor",
+    1
+   ]
+  ],
+  "features": {
+   "@property": 2,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 2,
+   "mask": 2,
+   "backdrop-filter": 4,
+   "perspective": 0,
+   "preserve-3d": 0,
+   "@media (prefers-reduced-motion": 2,
+   "steps(": 1,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 1768969,
+ "jsLibs": [
+  "react",
+  "howler",
+  "barba"
+ ]
+}

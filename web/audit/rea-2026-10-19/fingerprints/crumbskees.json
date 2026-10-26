@@ -1,0 +1,85 @@
+{
+ "slug": "crumbskees",
+ "url": "https://crumbskees.com/",
+ "fp": {
+  "title": "Crumbskees",
+  "globals": [
+   "Howl"
+  ],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "crumbskees.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 1,
+   "svg": 1,
+   "img": 1,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 1,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "\"Times New Roman\""
+  },
+  "h1": {
+   "ff": "Ginto Nord",
+   "fs": "52px",
+   "fw": "900",
+   "ls": "normal",
+   "tt": "none",
+   "text": "It’s\nthe"
+  },
+  "h2": null,
+  "p": null,
+  "fontsLoaded": [
+   "Fakt",
+   "Ginto Nord"
+  ],
+  "topFonts": [
+   [
+    "Ginto Nord 900",
+    14
+   ],
+   [
+    "Fakt 700",
+    6
+   ],
+   [
+    "Times New Roman 400",
+    1
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(0, 0, 0)",
+    2
+   ],
+   [
+    "rgb(255, 255, 255)",
+    2
+   ],
+   [
+    "rgb(63, 27, 208)",
+    1
+   ],
+   [
+    "rgb(255, 233, 69)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 1,
+   "clip-path": 1
+  }
+ },
+ "finalUrl": "https://crumbskees.com/"
+}

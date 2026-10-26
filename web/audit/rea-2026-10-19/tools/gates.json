@@ -1,0 +1,6 @@
+{
+  "yauch": [{"wait": 16000}, {"drag": [900, 450, 400, 450, 30]}, {"wait": 2500}, {"drag": [400, 450, 1100, 380, 30]}, {"wait": 2500}],
+  "crumbskees": [{"click": "text=PLAY NOW"}, {"wait": 6000}, {"move": [720, 450]}, {"click": "canvas"}, {"wait": 3000}],
+  "marseille": [{"wait": 20000}, {"click": "body"}, {"wait": 4000}],
+  "onelastbeat": [{"wait": 12000}, {"click": "#use-fking-headphones"}, {"wait": 6000}]
+}

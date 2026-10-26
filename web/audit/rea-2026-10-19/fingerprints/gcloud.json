@@ -1,0 +1,116 @@
+{
+ "slug": "gcloud",
+ "url": "https://cloud.google.com/infrastructure",
+ "fp": {
+  "title": "Global Infrastructure | Google Cloud",
+  "globals": [],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "apis.google.com",
+   "www.gstatic.com",
+   "googleads.g.doubleclick.net"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 2,
+   "img": 58,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 7,
+   "links": 815,
+   "splitChars": 0
+  },
+  "pageHeightVh": 6.2,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(95, 99, 104)",
+   "ff": "\"Google Sans Text\""
+  },
+  "h1": {
+   "ff": "Google Sans",
+   "fs": "36px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Google Cloud infrastructure"
+  },
+  "h2": null,
+  "p": {
+   "ff": "Google Sans",
+   "fs": "16px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Deploy a virtual machine cluster with a load balancer that instantaneously manag"
+  },
+  "fontsLoaded": [
+   "Google Sans Text",
+   "Roboto",
+   "Material Icons Extended",
+   "Google Material Icons",
+   "Google Sans"
+  ],
+  "topFonts": [
+   [
+    "Roboto 400",
+    411
+   ],
+   [
+    "Google Sans 400",
+    407
+   ],
+   [
+    "Google Sans 500",
+    342
+   ],
+   [
+    "Google Sans Text 400",
+    28
+   ],
+   [
+    "Material Icons Extended 400",
+    14
+   ],
+   [
+    "Google Sans Flex 500",
+    9
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    30
+   ],
+   [
+    "rgb(11, 87, 208)",
+    5
+   ],
+   [
+    "rgb(248, 249, 250)",
+    4
+   ],
+   [
+    "rgb(232, 234, 237)",
+    3
+   ],
+   [
+    "rgb(239, 242, 247)",
+    2
+   ],
+   [
+    "rgb(102, 136, 238)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 8,
+   "will-change": 31,
+   "sticky": 1
+  }
+ },
+ "finalUrl": "https://cloud.google.com/infrastructure"
+}

@@ -1,0 +1,116 @@
+{
+ "slug": "guess",
+ "url": "https://www.barrettrm.com/typefaces/p/guess",
+ "fp": {
+  "title": "Guess - Display Typeface — Barrett RM Type",
+  "globals": [],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.gstatic.com",
+   "s.pinimg.com",
+   "connect.facebook.net",
+   "assets.squarespace.com",
+   "definitions.sqspcdn.com",
+   "static1.squarespace.com",
+   "www.google.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 12,
+   "img": 28,
+   "iframe": 2,
+   "audio": 0,
+   "sections": 13,
+   "links": 37,
+   "splitChars": 3
+  },
+  "pageHeightVh": 6,
+  "body": {
+   "bg": "rgb(238, 237, 235)",
+   "color": "rgb(62, 68, 49)",
+   "ff": "sans-serif"
+  },
+  "h1": {
+   "ff": "Roboto Mono",
+   "fs": "61.2px",
+   "fw": "400",
+   "ls": "-2.448px",
+   "tt": "none",
+   "text": "Guess - Display Typeface"
+  },
+  "h2": {
+   "ff": "Roboto Mono",
+   "fs": "44.2px",
+   "fw": "400",
+   "ls": "-1.768px",
+   "tt": "none",
+   "text": "Subscribe"
+  },
+  "p": {
+   "ff": "Roboto Mono",
+   "fs": "17px",
+   "fw": "400",
+   "ls": "0.17px",
+   "tt": "none",
+   "text": "Guess is a playful sans-serif display typeface inspired by the natural and urban"
+  },
+  "fontsLoaded": [
+   "Roboto Mono",
+   "squarespace-ui-font"
+  ],
+  "topFonts": [
+   [
+    "Roboto Mono 400",
+    81
+   ],
+   [
+    "Roboto Mono 500",
+    5
+   ],
+   [
+    "Clarkson 500",
+    2
+   ],
+   [
+    "Clarkson 400",
+    2
+   ],
+   [
+    "Clarkson 700",
+    2
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(238, 237, 235)",
+    12
+   ],
+   [
+    "rgb(26, 26, 26)",
+    9
+   ],
+   [
+    "rgb(62, 68, 49)",
+    8
+   ],
+   [
+    "rgb(255, 255, 255)",
+    6
+   ],
+   [
+    "rgba(0, 0, 0, 0.12)",
+    4
+   ]
+  ],
+  "css": {
+   "will-change": 10,
+   "fixed": 3,
+   "sticky": 1,
+   "mask": 1
+  }
+ },
+ "finalUrl": "https://www.barrettrm.com/typefaces/p/guess"
+}

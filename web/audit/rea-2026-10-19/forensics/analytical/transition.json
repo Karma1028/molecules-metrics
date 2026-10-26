@@ -1,0 +1,69 @@
+{
+ "slug": "analytical",
+ "url": "https://analytical-group.com/it",
+ "phases": {
+  "loaded": 6032
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "fadeIn",
+    "target": "div.elementor-element.elementor-element-8f439c6",
+    "duration": 1250,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "afterNav": []
+ },
+ "transition": {
+  "href": "https://analytical-group.com/it/latest-news",
+  "kind": "hard navigation (new document)",
+  "clickAt": 0,
+  "urlFrames": [
+   null,
+   [
+    "/it/latest-news",
+    1421
+   ],
+   [
+    "/it/latest-news",
+    1680
+   ],
+   [
+    "/it/latest-news",
+    1936
+   ],
+   [
+    "/it/latest-news",
+    2194
+   ],
+   [
+    "/it/latest-news",
+    2446
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 2
+ }
+}

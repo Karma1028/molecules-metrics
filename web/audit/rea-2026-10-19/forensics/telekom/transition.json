@@ -1,0 +1,69 @@
+{
+ "slug": "telekom",
+ "url": "https://www.telekom.de/start",
+ "phases": {
+  "loaded": 2054
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterNav": [
+   {
+    "type": "CSSAnimation",
+    "name": "ods-carousel-timer-progress",
+    "target": "span.ODSCarouselTimer-SegmentProgress",
+    "duration": 8000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "width": "0px"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "width": "100%"
+     }
+    ]
+   }
+  ]
+ },
+ "transition": {
+  "href": "https://www.telekom.de/meinmagenta-app",
+  "kind": "hard navigation (new document)",
+  "clickAt": 0,
+  "urlFrames": [
+   null,
+   [
+    "/apps/meinmagenta-app",
+    4425
+   ],
+   [
+    "/apps/meinmagenta-app",
+    4714
+   ],
+   [
+    "/apps/meinmagenta-app",
+    4966
+   ],
+   [
+    "/apps/meinmagenta-app",
+    5282
+   ],
+   [
+    "/apps/meinmagenta-app",
+    5537
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 9
+ }
+}

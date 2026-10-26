@@ -1,0 +1,95 @@
+# monogrid — https://monogrid.com/en/
+- libs (bundle regex): gsap, ScrollTrigger, vue, Lenis, three, webflow-ix2, svelte · JS 3755 KB · CSS 53 KB · style mutations 15542
+- smooth scroll: native (no lerp detected on window scroll)
+- canvas contexts: 2d 300x150@2062ms, 2d 300x150@2067ms, 2d 300x150@2069ms, 2d 300x150@2072ms, 2d 300x150@2074ms, 2d 300x150@2075ms, 2d 300x150@2079ms, 2d 300x150@2082ms, 2d 300x150@2085ms, 2d 300x150@2087ms, 2d 300x150@2088ms, 2d 300x150@2089ms, 2d 300x150@2092ms, 2d 300x150@2094ms, 2d 300x150@2095ms, 2d 300x150@2096ms, 2d 300x150@2097ms, 2d 300x150@2100ms, 2d 300x150@2102ms, webgl2 300x150@2386ms
+- shaders: 18 · features: noise, grain, distortion/wave, texture sampling, fresnel/lighting · uniforms: texture, uVelocity, tVelocity, uPointer, uAspect, uSize, uOpacity, uTime, modelMatrix, modelViewMatrix, projectionMatrix, viewMatrix, normalMatrix, cameraPosition, isOrthographic, morphTexture, tImg, tTrail, uResolution, uPlaneSize, uImgSize, uScale, uAlpha, uColorMix, uMask
+- audio/media: VIDEO  | VIDEO d.com/media/86094f3a1fbc839a0d76dea8eb18f828d7fa18b23660585767406f6266916c47.mp4 | VIDEO d.com/media/86094f3a1fbc839a0d76dea8eb18f828d7fa18b23660585767406f6266916c47.mp4 | VIDEO d.com/media/86094f3a1fbc839a0d76dea8eb18f828d7fa18b23660585767406f6266916c47.mp4 | VIDEO  | VIDEO d.com/media/264e2e41d9550a382c370dff0302a322023b239626c373ab31834bb6a070ef33.mp4
+- CSS easings: cubic-bezier(.4, 0, .2, 1)×3, cubic-bezier(.455,.03,.515,.955)×3, cubic-bezier(.445,.05,.55,.95)×1
+- CSS durations: 3s×6, 0s×5, 15s×4, 45s×4, 1s×2, 5s×2, 1.5s×1
+- CSS keyframes (2): dash-9c0f6930 {0%{stroke-dasharray:1 150;stroke-dashoffset:0;transform:rotate(0)}50%{stroke-dasharray:90 } | carret-pulse {0%{opacity:0}50%{opacity:0}51%{opacity:1}to{opacity:1}}
+- CSS features: @property×28, mix-blend-mode×1, clip-path×2, backdrop-filter×1, @media (prefers-reduced-motion×7
+- top transitions: opacity var(--transition-duration)×5 | opacity .3s×3 | background-position .45s cubic-bezier(.455,.03,.515,.955)×3 | transform .5s ease-in-out×2 | color var(--transition-duration)×2
+
+## Running CSS/WAAPI animations (16 unique)
+- [load@600] CSSTransition transform on div.progress1.w-full: 150ms linear delay 0 iter 1 kf [{"offset":"0","easing":"linear","transform":"none"},{"offset":"1","easing":"linear","transform":"scaleX(0)"}]
+- [load@600] CSSTransition transform on div.progress2.absolute: 150ms linear delay 0 iter 1 kf [{"offset":"0","easing":"linear","transform":"none"},{"offset":"1","easing":"linear","transform":"scaleX(1)"}]
+- [load@600] CSSTransition opacity on div.is-hidden: 300ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","opacity":"1"},{"offset":"1","easing":"linear","opacity":"0"}]
+- [load@600] CSSTransition opacity on div.iubenda-cs-black.iubenda-cs-default-floating: 400ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","opacity":"0"},{"offset":"1","easing":"linear","opacity":"1"}]
+- [load@600] CSSTransition transform on div.iubenda-cs-container: 400ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","transform":"translateY(48px)"},{"offset":"1","easing":"linear","transform":"translateY(0px)"}]
+- [load@600] CSSAnimation carret-pulse on span.item.carret: 1000ms linear delay 0 iter null kf [{"offset":"0","easing":"ease","opacity":"0"},{"offset":"0.5","easing":"ease","opacity":"0"},{"offset":"0.51","easing":"ease","opacity":"1"},{"offset":"1","easi
+- [load@600] CSSAnimation app-loading-dash on circle.path: 1500ms linear delay 0 iter null kf [{"offset":"0","easing":"ease-in-out","strokeDasharray":"1px, 150px","strokeDashoffset":"0px","transform":"rotate(0deg)"},{"offset":"0.5","easing":"ease-in-out"
+- [load@1500] CSSTransition opacity on div.page.relative: 300ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","opacity":"0"},{"offset":"1","easing":"linear","opacity":"1"}]
+- [load@1500] CSSTransition opacity on a.cta.cta-icon: 300ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","opacity":"1"},{"offset":"1","easing":"linear","opacity":"0"}]
+- [load@1500] CSSAnimation carret-pulse on h2.carret.c-white: 1000ms linear delay 0 iter null kf [{"offset":"0","easing":"ease","opacity":"0"},{"offset":"0.5","easing":"ease","opacity":"0"},{"offset":"0.51","easing":"ease","opacity":"1"},{"offset":"1","easi
+- [load@1500] CSSAnimation carret-pulse on h2.h5.carret: 1000ms linear delay 0 iter null kf [{"offset":"0","easing":"ease","opacity":"0"},{"offset":"0.5","easing":"ease","opacity":"0"},{"offset":"0.51","easing":"ease","opacity":"1"},{"offset":"1","easi
+- [hover0] CSSTransition transform on svg.icon.inline-block: 500ms ease-in-out delay 0 iter 1 kf [{"offset":"0","easing":"linear","transform":"rotate(0deg)"},{"offset":"1","easing":"linear","transform":"rotate(360deg)"}]
+- [hover1] CSSTransition background-color on a.cta-primary.inline-flex: 300ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","backgroundColor":"rgba(0, 0, 0, 0)"},{"offset":"1","easing":"linear","backgroundColor":"rgb(117, 243, 72)"}]
+- [hover1] CSSTransition color on a.cta-primary.inline-flex: 300ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","color":"rgb(117, 243, 72)"},{"offset":"1","easing":"linear","color":"rgb(0, 0, 0)"}]
+- [hover2] CSSTransition opacity on img.vue-boost-lazyimage-img.width: 300ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","opacity":"0"},{"offset":"1","easing":"linear","opacity":"1"}]
+- [hover3] CSSTransition color on a.item.block: 300ms ease delay 0 iter 1 kf [{"offset":"0","easing":"linear","color":"oklab(0.700495 0.00116739 -0.0208321)"},{"offset":"1","easing":"linear","color":"rgb(255, 255, 255)"}]
+
+## JS-driven tween clusters (155 tweens → 71 groups; times ms from navigation; phases {"loaded":1874,"hover":10026,"cursorStep":16043,"scroll":17254,"end":28846})
+- [load @2454] div.wrapper-content.w-full · opacity 0.286→1 · 150ms · power1.out (rmse 0.016)
+- [load @3465] div.flex.items-center · widthPct 0.005→100 · 1100ms · css ease (rmse 0.095)
+- [load @3465] div.wrapper-content.w-full · opacity 0.581→0 · 150ms · circ-out(.075,.82,.165,1) (rmse 0.149)
+- [load @3565] div · transform.y 140→0 · 1000ms · power3.inOut (rmse 0.006) · ×23, stagger ~28ms
+- [load @3685] span · opacity 0.952→0 · 100ms · css ease-out (rmse 0.044)
+- [load @3694] span · opacity 0.982→0 · 100ms · linear (rmse 0.067) · ×2, stagger ~27ms
+- [load @4412] div.wrapper.fixed · opacity 0.884→0 · 100ms · power1.out (rmse 0.021)
+- [load @4613] span · opacity 0→1 · 100ms · power2.in (rmse 0.116) · ×6, stagger ~0ms
+- [load @4613] span · opacity 0→1 · 150ms · power2.in (rmse 0.153) · ×3, stagger ~2214ms
+- [load @5225] div.lg:text-right.whitespace-nowrap · opacity 0.023→1 · 300ms · linear (rmse 0.015)
+- [hover @11251] span · opacity 0→1 · 100ms · power2.in (rmse 0.149) · ×6, stagger ~0ms
+- [hover @11251] span · opacity 0→1 · 150ms · power2.in (rmse 0.105) · ×3, stagger ~2216ms
+- [hover @11821] div.wrapper.fixed · --v6840ce0d 0.069→0.172 · 200ms · power3.inOut (rmse 0.036)
+- [hover @11821] div.wrapper.fixed · --v6840ce0e 0.99→0.94 · 200ms · expo.inOut (rmse 0.021)
+- [hover @14373] div.layer-image.h-full · --scale 1→1.015 · 1000ms · linear (rmse 0.003)
+- [cursor @16050] div.layer-image.h-full · --scale 1.015→1 · 1000ms · linear (rmse 0.001)
+- [scroll @17267] div.wrapper.fixed · --v6840ce0d 0.619→0.751 · 1500ms · power2.out (rmse 0.075) · ×2, stagger ~7783ms
+- [scroll @17267] div.wrapper.fixed · --v6840ce0e 0.985→0.905 · 1500ms · css ease (rmse 0.058) · ×2, stagger ~3958ms
+- [scroll @17267] div.w-full · transform.y -18.845→-62.431 · 1500ms · power2.out (rmse 0.073) · ×3, stagger ~0ms
+- [scroll @17884] span · opacity 0→1 · 100ms · power2.in (rmse 0.103) · ×7, stagger ~0ms
+- [scroll @17884] span · opacity 0→1 · 150ms · power2.in (rmse 0.168) · ×2, stagger ~4423ms
+- [scroll @19170] div.wrapper.fixed · --v6840ce0d 0.219→0.249 · 200ms · linear (rmse 0.07)
+- [scroll @19170] div.wrapper.fixed · --v6840ce0e 0.904→0.876 · 200ms · linear (rmse 0.081)
+- [scroll @19170] div.w-full · transform.y -62.798→-72.694 · 200ms · linear (rmse 0.07) · ×3, stagger ~0ms
+- [scroll @19584] div.wrapper.fixed · --v6840ce0d 0.25→0.344 · 500ms · power1.out (rmse 0.069)
+- [scroll @19584] div.wrapper.fixed · --v6840ce0e 0.875→0.764 · 500ms · css ease-out (rmse 0.063)
+- [scroll @19584] div.w-full · transform.y -73.244→-100 · 350ms · css ease-out (rmse 0.096) · ×3, stagger ~0ms
+- [scroll @20245] div.wrapper.fixed · --v6840ce0d 0.344→0.351 · 550ms · circ-out(.075,.82,.165,1) (rmse 0.124)
+- [scroll @20245] div.wrapper.fixed · --v6840ce0e 0.763→0.754 · 550ms · circ-out(.075,.82,.165,1) (rmse 0.123)
+- [scroll @21225] div.wrapper.fixed · --v6840ce0d 0.485→0.618 · 1500ms · css ease (rmse 0.074) · ×3, stagger ~3815ms
+- [scroll @21661] div.intro.container · opacity 0.943→0 · 250ms · power2.out (rmse 0.047)
+- [scroll @21974] span · opacity 0.992→0 · 100ms · css ease-out (rmse 0.061) · ×4, stagger ~14ms
+- [scroll @21995] span · opacity 0.929→1 · 100ms · linear (rmse 0.061) · ×4, stagger ~20ms
+- [scroll @22023] span · opacity 0.955→0 · 150ms · css ease-out (rmse 0.053) · ×4, stagger ~14ms
+- [scroll @22078] span · opacity 0.993→0.92 · 200ms · css ease-out (rmse 0.023) · ×2, stagger ~445ms
+- [scroll @22092] span · opacity 0.959→0 · 250ms · css ease-out (rmse 0.023)
+- [scroll @22113] span · opacity 0.992→0.79 · 350ms · power1.out (rmse 0.023) · ×2, stagger ~264ms
+- [scroll @22127] span · opacity 0.979→0.141 · 600ms · power2.out (rmse 0.026) · ×2, stagger ~28ms
+- [scroll @22182] span · opacity 0.979→0.4 · 550ms · power2.out (rmse 0.029) · ×2, stagger ~28ms
+- [scroll @22252] span · opacity 0.994→0.53 · 500ms · power2.out (rmse 0.034)
+- [scroll @22302] span · opacity 0.992→0.66 · 450ms · power1.out (rmse 0.051)
+- [scroll @23143] div.wrapper.fixed · --v6840ce0e 0.291→0.124 · 1500ms · power2.out (rmse 0.062) · ×3, stagger ~1908ms
+- [scroll @23356] span · opacity 0.991→0 · 150ms · power1.out (rmse 0.019)
+- [scroll @23398] div.video.z-1 · opacity 0.028→1 · 150ms · power1.out (rmse 0.022)
+- [scroll @23981] li.h2.case-upper · opacity 0.023→1 · 300ms · linear (rmse 0.018) · ×5, stagger ~292ms
+
+## Notable assets
+- video ://monogrid.com/media/86094f3a1fbc839a0d76dea8eb18f828d7fa18b23660585767406f6266916c47.mp4 988KB
+- video ://monogrid.com/media/c3c3e9601c1a3fed6812c96f4a14dc15b68fbddc6c1a7a0ece568d9488f9727b.mp4 0KB
+- video ://monogrid.com/media/5e3a919f33f521a7627de96e9ca9b2fb223f8a108f0ab0a837f4c50af0f6e406.mp4 0KB
+- video ://monogrid.com/media/8ce71f22cf4fcdceaa5288e1fac759471f92ada8975995257edf18f1bf547047.mp4 0KB
+- video ://monogrid.com/media/c3c3e9601c1a3fed6812c96f4a14dc15b68fbddc6c1a7a0ece568d9488f9727b.mp4 34KB
+- video ://monogrid.com/media/5e3a919f33f521a7627de96e9ca9b2fb223f8a108f0ab0a837f4c50af0f6e406.mp4 31KB
+- video ://monogrid.com/media/8ce71f22cf4fcdceaa5288e1fac759471f92ada8975995257edf18f1bf547047.mp4 34KB
+- video ://monogrid.com/media/c3c3e9601c1a3fed6812c96f4a14dc15b68fbddc6c1a7a0ece568d9488f9727b.mp4 2428KB
+- video ://monogrid.com/media/5e3a919f33f521a7627de96e9ca9b2fb223f8a108f0ab0a837f4c50af0f6e406.mp4 3067KB
+- video ://monogrid.com/media/8ce71f22cf4fcdceaa5288e1fac759471f92ada8975995257edf18f1bf547047.mp4 2974KB
+- video ://monogrid.com/media/3561a79a3ca072d212ef759c1b6ed342bd0f021aac14728c50abd7ea3d906cbe.mp4 0KB
+- video ://monogrid.com/media/4ba5176274cd18e141a250203e73fbc01ac8ea90e6a88536fa816f4eb32e8b07.mp4 0KB
+- video ://monogrid.com/media/3561a79a3ca072d212ef759c1b6ed342bd0f021aac14728c50abd7ea3d906cbe.mp4 18KB
+- fetch ://monogrid.com/media/1ea2a47b9cc80ff9caa3dbb38f7dd1eba511a11924031eb01326a845e18ac696.glb 968KB
+- video ://monogrid.com/media/3561a79a3ca072d212ef759c1b6ed342bd0f021aac14728c50abd7ea3d906cbe.mp4 2170KB
+
+Raw: forensics/monogrid/ (forensics.json, source.css, source.js.txt, shaders.glsl, *.webm video of the run)

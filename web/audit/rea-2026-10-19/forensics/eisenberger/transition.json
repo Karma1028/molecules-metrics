@@ -1,0 +1,164 @@
+{
+ "slug": "eisenberger",
+ "url": "https://www.eisenberger.co.at/en/photography/",
+ "phases": {
+  "loaded": 4348
+ },
+ "anims": {
+  "load@600": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "header.js-site-head.site-head",
+    "duration": 700,
+    "delay": 0,
+    "easing": "cubic-bezier(0.77, 0, 0.175, 1)",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate(0px, -100%)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate(0px)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "a.js-menu-toggle.menu-toggle",
+    "duration": 500,
+    "delay": 400,
+    "easing": "cubic-bezier(0.165, 0.84, 0.44, 1)",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate(0px, -100%)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate(0px)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "a.site-title.delay--6",
+    "duration": 500,
+    "delay": 600,
+    "easing": "cubic-bezier(0.165, 0.84, 0.44, 1)",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate(-50%, -400%)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate(-50%, -50%)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "div.language-picker.delay--8",
+    "duration": 500,
+    "delay": 800,
+    "easing": "cubic-bezier(0.165, 0.84, 0.44, 1)",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate(0px, -150%)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate(0px, -50%)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "opacity",
+    "target": "img.js-video-fallback.video-fallback",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "ease-in-out",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterNav": []
+ },
+ "transition": {
+  "href": "https://www.eisenberger.co.at/en/people/",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 12397,
+  "urlFrames": [
+   [
+    "/en/photography/",
+    16654
+   ],
+   [
+    "/en/photography/",
+    16911
+   ],
+   [
+    "/en/photography/",
+    17161
+   ],
+   [
+    "/en/photography/",
+    17413
+   ],
+   [
+    "/en/photography/",
+    17675
+   ],
+   [
+    "/en/photography/",
+    17926
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 0
+ }
+}

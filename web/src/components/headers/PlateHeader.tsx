@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import { AlponaRule } from "../motifs/Alpona"
+import { Headline } from "../headline/Headline"
 
 export interface PlateHeaderProps {
   plate?: string
@@ -38,7 +39,7 @@ export function PlateHeader({
           <span>{kickText}</span>
         </div>
         <div className="ph-title-wrap">
-          <h1 className="ph-title">{title}</h1>
+          <Headline world="artist" className="ph-title">{title}</Headline>
           {note && <span className="ph-note">{note}</span>}
         </div>
         {showRule && <AlponaRule className="ph-rule" />}

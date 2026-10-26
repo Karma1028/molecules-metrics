@@ -1,0 +1,487 @@
+{
+ "slug": "analytical",
+ "url": "https://analytical-group.com/it",
+ "phases": {
+  "loaded": 6416,
+  "hover": 14478,
+  "cursorStep": 17973,
+  "scroll": 19195,
+  "end": 30467
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "fadeIn",
+    "target": "div.elementor-element.elementor-element-8f439c6",
+    "duration": 1250,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "hover0": [
+   {
+    "type": "CSSAnimation",
+    "name": "fadeIn",
+    "target": "div.elementor-element.elementor-element-8f439c6",
+    "duration": 1250,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "opacity": "1"
+     }
+    ]
+   }
+  ],
+  "hover1": [],
+  "hover3": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "div.swiper-wrapper",
+    "duration": 500,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate3d(-1481.63px, 0px, 0px)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate3d(-1728.57px, 0px, 0px)"
+     }
+    ]
+   }
+  ],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   11611,
+   "2d",
+   "1x1"
+  ],
+  [
+   11694,
+   "webgl",
+   "300x150"
+  ]
+ ],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [
+  {
+   "el": "div.elementor-motion-effects-layer",
+   "prop": "--translateX",
+   "start": 19217,
+   "dur": 471,
+   "from": -482.573,
+   "to": -381.946,
+   "n": 12,
+   "ease": "linear",
+   "rmse": 0.014
+  },
+  {
+   "el": "div.elementor-motion-effects-layer",
+   "prop": "--translateX",
+   "start": 21084,
+   "dur": 299,
+   "from": -361.843,
+   "to": -301.478,
+   "n": 8,
+   "ease": "linear",
+   "rmse": 0.006
+  },
+  {
+   "el": "div.elementor-motion-effects-layer",
+   "prop": "--translateX",
+   "start": 23014,
+   "dur": 467,
+   "from": -241.171,
+   "to": -140.544,
+   "n": 12,
+   "ease": "linear",
+   "rmse": 0.014
+  },
+  {
+   "el": "div.elementor-element.elementor-element-552d57e",
+   "prop": "--translateY",
+   "start": 23211,
+   "dur": 183,
+   "from": 7.24,
+   "to": -64,
+   "n": 6,
+   "ease": "power2.out",
+   "rmse": 0.013
+  },
+  {
+   "el": "a.elementor-element.elementor-element-6cbb408",
+   "prop": "--translateY",
+   "start": 23211,
+   "dur": 182,
+   "from": 7.24,
+   "to": -64,
+   "n": 6,
+   "ease": "power2.out",
+   "rmse": 0.014
+  },
+  {
+   "el": "a.elementor-element.elementor-element-55917d3",
+   "prop": "--translateY",
+   "start": 23212,
+   "dur": 183,
+   "from": 7.24,
+   "to": -64,
+   "n": 6,
+   "ease": "power2.out",
+   "rmse": 0.013
+  },
+  {
+   "el": "div.elementor-motion-effects-layer",
+   "prop": "--translateX",
+   "start": 24876,
+   "dur": 479,
+   "from": -120.442,
+   "to": -19.872,
+   "n": 12,
+   "ease": "linear",
+   "rmse": 0.011
+  }
+ ],
+ "mutationCount": 345,
+ "assets": [
+  [
+   "xmlhttprequest",
+   "/consentcdn.cookiebot.com/consentconfig/813fa6c8-60a9-43c9-8d24-d9e9acc11ffa/settings.json",
+   0
+  ],
+  [
+   "css",
+   "https://analytical-group.com/wp-content/uploads/GraphikBlack.woff",
+   54
+  ],
+  [
+   "css",
+   "https://analytical-group.com/wp-content/uploads/GraphikRegular.woff",
+   48
+  ],
+  [
+   "css",
+   "https://analytical-group.com/wp-content/uploads/GraphikSemibold.woff",
+   53
+  ],
+  [
+   "css",
+   "s://analytical-group.com/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2",
+   106
+  ],
+  [
+   "css",
+   "group.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2",
+   77
+  ],
+  [
+   "img",
+   "ttps://analytical-group.com/wp-content/plugins/sitepress-multilingual-cms/res/flags/en.svg",
+   2
+  ],
+  [
+   "img",
+   "ttps://analytical-group.com/wp-content/plugins/sitepress-multilingual-cms/res/flags/it.svg",
+   1
+  ]
+ ],
+ "css": {
+  "cssBytes": 478153,
+  "keyframes": [
+   {
+    "name": "eicon-spin",
+    "body": "0%{transform:rotate(0deg)}to{transform:rotate(359deg)}"
+   },
+   {
+    "name": "fadeInDown",
+    "body": "from{opacity:0;transform:translate3d(0,-100%,0)}to{opacity:1;transform:none}"
+   },
+   {
+    "name": "hide-scroll",
+    "body": "0%,to{overflow:hidden}"
+   },
+   {
+    "name": "hide-scroll",
+    "body": "0%,to{overflow:hidden}"
+   },
+   {
+    "name": "fadeIn",
+    "body": "from{opacity:0}to{opacity:1}"
+   },
+   {
+    "name": "swiper-preloader-spin",
+    "body": "0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}"
+   },
+   {
+    "name": "a",
+    "body": "0%{transform:rotate(0deg)}to{transform:rotate(359deg)}"
+   },
+   {
+    "name": "fa-spin",
+    "body": "0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}"
+   },
+   {
+    "name": "fa-spin",
+    "body": "0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}"
+   }
+  ],
+  "beziers": [
+   [
+    "cubic-bezier(0,.33,.07,1.03)",
+    1
+   ],
+   [
+    "cubic-bezier(.58,.3,.005,1)",
+    1
+   ]
+  ],
+  "durations": [
+   [
+    "3s",
+    30
+   ],
+   [
+    "0.3s",
+    20
+   ],
+   [
+    "2s",
+    17
+   ],
+   [
+    "1s",
+    15
+   ],
+   [
+    "0s",
+    8
+   ],
+   [
+    "4s",
+    7
+   ],
+   [
+    "500ms",
+    5
+   ],
+   [
+    "02s",
+    3
+   ],
+   [
+    "5s",
+    1
+   ],
+   [
+    "10s",
+    1
+   ],
+   [
+    "20s",
+    1
+   ],
+   [
+    "1.25s",
+    1
+   ],
+   [
+    "75s",
+    1
+   ],
+   [
+    "1.2s",
+    1
+   ],
+   [
+    "12s",
+    1
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:color 0.3s",
+    12
+   ],
+   [
+    "transition:all var(--n-menu-title-transition)",
+    6
+   ],
+   [
+    "transition:fill 0.3s",
+    6
+   ],
+   [
+    "transition:all .3s",
+    4
+   ],
+   [
+    "transition:max-height .3s,transform .3s",
+    3
+   ],
+   [
+    "transition:.3s",
+    3
+   ],
+   [
+    "transition:0.3s",
+    2
+   ],
+   [
+    "transition:all var(--n-menu-toggle-icon-hover-duration)",
+    2
+   ],
+   [
+    "transition:all .2s ease-in-out",
+    1
+   ],
+   [
+    "transition:opacity 1s",
+    1
+   ],
+   [
+    "transition:all .5s",
+    1
+   ],
+   [
+    "transition:background var(--background-transition,.3s),border var(--border-transition,.3s),box-shadow",
+    1
+   ]
+  ],
+  "customProps": [
+   [
+    "--padding-top",
+    130
+   ],
+   [
+    "--padding-right",
+    130
+   ],
+   [
+    "--padding-bottom",
+    130
+   ],
+   [
+    "--padding-left",
+    130
+   ],
+   [
+    "--display",
+    105
+   ],
+   [
+    "--width",
+    87
+   ],
+   [
+    "--min-height",
+    85
+   ],
+   [
+    "--gap",
+    70
+   ],
+   [
+    "--row-gap",
+    69
+   ],
+   [
+    "--column-gap",
+    69
+   ],
+   [
+    "--overlay-opacity",
+    54
+   ],
+   [
+    "--background-overlay",
+    53
+   ],
+   [
+    "--container-widget-width",
+    50
+   ],
+   [
+    "--flex-grow",
+    48
+   ],
+   [
+    "--flex-shrink",
+    47
+   ]
+  ],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 4,
+   "clip-path": 1,
+   "mask": 9,
+   "backdrop-filter": 0,
+   "perspective": 7,
+   "preserve-3d": 1,
+   "@media (prefers-reduced-motion": 3,
+   "steps(": 2,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 2681155,
+ "jsLibs": [
+  "react",
+  "lottie",
+  "barba"
+ ]
+}

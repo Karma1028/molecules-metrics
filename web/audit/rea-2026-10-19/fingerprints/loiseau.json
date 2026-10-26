@@ -1,0 +1,115 @@
+{
+ "slug": "loiseau",
+ "url": "https://loiseau.framer.website/",
+ "fp": {
+  "title": "L'OISEAU DÉ",
+  "globals": [
+   "__framer_importFromPackage"
+  ],
+  "libHints": [
+   "framer"
+  ],
+  "hosts": [
+   "events.framer.com",
+   "framerusercontent.com"
+  ],
+  "counts": {
+   "canvas": 3,
+   "video": 0,
+   "svg": 11,
+   "img": 22,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 8,
+   "links": 20,
+   "splitChars": 0
+  },
+  "pageHeightVh": 10.2,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "sans-serif"
+  },
+  "h1": {
+   "ff": "Clash Display",
+   "fs": "195.593px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "L'OISEAU DÉ"
+  },
+  "h2": {
+   "ff": "Clash Display",
+   "fs": "48px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": "L'OISEAU DÉ IS A MODERN ATELIER"
+  },
+  "p": {
+   "ff": "Clash Display",
+   "fs": "16px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": "L'OISEAU DÉ"
+  },
+  "fontsLoaded": [
+   "Inter",
+   "Clash Display",
+   "Inter Placeholder",
+   "Clash Display Placeholder"
+  ],
+  "topFonts": [
+   [
+    "Clash Display 500",
+    65
+   ],
+   [
+    "Clash Display 400",
+    32
+   ],
+   [
+    "Inter 300",
+    7
+   ],
+   [
+    "sans-serif 400",
+    6
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    18
+   ],
+   [
+    "rgb(0, 0, 0)",
+    7
+   ],
+   [
+    "rgb(195, 231, 148)",
+    2
+   ],
+   [
+    "rgb(215, 226, 193)",
+    2
+   ],
+   [
+    "rgb(247, 245, 237)",
+    1
+   ],
+   [
+    "rgb(72, 110, 70)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 4,
+   "sticky": 5,
+   "will-change": 5,
+   "mask": 3
+  }
+ },
+ "finalUrl": "https://loiseau.framer.website/"
+}

@@ -1,15 +1,36 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { Icon } from "../../lib/icons"
 import { motionTokens, springs } from "../../lib/motion-tokens"
+import { metaForUrl } from "../../lib/gallery-meta"
+import { scatterPoints } from "../../lib/exif-scatter"
+import { setWatched } from "../../lib/last-watched"
 import { useFrames, LOCAL_FRAMES, type Frame } from "../../lib/live"
 import { GalleryLightbox } from "./GalleryLightbox"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { PlateHeader } from "../../components/headers/PlateHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
-const DRIVE_FOLDER = "https://drive.google.com/drive/folders/1h-dsIi3apvvKvj3XBv-pAccL3F-EPnDI"
 
 const CSS = String.raw`
+  .p-gl .plot-toggle{font:600 9px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:none;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:999px;padding:5px 10px;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease)}
+  .p-gl .plot-toggle:hover,.p-gl .plot-toggle[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .p-gl .plot-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .p-gl .cells{transition:opacity .35s var(--ease)}
+  .p-gl .cells.plotted{opacity:0;pointer-events:none}
+  .p-gl .plot{position:absolute;inset:24px 10px;z-index:3}
+  .p-gl .plot .ax{position:absolute;font:600 8px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:rgba(244,234,217,.55)}
+  .p-gl .plot .ax-y{left:2px;top:0}
+  .p-gl .plot .ax-x{right:2px;bottom:0}
+  .p-gl .plot .nodata-k{position:absolute;left:2px;bottom:0;font:600 8px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:rgba(244,234,217,.4)}
+  .p-gl .plot .dot{position:absolute;translate:-50% -50%;padding:0;border:1.5px solid rgba(244,234,217,.8);border-radius:50%;overflow:hidden;cursor:pointer;background:#17110d;
+    animation:pl-in .5s var(--ease) both;animation-delay:var(--d);transition:scale .25s var(--ease),border-color .25s var(--ease)}
+  .p-gl .plot .dot img{width:100%;height:100%;object-fit:cover;display:block}
+  .p-gl .plot .dot:hover,.p-gl .plot .dot:focus-visible{scale:1.5;z-index:4;border-color:var(--accent);outline:none}
+  .p-gl .plot .dot.on{border-color:var(--accent);border-width:2.5px}
+  .p-gl .plot .dot.nodata{opacity:.55;border-style:dashed}
+  @keyframes pl-in{from{opacity:0;scale:.2}to{opacity:1;scale:1}}
+  @media(prefers-reduced-motion:reduce){.p-gl .plot .dot{animation:none}.p-gl .cells{transition:none}}
   .p-gl{height:100%;min-height:0;display:flex;flex-direction:column;max-width:1200px;margin:0 auto;width:100%;overflow:hidden}
 
   /* masthead — compact editorial, matches the field-notebook system */
@@ -23,7 +44,7 @@ const CSS = String.raw`
   .p-gl .gl-lede b{color:var(--ink);font-weight:600}
   .p-gl .gl-src{display:flex;flex-direction:column;gap:5px;align-items:flex-end;text-align:right;white-space:nowrap}
   .p-gl .gl-src .live{display:inline-flex;align-items:center;gap:7px;font:500 10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .p-gl .gl-src .live .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+  .p-gl .gl-src .live .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .p-gl .gl-src .live b{color:var(--ink);font-weight:600}
   .p-gl .gl-src .cue{font:500 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.8}
 
@@ -93,9 +114,6 @@ const CSS = String.raw`
   .p-gl .cell .slotmark .sn{font:700 clamp(13px,1.5vw,18px)/1 var(--font-mono);letter-spacing:.06em}
   .p-gl .cell .slotmark .sl{font:600 6.5px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;opacity:.8}
 
-  .p-gl .empty{flex:0 0 auto;margin-top:10px;display:flex;align-items:center;gap:10px;font:500 11px/1.4 var(--font-mono);color:var(--muted)}
-  .p-gl .empty a{color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor;padding-bottom:2px}
-  .p-gl .empty a .ic{width:12px;height:12px}
 
   /* lightbox v2 — immersive darkroom print */
   .p-gl-lb{position:fixed;inset:0;z-index:1000;background:color-mix(in srgb,#120f0b 90%,var(--paper));backdrop-filter:blur(12px);
@@ -149,13 +167,32 @@ const CSS = String.raw`
   .p-gl-lb .lb-btn .ic{width:16px;height:16px}
   .p-gl-lb .lb-btn.x{top:18px;right:18px;font:400 20px/1 var(--font-mono)}
   .p-gl-lb .lb-btn.snd{top:18px;right:70px}
+  .p-gl-lb .lb-btn.lamp{top:18px;right:122px}
+  .p-gl-lb .lb-btn.lamp[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .p-gl-lb .lb-lantern{position:absolute;inset:0;z-index:3;pointer-events:none;transition:background .08s linear}
   .p-gl-lb .lb-btn:hover{background:var(--accent);color:#fff;transform:scale(1.06)}
   .p-gl-lb .lbnav{position:fixed;top:50%;translate:0 -50%;z-index:4;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule);
     background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow-sm);transition:background .3s,transform .3s}
   .p-gl-lb .lbnav .ic{width:16px;height:16px}
   .p-gl-lb .lbnav.prev{left:20px}.p-gl-lb .lbnav.prev .ic{transform:rotate(180deg)}
   .p-gl-lb .lbnav.next{right:20px}
-  .p-gl-lb .lbnav:hover{background:var(--accent);color:#fff;transform:translateY(-50%) scale(1.06)}
+  /* centred with the translate property, so hover must use scale (a transform here would add a second -50% and jump the button) */
+  .p-gl-lb .lbnav:hover{background:var(--accent);color:#fff;scale:1.08}
+  .p-gl-lb .lbnav:active{scale:.94}
+  .p-gl-lb .lbnav.prev:hover .ic{transform:rotate(180deg) translateX(2px)}
+  .p-gl-lb .lbnav.next:hover .ic{transform:translateX(2px)}
+  .p-gl-lb .lbnav .ic{transition:transform .25s var(--ease)}
+  .p-gl-lb .lbnav:focus-visible,.p-gl-lb .lb-btn:focus-visible,.p-gl-lb .lb-strip button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  /* filmstrip: every frame, current one lit, click to jump */
+  .p-gl-lb{grid-template-rows:1fr auto}
+  .p-gl-lb .lb-strip{grid-row:2;display:flex;gap:6px;max-width:min(1100px,92vw);overflow-x:auto;padding:8px 4px 2px;scrollbar-width:none;scroll-snap-type:x proximity;cursor:auto}
+  .p-gl-lb .lb-strip::-webkit-scrollbar{display:none}
+  .p-gl-lb .lb-strip button{flex:0 0 auto;width:46px;height:34px;padding:0;border:0;border-radius:4px;overflow:hidden;cursor:pointer;opacity:.42;
+    outline:1.5px solid transparent;transition:opacity .25s var(--ease),outline-color .25s var(--ease),translate .25s var(--ease);scroll-snap-align:center;background:#1a1512}
+  .p-gl-lb .lb-strip button img{display:block;width:100%;height:100%;object-fit:cover}
+  .p-gl-lb .lb-strip button:hover{opacity:.85;translate:0 -2px}
+  .p-gl-lb .lb-strip button[aria-current="true"]{opacity:1;outline-color:var(--accent)}
 
   @media(max-width:760px){
     .p-gl{height:100%;min-height:0;overflow:hidden}
@@ -172,7 +209,6 @@ const CSS = String.raw`
     .p-gl .cell{aspect-ratio:1/1}
     .p-gl .cell .cno{display:none}
     .p-gl .cell .slotmark .sl{display:none}
-    .p-gl .empty{margin-top:4px;font-size:9.5px;flex-wrap:wrap;gap:4px 8px}
     .p-gl-lb .lb-frame{display:block;--gut:0px;padding:64px 0}
     .p-gl-lb .lb-stage,.p-gl-lb .lb-stage img{max-height:54vh}
     .p-gl-lb .lb-note.s-sm,.p-gl-lb .lb-note.s-md,.p-gl-lb .lb-note.s-lg{font-size:clamp(15px,4.4vw,19px)}
@@ -193,6 +229,7 @@ export function Gallery() {
 
   const [cur, setCur] = useState(0)
   const [open, setOpen] = useState(false)
+  const [plot, setPlot] = useState(false)
   const [hover, setHover] = useState<number | null>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const lock = useRef(0)
@@ -207,6 +244,10 @@ export function Gallery() {
   }, [n, cur])
 
   const go = useCallback((d: number) => { bump(); setCur((c) => (c + d + n) % n) }, [n, bump])
+  useEffect(() => {
+    if (open && frames[cur]) setWatched({ kind: "frame", index: cur, total: frames.length, name: frames[cur].name })
+  }, [open, cur, frames])
+  const pts = useMemo(() => scatterPoints(frames.map((f) => metaForUrl(f.url)?.exif ?? {})), [frames])
   const select = useCallback((i: number) => { bump(); setCur(i) }, [bump])
 
   // living roll — when untouched, the darkroom prints the next frame on a slow loop
@@ -275,11 +316,11 @@ export function Gallery() {
         kicker="Field Dispatches · Goa"
         title={<>Contact <em className="hl">sheet</em>.</>}
         note="~ pick or scroll to print"
-        lede={<>The whole roll at once. <b>Pick any negative</b> and it prints to the big frame, or <b>scroll, swipe or arrow</b> through them. Drop a photo into the live folder and it joins the sheet.</>}
+        lede={<>The whole roll at once. <b>Pick any negative</b> and it prints to the big frame, or <b>scroll, swipe or arrow</b> through them.</>}
         right={
           <div className="gl-src">
-            <span className="live"><span className="dot" /> <b>{n}</b> frames · {live ? "live from Drive" : "local set"}</span>
-            <span className="cue">pick or scroll to print</span>
+            <TwinDoor to="/analyst/work" label="Pull the thread: how I work" world="analyst" />
+            <span className="live"><span className="dot" /> <b>{n}</b> frames</span>
           </div>
         }
       />
@@ -310,6 +351,8 @@ export function Gallery() {
             layoutId={`frame-${f.url}`}
             className="print"
             src={f.url}
+            srcSet={`${f.url.replace(/\.webp$/, "")}-800w.webp 800w, ${f.url.replace(/\.webp$/, "")}-1600w.webp 1600w`}
+            sizes="(max-width: 768px) 800px, 1600px"
             alt={f.name}
             decoding="async"
             transition={morph}
@@ -340,11 +383,12 @@ export function Gallery() {
         <div className="sheet">
           <div className="sheet-top">
             <span className="st">Roll · <b>{String(n).padStart(2, "0")}</b> exposures</span>
-            <span className="st">{live ? "live" : "local"}</span>
+            <button type="button" className="plot-toggle" aria-pressed={plot} onClick={() => setPlot((p) => !p)}>{plot ? "back to the roll" : "count them"}</button>
+            <span className="st">{live ? "live" : "archive"}</span>
           </div>
           <div className="film-mat roll">
           <div
-            className={`cells${hover !== null ? " focus" : ""}`}
+            className={`cells${hover !== null ? " focus" : ""}${plot ? " plotted" : ""}`}
             style={{ ["--cols" as string]: cols }}
             onMouseLeave={() => setHover(null)}
           >
@@ -380,18 +424,36 @@ export function Gallery() {
               )
             })}
           </div>
+          {plot && (
+            <div className="plot" role="group" aria-label="Frames plotted by date, shutter speed and ISO">
+              <span className="ax ax-y">faster shutter ↑</span>
+              <span className="ax ax-x">earlier → later</span>
+              {frames.map((fr, i) => {
+                const p = pts[i]
+                const miss = "missing" in p
+                const size = miss ? 14 : 16 + p.s * 16
+                const style = miss
+                  ? { left: `${6 + (i / Math.max(frames.length - 1, 1)) * 88}%`, top: "93%", width: size, height: size, ["--d" as string]: `${i * 14}ms` }
+                  : { left: `${8 + p.x * 84}%`, top: `${10 + p.y * 72}%`, width: size, height: size, ["--d" as string]: `${i * 14}ms` }
+                return (
+                  <button
+                    key={fr.url}
+                    type="button"
+                    className={`dot${i === cur ? " on" : ""}${miss ? " nodata" : ""}`}
+                    style={style}
+                    aria-label={`Frame ${i + 1}: ${fr.name}${miss ? ", no camera data" : ""}`}
+                    onClick={() => select(i)}
+                  >
+                    <img src={fr.url} alt="" decoding="async" />
+                  </button>
+                )
+              })}
+              {pts.some((p) => "missing" in p) && <span className="nodata-k">no data</span>}
+            </div>
+          )}
           </div>
         </div>
       </div>
-
-      {!live && (
-        <div className="empty">
-          No frames in the live folder yet, showing the local set.
-          <a href={DRIVE_FOLDER} target="_blank" rel="noopener">
-            <Icon id="i-download" /> Drop photos into the live folder
-          </a>
-        </div>
-      )}
 
       {open && (
         <GalleryLightbox
@@ -399,6 +461,7 @@ export function Gallery() {
           index={cur}
           onClose={() => setOpen(false)}
           onStep={go}
+          onJump={select}
           reduce={!!reduce}
         />
       )}

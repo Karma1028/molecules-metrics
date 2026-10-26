@@ -16,7 +16,7 @@ Spotify setup (one time):
      The refresh token is appended to spotify.env automatically. Done.
 Stdlib only, no installs.
 """
-import base64, json, os, time, urllib.parse, urllib.request
+import base64, html, json, os, time, urllib.parse, urllib.request
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -31,7 +31,8 @@ _cache = {}
 
 
 def env():
-    def load(path, only_prefix=None):
+    def load(path, only_prefix=()):
+        """only_prefix: tuple of accepted key prefixes (empty = accept every key)."""
         if not path or not os.path.exists(path):
             return
         for line in open(path, encoding="utf-8"):
@@ -39,19 +40,22 @@ def env():
             if "=" in s and not s.startswith("#"):
                 k, v = s.split("=", 1)
                 k = k.strip()
-                if only_prefix and not k.startswith(only_prefix):
+                if only_prefix and not k.startswith(tuple(only_prefix)):
                     continue
                 vals[k] = v.strip()
 
     vals = dict(os.environ)
     load(ENV_FILE)  # prototype/spotify.env — authoritative, gitignored
-    # fallback: reuse the Spotify creds already set up in the KARMA-OS .env (Spotify keys only)
-    if not vals.get("SPOTIFY_REFRESH_TOKEN"):
+    # fallback: reuse the Spotify creds + YouTube Data API key already set up in the
+    # KARMA-OS .env. Only these prefixes are read, and only the ones still missing.
+    wanted = tuple(px for px, have in (("SPOTIFY_", vals.get("SPOTIFY_REFRESH_TOKEN")),
+                                       ("YOUTUBE_", vals.get("YOUTUBE_API_KEY"))) if not have)
+    if wanted:
         for p in (os.environ.get("KARMA_ENV"),
                   r"D:\antigravity project\karma - zeroclaw\.env",
                   "/mnt/d/antigravity project/karma - zeroclaw/.env"):
             if p and os.path.exists(p):
-                load(p, only_prefix="SPOTIFY_")
+                load(p, only_prefix=wanted)
                 break
     return vals
 
@@ -309,14 +313,16 @@ def music_search(q):
         configured = True
         try:
             qs = urllib.parse.urlencode({"part": "snippet", "q": q, "type": "video",
-                                         "maxResults": 8, "key": yt})
+                                         "videoEmbeddable": "true", "videoCategoryId": "10",
+                                         "maxResults": 6, "key": yt})
             _, d = http_json("https://www.googleapis.com/youtube/v3/search?" + qs)
             for it in (d or {}).get("items", []):
                 vid = (it.get("id") or {}).get("videoId")
                 sn = it.get("snippet") or {}
                 if not vid:
                     continue
-                out.append({"id": vid, "title": sn.get("title"), "artist": sn.get("channelTitle"),
+                out.append({"id": vid, "title": html.unescape(sn.get("title") or ""),
+                            "artist": html.unescape(sn.get("channelTitle") or ""),
                             "source": "youtube", "url": f"https://www.youtube.com/watch?v={vid}",
                             "art": ((sn.get("thumbnails") or {}).get("medium") or {}).get("url")})
         except Exception:
@@ -344,8 +350,8 @@ def music_lyrics(artist, title):
     try:
         qs = urllib.parse.urlencode({"artist_name": artist, "track_name": title})
         _, d = http_json("https://lrclib.net/api/get?" + qs)
-        return {"configured": True, "found": True, "synced": (d or {}).get("syncedLyrics"),
-                "plain": (d or {}).get("plainLyrics")}
+        synced, plain = (d or {}).get("syncedLyrics"), (d or {}).get("plainLyrics")
+        return {"configured": True, "found": bool(synced or plain), "synced": synced, "plain": plain}
     except Exception:
         return {"configured": True, "found": False}
 
@@ -458,7 +464,7 @@ class Handler(SimpleHTTPRequestHandler):
             if u.path == "/api/spotify/stats":
                 return self.send_json(cached("sp_stats", 1800, spotify_stats))
             if u.path == "/api/music/search":
-                q = (urllib.parse.parse_qs(u.query).get("q", [""])[0]).strip()
+                q = (urllib.parse.parse_qs(u.query).get("q", [""])[0]).strip()[:120]
                 if not q:
                     return self.send_json({"configured": True, "query": "", "results": []})
                 return self.send_json(cached("ms:" + q.lower(), 300, lambda: music_search(q)))

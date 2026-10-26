@@ -1,0 +1,35 @@
+{
+  "configured": true,
+  "activeDays": 27,
+  "sessions": 29,
+  "projects": 121,
+  "repos": 13,
+  "commits": 479,
+  "edits": 2753,
+  "filesTouched": 1085,
+  "linesAdded": 135648,
+  "linesRemoved": 10166,
+  "messages": 15578,
+  "toolCalls": 18380,
+  "agentCalls": 185,
+  "outputTokens": 9675253,
+  "contextTokens": 3767994220,
+  "cacheShare": 98,
+  "months": [
+    {
+      "month": "2026-07",
+      "output": 92067
+    },
+    {
+      "month": "2026-09",
+      "output": 3083355
+    },
+    {
+      "month": "2026-10",
+      "output": 6499831
+    }
+  ],
+  "since": "2026-07-21",
+  "until": "2026-10-15",
+  "generatedAt": "2026-10-15T17:08:38.006Z"
+}

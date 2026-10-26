@@ -1,0 +1,2176 @@
+{
+ "slug": "hvdmatch",
+ "url": "https://www.hvdfonts.com/fonts/match",
+ "phases": {
+  "loaded": 2093,
+  "hover": 10167,
+  "cursorStep": 20426,
+  "scroll": 21633,
+  "end": 32683
+ },
+ "anims": {
+  "load@600": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@1500": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@5000": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "hover0": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "hover1": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "hover2": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "hover3": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "scroll0": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "scroll1": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "scroll2": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "scroll3": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "scroll4": [
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ],
+  "scroll5": [
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-styles__characters.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.type-tester__line.type-tester__line--medium",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.type-tester__line.type-tester__line--medium",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.type-tester__line.type-tester__line--medium",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.type-tester__line.type-tester__line--medium",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.type-tester__line.type-tester__line--medium",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.type-tester__line.type-tester__line--medium",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.type-tester__line.type-tester__line--extralarge",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.type-l-to-xl.webfont-loaded",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.product__name.type-l-to-xl",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.webfont-loaded.webfont-loaded-done",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.webfont-loaded.webfont-loaded-done",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.webfont-loaded.webfont-loaded-done",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.ot-tnum.sample-with-lines",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.ot-tnum.sample-with-lines",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.webfont-loaded.webfont-loaded-done",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "div.tabs__tabs-contents.mt",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "h1.type-xxl-to-xxxxl.lh--xs",
+    "duration": 1000,
+    "delay": 300,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "hidenavihint",
+    "target": "header.header.has-hide-animation",
+    "duration": 450,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "transform": "translateY(15px)"
+     },
+     {
+      "offset": "0.3",
+      "easing": "ease",
+      "transform": "translateY(-5px)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "transform": "translateY(0px)"
+     }
+    ]
+   }
+  ]
+ },
+ "gsapCalls": [],
+ "canvasCtx": [],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [],
+ "mutationCount": 9,
+ "assets": [
+  [
+   "img",
+   "https://www.hvdfonts.com/assets/img/hvd_logo.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Matchtypefamily.svg",
+   3
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match_Logo.svg",
+   7
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Matchweights2.svg",
+   18
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Keepittight.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match1.svg",
+   9
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match152.svg",
+   12
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match87.svg",
+   13
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match170.svg",
+   10
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match45.svg",
+   6
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match50.svg",
+   9
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match175.svg",
+   32
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match172.svg",
+   3
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match168.svg",
+   42
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match26.svg",
+   44
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match125.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match169.svg",
+   18
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match167.svg",
+   23
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match160.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match166.svg",
+   7
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match3.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match163.svg",
+   7
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match159.svg",
+   12
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match162.svg",
+   7
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match155.svg",
+   12
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match156.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match143.svg",
+   7
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match158.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match157.svg",
+   12
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match140.svg",
+   18
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match177.svg",
+   8
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match154.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match153.svg",
+   21
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match150.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match149.svg",
+   10
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match148.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match144.svg",
+   11
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match145.svg",
+   10
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match109.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match129.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match146.svg",
+   10
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match147.svg",
+   13
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match151.svg",
+   20
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match141.svg",
+   11
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match165.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match39.svg",
+   3
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match164.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match142.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match176.svg",
+   34
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match134.svg",
+   2
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match138.svg",
+   11
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match135.svg",
+   6
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match139.svg",
+   13
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match171.svg",
+   13
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match137.svg",
+   3
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match136.svg",
+   3
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match174.svg",
+   12
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match131.svg",
+   8
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match130.svg",
+   7
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match132.svg",
+   11
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match133.svg",
+   14
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match126.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match128.svg",
+   9
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match127.svg",
+   6
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match94.svg",
+   6
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match120.svg",
+   20
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match124.svg",
+   2
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match173.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match123.svg",
+   6
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match113.svg",
+   41
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match117.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match122.svg",
+   3
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match118.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match121.svg",
+   6
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match107.svg",
+   11
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match110.svg",
+   13
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match116.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match114.svg",
+   4
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match106.svg",
+   10
+  ],
+  [
+   "img",
+   "https://www.hvdfonts.com/public/Match111.svg",
+   2
+  ]
+ ],
+ "css": {
+  "cssBytes": 1426641,
+  "keyframes": [
+   {
+    "name": "pop-in",
+    "body": "0%{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}"
+   },
+   {
+    "name": "fadeInOut",
+    "body": "0%{opacity:0}to{opacity:1}"
+   },
+   {
+    "name": "navihint",
+    "body": "0%{transform:translateY(0)}30%{transform:translateY(20px)}to{transform:translateY(15px)}"
+   },
+   {
+    "name": "hidenavihint",
+    "body": "0%{transform:translateY(15px)}30%{transform:translateY(-5px)}to{transform:translateY(0)}"
+   },
+   {
+    "name": "arrow",
+    "body": "0%{transform:translate(-50%) rotate(45deg)}30%{transform:translate(-50%) rotate(45deg)}70%{transform:translate(-50%,10%) rotate(45deg)}to{transform:translate(-50%) rotate(45deg)}"
+   },
+   {
+    "name": "dotpulse",
+    "body": "0%{background-color:#d8ebea}50%{background-color:#8ecfd4}to{background-color:#d8ebea}"
+   },
+   {
+    "name": "dotsonar",
+    "body": "0%{transform:translate(-50%) translateY(-50%) scale(1);opacity:.75}to{transform:translate(-50%) translateY(-50%) scale(4);opacity:0}"
+   },
+   {
+    "name": "bounceFromRight",
+    "body": "0%{margin-left:0}50%{margin-left:-30px}to{margin-left:0}"
+   },
+   {
+    "name": "bounceFromLeft",
+    "body": "0%{margin-left:0}50%{margin-left:30px}to{margin-left:0}"
+   },
+   {
+    "name": "bounce",
+    "body": "0%,to{transform:scale(0)}50%{transform:scale(1)}"
+   }
+  ],
+  "beziers": [
+   [
+    "cubic-bezier(.65,-.25,.31,1.99)",
+    1
+   ]
+  ],
+  "durations": [
+   [
+    "25s",
+    18
+   ],
+   [
+    "1s",
+    16
+   ],
+   [
+    "2s",
+    15
+   ],
+   [
+    "5s",
+    9
+   ],
+   [
+    "4s",
+    9
+   ],
+   [
+    "0s",
+    4
+   ],
+   [
+    "3s",
+    2
+   ],
+   [
+    "45s",
+    2
+   ],
+   [
+    "15s",
+    2
+   ],
+   [
+    "75s",
+    2
+   ],
+   [
+    "3.671s",
+    2
+   ],
+   [
+    "20s",
+    1
+   ],
+   [
+    "30s",
+    1
+   ],
+   [
+    "1.5s",
+    1
+   ],
+   [
+    "05s",
+    1
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:all .1s ease-in-out",
+    3
+   ],
+   [
+    "transition:.4s",
+    3
+   ],
+   [
+    "transition:all .2s ease-in-out",
+    2
+   ],
+   [
+    "transition:transform .1s ease",
+    2
+   ],
+   [
+    "transition:transform .25s ease-in-out",
+    2
+   ],
+   [
+    "transition:opacity .25s ease,visibility .25s ease",
+    2
+   ],
+   [
+    "transition:transform .75s ease-in-out",
+    2
+   ],
+   [
+    "transition:opacity .2s ease-in-out",
+    2
+   ],
+   [
+    "transition:all .25s",
+    2
+   ],
+   [
+    "transition:color,.25s",
+    1
+   ],
+   [
+    "transition:color 1s .3s",
+    1
+   ],
+   [
+    "transition:transform .1s ease-in-out",
+    1
+   ]
+  ],
+  "customProps": [
+   [
+    "--active",
+    7
+   ],
+   [
+    "--minimal",
+    6
+   ],
+   [
+    "--desktop",
+    4
+   ],
+   [
+    "--web",
+    4
+   ],
+   [
+    "--app",
+    4
+   ],
+   [
+    "--server",
+    4
+   ],
+   [
+    "--company",
+    4
+   ],
+   [
+    "--shop",
+    3
+   ],
+   [
+    "--outline",
+    2
+   ],
+   [
+    "--grey",
+    2
+   ],
+   [
+    "--line",
+    2
+   ],
+   [
+    "--buy",
+    1
+   ],
+   [
+    "--large",
+    1
+   ],
+   [
+    "--fadeout",
+    1
+   ],
+   [
+    "--sale",
+    1
+   ]
+  ],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 0,
+   "mix-blend-mode": 0,
+   "clip-path": 41,
+   "mask": 0,
+   "backdrop-filter": 0,
+   "perspective": 0,
+   "preserve-3d": 3,
+   "@media (prefers-reduced-motion": 0,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 1209239,
+ "jsLibs": []
+}

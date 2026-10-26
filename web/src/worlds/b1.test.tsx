@@ -66,7 +66,7 @@ describe("T:b1 Creative Pages (Matchday & Work)", () => {
         </MemoryRouter>
       )
 
-      expect(screen.getByText("The Work")).toBeDefined()
+      expect(screen.getByRole("heading", { level: 1, name: /The\s*work\./i })).toBeDefined()
       // First case is InfoLeap
       expect(screen.getAllByText(/InfoLeap/).length).toBeGreaterThan(0)
     })

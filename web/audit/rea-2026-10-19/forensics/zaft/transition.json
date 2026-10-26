@@ -1,0 +1,48 @@
+{
+ "slug": "zaft",
+ "url": "https://wisetype.nl/collections/wt-zaft-2",
+ "phases": {
+  "loaded": 3930
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "afterNav": []
+ },
+ "transition": {
+  "href": "https://wisetype.nl/typefaces",
+  "kind": "in-document (SPA/Barba/swup)",
+  "clickAt": 11963,
+  "urlFrames": [
+   [
+    "/collections/wt-zaft-2",
+    12243
+   ],
+   [
+    "/collections/wt-zaft-2",
+    12500
+   ],
+   [
+    "/collections/wt-zaft-2",
+    12754
+   ],
+   [
+    "/collections/wt-zaft-2",
+    13006
+   ],
+   [
+    "/collections/wt-zaft-2",
+    13258
+   ],
+   [
+    "/typefaces",
+    13518
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 0
+ }
+}

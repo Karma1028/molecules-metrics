@@ -1,0 +1,5 @@
+{
+ "slug": "witcher",
+ "url": "https://www.witchernetflix.com/en",
+ "error": "page.goto: net::ERR_SSL_PROTOCOL_ERROR at https://www.witchernetflix.com/en\nCall log:\n\u001b[2m  - navigating to \"https://www.witchernetflix.com/en\", waiting until \""
+}

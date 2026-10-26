@@ -21,11 +21,19 @@ describe("world-motion", () => {
     expect(preset(worldMotion.analyst.lock, false)).toBe(worldMotion.analyst.lock)
   })
 
-  it("route variants use per-world physics (turn vs scan)", () => {
-    expect(routeVariants("artist", false)).toBe(worldMotion.artist.turn)
-    expect(routeVariants("analyst", false)).toBe(worldMotion.analyst.scan)
+  it("route variants never scale a page in-world, and swing across worlds", () => {
+    type F = (t: unknown) => Record<string, unknown>
+    const down = { dir: 1, cross: false }
+    for (const world of ["artist", "analyst"] as const) {
+      const v = routeVariants(world, false)
+      expect((v.hidden as F)(down).scale ?? 1).toBe(1)
+      expect((v.exit as F)(down).scale).toBeUndefined()
+    }
+    expect(((routeVariants("analyst", false).hidden as F)(down).clipPath)).toContain("100%")
+    const v = routeVariants("analyst", false)
+    expect((v.hidden as F)({ dir: -1, cross: true }).rotateY).toBe(90)
+    expect(((v.exit as F)({ dir: 1, cross: true }).rotateY as number[]).at(-1)).toBe(90)
     expect(routeVariants("artist", true)).toBe(reducedFade)
-    expect(routeVariants("analyst", true)).toBe(reducedFade)
   })
 
   it("analyst lock never rotates", () => {

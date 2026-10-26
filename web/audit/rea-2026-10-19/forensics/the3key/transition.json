@@ -1,0 +1,268 @@
+{
+ "slug": "the3key",
+ "url": "https://the3key.com/",
+ "phases": {
+  "loaded": 3544
+ },
+ "anims": {
+  "load@600": [
+   {
+    "type": "CSSTransition",
+    "name": "opacity",
+    "target": "img.custom-logo.entered",
+    "duration": 300,
+    "delay": 0,
+    "easing": "ease-in-out",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "opacity": "0"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "opacity": "1"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "tapFloat-desktop",
+    "target": "a.tap-btn",
+    "duration": 4000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "0.5",
+      "easing": "ease-in-out",
+      "transform": "rotate(3deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     }
+    ]
+   }
+  ],
+  "load@1500": [
+   {
+    "type": "CSSAnimation",
+    "name": "tapFloat-desktop",
+    "target": "a.tap-btn",
+    "duration": 4000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "0.5",
+      "easing": "ease-in-out",
+      "transform": "rotate(3deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSAnimation",
+    "name": "tapFloat-desktop",
+    "target": "a.tap-btn",
+    "duration": 4000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "0.5",
+      "easing": "ease-in-out",
+      "transform": "rotate(3deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     }
+    ]
+   }
+  ],
+  "load@5000": [
+   {
+    "type": "CSSAnimation",
+    "name": "tapFloat-desktop",
+    "target": "a.tap-btn",
+    "duration": 4000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "0.5",
+      "easing": "ease-in-out",
+      "transform": "rotate(3deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     }
+    ]
+   }
+  ],
+  "load@8000": [
+   {
+    "type": "CSSAnimation",
+    "name": "tapFloat-desktop",
+    "target": "a.tap-btn",
+    "duration": 4000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "0.5",
+      "easing": "ease-in-out",
+      "transform": "rotate(3deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     }
+    ]
+   }
+  ],
+  "afterNav": [
+   {
+    "type": "CSSAnimation",
+    "name": "tapFloat-desktop",
+    "target": "a.tap-btn",
+    "duration": 4000,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": null,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "0.5",
+      "easing": "ease-in-out",
+      "transform": "rotate(3deg) translate(-100%, -50%)"
+     },
+     {
+      "offset": "1",
+      "easing": "ease-in-out",
+      "transform": "rotate(0deg) translate(-100%, -50%)"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "mc_slideOut",
+    "target": "button.cmplz-btn.cmplz-manage-consent",
+    "duration": 500,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "forwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "ease",
+      "bottom": "-35px"
+     },
+     {
+      "offset": "1",
+      "easing": "ease",
+      "bottom": "-35px"
+     }
+    ]
+   }
+  ]
+ },
+ "transition": {
+  "href": "https://the3key.com/onboarding/",
+  "kind": "NO navigation (click had no effect)",
+  "clickAt": 12456,
+  "urlFrames": [
+   [
+    "/",
+    16716
+   ],
+   [
+    "/",
+    16973
+   ],
+   [
+    "/",
+    17226
+   ],
+   [
+    "/",
+    17477
+   ],
+   [
+    "/",
+    17732
+   ],
+   [
+    "/",
+    17984
+   ]
+  ],
+  "tweens": [],
+  "mutationCount": 0
+ }
+}

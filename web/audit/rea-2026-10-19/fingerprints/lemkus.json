@@ -1,0 +1,121 @@
+{
+ "slug": "lemkus",
+ "url": "https://lemkus.com/blogs/news",
+ "fp": {
+  "title": "News – Lemkus",
+  "globals": [
+   "Shopify"
+  ],
+  "libHints": [
+   "ogl",
+   "shopify"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "connect.facebook.net",
+   "lemkus.com",
+   "cdn.shopify.com",
+   "static.klaviyo.com",
+   "static-tracking.klaviyo.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 33,
+   "img": 27,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 2,
+   "links": 250,
+   "splitChars": 3
+  },
+  "pageHeightVh": 2.5,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "\"Greed Standard\""
+  },
+  "h1": null,
+  "h2": {
+   "ff": "Greed Standard",
+   "fs": "40px",
+   "fw": "700",
+   "ls": "3.2px",
+   "tt": "uppercase",
+   "text": "SNEAKERS"
+  },
+  "p": {
+   "ff": "Greed Standard",
+   "fs": "12px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": ""
+  },
+  "fontsLoaded": [
+   "cofo-sans-mono-variable",
+   "Greed Standard",
+   "Greed Condensed",
+   "Anton"
+  ],
+  "topFonts": [
+   [
+    "Greed Standard 400",
+    175
+   ],
+   [
+    "cofo-sans-mono-variable 500",
+    64
+   ],
+   [
+    "Greed Condensed 900",
+    53
+   ],
+   [
+    "Greed Standard 700",
+    11
+   ],
+   [
+    "cofo-sans-mono-variable 400",
+    2
+   ],
+   [
+    "cofo-sans 700",
+    2
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgba(255, 255, 255, 0)",
+    18
+   ],
+   [
+    "rgb(243, 243, 243)",
+    14
+   ],
+   [
+    "rgb(255, 255, 255)",
+    10
+   ],
+   [
+    "rgb(255, 0, 0)",
+    9
+   ],
+   [
+    "rgb(0, 0, 0)",
+    8
+   ],
+   [
+    "rgba(0, 0, 0, 0.4)",
+    5
+   ]
+  ],
+  "css": {
+   "clip-path": 8,
+   "fixed": 10,
+   "will-change": 17,
+   "sticky": 1
+  }
+ },
+ "finalUrl": "https://lemkus.com/blogs/news"
+}

@@ -1,0 +1,77 @@
+/** Pure walking physics for the roaming Bankura horse (px and px/s). */
+
+export type Gait = "idle" | "walk" | "trot" | "gallop"
+export type Walker = { x: number; v: number }
+
+export const ARRIVE_PX = 14
+const MAX_V = 620
+const ACCEL = 900
+const BRAKE = 0.6 // fraction of ACCEL used to plan the stop, so it never overshoots
+const MIN_WANDER = 120
+const MAX_WANDER = 420
+
+export function gaitFor(v: number): Gait {
+  const s = Math.abs(v)
+  if (s < 8) return "idle"
+  if (s < 140) return "walk"
+  if (s < 340) return "trot"
+  return "gallop"
+}
+
+/** One physics step toward a target x. Settles inside ARRIVE_PX with v = 0. */
+export function stepWalker(s: Walker, target: number, dt: number, maxV: number = MAX_V): Walker {
+  const dist = target - s.x
+  if (Math.abs(dist) <= ARRIVE_PX && Math.abs(s.v) < 30) return { x: Math.abs(dist) < 1 ? s.x : s.x + dist, v: 0 }
+  const want = Math.sign(dist) * Math.min(maxV, Math.sqrt(2 * ACCEL * BRAKE * Math.abs(dist)))
+  const dv = Math.max(-ACCEL * dt, Math.min(ACCEL * dt, want - s.v))
+  const v = s.v + dv
+  return { x: s.x + v * dt, v }
+}
+
+/** A place to amble to: 120-420 px away, bouncing off the walls. r in [0,1). */
+export function wanderTarget(x: number, maxX: number, r: number): number {
+  const dist = MIN_WANDER + r * (MAX_WANDER - MIN_WANDER)
+  const dir = r < 0.5 ? -1 : 1
+  let t = x + dir * dist
+  if (t > maxX || t < 0) t = x - dir * dist
+  return Math.max(0, Math.min(maxX, t))
+}
+
+/** Distance between hoofprints. */
+export function strideFor(g: Gait): number {
+  return g === "gallop" ? 78 : g === "trot" ? 54 : g === "walk" ? 34 : 0
+}
+
+/** Which spot to run to on the n-th poke: nearest first, then outward, wrapping. Index into spots, -1 if none. */
+export function errandPick(spots: { x: number }[], fromX: number, n: number): number {
+  if (!spots.length) return -1
+  const order = spots.map((s, i) => ({ i, d: Math.abs(s.x - fromX) })).sort((a, b) => a.d - b.d)
+  return order[((n % order.length) + order.length) % order.length].i
+}
+
+/** Constant slow stroll, px/s: a walk, never a gallop. */
+export const STROLL_PX_S = 38
+
+export type Stroller = { x: number; dir: 1 | -1 }
+
+/** One step of the endless stroll along [0, maxX], turning at the walls. */
+export function strollStep(s: Stroller, dt: number, maxX: number): Stroller {
+  let x = s.x + s.dir * STROLL_PX_S * dt
+  let dir = s.dir
+  if (x >= maxX) {
+    x = maxX
+    dir = -1
+  } else if (x <= 0) {
+    x = 0
+    dir = 1
+  }
+  return { x, dir }
+}
+
+/** Between graze stops while strolling, and how long a stop lasts (ms). r in [0,1). */
+export const GRAZE_EVERY_MS: [number, number] = [9000, 16000]
+export const GRAZE_FOR_MS: [number, number] = [2800, 4500]
+
+const between = ([lo, hi]: [number, number], r: number) => lo + r * (hi - lo)
+export const grazeDelay = (r: number): number => between(GRAZE_EVERY_MS, r)
+export const grazeLength = (r: number): number => between(GRAZE_FOR_MS, r)

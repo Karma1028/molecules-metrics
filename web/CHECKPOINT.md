@@ -1,5 +1,62 @@
 # Molecules → Metrics — Portfolio Checkpoint
 
+> ## ▶ NEWEST (2026-10-19) — REA reference teardown, research only
+> - Read `audit/rea-2026-10-19/README.md` then `SYNTHESIS.md`. 40 Awwwards refs reverse-engineered (REA MCP + Playwright harvest, 35 carded).
+> - Core finding: winners = ONE governing device per page, mostly low-tech; creativity = art direction.
+> - Proposed first moves (NOT approved): two pointers (ink dot / crosshair+readout), counting loader → one-choice gate, Skills as working control.
+> - v2 (same day): motion forensics on 38 refs → `SYNTHESIS.md` §2b measured tokens (house ease cubic-bezier(.19,1,.22,1), durations 200-300/500-800/1000/1500, staggers 7-14/26-36 ms, pointer lerps .25/.074) + per-device recipes; §2c page transitions (localstudio swap recipe). Tools: forensics/digest/aggregate/cursor-probe/TRANSITION mode.
+> - v3 (same day): code teardown — `tools/slice.cjs` cuts each site's device functions; SYNTHESIS §2d = how pointer/reveal/loader/sound/stepper/route/idle are built (verbatim params, e.g. inkwell cursor `damp` λ .006/ms + magnet .2; wheel delta normalise [1,28,500] + snap .5 s; Howler 2 s fades, gesture unlock).
+> - v4 (same day, Tuhin: "retry then start"): gates retried (yauch drag gate passed; crumbskees div gate; marseille broken live; onelastbeat 429) → `device-teardown-F.md`. **BUILT (uncommitted): two pointers** — `src/lib/damp.ts` (+tests), `src/components/pointer/*` mounted in WorldLayout; tokens `motionTokens.pointer`. Self-audit with `tools/cursor-probe.cjs`: artist ring t63 224 / t95 557 ms vs inkwell 218 / 552. Touch = no custom pointer. Haiku react-reviewer: 2 HIGH (stale target, scroll re-aim) + 5 MEDIUM fixed; 80/80 tests; re-probe ring 221/554 ms, readout 62 ms (the3key 61). Not yet QA'd: reduced-motion live, dark themes visually. Dev server config added to karma root .claude/launch.json (molecules-metrics-web, port 5177).
+> - v5 (same day, Tuhin: "mould concepts to our story" + "constantly check UI output and the story"): pointers REMOULDED to R2 spine "he watched, then he counted". Artist = the ball he watched (ink nib + damped football, rolls by distance, speed lines when fast, passed to a hovered control's feet, press squash). Analyst = same ball as orange catalyst point under crosshair; readout `→ LABEL  n=06` (n = distinct controls inspected this session, lowercase n = sample size). World switch hands the ball off via module `pointerMemory`. NEW `src/components/headline/*` (Headline replaces h1 on 10 pages): artist WRITTEN in (word blur-rise, 0.05 s stagger, em/hand word signs last), analyst COUNTED in (letters tick orange digits, odometer clip, settle L→R ~700 ms). Reduced motion: plain fade. UI checked by headless contact sheets each step (scratch ptrshot.cjs/hlshot.cjs/sheet.cjs); fixed from sheets: N→n case, faint speed lines, digit spill. 95/95 tests, tsc clean. CONCEPT-MAP rows 1-4 now truly built. Still uncommitted.
+> - v5 COMMITTED as 21fdfdf (Tuhin OK, no push). v6 (same day, Tuhin: "commit and keep making it better"), UNCOMMITTED: **landing intro** `components/intro/KeepyUppy.tsx` (CONCEPT-MAP row 5): ink ball kept up, each touch counted `n=01..06` (orange mono, crosshair convention), kicked out of frame, then "He watched." written in + "Then he counted." counted in (reuses headline split + countIn), paper lifts and the landing entrance (paused via `:root[data-intro]`) plays. Once per session (`mm-intro-seen`), any key/click/wheel skips, reduced motion never sees it, `?intro=1` replays for QA. ~2.6 s, every beat in `motionTokens.intro`. **Header titles** PlateHeader (Gallery/Sound/Matchday) and LogHeader (Journey) now go through `<Headline>` too, so every page title in both worlds is written in / counted in. **Highlighter band** (`.hl`) now sweeps on after the hand word is signed (`--hn` words x stagger + .6 s) instead of showing before its word; static under reduced motion. **Matchday fix**: source line under "No. 10 · Garnet & Blue" ran off-screen (inherited `.ph-right` nowrap) → wraps. `BALL_SEAM` shared in pointer-shared.ts. QA: `tools/introshot.cjs`, `tools/pageshot.cjs` (CDP capture: page.screenshot hangs on landing web fonts); sheets in `audit/rea-2026-10-19/ui-qa-v6/`. 99/99 tests, tsc clean.
+> - BLOCKED on Tuhin: Gallery stepper vs print strip; Journey real places/people; intro length (built at ~2.6 s, token-tunable).
+>
+> ## ▶ CURRENT (2026-10-15, end of session 2m) — START HERE
+> - Read `audit/GAP-REPORT-2026-10-15.md` (honest ~35-40% vs asks) + `TOKEN-PROTOCOL.md`. It supersedes MASTER-PLAN/AUDIT ordering. Invoke skill `token-economy` at start.
+> - Pushed `178993e` on `r4-calm-pass` (Hostel Radio rooms, Journey map, audit docs).
+> - **Decisions (Tuhin, 2026-10-15):**
+>   - "No WebGL/3D" rule LIFTED, so heavy three.js is OK;
+>   - the ONE wow = molecule → chart morph on world switch;
+>   - Flow paper cut-outs of Tuhin + props, generated automatically;
+>   - commit and push approved for this baseline (ask again for later pushes).
+> - **Wave A status:**
+>   - `audit/TECHNIQUE-CARDS.md` DONE (6 sites; madebyhart, quangdinh, meermohsin blocked, so ask Tuhin for screenshots).
+>   - Session 2n fixes (uncommitted): AnalystHome cards filled rows (`.entry-cell` wrapper flex + `.entry-card` flex:1, minmax cols, 4-col ≤440px); landing enter cue = pill CTA with filled arrow disc, hover nudge, shown centered on mobile (`heroAssets.ts` .scrollcue). Verified 1440 + 375 shots.
+>   - **Wave B progress:** Analyst Home REBUILT as poster (giant "The Analyst." + huyml-style index of 6 huge-type rows, hover dims others + reveals gloss; graph-paper material; glass instrument = dial whose needle tracks hovered row via spring→state `rotate(a cx cy)`, live Goa clock). Needs `html[data-toc] .page.p-an-toc` to beat theme-base flex. Single column ≤900px. Verified 1440/768/375, no overflow. Shot script: scratchpad/shots/an.cjs.
+>   - Notes REBUILT as poster (giant "Working notebooks." + Caveat note + lede + TwinDoor + dispatch left; right = open notebook spread with spine/ruled lines, 4 torn taped leaves, per-leaf pointer parallax by depth + desk tilt, hover lift). Pattern for poster pages: `html[data-one-screen] .page.p-xx` grid 5fr/7fr, single col ≤900. Verified 1440/768/375 no overflow. Generic shooter: `MSYS_NO_PATHCONV=1 node scratchpad/shots/pg.cjs <route> <prefix> "<item selector>"`.
+>   - DONE 2026-10-15: Skills (lens picker 3x3 + spectrograph meters, "Nine lenses.") and Work (ledger index + case file w/ status stamp; phone ≤600 uses Problem/Approach/Status tabs). GOTCHA: world-analyst.css + theme-base have GLOBAL `.meter .panel .foot` rules; prefix page classes (sk-/wk-).
+>   - DONE: Résumé ("On paper." + clipped CV sheet desk object; edu bottom-left; phone/tablet tabs via main[data-tab]) and analyst Contact ("Let's talk data." + giant channel index, copy-email, Goa clock in kick). motion inline opacity overrides CSS opacity: dim children (`.ch>*`), not the motion element.
+>   - DONE: artist About (giant Fraunces headline + bio + facts ledger left, film-mat photo w/ tags right; ≤900 grid-areas photo|pull; 601-900 bigger tablet sizing).
+>   - DONE: artist Contact (PlateHeader removed → giant "Say / hello." Fraunces+Caveat, bigger postmark + tickets, email breaks after @ via <wbr>).
+>   - Verify tool: scratchpad/shots/pg.cjs (MSYS_NO_PATHCONV=1 node pg.cjs <route> <prefix> "<selector w/ ≥3 matches>"). All 7 rebuilt pages: mainOver 0 at 1440/768/375. Light theme spot-checked on Skills only.
+>   - NEXT pages (Wave B): artist Sound, Matchday, Gallery, Journey polish, Dashboard.
+>   - DECISIONS (Tuhin, 2026-10-15 late), from `audit/CREATIVE-AUDIT-2026-10-15b.md`:
+>     - chem-eng/P&ID drawing language REJECTED.
+>     - Dashboard KEEP, but only very critical, meaningful KPIs, nothing random.
+>     - Companion: explore options, incl. a chibi Messi companion.
+>     - Sound default OFF (opt-in).
+>     - Committed this batch.
+>     - Wants more creative + critical thinking using more refs/skills/plugins.
+>   - ROUND 2 LOCKED (Tuhin, 2026-10-15), see `audit/CREATIVE-DIRECTION-R2.md`:
+>     - companion = chibi Tuhin in a plain blaugrana No.10 shirt (no crest), with props per page; generate via Flow from me-1600w.webp;
+>     - Dashboard = BI work sample (5 KPIs + definition/source/refresh + drill-through, no CGPA, cut the clock/now-playing/Barça);
+>     - Matchday = Messi data portrait from StatsBomb Open Data (attribution required);
+>     - InfoLeap figures are CLEARED (Work note updated).
+>     - Build order: bugs → Dashboard → companion → Matchday portrait → Gallery strip / Journey rail / Sound radio → ball→chart morph.
+>   - Bugs open: Matchday 375 Season panel text overlap; Dashboard mobile lede 1-2 words wide; public/frames dup -1600w (~5 MB).
+>   - Hook noise root cause: pixeltable@inline plugin PostToolUse `validate_antipatterns.py` (Python can't open file in Claude's virtualized AppData). Tuhin should disable Pixeltable plugin in desktop app.
+>   - Cut-outs BLOCKED: Claude-in-Chrome extension disconnected (list_connected_browsers = []), Flow MCP window has no project open. Tuhin approved "I agree" on Flow's "Rights to use this image" dialog for his own photo (me-1600w.webp). Use Nano Banana only (0 credits). Once either is fixed, rerun the 16-asset brief via a Haiku agent:
+>     - cut-me: standing, camera, headphones, laptop;
+>     - prop: radio, ticket, notebook, cassette, film-roll, flask, terracotta-horse, postcard;
+>     - tex: torn-paper, tape;
+>     - guide: artist, analyst.
+>   - Output: `public/cutouts/` + MANIFEST + `_sheet.png`.
+> - **Next = Wave B (Opus):** poster-scale composition pass on all inner pages, with cut-out layers + pointer depth on the artist side and a material on the analyst side. Then:
+>   - Wave C: three.js molecule→chart via @react-three/fiber, lazy, plus CSS-3D page turns;
+>   - Wave D: per-page signatures;
+>   - Wave E: story glue + easter eggs.
+> - Open: Dashboard keep/merge/cut; sound default; world labels (Artist/Analyst vs Karma/Tuhin).
+
 > ## 🔎 GAP AUDIT (2026-10-15) — read `AUDIT-2026-10-15.md` before continuing
 > Revised order R0-R8 replaces MASTER-PLAN P3-P7. Key facts: git now set up (private Karma1028/molecules-metrics, baseline 96b874a); Gemini follows web/GEMINI-EXECUTION-BRIEF.md; cover `/` overflows at
 > 768+375 (both axes); Skills/Work/Journey/Dashboard still have inner scrollers at 375; 26 infinite
@@ -646,3 +703,16 @@ so links/numbers are real. Full cross-world QA, present for sign-off.
 > ### (prev, session 2b) unique-motion queue on `/artist/sound?mode=me` — mostly DONE
 > StatBig odometer ✅, Countdown stagger+bar-wipe ✅ (both QA'd). Only `#3 next page` (Football Room
 > `/artist/matchday` or Field Notes `/artist/notes`) was left of that queue — folded into step (4) above.
+
+## v7 (2026-10-19): element re-study + pat scroll Home prototype
+- Research gap found: most links were Awwwards element clips, not homepages. Re-studied all 17 pairs: audit/rea-2026-10-19/FINDINGS-v7.md.
+- Committed d223a08: deck fly-through dropped (DeckTunnel archived), leaf/scan in-world travel, pointer perf. Tab p95 48.6 -> 14.0 ms.
+- Decisions with Tuhin (5 question rounds): artist world = Bengal pat scroll that inks in where the pointer looks. No geography on the artist side. Plain click + glide, then ink wipe. Wheel: analyst steps tabs, artist pans the scroll. Art: SVG plus 1-2 Flow plates. Spec: PAT-SCROLL-SPEC.md.
+- Slice 1 BUILT, UNCOMMITTED:
+  - Files: worlds/artist/scroll/{PatScroll.tsx, pat-art.tsx, ink-reveal.ts, pat-scroll.css}.
+  - ArtistHome v3 uses it; the old masthead home is at archive/artist-home/.
+  - Artist wheel no longer navigates tabs (WorldLayout).
+  - Tokens: motionTokens.scroll.
+- Probe (tools/scrollprobe.cjs): p95 7.1 ms, 0 janky frames, both themes. Shots: ui-qa-v8/.
+- Next slices: ink wipe + sheet + hand menu, remove artist tab bar, script labels, About chapters, dither bridge, analyst modules, Flow plates.
+- Open: panels still read as separate cards. Consider making them contiguous so the scroll reads as one strip.

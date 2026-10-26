@@ -1,0 +1,598 @@
+{
+ "slug": "telekom",
+ "url": "https://www.telekom.de/start",
+ "phases": {
+  "loaded": 2170,
+  "hover": 11110,
+  "cursorStep": 15540,
+  "scroll": 16756,
+  "end": 28059
+ },
+ "anims": {
+  "load@600": [],
+  "load@1500": [],
+  "load@3000": [],
+  "load@5000": [],
+  "load@8000": [],
+  "hover0": [
+   {
+    "type": "CSSTransition",
+    "name": "transform",
+    "target": "div.swiper-wrapper",
+    "duration": 800,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "transform": "translate3d(-1368px, 0px, 0px)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "transform": "translate3d(0px, 0px, 0px)"
+     }
+    ]
+   }
+  ],
+  "hover1": [],
+  "hover2": [],
+  "hover3": [],
+  "scroll0": [],
+  "scroll1": [],
+  "scroll2": [],
+  "scroll3": [],
+  "scroll4": [],
+  "scroll5": []
+ },
+ "gsapCalls": [],
+ "canvasCtx": [
+  [
+   4889,
+   "2d",
+   "300x150"
+  ],
+  [
+   5661,
+   "2d",
+   "1x1"
+  ],
+  [
+   5662,
+   "2d",
+   "300x150"
+  ]
+ ],
+ "audio": [],
+ "scroll": {
+  "native": true,
+  "samples": 0
+ },
+ "tweens": [],
+ "mutationCount": 33,
+ "assets": [
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974660/telekom-logo.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080218/close-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974632/internet-tarife.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080210/arrow-right-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974628/internet-geraete.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974630/internet-netz.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974634/internet-vernetztes-zuhause.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974624/ratings-default.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974654/tv-tarife.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974652/tv-inhalte.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974650/tv-geraete.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974640/mobilfunk-tarife-optionen.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974636/mobilfunk-geraete.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974588/service-kontakt-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974590/service-stoerung-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974638/mobilfunk-netz.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/974586/service-hilfe-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080230/search-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080214/cart-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080222/login-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1008362/phone-number-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080216/close.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/693214/login-notification.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080226/menu-hover.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/620616/facebook.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/620618/linkedin-white.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/620620/youtube.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/620622/instagram.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/620624/thc.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1073408/tiktok-icon.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1050454/data-privacy-outline-white.svg",
+   1
+  ],
+  [
+   "css",
+   "https://www.telekom.de/resources/sites/phoenix/style/font/teleneo-variable.woff2",
+   176
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080228/search.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080212/cart.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1008364/phone-number-default.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/1080220/login.svg",
+   1
+  ],
+  [
+   "img",
+   "https://www.telekom.de/opt-in/icon/utiq.svg",
+   1
+  ],
+  [
+   "css",
+   "https://www.telekom.de/opt-in/font/teleneo/teleneo-bold.woff2",
+   52
+  ],
+  [
+   "css",
+   "https://www.telekom.de/opt-in/font/teleneo/teleneo-regular.woff2",
+   52
+  ],
+  [
+   "css",
+   "https://www.telekom.de/resources/images/1006934/arrow-right-selected.svg",
+   1
+  ],
+  [
+   "fetch",
+   "https://onebot-webfrontend.oneai.yo-digital.com/va/config-hercules-prodMaster-de-pk.json",
+   0
+  ],
+  [
+   "audio",
+   "https://onebot-webfrontend.oneai.yo-digital.com/hercules/assets/notification-94e4b656.mp3",
+   0
+  ],
+  [
+   "fetch",
+   "https://onebot-webfrontend.oneai.yo-digital.com/hercules/locales/de_DE/translation.json",
+   0
+  ],
+  [
+   "xmlhttprequest",
+   "https://utiqcontent.com/domains/telekom-de/templateData.json",
+   0
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/620612/apple.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/620614/google.svg",
+   5
+  ],
+  [
+   "img",
+   "https://www.telekom.de/resources/images/865484/telekom-logo-claim.svg",
+   29
+  ]
+ ],
+ "css": {
+  "cssBytes": 1655033,
+  "keyframes": [
+   {
+    "name": "pulse",
+    "body": "0%{background-position:0% 0%}100%{background-position:-135% 0%}"
+   },
+   {
+    "name": "pulse",
+    "body": "0%{background-position:0% 0%}100%{background-position:-135% 0%}"
+   },
+   {
+    "name": "fadein",
+    "body": "0%{opacity:0}100%{opacity:1}"
+   },
+   {
+    "name": "fadein",
+    "body": "0%{opacity:0}100%{opacity:1}"
+   },
+   {
+    "name": "dash",
+    "body": "0%{stroke-dasharray:90,252;stroke-dashoffset:90}20%{stroke-dasharray:120,252;stroke-dashoffset:60}40%{stroke-dasharray:252,50;stroke-dashoffset:0;animation-timing-function:ease-in}60%{stroke-dasharray:200,100;stroke-dashoffset:-100}80%{stroke-dasharray:100,252;stroke-dashoffset:-200}to{stroke-dashar"
+   },
+   {
+    "name": "rotate",
+    "body": "to{transform:rotate(360deg)}"
+   },
+   {
+    "name": "fadeOut",
+    "body": "0%{opacity:1}100%{opacity:0}"
+   },
+   {
+    "name": "fadeOut",
+    "body": "0%{opacity:1}100%{opacity:0}"
+   },
+   {
+    "name": "voucherStageSpin___CMSb",
+    "body": "to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}"
+   },
+   {
+    "name": "voucherStageSpin___CMSb",
+    "body": "to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}"
+   },
+   {
+    "name": "TileSlider__swiper-preloader-spin___ksErv",
+    "body": "to{transform:rotate(360deg)}"
+   },
+   {
+    "name": "TariffTileSlider__swiper-preloader-spin___XGuFc",
+    "body": "to{transform:rotate(360deg)}"
+   },
+   {
+    "name": "swiper-preloader-spin",
+    "body": "0%{transform:rotate(0)}to{transform:rotate(360deg)}"
+   },
+   {
+    "name": "fadeInContent___CMSb",
+    "body": "0%{opacity:0}to{opacity:1}"
+   },
+   {
+    "name": "fadeInContent___CMSb",
+    "body": "0%{opacity:0}to{opacity:1}"
+   },
+   {
+    "name": "fadeInContent___CMSb",
+    "body": "0%{opacity:0;-webkit-transform:translateY(30px);transform:translateY(30px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}"
+   },
+   {
+    "name": "fadeInContent___CMSb",
+    "body": "0%{opacity:0;-webkit-transform:translateY(30px);transform:translateY(30px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}"
+   },
+   {
+    "name": "TileSlider__swiper-preloader-spin___ksErv",
+    "body": " 100% { transform: rotate(360deg); }"
+   },
+   {
+    "name": "TariffTileSlider__swiper-preloader-spin___XGuFc",
+    "body": " 100% { transform: rotate(360deg); }"
+   }
+  ],
+  "beziers": [
+   [
+    "cubic-bezier(.215,.61,.355,1)",
+    42
+   ]
+  ],
+  "durations": [
+   [
+    "2s",
+    125
+   ],
+   [
+    "1s",
+    41
+   ],
+   [
+    "200ms",
+    39
+   ],
+   [
+    "4s",
+    33
+   ],
+   [
+    "3s",
+    33
+   ],
+   [
+    "0.2s",
+    24
+   ],
+   [
+    "25s",
+    22
+   ],
+   [
+    "0.4s",
+    10
+   ],
+   [
+    "6s",
+    6
+   ],
+   [
+    "0s",
+    6
+   ],
+   [
+    "300ms",
+    4
+   ],
+   [
+    "1.3s",
+    4
+   ],
+   [
+    "150ms",
+    3
+   ],
+   [
+    "5s",
+    3
+   ],
+   [
+    "8s",
+    2
+   ]
+  ],
+  "transitions": [
+   [
+    "transition:all .2s cubic-bezier(.215,.61,.355,1)",
+    12
+   ],
+   [
+    "transition:opacity .2s ease",
+    9
+   ],
+   [
+    "transition:opacity .4s ease",
+    7
+   ],
+   [
+    "transition:-webkit-transform .2s cubic-bezier(.215,.61,.355,1)",
+    6
+   ],
+   [
+    "transition:transform .2s cubic-bezier(.215,.61,.355,1)",
+    6
+   ],
+   [
+    "transition:all .2s ease",
+    6
+   ],
+   [
+    "transition:none",
+    6
+   ],
+   [
+    "transition:max-height .6s",
+    6
+   ],
+   [
+    "transition:opacity .2s cubic-bezier(.215,.61,.355,1)",
+    6
+   ],
+   [
+    "transition: background-color 0.2s ease",
+    4
+   ],
+   [
+    "transition:transform .2s ease",
+    4
+   ],
+   [
+    "transition:background-color .2s ease",
+    4
+   ]
+  ],
+  "customProps": [
+   [
+    "--focus-outline-offset",
+    223
+   ],
+   [
+    "--focus-pseudo-padding",
+    170
+   ],
+   [
+    "--standard-phoenix",
+    49
+   ],
+   [
+    "--hide-readonly-style",
+    31
+   ],
+   [
+    "--slider-columns",
+    24
+   ],
+   [
+    "--slider-tile",
+    24
+   ],
+   [
+    "--focus-outline-radius",
+    23
+   ],
+   [
+    "--slider-width",
+    18
+   ],
+   [
+    "--error",
+    16
+   ],
+   [
+    "--selected-indeterminate",
+    13
+   ],
+   [
+    "--selected-selected",
+    13
+   ],
+   [
+    "--phoenix",
+    13
+   ],
+   [
+    "--selected-unselected",
+    12
+   ],
+   [
+    "--slider-container-padding",
+    10
+   ],
+   [
+    "--disabled-true",
+    9
+   ]
+  ],
+  "features": {
+   "@property": 0,
+   "view-timeline": 0,
+   "animation-timeline": 0,
+   "scroll-timeline": 0,
+   "@container": 25,
+   "mix-blend-mode": 0,
+   "clip-path": 0,
+   "mask": 12,
+   "backdrop-filter": 1,
+   "perspective": 7,
+   "preserve-3d": 7,
+   "@media (prefers-reduced-motion": 4,
+   "steps(": 0,
+   "offset-path": 0,
+   "text-stroke": 0
+  }
+ },
+ "jsBytes": 9847255,
+ "jsLibs": [
+  "react",
+  "lottie",
+  "barba"
+ ]
+}

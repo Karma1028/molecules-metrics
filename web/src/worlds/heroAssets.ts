@@ -2,12 +2,12 @@
    Hero (front page) assets, preserved verbatim from the approved prototype
    hero v0.7. Mounted as a self-contained island on the "/" route so the
    signature cover-story hero keeps its exact look + behaviour. The SPA's
-   world shell is NOT applied here — this page owns its own styling.
+   world shell is NOT applied here: this page owns its own styling.
    ===================================================================== */
 
 export const HERO_STYLE = String.raw`
   :root{
-    --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#7D7059;
+    --paper:#ECE2D0; --paper2:#E4D8C2; --card:#FBF6EC; --ink:#241E17; --muted:#6A5E49;
     --orange:#E4631F; --pen:#2B4C6F; --teal:#2C9C98; --grid:rgba(90,70,45,.08);
     --blau:#004D98; --grana:#A50044;
     --shadow:0 1px 1px rgba(60,40,15,.08), 0 18px 34px -12px rgba(80,55,25,.32);
@@ -64,7 +64,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .stage{position:fixed; inset:0; z-index:5}
   .hero-root .lead{position:absolute; z-index:8; left:clamp(22px,5vw,64px); top:50%; translate:0 -46%; width:min(40vw,520px)}
   .hero-root .issue{font:500 11.5px/1 "JetBrains Mono",monospace; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:18px; transition:color .5s; display:flex; gap:10px; align-items:center}
-  .hero-root .issue .live{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+  .hero-root .issue .live{width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .hero-root h1{font-family:"Fraunces",serif; font-weight:900; font-size:min(7vw,12.4vh,112px); line-height:.9; letter-spacing:-.02em}
   .hero-root h1 .ln{display:block; overflow:hidden; padding-bottom:.06em; margin-bottom:-.06em}
   .hero-root h1 .ln>span{display:inline-block; animation:rise 1s var(--ease) both; animation-delay:calc(.15s + var(--i)*.09s)}
@@ -84,9 +84,12 @@ export const HERO_STYLE = String.raw`
     letter-spacing:.12em; text-transform:uppercase; color:var(--muted); transition:color .4s; white-space:nowrap}
   :root[data-mode="artist"] .hero-root .opt-artist, :root[data-mode="analyst"] .hero-root .opt-analyst{color:#fff}
   :root[data-theme="dark"][data-mode="analyst"] .hero-root .opt-analyst{color:#14202c}
-  .hero-root .hint{display:inline-block; margin-left:14px; font:600 19px/1 "Caveat",cursive; color:var(--muted); rotate:-4deg}
+  .hero-root .switch-row{display:flex; align-items:center; gap:14px; margin:14px 0 8px}
+  .hero-root .hint{display:inline-block; font:600 18px/1 "Caveat",cursive; color:var(--muted); rotate:-4deg}
   .hero-root .hint b{color:var(--accent); transition:color .5s}
-  .hero-root .elsewhere{margin-top:26px; font:500 10.5px/1.9 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .hero-root .thesis-line{font:400 12px/1.45 "Fraunces",serif; font-style:italic; color:var(--muted); max-width:48ch; margin:0 0 14px}
+  .hero-root .thesis-line .thread{color:var(--accent); font-style:normal; font-family:"JetBrains Mono",monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; display:inline-block; margin-left:6px; font-weight:600}
+  .hero-root .elsewhere{margin-top:20px; font:500 10.5px/1.9 "JetBrains Mono",monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   .hero-root .elsewhere a{color:var(--ink); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,transparent); margin-right:14px; transition:color .3s}
   .hero-root .elsewhere a:hover{color:var(--accent)}
   .hero-root .elsewhere a[hidden]{display:none}
@@ -95,7 +98,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .print{position:absolute; inset:0; overflow:hidden; background:#ccb; box-shadow:var(--shadow);
     clip-path:inset(0 0 0 0); animation:wipe 1.2s cubic-bezier(.76,0,.24,1) .1s both}
   .hero-root .ph{position:absolute; inset:0; background-repeat:no-repeat}
-  .hero-root .ph.base{background-image:url("/me.jpg"); background-size:cover; background-position:60% 16%; background-color:#b9a98f;
+  .hero-root .ph.base{background-image:url("/me.jpg"); background-image:image-set(url("/me-1600w.webp") type("image/webp"), url("/me.jpg") type("image/jpeg")); background-size:cover; background-position:60% 16%; background-color:#b9a98f;
     animation:settle 1.8s var(--ease) .1s both; transition:filter .7s var(--ease)}
   :root[data-theme="dark"] .hero-root .ph.base{filter:brightness(.78) saturate(.8) contrast(1.05)}
   :root[data-mode="analyst"] .hero-root .ph.base{filter:grayscale(1) contrast(1.12) brightness(1.04)}
@@ -107,7 +110,7 @@ export const HERO_STYLE = String.raw`
   :root[data-mode="analyst"] .hero-root .ph.plot{opacity:.55}
   .hero-root .figcap{position:absolute; left:14px; bottom:calc(3vh + 12px); z-index:2; font:500 10px/1 "JetBrains Mono",monospace; letter-spacing:.16em;
     text-transform:uppercase; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.5)}
-  .hero-root .figcap::after{content:"fig.1 — the artist, Goa"} :root[data-mode="analyst"] .hero-root .figcap::after{content:"fig.1 — specimen: analyst (chem-eng lineage)"}
+  .hero-root .figcap::after{content:"fig.1 · the artist, Goa"} :root[data-mode="analyst"] .hero-root .figcap::after{content:"fig.1 · specimen: analyst (chem-eng lineage)"}
 
   .hero-root .disc{position:absolute; z-index:-1; right:-13%; top:-11%; width:62%; aspect-ratio:1; overflow:visible; animation:pop 1.1s var(--spring) .35s both}
   .hero-root .disc .core{fill:var(--accent); transition:fill .6s}
@@ -143,13 +146,13 @@ export const HERO_STYLE = String.raw`
   .hero-root .spot .a{font-size:12.5px; color:#b7a98f; margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:155px}
   .hero-root .bars{display:none; gap:3px; align-items:flex-end; height:14px; margin-left:auto}
   .hero-root .spot.playing .bars{display:flex}
-  .hero-root .bars i{width:3px; background:#1DB954; border-radius:2px; animation:eq 1s ease-in-out infinite}
+  .hero-root .bars i{width:3px; background:#1DB954; border-radius:2px}
   .hero-root .bars i:nth-child(2){animation-delay:.25s}.hero-root .bars i:nth-child(3){animation-delay:.5s}.hero-root .bars i:nth-child(4){animation-delay:.12s}
   .hero-root .spot .foot{font:600 16px/1 "Caveat",cursive; color:#1DB954; margin-top:11px}
 
   .hero-root .mood{left:-50px; top:31%; width:132px; height:132px; --r:-8deg; --d:1.05; border-radius:50%; background:var(--orange); color:#1d1712;
     display:grid; place-items:center; text-align:center; box-shadow:var(--shadow)}
-  .hero-root .mood>svg{position:absolute; inset:0; width:100%; height:100%; animation:spin 22s linear infinite}
+  .hero-root .mood>svg{position:absolute; inset:0; width:100%; height:100%}
   .hero-root .mood>svg text{font:500 8.4px "JetBrains Mono",monospace; letter-spacing:.22em; fill:#1d1712; text-transform:uppercase}
   .hero-root .mood>div{display:flex; flex-direction:column; align-items:center; justify-content:center; width:82px; gap:1px}
   .hero-root .mood-ic{width:19px!important; height:19px!important; margin:0 0 3px!important; color:#1d1712; opacity:.9}
@@ -199,9 +202,9 @@ export const HERO_STYLE = String.raw`
   .hero-root .note p{font-size:12px; line-height:1.4; color:var(--muted); margin-top:4px}
   .hero-root .note .from{font:600 15px/1 "Caveat",cursive; color:var(--pen); margin-top:6px}
   .hero-root .n1{left:-46px; top:33%; --r:-1.5deg; --d:.5}
-  .hero-root .n2{right:-52px; top:6%;  --r:1.2deg; --d:.62}
-  .hero-root .n3{right:-56px; top:37%; --r:-1deg; --d:.74}
-  .hero-root .n4{right:-40px; top:63%; --r:1.6deg; --d:.86}
+  .hero-root .n2{right:-34px; top:6%;  --r:1.2deg; --d:.62}
+  .hero-root .n3{right:-34px; top:37%; --r:-1deg; --d:.74}
+  .hero-root .n4{right:-30px; top:63%; --r:1.6deg; --d:.86}
   .hero-root .n5{left:-34px; bottom:calc(3vh + 5%); --r:-1.2deg; --d:.98}
 
   .hero-root .eclipse{position:fixed; z-index:31; right:clamp(16px,4vw,52px); top:10px; width:52px; height:52px; border:none; background:transparent; cursor:pointer; display:grid; place-items:center}
@@ -216,9 +219,16 @@ export const HERO_STYLE = String.raw`
   ::view-transition-old(root){animation:none}
   ::view-transition-new(root){animation:ec .6s cubic-bezier(.76,0,.24,1)}
 
-  .hero-root .scrollcue{position:fixed; z-index:9; left:clamp(22px,5vw,64px); bottom:20px; font:500 10.5px/1 "JetBrains Mono",monospace; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); text-decoration:none}
+  .hero-root .scrollcue{position:fixed; z-index:9; left:clamp(22px,5vw,64px); bottom:clamp(18px,3vh,30px); display:inline-block;
+    padding:10px 12px 10px 16px; border:1px solid color-mix(in srgb,var(--accent) 45%,transparent); border-radius:999px;
+    background:color-mix(in srgb,var(--card) 85%,transparent); backdrop-filter:blur(6px);
+    font:500 11.5px/1 "JetBrains Mono",monospace; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); text-decoration:none;
+    transition:border-color .25s var(--ease), color .25s var(--ease)}
   .hero-root .scrollcue b{color:var(--ink)}
-  .hero-root .scrollcue i{font-style:normal; color:var(--accent); display:inline-block; animation:bob 1.8s ease-in-out infinite}
+  .hero-root .scrollcue i{font-style:normal; display:inline-grid; place-items:center; width:24px; height:24px; border-radius:50%;
+    background:var(--accent); color:var(--card); font-size:13px; letter-spacing:0; margin-left:10px; vertical-align:middle; transition:transform .25s var(--ease)}
+  .hero-root .scrollcue:hover,.hero-root .scrollcue:focus-visible{border-color:var(--accent); color:var(--ink)}
+  .hero-root .scrollcue:hover i,.hero-root .scrollcue:focus-visible i{transform:translateX(4px)}
 
   .hero-root .k .ic{width:13px; height:13px; color:var(--accent)}
   .hero-root .spot .k .ic{color:var(--orange)}
@@ -271,7 +281,7 @@ export const HERO_STYLE = String.raw`
   .hero-root .dia [data-flow]{stroke:var(--grana); fill:none; stroke-width:2.4; stroke-linecap:round; stroke-dasharray:3 5; opacity:0}
   :root[data-mode="analyst"] .hero-root .note .dia [data-draw]{stroke-dashoffset:0; transition-delay:calc(.3s + var(--i,0)*.12s)}
   :root[data-mode="analyst"] .hero-root .note .dia [data-pop]{opacity:1; scale:1; transition-delay:calc(.6s + var(--i,0)*.12s)}
-  :root[data-mode="analyst"] .hero-root .note .dia [data-flow]{opacity:.9; animation:flow 1.1s linear infinite .7s}
+  :root[data-mode="analyst"] .hero-root .note .dia [data-flow]{opacity:.9}
   @keyframes flow{to{stroke-dashoffset:-16}}
 
   .hero-root .scribble{position:absolute; left:-30px; top:4%; z-index:4; width:116px; --r:-6deg; --d:.8; rotate:var(--r);
@@ -296,18 +306,22 @@ export const HERO_STYLE = String.raw`
   .hero-root .print.advance .ph.base{animation:filmadv .5s var(--ease)}
   @keyframes filmadv{0%{transform:translateY(-6%) scale(1.05)}60%{transform:translateY(1%) scale(1.01)}100%{transform:translateY(0) scale(1)}}
 
-  .hero-root .curtain{position:fixed; inset:0; z-index:38; pointer-events:none; translate:-101% 0; will-change:translate;
-    background:var(--orange); display:grid; place-items:center; overflow:hidden}
-  .hero-root .curtain[data-to="analyst"]{background:var(--pen)}
-  .hero-root .curtain::before{content:""; position:absolute; inset:0; opacity:.14; mix-blend-mode:overlay;
-    background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 5px)}
-  .hero-root .curtain b{position:relative; font:900 clamp(42px,9vw,120px)/.9 "Fraunces",serif; letter-spacing:-.02em;
-    color:#fff; opacity:0; translate:0 .2em}
-  .hero-root .curtain .hw{font:700 clamp(20px,2.4vw,30px) "Caveat",cursive; color:rgba(255,255,255,.72); display:block; margin-top:.1em; letter-spacing:.02em}
-  .hero-root .curtain.run{animation:curtain .8s cubic-bezier(.76,0,.24,1)}
-  .hero-root .curtain.run b{animation:curtainWord .8s ease}
-  @keyframes curtain{0%{translate:-101% 0}46%{translate:0 0}54%{translate:0 0}100%{translate:101% 0}}
-  @keyframes curtainWord{0%,16%{opacity:0; translate:0 .25em}34%,56%{opacity:1; translate:0 0}74%,100%{opacity:0; translate:0 -.2em}}
+  /* kantha thread: a running stitch from the switch through the current world's objects */
+  /* below the cards (they are z 2) so the thread tucks under each one and comes out the other side */
+  .hero-root .kantha{position:absolute; inset:0; width:100%; height:100%; z-index:1; pointer-events:none; overflow:visible}
+  .hero-root .obj{z-index:2}
+  .hero-root .kantha #thread-p{fill:none; stroke:var(--accent); stroke-width:2.6; stroke-linecap:round; stroke-dasharray:11 8;
+    filter:drop-shadow(0 0 1.2px rgba(255,248,236,.95)) drop-shadow(0 1.5px 1.5px rgba(40,20,5,.28))}
+  /* the stitches' underside: shorter, fainter, half a beat out of step, like real running stitch */
+  .hero-root .kantha #thread-u{fill:none; stroke:var(--accent); stroke-width:1.2; stroke-linecap:round; stroke-dasharray:5 14; stroke-dashoffset:-11; opacity:.45; translate:0 3px}
+  .hero-root .kantha #thread-mp{fill:none; stroke:#fff; stroke-width:8}
+  .hero-root .kantha #thread-k circle{fill:var(--accent); stroke:rgba(255,248,236,.95); stroke-width:1.5}
+  .hero-root .kantha #thread-k circle.ring{fill:none; stroke:var(--accent); stroke-width:1; opacity:.55}
+  .hero-root .kantha #thread-k{transition:opacity .35s var(--ease)}
+  .hero-root .kantha #thread-n{opacity:0; offset-rotate:auto; transition:opacity .25s var(--ease); filter:drop-shadow(0 1px 1px rgba(40,20,5,.35))}
+  .hero-root .kantha #thread-n .nd{stroke:#5b5348; stroke-width:2; stroke-linecap:round}
+  .hero-root .kantha #thread-n .eye{fill:var(--card,#fff8ec); stroke:#5b5348; stroke-width:.6}
+  .hero-root .kantha #thread-n .tl{fill:none; stroke:var(--accent); stroke-width:1.6; stroke-linecap:round}
 
   @keyframes rise{from{translate:0 105%}to{translate:0 0}}
   @keyframes fadein{from{opacity:0}to{opacity:1}}
@@ -322,34 +336,53 @@ export const HERO_STYLE = String.raw`
   @keyframes bob{0%,100%{translate:0 0}50%{translate:0 4px}}
   @keyframes ec{from{clip-path:circle(0% at var(--cx,92%) var(--cy,6%))}to{clip-path:circle(150% at var(--cx,92%) var(--cy,6%))}}
 
-  @media (max-width:1180px){
-    .hero-root .portrait{width:min(48vw,640px)}
-    .hero-root .obj{scale:.86} .hero-root .set.in .obj{animation-name:slapS}
-    .hero-root .spot{right:-30px} .hero-root .pola{right:-26px} .hero-root .n2,.hero-root .n3,.hero-root .n4{right:-36px}
+  @media (max-width:1180px) and (min-width:761px){
+    .hero-root .portrait{width:min(46vw,560px); right:clamp(16px,2.5vw,32px); top:68px; bottom:16px}
+    .hero-root .lead{width:min(44vw,400px); left:clamp(16px,3vw,36px)}
+    .hero-root h1{font-size:clamp(38px,5vw,64px)}
+    .hero-root .sub{font-size:12.5px; line-height:1.45; min-height:0; margin:12px 0 16px}
+    .hero-root .obj{scale:.75} .hero-root .set.in .obj{animation-name:slapS}
+    .hero-root .spot{right:-16px} .hero-root .pola{right:-16px} .hero-root .n2,.hero-root .n3,.hero-root .n4{right:-24px}
+    .hero-root .disc{width:54%; right:-6%; top:-6%}
   }
   @keyframes slapS{0%{opacity:0; scale:1.2; rotate:calc(var(--r,0deg) + 14deg)}100%{opacity:1; scale:.86; rotate:var(--r,0deg)}}
-  @media (max-width:900px){
-    html[data-hero] body{overflow:auto}
-    .hero-root .stage{position:relative}
-    .hero-root .top{position:absolute} .hero-root .top .right{display:none}
-    .hero-root .eclipse{position:absolute}
-    .hero-root .lead{position:relative; left:auto; top:auto; translate:none; width:auto; padding:88px 22px 0}
-    .hero-root h1{font-size:clamp(50px,15vw,84px)}
-    .hero-root .sub{min-height:0}
-    .hero-root .hint{display:block; margin:12px 0 0 6px}
-    .hero-root .portrait{position:relative; right:auto; top:auto; bottom:auto; width:auto; margin:34px 22px 0}
-    .hero-root .print{position:relative; inset:auto; aspect-ratio:4/5; max-height:80vh; width:100%}
-    .hero-root .figcap{bottom:12px}
-    .hero-root .disc{width:78%; right:-16%; top:-8%}
-    .hero-root .set{position:relative; inset:auto; display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:0 0 64px; margin-top:-34px}
-    :root[data-mode="analyst"] .hero-root .set.artist, :root[data-mode="artist"] .hero-root .set.analyst{display:none}
-    .hero-root .obj{position:relative; inset:auto!important; width:auto!important; scale:1}
-    .hero-root .set.in .obj{animation-name:slap}
-    .hero-root .spot{grid-column:1/-1; margin:0 18px 0 30%} .hero-root .barca{grid-column:1/-1} .hero-root .mood{width:120px; height:120px; justify-self:center; align-self:center}
-    .hero-root .pola{width:100%!important}
-    .hero-root .set.analyst{grid-template-columns:1fr; margin-top:18px} .hero-root .note{width:auto!important}
+  @media (max-width:760px){
+    html[data-hero], html[data-hero] body{height:100%!important; width:100%!important; overflow:hidden!important}
+    .hero-root{width:100%; height:100%; overflow:hidden}
+    .hero-root .stage{position:fixed; inset:0; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between;
+      padding:clamp(40px,7vh,50px) 16px 12px; box-sizing:border-box}
+    .hero-root .top{position:absolute; inset:0 0 auto 0; padding:10px 16px}
+    .hero-root .top .right{display:none}
+    .hero-root .eclipse{position:absolute; top:8px; right:12px}
+    .hero-root .lead{position:relative; left:auto; top:auto; translate:none; width:100%; flex:0 0 auto; padding:0; z-index:10}
+    .hero-root .issue{margin-bottom:4px; font-size:clamp(8.5px,2.2vw,10px); letter-spacing:.18em}
+    .hero-root h1{font-size:clamp(28px,7.5vw,36px); line-height:.95}
+    .hero-root .sub{min-height:0; font-size:clamp(11px,2.8vw,12.5px); line-height:1.35; margin:6px 0 8px; max-width:100%}
+    .hero-root .switch-row{margin:4px 0 2px; gap:8px}
+    .hero-root .switch{padding:3px; border-radius:24px}
+    .hero-root .switch .thumb{border-radius:20px}
+    .hero-root .switch .opt{padding:6px 14px; font-size:10px; letter-spacing:.08em}
+    .hero-root .hint{font-size:14px; margin-left:6px}
+    .hero-root .thesis-line{font-size:10px; line-height:1.25; margin:2px 0 4px; max-width:100%}
+    .hero-root .thesis-line .thread{font-size:8.5px; margin-left:4px}
+    .hero-root .elsewhere{margin-top:6px; font-size:8.5px; line-height:1.4}
+    .hero-root .elsewhere a{margin-right:10px}
+    .hero-root .portrait{position:relative; right:auto; top:auto; bottom:auto; width:100%; flex:1; min-height:0; margin-top:6px;
+      overflow:hidden; border-radius:10px; box-shadow:var(--shadow)}
+    .hero-root .print{position:absolute; inset:0; width:100%; height:100%; max-height:none; aspect-ratio:auto; border-radius:10px}
+    .hero-root .figcap{bottom:6px; left:8px; font-size:8px}
+    .hero-root .disc{display:none}
+    .hero-root .set{position:absolute; inset:0; overflow:hidden}
+    .hero-root .obj{scale:.7; transform-origin:bottom right}
+    .hero-root .spot{right:6px; bottom:6px; top:auto; left:auto; width:220px}
+    .hero-root .barca{left:6px; bottom:6px; top:auto; right:auto; width:150px; scale:.68; transform-origin:bottom left}
+    .hero-root .mood{left:6px; top:6px; width:72px; height:72px; scale:.7; transform-origin:top left}
+    .hero-root .pola{right:6px; top:6px; width:110px; scale:.65; transform-origin:top right}
+    .hero-root .set.analyst .note{right:6px; bottom:6px; top:auto; left:auto; width:220px}
     .hero-root .leaders,.hero-root .pin,.hero-root .scribble{display:none}
-    .hero-root .scrollcue{display:none}
+    .hero-root .scrollcue{left:50%; translate:-50% 0; bottom:14px; padding:8px 10px 8px 14px; font-size:10px; letter-spacing:.12em; white-space:nowrap;
+      background:var(--card); box-shadow:var(--shadow)}
+    .hero-root .scrollcue i{width:20px; height:20px; font-size:11px}
   }
   @media (prefers-reduced-motion:reduce){.hero-root *,.hero-root *::before,.hero-root *::after{animation:none!important; transition:none!important}}
 `

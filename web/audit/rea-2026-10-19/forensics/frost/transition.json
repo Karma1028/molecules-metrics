@@ -1,0 +1,202 @@
+{
+ "slug": "frost",
+ "url": "https://www.frostype.xyz/typeface/system-blank",
+ "phases": {
+  "loaded": 646
+ },
+ "anims": {
+  "load@600": [
+   {
+    "type": "CSSAnimation",
+    "name": "progBar",
+    "target": "div.image_object",
+    "duration": 4500,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "cubic-bezier(0.75, 0, 0.25, 1)",
+      "width": "0px"
+     },
+     {
+      "offset": "1",
+      "easing": "cubic-bezier(0.75, 0, 0.25, 1)",
+      "width": "100%"
+     }
+    ]
+   }
+  ],
+  "load@1500": [
+   {
+    "type": "CSSTransition",
+    "name": "color",
+    "target": "p.image_title",
+    "duration": 500,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "color": "rgb(0, 0, 0)"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "color": "rgba(0, 0, 0, 0.5)"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "progBar",
+    "target": "div.image_object",
+    "duration": 4500,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "cubic-bezier(0.75, 0, 0.25, 1)",
+      "width": "0px"
+     },
+     {
+      "offset": "1",
+      "easing": "cubic-bezier(0.75, 0, 0.25, 1)",
+      "width": "100%"
+     }
+    ]
+   }
+  ],
+  "load@3000": [
+   {
+    "type": "CSSTransition",
+    "name": "opacity",
+    "target": "div.site_intro",
+    "duration": 1000,
+    "delay": 0,
+    "easing": "ease",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "opacity": "1"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "opacity": "0"
+     }
+    ]
+   },
+   {
+    "type": "CSSAnimation",
+    "name": "progBar",
+    "target": "div.image_object",
+    "duration": 4500,
+    "delay": 0,
+    "easing": "linear",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "none",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "cubic-bezier(0.75, 0, 0.25, 1)",
+      "width": "0px"
+     },
+     {
+      "offset": "1",
+      "easing": "cubic-bezier(0.75, 0, 0.25, 1)",
+      "width": "100%"
+     }
+    ]
+   }
+  ],
+  "load@5000": [],
+  "load@8000": [
+   {
+    "type": "CSSTransition",
+    "name": "width",
+    "target": "div.image_object.typeface_page_header_carousel_prog",
+    "duration": 5000,
+    "delay": 0,
+    "easing": "cubic-bezier(0.75, 0, 0.25, 1)",
+    "iterations": 1,
+    "direction": "normal",
+    "fill": "backwards",
+    "kf": [
+     {
+      "offset": "0",
+      "easing": "linear",
+      "width": "0px"
+     },
+     {
+      "offset": "1",
+      "easing": "linear",
+      "width": "100%"
+     }
+    ]
+   }
+  ],
+  "afterNav": []
+ },
+ "transition": {
+  "href": "/typefaces",
+  "kind": "in-document (SPA/Barba/swup)",
+  "clickAt": 8805,
+  "urlFrames": [
+   [
+    "/typefaces",
+    9118
+   ],
+   [
+    "/typefaces",
+    9372
+   ],
+   [
+    "/typefaces",
+    9630
+   ],
+   [
+    "/typefaces",
+    9889
+   ],
+   [
+    "/typefaces",
+    10154
+   ],
+   [
+    "/typefaces",
+    10477
+   ]
+  ],
+  "tweens": [
+   {
+    "el": "div.hand.second",
+    "prop": "transform.r",
+    "start": 8807,
+    "dur": 4174,
+    "from": 0.798,
+    "to": 25.842,
+    "n": 562,
+    "ease": "linear",
+    "rmse": 0
+   }
+  ],
+  "mutationCount": 568
+ }
+}
