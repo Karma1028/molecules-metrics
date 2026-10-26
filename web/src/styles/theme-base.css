@@ -80,7 +80,7 @@ html[data-toc] .foot,
 html[data-one-screen] .foot{height:44px;margin-top:0;padding:8px clamp(16px,4vw,44px);border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;font-size:10px}
 @media(max-width:640px){
   html[data-toc] .foot,
-  html[data-one-screen] .foot{height:34px;padding:6px 14px;font-size:9px}
+  html[data-one-screen] .foot{min-height:34px;height:auto;padding:6px 14px;font-size:10px}
   html[data-toc] .foot .cols a:not(:first-child),
   html[data-one-screen] .foot .cols a:not(:first-child){display:none}
   html[data-toc] .page,
@@ -388,3 +388,6 @@ html[data-rm] *, html[data-rm] *::before, html[data-rm] *::after{
   transition:none!important;
 }
 
+
+/* readability floor: nothing below 10px on any page (audit 2026-10-26) */
+.p-gl .st,.p-gl .plot-toggle,.p-sd .bay-k,.p-sd .vfd-k,.p-sd .vfd-n,.p-md .mh-src,.p-md .pk,.p-jn dt,.p-jn text.tlabel{font-size:max(10px,1em)}
