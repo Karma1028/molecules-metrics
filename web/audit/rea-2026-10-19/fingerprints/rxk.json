@@ -1,0 +1,89 @@
+{
+ "slug": "rxk",
+ "url": "https://rxkstudio.com/",
+ "fp": {
+  "title": "RXK©",
+  "globals": [
+   "__NUXT__"
+  ],
+  "libHints": [
+   "lenis",
+   "nuxt"
+  ],
+  "hosts": [
+   "rxkstudio.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 10,
+   "svg": 5,
+   "img": 60,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 3,
+   "links": 15,
+   "splitChars": 63
+  },
+  "pageHeightVh": 4,
+  "body": {
+   "bg": "rgb(244, 243, 237)",
+   "color": "rgb(23, 23, 23)",
+   "ff": "NeueMontreal"
+  },
+  "h1": {
+   "ff": "NeueMontreal",
+   "fs": "21.888px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "RXK Studio"
+  },
+  "h2": {
+   "ff": "NeueMontreal",
+   "fs": "40.32px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": "Lowlyland"
+  },
+  "p": {
+   "ff": "NeueMontreal",
+   "fs": "21.888px",
+   "fw": "500",
+   "ls": "normal",
+   "tt": "none",
+   "text": "09:33 GMT+1"
+  },
+  "fontsLoaded": [
+   "NeueMontreal"
+  ],
+  "topFonts": [
+   [
+    "NeueMontreal 500",
+    159
+   ],
+   [
+    "NeueMontreal 700",
+    77
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(244, 243, 237)",
+    18
+   ],
+   [
+    "rgb(23, 23, 23)",
+    17
+   ]
+  ],
+  "css": {
+   "clip-path": 14,
+   "fixed": 3,
+   "mask": 7,
+   "will-change": 10,
+   "filter": 5
+  }
+ },
+ "finalUrl": "https://rxkstudio.com/"
+}

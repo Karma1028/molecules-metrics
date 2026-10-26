@@ -1,0 +1,57 @@
+{
+ "slug": "onelastbeat",
+ "url": "http://onelastbeat.com/",
+ "fp": {
+  "title": "ONE LAST BEAT",
+  "globals": [
+   "PIXI",
+   "Howl"
+  ],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "onelastbeat.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 0,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 0,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(0, 0, 0)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "olbminiregular"
+  },
+  "h1": null,
+  "h2": null,
+  "p": null,
+  "fontsLoaded": [
+   "olbminiregular"
+  ],
+  "topFonts": [
+   [
+    "olbminiregular 400",
+    1
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(17, 17, 17)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 1
+  }
+ },
+ "finalUrl": "http://onelastbeat.com/"
+}

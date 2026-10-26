@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useLayoutEffect, useState } from "react"
+import { skyShift } from "./sky-shift"
 
 export type World = "artist" | "analyst"
 export type Theme = "light" | "dark"
@@ -26,14 +27,16 @@ export function initialTheme(world: World): Theme {
  */
 export function useWorldTheme(world: World) {
   const [theme, setTheme] = useState<Theme>(() => initialTheme(world))
-
-  // the layout can be reused across worlds; re-read that world's own choice
-  useEffect(() => {
+  // the layout can be reused across worlds; re-read that world's own choice in
+  // the same render, so the new world never paints a frame in the old theme
+  const [themeWorld, setThemeWorld] = useState(world)
+  if (themeWorld !== world) {
+    setThemeWorld(world)
     setTheme(initialTheme(world))
-  }, [world])
+  }
 
-  // keep <html> attributes in sync
-  useEffect(() => {
+  // keep <html> attributes in sync before paint
+  useLayoutEffect(() => {
     const root = document.documentElement
     root.dataset.world = world
     root.dataset.mode = world
@@ -41,7 +44,7 @@ export function useWorldTheme(world: World) {
   }, [world, theme])
 
   const toggle = useCallback(
-    (origin?: { x: number; y: number }) => {
+    (_origin?: { x: number; y: number }) => {
       const next: Theme = theme === "dark" ? "light" : "dark"
       const apply = () => {
         setTheme(next)
@@ -51,25 +54,10 @@ export function useWorldTheme(world: World) {
           /* ignore */
         }
       }
-      const doc = document as Document & {
-        startViewTransition?: (cb: () => void) => { ready: Promise<void> }
-      }
       const reduced =
         typeof window !== "undefined" &&
         !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
-      if (!doc.startViewTransition || reduced || !origin) {
-        apply()
-        return
-      }
-      const { x, y } = origin
-      const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
-      const t = doc.startViewTransition(apply)
-      t.ready.then(() => {
-        document.documentElement.animate(
-          { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
-          { duration: 540, easing: "cubic-bezier(.76,0,.24,1)", pseudoElement: "::view-transition-new(root)" }
-        )
-      })
+      skyShift({ toDark: next === "dark", reduce: reduced, flip: apply })
     },
     [theme, world]
   )

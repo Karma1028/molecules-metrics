@@ -3,17 +3,18 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { Icon } from "../../lib/icons"
 import { springs, motionTokens } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
-import { LogHeader } from "../../components/headers/LogHeader"
+import { TwinDoor } from "../../components/TwinDoor"
+import { Headline } from "../../components/headline/Headline"
 
-type Level = "strong" | "working" | "building" | "exploring"
+type Level = "exploring" | "building" | "working" | "strong"
 interface Item { name: string; note: string; lv: Level }
-interface Cat { id: string; icon: string; name: string; blurb: string; items: Item[] }
+interface Cat { id: string; icon: string; name: string; short: string; blurb: string; items: Item[] }
 
 // Honest capability map. Levels are self-assessed words, not scores.
 // AI & modern stack is seeded from real work (building this agent OS) and is meant to be expanded.
 const CATS: Cat[] = [
   {
-    id: "data", icon: "i-database", name: "Technical · data",
+    id: "data", icon: "i-database", name: "Technical · data", short: "Data",
     blurb: "The core analyst toolkit, used on real datasets end to end.",
     items: [
       { name: "Python · pandas, numpy", note: "Clean, reshape and analyse data from raw to answer.", lv: "working" },
@@ -24,7 +25,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "eng", icon: "i-flask", name: "Engineering rigour",
+    id: "eng", icon: "i-flask", name: "Engineering rigour", short: "Rigour",
     blurb: "Chemical-engineering discipline that transfers to any system.",
     items: [
       { name: "Mass / energy balances", note: "Account for every input and output; nothing vanishes.", lv: "strong" },
@@ -34,7 +35,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "ai", icon: "i-cpu", name: "AI & the modern stack",
+    id: "ai", icon: "i-cpu", name: "AI & the modern stack", short: "AI stack",
     blurb: "Built and run by me, not just read about. Actively expanding.",
     items: [
       { name: "LLM orchestration", note: "Wire models into real workflows, not demos.", lv: "working" },
@@ -45,7 +46,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "finance", icon: "i-scale", name: "Finance & markets",
+    id: "finance", icon: "i-scale", name: "Finance & markets", short: "Markets",
     blurb: "Reading a business and a market like a system. Correct these to your real call.",
     items: [
       { name: "Case-comp strategy", note: "Frame a problem, back the call with numbers, defend it.", lv: "strong" },
@@ -55,7 +56,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "research", icon: "i-quote", name: "Research & writing",
+    id: "research", icon: "i-quote", name: "Research & writing", short: "Research",
     blurb: "Turning a pile of sources into something you can use.",
     items: [
       { name: "Literature synthesis", note: "Read widely, keep what is load-bearing, cite it.", lv: "strong" },
@@ -65,7 +66,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "design", icon: "i-camera", name: "Design & creative",
+    id: "design", icon: "i-camera", name: "Design & creative", short: "Design",
     blurb: "Making the work clear, then making it land.",
     items: [
       { name: "UI & motion design", note: "Interfaces that move with intent, not decoration.", lv: "working" },
@@ -75,7 +76,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "product", icon: "i-funnel", name: "Product & strategy",
+    id: "product", icon: "i-funnel", name: "Product & strategy", short: "Product",
     blurb: "Deciding what to build and what to cut.",
     items: [
       { name: "Problem framing", note: "Name the real question before touching a tool.", lv: "strong" },
@@ -85,7 +86,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "transfer", icon: "i-route", name: "Transferable",
+    id: "transfer", icon: "i-route", name: "Transferable", short: "Transfer",
     blurb: "How I think, independent of the tool in front of me.",
     items: [
       { name: "Systems thinking", note: "See inputs, limits and loops in anything.", lv: "strong" },
@@ -95,7 +96,7 @@ const CATS: Cat[] = [
     ],
   },
   {
-    id: "tools", icon: "i-grid", name: "Tooling & delivery",
+    id: "tools", icon: "i-grid", name: "Tooling & delivery", short: "Tooling",
     blurb: "The plumbing that ships the work and keeps it reproducible.",
     items: [
       { name: "Git · branches, PRs", note: "Version everything; nothing lives only on my laptop.", lv: "working" },
@@ -105,95 +106,144 @@ const CATS: Cat[] = [
   },
 ]
 
+// Scale runs low → high; a meter fills one segment per step reached.
+const SCALE: Level[] = ["exploring", "building", "working", "strong"]
 const LVW: Record<Level, string> = { strong: "fluent", working: "working", building: "building", exploring: "learning" }
+const COUNT_WORD = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve"]
+const WHEEL_LOCK_MS = 430
+const WHEEL_MIN_DELTA = 6
+const STAGGER_S = 0.06
+
+const pad = (v: number) => String(v).padStart(2, "0")
 
 const CSS = String.raw`
-  .p-sk{height:100%;min-height:0;display:flex;flex-direction:column;max-width:1200px;margin:0 auto;width:100%;overflow:hidden}
+  html[data-one-screen] .page.p-sk,html[data-toc] .page.p-sk,.p-sk{min-height:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+    gap:clamp(20px,4vw,64px);max-width:1240px;margin:0 auto;width:100%;overflow:hidden;position:relative}
 
-  .p-sk .sk-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;
-    padding-bottom:clamp(6px,1.1vh,12px);margin-bottom:clamp(9px,1.5vh,16px);border-bottom:1px solid var(--rule)}
-  .p-sk .sk-kick{display:inline-flex;align-items:center;gap:8px;font:500 10px/1 var(--font-mono);letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
-  .p-sk .sk-kick .ic{width:13px;height:13px}
-  .p-sk .sk-title{font-family:var(--font-display);font-weight:700;font-size:clamp(22px,3.1vw,38px);line-height:1;letter-spacing:-.02em;color:var(--ink);margin:7px 0 4px}
-  .p-sk .sk-title em{font-style:italic;font-weight:600;color:var(--accent)}
-  .p-sk .sk-lede{font-size:clamp(11.5px,1vw,14px);line-height:1.5;color:var(--muted);max-width:60ch;text-wrap:pretty}
-  .p-sk .sk-lede b{color:var(--ink);font-weight:600}
-  .p-sk .sk-note{font:600 9px/1.6 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}
-  .p-sk .sk-note b{color:var(--teal)}
+  /* material: graph paper, same sheet as the Analyst index */
+  .p-sk::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px),
+      linear-gradient(color-mix(in srgb,var(--teal) 14%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--teal) 14%,transparent) 1px,transparent 1px);
+    background-size:24px 24px,24px 24px,120px 120px,120px 120px;
+    mask-image:radial-gradient(ellipse 80% 75% at 50% 45%,#000 40%,transparent 100%)}
 
-  .p-sk .body{flex:1;min-height:0;display:grid;grid-template-columns:minmax(188px,228px) 1fr;gap:clamp(16px,2.2vw,34px)}
+  /* left: poster + lens picker */
+  .p-sk .poster{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,22px)}
+  .p-sk .kick{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+  .p-sk .kick .ic{width:13px;height:13px}
+  .p-sk .big{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,min(7.6vw,13vh),120px);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
+  .p-sk .big em{font-style:normal;color:var(--accent)}
+  .p-sk .lede{font:500 clamp(12px,1vw,14px)/1.5 var(--font-mono);color:var(--muted);margin:clamp(8px,1.6vh,16px) 0 0;max-width:38ch}
+  .p-sk .lede b{color:var(--ink);font-weight:600}
 
-  /* left rail — category selector with a sliding indicator */
-  .p-sk .rail{min-height:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(2px,.4vh,5px);position:relative}
-  .p-sk .cat{position:relative;display:flex;align-items:center;gap:10px;padding:clamp(6px,1vh,11px) 12px;border:0;background:transparent;
-    text-align:left;cursor:pointer;color:var(--muted);border-radius:10px;width:100%;transition:color .25s}
-  .p-sk .cat:hover{color:var(--ink)}
-  .p-sk .cat.on{color:var(--ink)}
-  .p-sk .cat .ind{position:absolute;inset:0;border-radius:10px;background:color-mix(in srgb,var(--accent) 12%,transparent);
-    border:1px solid color-mix(in srgb,var(--accent) 26%,transparent);z-index:0}
-  .p-sk .cat .ic{width:16px;height:16px;flex:0 0 auto;position:relative;z-index:1;color:currentColor}
-  .p-sk .cat.on .ic{color:var(--accent)}
-  .p-sk .cat .cl{position:relative;z-index:1;display:flex;flex-direction:column;gap:2px;min-width:0}
-  .p-sk .cat .cn{font:600 12.5px/1.1 var(--font-display);letter-spacing:-.01em}
-  .p-sk .cat .cc{font:600 8px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .p-sk .lenses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+  .p-sk .lens{position:relative;display:flex;align-items:baseline;gap:7px;padding:clamp(6px,1.1vh,10px) 10px;border:0;border-radius:8px;
+    background:transparent;color:var(--muted);cursor:pointer;text-align:left;min-width:0;transition:color .2s var(--ease)}
+  .p-sk .lens:hover,.p-sk .lens.on{color:var(--ink)}
+  .p-sk .lens:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .p-sk .lens .ind{position:absolute;inset:0;border-radius:8px;z-index:0;background:color-mix(in srgb,var(--accent) 12%,transparent);
+    border:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}
+  .p-sk .lens .ln{position:relative;z-index:1;font:700 9.5px/1 var(--font-mono);letter-spacing:.08em;color:var(--teal)}
+  .p-sk .lens .lt{position:relative;z-index:1;font:600 clamp(12px,1.05vw,14.5px)/1.1 var(--font-display);letter-spacing:-.01em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .p-sk .sk-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    font:500 10px/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
 
-  /* right stage — the selected category's skills, swapped in place */
-  .p-sk .stage{position:relative;min-height:0;display:flex;flex-direction:column}
-  .p-sk .deck{position:absolute;inset:0;display:flex;flex-direction:column;min-height:0}
-  .p-sk .dh{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex:0 0 auto;margin-bottom:clamp(8px,1.4vh,14px)}
-  .p-sk .dh .dt{font-family:var(--font-display);font-weight:700;font-size:clamp(17px,1.9vw,24px);letter-spacing:-.015em;color:var(--ink)}
-  .p-sk .dh .db{font:500 10.5px/1.4 var(--font-mono);color:var(--muted);max-width:40ch;text-align:right}
-  .p-sk .dh .dn{font:700 11px/1 var(--font-mono);letter-spacing:.1em;color:var(--accent)}
+  /* right: the spectrograph, one lens at a time */
+  .p-sk .sk-panel{position:relative;min-height:0;display:flex;flex-direction:column;overflow:hidden;
+    padding:clamp(14px,2.4vh,26px) clamp(16px,2vw,30px);border-radius:16px;
+    background:linear-gradient(140deg,color-mix(in srgb,var(--card) 74%,transparent),color-mix(in srgb,var(--card) 38%,transparent));
+    border:1px solid color-mix(in srgb,var(--teal) 22%,var(--rule));backdrop-filter:blur(10px);
+    box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 8%,transparent),var(--shadow-sm)}
+  .p-sk .sk-panel::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(115deg,color-mix(in srgb,#fff 6%,transparent) 0 26%,transparent 26.5%)}
+  .p-sk .ghost{position:absolute;right:clamp(10px,1.6vw,24px);top:-.12em;font:800 clamp(120px,15vw,230px)/1 var(--font-display);letter-spacing:-.06em;
+    color:color-mix(in srgb,var(--teal) 9%,transparent);pointer-events:none;user-select:none}
+  .p-sk .deck{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
+  .p-sk .dh{flex:0 0 auto;padding-bottom:clamp(8px,1.6vh,16px);border-bottom:1px solid var(--rule)}
+  .p-sk .dk{font:600 10px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .p-sk .dt{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3.1vw,46px);line-height:1;letter-spacing:-.03em;color:var(--ink);margin:6px 0 6px}
+  .p-sk .db{font:500 clamp(11px,.9vw,12.5px)/1.45 var(--font-mono);color:var(--muted);max-width:52ch}
 
-  .p-sk .cards{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;align-content:center;gap:clamp(8px,1.3vh,14px) clamp(8px,1vw,14px)}
-  .p-sk .card{position:relative;overflow:hidden;background:color-mix(in srgb,var(--card) 92%,transparent);
-    border:1px solid var(--rule);border-radius:12px;padding:clamp(11px,1.5vh,16px) clamp(13px,1.3vw,18px);
-    display:flex;flex-direction:column;gap:5px;transition:border-color .3s,box-shadow .3s,transform .3s}
-  .p-sk .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--accent),var(--teal));
-    transform:scaleY(0);transform-origin:top;transition:transform .35s var(--ease)}
-  .p-sk .card:hover{border-color:color-mix(in srgb,var(--accent) 42%,transparent);box-shadow:var(--glow);transform:translateY(-3px)}
-  .p-sk .card:hover::before{transform:scaleY(1)}
-  .p-sk .card .ct{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-  .p-sk .card .cnm{font:600 clamp(12.5px,1.2vw,15px)/1.2 var(--font-display);letter-spacing:-.01em;color:var(--ink)}
-  .p-sk .card .lv{flex:0 0 auto;font:600 8px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;padding:3px 7px;border-radius:20px;
-    color:var(--accent);background:color-mix(in srgb,var(--accent) 11%,transparent);border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
-  .p-sk .card .lv[data-lv="strong"]{color:var(--teal);background:color-mix(in srgb,var(--teal) 12%,transparent);border-color:color-mix(in srgb,var(--teal) 26%,transparent)}
-  .p-sk .card .lv[data-lv="building"]{color:var(--muted);background:color-mix(in srgb,var(--ink) 6%,transparent);border-color:var(--rule)}
-  .p-sk .card .lv[data-lv="exploring"]{color:var(--orange);background:color-mix(in srgb,var(--orange) 11%,transparent);border-color:color-mix(in srgb,var(--orange) 24%,transparent)}
-  .p-sk .card .cno{font-size:clamp(10.5px,.95vw,12.5px);line-height:1.4;color:var(--muted);text-wrap:pretty}
+  .p-sk .scale{flex:0 0 auto;display:grid;grid-template-columns:minmax(0,1fr) var(--meter-w);gap:clamp(12px,1.6vw,24px);
+    padding:clamp(6px,1vh,10px) 0 2px;--meter-w:clamp(140px,15vw,220px)}
+  .p-sk .scale .sl{display:flex;justify-content:space-between;align-items:center;gap:6px;font:600 8px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .p-sk .scale .sl span:last-child{color:var(--teal)}
+  .p-sk .scale .sl i{flex:1;height:1px;background:linear-gradient(90deg,var(--rule),var(--teal))}
 
-  .p-sk .hint{flex:0 0 auto;margin-top:clamp(7px,1.2vh,12px);font:500 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);opacity:.7}
+  .p-sk .rows{list-style:none;margin:0;padding:0;flex:1;min-height:0;display:grid;grid-auto-rows:minmax(0,1fr);--meter-w:clamp(140px,15vw,220px)}
+  .p-sk .row{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) var(--meter-w);align-items:center;gap:clamp(12px,1.6vw,24px);
+    border-bottom:1px dashed color-mix(in srgb,var(--ink) 12%,transparent)}
+  .p-sk .row:last-child{border-bottom:0}
+  .p-sk .rn{font:600 clamp(15px,min(1.55vw,2.7vh),23px)/1.15 var(--font-display);letter-spacing:-.015em;color:var(--ink)}
+  .p-sk .ro{font-size:clamp(11px,.9vw,12.5px);line-height:1.4;color:var(--muted);margin-top:3px;text-wrap:pretty}
+  .p-sk .lvm{display:flex;flex-direction:column;gap:5px}
+  .p-sk .segs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+  .p-sk .seg{position:relative;height:clamp(8px,1.2vh,12px);border-radius:3px;overflow:hidden;background:color-mix(in srgb,var(--ink) 8%,transparent)}
+  .p-sk .seg i{position:absolute;inset:0;transform-origin:left center;background:linear-gradient(90deg,var(--teal),var(--accent))}
+  .p-sk .seg i[data-lv="exploring"]{background:var(--orange)}
+  .p-sk .lvw{font:700 8.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .p-sk .lvw[data-lv="strong"]{color:var(--teal)}
+  .p-sk .lvw[data-lv="exploring"]{color:var(--orange)}
+  .p-sk .hint{flex:0 0 auto;font:500 9.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+    padding-top:clamp(6px,1vh,10px);text-align:right}
   .p-sk .hint b{color:var(--accent)}
 
-  @media(max-width:880px){
-    .p-sk{height:100%;min-height:0;overflow:hidden;padding-bottom:8px}
-    .p-sk .sk-note{display:none}
-    .p-sk .body{display:flex;flex-direction:column;gap:8px;flex:1;min-height:0}
-    .p-sk .rail{flex-direction:row;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;gap:6px;padding-bottom:3px;flex:0 0 auto}
-    .p-sk .cat{flex:0 0 auto;padding:5px 10px;width:auto}
-    .p-sk .cat .cc{display:none}
-    .p-sk .cat .cn{font-size:11.5px}
-    .p-sk .stage{flex:1;min-height:0;display:flex;flex-direction:column;position:relative}
-    .p-sk .deck{position:relative;display:flex;flex-direction:column;flex:1;min-height:0}
-    .p-sk .dh{margin-bottom:6px}
-    .p-sk .dh .dt{font-size:15px}
-    .p-sk .dh .db{display:none}
-    .p-sk .cards{grid-template-columns:repeat(2,1fr);align-content:start;gap:6px;flex:1;min-height:0}
-    .p-sk .card{padding:7px 10px;gap:2px}
-    .p-sk .card .cnm{font-size:12px}
-    .p-sk .card .cno{font-size:10.5px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  @media(max-width:900px){
+    html[data-one-screen] .page.p-sk,html[data-toc] .page.p-sk,.p-sk{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:10px}
+    .p-sk .poster{gap:8px}
+    .p-sk .big{font-size:clamp(40px,11vw,64px);margin-top:4px}
+    .p-sk .big br{display:none}
+    .p-sk .lede{font-size:11px;margin-top:5px;max-width:none}
+    .p-sk .lens{padding:5px 7px;gap:5px}
+    .p-sk .lens .lt{font-size:11.5px}
+    .p-sk .sk-foot .fh{display:none}
+    .p-sk .sk-panel{padding:12px 14px;border-radius:12px}
+    .p-sk .ghost{font-size:110px}
+    .p-sk .dt{font-size:22px;margin:4px 0}
+    .p-sk .db{font-size:10.5px}
+    .p-sk .dh{padding-bottom:6px}
+    .p-sk .scale,.p-sk .rows{--meter-w:92px;gap:10px}
+    .p-sk .scale .sl{font-size:7px;letter-spacing:.08em}
+    .p-sk .rn{font-size:clamp(13.5px,2.2vw,18px)}
+    .p-sk .ro{font-size:10.5px;line-height:1.3;margin-top:1px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .p-sk .hint{display:none}
   }
-  @media(max-width:480px){
-    .p-sk .cards{grid-template-columns:1fr;gap:5px}
-    .p-sk .card{padding:6px 9px}
+  @media(max-width:900px) and (max-height:760px){
+    .p-sk .lede{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .p-sk .lens{transition:none}
   }
 `
 
+function Meter({ lv, delay, reduce }: { lv: Level; delay: number; reduce: boolean }) {
+  const reached = SCALE.indexOf(lv)
+  return (
+    <div className="lvm" aria-label={`Level: ${LVW[lv]}`}>
+      <div className="segs" aria-hidden="true">
+        {SCALE.map((s, k) => (
+          <span className="seg" key={s}>
+            {k <= reached && (
+              <motion.i
+                data-lv={lv}
+                initial={reduce ? { scaleX: 1 } : { scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={reduce ? { duration: 0 } : { ...springs.snappy, delay: delay + k * STAGGER_S }}
+              />
+            )}
+          </span>
+        ))}
+      </div>
+      <span className="lvw" data-lv={lv}>{LVW[lv]}</span>
+    </div>
+  )
+}
+
 export function Skills() {
-  const reduce = useReducedMotion()
+  const reduce = useReducedMotion() ?? false
   const [i, setI] = useState(0)
-  const stageRef = useRef<HTMLDivElement>(null)
+  const panelRef = useRef<HTMLElement>(null)
   const lock = useRef(0)
   const n = CATS.length
 
@@ -201,7 +251,7 @@ export function Skills() {
 
   const go = useCallback((d: number) => setI((c) => (c + d + n) % n), [n])
 
-  // keyboard: up/down or left/right cycles categories
+  // keyboard: arrows cycle lenses
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowDown" || e.key === "ArrowRight") go(1)
@@ -211,16 +261,16 @@ export function Skills() {
     return () => window.removeEventListener("keydown", onKey)
   }, [go])
 
-  // wheel over the stage swaps category in place — the page itself never scrolls
+  // wheel over the panel swaps lens in place; the page itself never scrolls
   useEffect(() => {
-    const el = stageRef.current
+    const el = panelRef.current
     if (!el) return
     const onWheel = (e: WheelEvent) => {
       e.preventDefault()
       const now = Date.now()
-      if (now - lock.current < 430) return
+      if (now - lock.current < WHEEL_LOCK_MS) return
       const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX
-      if (Math.abs(delta) < 6) return
+      if (Math.abs(delta) < WHEEL_MIN_DELTA) return
       lock.current = now
       go(delta > 0 ? 1 : -1)
     }
@@ -229,86 +279,91 @@ export function Skills() {
   }, [go])
 
   const cat = CATS[i]
-
-  const cardsWrap = {
-    hidden: {},
-    visible: { transition: { staggerChildren: reduce ? 0 : 0.06, delayChildren: reduce ? 0 : 0.05 } },
-  }
-  const cardV = {
-    hidden: reduce ? { opacity: 1 } : { opacity: 0, y: motionTokens.distance.md, filter: "blur(5px)" },
-    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: springs.gentle },
-  }
+  const rowStagger = reduce ? 0 : STAGGER_S
 
   return (
     <main className="page p-sk" aria-label="Capability map">
       <style>{CSS}</style>
 
-      <LogHeader
-        log="LOG.01"
-        section="SKILLS"
-        tag="capability-map"
-        title="Skills map"
-        lede={<>Not a scorecard. Lenses on the same person: the <b>technical toolkit</b>, the <b>engineering rigour</b> under it, the <b>AI stack</b>, research, design and scoping. Pick a lens.</>}
-        right={<div className="sk-note">{String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}<br />{n} lenses</div>}
-      />
+      <section className="poster">
+        <div>
+          <span className="kick"><Icon id="i-grid" /> Log.01 · Capability map</span>
+          <Headline world="analyst" className="big">{COUNT_WORD[n] ?? n}<br /> <em>lenses.</em></Headline>
+          <p className="lede">
+            Not a scorecard. Lenses on the same person: the <b>technical toolkit</b>, the <b>engineering rigour</b> under it,
+            the <b>AI stack</b>, research, design and scoping. Pick a lens.
+          </p>
+        </div>
 
-      <div className="body">
-        <nav className="rail" aria-label="Skill categories">
+        <nav className="lenses" aria-label="Skill lenses">
           {CATS.map((c, idx) => (
             <button
               key={c.id}
-              className={`cat${idx === i ? " on" : ""}`}
+              type="button"
+              className={`lens${idx === i ? " on" : ""}`}
               aria-current={idx === i}
+              aria-label={c.name}
               onClick={() => setI(idx)}
             >
               {idx === i && (
-                <motion.span
-                  className="ind"
-                  layoutId="cat-ind"
-                  transition={reduce ? { duration: 0 } : springs.snappy}
-                />
+                <motion.span className="ind" layoutId="sk-lens" transition={reduce ? { duration: 0 } : springs.snappy} />
               )}
-              <span className="ic"><Icon id={c.icon} /></span>
-              <span className="cl">
-                <span className="cn">{c.name}</span>
-                <span className="cc">{c.items.length} skills</span>
-              </span>
+              <span className="ln">{pad(idx + 1)}</span>
+              <span className="lt">{c.short}</span>
             </button>
           ))}
         </nav>
 
-        <div className="stage" ref={stageRef}>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={cat.id}
-              className="deck"
-              initial={reduce ? { opacity: 0 } : { opacity: 0, x: 18, filter: "blur(5px)" }}
-              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              exit={reduce ? { opacity: 0 } : { opacity: 0, x: -18, filter: "blur(5px)" }}
-              transition={reduce ? { duration: 0.15 } : springs.gentle}
-            >
-              <div className="dh">
-                <span className="dt">{cat.name}</span>
-                <span className="db">{cat.blurb}</span>
-              </div>
-
-              <motion.div className="cards" variants={cardsWrap} initial="hidden" animate="visible">
-                {cat.items.map((it) => (
-                  <motion.div className="card" key={it.name} variants={cardV}>
-                    <div className="ct">
-                      <span className="cnm">{it.name}</span>
-                      <span className="lv" data-lv={it.lv}>{LVW[it.lv]}</span>
-                    </div>
-                    <span className="cno">{it.note}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              <div className="hint">Scroll, arrow or click a lens <b>→</b> swaps in place</div>
-            </motion.div>
-          </AnimatePresence>
+        <div className="sk-foot">
+          <TwinDoor to="/artist/notes" label="Toolkit, from notebooks" world="artist" />
+          <span className="fh">Levels are self-assessed words, not scores.</span>
         </div>
-      </div>
+      </section>
+
+      <section className="sk-panel" ref={panelRef} aria-live="polite">
+        <span className="ghost" aria-hidden="true">{pad(i + 1)}</span>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={cat.id}
+            className="deck"
+            initial={reduce ? { opacity: 0 } : { opacity: 0, y: motionTokens.distance.md }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduce ? { opacity: 0 } : { opacity: 0, y: -motionTokens.distance.sm }}
+            transition={reduce ? { duration: motionTokens.duration.fast } : springs.gentle}
+          >
+            <header className="dh">
+              <div className="dk">Lens {pad(i + 1)} / {pad(n)} · {cat.items.length} skills</div>
+              <h2 className="dt">{cat.name}</h2>
+              <p className="db">{cat.blurb}</p>
+            </header>
+
+            <div className="scale" aria-hidden="true">
+              <span />
+              <span className="sl"><span>{LVW[SCALE[0]]}</span><i /><span>{LVW[SCALE[SCALE.length - 1]]}</span></span>
+            </div>
+
+            <ul className="rows" role="list">
+              {cat.items.map((it, k) => (
+                <motion.li
+                  className="row"
+                  key={it.name}
+                  initial={reduce ? { opacity: 1 } : { opacity: 0, x: -motionTokens.distance.sm }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={reduce ? { duration: 0 } : { ...springs.gentle, delay: k * rowStagger }}
+                >
+                  <div>
+                    <div className="rn">{it.name}</div>
+                    <div className="ro">{it.note}</div>
+                  </div>
+                  <Meter lv={it.lv} delay={k * rowStagger} reduce={reduce} />
+                </motion.li>
+              ))}
+            </ul>
+
+            <div className="hint">Scroll, arrow or pick a lens <b>→</b> swaps in place</div>
+          </motion.div>
+        </AnimatePresence>
+      </section>
     </main>
   )
 }

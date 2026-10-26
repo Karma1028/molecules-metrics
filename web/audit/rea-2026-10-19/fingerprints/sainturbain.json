@@ -1,0 +1,95 @@
+{
+ "slug": "sainturbain",
+ "url": "https://www.sainturbain.com/",
+ "fp": {
+  "title": "Saint Urbain | Creative, Brand, & Full Service Design Agency",
+  "globals": [],
+  "libHints": [
+   "ogl",
+   "wp-content"
+  ],
+  "hosts": [
+   "www.google-analytics.com",
+   "www.googletagmanager.com",
+   "googleads.g.doubleclick.net",
+   "www.sainturbain.com"
+  ],
+  "counts": {
+   "canvas": 2,
+   "video": 3,
+   "svg": 20,
+   "img": 20,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 2,
+   "links": 47,
+   "splitChars": 349
+  },
+  "pageHeightVh": 8.9,
+  "body": {
+   "bg": "rgb(26, 25, 24)",
+   "color": "rgb(232, 232, 232)",
+   "ff": "\"PP Neue Montreal\""
+  },
+  "h1": {
+   "ff": "PP Neue Montreal",
+   "fs": "120px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": ""
+  },
+  "h2": {
+   "ff": "PP Neue Montreal",
+   "fs": "36px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": "ABOUT"
+  },
+  "p": {
+   "ff": "PP Neue Montreal",
+   "fs": "12px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": "Where we work"
+  },
+  "fontsLoaded": [
+   "ITC Garamond",
+   "PP Neue Montreal"
+  ],
+  "topFonts": [
+   [
+    "PP Neue Montreal 400",
+    310
+   ],
+   [
+    "ITC Garamond 300",
+    29
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(26, 25, 24)",
+    12
+   ],
+   [
+    "rgb(246, 234, 24)",
+    5
+   ],
+   [
+    "rgb(232, 232, 232)",
+    3
+   ]
+  ],
+  "css": {
+   "blend:difference": 2,
+   "fixed": 2,
+   "clip-path": 4,
+   "sticky": 3,
+   "mask": 15
+  }
+ },
+ "finalUrl": "https://www.sainturbain.com/"
+}

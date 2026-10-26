@@ -1,0 +1,125 @@
+{
+ "slug": "monogrid",
+ "url": "https://monogrid.com/en/",
+ "fp": {
+  "title": "Home | MONOGRID",
+  "globals": [
+   "lenis"
+  ],
+  "libHints": [
+   "three",
+   "ogl"
+  ],
+  "hosts": [
+   "cdn.iubenda.com",
+   "www.googletagmanager.com",
+   "embeds.iubenda.com",
+   "monogrid.com"
+  ],
+  "counts": {
+   "canvas": 1,
+   "video": 7,
+   "svg": 29,
+   "img": 13,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 5,
+   "links": 36,
+   "splitChars": 101
+  },
+  "pageHeightVh": 13,
+  "body": {
+   "bg": "rgb(0, 0, 0)",
+   "color": "rgb(255, 255, 255)",
+   "ff": "HelveticaNeueLTPro"
+  },
+  "h1": {
+   "ff": "HelveticaNeueLTPro",
+   "fs": "62.0001px",
+   "fw": "300",
+   "ls": "-0.14px",
+   "tt": "none",
+   "text": "MONOGRID is a Creative Innovation Studio.\nWe craft elevated experiences for prem"
+  },
+  "h2": {
+   "ff": "HelveticaNeueLTPro",
+   "fs": "14px",
+   "fw": "400",
+   "ls": "-0.14px",
+   "tt": "uppercase",
+   "text": "{ OUR FEATURED WORKS }"
+  },
+  "p": {
+   "ff": "HelveticaNeueLTPro",
+   "fs": "14px",
+   "fw": "400",
+   "ls": "-0.14px",
+   "tt": "none",
+   "text": "We designed a landmark experience for Loro Piana celebrating its bond with New Y"
+  },
+  "fontsLoaded": [
+   "HelveticaNeueLTPro",
+   "Space Mono"
+  ],
+  "topFonts": [
+   [
+    "Space Mono 400",
+    242
+   ],
+   [
+    "HelveticaNeueLTPro 300",
+    122
+   ],
+   [
+    "HelveticaNeueLTPro 400",
+    32
+   ],
+   [
+    "-apple-system 700",
+    6
+   ],
+   [
+    "HelveticaNeueLTPro 700",
+    5
+   ],
+   [
+    "-apple-system 400",
+    5
+   ]
+  ],
+  "topBgs": [
+   [
+    "oklab(0.451981 -0.0324624 -0.311523)",
+    97
+   ],
+   [
+    "oklab(0 0 0)",
+    17
+   ],
+   [
+    "rgb(0, 0, 0)",
+    11
+   ],
+   [
+    "rgba(255, 255, 255, 0.02)",
+    5
+   ],
+   [
+    "rgba(255, 255, 255, 0.2)",
+    4
+   ],
+   [
+    "oklab(0.85957 -0.176349 0.154306)",
+    2
+   ]
+  ],
+  "css": {
+   "fixed": 6,
+   "sticky": 8,
+   "blend:": 7,
+   "clip-path": 3,
+   "will-change": 1
+  }
+ },
+ "finalUrl": "https://monogrid.com/en/"
+}

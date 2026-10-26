@@ -1,0 +1,106 @@
+/* The Bankura horse mascot. Terracotta from the shared tokens, so it follows light/dark and both worlds. */
+.mascot{position:fixed;z-index:26;left:clamp(8px,1.6vw,22px);bottom:clamp(38px,5.4vh,54px);width:clamp(34px,3.2vw,46px);
+  --face:1;--tilt:0deg;pointer-events:none;will-change:transform}
+.mascot-btn{all:unset;display:block;width:100%;cursor:pointer;pointer-events:auto;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.mascot-btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.mascot-svg{display:block;width:100%;height:auto;overflow:visible;transform:scaleX(var(--face));transform-origin:50% 100%;
+  transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+
+.mascot-svg{--clay:var(--orange,#c2562a);--clay-d:color-mix(in srgb,var(--orange,#c2562a) 68%,#2a1208);--paper-c:var(--paper,#f4ead8)}
+.mascot-svg .m-body path:first-child,.mascot-svg .m-head>path:first-child,.mascot-svg .m-tail path,.mascot-svg .m-leg rect:first-child{fill:var(--clay)}
+.mascot-svg .m-mane,.mascot-svg .m-band{fill:var(--clay-d)}
+.mascot-svg .m-ear{fill:var(--clay-d)}
+.mascot-svg .m-ear-b{opacity:.75}
+.mascot-svg .m-leg-b rect:first-child,.mascot-svg .m-leg-f2 rect:first-child{fill:var(--clay-d)}
+.mascot-svg .m-hoof{fill:var(--ink,#2a1d14)}
+.mascot-svg .m-dot,.mascot-svg .m-dot-p{fill:var(--paper-c);stroke:var(--paper-c)}
+.mascot-svg .m-ring{fill:none;stroke:var(--paper-c);stroke-width:1.2;stroke-dasharray:2 2.4}
+.mascot-svg .m-eye{fill:var(--ink,#2a1d14)}
+.mascot-svg .m-nostril{fill:var(--clay-d)}
+.mascot-svg .m-lid{fill:none;stroke:var(--ink,#2a1d14);stroke-width:1.6;stroke-linecap:round;opacity:0}
+.mascot-svg .m-shadow{fill:var(--ink,#2a1d14);opacity:.14}
+.mascot-svg .m-z{opacity:0;fill:var(--muted,#8a7a66);font:700 7px var(--font-mono,monospace)}
+
+/* parts rotate about their own joints */
+.mascot-svg .m-head,.mascot-svg .m-tail,.mascot-svg .m-body,.mascot-svg .m-ear,.mascot-svg .m-eye{transform-box:fill-box}
+.mascot-svg .m-head{transform-origin:25% 90%;transform:rotate(var(--tilt));transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.mascot-svg .m-tail{transform-origin:95% 10%;animation:m-swish 3.2s ease-in-out infinite}
+.mascot-svg .m-body{transform-origin:50% 100%;animation:m-breathe 3.6s ease-in-out infinite}
+.mascot-svg .m-ear{transform-origin:50% 100%;animation:m-flick 7s ease-in-out infinite}
+.mascot-svg .m-ear-b{animation-delay:-3.4s}
+.mascot-svg .m-eye{transform-origin:50% 50%;animation:m-blink 5.2s infinite}
+
+@keyframes m-swish{0%,100%{rotate:-7deg}50%{rotate:9deg}}
+@keyframes m-breathe{0%,100%{scale:1 1}50%{scale:1 1.025}}
+@keyframes m-flick{0%,90%,100%{rotate:0deg}93%{rotate:-14deg}96%{rotate:6deg}}
+@keyframes m-blink{0%,93%,100%{scale:1 1}95.5%{scale:1 .1}}
+
+/* click: a little hop */
+.mascot[data-hop] .mascot-svg{animation:m-hop .56s cubic-bezier(.34,1.56,.64,1)}
+@keyframes m-hop{0%{translate:0 0}35%{translate:0 -16px}70%{translate:0 0}85%{translate:0 -4px}100%{translate:0 0}}
+
+/* asleep: head down, eye shut, slower breath, drifting z */
+.mascot[data-asleep] .m-head{transform:rotate(26deg)}
+.mascot[data-asleep] .m-eye{animation:none;opacity:0}
+.mascot[data-asleep] .m-lid{opacity:1}
+.mascot[data-asleep] .m-body{animation-duration:6s}
+.mascot[data-asleep] .m-z{opacity:1;animation:m-zz 3s ease-in-out infinite}
+@keyframes m-zz{0%{translate:0 4px;opacity:0}30%{opacity:1}100%{translate:3px -6px;opacity:0}}
+
+/* speech bubble: sits above, never mirrored */
+.mascot-bubble{position:absolute;left:8px;bottom:calc(100% + 2px);width:max-content;max-width:min(200px,60vw);padding:7px 11px;border-radius:12px 12px 12px 3px;
+  background:var(--card,#fff8ec);color:var(--ink,#2a1d14);border:1px solid color-mix(in srgb,var(--ink,#2a1d14) 22%,transparent);
+  box-shadow:var(--shadow-sm,0 6px 16px -8px rgba(0,0,0,.4));font:600 10.5px/1.35 var(--font-mono,monospace);letter-spacing:.02em;
+  opacity:0;translate:0 6px;transition:opacity .25s ease,translate .3s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.mascot-bubble:not(:empty){opacity:1;translate:0 0}
+
+/* gaits: two-segment legs (thigh at the hip, shin at the knee), real footfall order, cycle tied to ground speed */
+.mascot-svg .m-leg,.mascot-svg .m-shin{transform-box:fill-box;transform-origin:50% 0}
+.mascot{--T:1.3s;--reach:17deg;--knee:42deg}
+.mascot[data-gait="walk"]{--T:1.3s;--reach:17deg;--knee:42deg}
+.mascot[data-gait="trot"]{--T:.56s;--reach:28deg;--knee:58deg}
+.mascot[data-gait="gallop"]{--T:.32s;--reach:40deg;--knee:70deg}
+.mascot[data-gait] .m-leg{animation:m-thigh var(--T) linear infinite}
+.mascot[data-gait] .m-shin{animation:m-shin var(--T) linear infinite;animation-delay:inherit}
+.mascot[data-gait="idle"] .m-leg,.mascot[data-gait="idle"] .m-shin{animation:none}
+/* walk is a four-beat lateral sequence: hind near, front near, hind far, front far */
+.mascot[data-gait="walk"] .m-leg{animation-delay:0s}
+.mascot[data-gait="walk"] .m-leg-f{animation-delay:calc(var(--T) * -.25)}
+.mascot[data-gait="walk"] .m-leg-b{animation-delay:calc(var(--T) * -.5)}
+.mascot[data-gait="walk"] .m-leg-f2{animation-delay:calc(var(--T) * -.75)}
+/* trot and gallop move diagonal pairs together */
+.mascot[data-gait="trot"] .m-leg,.mascot[data-gait="trot"] .m-leg-f2,.mascot[data-gait="gallop"] .m-leg,.mascot[data-gait="gallop"] .m-leg-f2{animation-delay:0s}
+.mascot[data-gait="trot"] .m-leg-f,.mascot[data-gait="trot"] .m-leg-b,.mascot[data-gait="gallop"] .m-leg-f,.mascot[data-gait="gallop"] .m-leg-b{animation-delay:calc(var(--T) * -.5)}
+/* stance is slow (foot travels back along the ground), swing is quick with the knee folding */
+@keyframes m-thigh{0%{rotate:calc(var(--reach) * -1)}58%{rotate:var(--reach)}100%{rotate:calc(var(--reach) * -1)}}
+@keyframes m-shin{0%,56%{rotate:0deg}72%{rotate:var(--knee)}90%{rotate:calc(var(--knee) * .25)}100%{rotate:0deg}}
+/* body dips on each footfall pair, head nods once a stride against the body, tail follows */
+.mascot[data-gait="walk"] .m-body{animation:m-bob calc(var(--T) / 2) ease-in-out infinite}
+.mascot[data-gait="trot"] .m-body,.mascot[data-gait="gallop"] .m-body{animation:m-bob calc(var(--T) / 2) ease-in-out infinite}
+.mascot[data-gait="walk"] .m-head{animation:m-nod var(--T) ease-in-out infinite}
+.mascot[data-gait="gallop"] .m-head{transform:rotate(calc(var(--tilt) - 8deg))}
+.mascot[data-gait="gallop"] .m-tail{animation-duration:.5s}
+@keyframes m-bob{0%,100%{translate:0 0}50%{translate:0 -2.2px}}
+@keyframes m-nod{0%,100%{rotate:-2deg}50%{rotate:3deg}}
+.m-prints{position:fixed;left:0;right:0;bottom:calc(clamp(38px,5.4vh,54px) + 1px);height:0;z-index:25;pointer-events:none}
+.m-print{position:absolute;bottom:0;width:7px;height:5px;border-radius:50% 50% 45% 45%;background:var(--orange,#c2562a);opacity:0;
+  animation:m-print 2.6s ease-out forwards}
+@keyframes m-print{0%{opacity:.55;scale:1}100%{opacity:0;scale:.6}}
+
+@media (prefers-reduced-motion:reduce){
+  .m-prints{display:none}
+  .mascot-svg,.mascot-svg *{animation:none!important;transition:none!important}
+  .mascot-bubble{transition:none}
+}
+@media (max-width:600px){.mascot{width:32px;bottom:34px}.mascot-bubble{font-size:10px;max-width:56vw}}
+
+/* errand: the thing the horse ran to point at */
+.horse-pointed{outline:2px solid var(--orange,#c2562a);outline-offset:4px;border-radius:6px;animation:horse-ping 1.3s ease-out 2}
+@keyframes horse-ping{0%{outline-offset:2px;outline-color:var(--orange,#c2562a)}100%{outline-offset:12px;outline-color:transparent}}
+@media (prefers-reduced-motion:reduce){.horse-pointed{animation:none}}
+.mascot[data-side="r"] .mascot-bubble{left:auto;right:8px;border-radius:12px 12px 3px 12px}
+
+/* grazing: head to the ground, a slow nibble */
+.mascot[data-graze] .m-head{transform:rotate(38deg);animation:m-nibble .7s ease-in-out infinite}
+@keyframes m-nibble{0%,100%{rotate:0deg}50%{rotate:5deg}}
+@media (prefers-reduced-motion:reduce){.mascot[data-graze] .m-head{animation:none}}

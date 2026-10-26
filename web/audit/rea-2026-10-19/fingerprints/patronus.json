@@ -1,0 +1,128 @@
+{
+ "slug": "patronus",
+ "url": "https://www.harrypotter.com/patronus",
+ "fp": {
+  "title": "Harry Potter | Sign Up",
+  "globals": [
+   "__NEXT_DATA__"
+  ],
+  "libHints": [
+   "three",
+   "next",
+   "ogl"
+  ],
+  "hosts": [
+   "www.google-analytics.com",
+   "cdn.segment.com",
+   "www.googletagmanager.com",
+   "platform.twitter.com",
+   "www.harrypotter.com",
+   "cdn.cookielaw.org",
+   "unpkg.com",
+   "client-api.arkoselabs.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 6,
+   "img": 3,
+   "iframe": 3,
+   "audio": 0,
+   "sections": 4,
+   "links": 4,
+   "splitChars": 7
+  },
+  "pageHeightVh": 1.2,
+  "body": {
+   "bg": "rgb(16, 20, 27)",
+   "color": "rgb(255, 255, 255)",
+   "ff": "\"Sofia Pro\""
+  },
+  "h1": {
+   "ff": "Harry Beast Regular",
+   "fs": "40px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Sign Up to"
+  },
+  "h2": {
+   "ff": "Sofia Pro",
+   "fs": "16px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": ""
+  },
+  "p": {
+   "ff": "Sofia Pro",
+   "fs": "18px",
+   "fw": "300",
+   "ls": "normal",
+   "tt": "none",
+   "text": "/register"
+  },
+  "fontsLoaded": [
+   "Sofia Pro",
+   "Harry Beast Regular",
+   "Harry Beast Display"
+  ],
+  "topFonts": [
+   [
+    "Sofia Pro 400",
+    13
+   ],
+   [
+    "Sofia Pro 300",
+    9
+   ],
+   [
+    "Harry Beast Display 400",
+    6
+   ],
+   [
+    "Harry Beast Regular 400",
+    6
+   ],
+   [
+    "Sofia Pro 800",
+    5
+   ],
+   [
+    "Sofia Pro 700",
+    5
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgba(28, 30, 40, 0.5)",
+    6
+   ],
+   [
+    "rgb(250, 246, 240)",
+    4
+   ],
+   [
+    "rgb(16, 20, 27)",
+    3
+   ],
+   [
+    "rgb(87, 88, 255)",
+    2
+   ],
+   [
+    "rgba(0, 0, 0, 0.5)",
+    1
+   ],
+   [
+    "rgb(249, 255, 250)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 2,
+   "sticky": 1
+  }
+ },
+ "finalUrl": "https://www.harrypotter.com/register"
+}

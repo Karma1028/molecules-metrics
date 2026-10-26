@@ -1,0 +1,25 @@
+{
+  "interests": [
+    { "id": "football", "label": "Football", "keywords": ["barcelona", "barça", "barca", "la liga", "champions league", "lamine yamal", "pedri", "flick"] },
+    { "id": "data", "label": "Data", "keywords": ["data", "dataset", "analytics", "statistics", "regression", "forecast", "dashboard", "sql"] },
+    { "id": "ai", "label": "AI", "keywords": ["ai", "llm", "language model", "machine learning", "neural", "transformer", "agent", "diffusion", "reasoning"] },
+    { "id": "photo", "label": "Photography", "keywords": ["photo", "photography", "camera", "lens", "mirrorless", "sony", "fujifilm", "street photography"] },
+    { "id": "music", "label": "Music", "keywords": ["album", "song", "singer", "tour", "playlist", "spotify", "bengali", "indie"] },
+    { "id": "chem", "label": "Chemistry", "keywords": ["chemistry", "chemical", "catalyst", "reactor", "polymer", "molecule", "battery", "hydrogen"] }
+  ],
+  "papers": [
+    { "kind": "hf", "name": "Hugging Face Daily Papers", "url": "https://huggingface.co/api/daily_papers?limit=24" },
+    { "kind": "feed", "name": "arXiv stat.ML + cs.LG", "url": "https://export.arxiv.org/api/query?search_query=cat:stat.ML+OR+cat:cs.LG&sortBy=submittedDate&sortOrder=descending&max_results=14", "tag": "data" }
+  ],
+  "news": [
+    { "kind": "feed", "name": "BBC Sport", "url": "https://feeds.bbci.co.uk/sport/football/rss.xml", "only": "football" },
+    { "kind": "feed", "name": "Google News", "url": "https://news.google.com/rss/search?q=FC+Barcelona&hl=en-IN&gl=IN&ceid=IN:en", "tag": "football" },
+    { "kind": "feed", "name": "PetaPixel", "url": "https://petapixel.com/feed/", "tag": "photo" },
+    { "kind": "feed", "name": "Hacker News", "url": "https://hnrss.org/frontpage?q=AI+OR+data+OR+LLM&points=80", "tag": "ai" },
+    { "kind": "feed", "name": "Pitchfork", "url": "https://pitchfork.com/feed/feed-news/rss", "tag": "music" },
+    { "kind": "feed", "name": "ScienceDaily Chemistry", "url": "https://www.sciencedaily.com/rss/matter_energy/chemistry.xml", "tag": "chem" }
+  ],
+  "perSourceCap": 8,
+  "papersCap": 30,
+  "newsCap": 40
+}

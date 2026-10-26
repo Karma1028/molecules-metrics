@@ -1,0 +1,8 @@
+/* the visitor's own thread: a column of running stitches hugging the left margin */
+.kantha-thread{position:fixed;z-index:3;left:5px;top:76px;bottom:132px;width:3px;display:flex;flex-direction:column;justify-content:flex-start;gap:7px;
+  pointer-events:none;overflow:hidden}
+.kantha-thread .st{display:block;flex:0 0 auto;width:3px;height:9px;border-radius:2px;opacity:.75;transform-origin:top}
+.kantha-thread .st.new{animation:kt-stitch .7s cubic-bezier(.19,1,.22,1) both}
+@keyframes kt-stitch{from{transform:scaleY(0);opacity:0}to{transform:scaleY(1);opacity:.75}}
+@media (prefers-reduced-motion:reduce){.kantha-thread .st.new{animation:none}}
+@media (max-width:600px){.kantha-thread{left:2px;top:62px;bottom:96px}}

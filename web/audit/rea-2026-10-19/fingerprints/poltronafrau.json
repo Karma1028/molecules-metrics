@@ -1,0 +1,125 @@
+{
+ "slug": "poltronafrau",
+ "url": "https://www.poltronafrau.com/it/it.html",
+ "fp": {
+  "title": "Poltrona Frau | Artigianalità senza tempo, Heritage, Sostenibilità",
+  "globals": [],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "scripts.clarity.ms",
+   "www.googletagmanager.com",
+   "www.clarity.ms",
+   "cdn.doofinder.com",
+   "consent.cookiebot.com",
+   "eu1-config.doofinder.com",
+   "eu.acsbapp.com",
+   "www.poltronafrau.com",
+   "embeds.acswapp.com",
+   "static.cloudflareinsights.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 1,
+   "svg": 11,
+   "img": 73,
+   "iframe": 3,
+   "audio": 0,
+   "sections": 0,
+   "links": 272,
+   "splitChars": 4
+  },
+  "pageHeightVh": 8.1,
+  "body": {
+   "bg": "rgb(250, 248, 246)",
+   "color": "rgb(101, 101, 108)",
+   "ff": "Executive"
+  },
+  "h1": {
+   "ff": "SangBleu",
+   "fs": "60px",
+   "fw": "300",
+   "ls": "0.9px",
+   "tt": "none",
+   "text": "Prodotti in evidenza"
+  },
+  "h2": {
+   "ff": "Executive",
+   "fs": "14px",
+   "fw": "500",
+   "ls": "1.12px",
+   "tt": "uppercase",
+   "text": "SEDUTE"
+  },
+  "p": {
+   "ff": "sans-serif",
+   "fs": "15px",
+   "fw": "400",
+   "ls": "0.5px",
+   "tt": "none",
+   "text": "We use cookies to personalise content and ads, to provide social media features "
+  },
+  "fontsLoaded": [
+   "Executive",
+   "SangBleu"
+  ],
+  "topFonts": [
+   [
+    "sans-serif 700",
+    304
+   ],
+   [
+    "sans-serif 400",
+    263
+   ],
+   [
+    "Executive 400",
+    169
+   ],
+   [
+    "Executive 500",
+    92
+   ],
+   [
+    "Executive 700",
+    72
+   ],
+   [
+    "sans-serif 600",
+    33
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgba(0, 0, 0, 0.05)",
+    79
+   ],
+   [
+    "rgb(255, 255, 255)",
+    66
+   ],
+   [
+    "rgb(232, 230, 224)",
+    42
+   ],
+   [
+    "rgb(101, 101, 108)",
+    17
+   ],
+   [
+    "rgb(53, 53, 53)",
+    13
+   ],
+   [
+    "rgba(101, 101, 108, 0.8)",
+    12
+   ]
+  ],
+  "css": {
+   "fixed": 40,
+   "blend:": 1
+  }
+ },
+ "finalUrl": "https://www.poltronafrau.com/it/it.html"
+}

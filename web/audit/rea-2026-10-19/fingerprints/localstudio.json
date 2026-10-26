@@ -1,0 +1,112 @@
+{
+ "slug": "localstudio",
+ "url": "https://localstudio.fr/about",
+ "fp": {
+  "title": "Local™ — Branding & Digital Studio",
+  "globals": [],
+  "libHints": [
+   "three",
+   "lenis",
+   "barba"
+  ],
+  "hosts": [
+   "localstudio.fr"
+  ],
+  "counts": {
+   "canvas": 3,
+   "video": 0,
+   "svg": 16,
+   "img": 17,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 3,
+   "links": 26,
+   "splitChars": 633
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(16, 16, 16)",
+   "ff": "\"Times New Roman\""
+  },
+  "h1": {
+   "ff": "Roc Grotesk Condensed",
+   "fs": "1323.81px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": ""
+  },
+  "h2": {
+   "ff": "Roc Grotesk Condensed",
+   "fs": "190.476px",
+   "fw": "400",
+   "ls": "-4px",
+   "tt": "uppercase",
+   "text": ""
+  },
+  "p": {
+   "ff": "Roc Grotesk Condensed",
+   "fs": "13.3333px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "uppercase",
+   "text": "©2024 LOCAL™"
+  },
+  "fontsLoaded": [
+   "Times Now",
+   "Roc Grotesk Condensed"
+  ],
+  "topFonts": [
+   [
+    "Roc Grotesk Condensed 700",
+    765
+   ],
+   [
+    "Times Now 400",
+    61
+   ],
+   [
+    "Roc Grotesk Condensed 400",
+    24
+   ],
+   [
+    "Times New Roman 400",
+    2
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    37
+   ],
+   [
+    "rgba(40, 40, 42, 0.4)",
+    5
+   ],
+   [
+    "rgba(40, 40, 42, 0.6)",
+    4
+   ],
+   [
+    "rgb(16, 16, 16)",
+    3
+   ],
+   [
+    "rgb(255, 72, 35)",
+    2
+   ],
+   [
+    "rgb(255, 255, 241)",
+    2
+   ]
+  ],
+  "css": {
+   "blend:difference": 3,
+   "fixed": 16,
+   "mask": 6,
+   "clip-path": 2
+  }
+ },
+ "finalUrl": "https://localstudio.fr/about"
+}

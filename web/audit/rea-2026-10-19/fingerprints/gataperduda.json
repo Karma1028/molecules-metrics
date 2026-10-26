@@ -1,0 +1,104 @@
+{
+ "slug": "gataperduda",
+ "url": "https://lagataperduda.com/en/mapa/",
+ "fp": {
+  "title": "La Gata Perduda",
+  "globals": [
+   "Howl",
+   "__NUXT__"
+  ],
+  "libHints": [
+   "nuxt",
+   "mapbox"
+  ],
+  "hosts": [
+   "cdn.usefathom.com",
+   "lagataperduda.com",
+   "static.cloudflareinsights.com"
+  ],
+  "counts": {
+   "canvas": 1,
+   "video": 0,
+   "svg": 9,
+   "img": 0,
+   "iframe": 1,
+   "audio": 0,
+   "sections": 0,
+   "links": 12,
+   "splitChars": 16
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(0, 0, 0)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "\"GT America Mono\""
+  },
+  "h1": null,
+  "h2": null,
+  "p": {
+   "ff": "GT America Mono",
+   "fs": "14px",
+   "fw": "300",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Idioma / Language"
+  },
+  "fontsLoaded": [
+   "GT America Mono"
+  ],
+  "topFonts": [
+   [
+    "GT America Mono 300",
+    19
+   ],
+   [
+    "Helvetica Neue 400",
+    2
+   ],
+   [
+    "Canela 300",
+    1
+   ],
+   [
+    "GT America Mono 700",
+    1
+   ],
+   [
+    "Helvetica Neue 700",
+    1
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgba(0, 0, 0, 0.8)",
+    3
+   ],
+   [
+    "rgba(0, 0, 0, 0.88)",
+    1
+   ],
+   [
+    "rgba(0, 0, 0, 0.9)",
+    1
+   ],
+   [
+    "rgb(0, 0, 0)",
+    1
+   ],
+   [
+    "rgb(160, 194, 159)",
+    1
+   ],
+   [
+    "rgb(206, 148, 148)",
+    1
+   ]
+  ],
+  "css": {
+   "fixed": 8,
+   "filter": 9,
+   "will-change": 116
+  }
+ },
+ "finalUrl": "https://lagataperduda.com/en/mapa/"
+}

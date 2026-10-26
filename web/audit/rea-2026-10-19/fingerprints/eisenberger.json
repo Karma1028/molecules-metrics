@@ -1,0 +1,94 @@
+{
+ "slug": "eisenberger",
+ "url": "https://www.eisenberger.co.at/en/photography/",
+ "fp": {
+  "title": "Harald Eisenberger Photography Photography",
+  "globals": [
+   "jQuery"
+  ],
+  "libHints": [
+   "ogl"
+  ],
+  "hosts": [
+   "www.googletagmanager.com",
+   "www.google-analytics.com",
+   "www.eisenberger.co.at",
+   "s3.amazonaws.com"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 5,
+   "img": 13,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 5,
+   "links": 41,
+   "splitChars": 1
+  },
+  "pageHeightVh": 3.8,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(121, 120, 120)",
+   "ff": "Yoga-Sans-Thin"
+  },
+  "h1": {
+   "ff": "Yoga-Sans-Hairline",
+   "fs": "88px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Work"
+  },
+  "h2": null,
+  "p": {
+   "ff": "Yoga-Sans-Hairline",
+   "fs": "40px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Harald Eisenberger is an international photographer specialised in people, food,"
+  },
+  "fontsLoaded": [
+   "Yoga-Sans-Thin",
+   "Yoga-Sans-Hairline"
+  ],
+  "topFonts": [
+   [
+    "Yoga-Sans-Thin 400",
+    33
+   ],
+   [
+    "Yoga-Sans-Hairline 400",
+    23
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    3
+   ],
+   [
+    "rgb(233, 233, 233)",
+    1
+   ],
+   [
+    "rgb(66, 66, 65)",
+    1
+   ],
+   [
+    "rgb(245, 245, 245)",
+    1
+   ],
+   [
+    "rgb(11, 85, 102)",
+    1
+   ]
+  ],
+  "css": {
+   "will-change": 16,
+   "fixed": 2
+  }
+ },
+ "finalUrl": "https://www.eisenberger.co.at/en/photography/"
+}

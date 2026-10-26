@@ -5,6 +5,7 @@ import { Icon } from "../../lib/icons"
 import { springs, motionTokens } from "../../lib/motion-tokens"
 import { useOneScreen } from "../../hooks/useOneScreen"
 import { PlateHeader } from "../../components/headers/PlateHeader"
+import { TwinDoor } from "../../components/TwinDoor"
 
 /* ── kickoff countdown (editorial one-liner, not a chip grid) ─────────── */
 function kickoffLine(ts?: string | null): string | null {
@@ -41,26 +42,26 @@ function useCountUp(target: number, reduce: boolean | null, ms = 1000): number {
 /* ── the feature photographs (real, shot in Flow — no IP, no faces) ───── */
 interface Plate { src: string; kicker: string; title: string; note: string }
 const STADIUM: Plate = {
-  src: "/images/matchday/stadium.jpg",
+  src: "/images/matchday/stadium.webp",
   kicker: "The cathedral",
   title: "Floodlights, before anyone arrives",
   note: "Empty stands, full of noise about to happen",
 }
 const PLATES: Plate[] = [
   {
-    src: "/images/matchday/terrace.jpg",
+    src: "/images/matchday/terrace.webp",
     kicker: "The terrace",
     title: "Scarves up, full throat",
     note: "The only ritual that still gathers a crowd on purpose",
   },
   {
-    src: "/images/matchday/boot.jpg",
+    src: "/images/matchday/boot.webp",
     kicker: "The tool",
     title: "One worn boot, wet grass",
     note: "Where every stat in this room actually begins",
   },
   {
-    src: "/images/matchday/scarf.jpg",
+    src: "/images/matchday/scarf.webp",
     kicker: "The colours",
     title: "Knitted scarf, old ticket stub",
     note: "Garnet and blue, kept in a drawer between matches",
@@ -85,10 +86,10 @@ const CSS = String.raw`
   .p-md .backdrop{position:absolute;inset:0;z-index:0;overflow:hidden}
   .p-md .backdrop .bg{position:absolute;inset:-6%;background-size:cover;background-position:center 30%;
     background-image:var(--bg);filter:saturate(.9);transform-origin:60% 40%;
-    animation:mdKen 42s ease-in-out infinite alternate}
+    animation:mdKen 42s ease-out both}
   .p-md .backdrop .beam{position:absolute;inset:0;mix-blend-mode:screen;opacity:.5;
     background:linear-gradient(104deg,transparent 42%,rgba(232,176,75,.26) 50%,transparent 58%);
-    transform:translateX(-60%);animation:mdBeam 11s ease-in-out infinite}
+    transform:translateX(-60%);display:none}
   .p-md .backdrop .scrim{position:absolute;inset:0;
     background:linear-gradient(180deg,rgba(8,6,10,.52) 0%,rgba(8,6,10,.30) 42%,rgba(8,6,10,.72) 100%)}
   :root[data-theme="light"] .p-md .backdrop .bg{filter:saturate(.92) brightness(1.05)}
@@ -119,7 +120,7 @@ const CSS = String.raw`
   .p-md .mh-sub{font-family:var(--font-hand);font-size:clamp(13px,1.3vw,18px);color:var(--fz-mut);rotate:-.6deg}
   .p-md .mh-meta{text-align:right;display:flex;flex-direction:column;gap:3px;align-items:flex-end}
   .p-md .mh-iss{font:800 10px/1 var(--font-display);letter-spacing:.04em;color:var(--fz-ink);text-transform:uppercase}
-  .p-md .mh-src{font:600 8.5px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);max-width:24ch}
+  .p-md .mh-src{font:600 8.5px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);max-width:24ch;white-space:normal}
 
   /* ── the spread grid ── */
   .p-md .spread{flex:1;min-height:0;display:grid;gap:clamp(9px,1.1vw,15px);
@@ -145,9 +146,9 @@ const CSS = String.raw`
 
   /* motion-graphic layers painted INSIDE a photo's .img box */
   .p-md .mg-scan{position:absolute;left:0;right:0;top:0;height:2px;z-index:3;mix-blend-mode:screen;opacity:.6;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:mdScan 5s linear infinite}
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);display:none}
   .p-md .mg-glare{position:absolute;top:-20%;bottom:-20%;left:0;width:34%;z-index:3;mix-blend-mode:screen;
-    background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:mdGlare 7s ease-in-out infinite}
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);display:none}
   .p-md .mg-grid{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.14;mix-blend-mode:overlay;
     background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
     background-size:28px 28px}
@@ -165,7 +166,7 @@ const CSS = String.raw`
 
   /* tracking reticle over a small photo (the boot) */
   .p-md .retic{position:absolute;inset:18% 20%;z-index:3;pointer-events:none}
-  .p-md .retic span{position:absolute;width:12px;height:12px;border:1.5px solid var(--gold);opacity:.85;animation:mdPulse 2.4s ease-in-out infinite}
+  .p-md .retic span{position:absolute;width:12px;height:12px;border:1.5px solid var(--gold);opacity:.85}
   .p-md .retic span:nth-child(1){top:0;left:0;border-right:none;border-bottom:none}
   .p-md .retic span:nth-child(2){top:0;right:0;border-left:none;border-bottom:none}
   .p-md .retic span:nth-child(3){bottom:0;left:0;border-right:none;border-top:none}
@@ -285,7 +286,7 @@ const CSS = String.raw`
     padding:clamp(9px,1.2vw,14px);display:flex;flex-direction:column;gap:6px;min-height:0}
   .p-md .wire .lab{font:800 8px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--fz-mut);
     display:flex;align-items:center;gap:6px;flex-shrink:0}
-  .p-md .wire .lab .dot{width:6px;height:6px;border-radius:50%;background:var(--garnet);animation:mdPulse 1.6s ease-in-out infinite}
+  .p-md .wire .lab .dot{width:6px;height:6px;border-radius:50%;background:var(--garnet)}
   .p-md .wire .list{display:flex;flex-direction:column;min-height:0;overflow:hidden}
   .p-md .wire .it{text-decoration:none;color:inherit;padding:6px 0;border-top:1px solid var(--fz-line)}
   .p-md .wire .it:first-child{border-top:none}
@@ -330,7 +331,12 @@ const CSS = String.raw`
   @media(max-width:900px){
     .p-md .mh-src{display:none}
     .p-md .mh-title{font-size:clamp(26px,8vw,40px)}
-    .p-md .spread{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(150px,34%) auto minmax(0,1fr);gap:9px}
+    /* header: stack full-width so the title/lede stop wrapping into a 100px column beside the badge */
+    .p-md .plate-head{flex-direction:column;align-items:stretch;gap:4px;margin-bottom:0}
+    .p-md .plate-head .ph-right{align-items:flex-start;text-align:left;white-space:normal}
+    .p-md .plate-head .mh-meta{align-items:flex-start;text-align:left;flex-direction:row;flex-wrap:wrap;gap:4px 10px}
+    .p-md .plate-head .ph-rule{margin:3px 0}
+    .p-md .spread{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(84px,17%) auto minmax(0,1fr);gap:8px}
     .p-md .lead{grid-area:1 / 1}.p-md .lead .print{rotate:0deg}
     .p-md .mtabs{grid-area:2 / 1;display:flex;gap:4px;padding:3px;border-radius:999px;
       background:var(--fz-card);border:1px solid var(--fz-line);backdrop-filter:blur(3px)}
@@ -345,9 +351,35 @@ const CSS = String.raw`
     .p-md .spread[data-tab="rail"] :is(.poster,.stub,.wire){display:none}
     .p-md .poster{justify-content:flex-start}
     .p-md .prow{flex-direction:row;align-items:center}
-    .p-md .radarbox{flex:0 0 min(132px,36%)}
+    .p-md .radarbox{flex:0 0 min(104px,30%)}
+    /* season panel: tight stack so the radar, rows and underlying line each get their own space */
+    .p-md .poster{gap:5px;padding:7px 10px}
+    .p-md .poster .pk{letter-spacing:.02em;font-size:7.5px;gap:4px;flex-wrap:nowrap;white-space:nowrap}
+    .p-md .poster .pk .leg{letter-spacing:.02em;white-space:nowrap;gap:4px;font-size:7px}
+    .p-md .prow{flex:1 1 auto;min-height:0;gap:8px}
+    .p-md .radar .al{font-size:5.5px}
+    .p-md .pstats{gap:3px}
+    .p-md .yhead{gap:8px;flex-wrap:nowrap}
+    .p-md .yh-main b{font-size:28px}
+    .p-md .cmp-row{padding:1.5px 2px;gap:6px}
+    .p-md .cl{font-size:9.5px}
+    .p-md .under{padding-top:4px;gap:3px 8px}
+    .p-md .under .un{display:block}
     .p-md .rail{flex-direction:column}
     .p-md .rail .print{rotate:0deg}
+  }
+  /* short phones (375x667): lead print yields rows to the Season panel so nothing clips or collides */
+  @media(max-width:900px) and (max-height:720px){
+    .p-md .spread{grid-template-rows:minmax(52px,10%) auto minmax(0,1fr);gap:6px}
+    .p-md .poster{gap:3px;padding:5px 10px}
+    .p-md .prow{gap:6px}
+    .p-md .radarbox{flex-basis:min(84px,26%)}
+    .p-md .pstats{gap:2px}
+    .p-md .yh-main b{font-size:24px}
+    .p-md .yh-delta{padding:3px 6px}
+    .p-md .cmp-row{padding:.5px 2px}
+    .p-md .cmp-head{padding-bottom:2px}
+    .p-md .under{padding-top:3px;gap:2px 7px}
   }
   @media(prefers-reduced-motion:reduce){
     .p-md .backdrop .bg,.p-md .backdrop .beam,.p-md .mg-scan,.p-md .mg-glare,
@@ -500,6 +532,7 @@ export function Matchday() {
         lede="I read Barça through Messi, then went and measured why."
         right={
           <div className="mh-meta">
+            <TwinDoor to="/analyst/work" label="The system behind the fandom" world="analyst" />
             <div className="mh-iss">No. 10 · Garnet &amp; Blue</div>
             <div className="mh-src">Last season from FBref + Understat · this season live via TheSportsDB</div>
           </div>

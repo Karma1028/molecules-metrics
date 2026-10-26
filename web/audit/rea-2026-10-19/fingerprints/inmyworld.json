@@ -1,0 +1,64 @@
+{
+ "slug": "inmyworld",
+ "url": "https://www.onedayinmyworld.com/",
+ "fp": {
+  "title": "WordPress › Error",
+  "globals": [],
+  "libHints": [
+   "wordpress"
+  ],
+  "hosts": [],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 0,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 1,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(68, 68, 68)",
+   "ff": "-apple-system"
+  },
+  "h1": {
+   "ff": "-apple-system",
+   "fs": "24px",
+   "fw": "700",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Error establishing a database connection"
+  },
+  "h2": null,
+  "p": {
+   "ff": "-apple-system",
+   "fs": "14px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": ""
+  },
+  "fontsLoaded": [],
+  "topFonts": [
+   [
+    "-apple-system 400",
+    8
+   ],
+   [
+    "-apple-system 700",
+    4
+   ],
+   [
+    "Consolas 400",
+    3
+   ]
+  ],
+  "topBgs": [],
+  "css": {}
+ },
+ "finalUrl": "https://www.onedayinmyworld.com/"
+}

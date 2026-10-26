@@ -1,0 +1,83 @@
+{
+ "slug": "zaft",
+ "url": "https://wisetype.nl/collections/wt-zaft-2",
+ "fp": {
+  "title": "WiseType® | 404",
+  "globals": [
+   "jQuery"
+  ],
+  "libHints": [],
+  "hosts": [
+   "wisetype.nl"
+  ],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 8,
+   "img": 1,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 6,
+   "links": 13,
+   "splitChars": 3
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(51, 51, 51)",
+   "ff": "\"WT Main\""
+  },
+  "h1": {
+   "ff": "WT Main",
+   "fs": "16px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "404"
+  },
+  "h2": {
+   "ff": "WT Main",
+   "fs": "16px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "Font Trials"
+  },
+  "p": {
+   "ff": "WT Main",
+   "fs": "16px",
+   "fw": "400",
+   "ls": "normal",
+   "tt": "none",
+   "text": "There’s nothing here, please go back to Typefaces."
+  },
+  "fontsLoaded": [
+   "WT Main"
+  ],
+  "topFonts": [
+   [
+    "WT Main 400",
+    31
+   ]
+  ],
+  "topBgs": [
+   [
+    "rgb(255, 255, 255)",
+    6
+   ],
+   [
+    "rgb(242, 242, 242)",
+    4
+   ],
+   [
+    "rgba(0, 0, 0, 0.3)",
+    2
+   ]
+  ],
+  "css": {
+   "fixed": 6,
+   "sticky": 2
+  }
+ },
+ "finalUrl": "https://wisetype.nl/collections/wt-zaft-2"
+}

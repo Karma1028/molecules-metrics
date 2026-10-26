@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { HERO_STYLE } from "./heroAssets"
+import { skyShift } from "../lib/sky-shift"
+import { KeepyUppy } from "../components/intro/KeepyUppy"
 
 const HERO_BODY = String.raw`
   <div class="bg"></div><div class="halftone" aria-hidden="true"></div><div class="grain"></div>
@@ -18,8 +20,6 @@ const HERO_BODY = String.raw`
     <symbol id="i-headphone" viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="7" rx="1.6"/><rect x="17" y="13" width="4" height="7" rx="1.6"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
   </defs></svg>
-
-  <div class="curtain" id="curtain" aria-hidden="true"><b><span id="curtain-w">Tuhin</span><span class="hw" id="curtain-hw">flip the page</span></b></div>
 
   <header class="top">
     <div>Tuhin Bhattacharya <b>&middot;</b> Field Notebook</div>
@@ -49,9 +49,13 @@ const HERO_BODY = String.raw`
         <span class="s artist">I photograph Goa, never miss a <b>Bar&ccedil;a</b> match and over-think every playlist. Everything pinned to the photo is <b>live</b>, pulled from the real thing, right now.</span>
         <span class="s analyst">Chemical engineer turned data analyst. <b>Data Science Intern at InfoLeap</b>, PGDM Big Data Analytics at GIM. Same instincts, new raw material.</span>
       </p>
-      <button class="switch" id="switch" aria-label="switch side: artist or analyst">
-        <span class="thumb"></span><span class="opt opt-artist">Karma</span><span class="opt opt-analyst">Tuhin</span>
-      </button><span class="hint">one switch, <b>two sides</b> &#8634;</span>
+      <div class="switch-row">
+        <button class="switch" id="switch" aria-label="switch side: artist or analyst">
+          <span class="thumb"></span><span class="opt opt-artist">Karma</span><span class="opt opt-analyst">Tuhin</span>
+        </button>
+        <span class="hint">one switch, <b>two sides</b> &#8634;</span>
+      </div>
+      <p class="thesis-line">Chemical engineer by training, analyst by trade, photographer by habit.<span class="thread">One thread, two weaves.</span></p>
       <nav class="elsewhere" aria-label="elsewhere">
         elsewhere &rarr;
         <a href="https://www.linkedin.com/in/tuhinbhattacharya28" target="_blank" rel="noopener">LinkedIn &#8599;</a>
@@ -75,6 +79,11 @@ const HERO_BODY = String.raw`
         <span class="figcap"></span>
       </div>
 
+      <svg class="kantha" id="kantha" aria-hidden="true">
+        <defs><mask id="thread-m" maskUnits="userSpaceOnUse" x="-2000" y="-2000" width="6000" height="6000"><path id="thread-mp"/></mask></defs>
+        <path id="thread-u" mask="url(#thread-m)"/><path id="thread-p" mask="url(#thread-m)"/><g id="thread-k"></g>
+        <g id="thread-n"><path d="M-9,0 L11,0" class="nd"/><ellipse cx="-6" cy="0" rx="2.2" ry="1.1" class="eye"/><path d="M-9,0 C-18,-3 -24,3 -34,0" class="tl"/></g>
+      </svg>
       <svg class="leaders" id="leaders" aria-hidden="true"></svg>
       <span class="pin" data-for="n1" style="--x:41;--y:23">1</span>
       <span class="pin" data-for="n2" style="--x:56;--y:13">2</span>
@@ -242,12 +251,7 @@ function initHero(spa: (path: string) => void): () => void {
   const eclipse = $("#eclipse")
   const onEclipse = () => {
     const n = root.dataset.theme === "dark" ? "light" : "dark"
-    const r = eclipse!.getBoundingClientRect()
-    root.style.setProperty("--cx", r.left + r.width / 2 + "px")
-    root.style.setProperty("--cy", r.top + r.height / 2 + "px")
-    const doc = document as Document & { startViewTransition?: (cb: () => void) => void }
-    if (doc.startViewTransition && !reduce) doc.startViewTransition(() => setTheme(n))
-    else setTheme(n)
+    skyShift({ toDark: n === "dark", reduce, flip: () => setTheme(n) })
   }
   eclipse?.addEventListener("click", onEclipse)
 
@@ -257,6 +261,8 @@ function initHero(spa: (path: string) => void): () => void {
     void set.offsetWidth
     set.classList.add("in")
   }
+  const LEADER_SETTLE_MS = 1500
+  let leaderTimer = 0
   function setMode(m: string, first?: boolean) {
     root.dataset.mode = m
     try {
@@ -277,7 +283,14 @@ function initHero(spa: (path: string) => void): () => void {
       void pr.offsetWidth
       pr.classList.add("advance")
     }
-    requestAnimationFrame(() => drawLeaders(!first))
+    window.clearTimeout(leaderTimer)
+    // the cards slap in with a transform; measure them again once they have landed
+    leaderTimer = window.setTimeout(() => drawLeaders(false), LEADER_SETTLE_MS)
+    requestAnimationFrame(() => {
+      drawLeaders(!first)
+      // first visit: stitch once the cover's entrance has placed the photo and objects
+      drawThread(true, first ? THREAD_FIRST_MS : THREAD_SETTLE_MS)
+    })
   }
   try {
     const m = localStorage.getItem("nb-mode")
@@ -294,26 +307,8 @@ function initHero(spa: (path: string) => void): () => void {
     }
   }
   function runSwitch() {
-    const dest = root.dataset.mode === "artist" ? "analyst" : "artist"
-    const cur = $("#curtain")
-    if (reduce || !cur) {
-      setMode(dest)
-      return
-    }
-    cur.dataset.to = dest
-    const w = $("#curtain-w")
-    const hw = $("#curtain-hw")
-    if (w) w.textContent = LABEL[dest]
-    if (hw) hw.textContent = dest === "artist" ? "the creative self" : "the professional self"
-    cur.classList.remove("run")
-    void cur.offsetWidth
-    cur.classList.add("run")
-    window.setTimeout(() => setMode(dest), 330)
+    setMode(root.dataset.mode === "artist" ? "analyst" : "artist")
   }
-  $("#curtain")?.addEventListener("animationend", (e) => {
-    if ((e as AnimationEvent).animationName === "curtain")
-      (e.currentTarget as HTMLElement).classList.remove("run")
-  })
   // SPA-navigate when entering a world (intercept the scrollcue link)
   $("#enter")?.addEventListener("click", (e) => {
     e.preventDefault()
@@ -355,7 +350,127 @@ function initHero(spa: (path: string) => void): () => void {
         p.style.strokeDashoffset = "0"
       })
   }
-  ON("resize", () => drawLeaders(false))
+  ON("resize", () => {
+    drawLeaders(false)
+    drawThread(false)
+  })
+
+  /* The kantha thread: one running stitch from the switch through every
+     object of the current world. Flipping Karma/Tuhin re-stitches it. */
+  const THREAD_MS = 1100
+  const THREAD_SETTLE_MS = 420 // let the set's entrance place the objects first
+  const THREAD_FIRST_MS = 1500
+  const MERGE_PX = 48
+  let threadAnim: Animation | null = null
+  let needleAnim: Animation | null = null
+  let threadTimer = 0
+  function threadPoints(): Array<[number, number]> {
+    const stage = $(".stage")
+    const sw = $("#switch")
+    const portrait = $("#portrait")
+    if (!stage || !sw || !portrait) return []
+    const S = stage.getBoundingClientRect()
+    const P = portrait.getBoundingClientRect()
+    const mid = (r: DOMRect): [number, number] => [r.left + r.width / 2 - S.left, r.top + r.height / 2 - S.top]
+    const analyst = root.dataset.mode === "analyst"
+    // analyst stitches the numbered pins in order (they sit on the photo, never on card text);
+    // artist stitches the collage cards, taken clockwise round the portrait so it never doubles back
+    const live = (r: DOMRect) => r.width > 0 && r.height > 0
+    const rest = $$(analyst ? ".pin" : ".set.artist .obj")
+      .map((el) => el.getBoundingClientRect())
+      .filter(live)
+      .map(mid)
+      .filter(([x, y], i, all) => all.slice(0, i).every(([px, py]) => Math.hypot(x - px, y - py) > MERGE_PX))
+    const sr = sw.getBoundingClientRect()
+    const [cx, cy] = mid(P)
+    const side = sr.right + 24 < P.left // wide layout: the switch sits left of the photo
+    let path: Array<[number, number]>
+    if (side) {
+      // leave the switch along the empty band beside it, then enter the photo at the same height
+      const y = sr.top + sr.height / 2 - S.top
+      // the "one switch, two sides" hint sits right of the switch: start the stitch after it, not through it
+      const hint = $(".hint")?.getBoundingClientRect()
+      const startX = Math.max(sr.right, hint && hint.width > 0 ? hint.right + 10 : 0)
+      path = [[startX - S.left, y], [(startX + P.left) / 2 - S.left, y], [P.left - S.left + 14, y]]
+      if (!analyst) {
+        const ang = ([x, y2]: [number, number]) => (Math.atan2(y2 - cy, x - cx) - Math.PI + 2 * Math.PI) % (2 * Math.PI)
+        rest.sort((a2, b2) => ang(a2) - ang(b2))
+      }
+      path.push(...rest)
+    } else {
+      // stacked layout (switch above the photo): start at the photo's top edge, nearest-neighbour walk
+      const [sx, sy] = mid(sr)
+      path = [sy < 0 && sx > 0 && sx < S.width ? [sx, 0] : [sx, sy]]
+      while (rest.length) {
+        const [lx, ly] = path[path.length - 1]
+        let best = 0
+        rest.forEach(([x, y], i) => {
+          const [bx, by] = rest[best]
+          if (Math.hypot(x - lx, y - ly) < Math.hypot(bx - lx, by - ly)) best = i
+        })
+        path.push(rest.splice(best, 1)[0])
+      }
+    }
+    // the thread lives inside the photo box, so express every stitch relative to it
+    return path.map(([x, y]) => [x - (P.left - S.left), y - (P.top - S.top)] as [number, number])
+  }
+  function smoothPath(p: Array<[number, number]>): string {
+    // Catmull-Rom through the stitch points, as cubic Béziers
+    let d = `M${p[0][0]},${p[0][1]}`
+    for (let i = 0; i < p.length - 1; i++) {
+      const [x0, y0] = p[Math.max(i - 1, 0)]
+      const [x1, y1] = p[i]
+      const [x2, y2] = p[i + 1]
+      const [x3, y3] = p[Math.min(i + 2, p.length - 1)]
+      d += ` C${x1 + (x2 - x0) / 6},${y1 + (y2 - y0) / 6} ${x2 - (x3 - x1) / 6},${y2 - (y3 - y1) / 6} ${x2},${y2}`
+    }
+    return d
+  }
+  function drawThread(animate: boolean, delay = THREAD_SETTLE_MS) {
+    window.clearTimeout(threadTimer)
+    const run = () => {
+      const p = $("#thread-p")
+      const u = $("#thread-u")
+      const mp = $("#thread-mp") as unknown as SVGPathElement | null
+      const knots = $("#thread-k")
+      const needle = $("#thread-n") as unknown as SVGGElement | null
+      if (!p || !u || !mp || !knots || !needle) return
+      const pts = threadPoints()
+      if (pts.length < 2) return
+      const d = smoothPath(pts)
+      p.setAttribute("d", d)
+      u.setAttribute("d", d)
+      mp.setAttribute("d", d)
+      // a French knot at every card: ring, then a fat bead
+      knots.innerHTML = pts
+        .slice(1)
+        .map(([x, y]) => `<circle class="ring" cx="${x}" cy="${y}" r="5.2"/><circle cx="${x}" cy="${y}" r="3.1"/>`)
+        .join("")
+      const L = mp.getTotalLength()
+      mp.style.strokeDasharray = String(L)
+      needleAnim?.cancel()
+      threadAnim?.cancel()
+      needle.style.offsetPath = `path("${d}")`
+      if (!animate || reduce) {
+        mp.style.strokeDashoffset = "0"
+        knots.style.opacity = "1"
+        needle.style.opacity = "0"
+        return
+      }
+      knots.style.opacity = "0"
+      needle.style.opacity = "1"
+      const timing = { duration: THREAD_MS, easing: "cubic-bezier(.22,1,.36,1)", fill: "forwards" as const }
+      threadAnim = mp.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }], timing)
+      // the needle rides the stitch it is drawing, then lifts away
+      needleAnim = needle.animate([{ offsetDistance: "0%" }, { offsetDistance: "100%" }], timing)
+      threadAnim.onfinish = () => {
+        knots.style.opacity = "1"
+        needle.style.opacity = "0"
+      }
+    }
+    if (animate && !reduce) threadTimer = window.setTimeout(run, delay)
+    else run()
+  }
 
   // rotating frames
   const LOCAL_FRAMES = [
@@ -408,6 +523,7 @@ function initHero(spa: (path: string) => void): () => void {
     buildImgs()
     showFrame(fi, false)
     window.clearInterval(frTimer)
+    if (reduce) return // one still frame, no slideshow
     frTimer = window.setInterval(() => {
       if (document.hidden) return
       fi = (fi + 1) % FR.length
@@ -554,11 +670,11 @@ function initHero(spa: (path: string) => void): () => void {
     $("#fx-dot")?.classList.toggle("live", live || ms < 6 * 3600e3)
     setTxt("#fx-k", live ? "LIVE · right now" : "next · kick-off")
     if (live) {
-      setTxt("#fx-cd", "● in play — refresh for the score")
+      setTxt("#fx-cd", "● in play · refresh for the score")
       return
     }
     if (ms < 0) {
-      setTxt("#fx-cd", "full time — result updating")
+      setTxt("#fx-cd", "full time · result updating")
       return
     }
     const d = Math.floor(ms / 864e5)
@@ -695,6 +811,9 @@ function initHero(spa: (path: string) => void): () => void {
 
   return () => {
     ivs.forEach((id) => clearInterval(id))
+    window.clearTimeout(threadTimer)
+    window.clearTimeout(leaderTimer)
+    threadAnim?.cancel()
     wins.forEach(([t, f]) => window.removeEventListener(t, f))
     if (raf) cancelAnimationFrame(raf)
     eclipse?.removeEventListener("click", onEclipse)
@@ -734,5 +853,10 @@ export function Landing() {
     }
   }, [])
 
-  return <div className="hero-root" ref={hostRef} />
+  return (
+    <>
+      <KeepyUppy />
+      <div className="hero-root" ref={hostRef} />
+    </>
+  )
 }

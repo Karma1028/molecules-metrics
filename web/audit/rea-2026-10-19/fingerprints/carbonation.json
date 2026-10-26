@@ -1,0 +1,40 @@
+{
+ "slug": "carbonation",
+ "url": "https://thecarbonation.com/",
+ "fp": {
+  "title": "",
+  "globals": [],
+  "libHints": [],
+  "hosts": [],
+  "counts": {
+   "canvas": 0,
+   "video": 0,
+   "svg": 0,
+   "img": 0,
+   "iframe": 0,
+   "audio": 0,
+   "sections": 0,
+   "links": 0,
+   "splitChars": 0
+  },
+  "pageHeightVh": 1,
+  "body": {
+   "bg": "rgba(0, 0, 0, 0)",
+   "color": "rgb(0, 0, 0)",
+   "ff": "\"Times New Roman\""
+  },
+  "h1": null,
+  "h2": null,
+  "p": null,
+  "fontsLoaded": [],
+  "topFonts": [
+   [
+    "monospace 400",
+    1
+   ]
+  ],
+  "topBgs": [],
+  "css": {}
+ },
+ "finalUrl": "https://thecarbonation.com/"
+}
