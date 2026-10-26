@@ -393,3 +393,13 @@ html[data-rm] *, html[data-rm] *::before, html[data-rm] *::after{
 
 /* readability floor: nothing below 11px on any page (audit 2026-10-26) */
 .p-gl .st,.p-gl .plot-toggle,.p-sd .bay-k,.p-sd .vfd-k,.p-sd .vfd-n,.p-md .mh-src,.p-md .pk,.p-jn dt,.p-jn text.tlabel{font-size:max(11px,1em)}
+
+/* ---- tap targets (WCAG 2.5.8 >=24px; 2.5.5 44px on coarse pointers) ----
+   Visual box stays put; the hit area grows through ::after so nothing reflows. */
+.tap,.nav .brand,.foot a,[role="tab"],.twin-door{position:relative}
+.tap::after,.nav .brand::after,.foot a::after,[role="tab"]::after,.twin-door::after{
+  content:"";position:absolute;inset:-6px -4px;pointer-events:auto}
+@media (pointer:coarse){
+  .tap::after,.foot a::after,[role="tab"]::after,.twin-door::after{inset:-11px -6px}
+  .nav .brand::after{inset:-16px -8px}
+}
