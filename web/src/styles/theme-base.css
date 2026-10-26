@@ -75,7 +75,7 @@ img{outline:1px solid rgba(0,0,0,.1); outline-offset:-1px}
 html[data-toc], html[data-toc] body,
 html[data-one-screen], html[data-one-screen] body{height:100vh;height:100dvh;overflow:hidden}
 html[data-toc] .page,
-html[data-one-screen] .page{height:calc(100dvh - var(--nav-h) - 44px);padding:calc(var(--nav-h) + 10px) clamp(16px,4vw,44px) 8px;display:flex;flex-direction:column;overflow:hidden}
+html[data-one-screen] .page{height:calc(100dvh - 44px);padding:calc(var(--nav-h) + 10px) clamp(16px,4vw,44px) 8px;display:flex;flex-direction:column;overflow:hidden}
 html[data-toc] .foot,
 html[data-one-screen] .foot{height:44px;margin-top:0;padding:8px clamp(16px,4vw,44px);border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;font-size:10px}
 @media(max-width:640px){
@@ -84,7 +84,7 @@ html[data-one-screen] .foot{height:44px;margin-top:0;padding:8px clamp(16px,4vw,
   html[data-toc] .foot .cols a:not(:first-child),
   html[data-one-screen] .foot .cols a:not(:first-child){display:none}
   html[data-toc] .page,
-  html[data-one-screen] .page{height:calc(100dvh - var(--nav-h) - 34px);padding:calc(var(--nav-h) + 8px) 14px 6px}
+  html[data-one-screen] .page{height:calc(100dvh - 34px);padding:calc(var(--nav-h) + 8px) 14px 6px}
 }
 
 /* ---- page scaffold ---- */
