@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import handler from "./frames.mjs"
+import handler from "../frames.mjs"
 
 describe("/api/frames", () => {
   it("answers an empty frame list with cache headers so the UI keeps its local frames", async () => {
