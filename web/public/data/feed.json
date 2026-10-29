@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T06:01:58.119Z",
+  "generatedAt": "2026-10-29T06:13:31.736Z",
   "interests": [
     {
       "id": "football",
@@ -174,19 +174,62 @@
       ]
     },
     {
-      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
-      "link": "https://huggingface.co/papers/2610.37381",
+      "title": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
+      "link": "https://huggingface.co/papers/2610.37230",
       "date": "2026-10-27T00:00:00.000Z",
-      "summary": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into…",
-      "score": 9,
+      "summary": "Agentic services alternate between model inference on clustered GPUs and external tools on distributed CPUs. In this scenario, existing systems (1) overlook tool-return readiness in service evaluation, wasting limited resources, and (2) use heuristic strategies to decide admissio…",
+      "score": 2,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Quaternion Approximate Networks for Enhanced Image Classification and Oriented Object Detection",
+      "link": "https://huggingface.co/papers/2509.05512",
+      "date": "2026-10-27T00:00:00.000Z",
+      "summary": "This paper introduces Quaternion Approximate Networks (QUAN), a novel deep learning framework that leverages quaternion algebra for rotation equivariant image classification and object detection. Unlike conventional quaternion neural networks attempting to operate entirely in the…",
+      "score": 2,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "EmbeddingGemma 2: Unified and Efficient Multimodal Representations",
+      "link": "https://huggingface.co/papers/2610.37364",
+      "date": "2026-10-27T00:00:00.000Z",
+      "summary": "We present EmbeddingGemma 2, an open multimodal embedding model which natively represents text, images, audio, video, and combinations thereof in a unified space. Our approach introduces improvements such as simplified per-layer embeddings and a multi-stage curriculum with modali…",
+      "score": 20,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
     {
-      "title": "Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces",
-      "link": "https://huggingface.co/papers/2610.37255",
+      "title": "Zooming without Zooming v2: From Seeing Details to Connecting Evidence for Generalizable Multimodal Perception",
+      "link": "https://huggingface.co/papers/2610.37037",
       "date": "2026-10-27T00:00:00.000Z",
-      "summary": "Language model agents are post-trained and deployed through a harness, the prompts, tools, and control logic that present a task to the model and execute its outputs. Harnesses are often revised and judged by how an already trained model performs under them, which assumes that wh…",
+      "summary": "Multimodal perception forms the foundation of multimodal intelligence. In particular, spatial perception and multimodal long-context understanding are two pivotal tasks that underpin embodied AI and multimodal agents. However, synthesizing targeted, high-quality training data for…",
+      "score": 26,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "data",
+        "ai"
+      ]
+    },
+    {
+      "title": "Can Discrete Tokens Serve as Semantically Lossless Representations of Visual Signals?",
+      "link": "https://huggingface.co/papers/2610.37662",
+      "date": "2026-10-27T00:00:00.000Z",
+      "summary": "Discrete visual tokens represent vision in a discrete form analogous to language, offering a native interface for multimodal modeling under a shared next-token prediction objective. However, quantization error is widely assumed to cause unavoidable semantic loss, fundamentally li…",
+      "score": 90,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions",
+      "link": "https://huggingface.co/papers/2610.37624",
+      "date": "2026-10-27T00:00:00.000Z",
+      "summary": "When an LLM group's discussion is compressed into a short memory for a final decision maker, what should the memory keep? Two natural heuristics keep the rarest claims or the claims relevant to the decision criteria. On hidden-profile tasks both look attractive, because how widel…",
       "score": 5,
       "source": "Hugging Face Daily Papers",
       "tags": [
@@ -194,149 +237,360 @@
       ]
     },
     {
-      "title": "MLE-World: Predicting Machine Learning Experiment Outcomes with a Learned World Model",
-      "link": "https://huggingface.co/papers/2610.37175",
+      "title": "VibeVideoBench: Evaluating Multimodal Agents on Code-Driven Video Generation",
+      "link": "https://huggingface.co/papers/2610.35864",
       "date": "2026-10-27T00:00:00.000Z",
-      "summary": "AI research agents can propose, execute, and improve programs that solve machine learning tasks. However, executing each candidate program requires training and evaluating ML models, limiting how many candidates an agent can explore at each step. We introduce MLE-World, a world m…",
-      "score": 1,
+      "summary": "Diffusion video models produce striking clips, but they cannot reliably render an exact formula, a correct chart, a rule-consistent game or narration synchronized to on-screen events. A different route is emerging: multimodal agents that write code to render every frame and synth…",
+      "score": 173,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
       ]
     },
     {
-      "title": "Vision-Language-Action or World-Action? Just Action Models",
-      "link": "https://huggingface.co/papers/2610.37219",
-      "date": "2026-10-27T00:00:00.000Z",
-      "summary": "The vision-language-action (VLA) and world-action model (WAM) communities debate whether control policies should inherit pretrained knowledge from vision-language models or from visual generators. The debate, however, bundles three separable choices: backbone initialization, the…",
-      "score": 3,
+      "title": "OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images",
+      "link": "https://huggingface.co/papers/2610.35684",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "Generating videos of a specific subject from a few reference images remains challenging when the camera reveals surfaces that are not visible in the input. Early subject-to-video (S2V) methods condition on a single reference image and must therefore infer the subject's unseen app…",
+      "score": 22,
       "source": "Hugging Face Daily Papers",
-      "tags": []
+      "tags": [
+        "photo"
+      ]
     },
     {
-      "title": "Timestral",
-      "link": "https://huggingface.co/papers/2610.37585",
-      "date": "2026-10-27T00:00:00.000Z",
-      "summary": "We introduce Timestral, a family of four time series foundation models for probabilistic forecasting, with 5M, 28M, 123M, and 209M parameters. Timestral sets a new state of the art on GIFT-Eval, TIME, and fev-bench, where Timestral-209M and Timestral-123M take the top two places…",
+      "title": "DTCA: Denoising Token Credit Assignment for Reinforcement Learning in Diffusion Language Models",
+      "link": "https://huggingface.co/papers/2610.35201",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "Diffusion language models (DLMs) generate text through iterative denoising, enabling bidirectional context modeling and parallel token refinement. Recent studies have applied reinforcement learning (RL) to DLMs and improved their reasoning performance. However, the iterative deno…",
+      "score": 254,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Lipi-Ghor: A Large-Scale, Diarized, Multi-Domain Bengali Speech Corpus and a Scalable Pipeline for Building It",
+      "link": "https://huggingface.co/papers/2610.36184",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "Bengali, spoken by over 230 million people, remains severely under-resourced in spoken language research. Existing open Bengali ASR corpora are confined to short, read or crowd-sourced speech and lack speaker diarization and long-form audio. We present Lipi-Ghor, a large-scale we…",
       "score": 1,
       "source": "Hugging Face Daily Papers",
-      "tags": []
+      "tags": [
+        "music"
+      ]
     },
     {
-      "title": "Channel Selection for Mixture-of-Experts Decoding Needs No Calibration Data",
-      "link": "https://huggingface.co/papers/2610.37386",
-      "date": "2026-10-27T00:00:00.000Z",
-      "summary": "Mixture-of-Experts (MoE) models are bottlenecked by loading routed-expert weights from memory during interactive decoding at small batch sizes. Because most intermediate channels in a routed expert contribute little to any single token, channel selectors predict which channels ma…",
-      "score": 11,
+      "title": "Beyond the Estimate: Wiener-Informed Decoding for Easier Training of Pixel-Space Flow Models",
+      "link": "https://huggingface.co/papers/2610.36192",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "Learning velocity fields directly in pixel space is difficult and slow. We show that coarse second-order image statistics can ease this task: frozen Wiener estimates improve velocity learning, with gains extending beyond the linear predictions they explicitly provide. Moreover, w…",
+      "score": 10,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "data"
       ]
     },
     {
-      "title": "CodeCap-Bench: Can Code Serve as a Good Video Caption?",
-      "link": "https://huggingface.co/papers/2610.37341",
-      "date": "2026-10-27T00:00:00.000Z",
-      "summary": "Video captioning aims to preserve visual information through compact descriptions, predominantly using natural language. However, precisely expressing fine-grained spatial structures and temporal dynamics in natural language often leads to lengthy and potentially ambiguous descri…",
-      "score": 34,
+      "title": "What Outcome RL Buys: Finishing, Reliability, Rarely Reach",
+      "link": "https://huggingface.co/papers/2610.34894",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "Outcome RL raises pass@1 but not pass@k at large k (Yue et al., 2025). But every pass@1 is scored under a token budget. Every recipe also trains under one. On physics and math problems at fixed token budgets, we compare the pass@1 of 20 released RL models (1.5B to 32B) with that…",
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
     {
-      "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
-      "link": "https://huggingface.co/papers/2610.37666",
-      "date": "2026-10-27T00:00:00.000Z",
-      "summary": "Vision-Language-Action (VLA) models have made substantial progress in robotic manipulation, but their generalization remains constrained by the diversity and coverage of action-labeled robot demonstrations. Human videos provide much broader behavioral and environmental experience…",
-      "score": 41,
+      "title": "How Much Does the Hint Matter? Scope Conditions for Hindsight Self-Distillation in Financial Reasoning",
+      "link": "https://huggingface.co/papers/2610.36082",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "Financial institutions operating under data-residency constraints are restricted to open-weight models small enough to locally host, which trail frontier systems on multi-step quantitative reasoning. On-policy distillation narrows such gaps by supervising a student on its own rol…",
+      "score": 4,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "data",
+        "ai"
+      ]
+    },
+    {
+      "title": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+      "link": "https://huggingface.co/papers/2610.35013",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "Long-horizon LLM agents interact with their environments through complete assistant turns while generating each action token by token. We observe that critic values vary primarily across turns, motivating optimization anchored at turns with finer credit allocation among tokens. W…",
+      "score": 376,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
       ]
     },
     {
-      "title": "Hy-Nomas: Towards Free-form Interactive World Generation",
-      "link": "https://huggingface.co/papers/2610.36729",
-      "date": "2026-10-27T00:00:00.000Z",
-      "summary": "Interactive world generation requires models to follow successive commands while preserving relevant history and action consequences. We present Hy-Nomas, a video world model with an 8B diffusion backbone that supports free-form text instructions and continuous camera control acr…",
-      "score": 67,
+      "title": "The Lexical Imprint of Pre-training Data",
+      "link": "https://huggingface.co/papers/2602.10657",
+      "date": "2026-10-26T00:00:00.000Z",
+      "summary": "How much of zero-shot benchmark accuracy is captured by word-level alignment between a pre-training corpus and the benchmark target? We study this question through word-level unigram cross-entropy (UCE), a tokenizer-agnostic, model-free measure of lexical alignment between a refe…",
+      "score": 9,
       "source": "Hugging Face Daily Papers",
       "tags": [
-        "ai",
-        "photo"
+        "data"
       ]
     },
     {
-      "title": "Can LLMs Uncover Hidden Physical Laws through Free Exploration?",
-      "link": "https://huggingface.co/papers/2610.37649",
-      "date": "2026-10-27T00:00:00.000Z",
-      "summary": "Scientific discovery often begins with an unexpected observation that prompts a new research question. In a world with altered physical laws, can large language models (LLMs) notice unexpected behavior, such as heavier objects falling more slowly, and discover the law through exp…",
-      "score": 3,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Benchmarking Obstacle-Conditioned Safety in Household Robot Navigation",
-      "link": "https://huggingface.co/papers/2610.34674",
-      "date": "2026-10-26T00:00:00.000Z",
-      "summary": "Safe household navigation requires robots to regulate clearance and speed according to what an obstacle is and how close it is, without unnecessary conservatism. Yet existing evaluations do not test whether semantic safety distinctions are reflected in continuous motion. To that…",
-      "score": 3,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "The Trinity:Capability-Driven Recursive Self-Improvement for Multimodal Agents",
-      "link": "https://huggingface.co/papers/2610.36077",
-      "date": "2026-10-26T00:00:00.000Z",
-      "summary": "Multimodal intelligence can be viewed as human-guided co-evolution between worlds and agents through interaction. However, scaling this process faces two bottlenecks: constructing heterogeneous, verifiable environments is costly, and manual Harness iteration cannot keep pace with…",
-      "score": 12,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "PhysEvolve: Verifier-grounded Self-evolution for Physical Reasoning with Executable Worlds",
-      "link": "https://huggingface.co/papers/2610.34921",
-      "date": "2026-10-26T00:00:00.000Z",
-      "summary": "Physical reasoning underpins how embodied systems understand and act in the physical world, yet vision-language models (VLMs) remain unreliable on questions about dynamics and physical causality. Progress is critically constrained by the scarcity of grounded counterfactual traini…",
-      "score": 0,
+      "title": "h1: A Taste of the Bitter Lesson in Automated Theorem Proving",
+      "link": "https://huggingface.co/papers/2610.35962",
+      "date": "2026-10-25T00:00:00.000Z",
+      "summary": "While progress in informal mathematics has come largely from scaling the chain-of-thought and agentic reasoning of frontier language models, formal theorem proving has increasingly relied on human-designed workflows around these models, such as planning, decomposition, and orches…",
+      "score": 15,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
       ]
-    },
-    {
-      "title": "MoveBench: A Rubric-Based Benchmark for Evaluating Large Language Models in Sports and Health Coaching",
-      "link": "https://huggingface.co/papers/2610.26185",
-      "date": "2026-10-26T00:00:00.000Z",
-      "summary": "Despite rapid advances in large language models (LLMs), their deployment in the sports and health domain remains high-risk due to the absence of domain-specific evaluation benchmarks. Existing general-purpose benchmarks (e.g., MMLU and HELM) primarily assess broad knowledge and r…",
-      "score": 1,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Learning and Reasoning with Geometry: How Generation Helps Spatial Understanding",
-      "link": "https://huggingface.co/papers/2610.36022",
-      "date": "2026-10-26T00:00:00.000Z",
-      "summary": "Image and video generators can produce spatially consistent visual content, but how to use this capability to improve spatial understanding remains underexplored. We study this problem from two perspectives: geometric supervision during training and explicit geometric evidence du…",
-      "score": 0,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "MatAnyone-E: Sparse Memory Propagation for Efficient High-Resolution Video Matting",
-      "link": "https://huggingface.co/papers/2610.35724",
-      "date": "2026-10-26T00:00:00.000Z",
-      "summary": "High-resolution video matting requires preserving fine details, such as hair strands and soft transparency, while maintaining consistency across frames. Memory-based methods achieve strong matting quality by matching current-frame features with information stored from earlier fra…",
-      "score": 16,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
     }
   ],
   "news": [
     {
+      "title": "Nikon’s Nikkor Z 120-300mm f/2.8 TC VR S Picks Up Where a Legend Left Off",
+      "link": "https://petapixel.com/2026/10/28/nikons-nikkor-z-120-300mm-f-2-8-tc-vr-s-picks-up-where-a-legend-left-off/",
+      "date": "2026-10-29T04:01:15.000Z",
+      "summary": "Nikon has fully unveiled the Nikkor Z 120-300mm f/2.8 TC VR S, a new professional telephoto zoom lens for full-frame Nikon mirrorless cameras. Nikon first said it was making this lens back in early May. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "How unbeaten Chelsea are getting back to their best",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c8wy9wenqd01o?at_medium=RSS&at_campaign=rss",
+      "date": "2026-10-28T23:17:33.000Z",
+      "summary": "Chelsea are getting back to their best following their 2-0 Women's Champions League win over Roma - so how have they built success in their unbeaten run?",
+      "source": "BBC Sport",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Maryland Is Getting Its Own (Mini) Sphere",
+      "link": "https://pitchfork.com/story/maryland-is-getting-its-own-mini-sphere/",
+      "date": "2026-10-28T22:41:52.000Z",
+      "summary": "The Prince George’s County Council has authorized up to $215 million for a venue at the D.C. area National Harbor",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Real Madrid star accused Barcelona’s Lamine Yamal of repeatedly ‘provoking’ teammate - Get Spanish Football News",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQYU9CR0hMeHZ0cE92LXVwMHNja2J3RzZESWlWeU5UZFZ5ZFFCT29Hakc1MV9mV0lsRkhyS2J5Vkt1TEFlYlE3ek9qTElTMGpkcDlqUEVrbmEyWXN5WGZwNVg4Tnd3WExmdWdrbGc0MU9CSWdoYnFia0JvODZuZE52WmxWeTFpX1hBeW5pNlAxdXhpRmVrekpmcGNsZmtZdWRjT1ItWmZ0TnRGeU94NmEtRlpVclFVZw?oc=5",
+      "date": "2026-10-28T22:30:00.000Z",
+      "summary": "Real Madrid star accused Barcelona’s Lamine Yamal of repeatedly ‘provoking’ teammate&nbsp;&nbsp;Get Spanish Football News",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Sancho rejects Getafe - Thursday's gossip",
+      "link": "https://www.bbc.co.uk/sport/football/articles/ckyvr1q72v84o?at_medium=RSS&at_campaign=rss",
+      "date": "2026-10-28T21:34:36.000Z",
+      "summary": "Free agent Jadon Sancho turns down a move to La Liga, Desire Doue is in talks with Paris St-Germain about a contract extension, and Everton are considering a move for Marcus Rashford.",
+      "source": "BBC Sport",
+      "tags": [
+        "football",
+        "ai"
+      ]
+    },
+    {
+      "title": "Watch Robyn Cover Tinashe’s “Popstar”",
+      "link": "https://pitchfork.com/story/watch-robyn-cover-tinashes-popstar/",
+      "date": "2026-10-28T21:12:08.000Z",
+      "summary": "She mashed it up Teddybears’ “Punkrocker” for the BBC Live Lounge",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Apple Isn’t Locking Peak MacBook Pro Performance Behind Touch OLED",
+      "link": "https://petapixel.com/2026/10/28/apple-isnt-locking-peak-macbook-pro-performance-behind-touch-oled/",
+      "date": "2026-10-28T20:22:24.000Z",
+      "summary": "Today, Apple announced a major shift in its laptop computing by adding touch to the MacBook Pro — a move famously despised by Steve Jobs so many years ago. But in a move that I found to be unexpected, Apple isn’t forcing you to go with this new model if you want the latest and gr…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Two Barcelona stars spearhead initiative to unite dressing room after consecutive defeats - report - Barca Universal",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPTTlVek9mYWh0b0pNTXJwUFZiTjEwdEQ5ZUlzc2ZxV1RNa1EtLU5OSG1YT1JUaUQtU1ozbkphRHBaNHc4d0h3TlNxQnhYa3BmdDJIYU1hVk1hSm9DV3J2MnVEZU1HQ3hsQW5Tc0dzWmw1UFRBUk90TXYxVFo2M2M1T0x4VU9iTTRtb3NaX2JFWng5SFdCYXVuU0JvUktsamxZbDZaZUVtX0RoVGxyOHdLNW52Rk9UMFVNaDhZM0xpaDBmdw?oc=5",
+      "date": "2026-10-28T20:00:56.000Z",
+      "summary": "Two Barcelona stars spearhead initiative to unite dressing room after consecutive defeats - report&nbsp;&nbsp;Barca Universal",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Diiv Announce Massive 2027 World Tour",
+      "link": "https://pitchfork.com/story/diiv-announce-2027-world-tour/",
+      "date": "2026-10-28T18:39:27.000Z",
+      "summary": "The band will bring their new album ZIRP! across the U.S., Europe, Australia, and Japan",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Xaviersobased Wants to Collab With Sabrina Carpenter",
+      "link": "https://pitchfork.com/story/xaviersobased-wants-to-collaborate-with-sabrina-carpenter/",
+      "date": "2026-10-28T18:38:43.000Z",
+      "summary": "“Bro, I’ll knock out a whole album with her”",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Rescue mission: Koundé risks everything for Barcelona - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUXllWjBsdkhzUzVTa2dfcHJCUzJJYk1Hc0JTVHFEaTZqSVJQY0xrS1ZNY0xCN0o2aUNoX0xTVlhMajlWT2lNeHFDZ3VTSnZEQjA2ZHhGOWxZU0ZKYlFQS0YzY3JRbVBybTZRVlZaTlBTcWlEdW9tMXBjMjl5ZzliU0ZBVktiRDQ0bnRsSlJFZ19WLVRpa3cwbUFzaENLUHZ0RVJYVUNsbw?oc=5",
+      "date": "2026-10-28T18:15:36.000Z",
+      "summary": "Rescue mission: Koundé risks everything for Barcelona&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Jim James Announces Memoir One Wonders",
+      "link": "https://pitchfork.com/story/jim-james-announces-memoir-one-wonders/",
+      "date": "2026-10-28T17:47:16.000Z",
+      "summary": "“I hope the main thing someone takes away from this book (aside from learning more about the joys and challenges of being a working artist and musician) is that it’s okay to ask for help.\"",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Slayyyter, the Strokes, and Fontaines D.C. Set for Kilby Block Party 2027",
+      "link": "https://pitchfork.com/story/slayyyter-the-strokes-and-fontaines-dc-set-for-kilby-block-party-2027/",
+      "date": "2026-10-28T17:42:10.000Z",
+      "summary": "Deftones, Spoon, Weyes Blood, Atlas Sound, Erika de Casier, and quite a few mystery artists fill out the bill",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Apple Unveils Its First-Ever MacBook Pro With a Touchscreen OLED",
+      "link": "https://petapixel.com/2026/10/28/apple-unveils-its-first-ever-macbook-pro-with-a-touchscreen-oled/",
+      "date": "2026-10-28T17:18:14.000Z",
+      "summary": "Apple has announced its first-ever touchscreen-equipped Macs. The redesigned MacBook Pro models are also Apple's first laptops with OLED displays. It's a big day for the Mac. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Check Out These Awesome Miniature Canon Camera Gachapon",
+      "link": "https://petapixel.com/2026/10/28/check-out-these-awesome-miniature-canon-camera-gachapon/",
+      "date": "2026-10-28T16:47:58.000Z",
+      "summary": "Canon and Bandai are teaming up to expand their camera-themed gachapon collection. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Kevin Morby and Lonnie Holley’s New Single Raises Money for Gun Safety",
+      "link": "https://pitchfork.com/story/kevin-morbys-new-song-raises-money-for-gun-safety/",
+      "date": "2026-10-28T16:33:16.000Z",
+      "summary": "“It is far and away the darkest and most violent song I’ve ever written”",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Sigma’s Unique Lens, Another New Instax, and Stephen Wilkes on Printing | The PetaPixel Podcast",
+      "link": "https://petapixel.com/2026/10/28/sigmas-unique-lens-another-new-instax-and-stephen-wilkes-on-printing-the-petapixel-podcast/",
+      "date": "2026-10-28T16:30:50.000Z",
+      "summary": "This week on the PetaPixel Podcast, the team is joined by photography legend Stephen Wilkes and his 25th anniversary exhibition of his series \"America in Detail.\" [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Photographer Gets Yanked by Security at the Ballon d’Or Award",
+      "link": "https://petapixel.com/2026/10/28/photographer-gets-yanked-by-security-at-the-ballon-dor-award/",
+      "date": "2026-10-28T16:14:34.000Z",
+      "summary": "A photographer went viral after he was unceremoniously grabbed by security during a live TV broadcast of the Ballon d'Or. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Worldpeace DMT Announce 2027 North American Tour",
+      "link": "https://pitchfork.com/story/worldpeace-dmt-announce-2027-north-american-tour/",
+      "date": "2026-10-28T16:11:30.000Z",
+      "summary": "The “laptop twee” duo will Stick Around for Tea in 20 cities throughout March and April",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "McDonald’s and Lenovo Made an Adorable French Fry Mouse From Recycled Happy Meal Toys",
+      "link": "https://petapixel.com/2026/10/28/mcdonalds-and-lenovo-made-an-adorable-french-fry-mouse-from-recycled-happy-meal-toys/",
+      "date": "2026-10-28T15:48:42.000Z",
+      "summary": "McDonald's teamed up with Chinese technology and electronics company Lenovo to make an utterly wild mouse shaped like a carton of McDonald's famous french fries. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Dayjob: Tax – evaluating AI agents on 50 professional tax assignments",
+      "link": "https://surgehq.ai/blog/dayjob-tax",
+      "date": "2026-10-28T15:46:30.000Z",
+      "summary": "Article URL: https://surgehq.ai/blog/dayjob-tax Comments URL: https://news.ycombinator.com/item?id=50275626 Points: 222 # Comments: 143",
+      "source": "Hacker News",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "‘Life’ Magazine, Champion of Photography, to Publish Again",
+      "link": "https://petapixel.com/2026/10/28/life-magazine-champion-of-photography-to-publish-again/",
+      "date": "2026-10-28T14:15:22.000Z",
+      "summary": "One of the 20th century's most important photojournalism publications is returning to print 90 years after it was first published. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Pursuit of Julian Alvarez: FC Barcelona handed a laughable punishment - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPeFl2RGR3Z0ROempMbHN2VWRfNXkzdGxjWlg1cG5WUnYzZXROdGREbU1mdDNGRXVEV3hFRllDMFlidlV0NmlfdnFuRTBHMHFrMjl3YVZ4bGVyS3lqaTNMdDRvVDc2U3dxMlA0aWZ3QmpjSGFaRFlmWFZBYXVsZUswQUZSbE5Cb2U4ZXhZaHFIUmx1NjhGN1RxRDJPQlBtM1pTMW4zajNEdTY3d0ZHNE9GYlZ1c1JtRE55ZExVWA?oc=5",
+      "date": "2026-10-28T11:33:41.000Z",
+      "summary": "Pursuit of Julian Alvarez: FC Barcelona handed a laughable punishment&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "FC Barcelona News: 28 October 2026; Barca handed Julian Alvarez fine, Lamine Yamal sends Ballon d’Or message - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdlpKRUYwYmMwVVVxOUtURUpyb0xlQlY2ckdsa1J2ZFFhdkRwUzlHa3dueDk0aC1hSEQ0cVFfeG5vVUJsajhST19BNVNzZXc2c1lfeXpUazZBN2gyc2ZvOGxQd294Z1VqdlU0S2l6T2Y3RjdORmN4d2NkcjkwOFIxTi1COTBUWHRUd3h5cmc2SXNrT2laUElMdnNZTWlsMkthaENFc2kya1hUM0xhS1h2WXppQTZtZ044ZFE?oc=5",
+      "date": "2026-10-28T10:00:00.000Z",
+      "summary": "FC Barcelona News: 28 October 2026; Barca handed Julian Alvarez fine, Lamine Yamal sends Ballon d’Or message&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
       "title": "FC Barcelona Asked To Pay $672 Fine After Complaint Over Julian Alvarez Pursuit - News18",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNUGozUkhQYUNCMEprN1B6NFJrTjJNWXB2OVlvcmt4NTd3TGdKRVVoOVJJZG5zc01aX3Vfb0dZTVJ4MUNUQV9CLWZTajUtbHBQM1BBWEptb0JmeWNMMkp4cGY1OGVRUEJnSmxzS3NtSXdteGwtdWRCTF9qMXNlU2d6U3NJTWw4V2I1THhkOG9xNDVucVB1VHN5UkxneHF0Rk9zcUNmRnVVbTlJNGRLRktBNGI1RmowYzNsS0Y1WVFlZ3VWazg0VEVPMlZYV2ZSajZJejEtLQ?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNUGozUkhQYUNCMEprN1B6NFJrTjJNWXB2OVlvcmt4NTd3TGdKRVVoOVJJZG5zc01aX3Vfb0dZTVJ4MUNUQV9CLWZTajUtbHBQM1BBWEptb0JmeWNMMkp4cGY1OGVRUEJnSmxzS3NtSXdteGwtdWRCTF9qMXNlU2d6U3NJTWw4V2I1THhkOG9xNDVucVB1VHN5UkxneHF0Rk9zcUNmRnVVbTlJNGRLRktBNGI1RmowYzNsS0Y1WVFlZ3VWazg0VEVPMlZYV2ZSajZJejEtLdIB2gFBVV95cUxPTzFEUEZCTHppZllDNTFzUncxc0FnMHNjVnU5QlhaN3UtN2EzX1JfaDZYNkVCWjZXMUlkVXBkQzFvbGJpa3pPakF0cEVoOVdUYXdBMHNsMEdqdEVycmRMTGNsVlRVTnZoSXZBZ2JjNHlsMm5wcFhYa1NLd3pmZl9La2FUTElheXh5ZzRjZUo1dVBkaWxQVVd3WVozYm9wME9DdXI0YlJyUGN4YVdOM2ZwV1BGZ2NrdVJBZjNKUjVYSGE0cUZjYmpEWkZGVHBJRmx0X2hqeE9xb2Yydw?oc=5",
       "date": "2026-10-28T04:22:15.000Z",
       "summary": "FC Barcelona Asked To Pay $672 Fine After Complaint Over Julian Alvarez Pursuit&nbsp;&nbsp;News18",
       "source": "Google News",
@@ -355,226 +609,13 @@
       ]
     },
     {
-      "title": "Barcelona want to sign Premier League star in 2027 - Get Spanish Football News",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOX2ZlTlFJU2h6ZTdRVXhPT2VqdXhLOEJGbjB3aV9OMUZsZUEzVFZlRGNvWDlrbm5IeGVESHpqcFhIa0RDQkl3bGVSQXJQd1h6QXpJY1JSa1pFNWRkdFBfRzJzNnY2aDk3TDdJMmZBUjJnYW9sQmZsVnV1b3RSaEpaeGNsTlFURUZGemk4eA?oc=5",
-      "date": "2026-10-27T21:50:00.000Z",
-      "summary": "Barcelona want to sign Premier League star in 2027&nbsp;&nbsp;Get Spanish Football News",
+      "title": "Lamine Yamal, Young Talent of the Year and third in Ballon d'Or rankings - Official FC Barcelona Website",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcjJTUVVHNHFFMXFMbXBXcWFnd3RZMFpTcFczREJ2NlRvenByaG1teHlkeVZRRldGMnFtb1NNOVltaTlIZVlnUFM0OXVVY3FmV1NZRE5EOHA3TF9WR2pmRDczb244UjFMQ2JIUm9IT0V4ckNTbHA5dGctUzRiUVZfZHFURGdIMmNDQkMtUkc1MlZEc1dZUm5ueVNIWWkzZnZfZGlSWjN2MTA3TFEyMWJfd09fT0M?oc=5",
+      "date": "2026-10-26T21:00:32.000Z",
+      "summary": "Lamine Yamal, Young Talent of the Year and third in Ballon d'Or rankings&nbsp;&nbsp;Official FC Barcelona Website",
       "source": "Google News",
       "tags": [
         "football"
-      ]
-    },
-    {
-      "title": "Barcelona fined £503 over approach for Alvarez",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cmpwg0lqxkd4o?at_medium=RSS&at_campaign=rss",
-      "date": "2026-10-27T21:38:20.000Z",
-      "summary": "Barcelona are fined 602 euros (£503) following a complaint by Atletico Madrid over contact the club made with striker Julian Alvarez.",
-      "source": "BBC Sport",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Trump Says He Will Ban the Term ‘Artificial Intelligence’",
-      "link": "https://petapixel.com/2026/10/27/trump-says-he-will-ban-the-term-artificial-intelligence/",
-      "date": "2026-10-27T21:09:14.000Z",
-      "summary": "President Trump wants to rebrand artificial intelligence, presumably to improve public perception of the data centers he wants to build everywhere. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "data",
-        "photo"
-      ]
-    },
-    {
-      "title": "Brakence Sets 2027 North American Tour",
-      "link": "https://pitchfork.com/story/brakence-sets-2027-north-american-tour/",
-      "date": "2026-10-27T20:42:29.000Z",
-      "summary": "The producer and singer-songwriter dropped his new album Marrow just last Friday",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Lamine Yamal breaks silence after Ballon d’Or disappointment: ‘My time will come’ - Barca Universal",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZk0yMGEtQnROMHBuRDhjTFlEblhFdjhEWjktVFpqZnFnaVBxLUM1YkhleWcwUnkyWjFiTWV5V1RLVWNKQ2VUaWlLR0J5NlI5Z3BMLXdnYXBIMUNGTXpyTE82djlJRHNNbmRHTk5yZWZJMDdhQy1YSnhhV0JmM3ByRF9oakdmVFN0eEQ2THJCUTM1c1IxMW93OTZIdVZPbi12SDhxaG1aM24?oc=5",
-      "date": "2026-10-27T19:34:31.000Z",
-      "summary": "Lamine Yamal breaks silence after Ballon d’Or disappointment: ‘My time will come’&nbsp;&nbsp;Barca Universal",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Hum Are Hitting the Road in 2027",
-      "link": "https://pitchfork.com/story/hum-2027-tour/",
-      "date": "2026-10-27T19:13:09.000Z",
-      "summary": "It’s the Illinois rock band’s first proper run since 2015",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Artra’s Incredible New Watch Looks Like a Rolleiflex TLR",
-      "link": "https://petapixel.com/2026/10/27/artras-incredible-new-watch-looks-like-a-rolleiflex-tlr/",
-      "date": "2026-10-27T18:18:09.000Z",
-      "summary": "Lens and watchmaker Artra is teaming up with the legendary camera brand, Rollei, on a limited-edition Rolleiflex-inspired watch. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Barcelona fined after Atletico Madrid complain about Julian Alvarez pursuit - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOd0tmelVYRG1YV2hXMDIzMnMxa1JPcUlLODVUejJ2bms2Qmk5MWh4QVZ0bk5ZZEYwVW1YU3BBMDl3M0VPQ2x6TVg3Q2JsenE5NURMb3EzdDZPandDU2hkc1k2d1VWZTFkbFhxaThJWEtmMVRLMGRLODFOYnNjRVZtUXRneTRicTFyeEhzZzZZOFVpQ0ZnQ3JGa1RtQmxmOTc0R0JCZ0xfc2xDNm5vWVY5R1hwelpvZjRSU0pHWjJNSGtLbzczY3RTd0VGZThac1U4SHhLcQ?oc=5",
-      "date": "2026-10-27T18:00:00.000Z",
-      "summary": "Barcelona fined after Atletico Madrid complain about Julian Alvarez pursuit&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "This Mouse Has a Built-In Touchscreen and Customizable App Controls",
-      "link": "https://petapixel.com/2026/10/27/this-mouse-has-a-built-in-touchscreen-and-customizable-app-controls/",
-      "date": "2026-10-27T17:00:07.000Z",
-      "summary": "Arctic Fox Technologies has announced Super Mouse, a productivity-focused, screen-equipped mouse with built-in, customizable app shortcuts. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Firefox Assembles Cast of Meme Legends for Ad Promoting a More Innocent Internet",
-      "link": "https://petapixel.com/2026/10/27/firefox-assembles-cast-of-meme-legends-for-ad-promoting-a-more-innocent-internet/",
-      "date": "2026-10-27T16:35:34.000Z",
-      "summary": "The internet has changed a lot since PetaPixel published its first post all the way back in 2009, and Firefox has created an ad full of fond memories of those halcyon days. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Neil Young Really Wants Trump to Stop Playing “Rockin’ in the Free World”",
-      "link": "https://pitchfork.com/story/neil-young-really-wants-trump-to-stop-playing-rockin-in-the-free-world/",
-      "date": "2026-10-27T16:29:52.000Z",
-      "summary": "He’s suing (again) over the president’s unauthorized use of the song at political rallies",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Listen to MJ Lenderman Cover Lambchop’s “Weakened”",
-      "link": "https://pitchfork.com/story/listen-to-mj-lenderman-cover-lambchops-weakened/",
-      "date": "2026-10-27T15:27:33.000Z",
-      "summary": "From the veteran Nashville band's new covers EP Demoed",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Influencer Ordered to Delete Social Media Photos After Posing With Great White Shark",
-      "link": "https://petapixel.com/2026/10/27/influencer-ordered-to-delete-social-media-photos-after-posing-with-great-white-shark/",
-      "date": "2026-10-27T15:15:28.000Z",
-      "summary": "A U.S. judge has ordered an influencer to delete his social media photos and not post any additional videos after he shared pictures of himself posing with a great white shark he caught. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Godox’s $25 iM10 Mini Flash Is a Cute Little Fella",
-      "link": "https://petapixel.com/2026/10/27/godoxs-25-im10-mini-flash-is-a-cute-little-fella/",
-      "date": "2026-10-27T15:00:31.000Z",
-      "summary": "The Godox iM10 Mini Flash fits easily in a photographer's pocket and weighs less than an ounce (23 grams). It's designed to be easy to carry and even easier to pop onto a camera for a bit of extra light in the field. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Shelved David Bowie Concert Film Revived for Immersive Live Show",
-      "link": "https://pitchfork.com/story/shelved-david-bowie-concert-film-revived-for-immersive-live-show/",
-      "date": "2026-10-27T14:48:01.000Z",
-      "summary": "Moonage Daydream director Brett Morgen has remastered the unreleased 1978 film “Stage” for a multi-screen extravaganza",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Google May Use Your Google Photos Data to Target Ads",
-      "link": "https://petapixel.com/2026/10/27/google-may-use-your-google-photos-data-to-target-ads/",
-      "date": "2026-10-27T14:44:40.000Z",
-      "summary": "Google says it may use data from Google Photos to target ads to users who have certain personalized AI features enabled. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "data",
-        "ai",
-        "photo"
-      ]
-    },
-    {
-      "title": "Apple Creator Studio Update Brings Massive Final Cut Pro Improvements",
-      "link": "https://petapixel.com/2026/10/27/apple-creator-studio-update-brings-massive-final-cut-pro-improvements/",
-      "date": "2026-10-27T14:11:17.000Z",
-      "summary": "Apple's answer to Adobe's Creative Cloud, Creator Studio, has received what Apple calls its most exciting update yet. There are major improvements across the board, including to Final Cut Pro and Pixelmator Pro. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Hansi Flick annoyed with Barcelona leaders after chaotic Seville trip – report - Barca Universal",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdU1zTmM2N25kRHRVQVNiZ2RXbUJiVC1acGlLLUxKc2hjVUphaXJSWjNFWTlHaTJaa09VX01MaXhpc2VOQWJyMnFET0dObzFpOHlKUDRsam5DWGNBcVlIU2ZJa1NUckhTdkI4MTBSWXNYOTRWVWxNcEY5TWRkRm5BU1ltc01HTmJQYllpbU1MNEZVR3pERjRENTBzX3BoYkJJNzdqd1gwdw?oc=5",
-      "date": "2026-10-27T12:34:23.000Z",
-      "summary": "Hansi Flick annoyed with Barcelona leaders after chaotic Seville trip – report&nbsp;&nbsp;Barca Universal",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Factory Floor Return With First Album in 10 Years",
-      "link": "https://pitchfork.com/story/factory-floor-return-with-first-album-in-10-years/",
-      "date": "2026-10-27T12:13:43.000Z",
-      "summary": "Listen to “Continuation” and the title track from One Trip",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Ballon d'Or chief reveals how Barcelona team-mate Rodri 'took votes away' from Lamine Yamal in 2026 Golden Ball race as Harry Kane triumph - Goal.com",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVzZ4bmdBSHJEQl9uTFR4UGU2ZUFOSmtGMFBFTm1XYnBEMG9TYlNoLW1MUmVVWExqZm51dklUaFFpNHNOTHB1OThBNVNZaHhYVEZ0LUZ4V0lBZHd5RmhQWmpIWjBBMlZmQzFZMVladEdSRG9SaF9DR0pFcHp2SXZsTXVKX2JCTWZmSGwtOVBzS2p3U3NKandZMGNUVDB3azRtQjRrTXVkaTc2UVkxZGc?oc=5",
-      "date": "2026-10-27T11:00:11.000Z",
-      "summary": "Ballon d'Or chief reveals how Barcelona team-mate Rodri 'took votes away' from Lamine Yamal in 2026 Golden Ball race as Harry Kane triumph&nbsp;&nbsp;Goal.com",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Dead Man’s Bones Unveil First New Song in 17 Years",
-      "link": "https://pitchfork.com/story/dead-mans-bones-unveil-first-new-song-in-17-years/",
-      "date": "2026-10-27T05:10:37.000Z",
-      "summary": "The duo of Ryan Gosling and Zach Shields return with “Lost in the Night”",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Jay-Z Confirmed for Super Bowl 2027 Halftime Show",
-      "link": "https://pitchfork.com/story/jay-z-confirmed-for-super-bowl-2027-halftime-show/",
-      "date": "2026-10-27T02:21:32.000Z",
-      "summary": "The Roc Nation founder will headline his own event at California’s SoFi Stadium on Valentine’s Day",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
       ]
     },
     {
