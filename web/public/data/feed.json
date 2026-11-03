@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T06:36:45.585Z",
+  "generatedAt": "2026-11-03T07:06:12.819Z",
   "interests": [
     {
       "id": "football",
@@ -28,10 +28,30 @@
   ],
   "papers": [
     {
-      "title": "Latent Reasoning in Continuous Space for Unified Multimodal Models",
-      "link": "https://arxiv.org/abs/2610.42149v1",
-      "date": "2026-10-30T17:59:43.000Z",
-      "summary": "Unified Multimodal Models (UMMs) achieve remarkable success on diverse multimodal understanding and generation tasks, yet they still struggle to effectively leverage language-based chain-of-thought reasoning for image generation. As a result, existing reasoning-augmented UMMs oft…",
+      "title": "Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations",
+      "link": "https://arxiv.org/abs/2611.03647v1",
+      "date": "2026-11-02T18:59:32.000Z",
+      "summary": "Sensorized human demonstrations offer scalable data for mobile manipulation, but embodiment differences complicate policy learning. We present Pixel-UMI, a pipeline for learning environment-aware whole-body policies from human data. We first introduce Environment-Aware Retargetin…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation",
+      "link": "https://arxiv.org/abs/2611.03648v1",
+      "date": "2026-11-02T18:59:32.000Z",
+      "summary": "General-purpose mobile manipulation requires a combination of capable robot hardware, scalable demonstration collection, expressive whole-body control, and effective policy learning. Yet these components are often developed independently, creating mismatches that limit the capabi…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "WebHarbor: Docking Real Websites for Evolving GUI Agent Environments",
+      "link": "https://arxiv.org/abs/2611.03634v1",
+      "date": "2026-11-02T18:57:36.000Z",
+      "summary": "GUI web agents require realistic and interactive environments that remain stable during both evaluation and training. Live website evaluation suffers from changing content, access restrictions, and limited coverage of authenticated workflows, while existing synthetic environments…",
       "source": "arXiv stat.ML + cs.LG",
       "tags": [
         "ai",
@@ -39,293 +59,284 @@
       ]
     },
     {
-      "title": "Counting on Dummies: Privacy Amplification with Observable Counts and Truncated Batches",
-      "link": "https://arxiv.org/abs/2610.42139v1",
-      "date": "2026-10-30T17:58:42.000Z",
-      "summary": "In many practical deployments of Differentially Private Stochastic Gradient Descent (DP-SGD), the server processes data in batches. Randomly sampling these batches allows for better privacy bounds via privacy amplification results. Most sampling schemes with provable privacy ampl…",
+      "title": "Pretraining Data Scale Reverses the Muon-AdamW Fine-Tuning Gap",
+      "link": "https://arxiv.org/abs/2611.03633v1",
+      "date": "2026-11-02T18:56:43.000Z",
+      "summary": "Muon has recently emerged as a promising optimizer for pretraining large language models, offering a speedup over AdamW in minimizing pretraining loss. However, it remains unclear whether Muon's advantage persists after fine-tuning. In this paper, we study the downstream behavior…",
       "source": "arXiv stat.ML + cs.LG",
       "tags": [
         "data"
       ]
     },
     {
-      "title": "ReLift: Dense 3D Tracking as Lifted Trajectory Repair",
-      "link": "https://huggingface.co/papers/2610.42136",
-      "date": "2026-10-30T17:58:33.000Z",
-      "summary": "Dense 3D tracking from monocular video requires establishing point correspondences over time, estimating their depth, and inferring their trajectories during occlusion. Existing methods typically learn these tasks jointly, a demanding objective given the scarcity of 4D supervisio…",
-      "score": 2,
+      "title": "Not All Reasoning Generalizes: A Case Study on Learning Generalizable Reasoning Strategies in RLVR",
+      "link": "https://arxiv.org/abs/2611.03627v1",
+      "date": "2026-11-02T18:53:54.000Z",
+      "summary": "Reinforcement learning with verifiable rewards (RLVR) can enable generalizable improvement for large language model (LLM) reasoning. This paper studies how to incentivize such generalization via reasoning strategies. We study this question with a controllable equation-solving fra…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "FADE: Factored Ability--Difficulty Filtering for Online RLVR Scheduling",
+      "link": "https://arxiv.org/abs/2611.03625v1",
+      "date": "2026-11-02T18:53:23.000Z",
+      "summary": "Group-based reinforcement learning with verifiable rewards (RLVR) learns only from prompts whose sampled completions disagree: all-pass and all-fail groups produce zero relative advantage and burn generation budget without moving the policy. Adaptive schedulers try to steer rollo…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Thought-deciphering via hierarchical EEG-to-text alignment",
+      "link": "https://arxiv.org/abs/2611.03623v1",
+      "date": "2026-11-02T18:52:26.000Z",
+      "summary": "Communication is important for our well-being, but it can be impaired by disabilities, such as locked-in syndrome (LIS), cerebral palsy (CP), and dysarthria. Non-invasive brain-to-text brain-computer interfaces (BCIs) offer a promising solution by providing an alternative communi…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models",
+      "link": "https://arxiv.org/abs/2611.03622v1",
+      "date": "2026-11-02T18:52:11.000Z",
+      "summary": "Vision-Language Models (VLMs) hold promise for zero-shot video task-progress estimation in robot learning, yet existing frameworks frequently suffer from confirmation bias, hallucinating progress in failed executions due to implicit success assumptions or relative temporal rankin…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Benchmark Prediction with Sparse and Unpaired Cached Responses",
+      "link": "https://arxiv.org/abs/2611.03614v1",
+      "date": "2026-11-02T18:49:33.000Z",
+      "summary": "Evaluating a generative model on all queries from all available benchmark tasks is prohibitively expensive. As such, models are often evaluated on different subsets of tasks and/or different subsets of queries from a given task. The resulting collection of responses and the corre…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Efficient Closure Learning in Dynamical Systems: A Comparison of Data-Assimilated and Embedded Approaches",
+      "link": "https://arxiv.org/abs/2611.03612v1",
+      "date": "2026-11-02T18:47:40.000Z",
+      "summary": "Increased computing power has transformed computational science and improved predictive capabilities for complex systems, but many phenomena still exceed current simulation capabilities or require rapid evaluations for fast design iterations. Closure models address this challenge…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Should We Combine Our Data? Algorithms and Limits for Privately Assessing Data Sharing",
+      "link": "https://arxiv.org/abs/2611.03599v1",
+      "date": "2026-11-02T18:40:38.000Z",
+      "summary": "In this paper, we study when two parties should pool their data to train a machine learning model. Two agents, Alice and Bob, each hold a sensitive labeled dataset and want to train a classifier from a given hypothesis class $\\mathcal{H}$. Even when each party's dataset can be pe…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "data",
+        "ai"
+      ]
+    },
+    {
+      "title": "Structured Visual Landscape: Generating Preferred Representations in Biological and Artificial Neural Networks",
+      "link": "https://arxiv.org/abs/2611.03597v1",
+      "date": "2026-11-02T18:39:55.000Z",
+      "summary": "Understanding how neurons respond to visual stimulus is an important question in both deep learning and neuroscience. It has significant implications for enhancing the interpretability of black-box artificial neural networks and for understanding the visual representation in the…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "Spacetime Emergence in the Memory of a Learning Agent",
+      "link": "https://arxiv.org/abs/2611.03596v1",
+      "date": "2026-11-02T18:39:52.000Z",
+      "summary": "We show that the causal structure of spacetime can emerge within the memory of a learning agent performing a quantum information task. We train a model-based reinforcement-learning agent to maximize the quantum mutual information between localized quantum probes interacting with…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "DynaSolver: A Neural Operator for Autoregressive 4D Flow Prediction with Dynamic Boundaries",
+      "link": "https://arxiv.org/abs/2611.03595v1",
+      "date": "2026-11-02T18:39:26.000Z",
+      "summary": "Neural operators provide efficient surrogates for computational fluid dynamics (CFD), but most are designed for static geometries and are not equipped to model unsteady flows induced by continuously moving boundaries. We study dynamic-boundary 4D CFD prediction for articulated mo…",
+      "source": "arXiv stat.ML + cs.LG",
+      "tags": [
+        "ai",
+        "data"
+      ]
+    },
+    {
+      "title": "CUA-Master: Scaling Computer-use Agents through Open-World Recursive Improvements",
+      "link": "https://huggingface.co/papers/2611.03126",
+      "date": "2026-11-02T13:41:14.000Z",
+      "summary": "Despite recent advances in CUAs, their development remains constrained by the limited diversity, controllability, and reliability of interaction data. Moreover, conventional optimization pipelines lack iterative feedback, while existing recursive improvement approaches often rely…",
+      "score": 20,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "data"
+      ]
+    },
+    {
+      "title": "Avatar Intelligence: Amplifying Human Agency Through Persistent Personal Agents",
+      "link": "https://huggingface.co/papers/2611.03092",
+      "date": "2026-11-02T00:00:00.000Z",
+      "summary": "Personal AI agents are increasingly capable of handling long-horizon tasks across applications, yet users often need to invest substantial effort in specifying goals, resolving ambiguity, and verifying outcomes. We argue that progress should be measured by how effectively agents…",
+      "score": 11,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "CrossSWE: Benchmarking Cross-Repository Joint Development for Coding Agents",
+      "link": "https://huggingface.co/papers/2611.01484",
+      "date": "2026-11-01T03:16:52.000Z",
+      "summary": "As coding agents achieve increasingly high success rates on software engineering benchmarks, recent efforts have sought to increase task complexity through longer horizons and more extensive code modifications. However, real-world software development often spans multiple interde…",
+      "score": 6,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
     {
-      "title": "A Better Critic Matters for Distribution Matching Distillation",
-      "link": "https://arxiv.org/abs/2610.42135v1",
-      "date": "2026-10-30T17:58:26.000Z",
-      "summary": "Distribution Matching Distillation (DMD) trains a few-step student using the difference between a teacher's score and an online critic's estimate of the student distribution's score. We investigate what the critic needs, in capacity and in information, to provide a reliable train…",
-      "source": "arXiv stat.ML + cs.LG",
+      "title": "Democratizing Robot-Use Agents: A Unified Harness with Open Models",
+      "link": "https://huggingface.co/papers/2611.01560",
+      "date": "2026-11-01T00:00:00.000Z",
+      "summary": "Robot-use Agents (RUAs) have shown promising zero-shot manipulation capabilities, but reliance on frontier, proprietary models limits research into further training. To democratize RUA research, we introduce uni-robot-agent, a unified harness for competitive open-weight robot use…",
+      "score": 22,
+      "source": "Hugging Face Daily Papers",
       "tags": [
-        "data"
-      ]
-    },
-    {
-      "title": "Instance-dependent sequential limits as an exact information ledger",
-      "link": "https://arxiv.org/abs/2610.42133v1",
-      "date": "2026-10-30T17:57:44.000Z",
-      "summary": "Instance-dependent limits for bandit regret, sequential tests, best-arm identification and Markov decision processes are proved by one chain. It runs from a divergence decomposition through data processing to a statistic, a testing step that turns a class guarantee into a require…",
-      "source": "arXiv stat.ML + cs.LG",
-      "tags": [
-        "data"
-      ]
-    },
-    {
-      "title": "Physiological Trajectories and Observation Patterns in ICU Mortality Prediction: Transportability Under Changing Measurement Conditions",
-      "link": "https://arxiv.org/abs/2610.42126v1",
-      "date": "2026-10-30T17:56:10.000Z",
-      "summary": "Objective: To distinguish the transferable predictive value of physiological trajectories from that of observation patterns in ICU mortality prediction, and to assess whether measurement timing affects performance independently of observation quantity. Materials and Methods: In-h…",
-      "source": "arXiv stat.ML + cs.LG",
-      "tags": [
-        "data"
-      ]
-    },
-    {
-      "title": "Gradient Descent on Two ReLU Neurons: Global Landscape and Bifurcation Dynamics",
-      "link": "https://arxiv.org/abs/2610.42118v1",
-      "date": "2026-10-30T17:51:35.000Z",
-      "summary": "Understanding how gradient descent learns features remains a central challenge in neural network theory. We study this question in a minimal multi-index setting that already exhibits rich multi-phase gradient dynamics: a well-specified two-neuron ReLU teacher-student model under…",
-      "source": "arXiv stat.ML + cs.LG",
-      "tags": [
-        "ai",
-        "data"
-      ]
-    },
-    {
-      "title": "Fast Privacy Loss Accounting for Random Allocation via Multiscale FFT",
-      "link": "https://arxiv.org/abs/2610.42117v1",
-      "date": "2026-10-30T17:51:03.000Z",
-      "summary": "In the random allocation sampling scheme each user's data is used in $k$ steps chosen randomly and uniformly from a sequence of $t$ steps. This scheme is known to improve on Poisson sampling in private optimization and in communication-efficient aggregation. The existing privacy…",
-      "source": "arXiv stat.ML + cs.LG",
-      "tags": [
-        "data"
-      ]
-    },
-    {
-      "title": "SATFRONT: Detecting Atmospheric Fronts with Satellite Data using Machine Learning",
-      "link": "https://arxiv.org/abs/2610.42111v1",
-      "date": "2026-10-30T17:48:20.000Z",
-      "summary": "Atmospheric fronts are associated with much of the high-impact weather in the mid-latitudes, yet their identification and classification remain largely manual and subjective. Existing deep learning approaches rely primarily on gridded reanalysis or forecast data, limiting their a…",
-      "source": "arXiv stat.ML + cs.LG",
-      "tags": [
-        "data",
         "ai"
       ]
     },
     {
-      "title": "Regret-Optimal Wasserstein-Robust Linear Regression",
-      "link": "https://arxiv.org/abs/2610.42109v1",
-      "date": "2026-10-30T17:47:58.000Z",
-      "summary": "Distributionally robust optimization (DRO) minimizes worst-case risk under distributional uncertainty, but its decisions can be suboptimal in terms of their excess risk, or regret. We study this gap for multivariate least-squares regression, assuming that the observed source law…",
-      "source": "arXiv stat.ML + cs.LG",
-      "tags": [
-        "data"
-      ]
+      "title": "NorthCUA Technical Report: Turbocharging Computer-Use Agents through Experience at Scale",
+      "link": "https://huggingface.co/papers/2611.02102",
+      "date": "2026-11-01T00:00:00.000Z",
+      "summary": "Scaling computer-use agents from individual actions to complex software work requires experience that connects decisions to complete outcomes. We present NorthCUA, an integrated system for turbocharging computer-use agents through experience at scale. Its Experience Flywheel supp…",
+      "score": 17,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
     },
     {
-      "title": "Hard Constraint Projection in a Physics Informed Neural Network (Burgers)",
-      "link": "https://arxiv.org/abs/2610.42106v1",
-      "date": "2026-10-30T17:47:01.000Z",
-      "summary": "Physics informed machine learning provides a framework to study and simulate fluid dynamics, potentially at a fraction of the computational cost of traditional numerical methods, with the goal of improving the explainability, accuracy and robustness of purely data driven machine…",
-      "source": "arXiv stat.ML + cs.LG",
+      "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+      "link": "https://huggingface.co/papers/2611.00859",
+      "date": "2026-10-31T00:00:00.000Z",
+      "summary": "Real-time long-video generation requires continuous output with consistent appearance and natural motion. Existing chunk-wise autoregressive methods face challenges in both generation efficiency and long-video quality: serialized denoising and history-cache refresh require two fo…",
+      "score": 42,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents",
+      "link": "https://huggingface.co/papers/2610.41216",
+      "date": "2026-10-30T03:53:42.000Z",
+      "summary": "Robot agents built on vision-language models depend on both the planner and its harness: the tools, feedback, memory, and recovery logic around it. Can improvements to a large teacher's harness be carried into a compact agent with lower inference compute cost? We present TinyAstr…",
+      "score": 2,
+      "source": "Hugging Face Daily Papers",
       "tags": [
-        "data",
         "ai"
       ]
     },
     {
-      "title": "Hyperbolic Inverse Reinforcement Learning",
-      "link": "https://arxiv.org/abs/2610.42104v1",
-      "date": "2026-10-30T17:46:04.000Z",
-      "summary": "Inverse reinforcement learning (IRL) seeks to infer the reward function underlying observed behavior, but its predictive accuracy and interpretability depend on how that reward is computed from the underlying features. While prior IRL reward functions have been implemented throug…",
-      "source": "arXiv stat.ML + cs.LG",
+      "title": "From Fragmentation to Fusion: A Survey and Roadmap for Omnimodal Embeddings",
+      "link": "https://huggingface.co/papers/2611.00172",
+      "date": "2026-10-30T00:00:00.000Z",
+      "summary": "Embedding models underpin virtually every modern AI system, from search engines to recommendation systems. Despite shared mathematical foundations, research on embedding models remains fragmented by modality: the communities develop largely in isolation, seldom exchanging insight…",
+      "score": 18,
+      "source": "Hugging Face Daily Papers",
       "tags": [
-        "data"
+        "ai"
       ]
     },
     {
-      "title": "Towards Understanding the Impact of Plasticity Loss on Reinforcement Learning in Stochastic Environments",
-      "link": "https://arxiv.org/abs/2610.42100v1",
-      "date": "2026-10-30T17:43:04.000Z",
-      "summary": "Deep reinforcement learning (RL) is a powerful framework for sequential decision-making. Despite many high-profile successes in recent years, deep RL is known to be brittle. An emerging line of research attributes this brittleness to a loss of plasticity in neural networks. Howev…",
-      "source": "arXiv stat.ML + cs.LG",
+      "title": "Self-Improvement with Auxiliary Rewards: Learning from Verified Traces and Evaluating Transfer",
+      "link": "https://huggingface.co/papers/2610.41296",
+      "date": "2026-10-30T00:00:00.000Z",
+      "summary": "Answer-level rewards cannot distinguish reasoning traces with equally correct outcomes. We study whether auxiliary trajectory preferences improve small-language-model self-improvement and transfer under limited supervision. We compare confidence-based (SC) and entropy-based metri…",
+      "score": 3,
+      "source": "Hugging Face Daily Papers",
       "tags": [
-        "ai",
-        "data"
+        "ai"
       ]
     },
     {
-      "title": "Cost-Aware Stopping for Freeze-Thaw Bayesian Optimization: When Does One-Step Lookahead Suffice?",
-      "link": "https://arxiv.org/abs/2610.42085v1",
-      "date": "2026-10-30T17:36:06.000Z",
-      "summary": "Freeze-thaw Bayesian optimization (BO) evaluates candidates in resumable increments but usually stops at a budget or convergence test. We maximize a budget-free utility, the best observed score minus a cost per increment, with a one-step lookahead: advance the candidate with the…",
-      "source": "arXiv stat.ML + cs.LG",
+      "title": "DecisionRank: On-Policy Distillation for Decision-Model Rerankers",
+      "link": "https://huggingface.co/papers/2610.42128",
+      "date": "2026-10-30T00:00:00.000Z",
+      "summary": "Decision models target structured tasks by directly predicting choices or scores, avoiding autoregressive decoding latency. However, transferring a generative LLM's ranking knowledge to a decision model remains challenging: the teacher expresses preferences through a ranked list…",
+      "score": 7,
+      "source": "Hugging Face Daily Papers",
       "tags": [
-        "data"
+        "ai"
       ]
     },
     {
-      "title": "SketchDirector: Complex Scene Sketching via Agentic Layout Reasoning and Detail Refinement",
-      "link": "https://huggingface.co/papers/2610.41260",
-      "date": "2026-10-30T05:05:12.000Z",
-      "summary": "Existing sketch generation methods often rely on image guidance and are largely limited to individual objects or simplified scenes, leaving text-guided complex scene sketching underexplored. We present SketchDirector, an agentic framework that mimics the human sketching workflow…",
+      "title": "DeFT-RAG: Decomposing Multi-Hop Questions into Self-Contained Sub-Questions with Reusable Answers",
+      "link": "https://huggingface.co/papers/2610.37826",
+      "date": "2026-10-30T00:00:00.000Z",
+      "summary": "Retrieval-augmented generation (RAG) lets a large language model (LLM) answer questions by retrieving relevant passages from a large corpus. However, RAG struggles with multi-hop questions, which require chaining facts spread across several documents through intermediate entities…",
+      "score": 8,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "AuditFL: A Contract-Backed Clearing Layer for Open Federated Learning",
+      "link": "https://huggingface.co/papers/2610.41278",
+      "date": "2026-10-30T00:00:00.000Z",
+      "summary": "Federated learning (FL) keeps raw data local, but most deployments still rely on a trusted coordinator for client admission, checkpoint distribution, update collection, aggregation, and rewards. This paper presents AuditFL, a contract-backed clearing layer for auditable FL in ope…",
       "score": 1,
       "source": "Hugging Face Daily Papers",
       "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
-      "link": "https://huggingface.co/papers/2610.42141",
-      "date": "2026-10-30T00:00:00.000Z",
-      "summary": "Recent work shows that a frozen robot policy performs far better inside an agent harness, where control code decides when to query the policy, consult vision tools, or command the arm directly. Yet today these harnesses are built by hand and redesigned for each new robot or bench…",
-      "score": 4,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "CausalWAM: Learning the Causes of Actions in World Action Models",
-      "link": "https://huggingface.co/papers/2610.42096",
-      "date": "2026-10-30T00:00:00.000Z",
-      "summary": "World action models (WAMs) learn latent variables from observations and use these to both predict the evolution of the scene and to generate actions. The prediction has to be of the whole scene, whereas only a portion of the scene causes actions. WAMs fitted to demonstrations do…",
-      "score": 2,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "WeFair: Fidelity-Aware Alignment from Human Feedback for Personalized Query Rewriting in Short-Video Search",
-      "link": "https://huggingface.co/papers/2610.16927",
-      "date": "2026-10-30T00:00:00.000Z",
-      "summary": "Short-video search needs compact query rewriters that recover users' personalized intent from ambiguous queries under strict latency constraints. Existing LLM-based methods have improved rewriting by using synthetic reasoning and subsequent consumption-behavioral feedback. Howeve…",
-      "score": 4,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "Probing Spatial State Representations in Visual Foundation Models",
-      "link": "https://huggingface.co/papers/2610.40636",
-      "date": "2026-10-29T17:58:16.000Z",
-      "summary": "An observer sees only part of the surrounding world, yet must keep track of what lies beyond the current view. Spatial perception therefore involves more than recognizing individual images: it calls for a persistent spatial state that is updated under self-motion and used to guid…",
-      "score": 7,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "HALO: Human-Grounded Granular Evaluation of Proactive Agents",
-      "link": "https://huggingface.co/papers/2610.39086",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Proactive agents must decide whether, when, and how far to assist without an explicit request. Existing evaluations often rely on automated scores or binary verdicts, offering limited human diagnosis of evidence use and intervention quality. To address these gaps, we introduce HA…",
-      "score": 2,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Apriel Voice 27B Preview: An Open Model for Speech, Reasoning, and Tool Use",
-      "link": "https://huggingface.co/papers/2610.40738",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "A capable voice assistant must do more than recognize words; it must understand requests, reason over context, sustain conversations, and act through tools. We present Apriel Voice 27B Preview, an open speech-language model that unifies these capabilities within a shared reasonin…",
-      "score": 11,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "On the Origin and Evolution of Training-Inference Mismatch in LLM Reinforcement Learning",
-      "link": "https://huggingface.co/papers/2610.40945",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "On-policy reinforcement learning for large language models assumes that training responses are sampled from the current policy. In practice, an inference engine samples the responses and a separate trainer computes the gradients, and the training-inference mismatch between the tw…",
-      "score": 4,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents",
-      "link": "https://huggingface.co/papers/2610.40799",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Across coding, web, and tool-use tasks, language-model agents are now routinely trained with the same recipe: supervised fine-tuning (SFT) to learn the interface, then multi-turn reinforcement learning (RL) to master it. Code-as-policy (CaP) casts robot manipulation in the same f…",
-      "score": 11,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Wizard: Manipulate Any World in Real Time via Agentic Control",
-      "link": "https://huggingface.co/papers/2610.40339",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Recent advances in video world models have enabled the generation of increasingly realistic and interactive virtual environments, opening new possibilities for player-customizable gameplay. Agentic frameworks further advance this direction by decoupling explicit game logic and co…",
-      "score": 14,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?",
-      "link": "https://huggingface.co/papers/2610.39497",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Progress toward artificial general intelligence (AGI) has largely relied on scaling a resource-intensive executive, System-2, through larger models, more data and compute, longer reasoning, and more agents. We ask whether the next stage may come instead from co-designing it with…",
-      "score": 35,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
-        "data",
-        "ai"
-      ]
-    },
-    {
-      "title": "WorldBridge: Bridging Video and Action for Task Generalization in World Action Models",
-      "link": "https://huggingface.co/papers/2610.40748",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Achieving the broad task generalization of embodied models in physical environments remains a central challenge in robot learning. We study this challenge in World Action Models (WAMs) through two complementary capabilities: video generalization, which predicts the visual evoluti…",
-      "score": 9,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "HiFOR: Hierarchical Foresight with Action-Guided World Grounding for Vision-Language-Action Model",
-      "link": "https://huggingface.co/papers/2610.40373",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Vision-Language-Action (VLA) models have demonstrated promising capabilities in robotic manipulation by integrating visual perception, language understanding, and action generation. Recent advances have further incorporated future prediction to enhance the understanding of enviro…",
-      "score": 15,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Unlocking Any-Order Generation in Pretrained Autoregressive Image Models",
-      "link": "https://huggingface.co/papers/2610.39293",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Autoregressive (AR) image generators are powerful in principle but inflexible in practice: training with a fixed raster-scan order hardcodes a single factorization of the image distribution into the model, leaving it unable to inpaint, outpaint, or edit at inference time. Existin…",
-      "score": 3,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Training Foundation Models with a Single Algorithm",
-      "link": "https://huggingface.co/papers/2610.40564",
-      "date": "2026-10-29T00:00:00.000Z",
-      "summary": "Foundation models are typically trained in stages: pretraining, midtraining, supervised fine-tuning (SFT), and reinforcement learning (RL), with changes in both data and learning algorithms. We show that this algorithmic separation is not fundamental. By deriving suitable RL obje…",
-      "score": 12,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
         "data"
       ]
     },
     {
-      "title": "EPSBench: Benchmarking LLM Agents for Earnings Forecasting",
-      "link": "https://huggingface.co/papers/2610.38293",
-      "date": "2026-10-28T05:24:11.000Z",
-      "summary": "Quarterly earnings forecasting requires an agent to connect financial evidence to the income-statement line items that produce a company's reported earnings. We introduce EPSBench, a benchmark for studying this ability across 149 firm-quarters from 86 US companies. Agents read a…",
+      "title": "rTaste: Do Research Agents Have Taste? Evaluating Early Stage Research Judgment",
+      "link": "https://huggingface.co/papers/2610.40488",
+      "date": "2026-10-29T17:15:53.000Z",
+      "summary": "Do research agents have taste, the judgment of which experiments are worth running before their outcomes are known? We give six frontier models seven recent NLP papers. Each model, working as a research agent alone or as a team, proposes minimum viable experiments (MVEs), forecas…",
+      "score": 2,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement",
+      "link": "https://huggingface.co/papers/2610.40191",
+      "date": "2026-10-29T14:47:39.000Z",
+      "summary": "Video generation is shifting from end-to-end synthesis toward agentic generation, where planning, tool use, and feedback enable coherent, controllable multi-shot videos. In parallel, video world models provide action-conditioned observations and predicted futures, serving as inte…",
+      "score": 42,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Diagnosing the Reference Gap: What Visual Scaffolds Can and Cannot Fix in Multimodal Reasoning",
+      "link": "https://huggingface.co/papers/2610.39419",
+      "date": "2026-10-29T06:00:35.000Z",
+      "summary": "Multimodal large language models can recognize visual content yet struggle to reason reliably over it across multiple steps. In counting, a model may see all objects but lose track of which ones it has counted. We argue that such failures, commonly attributed to perception, revea…",
+      "score": 13,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "MAServeBench: Benchmarking Multi-Agent LLM Serving Systems with Hierarchical Collaboration Workloads",
+      "link": "https://huggingface.co/papers/2610.40293",
+      "date": "2026-10-29T00:00:00.000Z",
+      "summary": "Large language model (LLM)-based multi-agent systems (MAS) coordinate specialized agents to solve complex tasks, turning each user request into interdependent model and tool operations. Unlike independent requests, these operations become ready at different times and consume evol…",
       "score": 3,
       "source": "Hugging Face Daily Papers",
       "tags": [
@@ -335,10 +346,241 @@
   ],
   "news": [
     {
-      "title": "Joan Garcia gives his verdict on Frenkie de Jong and Brian Farinas as Barcelona defenders - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUHJSN2ZpTlQ5Tm5oUHlfLTBLWTNBcUNNWFJ6bDVEZElsbTFBQXc2SV9MTzB0UXNpTmtBdDdvYWNsZWIwV1M5Nl9zSGhpS2ZsN0J2MzlDNVJaX1NSanJtWWNSOGR3d3NIWGdmZUlSUGN1R0xoUTlJczc1YnB1TGhFSXM4Q3IwV2ZiRmhITGpzQm52OGRkV1BVeXV2VDlpZkRQd0VSWm80ZW1FOFhMMFNJTHR6VjBhVW8?oc=5",
-      "date": "2026-11-02T04:00:00.000Z",
-      "summary": "Joan Garcia gives his verdict on Frenkie de Jong and Brian Farinas as Barcelona defenders&nbsp;&nbsp;Barca Blaugranes",
+      "title": "The referee who became a role model after bouncing back from Diaz error",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cdj4z0lwjzlo?at_medium=RSS&at_campaign=rss",
+      "date": "2026-11-03T06:41:31.000Z",
+      "summary": "Referee Darren England shares how he has moved on from the VAR error that stalled his career to the FA Cup final and the Champions League.",
+      "source": "BBC Sport",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Daily Thread: 3 Nov. 2026 - Managing Madrid",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBTa1JzdEVVa1lwajloUV8zbGFsUGdaVEJqNzVIaDNyQlVYWmZfeXE4dERDUFhTNGhnVzhkdmlyQ09zRlY1dXFRUmVULVgxVWRFS2VJallXZ0RkMWpmR0x3eW56ZTlJZUpTNzV3amN2OHBWV09pRjZHcGh1aG5kUQ?oc=5",
+      "date": "2026-11-03T05:53:00.000Z",
+      "summary": "Daily Thread: 3 Nov. 2026&nbsp;&nbsp;Managing Madrid",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Barcelona vs Aston Villa – Predicted lineup and team news - Yahoo Sports",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMVNHRTZwZWVOWW5GMURUcGcxdkROU1BIdXBDdll4azAwT29FcTB0S1BXZWZNVnZnR3lwclo4Rjh6cGNoWmk1LWtFTDBQMl9XUHZuaURXYUpmRDNVUnFiLThIWDBaZVl3ZVh5RllFbTZZQ3VVTGR3Wmg3NFprR2tXN08zTEo3M0hUSlQw?oc=5",
+      "date": "2026-11-03T04:52:00.000Z",
+      "summary": "Barcelona vs Aston Villa – Predicted lineup and team news&nbsp;&nbsp;Yahoo Sports",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Barcelona vs Aston Villa, Champions League: Preview - Yahoo Sports",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQS3UwU3d6cGdmWGFSNUNNa1pqUXo1blJzdjZlMTcyTW9aZ2xmekItNEFJUUNsRGEzUUJrTVpNQVg3UGF5c002QXBEZXc0bVhZVGV1OXg5dmFfUzRoSzgyR3BadkdUQzVBd2t1TlVZWmFITjhFZ1gzczIzd2VkS2plX0ZXUWdqUDJadWx3?oc=5",
+      "date": "2026-11-03T04:00:00.000Z",
+      "summary": "Barcelona vs Aston Villa, Champions League: Preview&nbsp;&nbsp;Yahoo Sports",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Fallout from the Camavinga disaster: Barcelona make a risky decision - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQzBFOHBYSXl3V0QwODRFaDhsRzZueUgwcksyZWFuN3JkZnBMX0Zna2Q4YVVaTXFaZGh3MDVwdGpJajdlbE9YZTczZFZWZkRjcFNUUU01RXhhMlh1eDhkMm0zTW41eVlSZjEyeVRCbVk0cDl5WjFRUG8yNGhwaEJQSm1EQTBxaC1sWTlQcWc2cTNLZTdfbDJhQllZa2FwQkdaZEVzRzdiMEkzUzMxeERFc3dfTHN4YWV3a1ROVA?oc=5",
+      "date": "2026-11-02T22:07:43.000Z",
+      "summary": "Fallout from the Camavinga disaster: Barcelona make a risky decision&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "New Music Releases and Upcoming Albums in 2026 and 2027",
+      "link": "https://pitchfork.com/news/new-album-releases/",
+      "date": "2026-11-02T22:05:17.000Z",
+      "summary": "A regularly updated guide to the new albums, EPs, mixtapes, and projects getting released in the coming weeks and months",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Barcelona make major decision on ultras ahead of Aston Villa clash after El Clasico controversy - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOamVCa1JlcS1yYTJSanhTSWotOElHbGlGbWZ1WGtVZmp3RmpHRU9oZWNIRGczdlQ5Nm1kUjBvc1lKYjBrYWVsQXhXelA1d3lhYlZlanNKNTBNTjdfQllBRThpZzhyQUwwUEF1djROT0hNWDdCbk95MmpKalY3TXBieWctd1k1OThEN3g4WnBZMXZ6Y3ZzUnBwSnhhQXRGZ3BCYnZSSEpEQTc4QnZGOGZaTFhHUnlMS3htUlBOeA?oc=5",
+      "date": "2026-11-02T21:46:49.000Z",
+      "summary": "Barcelona make major decision on ultras ahead of Aston Villa clash after El Clasico controversy&nbsp;&nbsp;Goal.com Three talking points ahead of Barcelona vs Aston Villa | UEFA Champions League&nbsp;&nbsp;Barca Universal Barcelona vs Aston Villa, Champions League: Team News, Mat…",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Ricoh Is Opening Its First GR Space In the US",
+      "link": "https://petapixel.com/2026/11/02/ricoh-is-opening-its-first-gr-space-in-the-us/",
+      "date": "2026-11-02T21:41:12.000Z",
+      "summary": "Ricoh Imaging is opening its first dedicated GR Space in the United States. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Nettspend, Gracie Abrams, Factory Floor, and More: This Week’s Pitchfork Selects Playlist",
+      "link": "https://pitchfork.com/story/nettspend-gracie-abrams-factory-floor-pitchfork-selects-playlist-songs-of-the-week/",
+      "date": "2026-11-02T20:13:06.000Z",
+      "summary": "Our weekly playlist highlights songs that our writers, editors, and contributors are listening to on repeat",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "The 30 Awe-Inspiring Finalists for Weather Photographer of the Year",
+      "link": "https://petapixel.com/2026/11/02/the-30-awe-inspiring-finalists-for-weather-photographer-of-the-year/",
+      "date": "2026-11-02T20:01:12.000Z",
+      "summary": "The Royal Meteorological Society (RMetS) has unveiled the 30 finalists for its annual Weather Photographer of the Year photo contest, and there are just a few days left for people to vote for their favorites. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "All Bundled Up: Winter Picks for Photographers",
+      "link": "https://petapixel.com/2026/11/02/all-bundled-up-winter-picks-for-photographers/",
+      "date": "2026-11-02T19:25:05.000Z",
+      "summary": "When it comes to creating content during the winter, the last thing you want to worry about is your gear. You want to focus on capturing your images and videos. To accomplish that, you need gear that becomes an extension of your own artistic process. Before you set out on that co…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Egoless Mathematics in the AI Era",
+      "link": "https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/",
+      "date": "2026-11-02T18:54:44.000Z",
+      "summary": "Article URL: https://terrytao.wordpress.com/2026/11/02/egoless-mathematics-in-the-ai-era/ Comments URL: https://news.ycombinator.com/item?id=50341736 Points: 145 # Comments: 99",
+      "source": "Hacker News",
+      "tags": [
+        "ai"
+      ]
+    },
+    {
+      "title": "Trent Reznor and Atticus Ross Are Back at It (Scoring David Fincher Movies)",
+      "link": "https://pitchfork.com/story/trent-reznor-and-atticus-ross-david-fincher-mis-adventures-of-cliff-booth/",
+      "date": "2026-11-02T18:39:08.000Z",
+      "summary": "The duo’s work on The Further Mis-Adventures of Cliff Booth will be their sixth collaboration",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "OM Exec Says Company Considered Expanding Into Larger Formats",
+      "link": "https://petapixel.com/2026/11/02/om-exec-says-company-considered-expanding-into-larger-formats/",
+      "date": "2026-11-02T18:28:59.000Z",
+      "summary": "Two longtime OM Digital Solutions (OMDS) executives sat down for a Japanese-language interview on OM's YouTube channel, covering a wide range of topics, including the company's development philosophy, whether it should develop cameras with larger image sensors, and what makes Mic…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Barcelona star ‘upset’ with the club and Hansi Flick - Get Spanish Football News",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPQkxEbGFZQ21CTzdwdTB0SGMtRjN2ZVlSOHZrQlY0bGxnaTFuWUw5WVZPNzFHTnJ3bkNKZ1diZGlSZmNsTzdkbHRpTXVoUmlmUjNtWDhrT0d6WGZlYkViZzRtbHV3OGp5bEhaSnA1RDF4a1BRelJ4NUVGdFZnY29BbE9qTXZLUkhUaFFLMWZBZnNJZw?oc=5",
+      "date": "2026-11-02T18:10:00.000Z",
+      "summary": "Barcelona star ‘upset’ with the club and Hansi Flick&nbsp;&nbsp;Get Spanish Football News",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Photographer Offers Free Wedding Photography Services to a Couple Facing Hardship Each Year",
+      "link": "https://petapixel.com/2026/11/02/photographer-offers-free-wedding-photography-services-to-a-couple-facing-hardship-each-year/",
+      "date": "2026-11-02T17:14:55.000Z",
+      "summary": "A wedding photographer is offering one couple each year free photography on their big day, aiming to help those facing financial hardship or difficult personal circumstances capture memories of their wedding. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Shimoda Launches Upgraded Action X v3 Backpack and a New Insider Sling Bag",
+      "link": "https://petapixel.com/2026/11/02/shimoda-launches-upgraded-action-x-v3-backpack-and-a-new-insider-sling-bag/",
+      "date": "2026-11-02T17:05:35.000Z",
+      "summary": "Shimoda Designs has announced a refresh of its adventure camera backpack system, headlined by the Action X v3. Additionally, the company has a new set of interior core cubes and a brand-new sling bag. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "18 Splendid Winners From the British Photography Awards",
+      "link": "https://petapixel.com/2026/11/02/18-splendid-winners-from-the-british-photography-awards/",
+      "date": "2026-11-02T17:04:41.000Z",
+      "summary": "The British Photography Awards, a competition open to every photographer based in the U.K., have announced the winners for 2026. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Man Jailed for 14 Months After Stealing $19K Worth of Camera Gear From Photographer",
+      "link": "https://petapixel.com/2026/11/02/man-jailed-for-14-months-after-stealing-19k-worth-of-camera-gear-from-photographer/",
+      "date": "2026-11-02T16:51:03.000Z",
+      "summary": "A man has been sentenced to 14 months in prison for robbing a photographer of nearly $19,000 worth of camera equipment as he was preparing for a photo shoot. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Yaeji Plots a Dance Dance Revolution in New Single “DDR”",
+      "link": "https://pitchfork.com/story/yaeji-plots-a-dance-dance-revolution-in-new-ddr-video/",
+      "date": "2026-11-02T16:27:19.000Z",
+      "summary": "The singer-producer’s first song of the year is a collaboration with Enayet and K Wata",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Tottenham rocked as Barcelona ‘make contact’ with agent of best player – report - Football365",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPeTJDZHBhc1BGSlJ2bld6VWt3eWJmMll5NGE5WFN1THZDd1lheGw3RDFaZmtTS1d3eVJMYlc1U2lLRVZfeU5JUGtvSmsyeHF2MHlWbjUxRXJObjFYdmJUb2FPLWIxdzd4ZWxHWDFPUC1TZXRSQ1cybUF1SlllWXlsV2NrRHFFOWlhalpYZ1oxZE1kcFJ3OHJKaEFXczc4QQ?oc=5",
+      "date": "2026-11-02T16:07:39.000Z",
+      "summary": "Tottenham rocked as Barcelona ‘make contact’ with agent of best player – report&nbsp;&nbsp;Football365",
+      "source": "Google News",
+      "tags": [
+        "football",
+        "ai"
+      ]
+    },
+    {
+      "title": "Carrick says it's 'crazy' but he's looking forward to Roma game",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c933x04ryz4do?at_medium=RSS&at_campaign=rss",
+      "date": "2026-11-02T16:00:07.000Z",
+      "summary": "Under-pressure Michael Carrick says it might be \"crazy\" but he is looking forward to Manchester United's Champions League match against Roma at Old Trafford.",
+      "source": "BBC Sport",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Listen to Sufjan Stevens’ New Song “On This Christmas (It Only Gets Better)”",
+      "link": "https://pitchfork.com/story/listen-to-sufjan-stevens-new-song-on-this-christmas-it-only-gets-better/",
+      "date": "2026-11-02T15:07:32.000Z",
+      "summary": "He dug into the vault for his holiday compilation Worst Christmas Ever!",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "FC Barcelona and Assistència Sanitària renew their strategic alliance until the 2030/31 season - Official FC Barcelona Website",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPYl9pYllxUUxxR1IxT2ptbDVpSDljSW9ITnphYXJKYzY0enZMSHloVW94UUM2UkVYdlhfODJHMEdIaVNNNnV6VEFxUEF6T2dpS1Z5dHdPQUFaSnNCT1B4MnhzY3VmczlWaVBzTXBSdlFxQ3hUYUZtODJKQ045bnhJT1N4NDN3T3NlMmx1M2hWR3NjNHZ3V2Z3dmNzeGZaMU94eEdtQlJKT01pb0g3YUkwWWREek1Bemc3czktNjl1THhmanF0UUxkZ3djN1lpZzJ3VVVJdTVJYWxkdw?oc=5",
+      "date": "2026-11-02T10:05:55.000Z",
+      "summary": "FC Barcelona and Assistència Sanitària renew their strategic alliance until the 2030/31 season&nbsp;&nbsp;Official FC Barcelona Website",
       "source": "Google News",
       "tags": [
         "football"
@@ -355,66 +597,6 @@
       ]
     },
     {
-      "title": "Pep Guardiola reportedly bought £13.5m Barcelona mansion near former marital home he shared with estrange - The Times of India",
-      "link": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxQT1AtVGstd0sxVWxHaFVrTko3T1dkYXF4ZlUzTG9DS1ZtRmNfZFdYZ3V3Ulp2Y0pIcm5rU3BjdEhXTkJqWlJjRjhvVDdqWE5KN3hwZGtvUHE5cW1fME5MMFBCakgxTFY1bEoySXJJWFJRRF9kMVZZV0hjUTBLMmdjaGg4Sl9KOExtdS1QVVRMRkhPYnd3N05jb01YVXBYSFJuVnhTTmZYZ1hheFVjSGNMWXBoNmI1M1NoQWE5bll3SlozZGRST3NGTlMyZ1RPRURpZG9jU1plQ2hmd1FwR083MDhmRXdIN2F3aVRwRkdzQ0xSTzlkMVJyV0Nfd196ZUxhTUwwQ0hWN21HWF9VRGFEWC1mVXF6MVhsbzFldlZaemdOakRQaVdxelE4S2lOTjNuNEVlZnB4SFpFaU8xcF9NbUhR0gHHAkFVX3lxTE53YUNuTnp6TUpRYXZ3aTNHYkRJV0tKSTVka1cxU2JIY2RPV3FiV2kyQldqaDNDeDRxOVVjc19Ybk5NSkhBS0xxTzhCdXo3d0hwS3dLNFJXUURMdS1HUWw2MWZEX1E2YmlhODB0Z0k5WDZVUWtXR2JBVHp2R1daQ2lndkdwRDRjc2c3dVo0cU5wYzQya3VxcTF6bnFGVEdwX05fRVdXb0ExazV6Q2hFc2d4d1ZTWWVianlvV3pMamprb0FMMm1MNEVPS3hYM3hpTm1qUmRaTE96dkgtckFqZFV6cmZfemlQS29vSkVCZVdmZ2k5Q0dBb2N4a0NTSkN4MUZydXdsaXNVc2ljYVQ4bUhMWFh4VTZjLXpCd3RycVI1eWRrUG1xRnJ4NlJxOEdkd29OOHh4djJOc2JlZXJScm5Rd2NaeE4wZw?oc=5",
-      "date": "2026-11-01T19:48:00.000Z",
-      "summary": "Pep Guardiola reportedly bought £13.5m Barcelona mansion near former marital home he shared with estrange&nbsp;&nbsp;The Times of India",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Hansi Flick responds to Gavi’s lack of Barcelona minutes - Get Spanish Football News",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZzlMSDZmeXM4SFFXQ0lsVlJPZS02OEhKOExaX3ZnYk0wdTZtNkhlNS1YWGxHbGpLZ2xCV3k3QlF5RkMzSk5vczRjbVp0eU4tTjVHWVRTVW42S1FFTm1RbTRnWUFNY1hza3hxcFUyX1dna3A4VDJoLVMzbDVfN3FpamtBaEhlMW9TaldIbjVTM25SVFU?oc=5",
-      "date": "2026-11-01T19:45:00.000Z",
-      "summary": "Hansi Flick responds to Gavi’s lack of Barcelona minutes&nbsp;&nbsp;Get Spanish Football News",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Will he leave in the winter? A firm response from Barcelona's star over Manchester United negotiations - Goal.com",
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNQTFqTXpiWC1oaERlcTU4dTh0VHdhb0F3MmZPRTZKeENJNVotTS1HVzhaZC0xVjdoQ1lpdkU2MzVJd0tUYXl1NEVpWXotOS1CdEw2Zy1hM1pXNWFhSmVoS1ZleFhPUjhHS0JHNnVybVVCYjd3eUdZNVlHWmo3bTRsdmVpaW1mMHFyZlVxMGNvTy1lUFl0bEtPQWlTNC1ia2tXNTFMZF9QSjdlMmtfWXZnOWtsYm0zMjAyVjVPb3owYXduekJKUUZFS0NuUGJnV19QNmtGeVdURTVIUWZLMW1wUXQxNmdaOFF1?oc=5",
-      "date": "2026-11-01T16:39:32.000Z",
-      "summary": "Will he leave in the winter? A firm response from Barcelona's star over Manchester United negotiations&nbsp;&nbsp;Goal.com",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Bart Simpson Could Have Been the Best Photographer of His Generation",
-      "link": "https://petapixel.com/2026/11/01/bart-simpson-could-have-been-the-best-photographer-of-his-generation/",
-      "date": "2026-11-01T16:30:23.000Z",
-      "summary": "Diane Arbus. Helmut Newton. Bruce Gilden. If the world was just, Bart Simpson would have been counted among them, all legendary photographic talents of the 20th century. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Photographer Captures International Space Station and Jupiter in the Same Frame",
-      "link": "https://petapixel.com/2026/11/01/photographer-captures-international-space-station-and-jupiter-in-the-same-frame/",
-      "date": "2026-11-01T16:00:35.000Z",
-      "summary": "A photographer captured a rare shot of the International Space Station (ISS) as it whizzed past Jupiter. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Defeat for London City - but is Europe a real possibility?",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cj93z2nk2694o?at_medium=RSS&at_campaign=rss",
-      "date": "2026-11-01T15:49:47.000Z",
-      "summary": "London City Lionesses suffer defeat by Manchester City but their performance suggests they are closer to Champions League qualification than expected.",
-      "source": "BBC Sport",
-      "tags": [
-        "football"
-      ]
-    },
-    {
       "title": "Juan Atkins, Co-Founder of Techno Music, Dies at 64",
       "link": "https://pitchfork.com/story/juan-atkins-co-founder-of-techno-music-dies-at-64/",
       "date": "2026-11-01T15:49:25.000Z",
@@ -425,173 +607,12 @@
       ]
     },
     {
-      "title": "Barcelona identify 23-year-old star as leading candidate for January sale to fund defensive signing - Barca Universal",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQSGpIYll4M01XYVJhV242RnVCMVppTi0wRG1veENuOUE3V2NrTmdvNnQtVlROQnpYcTlkNl9YRGRtWU1McmNYNjA5ZXZybWJ4M0JvejhGck9CUmxNbnNwQzBRczZmWE1ZX21GX0toNlJIRWVvTjk0TUhnMmZhSFp3TWN4ZldfOUd6ajVnS0JPNTJSWE53OHR4aTQ0YVV0R04wYWlIMVhWclRZVXV2Tnp1ZmFuNERURG5KOEdKMjg1aFBTc3IwR1E?oc=5",
-      "date": "2026-11-01T14:37:54.000Z",
-      "summary": "Barcelona identify 23-year-old star as leading candidate for January sale to fund defensive signing&nbsp;&nbsp;Barca Universal",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Why the Habitat Matters as Much as the Animal in Wildlife Photography",
-      "link": "https://petapixel.com/2026/11/01/why-the-habitat-matters-as-much-as-the-animal-in-wildlife-photography/",
-      "date": "2026-11-01T14:00:38.000Z",
-      "summary": "Wildlife rarely exists in isolation, yet it's easy to overlook the environment when you're trying to capture a compelling portrait. Learn how environmental wildlife portraits use habitat, composition, and animal behavior to tell a bigger story without losing focus on the subject.…",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Fermin Lopez rubbishes Man Utd transfer talk after starring in Barcelona win - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPeUREcW1zbTlYVkhIUEJFSXdfV2JBOE9ib1RWSzh3VlpHYThpeGdncHh2b0U0VEVSWlhVUDlsWXBkeUR6eG1tZS16a1U2d1B1LXB4SDFHRktyOUY2a2tFMkJfLWR2dWI5NFE1U3BfY3ZHMVhHSXBIcG5PbXRaVU9Fdk1aczRXNWJrT2VBVkJJY1pJSDcxTDd0UUZteE5MLVhFdmJWQk1YM0p4RkNaMG5hMVoxUzcyQXNDV3lYX3BZTjVKaWp3aFp0S1Z1UEpZNEI4bzMzc0NVazRrRjVqYU1WVzROQQ?oc=5",
-      "date": "2026-11-01T14:00:00.000Z",
-      "summary": "Fermin Lopez rubbishes Man Utd transfer talk after starring in Barcelona win&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Images by Nadar and Man Ray Feature in Auction Celebrating 200 Years of Photography",
-      "link": "https://petapixel.com/2026/11/01/images-by-nadar-and-man-ray-feature-in-auction-celebrating-200-years-of-photography/",
-      "date": "2026-11-01T12:00:44.000Z",
-      "summary": "A major collection of groundbreaking 19th- and 20th-century French photography, featuring works by Henri Cartier-Bresson, Nadar, and Man Ray, will be offered. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "FC Barcelona News: 1 November 2026; Hansi Flick reaches 100 wins as Barça thrash Alavés - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOc1dGY0lFUUhRRXdsdWVRT21xSlZSb2xhVDVBTGswbWh0WTBpLTd0ZTdHaHhLSDRJY2daaTJzQlZKY0NTeU9zbmdkdmxQb1hERENyN1YycERUSGdXSXppZW00S2lUUlFBQWtsTmR5SVBfZXNDOW5OUU5DcFQ1M21zNmxwMHctSVBoajJ3WjlwWm5pVVZSamtNSWhoQWpqTWlDUlpwMVpiV09kMFptTllQTjEwZ3VaWmtJYlNtc2NXN3o0STNPOHZF?oc=5",
-      "date": "2026-11-01T10:00:00.000Z",
-      "summary": "FC Barcelona News: 1 November 2026; Hansi Flick reaches 100 wins as Barça thrash Alavés&nbsp;&nbsp;Barca Blaugranes Barcelona thrash Alaves 6-1 to solidify top spot; Atletico down Levante&nbsp;&nbsp;Rediff Barcelona player ratings vs Deportivo Alaves: Lamine Yamal and Raphinha da…",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Barcelona midfield star shuts the door on potential Manchester United move: 'I don't pay attention' - Barca Universal",
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUkZmSUFwaGdCVzN1TEpyNTcxUXc5eFdEWjFHeDZySVFDNXpxalEybl9ZUUYwTnkyUVFpNXFkeXgxT1FuX0lpZVk2bkM1N0U2YnZYeHFmVTY4TEJnSUQ1UU81VmtqUjl2NzVxTE1IOEdTMFdkalZNSkM3YkR5Y1hQeHdkbS1TdHNMWWkycWFhUEhreHBHWWhyZ25CcXloaWd0Wjd0dmtTYW1ZWHRuU1BGaGJ5VU5MWDVJNENtc09KeGQ?oc=5",
-      "date": "2026-11-01T08:40:16.000Z",
-      "summary": "Barcelona midfield star shuts the door on potential Manchester United move: 'I don't pay attention'&nbsp;&nbsp;Barca Universal",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "The AI cost of JavaScript frameworks",
-      "link": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
-      "date": "2026-11-01T06:06:19.000Z",
-      "summary": "Article URL: https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/ Comments URL: https://news.ycombinator.com/item?id=50323088 Points: 345 # Comments: 261",
-      "source": "Hacker News",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "Viltrox 35mm f/1.4 Pro Review: A Beautiful Behemoth",
-      "link": "https://petapixel.com/2026/10/31/viltrox-35mm-f-1-4-pro-review-a-beautiful-behemoth/",
-      "date": "2026-10-31T14:00:52.000Z",
-      "summary": "Viltrox has made huge waves in the world of optics, with many saying that it is the Sigma of China. Of course, this is a huge compliment given that Sigma is now famous for making affordable optics that easily compete with OEM lenses. I've reviewed many Viltrox lenses now, and I a…",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Two Telescopes Team Up To Photograph a Spooky Space Cat",
-      "link": "https://petapixel.com/2026/10/31/two-telescopes-team-up-to-photograph-a-spooky-space-cat/",
-      "date": "2026-10-31T13:30:19.000Z",
-      "summary": "What better way to celebrate Halloween than with a ghostly cat comprised of a nebula? NASA's James Webb Space Telescope and the Hubble Space Telescope joined forces to capture the Cat's Head Nebula. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "There’s a New M-Mount Pancake Lens in Town",
-      "link": "https://petapixel.com/2026/10/31/theres-a-new-m-mount-pancake-lens-in-town/",
-      "date": "2026-10-31T12:30:10.000Z",
-      "summary": "DJ-Optical, which sells its lenses on eBay, has a new ultra-slim manual-focus pancake lens that looks quite stylish. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Sam Taylor-Johnson’s ‘Crying Men’ Photo Series Featured in Major Solo Exhibition",
-      "link": "https://petapixel.com/2026/10/31/sam-taylor-johnsons-crying-men-photo-series-featured-in-major-solo-exhibition/",
-      "date": "2026-10-31T11:00:11.000Z",
-      "summary": "An exhibition presents the career-defining work of internationally celebrated British photographer Sam Taylor-Johnson, including a selection of works from her iconic Crying Men series. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
       "title": "Listen to the First Atlas Sound Song in 15 Years",
       "link": "https://pitchfork.com/story/listen-to-the-first-atlas-sound-song-in-15-years/",
       "date": "2026-10-30T21:03:48.000Z",
       "summary": "“Octoberland” also arrives with a music video",
       "source": "Pitchfork",
       "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "You Can Now Share Your Pitchfork Reviews",
-      "link": "https://pitchfork.com/story/you-can-now-share-your-pitchfork-reviews/",
-      "date": "2026-10-30T19:45:33.000Z",
-      "summary": "Go ahead and send those 0.0s to 10.0s to your friends and family",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Florence and the Machine Announce Everybody Scream Tour Live Album",
-      "link": "https://pitchfork.com/story/florence-and-the-machine-announce-everybody-scream-tour-live-album/",
-      "date": "2026-10-30T17:38:31.000Z",
-      "summary": "The 22-track effort is out next week",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Lily Allen Dressed as an Empty Ticketmaster Map for Halloween",
-      "link": "https://pitchfork.com/story/lily-allen-dressed-as-an-empty-ticketmaster-map-for-halloween/",
-      "date": "2026-10-30T16:02:12.000Z",
-      "summary": "After scaling down her summer tour, Allen dressed up as every pop star’s nightmare: a pox of unsold tickets",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "8 New Albums You Should Listen to Now: Diiv, Queens of the Stone Age, and More",
-      "link": "https://pitchfork.com/story/8-new-albums-you-should-listen-to-now-diiv-queens-of-the-stone-age/",
-      "date": "2026-10-30T13:52:20.000Z",
-      "summary": "Stream new releases from Diiv, Queens of the Stone Age, Kali Malone, and more",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Phoebe Bridgers and Billie Eilish Lend Their Voices to My Chemical Romance’s New Short Film",
-      "link": "https://pitchfork.com/story/phoebe-bridgers-and-billie-eilish-are-in-my-chemical-romances-new-short-film/",
-      "date": "2026-10-30T00:28:52.000Z",
-      "summary": "The band made the animated “Prelude to the End” with visual artist Lauren Tsai",
-      "source": "Pitchfork",
-      "tags": [
-        "chem",
         "music"
       ]
     },
