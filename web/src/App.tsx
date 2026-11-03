@@ -43,6 +43,12 @@ const Replay = lazy(() => import("./worlds/Replay"));
 const Kickoff = lazy(() => import("./worlds/Kickoff"));
 const Darkroom = lazy(() => import("./worlds/Darkroom"));
 const Orbit = lazy(() => import("./worlds/Orbit"));
+const StoryOpening = lazy(() =>
+  import("./story/StoryOpening").then((m) => ({ default: m.StoryOpening })),
+);
+const StoryMatchday = lazy(() =>
+  import("./story/StoryMatchday").then((m) => ({ default: m.StoryMatchday })),
+);
 const Landing = page(() => import("./worlds/Landing"), "Landing");
 const ArtistHome = page(
   () => import("./worlds/artist/ArtistHome"),
@@ -78,6 +84,23 @@ export default function App() {
         element={
           <Suspense fallback={null}>
             <Landing />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path="/story"
+        element={
+          <Suspense fallback={null}>
+            <StoryOpening />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/story/matchday"
+        element={
+          <Suspense fallback={null}>
+            <StoryMatchday />
           </Suspense>
         }
       />

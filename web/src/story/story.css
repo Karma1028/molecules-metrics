@@ -1,0 +1,188 @@
+/* Story slice 1, scene 1: the patachitra opening. Scoped to .story-pat. */
+.story-pat {
+  --paper: #f2e4c4;
+  --ink: #1c1410;
+  --terracotta: #b85c2e;
+  --ochre: #9c3b22;
+  --indigo: #2b3a67;
+  --turmeric: #e0a526;
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-rows: auto 1fr auto;
+  column-gap: clamp(16px, 3vw, 48px);
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+/* alpona-style band: lozenges and dots, drawn in CSS, no image */
+/* cut-outs are transparent; the global image hairline would box them in */
+.story-pat img {
+  outline: 0;
+}
+
+.story-pat .pat-border {
+  grid-column: 1 / -1;
+  height: clamp(18px, 3.2vh, 30px);
+  background:
+    radial-gradient(circle at 50% 50%, var(--paper) 0 2.5px, transparent 3px) 0 0 / 22px 100%,
+    linear-gradient(135deg, var(--terracotta) 25%, transparent 25%) 0 0 / 22px 100%,
+    linear-gradient(225deg, var(--terracotta) 25%, transparent 25%) 0 0 / 22px 100%,
+    linear-gradient(0deg, var(--indigo), var(--indigo));
+  border-bottom: 3px solid var(--ink);
+}
+.story-pat .pat-border-b {
+  border-bottom: 0;
+  border-top: 3px solid var(--ink);
+}
+
+.story-pat .pat-copy {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  min-width: 0;
+  min-height: 0;
+  padding: clamp(16px, 4vh, 48px) 0 clamp(16px, 4vh, 48px) clamp(20px, 5vw, 72px);
+}
+.story-pat .pat-title {
+  margin: 0;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6.4vw, 6.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  overflow-wrap: break-word;
+}
+.story-pat .char-line:last-child {
+  color: var(--ochre);
+}
+.story-pat {
+  --dust: rgba(184, 92, 46, 0.45);
+  --shadow: rgba(28, 20, 16, 0.3);
+}
+.story-pat .pat-sub {
+  max-width: 34ch;
+  margin: clamp(14px, 2.6vh, 28px) 0 clamp(16px, 3vh, 32px);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.5;
+}
+.story-pat .pat-cta {
+  display: inline-block;
+  padding: 0.85em 1.4em;
+  min-height: 44px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 700 1rem/1 "Fraunces", Georgia, serif;
+  text-decoration: none;
+  border: 3px solid var(--ink);
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.story-pat .pat-cta:hover {
+  background: var(--terracotta);
+  transform: translateY(-2px);
+}
+.story-pat .pat-cta:active {
+  transform: scale(0.97);
+}
+.story-pat .pat-cta:focus-visible {
+  outline: 3px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+.story-pat .pat-stage {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 1.6vh, 16px);
+  padding: clamp(10px, 2vh, 24px) clamp(12px, 3vw, 48px);
+  position: relative;
+}
+/* the turmeric sun the horse stands against */
+.story-pat .pat-sun {
+  position: absolute;
+  z-index: 0;
+  left: 13%;
+  width: 74%;
+  top: 28%;
+  height: 60%;
+  border-radius: 50%;
+  background: var(--turmeric);
+}
+.story-pat .pat-horse,
+.story-pat .pat-caption {
+  position: relative;
+  z-index: 1;
+}
+.story-pat .pat-horse {
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+}
+.story-pat .horse-img {
+  display: block;
+  height: min(62dvh, 620px);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+.story-pat .pat-caption {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .story-pat {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+  }
+  .story-pat .pat-copy {
+    grid-column: 1;
+    grid-row: 2;
+    padding: clamp(10px, 2.4vh, 20px) 20px 0;
+  }
+  .story-pat .pat-title {
+    font-size: clamp(2.1rem, 11vw, 3.4rem);
+  }
+  .story-pat .pat-sub {
+    margin: 8px 0 12px;
+    font-size: 0.95rem;
+  }
+  .story-pat .pat-stage {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 4px 16px;
+  }
+  .story-pat .horse-img {
+    height: min(46dvh, 460px);
+  }
+  .story-pat .pat-border-b {
+    grid-row: 4;
+  }
+}
+
+/* short windows (landscape phones): keep every line, shrink the type and gaps */
+@media (max-height: 560px) and (min-width: 801px) {
+  .story-pat .pat-title { font-size: clamp(2rem, 9vh, 3.6rem); }
+  .story-pat .pat-sub { margin: 8px 0 10px; font-size: 0.9rem; }
+  .story-pat .horse-img { height: min(52dvh, 300px); }
+  .story-pat .pat-caption { font-size: 0.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-pat .pat-cta {
+    transition: none;
+  }
+  .story-pat .pat-cta:hover,
+  .story-pat .pat-cta:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,320 @@
+/* Story slice 1, scene 2: Matchday in the Blue Lock (Heat) look. Scoped to .story-heat. */
+.story-heat {
+  --void: #07090f;
+  --volt: #2f6bff;
+  --white: #f5f7ff;
+  --hot: #ff2f4d;
+  --dim: #9aa6c4;
+  --dust: rgba(154, 166, 196, 0.5);
+  --shadow: rgba(0, 0, 0, 0.45);
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+  overflow: hidden;
+  background: var(--void);
+  color: var(--white);
+  font-family: "Chakra Petch", system-ui, sans-serif;
+  isolation: isolate;
+}
+
+/* the diagonal volt slash with a halftone fade */
+.story-heat .heat-slash {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle, rgba(7, 9, 15, 0.55) 1.2px, transparent 1.6px) 0 0 / 9px 9px,
+    var(--volt);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 46% 100%);
+}
+
+/* cut-outs are transparent; the global image hairline would box them in */
+.story-heat img {
+  outline: 0;
+}
+
+.story-heat .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.story-heat .heat-left {
+  min-width: 0;
+  min-height: 0;
+  align-self: center;
+  max-width: 46vw;
+  padding: clamp(14px, 4vh, 48px) 0 clamp(14px, 4vh, 48px) clamp(18px, 5vw, 72px);
+}
+.story-heat .heat-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 7vw, 7rem);
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  font-style: italic;
+  overflow-wrap: break-word;
+}
+.story-heat .heat-fixture {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4em 0.6em;
+  margin: clamp(10px, 2.4vh, 24px) 0 4px;
+  font-size: clamp(1.15rem, 2.4vw, 2rem);
+  font-weight: 700;
+}
+.story-heat .heat-fixture i {
+  color: var(--hot);
+  font-style: normal;
+}
+.story-heat .heat-empty {
+  color: var(--dim);
+  font-weight: 500;
+}
+.story-heat .heat-kick {
+  margin: 0 0 clamp(10px, 2vh, 20px);
+  color: var(--hot);
+  font-weight: 700;
+}
+
+.story-heat .heat-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 520px;
+  margin: 0 0 clamp(10px, 2vh, 20px);
+}
+.story-heat .heat-stats div {
+  padding: 8px 10px;
+  background:
+    linear-gradient(var(--hot), var(--hot)) 10px 100% / 26% 3px no-repeat,
+    rgba(245, 247, 255, 0.07);
+}
+.story-heat .heat-stats dt {
+  font-size: 0.85rem;
+  color: var(--dim);
+}
+.story-heat .heat-stats dd {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.story-heat .heat-note {
+  max-width: 36ch;
+  color: var(--dim);
+  margin: 0 0 12px;
+}
+
+.story-heat .heat-form {
+  display: flex;
+  gap: 6px;
+  padding: 0;
+  margin: 0 0 clamp(8px, 1.6vh, 16px);
+  list-style: none;
+}
+.story-heat .heat-form li {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  background: var(--white);
+  color: var(--void);
+}
+.story-heat .heat-form li[data-r="W"] { background: var(--white); }
+.story-heat .heat-form li[data-r="D"] { background: var(--dim); }
+.story-heat .heat-form li[data-r="L"] { background: var(--hot); color: var(--white); }
+
+.story-heat .heat-src {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dim);
+}
+.story-heat .heat-src a {
+  display: inline-block;
+  padding: 12px 4px;
+  color: var(--white);
+  text-underline-offset: 3px;
+}
+.story-heat .heat-src a:focus-visible,
+.story-heat .heat-kicker:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+}
+
+.story-heat .heat-right {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0px, 2vw, 32px);
+  padding: 0 clamp(8px, 3vw, 40px) clamp(8px, 3vh, 32px);
+}
+.story-heat .heat-kicker {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+}
+.story-heat .heat-man {
+  display: block;
+  height: min(78dvh, 720px);
+  width: auto;
+  max-width: 100%;
+  user-select: none;
+}
+.story-heat .heat-man-in {
+  transform-origin: 50% 100%;
+}
+.story-heat .heat-man {
+  transform-origin: 50% 100%;
+}
+.story-heat .heat-ball {
+  position: absolute;
+  left: 8%;
+  bottom: 2%;
+  width: clamp(36px, 6vw, 72px);
+  height: auto;
+}
+.story-heat .heat-ghost {
+  opacity: 0;
+  filter: brightness(1.6) saturate(0.6);
+  pointer-events: none;
+}
+.story-heat .heat-dust {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+/* impact flash at the foot */
+.story-heat .heat-flash {
+  position: absolute;
+  left: 6%;
+  bottom: 0;
+  width: 22%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--white) 0 18%, rgba(245, 247, 255, 0) 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+/* the sound word */
+.story-heat .heat-word {
+  position: absolute;
+  left: -24%;
+  top: 2%;
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(1.6rem, 5.4vw, 4.6rem);
+  letter-spacing: -0.03em;
+  color: var(--hot);
+  -webkit-text-stroke: 2px var(--white);
+  paint-order: stroke fill;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: 0 100%;
+  rotate: -8deg;
+}
+/* motion streaks behind the player, flashed on the strike */
+.story-heat .heat-speed {
+  position: absolute;
+  left: -30%;
+  right: -10%;
+  top: 8%;
+  bottom: 8%;
+  z-index: 0;
+  opacity: 0;
+  background: repeating-linear-gradient(0deg, transparent 0 13px, rgba(245, 247, 255, 0.5) 13px 14px, transparent 14px 31px);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 35%, #000 65%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 35%, #000 65%, transparent);
+  pointer-events: none;
+}
+.story-heat .heat-kicker:disabled {
+  cursor: default;
+}
+.story-heat .heat-horse {
+  display: flex;
+  min-height: 0;
+}
+.story-heat .horse-img {
+  display: block;
+  height: min(54dvh, 520px);
+  width: auto;
+  max-width: 100%;
+  user-select: none;
+}
+
+@media (max-width: 800px) {
+  .story-heat {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .story-heat .heat-slash {
+    clip-path: polygon(0 52%, 100% 38%, 100% 100%, 0 100%);
+  }
+  .story-heat .heat-left {
+    max-width: none;
+    padding: 14px 16px 0;
+  }
+  .story-heat .heat-title {
+    font-size: clamp(2.2rem, 13vw, 3.6rem);
+  }
+  .story-heat .heat-fixture {
+    margin: 6px 0 2px;
+    font-size: 1.05rem;
+  }
+  .story-heat .heat-kick {
+    margin-bottom: 6px;
+  }
+  .story-heat .heat-stats {
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .story-heat .heat-stats dd {
+    font-size: 1.35rem;
+  }
+  .story-heat .heat-note,
+  .story-heat .heat-src {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  .story-heat .heat-form li {
+    width: 28px;
+    height: 28px;
+  }
+  .story-heat .heat-man {
+    height: min(46dvh, 460px);
+  }
+  .story-heat .horse-img {
+    height: min(32dvh, 320px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-heat .heat-dust,
+  .story-heat .heat-ghost,
+  .story-heat .heat-flash,
+  .story-heat .heat-word,
+  .story-heat .heat-speed {
+    display: none;
+  }
+}

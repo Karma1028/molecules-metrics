@@ -50,6 +50,43 @@ export const motionTokens = {
     /** light seam along the card's spine during a world flip (s) */
     seam: 1.2,
   },
+  /**
+   * Story slice (src/story). Seconds unless named otherwise. Char stagger and
+   * hero length follow the REA teardown (§2b: chars 7-14 ms, hero 1000 ms).
+   */
+  story: {
+    /** title letters: rise length, ms between letters, gap between lines */
+    heroSec: 1.0,
+    charMs: 14,
+    lineGapSec: 0.35,
+    /** left column items arriving one after another (motion-patterns 0.05-0.10 band) */
+    itemStagger: 0.07,
+    /** the horse's gallop in: travel, how long, one stride, one dust puff, puffs per ride */
+    rideSec: 1.7,
+    rideFromVw: 70,
+    gaitSec: 0.42,
+    dustSec: 0.7,
+    dustPuffs: 8,
+    /** horse cheer hop: seconds and lift (px) */
+    hopSec: 0.5,
+    hopRise: 26,
+    /** the kick: wind-up, strike, flight (s); arc samples; peak as a share of stage height; spin (deg); end scale */
+    windUpSec: 0.22,
+    strikeSec: 0.12,
+    flightSec: 0.95,
+    arcSteps: 16,
+    arcPeak: 0.28,
+    spin: 720,
+    shrink: 0.55,
+    ghosts: 3,
+    /** stage shake on impact (px) and its length */
+    shake: [0, -7, 6, -3, 0],
+    shakeSec: 0.26,
+    /** colour panel sweeping between scenes */
+    wipeSec: 0.6,
+    /** stat numbers counting up */
+    countSec: 1.0,
+  },
   /** page headline entrance (components/headline): artist written in, analyst counted in */
   headline: {
     /** s between words (motion-patterns 0.05-0.10 band) */

@@ -1,4 +1,6 @@
 # CONTINUATION PROMPT — Tuhin portfolio "Molecules → Metrics"
+> **NEWER (2026-11-03):** use `web/audit/CONTINUATION-GRILL-2026-11-03.md` and `web/audit/SESSION-2026-11-03-LEARNINGS.md`. The block below is from 2026-10-12 and is stale.
+
 _Last session: 2026-10-12. Paste the block below into a fresh Antigravity / Claude Code session to resume._
 
 ---
