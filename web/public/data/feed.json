@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T06:22:27.087Z",
+  "generatedAt": "2026-11-08T06:30:40.959Z",
   "interests": [
     {
       "id": "football",
@@ -181,7 +181,7 @@
       "link": "https://huggingface.co/papers/2611.08376",
       "date": "2026-11-05T17:53:49.000Z",
       "summary": "Linear attention compresses context into a fixed-size key-value state for linear-time training and constant-memory inference. Gated delta-rule models decay this state and erase its prediction for an incoming key before writing a new value; Gated DeltaNet-2 (GDN-2) generalizes thi…",
-      "score": 5,
+      "score": 9,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -190,7 +190,7 @@
       "link": "https://huggingface.co/papers/2611.08237",
       "date": "2026-11-05T16:18:35.000Z",
       "summary": "Mathematical modeling turns an open-ended real-world problem into assumptions, a model, a solution, and a defended recommendation, and its answers matter only if they are both close to a credible reference and physically feasible; existing benchmarks either score solver fragments…",
-      "score": 7,
+      "score": 11,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -199,7 +199,7 @@
       "link": "https://huggingface.co/papers/2611.08089",
       "date": "2026-11-05T14:35:08.000Z",
       "summary": "Mixture-of-Experts (MoE) models route each token to a few of many experts, yet what an individual expert is responsible for remains unsettled. Existing analyses count how often an expert is selected on domain-labeled corpora, an instrument that fixes the taxonomy in advance, stay…",
-      "score": 6,
+      "score": 8,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -208,7 +208,7 @@
       "link": "https://huggingface.co/papers/2611.07613",
       "date": "2026-11-05T07:56:01.000Z",
       "summary": "LiDAR is a critical sensor for autonomous driving and robotics, yet it remains vulnerable to adverse conditions such as fog, rain, transparent objects, and low-reflectance surfaces. Full-waveform LiDAR (FWL) addresses these limitations by capturing the complete return waveform as…",
-      "score": 3,
+      "score": 5,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -217,7 +217,7 @@
       "link": "https://huggingface.co/papers/2611.07298",
       "date": "2026-11-05T01:30:28.000Z",
       "summary": "Embedding models compress variable-length text into fixed-size vector representations, but this compression can entangle semantic content with residual token-level information, such as artifacts arising from attention sink behavior. We propose a simple method that prepends traina…",
-      "score": 2,
+      "score": 6,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -226,7 +226,7 @@
       "link": "https://huggingface.co/papers/2611.08483",
       "date": "2026-11-05T00:00:00.000Z",
       "summary": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for eac…",
-      "score": 3,
+      "score": 8,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -237,7 +237,7 @@
       "link": "https://huggingface.co/papers/2609.37820",
       "date": "2026-11-05T00:00:00.000Z",
       "summary": "When firms respond to new market opportunities, their capacity choices alter the future discounted free cash flows available to both competitors and investors. In competitive markets, these investment decisions publicized in news articles and analyst reports, measuring the change…",
-      "score": 2,
+      "score": 3,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -246,7 +246,7 @@
       "link": "https://huggingface.co/papers/2611.08373",
       "date": "2026-11-05T00:00:00.000Z",
       "summary": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However, vision-language-action (VLA) foundations largely inherit visual representations from 2D vision-language pre-training, while spatial supervision is often int…",
-      "score": 124,
+      "score": 82,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -255,7 +255,7 @@
       "link": "https://huggingface.co/papers/2611.08449",
       "date": "2026-11-05T00:00:00.000Z",
       "summary": "Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generat…",
-      "score": 96,
+      "score": 100,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -266,7 +266,7 @@
       "link": "https://huggingface.co/papers/2611.06976",
       "date": "2026-11-04T13:33:47.000Z",
       "summary": "Prefill-to-Autoregressive Cross-model Transfer (PACT), a form of latent communication between language models, combines a larger model's prompt representations with a smaller model's efficient generation, offering a promising way to balance capability and inference cost. However,…",
-      "score": 12,
+      "score": 15,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -275,7 +275,7 @@
       "link": "https://huggingface.co/papers/2611.06498",
       "date": "2026-11-04T13:32:04.000Z",
       "summary": "Offline retrieval-augmented generation (RAG) on edge devices is updated through signed knowledge packs that carry text and precomputed embedding vectors. A signature proves who published a pack, not that its vectors encode its text. We study this text-vector integrity gap. A veri…",
-      "score": 1,
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -284,7 +284,7 @@
       "link": "https://huggingface.co/papers/2611.06500",
       "date": "2026-11-04T00:00:00.000Z",
       "summary": "Large language model (LLM) agents typically append raw tool outputs to their context. Over multi-step interactions, long and noisy observations incur substantial context overhead and dilute the agent's attention to task-relevant information. Existing token pruning and summarizati…",
-      "score": 1,
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -295,7 +295,7 @@
       "link": "https://huggingface.co/papers/2611.06741",
       "date": "2026-11-04T00:00:00.000Z",
       "summary": "Strong single-turn editing performance does not guarantee reliable multi-turn interaction: as edited outputs are repeatedly reused, small unintended changes can accumulate into severe visual drift. This long-term drift is often mitigated through training on multi-turn data or cro…",
-      "score": 37,
+      "score": 40,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "data"
@@ -306,7 +306,7 @@
       "link": "https://huggingface.co/papers/2611.06982",
       "date": "2026-11-04T00:00:00.000Z",
       "summary": "Chunk-interleaved full-duplex speech language models listen and speak in fixed time chunks, and each chunk must be processed before the next one arrives. Their workload is asymmetric across chunks: listen chunks leave compute idle while awaiting audio, and speak and tool-call chu…",
-      "score": 7,
+      "score": 8,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -315,7 +315,7 @@
       "link": "https://huggingface.co/papers/2611.04527",
       "date": "2026-11-04T00:00:00.000Z",
       "summary": "World Action Models (WAMs) use the predictive knowledge of pretrained video diffusion models for robot control through future video prediction. However, iterative video denoising is costly, and inaccurate visual predictions can compromise action prediction. Our key idea is to mak…",
-      "score": 8,
+      "score": 9,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -326,7 +326,7 @@
       "link": "https://huggingface.co/papers/2611.05376",
       "date": "2026-11-03T18:59:52.000Z",
       "summary": "For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. Large foundation models now write code and run multistep tasks, and personal agents act on a person's behalf. Yet people still forget what they once knew, miss what they a…",
-      "score": 5,
+      "score": 86,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -335,30 +335,111 @@
   ],
   "news": [
     {
-      "title": "Bayern Munich News: Why FC Bayern wants Oskar Pietuszewski; Liverpool, FC Barcelona want Finn Jeltsch; and MORE! - Yahoo Sports",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA4c19rV1ZfYTJxeXZlV3JuYURlVVlrN0tMM3Q4di1pMGtkWVhTM3pzNEtrX0s4czRWNjhOaUN4QjZYUlMtRnFTaFlHWkNJM2NYdHg4RGFsLWhmc1NzVXV3d2s5T056ZXhZNlhRWUEtNzlUUjZhVkhlOUpxdHd5clE?oc=5",
-      "date": "2026-11-07T05:00:00.000Z",
-      "summary": "Bayern Munich News: Why FC Bayern wants Oskar Pietuszewski; Liverpool, FC Barcelona want Finn Jeltsch; and MORE!&nbsp;&nbsp;Yahoo Sports",
+      "title": "Real Madrid Beat Valencia To Level La Liga Leaders Barcelona - Deccan Chronicle",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNWFBVmhITUxkVktsWkFtZGhzbGxGWVM1a0JsbDlLLUNTVEdoUjJKUVBSZWp2Z25UUjRMandheTBWWVNyMzRVUzJ4aXVxU2d0RTViNDNPWncyM1ZCV1pfVlZwQm5ZRER3UjJsRWNaLTNiek9oN083ZEN3RUJrRzhlSVhJZE9TRVJOc0JiVjJRZ040bHFNdG5CVmllYV81VWRneVRzSk0wcTRzNDg?oc=5",
+      "date": "2026-11-08T01:55:06.000Z",
+      "summary": "Real Madrid Beat Valencia To Level La Liga Leaders Barcelona&nbsp;&nbsp;Deccan Chronicle",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "Barcelona set to lose Ebrima Tunkara to Under-17 World Cup - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOVTRudGNJWlhYZGZLVXVLdHFtNXYzbkpoNHVQRkxJRFByWlk1ZjU3dGNCendqUGszLVl2Mmp3NG1PMkczNnNUTVQ4aTh2dGRFR0laN2RwMzlGQlNzT3BiVUMyUmhScVF4TGY4b1gzVUpGdGxxQ253M0ZvejhoMmxtNWFwc1MydW1fZzNkVXJDRHRRMDQtclJIM2dNMXd1QXI2NnZqbHlNY2k?oc=5",
-      "date": "2026-11-07T04:00:00.000Z",
-      "summary": "Barcelona set to lose Ebrima Tunkara to Under-17 World Cup&nbsp;&nbsp;Barca Blaugranes",
+      "title": "Real Madrid make easy work of Valencia to go level with Barcelona at the LaLiga summit - Flashscore.com",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZGc2eHI5bFdHSV9wazB5VUxVdm9CbHhSQ0xMdzRObFdKT1dhdW1haTA2bTQyeU1DUGtWT2tJMEZuaUFWWkpNNDRJWWE0TEFvZ0hrUE4xaEIyaHcyM1E0Vm5ka1VJLWduTGQwYm5sV2RESGVDdThpUXR0ZkJmWU1ySDNuSjk1NkxWTUlSUGxLcmZ3R3p2QWJISkRB?oc=5",
+      "date": "2026-11-07T23:22:35.000Z",
+      "summary": "Real Madrid make easy work of Valencia to go level with Barcelona at the LaLiga summit&nbsp;&nbsp;Flashscore.com",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "Barcelona set to lose Ebrima Tunkara to Under-17 World Cup - Yahoo Sports",
-      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNOEtwRUxnS1kyX1MwdFJZMzhzRzJ1U0dIWC1ESlJZVU1EMU1LOEZrTU9KZFRZRDJvYWw1OUVCVWpidnk4R251T1ZlTzJMT18zV01vaGVlWlc0ZzFlX1NBQ3gzbVFIMi1SYldXb0R1RDNTd010eWNZV3c4VGVPX25RVkFHUTJlVlZJSXc?oc=5",
-      "date": "2026-11-07T04:00:00.000Z",
-      "summary": "Barcelona set to lose Ebrima Tunkara to Under-17 World Cup&nbsp;&nbsp;Yahoo Sports",
+      "title": "Bundesliga star dreams of Barcelona: Deco meets his agent - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNelFES3p5aFpFU0JoT0czT24zLUpDWTEyNzlTcHRKSDdpT05xT3VQNDc2YThwTzhqTjVheFk5UFhzSkxiM1E2UmkzUVdENEhIbWlhR3g5OTJGc0o2X2I5YnFNcVZ0ekp0VVBPQVJPdEZDMFVtOEtHdFdkZ1VjeXVGY29ZdXp0azNLUWN4Rm1VaEJKQlBNSE9jVm03M1Z3SVRPN0F5QmpwWjBqcGM3?oc=5",
+      "date": "2026-11-07T20:16:00.000Z",
+      "summary": "Bundesliga star dreams of Barcelona: Deco meets his agent&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football",
+        "ai"
+      ]
+    },
+    {
+      "title": "Richard Lloyd, Television Guitarist, Dies at 75",
+      "link": "https://pitchfork.com/story/richard-lloyd-television-guitarist-dies-at-75/",
+      "date": "2026-11-07T17:11:52.000Z",
+      "summary": "Lloyd co-founded the pioneering rock band alongside Tom Verlaine, Billy Ficca, and Richard Hell",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Samyang AF 60-180mm f/2.8 Review: A Trinity Completed",
+      "link": "https://petapixel.com/2026/11/07/samyang-af-60-180mm-f-2-8-review-a-trinity-completed/",
+      "date": "2026-11-07T15:01:52.000Z",
+      "summary": "The two major third-party manufacturers from Japan have a complete trinity of full-frame professional f/2.8 zoom lenses. Sigma has long had a complete set, and Tamron has its excellent G2 series finalized. The Chinese companies are only now venturing into the autofocusing pro zoo…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Wildlife Silhouettes and the Power of Shape",
+      "link": "https://petapixel.com/2026/11/07/wildlife-silhouettes-and-the-power-of-shape/",
+      "date": "2026-11-07T13:30:12.000Z",
+      "summary": "Explore how posture, shape, light, and composition can help wildlife photographers create striking backlit imagery that tells a powerful story. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Bayern Munich News: Why FC Bayern wants Pietuszewski; Finn Jeltsch info - Bavarian Football Works",
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQbFRKOWJqUFE5QloxVjFvMVhwcFdNLXNHZFNuRkprUEpBRVhqWFdZWFE4VUJqaW1RZEFCVUE2YmFhZnFXbThZTUUxcTcwWWpOTTFodnpzUzJWcE9XSUtTZ2xFT0VURlVvS1IxbFlaOGo1TFNiODVvazRCZ0FZR09vamhBYndlZ3BzaUVIVmJzaFotTE9Zd1F1YVBkZ0MzNGJsMVkwTkphN1FnQ0pWY2E5V1pXZ29lZi1TRWRaX0k0VnkyZUJ5YjJObHdxZkFQRTVfTUpOa0llSUxYVGhyYXdYUml6d0VteW1IVXc?oc=5",
+      "date": "2026-11-07T13:22:00.000Z",
+      "summary": "Bayern Munich News: Why FC Bayern wants Pietuszewski; Finn Jeltsch info&nbsp;&nbsp;Bavarian Football Works",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Pioneering Female Photographer’s Work Discovered After Thousands of Negatives Found in Suitcase",
+      "link": "https://petapixel.com/2026/11/07/violette-cornelius-pioneering-female-photographer-discovered-after-thousands-of-negatives-found-in-suitcase/",
+      "date": "2026-11-07T12:00:40.000Z",
+      "summary": "The work of a pioneering female photographer, whose images remained hidden for decades until thousands of her negatives were discovered in suitcases, is being exhibited for the first time. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Lamine Yamal hailed as closest player to Lionel Messi and tipped to become a seven-time Ballon d’Or winne - The Times of India",
+      "link": "https://news.google.com/rss/articles/CBMioAJBVV95cUxOeDF5eWJSSkNJeWNWLXVhMVAyU05WR21pUnFhcGdUVG5RSEY0QzJ2NlpnWWhKTEVUVlI0UllpY1dfZ1ZxcjlPTksxVnlOc3lOZjRNZGtiNjF5bWxTdVlXbDJzbWwzT3RpbEZid2tIeDcxTEtFNnBCNkFPRmhMQ1NZT3ZtSmxKQkJ6YWlaUW9mNnRtWXJBU0x1LUExYTRnZ0tCZkg0SDRNLUxxOGhwS0VDQk5GOTVNaU9BRUt1VkxDTU5OODNyVTVFRzJlaFRuMFQ4VTllTE1lanpRbWdwZjU0TTdES0pZeUp0TTdKQWxpREd5YXRkN1VXRjh2b0lJaUhsbl9OTnRETm9NbkU2OUlYaVBqYUY4Z3pPQmZsTjN0Q0zSAaYCQVVfeXFMUEhsUm12dXNVdGd2WEJFZ29OUFpVVnF4YmQ1NHRwbHczMmh6d2g4RHlkMmRsVm1mMkJFLW1JRURJZ0ViRWxNZm9aZFI4WU0tb3FsTlAyck9HdUR0aktqRUlVTnVxR3dIZjE3cVJybFVOQmVSSW0zYW96cDNWMnM5UVI3bWVvdU93NmdmQ2IxQ0tOZkRSbG1qV0o0NnhhMndGX2JfenJBcGhKSS1qVGZXNXVsVWV0Q1kwek01YnRqb0xyX0RnUnZtX3ZnS3VEZFNaQTItTDdXZHk1ajRxUW9mSmpwTU4yQjFzT2VJRXNZVGF5anBGWTBBUlBNS0wzT2JTRlloUV9BZW9TLTIwcFl4X3NrRG9MNThGVHYySjFzV0JfYnNjeFhR?oc=5",
+      "date": "2026-11-07T10:36:00.000Z",
+      "summary": "Lamine Yamal hailed as closest player to Lionel Messi and tipped to become a seven-time Ballon d’Or winne&nbsp;&nbsp;The Times of India",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "FC Barcelona News: 7 November 2026; Preparations begin for Atlético Madrid, Eric Garcia returns to training - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNZU9EeldGZXA4TDdGVDBpYVRQWTNIY1ZGVy1uU2FqLTVjbW9tOElZcm94UHRRYmFRRU1ueVJsTUthTk1KbW8yNUFKYmdlMUE3UU1vSjR6YW1MN3ZEQUpXRF9UZHNSREtsVlY3MUtfbXRQazlYUWJLN25TMTNOdlc5VDR2cndOMHFSN2ZlLThZTTV3aEpQTm5jYlFmV0xZMmZVdUJDbU1FRTNaWE05djFXeXJ6WXNlUU5WUVRzc0xFUjdYWnpZRmxEaWdYcUJPNjdkczVPaUJlSUNfYjVqZVlLUzVrOVFQQQ?oc=5",
+      "date": "2026-11-07T10:00:00.000Z",
+      "summary": "FC Barcelona News: 7 November 2026; Preparations begin for Atlético Madrid, Eric Garcia returns to training&nbsp;&nbsp;Barca Blaugranes Three talking points ahead of Atletico Madrid vs Barcelona | La Liga MD 12&nbsp;&nbsp;Barca Universal Atlético Madrid vs Barcelona, La Liga: Tea…",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Valencia 0-3 Real Madrid (8 Nov, 2026) Game Analysis - ESPN India",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5mcGh0RkVhOUhWMmlEUW9IZVFmXzVkWXBpXzlYTmY1WnZTcGdxS2RTYnV3bXYwMlZvZGF3Vnpmc1hMTUJEODZUS0dEUUx0VDNWRmFtLTdfVUtCVXkwY3NZMWxqVnc?oc=5",
+      "date": "2026-11-07T09:06:00.000Z",
+      "summary": "Valencia 0-3 Real Madrid (8 Nov, 2026) Game Analysis&nbsp;&nbsp;ESPN India",
       "source": "Google News",
       "tags": [
         "football"
@@ -367,7 +448,7 @@
     {
       "title": "Man Utd handed boost in pursuit of Barcelona left-back - Paper Talk - Sky Sports",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNSm83SGdvZTZHWTZvcHlDR3ZQUkRUSmh1dl80TUk2UDAzZ2JiQy16ZEhhcXM0V0V1d2FHcHdYRS1mQ1VWYUJqdjNoV0FWMEozeU9HdUxVSFZsMXUwdHZTYlY2NFJYV3hqWjVPSERyb3c4ZjgzLVd3cEluLWdIdDk5WjBtdFBHWlJyX3NlTXg5WGxYT19SNDVMcExreGhzMnRZU0s5ajBBc1JvR05Gb0ZNaUhMZzk?oc=5",
-      "date": "2026-11-06T22:46:42.000Z",
+      "date": "2026-11-07T07:37:45.000Z",
       "summary": "Man Utd handed boost in pursuit of Barcelona left-back - Paper Talk&nbsp;&nbsp;Sky Sports",
       "source": "Google News",
       "tags": [
@@ -385,6 +466,16 @@
       ]
     },
     {
+      "title": "Scientists accidentally solve a chemistry mystery that lasted 60 years",
+      "link": "https://www.sciencedaily.com/releases/2026/11/261103003205.htm",
+      "date": "2026-11-06T21:28:04.000Z",
+      "summary": "After more than 60 years of unsuccessful attempts, scientists have finally isolated stable examples of elusive boron-oxygen molecules once considered too unstable to capture. The surprising breakthrough, achieved using relatively simple chemical reactions, could pave the way for…",
+      "source": "ScienceDaily Chemistry",
+      "tags": [
+        "chem"
+      ]
+    },
+    {
       "title": "Please Do Not Buy Costco’s $520 Canon R100 Kit",
       "link": "https://petapixel.com/2026/11/06/please-do-not-buy-costcos-520-canon-r100-kit/",
       "date": "2026-11-06T20:36:09.000Z",
@@ -392,26 +483,6 @@
       "source": "PetaPixel",
       "tags": [
         "photo"
-      ]
-    },
-    {
-      "title": "AI is dramatically accelerating AI research",
-      "link": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
-      "date": "2026-11-06T20:27:23.000Z",
-      "summary": "Article URL: https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai Comments URL: https://news.ycombinator.com/item?id=50397994 Points: 255 # Comments: 207",
-      "source": "Hacker News",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
-      "title": "Arsenal have no intention of selling Barcelona-linked 24-year-old defender – Romano - Barca Universal",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVDlpeEZEVDl0U1h4Uk1POF80dUpZTllnSnVjNHRTOTd0UDUxNTNWand4VENINUxuTzhSQWMyQ1ZZUWVMRUF6TVRXcDdXOHJtRENQVXVUUnhCVzZNVDF0cWVuaHhYTjg1em5IUVhqWHF1OVpYTUJGSjFoOURCcU9aWVZtNWktZU9zbU9rSkFJckJGQTNTV21OOGU5RHhldE8wOXk3UE1uOHJSN0MzYlE?oc=5",
-      "date": "2026-11-06T20:00:48.000Z",
-      "summary": "Arsenal have no intention of selling Barcelona-linked 24-year-old defender – Romano&nbsp;&nbsp;Barca Universal",
-      "source": "Google News",
-      "tags": [
-        "football"
       ]
     },
     {
@@ -465,16 +536,6 @@
       ]
     },
     {
-      "title": "Saype Is a Humanist Land Artist Who Captures His Murals with a Drone",
-      "link": "https://petapixel.com/2026/11/06/saype-is-a-humanist-land-artist-who-captures-his-murals-with-a-drone/",
-      "date": "2026-11-06T17:27:56.000Z",
-      "summary": "Grass, snow, sand, and laterite—these are the surfaces Saype (real name Guillaume Legros) has spent the last fifteen years exploring, creating monumental, ephemeral works of art around the world with his 100% biodegradable paint. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
       "title": "Cleo Reed Announces New EP Is This How Empires Die?",
       "link": "https://pitchfork.com/story/cleo-reed-announces-new-ep-is-this-how-empires-die/",
       "date": "2026-11-06T17:26:52.000Z",
@@ -495,16 +556,6 @@
       ]
     },
     {
-      "title": "DaVinci Resolve Now Supports Apple’s Brand-New Touchscreen Mac",
-      "link": "https://petapixel.com/2026/11/06/davinci-resolve-now-supports-apples-brand-new-touchscreen-mac/",
-      "date": "2026-11-06T15:35:47.000Z",
-      "summary": "Apple's brand-new MacBook Pro with PROLED XDR display, the first Mac to ever feature a touchscreen, arrives today, and Blackmagic Design's DaVinci Resolve 21 video editor is ready. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
       "title": "Future, Drake, and Travis Scott Join Forces for “Ya Hit”",
       "link": "https://pitchfork.com/story/future-drake-and-travis-scott-join-forces-for-ya-hit/",
       "date": "2026-11-06T15:35:30.000Z",
@@ -512,16 +563,6 @@
       "source": "Pitchfork",
       "tags": [
         "music"
-      ]
-    },
-    {
-      "title": "The ‘Enough’ Is for All You Small Phone Fans",
-      "link": "https://petapixel.com/2026/11/06/the-enough-is-for-all-you-small-phone-fans/",
-      "date": "2026-11-06T14:43:06.000Z",
-      "summary": "Not everyone is stoked that smartphones keep getting larger, offering ever-bigger displays. In fact, some people are very much in love with the small phones of years past. New smartphone company Enough believes there are, well, enough of those people to justify launching an all-n…",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
       ]
     },
     {
@@ -535,26 +576,6 @@
       ]
     },
     {
-      "title": "Large number of FC Barcelona players called up for international duty - Official FC Barcelona Website",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOZGpkMnJOQk5KY2w2OVdzTi1Qa1g3dGpMT3Z4R3NpV0tnYmxXZVhQZGR3VjFHZS1XZGloU3NEekh0dzVUM2NGLWlZeVRDZDh4eVBnZnphNnFPZkJQRWh4a3Z5MlhHMS1yNk5UTml5LXhFR29ZZml3ZFkyQ1lrdVgwS3RRbURwazlXbkNlZF9QT0pocjdsMHd1ekRkd19YaHIwcF96VE81ZXlScF92azJ2Q2JCQQ?oc=5",
-      "date": "2026-11-06T13:03:15.000Z",
-      "summary": "Large number of FC Barcelona players called up for international duty&nbsp;&nbsp;Official FC Barcelona Website",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Weakness? Barcelona spend €0m on defenders as 29 European clubs splash €100m+ - Transfermarkt",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPWEVCXzNGMTBFdXZ1WHdFTE0yVWptTTNFX09maFdncXd6M3UtejhIU2xZNDh3T093allrOHF3c0EwNXJSbHFaanBHMWN1aGhpbUhYcW05ZnA3OHRLTF9PWFVIYk1ycVNlbC1xVlhYM25pZHk3VzBkTV90ZkVLUF9KSkJVcHF6VVBPaHhtcGl0Qy1jR3ltWTh4YXR2bXZDdHpaSENoRi0tbWVWU2lQUXJSMWlKNGVNM19SVGRic2xRbXFvdWk1UW9iZXRoQQ?oc=5",
-      "date": "2026-11-06T11:29:16.000Z",
-      "summary": "Weakness? Barcelona spend €0m on defenders as 29 European clubs splash €100m+&nbsp;&nbsp;Transfermarkt",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
       "title": "Watch Slayyyter Romance a Skeleton in New “Hey Boyyy” Video",
       "link": "https://pitchfork.com/story/watch-slayyyter-date-a-skeleton-in-new-hey-boyyy-video/",
       "date": "2026-11-06T05:20:22.000Z",
@@ -562,26 +583,6 @@
       "source": "Pitchfork",
       "tags": [
         "music"
-      ]
-    },
-    {
-      "title": "Go Fishing With Twisted Teens in Video for “I Spend My Time Crying”",
-      "link": "https://pitchfork.com/story/go-fishing-with-twisted-teens-in-new-video-for-i-spend-my-time-crying/",
-      "date": "2026-11-06T05:18:01.000Z",
-      "summary": "Their new album, The Holy Cross Tigers, is out today",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "The Metropolitano curse haunts Simeone: Barcelona rule Atletico's fortress before the top-of-the-table clash - Goal.com",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPNFZBR25qc3gwQVVhcFo3WGhRcFVQYzd4aXhlUEY4OWkxYTdDU3laYllWU1RkVGlfSEtnNXp4a0xKemFsZ1doUFYyTWpKNEFmazFiNkR6MWRzeTBuQWJWQlBZX2V6cl9KS0d1QjBOMHFtV0pXem5fZHZnZ244eDlkaXV0OTZ1VzVUczBmS1hjNnBYdjRlWlpkdlZvN1JYVGMybmd3VDBiNjhya21xb3lkMnZUbFRMd09yNDBYVTF6bnVNQ2N3Wm5rQjc0Zk5wR1NoZ1laVy03SzU2c01VU2FMcGx0VXBrMDRKNHZQbg?oc=5",
-      "date": "2026-11-05T21:49:57.000Z",
-      "summary": "The Metropolitano curse haunts Simeone: Barcelona rule Atletico's fortress before the top-of-the-table clash&nbsp;&nbsp;Goal.com Rival Watch: Atletico star returns to training ahead of Barcelona clash; key duo out&nbsp;&nbsp;Barca Universal When and where to watch Atlético Madrid…",
-      "source": "Google News",
-      "tags": [
-        "football"
       ]
     },
     {
@@ -650,16 +651,6 @@
       "link": "https://www.sciencedaily.com/releases/2026/10/261008005242.htm",
       "date": "2026-10-10T18:57:27.000Z",
       "summary": "Princeton Plasma Physics Laboratory may have found a dramatically more efficient route to fusion energy by reversing the traditional approach: heating plasma first, then increasing its density. Their calculations could help future reactors reach self-sustaining fusion with far le…",
-      "source": "ScienceDaily Chemistry",
-      "tags": [
-        "chem"
-      ]
-    },
-    {
-      "title": "Physicists just found the ‘ghost’ of superconductivity",
-      "link": "https://www.sciencedaily.com/releases/2026/10/261005071517.htm",
-      "date": "2026-10-07T12:34:39.000Z",
-      "summary": "Physicists have found striking evidence for an unusual form of superconducting behavior in uranium ditelluride, where electron pairs organize into rippling patterns called pair density waves. Even more surprisingly, these patterns appear to survive after ordinary superconductivit…",
       "source": "ScienceDaily Chemistry",
       "tags": [
         "chem"
