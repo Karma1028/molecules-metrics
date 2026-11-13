@@ -13,16 +13,16 @@ import { TwinDoor } from "../../components/TwinDoor"
 
 
 const CSS = String.raw`
-  .p-gl .plot-toggle{font:600 9px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:none;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:999px;padding:5px 10px;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease)}
+  .p-gl .plot-toggle{font:600 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink);background:none;border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:999px;padding:5px 10px;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease)}
   .p-gl .plot-toggle:hover,.p-gl .plot-toggle[aria-pressed="true"]{background:var(--accent);color:#fff}
   .p-gl .plot-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .p-gl .cells{transition:opacity .35s var(--ease)}
   .p-gl .cells.plotted{opacity:0;pointer-events:none}
   .p-gl .plot{position:absolute;inset:24px 10px;z-index:3}
-  .p-gl .plot .ax{position:absolute;font:600 8px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:rgba(244,234,217,.55)}
+  .p-gl .plot .ax{position:absolute;font:600 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:rgba(244,234,217,.55)}
   .p-gl .plot .ax-y{left:2px;top:0}
   .p-gl .plot .ax-x{right:2px;bottom:0}
-  .p-gl .plot .nodata-k{position:absolute;left:2px;bottom:0;font:600 8px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:rgba(244,234,217,.4)}
+  .p-gl .plot .nodata-k{position:absolute;left:2px;bottom:0;font:600 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:rgba(244,234,217,.4)}
   .p-gl .plot .dot{position:absolute;translate:-50% -50%;padding:0;border:1.5px solid rgba(244,234,217,.8);border-radius:50%;overflow:hidden;cursor:pointer;background:#17110d;
     animation:pl-in .5s var(--ease) both;animation-delay:var(--d);transition:scale .25s var(--ease),border-color .25s var(--ease)}
   .p-gl .plot .dot img{width:100%;height:100%;object-fit:cover;display:block}
@@ -36,17 +36,17 @@ const CSS = String.raw`
   /* masthead — compact editorial, matches the field-notebook system */
   .p-gl .gl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;
     padding-bottom:clamp(6px,1.1vh,12px);margin-bottom:clamp(8px,1.4vh,16px);border-bottom:1px dashed color-mix(in srgb,var(--accent) 40%,transparent)}
-  .p-gl .gl-kick{display:inline-flex;align-items:center;gap:9px;font:600 10px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .p-gl .gl-kick{display:inline-flex;align-items:center;gap:9px;font:600 11px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent-ink)}
   .p-gl .gl-kick .ic{width:14px;height:14px}
   .p-gl .gl-title{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3.6vw,44px);line-height:.95;letter-spacing:-.025em;color:var(--ink);margin:6px 0 3px}
-  .p-gl .gl-title em{font-style:italic;font-weight:500;color:var(--accent)}
+  .p-gl .gl-title em{font-style:italic;font-weight:500;color:var(--accent-ink)}
   .p-gl .gl-lede{font-size:clamp(11.5px,1vw,14px);color:var(--muted);max-width:52ch;text-wrap:pretty}
   .p-gl .gl-lede b{color:var(--ink);font-weight:600}
   .p-gl .gl-src{display:flex;flex-direction:column;gap:5px;align-items:flex-end;text-align:right;white-space:nowrap}
-  .p-gl .gl-src .live{display:inline-flex;align-items:center;gap:7px;font:500 10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .p-gl .gl-src .live{display:inline-flex;align-items:center;gap:7px;font:500 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .p-gl .gl-src .live .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
   .p-gl .gl-src .live b{color:var(--ink);font-weight:600}
-  .p-gl .gl-src .cue{font:500 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.8}
+  .p-gl .gl-src .cue{font:500 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.8}
 
   /* contact-sheet stage: the printed frame (hero) + the full sheet of negatives */
   .p-gl .stage{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(258px,.95fr);gap:clamp(12px,1.8vw,26px)}
@@ -82,13 +82,13 @@ const CSS = String.raw`
   .p-gl .plate .big{display:flex;align-items:flex-start;gap:3px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.5)}
   .p-gl .plate .big .n{font-family:var(--font-display);font-weight:900;font-size:clamp(40px,5vw,76px);line-height:.8;letter-spacing:-.05em;
     font-variant-numeric:tabular-nums}
-  .p-gl .plate .big .of{font:600 10px/1 var(--font-mono);letter-spacing:.12em;opacity:.78;margin-top:3px}
+  .p-gl .plate .big .of{font:600 11px/1 var(--font-mono);letter-spacing:.12em;opacity:.78;margin-top:3px}
   @media(prefers-reduced-motion:reduce){.p-gl .peek{transition:none}}
 
   /* the sheet — every frame, always visible */
   .p-gl .sheet{min-height:0;display:flex;flex-direction:column;gap:clamp(6px,1vh,10px)}
   .p-gl .sheet-top{flex:0 0 auto;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-  .p-gl .sheet-top .st{font:600 9px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .p-gl .sheet-top .st{font:600 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
   .p-gl .sheet-top .st b{color:var(--ink)}
   .p-gl .roll{flex:1;min-height:0;display:flex;padding:22px 8px}
   .p-gl .roll::before{top:6px}
@@ -103,7 +103,7 @@ const CSS = String.raw`
   /* focus-pull: hovering one negative dims the rest of the sheet */
   .p-gl .cells.focus .cell:not(.hot):not(.on){opacity:.4;filter:saturate(.7)}
   .p-gl .cell{opacity:1;filter:none;transition:border-color .3s,box-shadow .3s,transform .3s,opacity .3s,filter .3s}
-  .p-gl .cell .cno{position:absolute;top:4px;left:5px;z-index:2;font:600 8px/1 var(--font-mono);letter-spacing:.08em;color:#fff;
+  .p-gl .cell .cno{position:absolute;top:4px;left:5px;z-index:2;font:600 11px/1 var(--font-mono);letter-spacing:.08em;color:#fff;
     text-shadow:0 1px 4px rgba(0,0,0,.7);opacity:.9}
   /* the active negative is being "printed": slot sits empty, marked */
   .p-gl .cell.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),var(--glow);cursor:default;
@@ -112,7 +112,7 @@ const CSS = String.raw`
   .p-gl .cell .slotmark{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
     color:#f4ead9}
   .p-gl .cell .slotmark .sn{font:700 clamp(13px,1.5vw,18px)/1 var(--font-mono);letter-spacing:.06em}
-  .p-gl .cell .slotmark .sl{font:600 6.5px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+  .p-gl .cell .slotmark .sl{font:600 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;opacity:.8}
 
 
   /* lightbox v2 — immersive darkroom print */
@@ -153,13 +153,13 @@ const CSS = String.raw`
   .p-gl-lb .lb-meta{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;max-width:72ch}
   .p-gl-lb .lb-nm{display:flex;align-items:baseline;gap:14px}
   .p-gl-lb .lb-nm .nm{font-family:var(--font-display);font-weight:700;font-size:clamp(18px,2.4vw,30px);line-height:1;color:#f6efe4}
-  .p-gl-lb .lb-nm .no{font:600 11px/1 var(--font-mono);letter-spacing:.16em;color:var(--accent)}
-  .p-gl-lb .lb-exif{display:flex;flex-wrap:wrap;justify-content:center;font:500 10px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(246,239,228,.72)}
+  .p-gl-lb .lb-nm .no{font:600 11px/1 var(--font-mono);letter-spacing:.16em;color:var(--accent-ink)}
+  .p-gl-lb .lb-exif{display:flex;flex-wrap:wrap;justify-content:center;font:500 11px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(246,239,228,.72)}
   .p-gl-lb .lb-exif .ex{padding:0 11px;border-right:1px solid rgba(246,239,228,.28)}
   .p-gl-lb .lb-exif .ex:last-child{border-right:0}
 
   /* corner motif + controls */
-  .p-gl-lb .lb-alpona{position:fixed;width:clamp(40px,6vw,72px);height:clamp(40px,6vw,72px);color:var(--accent);opacity:.45;pointer-events:none;z-index:1}
+  .p-gl-lb .lb-alpona{position:fixed;width:clamp(40px,6vw,72px);height:clamp(40px,6vw,72px);color:var(--accent-ink);opacity:.45;pointer-events:none;z-index:1}
   .p-gl-lb .lb-alpona.tl{top:clamp(14px,3vh,30px);left:clamp(14px,3vw,30px)}
   .p-gl-lb .lb-alpona.br{bottom:clamp(14px,3vh,30px);right:clamp(14px,3vw,30px);transform:rotate(180deg)}
   .p-gl-lb .lb-btn{position:fixed;z-index:4;width:42px;height:42px;border-radius:50%;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer;

@@ -110,7 +110,7 @@ const CSS = String.raw`
   /* ── masthead / nameplate ── */
   .p-md .mh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;
     border-bottom:1.5px solid var(--fz-line);padding-bottom:clamp(5px,1vh,9px)}
-  .p-md .mh-kick{font:800 9.5px/1 var(--font-mono);letter-spacing:.26em;text-transform:uppercase;
+  .p-md .mh-kick{font:800 11px/1 var(--font-mono);letter-spacing:.26em;text-transform:uppercase;
     color:var(--gold);display:flex;align-items:center;gap:9px}
   .p-md .ribbon{display:inline-flex;height:11px;width:22px;border-radius:2px;overflow:hidden;box-shadow:0 0 0 1px var(--fz-line)}
   .p-md .ribbon i{flex:1}.p-md .ribbon .g{background:var(--garnet)}.p-md .ribbon .b{background:#004D98}.p-md .ribbon .y{background:var(--gold)}
@@ -119,8 +119,8 @@ const CSS = String.raw`
   .p-md .mh-title em{color:var(--garnet);font-style:normal}
   .p-md .mh-sub{font-family:var(--font-hand);font-size:clamp(13px,1.3vw,18px);color:var(--fz-mut);rotate:-.6deg}
   .p-md .mh-meta{text-align:right;display:flex;flex-direction:column;gap:3px;align-items:flex-end}
-  .p-md .mh-iss{font:800 10px/1 var(--font-display);letter-spacing:.04em;color:var(--fz-ink);text-transform:uppercase}
-  .p-md .mh-src{font:600 8.5px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);max-width:24ch;white-space:normal}
+  .p-md .mh-iss{font:800 11px/1 var(--font-display);letter-spacing:.04em;color:var(--fz-ink);text-transform:uppercase}
+  .p-md .mh-src{font:600 11px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);max-width:24ch;white-space:normal}
 
   /* ── the spread grid ── */
   .p-md .spread{flex:1;min-height:0;display:grid;gap:clamp(9px,1.1vw,15px);
@@ -137,8 +137,8 @@ const CSS = String.raw`
   .p-md .print .img{position:absolute;inset:6px 6px auto;top:6px;bottom:30px;background-size:cover;background-position:center;border-radius:1px;overflow:hidden}
   .p-md .print .cap{position:absolute;left:0;right:0;bottom:0;height:30px;display:flex;align-items:center;gap:7px;
     padding:0 9px;background:#fff;color:#17110d;z-index:4}
-  .p-md .print .cap b{font:800 8.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--garnet)}
-  .p-md .print .cap span{font:600 9px/1.2 var(--font-body);color:#4a403a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .p-md .print .cap b{font:800 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--garnet)}
+  .p-md .print .cap span{font:600 11px/1.2 var(--font-body);color:#4a403a;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .p-md .print .zc{position:absolute;top:11px;right:11px;z-index:5;width:24px;height:24px;display:grid;place-items:center;
     background:rgba(10,8,6,.55);border-radius:50%;color:#fff;opacity:0;transition:opacity .22s}
   .p-md .print .zc .ic{width:12px;height:12px}
@@ -157,12 +157,12 @@ const CSS = String.raw`
   .p-md .hud{position:absolute;left:12px;bottom:40px;z-index:4;display:flex;align-items:center;gap:7px}
   .p-md .hud .live{display:flex;align-items:center;gap:5px;background:rgba(10,8,6,.56);backdrop-filter:blur(3px);
     border:1px solid rgba(255,255,255,.18);border-radius:4px;padding:4px 8px;
-    font:800 8px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:#fff}
+    font:800 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:#fff}
   .p-md .hud .live .d{width:6px;height:6px;border-radius:50%;background:var(--garnet);animation:mdPulse 1.6s ease-in-out infinite}
   .p-md .hud .chip{background:rgba(10,8,6,.56);backdrop-filter:blur(3px);border:1px solid rgba(255,255,255,.18);
     border-radius:4px;padding:3px 9px;text-align:center}
   .p-md .hud .chip b{font:900 16px/1 var(--font-display);color:var(--gold);font-variant-numeric:tabular-nums;display:block}
-  .p-md .hud .chip i{font:700 6.5px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);font-style:normal}
+  .p-md .hud .chip i{font:700 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);font-style:normal}
 
   /* tracking reticle over a small photo (the boot) */
   .p-md .retic{position:absolute;inset:18% 20%;z-index:3;pointer-events:none}
@@ -171,7 +171,7 @@ const CSS = String.raw`
   .p-md .retic span:nth-child(2){top:0;right:0;border-left:none;border-bottom:none}
   .p-md .retic span:nth-child(3){bottom:0;left:0;border-right:none;border-top:none}
   .p-md .retic span:nth-child(4){bottom:0;right:0;border-left:none;border-top:none}
-  .p-md .retic em{position:absolute;left:0;top:-15px;font:800 6.5px/1 var(--font-mono);letter-spacing:.1em;
+  .p-md .retic em{position:absolute;left:0;top:-15px;font:800 11px/1 var(--font-mono);letter-spacing:.1em;
     text-transform:uppercase;color:var(--gold);text-shadow:0 1px 3px rgba(0,0,0,.7);font-style:normal}
 
   /* ① dominant print — the terrace, slightly tilted like it was taped down */
@@ -179,14 +179,14 @@ const CSS = String.raw`
   .p-md .lead .print{flex:1;rotate:-1.1deg;padding:9px 9px 0}
   .p-md .lead .print .img{top:9px;left:9px;right:9px;bottom:38px}
   .p-md .lead .print .cap{height:38px}
-  .p-md .lead .print .cap b{font-size:9.5px}
+  .p-md .lead .print .cap b{font-size:11px}
   .p-md .lead .print .cap span{font-size:11px;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 
   /* ② poster — editorial headline stats from real data ── */
   .p-md .poster{display:flex;flex-direction:column;justify-content:center;gap:clamp(6px,1.1vh,13px);
     padding:clamp(8px,1.4vw,18px) clamp(10px,1.6vw,20px);background:var(--fz-card);
     backdrop-filter:blur(3px);border:1px solid var(--fz-line);border-radius:5px}
-  .p-md .poster .pk{font:800 9px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  .p-md .poster .pk{font:800 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
     display:flex;align-items:center;gap:7px}
   .p-md .poster .pk .ic{width:12px;height:12px}
   .p-md .pl{display:flex;align-items:baseline;gap:11px;line-height:.9}
@@ -195,7 +195,7 @@ const CSS = String.raw`
   .p-md .pl.gold .big{color:var(--gold)}
   .p-md .pl .say{font-family:var(--font-display);font-weight:900;font-size:clamp(15px,1.7vw,23px);
     text-transform:uppercase;letter-spacing:-.01em;color:var(--fz-ink);line-height:.94;max-width:16ch}
-  .p-md .pl .say em{font-style:normal;color:var(--fz-mut);display:block;font:600 10px/1.35 var(--font-mono);
+  .p-md .pl .say em{font-style:normal;color:var(--fz-mut);display:block;font:600 11px/1.35 var(--font-mono);
     letter-spacing:.04em;text-transform:none;margin-top:4px}
   .p-md .poster .hand{font-family:var(--font-hand);font-size:clamp(14px,1.4vw,19px);color:var(--blau);
     rotate:-1deg;margin-top:2px}
@@ -206,7 +206,7 @@ const CSS = String.raw`
   .p-md .yh-main{display:flex;align-items:baseline;gap:6px}
   .p-md .yh-main b{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4.4vw,58px);color:var(--garnet);
     line-height:.82;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
-  .p-md .yh-main i{font:700 7.5px/1.05 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);font-style:normal}
+  .p-md .yh-main i{font:700 11px/1.05 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);font-style:normal}
   .p-md .yh-delta{font:800 11px/1 var(--font-mono);letter-spacing:.03em;padding:4px 8px;border-radius:4px;display:inline-flex;align-items:center;gap:5px}
   .p-md .yh-delta span{font-weight:600;color:var(--fz-mut)}
   .p-md .yh-delta.good{color:#1f9d57;background:color-mix(in srgb,#1f9d57 15%,transparent)}
@@ -217,7 +217,7 @@ const CSS = String.raw`
 
   /* legend in the header */
   .p-md .leg{margin-left:auto;display:inline-flex;align-items:center;gap:6px;
-    font:700 7.5px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut)}
+    font:700 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut)}
   .p-md .leg .lg{width:9px;height:9px;border-radius:2px;margin-right:-2px}
   .p-md .leg .lg.prev{background:color-mix(in srgb,var(--garnet) 70%,transparent)}
   .p-md .leg .lg.cur{background:var(--gold)}
@@ -231,70 +231,70 @@ const CSS = String.raw`
   .p-md .radar .rp{stroke-width:1.6;stroke-linejoin:round}
   .p-md .radar .rp.prev{fill:color-mix(in srgb,var(--garnet) 16%,transparent);stroke:var(--garnet)}
   .p-md .radar .rp.cur{fill:color-mix(in srgb,var(--gold) 20%,transparent);stroke:var(--gold)}
-  .p-md .radar .al{fill:var(--fz-mut);font:800 6px/1 var(--font-mono);letter-spacing:.04em;
+  .p-md .radar .al{fill:var(--fz-mut);font:800 11px/1 var(--font-mono);letter-spacing:.04em;
     text-transform:uppercase;text-anchor:middle}
 
   .p-md .pstats{flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(4px,0.8vh,8px)}
   .p-md .under{display:flex;flex-wrap:wrap;align-items:center;gap:5px 10px;
     padding-top:6px;border-top:1px solid var(--fz-line)}
-  .p-md .under .ut{font:800 7.5px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-  .p-md .under .uc{font:600 8.5px/1 var(--font-mono);color:var(--fz-mut);display:inline-flex;align-items:baseline;gap:3px}
+  .p-md .under .ut{font:800 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .p-md .under .uc{font:600 11px/1 var(--font-mono);color:var(--fz-mut);display:inline-flex;align-items:baseline;gap:3px}
   .p-md .under .uc b{font:900 11px/1 var(--font-display);color:var(--fz-ink);font-variant-numeric:tabular-nums}
-  .p-md .under .un{flex-basis:100%;font:600 7.5px/1.3 var(--font-mono);color:var(--fz-mut);opacity:.85}
+  .p-md .under .un{flex-basis:100%;font:600 11px/1.3 var(--font-mono);color:var(--fz-mut);opacity:.85}
 
   .p-md .cmp{display:flex;flex-direction:column;gap:1px}
   .p-md .cmp-head{display:grid;grid-template-columns:1fr auto 18px auto;gap:8px;align-items:center;
-    font:700 7px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fz-mut);
+    font:700 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fz-mut);
     padding:0 2px 3px;border-bottom:1px solid var(--fz-line)}
   .p-md .cmp-head span:nth-child(2),.p-md .cmp-head span:nth-child(4){text-align:right}
   .p-md .cmp-row{display:grid;grid-template-columns:1fr auto 18px auto;gap:8px;align-items:center;padding:2.5px 2px}
-  .p-md .cl{font:700 10px/1 var(--font-body);color:var(--fz-ink)}
+  .p-md .cl{font:700 11px/1 var(--font-body);color:var(--fz-ink)}
   .p-md .ca{font:700 11px/1 var(--font-mono);color:var(--fz-mut);text-align:right;font-variant-numeric:tabular-nums}
   .p-md .cb{font:900 12px/1 var(--font-display);color:var(--fz-ink);text-align:right;font-variant-numeric:tabular-nums}
   .p-md .cb.good{color:#1f9d57}.p-md .cb.bad{color:#d14b45}
   :root[data-theme="dark"] .p-md .cb.good{color:#48d184}:root[data-theme="dark"] .p-md .cb.bad{color:#f2756f}
-  .p-md .cd{font:800 9px/1 var(--font-mono);text-align:center}
+  .p-md .cd{font:800 11px/1 var(--font-mono);text-align:center}
   .p-md .cd.good{color:#1f9d57}.p-md .cd.bad{color:#d14b45}.p-md .cd.same{color:var(--fz-mut)}
   :root[data-theme="dark"] .p-md .cd.good{color:#48d184}:root[data-theme="dark"] .p-md .cd.bad{color:#f2756f}
-  .p-md .cmp-empty{font:600 10px/1.4 var(--font-mono);color:var(--fz-mut)}
+  .p-md .cmp-empty{font:600 11px/1.4 var(--font-mono);color:var(--fz-mut)}
 
   /* ③ fixture stub — torn ticket ── */
   .p-md .stub{background:var(--fz-card);backdrop-filter:blur(3px);border:1px solid var(--fz-line);border-radius:5px;
     padding:clamp(9px,1.2vw,14px);display:flex;flex-direction:column;gap:7px;position:relative;overflow:hidden}
   .p-md .stub::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
     background:repeating-linear-gradient(180deg,var(--garnet) 0 6px,transparent 6px 11px)}
-  .p-md .stub .lab{font:800 8px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--fz-mut);
+  .p-md .stub .lab{font:800 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--fz-mut);
     display:flex;align-items:center;gap:6px}
   .p-md .stub .lab .ic{width:11px;height:11px;color:var(--gold)}
   .p-md .stub .vs{display:flex;flex-direction:column;gap:2px}
   .p-md .stub .tn{font:900 clamp(13px,1.5vw,18px)/1 var(--font-display);text-transform:uppercase;color:var(--fz-ink);
     letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .p-md .stub .tn.a{color:var(--fz-mut)}
-  .p-md .stub .vx{font:800 8px/1 var(--font-mono);letter-spacing:.12em;color:var(--garnet)}
-  .p-md .stub .kick{font:700 9px/1.2 var(--font-mono);letter-spacing:.04em;color:var(--gold);margin-top:1px}
+  .p-md .stub .vx{font:800 11px/1 var(--font-mono);letter-spacing:.12em;color:var(--garnet)}
+  .p-md .stub .kick{font:700 11px/1.2 var(--font-mono);letter-spacing:.04em;color:var(--gold);margin-top:1px}
   .p-md .stub .tbl{margin-top:auto;display:flex;gap:10px;align-items:center;padding-top:7px;border-top:1px solid var(--fz-line)}
   .p-md .stub .st{display:flex;flex-direction:column}
   .p-md .stub .st b{font:900 14px/1 var(--font-display);color:var(--fz-ink);font-variant-numeric:tabular-nums}
-  .p-md .stub .st i{font:600 7px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);font-style:normal;margin-top:3px}
+  .p-md .stub .st i{font:600 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fz-mut);font-style:normal;margin-top:3px}
   .p-md .stub .form{display:flex;gap:3px}
-  .p-md .fp{width:13px;height:13px;border-radius:3px;font:800 8px/13px var(--font-mono);text-align:center;color:#fff}
+  .p-md .fp{width:13px;height:13px;border-radius:3px;font:800 11px/13px var(--font-mono);text-align:center;color:#fff}
   .p-md .fp.W{background:#2e8c50}.p-md .fp.D{background:#a8862a}.p-md .fp.L{background:#a8412f}
-  .p-md .stub .empty{font:600 10px/1.4 var(--font-mono);color:var(--fz-mut);margin:auto 0}
+  .p-md .stub .empty{font:600 11px/1.4 var(--font-mono);color:var(--fz-mut);margin:auto 0}
 
   /* ④ wire — live headlines as an editorial column ── */
   .p-md .wire{background:var(--fz-card);backdrop-filter:blur(3px);border:1px solid var(--fz-line);border-radius:5px;
     padding:clamp(9px,1.2vw,14px);display:flex;flex-direction:column;gap:6px;min-height:0}
-  .p-md .wire .lab{font:800 8px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--fz-mut);
+  .p-md .wire .lab{font:800 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--fz-mut);
     display:flex;align-items:center;gap:6px;flex-shrink:0}
   .p-md .wire .lab .dot{width:6px;height:6px;border-radius:50%;background:var(--garnet)}
   .p-md .wire .list{display:flex;flex-direction:column;min-height:0;overflow:hidden}
   .p-md .wire .it{text-decoration:none;color:inherit;padding:6px 0;border-top:1px solid var(--fz-line)}
   .p-md .wire .it:first-child{border-top:none}
-  .p-md .wire .it .h{font:650 10.5px/1.28 var(--font-body);color:var(--fz-ink);
+  .p-md .wire .it .h{font:650 11px/1.28 var(--font-body);color:var(--fz-ink);
     display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .p-md .wire .it:hover .h{color:var(--garnet)}
-  .p-md .wire .it .s{font:700 7px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:3px}
-  .p-md .wire .empty{font:600 9.5px/1.4 var(--font-mono);color:var(--fz-mut);margin:auto 0}
+  .p-md .wire .it .s{font:700 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+  .p-md .wire .empty{font:600 11px/1.4 var(--font-mono);color:var(--fz-mut);margin:auto 0}
 
   /* ⑤ rail — two small prints stacked + next-issue teaser ── */
   .p-md .rail{display:flex;flex-direction:column;gap:clamp(7px,0.9vw,11px);min-height:0}
@@ -302,12 +302,12 @@ const CSS = String.raw`
   .p-md .rail .print:nth-child(2){rotate:-1.4deg}
   .p-md .rail .print .img{bottom:22px}
   .p-md .rail .print .cap{height:22px;padding:0 7px}
-  .p-md .rail .print .cap b{font-size:7.5px}.p-md .rail .print .cap span{font-size:8px}
+  .p-md .rail .print .cap b{font-size:11px}.p-md .rail .print .cap span{font-size:11px}
   .p-md .next{flex-shrink:0;background:linear-gradient(120deg,color-mix(in srgb,var(--garnet) 30%,transparent),var(--fz-card));
     border:1px solid color-mix(in srgb,var(--gold) 34%,var(--fz-line));border-radius:5px;padding:9px 11px;position:relative;overflow:hidden}
-  .p-md .next .nb{font:800 7.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .p-md .next .nb{font:800 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
   .p-md .next .nh{font:900 clamp(13px,1.4vw,16px)/.96 var(--font-display);text-transform:uppercase;color:var(--fz-ink);margin:4px 0 2px}
-  .p-md .next .np{font:600 8.5px/1.35 var(--font-mono);color:var(--fz-mut)}
+  .p-md .next .np{font:600 11px/1.35 var(--font-mono);color:var(--fz-mut)}
   .p-md .next .ball{position:absolute;right:-14px;bottom:-16px;width:72px;height:72px;color:var(--gold);opacity:.16;pointer-events:none}
   .p-md .next .ball .ic{width:100%;height:100%}
 
@@ -317,10 +317,10 @@ const CSS = String.raw`
     background-size:cover;background-position:center;border:8px solid #fff;border-radius:3px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
   .p-md .lb-cap{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;
     background:linear-gradient(0deg,rgba(8,6,10,.82),transparent);color:#fff}
-  .p-md .lb-cap b{font:800 9px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .p-md .lb-cap b{font:800 11px/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
   .p-md .lb-cap h3{font:900 clamp(18px,2.6vw,30px)/.98 var(--font-display);text-transform:uppercase;margin:6px 0 0}
   .p-md .lb-cap p{font:600 11px/1.4 var(--font-mono);letter-spacing:.04em;opacity:.85;margin:4px 0 0}
-  .p-md .lb-x{position:absolute;top:12px;right:14px;z-index:3;font:800 9px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;
+  .p-md .lb-x{position:absolute;top:12px;right:14px;z-index:3;font:800 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;
     color:#17110d;background:var(--gold);border-radius:20px;padding:6px 12px}
 
   /* mobile tab strip (hidden on desktop, where the whole spread shows at once) */
@@ -341,7 +341,7 @@ const CSS = String.raw`
     .p-md .mtabs{grid-area:2 / 1;display:flex;gap:4px;padding:3px;border-radius:999px;
       background:var(--fz-card);border:1px solid var(--fz-line);backdrop-filter:blur(3px)}
     .p-md .mtab{flex:1;border:0;background:none;border-radius:999px;padding:7px 4px;cursor:pointer;
-      font:800 8.5px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fz-mut)}
+      font:800 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fz-mut)}
     .p-md .mtab[aria-selected="true"]{background:var(--garnet);color:#fff}
     .p-md .mtab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
     .p-md .poster,.p-md .stub,.p-md .wire,.p-md .rail{grid-area:3 / 1;min-height:0;overflow:hidden}
@@ -354,15 +354,15 @@ const CSS = String.raw`
     .p-md .radarbox{flex:0 0 min(104px,30%)}
     /* season panel: tight stack so the radar, rows and underlying line each get their own space */
     .p-md .poster{gap:5px;padding:7px 10px}
-    .p-md .poster .pk{letter-spacing:.02em;font-size:7.5px;gap:4px;flex-wrap:nowrap;white-space:nowrap}
-    .p-md .poster .pk .leg{letter-spacing:.02em;white-space:nowrap;gap:4px;font-size:7px}
+    .p-md .poster .pk{letter-spacing:.02em;font-size:11px;gap:4px;flex-wrap:nowrap;white-space:nowrap}
+    .p-md .poster .pk .leg{letter-spacing:.02em;white-space:nowrap;gap:4px;font-size:11px}
     .p-md .prow{flex:1 1 auto;min-height:0;gap:8px}
-    .p-md .radar .al{font-size:5.5px}
+    .p-md .radar .al{font-size:11px}
     .p-md .pstats{gap:3px}
     .p-md .yhead{gap:8px;flex-wrap:nowrap}
     .p-md .yh-main b{font-size:28px}
     .p-md .cmp-row{padding:1.5px 2px;gap:6px}
-    .p-md .cl{font-size:9.5px}
+    .p-md .cl{font-size:11px}
     .p-md .under{padding-top:4px;gap:3px 8px}
     .p-md .under .un{display:block}
     .p-md .rail{flex-direction:column}

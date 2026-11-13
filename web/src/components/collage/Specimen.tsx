@@ -50,7 +50,7 @@ export function Specimen({
           color: "var(--muted)",
         }}
       >
-        <span style={{ color: "var(--accent)" }}>{label}</span>
+        <span style={{ color: "var(--accent-ink)" }}>{label}</span>
         {caption && <span>{caption}</span>}
       </figcaption>
     </motion.figure>

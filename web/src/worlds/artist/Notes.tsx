@@ -15,19 +15,19 @@ const CSS = String.raw`
 
   /* left: poster headline */
   .p-nt .poster{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:16px;padding-top:clamp(0px,1vh,10px)}
-  .p-nt .kick{display:flex;align-items:center;gap:10px;font:600 10px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-  .p-nt .kick b{color:var(--accent);font-weight:600}
+  .p-nt .kick{display:flex;align-items:center;gap:10px;font:600 11px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .p-nt .kick b{color:var(--accent-ink);font-weight:600}
   .p-nt .big{font-family:var(--font-display);font-weight:900;font-size:clamp(58px,7.4vw,118px);line-height:.88;letter-spacing:-.04em;color:var(--ink);margin:clamp(8px,1.6vh,18px) 0 0}
-  .p-nt .big em{font-style:italic;font-weight:400;color:var(--accent)}
-  .p-nt .hand{font-family:var(--font-hand);font-size:clamp(18px,1.6vw,23px);color:var(--accent);rotate:-2deg;display:inline-block;margin:6px 0 0 6px}
+  .p-nt .big em{font-style:italic;font-weight:400;color:var(--accent-ink)}
+  .p-nt .hand{font-family:var(--font-hand);font-size:clamp(18px,1.6vw,23px);color:var(--accent-ink);rotate:-2deg;display:inline-block;margin:6px 0 0 6px}
   .p-nt .lede{font:400 clamp(14px,1.15vw,16.5px)/1.6 var(--font-body);color:var(--muted);max-width:36ch;margin:clamp(10px,2vh,20px) 0 0}
   .p-nt .lede i{font-family:var(--font-display);font-style:italic;color:var(--ink)}
   .p-nt .door{margin-top:clamp(10px,2vh,18px)}
   .p-nt .dispatch{display:flex;align-items:flex-start;gap:10px;padding-top:12px;border-top:1px dashed color-mix(in srgb,var(--ink) 22%,transparent);
     font:500 11px/1.5 var(--font-mono);color:var(--muted)}
-  .p-nt .dispatch > .ic{width:14px;height:14px;color:var(--accent);flex:none;margin-top:2px}
+  .p-nt .dispatch > .ic{width:14px;height:14px;color:var(--accent-ink);flex:none;margin-top:2px}
   .p-nt .dispatch b{color:var(--ink);font-weight:600}
-  .p-nt .dispatch a{display:inline-flex;align-items:center;gap:5px;color:var(--accent);text-decoration:none;white-space:nowrap;margin-left:auto}
+  .p-nt .dispatch a{display:inline-flex;align-items:center;gap:5px;color:var(--accent-ink);text-decoration:none;white-space:nowrap;margin-left:auto}
   .p-nt .dispatch a .ic{width:11px;height:11px}
 
   @media(max-width:900px){
@@ -37,9 +37,9 @@ const CSS = String.raw`
     .p-nt .hand{font-size:16px;margin-top:2px}
     .p-nt .lede{font-size:12.5px;margin-top:6px;line-height:1.45}
     .p-nt .door{margin-top:8px}
-    .p-nt .dispatch{font-size:10px;padding-top:8px;gap:8px}
+    .p-nt .dispatch{font-size:11px;padding-top:8px;gap:8px}
     .p-nt .dispatch a{display:none}
-    .p-nt .twin-door .td-label,.p-nt .twin-door .td-arr{font-size:9.5px}
+    .p-nt .twin-door .td-label,.p-nt .twin-door .td-arr{font-size:11px}
   }
   @media(max-width:600px){ .p-nt .lede{max-width:none} }
   /* short phones: tighten the poster so all four strips keep their full text */

@@ -22,7 +22,7 @@
 .ptr-lines { will-change: transform, opacity; width: 30px; height: 11px; translate: -100% -50%; transform-origin: 100% 50%; opacity: 0;
   background: repeating-linear-gradient(180deg, transparent 0 2px, var(--accent) 2px 3.5px, transparent 3.5px 4px);
   -webkit-mask: linear-gradient(90deg, transparent, #000); mask: linear-gradient(90deg, transparent, #000); }
-.ptr-ink[data-hover="true"] .ptr-ball { scale: 1.2; color: var(--accent); }
+.ptr-ink[data-hover="true"] .ptr-ball { scale: 1.2; color: var(--accent-ink); }
 .ptr-ink[data-hover="true"] .ptr-dot { scale: .6; }
 .ptr-ink[data-press="true"] .ptr-ball { scale: 1.25 .8; }
 
@@ -35,8 +35,8 @@
 /* the catalyst point: the ball, reduced to a data point (orange never leaves) */
 .ptr-point { position: absolute; width: 5px; height: 5px; border-radius: 50%; translate: -50% -50%; background: var(--orange, #E0662F);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--orange, #E0662F) 22%, transparent); }
-.ptr-read { font: 600 10px/1 var(--font-mono, monospace); letter-spacing: .08em; white-space: pre;
-  color: var(--accent); padding: 4px 6px; border-radius: 4px; background: color-mix(in srgb, var(--paper) 82%, transparent);
+.ptr-read { font: 600 11px/1 var(--font-mono, monospace); letter-spacing: .08em; white-space: pre;
+  color: var(--accent-ink); padding: 4px 6px; border-radius: 4px; background: color-mix(in srgb, var(--paper) 82%, transparent);
   border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent); font-variant-numeric: tabular-nums; }
 .ptr-read[data-flip-x="true"] { translate: -100% 0; }
 .ptr-lock { opacity: 0; transition: opacity .18s; }

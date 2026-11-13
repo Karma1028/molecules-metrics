@@ -12,7 +12,7 @@ export const STAGE_CSS = String.raw`
     linear-gradient(100deg,color-mix(in srgb,var(--pal-bg,#0b0b0d) 55%,transparent) 0%,color-mix(in srgb,var(--pal-bg,#0b0b0d) 30%,transparent) 45%,#000000a6 100%),
     radial-gradient(90% 70% at 50% 110%,#000c,transparent 70%)}
   .stage .exit{position:absolute;top:18px;right:20px;z-index:3;background:#ffffff14;border:1px solid #ffffff26;
-    color:inherit;cursor:pointer;border-radius:30px;padding:8px 14px;font:600 10px/1 var(--font-mono);letter-spacing:.12em;
+    color:inherit;cursor:pointer;border-radius:30px;padding:8px 14px;font:600 11px/1 var(--font-mono);letter-spacing:.12em;
     text-transform:uppercase;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
   .stage .exit:hover{background:#ffffff2b}
   .stage .exit:focus-visible{outline:2px solid var(--pal-accent,#1DB954);outline-offset:2px}
@@ -55,7 +55,7 @@ export const STAGE_CSS = String.raw`
   .st-note a{color:var(--pal-accent,#1DB954)}
 
   .stage-head{display:flex;flex-direction:column;gap:6px;min-width:0;max-width:100%}
-  .stage-src{display:flex;align-items:center;gap:8px;font:600 10px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+  .stage-src{display:flex;align-items:center;gap:8px;font:600 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;opacity:.8}
   .stage-title{font:700 clamp(26px,3.6vw,48px)/1.02 var(--font-display);letter-spacing:-.02em;text-wrap:balance;
     overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .stage-artist{font:500 clamp(13px,1.2vw,16px)/1.2 var(--font-body);opacity:.78}
@@ -79,7 +79,7 @@ export const STAGE_CSS = String.raw`
 
   .stage-embed{display:block;width:min(100%,calc(var(--cv,400px) * 1.3));border:0;border-radius:12px;background:transparent;
     box-shadow:0 16px 30px -18px #000}
-  .stage-open{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:600 10px/1 var(--font-mono);
+  .stage-open{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:600 11px/1 var(--font-mono);
     letter-spacing:.08em;text-transform:uppercase;color:#06110a;background:#1DB954;padding:9px 14px;border-radius:30px;
     transition:transform .3s var(--spring),filter .3s}
   .stage-open:hover{transform:translateY(-2px);filter:brightness(1.08)}

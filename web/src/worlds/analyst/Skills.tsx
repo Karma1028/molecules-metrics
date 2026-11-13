@@ -129,10 +129,10 @@ const CSS = String.raw`
 
   /* left: poster + lens picker */
   .p-sk .poster{min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(10px,2vh,22px)}
-  .p-sk .kick{display:inline-flex;align-items:center;gap:8px;font:600 10px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+  .p-sk .kick{display:inline-flex;align-items:center;gap:8px;font:600 11px/1.4 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--teal-ink)}
   .p-sk .kick .ic{width:13px;height:13px}
   .p-sk .big{font-family:var(--font-display);font-weight:700;font-size:clamp(56px,min(7.6vw,13vh),120px);line-height:.86;letter-spacing:-.045em;color:var(--ink);margin:clamp(6px,1.2vh,14px) 0 0}
-  .p-sk .big em{font-style:normal;color:var(--accent)}
+  .p-sk .big em{font-style:normal;color:var(--accent-ink)}
   .p-sk .lede{font:500 clamp(12px,1vw,14px)/1.5 var(--font-mono);color:var(--muted);margin:clamp(8px,1.6vh,16px) 0 0;max-width:38ch}
   .p-sk .lede b{color:var(--ink);font-weight:600}
 
@@ -143,11 +143,11 @@ const CSS = String.raw`
   .p-sk .lens:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
   .p-sk .lens .ind{position:absolute;inset:0;border-radius:8px;z-index:0;background:color-mix(in srgb,var(--accent) 12%,transparent);
     border:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}
-  .p-sk .lens .ln{position:relative;z-index:1;font:700 9.5px/1 var(--font-mono);letter-spacing:.08em;color:var(--teal)}
+  .p-sk .lens .ln{position:relative;z-index:1;font:700 11px/1 var(--font-mono);letter-spacing:.08em;color:var(--teal-ink)}
   .p-sk .lens .lt{position:relative;z-index:1;font:600 clamp(12px,1.05vw,14.5px)/1.1 var(--font-display);letter-spacing:-.01em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .p-sk .sk-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    font:500 10px/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+    font:500 11px/1.5 var(--font-mono);letter-spacing:.06em;color:var(--muted)}
 
   /* right: the spectrograph, one lens at a time */
   .p-sk .sk-panel{position:relative;min-height:0;display:flex;flex-direction:column;overflow:hidden;
@@ -161,14 +161,14 @@ const CSS = String.raw`
     color:color-mix(in srgb,var(--teal) 9%,transparent);pointer-events:none;user-select:none}
   .p-sk .deck{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
   .p-sk .dh{flex:0 0 auto;padding-bottom:clamp(8px,1.6vh,16px);border-bottom:1px solid var(--rule)}
-  .p-sk .dk{font:600 10px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .p-sk .dk{font:600 11px/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-ink)}
   .p-sk .dt{font-family:var(--font-display);font-weight:700;font-size:clamp(26px,3.1vw,46px);line-height:1;letter-spacing:-.03em;color:var(--ink);margin:6px 0 6px}
   .p-sk .db{font:500 clamp(11px,.9vw,12.5px)/1.45 var(--font-mono);color:var(--muted);max-width:52ch}
 
   .p-sk .scale{flex:0 0 auto;display:grid;grid-template-columns:minmax(0,1fr) var(--meter-w);gap:clamp(12px,1.6vw,24px);
     padding:clamp(6px,1vh,10px) 0 2px;--meter-w:clamp(140px,15vw,220px)}
-  .p-sk .scale .sl{display:flex;justify-content:space-between;align-items:center;gap:6px;font:600 8px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  .p-sk .scale .sl span:last-child{color:var(--teal)}
+  .p-sk .scale .sl{display:flex;justify-content:space-between;align-items:center;gap:6px;font:600 11px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .p-sk .scale .sl span:last-child{color:var(--teal-ink)}
   .p-sk .scale .sl i{flex:1;height:1px;background:linear-gradient(90deg,var(--rule),var(--teal))}
 
   .p-sk .rows{list-style:none;margin:0;padding:0;flex:1;min-height:0;display:grid;grid-auto-rows:minmax(0,1fr);--meter-w:clamp(140px,15vw,220px)}
@@ -182,12 +182,12 @@ const CSS = String.raw`
   .p-sk .seg{position:relative;height:clamp(8px,1.2vh,12px);border-radius:3px;overflow:hidden;background:color-mix(in srgb,var(--ink) 8%,transparent)}
   .p-sk .seg i{position:absolute;inset:0;transform-origin:left center;background:linear-gradient(90deg,var(--teal),var(--accent))}
   .p-sk .seg i[data-lv="exploring"]{background:var(--orange)}
-  .p-sk .lvw{font:700 8.5px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right}
-  .p-sk .lvw[data-lv="strong"]{color:var(--teal)}
-  .p-sk .lvw[data-lv="exploring"]{color:var(--orange)}
-  .p-sk .hint{flex:0 0 auto;font:500 9.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  .p-sk .lvw{font:700 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .p-sk .lvw[data-lv="strong"]{color:var(--teal-ink)}
+  .p-sk .lvw[data-lv="exploring"]{color:var(--orange-ink)}
+  .p-sk .hint{flex:0 0 auto;font:500 11px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
     padding-top:clamp(6px,1vh,10px);text-align:right}
-  .p-sk .hint b{color:var(--accent)}
+  .p-sk .hint b{color:var(--accent-ink)}
 
   @media(max-width:900px){
     html[data-one-screen] .page.p-sk,html[data-toc] .page.p-sk,.p-sk{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:10px}
@@ -201,12 +201,12 @@ const CSS = String.raw`
     .p-sk .sk-panel{padding:12px 14px;border-radius:12px}
     .p-sk .ghost{font-size:110px}
     .p-sk .dt{font-size:22px;margin:4px 0}
-    .p-sk .db{font-size:10.5px}
+    .p-sk .db{font-size:11px}
     .p-sk .dh{padding-bottom:6px}
     .p-sk .scale,.p-sk .rows{--meter-w:92px;gap:10px}
-    .p-sk .scale .sl{font-size:7px;letter-spacing:.08em}
+    .p-sk .scale .sl{font-size:11px;letter-spacing:.08em}
     .p-sk .rn{font-size:clamp(13.5px,2.2vw,18px)}
-    .p-sk .ro{font-size:10.5px;line-height:1.3;margin-top:1px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .p-sk .ro{font-size:11px;line-height:1.3;margin-top:1px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .p-sk .hint{display:none}
   }
   @media(max-width:900px) and (max-height:760px){

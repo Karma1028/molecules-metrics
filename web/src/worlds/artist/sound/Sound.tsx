@@ -24,7 +24,7 @@ const CSS = String.raw`
   /* ---- tuner / band-switch ---- */
   .tuner{position:relative;display:inline-flex;align-items:stretch;height:40px;width:300px;max-width:100%;box-sizing:border-box;
     border:1px solid var(--rule);border-radius:40px;padding:4px;background:var(--card);box-shadow:var(--shadow-sm);
-    font:600 10px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
+    font:600 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase}
   .p-sound[data-sound="radio"] .tuner{background:#16151a;border-color:#2c2a33;color:#b9b3a6}
   .tuner{isolation:isolate}
   .tuner .tn{position:relative;z-index:2;flex:1 1 0;background:none;border:none;cursor:pointer;color:var(--muted);font:inherit;letter-spacing:inherit;
@@ -38,7 +38,7 @@ const CSS = String.raw`
   .tuner[data-on="radio"] .tn-slide{transform:translateX(100%)}
   .tuner-row{display:flex;justify-content:center;margin:6px 0 clamp(26px,5vh,54px)}
 
-  .sound-kick{text-align:center;color:var(--muted);font:500 10.5px/1.5 var(--font-mono);letter-spacing:.2em;
+  .sound-kick{text-align:center;color:var(--muted);font:500 11px/1.5 var(--font-mono);letter-spacing:.2em;
     text-transform:uppercase;margin-bottom:8px}
   .p-sound[data-sound="radio"] .sound-kick{color:#6f6a60}
 
@@ -64,7 +64,7 @@ const CSS = String.raw`
   .faceplate .fp-dial{position:relative;flex:1;height:26px;border-radius:6px;background:
     repeating-linear-gradient(90deg,#ffffff1c 0 1px,transparent 1px 11px);border:1px solid #ffffff14;overflow:hidden}
   .faceplate .fp-freq{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font:600 10px/1 var(--font-mono);letter-spacing:.1em;color:#9a95a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+    font:600 11px/1 var(--font-mono);letter-spacing:.1em;color:#9a95a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
   .faceplate .fp-needle{position:absolute;top:-2px;bottom:-2px;left:62%;width:2px;background:#1DB954;box-shadow:0 0 8px #1DB954}
 
   .void{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px}
@@ -86,7 +86,7 @@ const CSS = String.raw`
   .s-sep{color:#5f5b53;flex:0 0 auto}
   .s-artist{font:500 12px/1 var(--font-mono);color:#908b80;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .s-src{flex:0 0 auto;display:flex;align-items:center}
-  .s-prev{font:600 10px/1 var(--font-mono,ui-monospace,monospace);letter-spacing:.08em;padding:3px 5px;border:1px solid currentColor;border-radius:4px;opacity:.7}
+  .s-prev{font:600 11px/1 var(--font-mono,ui-monospace,monospace);letter-spacing:.08em;padding:3px 5px;border:1px solid currentColor;border-radius:4px;opacity:.7}
 
   /* tunable dial: five room stops + a needle that glides between them */
   .faceplate .fp-dial.tunable{height:38px;overflow:visible}
@@ -98,13 +98,13 @@ const CSS = String.raw`
   .fp-stop{position:absolute;top:50%;left:var(--x);transform:translate(-50%,-50%);background:none;border:none;cursor:pointer;
     display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 6px;border-radius:4px;color:#8f8a99;white-space:nowrap}
   .fp-stop .fp-f{font:700 11px/1 var(--font-mono);letter-spacing:.06em}
-  .fp-stop .fp-nm{font:600 10px/1 var(--font-mono);letter-spacing:.04em;text-transform:uppercase;opacity:.85}
+  .fp-stop .fp-nm{font:600 11px/1 var(--font-mono);letter-spacing:.04em;text-transform:uppercase;opacity:.85}
   .fp-stop[aria-checked="true"]{color:#eafbe9}
   .fp-stop[aria-checked="true"] .fp-f{color:#1DB954}
   .fp-stop:hover{color:#d9d4c8}
   .fp-stop:focus-visible{outline:1.5px solid #1DB954;outline-offset:1px}
   .fp-band{display:flex;border:1px solid #ffffff1f;border-radius:8px;overflow:hidden;flex:0 0 auto}
-  .fp-band button{background:none;border:none;cursor:pointer;padding:8px 11px;font:600 10px/1 var(--font-mono);
+  .fp-band button{background:none;border:none;cursor:pointer;padding:8px 11px;font:600 11px/1 var(--font-mono);
     letter-spacing:.12em;text-transform:uppercase;color:#9a95a3}
   .fp-band button[aria-selected="true"]{background:#1DB95429;color:#1DB954}
 
@@ -117,7 +117,7 @@ const CSS = String.raw`
   .room-name{margin:0;font:800 clamp(44px,min(8.4vw,15vh),132px)/.9 var(--font-display);letter-spacing:-.035em;color:#f6f1e7;text-wrap:balance}
   .room-note{margin:0;padding:0;background:none;border:none;cursor:pointer;text-align:left;display:flex;flex-direction:column;align-items:flex-start;gap:4px;
     font-family:var(--font-hand);font-size:clamp(18px,2.2vw,28px);color:#e6dfd1;rotate:-.6deg;text-shadow:inherit}
-  .rn-more{font:500 10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:#8f8a80;rotate:.6deg;transition:color .2s var(--ease)}
+  .rn-more{font:500 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:#8f8a80;rotate:.6deg;transition:color .2s var(--ease)}
   .room-note:hover .rn-more,.room-note:focus-visible .rn-more{color:#1DB954}
   .room-note:focus-visible{outline:1.5px solid #1DB954;outline-offset:4px;border-radius:4px}
   .room-kit{display:flex;gap:8px}
@@ -126,7 +126,7 @@ const CSS = String.raw`
     transition:border-color .2s var(--ease),color .2s var(--ease)}
   .rk:hover,.rk:focus-visible{border-color:#1DB95499}
   .rk[aria-pressed="true"]{border-color:#1DB954;color:#eafbe9}
-  .rk-k{font:600 10px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:#8f8a80}
+  .rk-k{font:600 11px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:#8f8a80}
   .rk-v{font:600 13px/1 var(--font-mono);font-variant-numeric:tabular-nums}
   .rk[aria-pressed="true"] .rk-v{color:#1DB954}
   .room-deck{display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0}
@@ -137,7 +137,7 @@ const CSS = String.raw`
   .rp-txt{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
   .rp-track{font:600 16px/1.15 var(--font-display);color:#f4efe6}
   .rp-artist{font:500 11px/1.35 var(--font-mono);color:#b3ada2;overflow-wrap:anywhere}
-  .rp-full{font:600 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:#1DB954;white-space:nowrap}
+  .rp-full{font:600 11px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:#1DB954;white-space:nowrap}
   .room-search{align-self:flex-end;background:none;border:none;cursor:pointer;color:#cfc8ba;font:500 11px/1 var(--font-mono);letter-spacing:.08em;
     text-decoration:underline;text-underline-offset:3px;padding:6px 0}
   .room-search:hover{color:#1DB954}

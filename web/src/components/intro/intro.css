@@ -1,11 +1,11 @@
 /* Landing intro: keepy-uppy count (components/intro/KeepyUppy.tsx) */
 .kp {
-  --kp-paper: #ECE2D0; --kp-ink: #241E17; --orange: #E4631F;
+  --kp-paper: #ECE2D0; --kp-ink: #241E17; --orange: #E4631F; --orange-ink: #9C4E12;
   position: fixed; inset: 0; z-index: 9000; display: grid; place-content: center; justify-items: center; gap: 28px;
   background: var(--kp-paper); color: var(--kp-ink);
   clip-path: inset(0 0 0 0);
 }
-:root[data-theme="dark"] .kp { --kp-paper: #1C1813; --kp-ink: #EFE7DA; --orange: #FF8A4C; }
+:root[data-theme="dark"] .kp { --kp-paper: #1C1813; --kp-ink: #EFE7DA; --orange: #FF8A4C; --orange-ink: #FF8A4C; }
 
 .kp-stage { --hop: 150px; position: relative; width: 300px; height: 230px; }
 /* the foot / ground: a short hand-drawn stroke the ball comes back to */
@@ -25,7 +25,7 @@
 
 /* the count: analyst readout, lowercase n like the crosshair lock */
 .kp-n { position: absolute; left: calc(50% + 80px); bottom: -6px; font: 500 22px/1 "JetBrains Mono", monospace;
-  font-variant-numeric: tabular-nums; color: var(--orange); letter-spacing: .02em; animation: kp-tick .18s ease-out both; }
+  font-variant-numeric: tabular-nums; color: var(--orange-ink); letter-spacing: .02em; animation: kp-tick .18s ease-out both; }
 
 /* gravity: slow at the top, fast at the foot, a squash on the touch */
 @keyframes kp-bounce {

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { HERO_STYLE } from "./heroAssets"
 import { skyShift } from "../lib/sky-shift"
+import { rememberTheme } from "../lib/theme"
 import { KeepyUppy } from "../components/intro/KeepyUppy"
 
 const HERO_BODY = String.raw`
@@ -237,6 +238,7 @@ function initHero(spa: (path: string) => void): () => void {
     root.dataset.theme = t
     try {
       localStorage.setItem("nb-theme", t)
+      if (t === "light" || t === "dark") rememberTheme(root.dataset.mode === "analyst" ? "analyst" : "artist", t)
     } catch {
       /* ignore */
     }
