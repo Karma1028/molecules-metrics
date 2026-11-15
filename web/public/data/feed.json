@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T06:52:25.894Z",
+  "generatedAt": "2026-11-15T06:57:00.605Z",
   "interests": [
     {
       "id": "football",
@@ -178,7 +178,7 @@
       "link": "https://huggingface.co/papers/2611.17336",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "Frontier video generation models work in a VAE latent space that compresses video in both space and time. This compression made training tractable, but now limits high-resolution, controllable, and interactive generation -- doubling resolution quadruples token count, conditions a…",
-      "score": 2,
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -189,7 +189,7 @@
       "link": "https://huggingface.co/papers/2611.17190",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersectio…",
-      "score": 3,
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "photo"
@@ -200,7 +200,7 @@
       "link": "https://huggingface.co/papers/2611.16961",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "Existing adaptive-reasoning methods shorten the explicit reasoning a model writes, or skip it by switching modes; either way the answer is still written out token by token. Rather than deciding how much to think, we explore a different paradigm, zero-or-T thinking: a single model…",
-      "score": 2,
+      "score": 5,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -211,7 +211,7 @@
       "link": "https://huggingface.co/papers/2611.17334",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choic…",
-      "score": 13,
+      "score": 14,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -222,7 +222,7 @@
       "link": "https://huggingface.co/papers/2611.16409",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "It is common to train Large Language Models (LLMs) for agentic tasks with Reinforcement Learning (RL) from scalar rewards. However, this throws away the fine-grained information about the environment that the agent experienced during the trial (e.g., error logs). To utilize this…",
-      "score": 2,
+      "score": 5,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -233,7 +233,7 @@
       "link": "https://huggingface.co/papers/2607.13920",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "While search agents demonstrate impressive capabilities in multi-step question answering, their robustness to poor-quality evidence remains under-explored. Such evidence is rare in benchmark corpora, and resulting failures are hard to reproduce. We propose DeepStress, a dynamic s…",
-      "score": 4,
+      "score": 7,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -242,7 +242,7 @@
       "link": "https://huggingface.co/papers/2611.17331",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propo…",
-      "score": 21,
+      "score": 23,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -264,7 +264,7 @@
       "link": "https://huggingface.co/papers/2611.17167",
       "date": "2026-11-12T00:00:00.000Z",
       "summary": "Decision models answer a question with a typed output, such as a choice among options with a probability for each, so one model can choose an agent's actions, evaluate actions already taken, or score every action to teach a policy with reinforcement learning. Prior work has studi…",
-      "score": 30,
+      "score": 34,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -284,7 +284,7 @@
       "link": "https://huggingface.co/papers/2611.16009",
       "date": "2026-11-11T00:00:00.000Z",
       "summary": "GPT-6 Astra can drive a robot arm directly through a fixed harness, and scores of such robot-use agents on RoboDojo have risen quickly since. Reported systems differ in harness and test subset and often change several designs at once, so it is hard to tell which choices produce t…",
-      "score": 3,
+      "score": 5,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -293,7 +293,7 @@
       "link": "https://huggingface.co/papers/2611.15844",
       "date": "2026-11-11T00:00:00.000Z",
       "summary": "Recent work suggests that pretrained image generators encode real-world understanding beyond image synthesis. Vision Banana exploits this by framing vision tasks as conditional image editing. However, its data, weights, code, and implementation details are not public. We present…",
-      "score": 32,
+      "score": 35,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "data"
@@ -304,7 +304,7 @@
       "link": "https://huggingface.co/papers/2611.14256",
       "date": "2026-11-10T00:00:00.000Z",
       "summary": "Recent work shows that multimodal agents increasingly self-improve without recurring human annotation. However, each self-improvement mechanism is designed and evaluated within a single scenario, leaving its preconditions unverified under cross-scenario transfer. This survey inve…",
-      "score": 1,
+      "score": 2,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -331,47 +331,127 @@
       "link": "https://huggingface.co/papers/2611.12872",
       "date": "2026-11-09T00:00:00.000Z",
       "summary": "As multimodal agents accumulate increasingly long interaction histories, effectively retrieving and utilizing past information becomes critical for long-term interaction. Existing memory systems typically rely on semantic retrieval over compressed memories and expose predefined r…",
-      "score": 3,
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": []
     }
   ],
   "news": [
     {
-      "title": "Puyol roots for Flick’s new Barca, feels present group of players can win Champions League - Telegraph India",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNcWp2TFk0ZnFVQVIzNTdndmJLVFdJUUltazVDQ0FCaDk5MWRBNk5ZbDZPRnR2VU1UQi1rUVo4LU5OSjhhMWtzOVlQTmhRNUVHM2pkeWp5SXk3LWxWbHVaV01fcm5DSnBtcDVZN21uUkNtcGl1SnRJN09Ic1J6cHhhMzg2QURrYUNxQzUwN1VkSkhfb0FUQmdsNDBFNlYzUFhQRWZ6LTNxZjdkUmZsTTdPU203QmJmUWlCaEhFS0l4OGdSTjVvVVVBMkt1b0JjcTVDY1o3bV9UZUZuYTVqS2k3bnZMU3l4dDDSAewBQVVfeXFMTlZJT1g4Yk1Vel9TdHF4U0dBS0V0OGxBaWlTblZIRl81dEs1YnJqOVk1RmZDTGIySWJPNVhDZlhXUnhQbmtzNURCSlI3a1BwcFUzNWlCZWJuWjN5bGVjV1NvLUpKT1pYc3Z5SnB0R3dlbmxlZm42UmpyTkpuRXVHLWxwVFhpWUQxSUtSWGRsUEJCTmdkVVhIVmtRXzBkOGM5M1lRTlJlRzZXNWJtdno2S24zMG9kUGRXUUY0WklFejk5QXZJanNFVmpsMUpnSThpQVozaWFHX1djLVQyV0NOVGplaE0waVE2S3FBM3k?oc=5",
-      "date": "2026-11-14T04:26:10.000Z",
-      "summary": "Puyol roots for Flick’s new Barca, feels present group of players can win Champions League&nbsp;&nbsp;Telegraph India",
+      "title": "Liverpool told to snap up Ronald Araujo in bargain €55m deal by former defender - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVmp4ZUU1TGMzLW12bGpsekhGWDRiX2hLU0ZyQV85SjR4UXlGS3R4VGtENk0yYXZNVGxDVTh4YzNBeFVmNkF2VUFnWmdneFRDQl80aEFpUVdib3JrN1loMzJybXdYWk96aG9ydDFfQnJ0Qk5fWTRFaTQxNUU5WVBuU1NRRXpqbHI4U2ZIYXRTNlB3MFZWbTN5b204NEhCOUVYMkE3VzZpLURfMGIzME9vM0RKS0ZoQlFnb3g2VFBOTFdYZw?oc=5",
+      "date": "2026-11-15T04:00:00.000Z",
+      "summary": "Liverpool told to snap up Ronald Araujo in bargain €55m deal by former defender&nbsp;&nbsp;Barca Blaugranes",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "Barcelona target Ruud Nijstad likened to Frenkie de Jong by FC Twente captain - Yahoo Sports",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOT0k1QWk5ZkRiZGdFeGtHM294eldYR3R5RGFjUGozdVZ2Vk9oM2k1WG1YYUtwTVBsa0RseW84ZGJic0J6dlhRUEU0NWp3TU1yUElKRC1nRFVxdU9kekFsZDlGTEpDX0c3cGZOYzIxNHdqbVdyNWVKcVVIZkpXYzlMM2dEWE1NSktCQTZpd29hVQ?oc=5",
-      "date": "2026-11-14T04:00:00.000Z",
-      "summary": "Barcelona target Ruud Nijstad likened to Frenkie de Jong by FC Twente captain&nbsp;&nbsp;Yahoo Sports",
+      "title": "FC Barcelona 27-28 Third Kit to Be Inspired by Catalan 'Correfoc' Festival - Footy Headlines",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQR0V6SHFqRURNdy1ua29wcko0am1IbDlDTk5DTk1hck9RYzJZQUtETjBWOTRicGVrdm4tbmZwd1hpSDN3N2lVMHVWTUxsX1kwOW1GSmlTTE04dDRJZkIwamlDWks3dEVYU2JEc25yRVo3UWpxSjFKRE9YZ0NES1VPM3pDOVJKU1VYNDVTVVJESXlLbnNaVHJ3Z0pGUGotazRpelZZQk82a1ZKdFU2QmJ6eFBuRGpLVkY2UlVB?oc=5",
+      "date": "2026-11-15T00:06:01.000Z",
+      "summary": "FC Barcelona 27-28 Third Kit to Be Inspired by Catalan 'Correfoc' Festival&nbsp;&nbsp;Footy Headlines",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "Nvidia Allegedly Engineered Scarcity by Funding AI Startups to Buy Its GPUs",
-      "link": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
-      "date": "2026-11-14T02:52:59.000Z",
-      "summary": "Article URL: https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus Comments URL: https://news.ycombinator.com/item?id=50493251 Points: 338 # Comments: 175",
-      "source": "Hacker News",
+      "title": "Barcelona told young German defender Finn Jeltsch ‘would fit perfectly’ in Hansi Flick’s side - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPWTRiQWhiVGlfQzQ0dEM3MnlsSEVFUkxOQkZNSUlPaGdQQVdnaWp1Q0p3SlJvcGd2ZFVHdnhnVHpoNGRtQ09OdFRadG9QbGtFclhYMkNrZC12cFVGdzhvMUVpRlF5SDdYdVZFbld1MERPNmUtS09GM1pDNUdabW96Vzd4aUlaVlp2MWxjRTFvcHlxQ1pmMUw4bjd1TjBVNXlHZ2xxLUVHNGtWSXpnRDd6X3g0dTZUTXpQ?oc=5",
+      "date": "2026-11-15T00:00:00.000Z",
+      "summary": "Barcelona told young German defender Finn Jeltsch ‘would fit perfectly’ in Hansi Flick’s side&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
       "tags": [
-        "ai"
+        "football"
       ]
     },
     {
-      "title": "La Liga star refuses to rule out future Barcelona move - Get Spanish Football News",
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPYzdqWXZsN3lKSno2Sml1TXZaLWU3RXgwVDV3VkhHWVlwTmVKNUwwMjVLZ3FWaUdNUGM3bVFDb2VoWkdhaVQ0bWU2N2VVa2U2XzVEWjdhM1BnUm1qYzZ5WDJWTTlBNUtCclhCMWE5LU1GdEEwNzVUMUEzU3UxYS1lMS1aU1FXMURPZ1R4MVM2ZmxZdw?oc=5",
-      "date": "2026-11-13T20:45:00.000Z",
-      "summary": "La Liga star refuses to rule out future Barcelona move&nbsp;&nbsp;Get Spanish Football News",
+      "title": "Would Lisandro Martinez be a good addition for Barcelona in the January transfer window? - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNR2lJNDd0LWk5bHlSdzd5NmdOa0NPZHN0cXRpS1NGa05vaElLaVBBY1RwcFZNdFZ1ZVlrWXd6V0tialMzTFFYQUZEZEJDcUZSdjdmV0ZqTUpsUWNrRFdzdzJZWm5Xa01tVjZoaVB2Mm10c09sUEN1TktpVG5kalBpTzhNMzdKX2wwSU1zWTlsSzVld1dZcFpCZzBtNjVCTDMxZ2ZuQkFJSGprZm9jOFNrZmJMSWZJcHZ3dHBzZGE0TlVyT2xwWWRiX3docXY?oc=5",
+      "date": "2026-11-14T21:00:00.000Z",
+      "summary": "Would Lisandro Martinez be a good addition for Barcelona in the January transfer window?&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Barça Atlètic 0-1 Girona B - Official FC Barcelona Website",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQUzV3SGM3cU9DdkUyRmU2NkpQcExFTTg3Q1I1S3FXUDUyeG1RX1ExbjhidGtIOWZDYzN3XzJkZC1KdlNzSWhGaWtlVklKX01rUkpGMzN6TmNJMnRtWXo4TzdsaF9nakdCbTB5aFFOVE1HbFVDSkNudE9OaXVrY0pDNjVSM1VhYWRHdm1RZ2FEV1JjUlE?oc=5",
+      "date": "2026-11-14T20:39:12.000Z",
+      "summary": "Barça Atlètic 0-1 Girona B&nbsp;&nbsp;Official FC Barcelona Website",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Bangladeshi Photographer wins $200,000 for “Family” in the World’s Richest $1 Million Photo Contest",
+      "link": "https://petapixel.com/2026/11/14/bangladeshi-photographer-wins-200000-for-family-in-the-worlds-richest-1-million-photo-contest/",
+      "date": "2026-11-14T16:00:51.000Z",
+      "summary": "Recognized as the world’s most lucrative photography competition, the 15th annual HIPA awards celebrated its winners on November 10, 2026, with Family as this year’s theme. The awards were presented at the Museum of the Future, the torus-shaped architectural landmark in Dubai's f…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Big boost for Barcelona as Brazil consider sending star attacker back after red card vs Japan - Barca Universal",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUUJpRXdFczZiMUdha1AwbHE4dThqNHl6aTBURDE4Vm1TWGpOWWI0NTZGQTRiN1FTMUcySHVWUzdRU2JvMGhxeW9fM25ZVWJoR2hCUHBOOHFCUmV4dHltSWZpbFY0V1E5aXdlZllUS0IzTnB2WDJvM2dvdmJLaXhJcGVBUzgzQXg0X0w3Z2pYQ1dBMVItNC15YXhEcmNlcXU0VlFHYUQ5TEs0Q3lua3ViY09NSExNaFF1Z2RvLXdn?oc=5",
+      "date": "2026-11-14T15:38:10.000Z",
+      "summary": "Big boost for Barcelona as Brazil consider sending star attacker back after red card vs Japan&nbsp;&nbsp;Barca Universal",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Is the Nikon D850 Really as Good as You Remember, or Is It Just Nostalgia?",
+      "link": "https://petapixel.com/2026/11/14/is-the-nikon-d850-really-as-good-as-you-remember-or-is-it-just-nostalgia/",
+      "date": "2026-11-14T15:00:20.000Z",
+      "summary": "I never owned a Nikon D850, although I put some miles on my D700 over the years. I did get a chance to review the D850, though, on one of my first major press trips to Bend, Oregon. This was back in the TCS TV days, and it was there that I met many of the industry professionals w…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Images of Marilyn Monroe by Her Last Surviving Photographer to Be Exhibited",
+      "link": "https://petapixel.com/2026/11/14/images-of-marilyn-monroe-by-her-last-surviving-photographer-to-be-exhibited/",
+      "date": "2026-11-14T14:00:24.000Z",
+      "summary": "An upcoming exhibition will feature photographs of Marilyn Monroe taken by Lawrence Schiller, the last living professional photographer to have worked with the Hollywood icon. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "How Understanding Animal Behavior Transforms Your Wildlife Photography",
+      "link": "https://petapixel.com/2026/11/14/how-understanding-animal-behavior-transforms-your-wildlife-photography/",
+      "date": "2026-11-14T13:00:28.000Z",
+      "summary": "Wildlife photography is about more than finding an animal and capturing a sharp image. Understanding animal behavior helps photographers anticipate movement, recognize meaningful interactions, and capture moments that reveal more about a subject than its appearance alone—they tel…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "FC Barcelona News: 14 November 2026; Lamine Yamal joins up with Spain squad, Hamza Abdelkarim transfer update - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQSEZYbDd0ZzU0dWdwLVZwRFVMSVNpcDJvZmJQZXFLRFVGRWtGaDJQYUljQVA2bEdEMU1pa19KcFc0U0ZCcDRUbEFvdjdHc1F1czY5bUpsTDJRZGNZWkp0bEpUVVdpeVpmXzRJRURuMWhybTNIZ1pCckdldEQtVkFGYldVTXVsXzdYY0JuQ19CWDI0blNtUHZ5cFY2VWQ0WUZIaC1NMm9sbl9pcHV4RGRhcmpMUHg?oc=5",
+      "date": "2026-11-14T10:00:00.000Z",
+      "summary": "FC Barcelona News: 14 November 2026; Lamine Yamal joins up with Spain squad, Hamza Abdelkarim transfer update&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Barcelona, Real Madrid, PSG, Milan and Brighton tracking young Brazilian star - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQbXVxZGk2UkNsM0ZQd0VmZlV1YUpnNTR1Y3ZlRDZQdkxjNVJndVFEQnoxd2NvS0dYSVhhUWxPcHZFRk81eHNIQWI3NndvS3Z1am5qLWNUcU1uS2dzR29vWWZiWktEdUlwZWx4ak5XR0k1MDZRZnl4MXF5Rk5YZERXaVdvalp3OUV4WEFkaUZtN3lmRklsQjVIYWFRSFhMVWhvLW5PcjYzYWJlV0dFOFYwYjFXT0dXUXR6TmZfZVNCVElyS2RmWURSZzh1ZGxvdGxhYXBVcVpuYThsajJkV2RzQQ?oc=5",
+      "date": "2026-11-14T08:00:00.000Z",
+      "summary": "Barcelona, Real Madrid, PSG, Milan and Brighton tracking young Brazilian star&nbsp;&nbsp;Barca Blaugranes",
       "source": "Google News",
       "tags": [
         "football"
@@ -418,16 +498,6 @@
       ]
     },
     {
-      "title": "Barcelona handed positive injury news - Get Spanish Football News",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1QS0Zick9WcWFPdzA0WjJsTXlWVmhGbUMzdzF2U1ZkRGgtYVFQNnRwdEtsdFNoRHB5LTRRZXhDS052LU5pNHpVVkQzTFlXNERER3dDWWliZ0s1UC1xQ19kRFpXV1NSVWFndHdHUFFNam1PSFBjemdjUFlvU2Vydw?oc=5",
-      "date": "2026-11-13T17:45:00.000Z",
-      "summary": "Barcelona handed positive injury news&nbsp;&nbsp;Get Spanish Football News",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
       "title": "Shygirl, Brutalismus 3000, Nirosta Steel Feature on Club Kid Companion EP",
       "link": "https://pitchfork.com/story/shygirl-brutalismus-3000-nirosta-steel-feature-on-club-kid-ep/",
       "date": "2026-11-13T16:59:26.000Z",
@@ -468,30 +538,10 @@
       ]
     },
     {
-      "title": "Jonathan Blow – If AI solved coding, why is my software still the same? [video]",
-      "link": "https://www.youtube.com/watch?v=IRK8h67ol7Q",
-      "date": "2026-11-13T15:08:44.000Z",
-      "summary": "Article URL: https://www.youtube.com/watch?v=IRK8h67ol7Q Comments URL: https://news.ycombinator.com/item?id=50484658 Points: 225 # Comments: 223",
-      "source": "Hacker News",
-      "tags": [
-        "ai"
-      ]
-    },
-    {
       "title": "Photographer Gabriel Moses to Receive the Trailblazer Award at The Fashion Awards 2026",
       "link": "https://petapixel.com/2026/11/13/photographer-gabriel-moses-to-receive-the-trailblazer-award-at-the-fashion-awards-2026/",
       "date": "2026-11-13T15:03:55.000Z",
       "summary": "Gabriel Moses -- the photographer behind some of the most influential fashion campaigns in recent years -- will receive the Trailblazer Award at The Fashion Awards 2026. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Samsung P9 SSD Review: Finally Best in Class",
-      "link": "https://petapixel.com/2026/11/13/samsung-p9-ssd-review-finally-best-in-class/",
-      "date": "2026-11-13T15:01:23.000Z",
-      "summary": "I have been very hard on Samsung SSDs over the last few years. The T-series SSDs have been hugely popular among photographers because of their compact size, but I have never liked them because of their atrocious transfer speeds. For what they cost, they just aren't worth it. But…",
       "source": "PetaPixel",
       "tags": [
         "photo"
@@ -508,26 +558,6 @@
       ]
     },
     {
-      "title": "Barcelona’s hits and misses of the 2026-27 season so far - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQaFJOeE41SVFTSjJnTE9sVGt2Ny13MmVySDZTRE1RMmFWYWJ1NkZzWVFwSDc3Q2ExZkNTRTFMUmZCcTgyeGJPZmlmZmV3QlVMbnN1UUtMNGQ1c0tZRG1NZ0kyeXItcTctWkZqOUY3NTc1SHVURl9SQlluN3hNLWJHNDl6Y3J4RXZ6ZWhhTlZGTGNtaWhsVnJBcEh6YllwWHN6MS1wX2gtVQ?oc=5",
-      "date": "2026-11-13T14:00:00.000Z",
-      "summary": "Barcelona’s hits and misses of the 2026-27 season so far&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "The Best Deals on Canon Cameras and Lenses",
-      "link": "https://petapixel.com/2026/11/13/the-best-deals-on-canon-cameras-and-lenses/",
-      "date": "2026-11-13T13:30:29.000Z",
-      "summary": "With the holidays just around the corner, the deals are coming in full force. This week, we're focused on Canon gear, including discounts on DSLR and mirrorless cameras, lenses, and more. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
       "title": "Zsela Invites You to The Party With New Album",
       "link": "https://pitchfork.com/story/zsela-invites-you-to-the-party-with-new-album/",
       "date": "2026-11-13T12:44:36.000Z",
@@ -535,46 +565,6 @@
       "source": "Pitchfork",
       "tags": [
         "music"
-      ]
-    },
-    {
-      "title": "Powerful Photo Awards Celebrates Image-Makers Around the World",
-      "link": "https://petapixel.com/2026/11/13/powerful-photo-awards-celebrates-image-makers-around-the-world/",
-      "date": "2026-11-13T12:36:56.000Z",
-      "summary": "A portrait of a First Nations Elder, a burning gas crater in the Turkmenistan desert, and an image exploring the environmental impact of plastic have taken out the top honors at the 2026 Head On Photo Awards, announced as the Head On Photo Festival opens in Sydney, Australia. [Re…",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Satellite Captures Amazing View of International Space Station",
-      "link": "https://petapixel.com/2026/11/13/satellite-captures-amazing-view-of-international-space-station/",
-      "date": "2026-11-13T11:26:48.000Z",
-      "summary": "A satellite has captured a sublime image of the International Space Station (ISS) as the two objects sailed past one another in the sky. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Barcelona offer fans worldwide chance to have loved ones’ ashes permanently preserved at Camp Nou for €10 - The Times of India",
-      "link": "https://news.google.com/rss/articles/CBMizwJBVV95cUxOYVM3ZTFWQmg4a05jZUpBeHgxZDc5ZHByM1BVaFVCajJ0ZVlWM05jVFFMc3o0M3RISDNLZnVYMTJrTUdBNmt2NTBPc0FMNm52bjIwTDFYYTRhYXptR04zWGNyQ0JUWnY3M2Rkdk9SWS1SUWFOYjZIX2NPQUtiRm9TTVVGbnlDc3pVNzB4cWp3R0s2bzR1QldFLThaUWFpTDQ4czdCcDJIUWlCU3lxekcza3JpaFRuUVo4VG5CY0k2RTNOWHNjY0VEUS14MDZVVWFfSm9aWS1HU0V3NF9ZLW5ySjFzdjZneHpLeHdaSlczU0VYd2RlVktIX2N3Wnp2NHloOGRHUXdCbnhQUnc3SjhfUFYyWVNBc2RIaElUaVhpQVZXazJ3TEtBVVh1UU0zLVlWRndPWkY4YW5qUy1DMkpEcWZ0M3U3WDdhanZybWhkMNIB1AJBVV95cUxObUZycFBXTmZvTmVTcTZxTV80U1FvRWlvOFVSRUUyTWhUajlZZU1ndUxMSHhGNXFIVGxCM1BjMXhBc3RPV19wUVNUSjJLZnI5ZjVwRkFDVG9UT3JqTFJxNlAtc3pfSkV3Yi1BY1JvODBSdWtRUTc5c2trOXBRMkJhM2ZMX1NfSHhWMjBuUVdxM3hDZkRfVHdvZnJJXzN1NHZDaGZobW4xQXdSRDRtb2hTdVpPZFhSQzgtc1Q3YTZyYzRBVWtoR1l6b1VzMVRYblZ6MXVMTm9KMlF1QVBJNElUenBIWWExYXB2alN5YTdGZHZLUU9zTHQ4WDBNSHRwaFVBZmVTUDhmei0zRFpNWTRyTjNlakFFX1RpQW5tN25NekRRZnlHNkNycmF2Q1ozRW9PeHBVR1R3UjltajhvTGRoMUNqYURSNDhSaTBSRmZnbWVWVXZk?oc=5",
-      "date": "2026-11-13T11:19:00.000Z",
-      "summary": "Barcelona offer fans worldwide chance to have loved ones’ ashes permanently preserved at Camp Nou for €10&nbsp;&nbsp;The Times of India",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Barcelona and Arsenal draw 1-1 in the Women’s Champions League - Sportstar",
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNdXZ6aC0xWHVMYnBhazlELVNHa3ZlNjBvZ1RyVVBSWm5BZWVTN1dzd3VpNUQyZ1I0NXN3OW5SSWpINjJ5NG4wWTIxRF9ycUxIT2hfdlVWMlJzTllFZUR1RUthTldnV2k1eFE5WTl3N1NLMFlXUmZ3UFZTUFZOckxrZXd0eUg0dG9ZZFRDZ3Nvd1FpUXhoMW1odklPT2FhNnVrWm81NXlCRkhBOTVkVGdRT2h0WG52Y0l2VjRUenhfT29CMEVZQm0wWTdsRHNCMGhMTGQ1Yi14TDVaLXR4emtRckhMMNIB6gFBVV95cUxNa2hpclhMVDA4SDlwLXhjbXhueFdQU3gwaGpWUG9IYTFyYS1NMkk3TDRCaER0RmtkOXpfV3ZXZFZBUzA3emNCUmNKd1BGZ3hDWFJjTkIwZlF5X2NzYTN6ZXl3MzlqTWdCWHRyR2h3alNUNnQ1RFBNSjQtMHh5dVltbFhYWlk5cjZEOURnU0dtNU03QkFNQkhwOEhNaE80TTFMbjRsc05kWUVXSVhsYVI0Y3YyRXhxYnl2Ym9aQ3JZNGNfQXRpZzRkRFZ4SS1VUEtMZ1Jfa2hTRXh3LTNTb20wWVdjVy0tRy1OMUE?oc=5",
-      "date": "2026-11-13T07:11:42.000Z",
-      "summary": "Barcelona and Arsenal draw 1-1 in the Women’s Champions League&nbsp;&nbsp;Sportstar",
-      "source": "Google News",
-      "tags": [
-        "football"
       ]
     },
     {
@@ -609,13 +599,13 @@
       ]
     },
     {
-      "title": "Lamine Yamal continues recovery programme at Barcelona facilities as Spain return approaches - Barca Universal",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNbWUxc2xqVGZJVGplTEdvNXB5RDNPaTNqaTBEdzhPM24tSVRpSlBkV3N1RUFjNlRtNTUxZkRWenFudVlUNU82MDY0Z3JJMnA4ZFVhX2hvLVYyNi1tMGtlYjl6cXVWR3daTkpBdHVodDRuWnhmZXFmTzl1OXZKNFRtN3VhTE0wYlAzbVBCaVdCQ0dNRGJVS0ZCSnFWd2pfXzhrUnNVeFNmdDZUOE1xT25qaXl3WjhKak1KcDlXRw?oc=5",
-      "date": "2026-11-12T14:49:49.000Z",
-      "summary": "Lamine Yamal continues recovery programme at Barcelona facilities as Spain return approaches&nbsp;&nbsp;Barca Universal",
-      "source": "Google News",
+      "title": "Generative AI uses more energy on non-English text",
+      "link": "https://news.umich.edu/generative-ai-uses-more-energy-on-non-english-text/",
+      "date": "2026-11-10T15:07:28.000Z",
+      "summary": "Article URL: https://news.umich.edu/generative-ai-uses-more-energy-on-non-english-text/ Comments URL: https://news.ycombinator.com/item?id=50441444 Points: 198 # Comments: 104",
+      "source": "Hacker News",
       "tags": [
-        "football"
+        "ai"
       ]
     },
     {
