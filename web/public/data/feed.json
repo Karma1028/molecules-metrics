@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T07:34:13.876Z",
+  "generatedAt": "2026-11-22T07:15:54.651Z",
   "interests": [
     {
       "id": "football",
@@ -146,7 +146,7 @@
       "link": "https://huggingface.co/papers/2611.26232",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Learning and inference on time series can pose significant statistical challenges, including autocorrelated observations, distribution shift over time, and the curse of dimensionality. These challenges complicate the practical application of causal discovery algorithms, which alr…",
-      "score": 1,
+      "score": 2,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -155,7 +155,7 @@
       "link": "https://huggingface.co/papers/2611.26239",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Vision-language-action (VLA) models enable robots to perform diverse tasks from visual observations and language instructions. While prior work has explored task suppression and refusal, stopping prohibited behavior once execution is underway and controlling the resulting physica…",
-      "score": 3,
+      "score": 7,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -175,7 +175,7 @@
       "link": "https://huggingface.co/papers/2611.26627",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Reinforcement learning (RL) post-training substantially improves the visual quality, text rendering, and compositional accuracy of diffusion transformers. Because capabilities such as rendering requested text or composing multiple objects are inherently prompt-dependent, a natura…",
-      "score": 15,
+      "score": 19,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -186,7 +186,7 @@
       "link": "https://huggingface.co/papers/2611.25567",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "An assistant monitoring a person performing a procedure is most useful when it can detect mistakes while there is still time to recover. This requires judging actions against task instructions as the video unfolds, identifying the attempted step, locating it in time, and assessin…",
-      "score": 9,
+      "score": 11,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -195,7 +195,7 @@
       "link": "https://huggingface.co/papers/2611.26540",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Current audio-driven video diffusion models can synthesize realistic talking-head videos but generally require dozens of diffusion denoising steps over multi-second video chunks, making them unsuitable for streaming applications such as voice assistants and virtual avatars, where…",
-      "score": 2,
+      "score": 3,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -206,7 +206,7 @@
       "link": "https://huggingface.co/papers/2611.26211",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Recently, video world models have advanced interactive generation, with large models offering higher quality and smaller models enabling faster inference. Existing speculative methods combine their strengths through fast draft generation and selective target regeneration guided b…",
-      "score": 2,
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -226,7 +226,7 @@
       "link": "https://huggingface.co/papers/2611.26450",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Pretrained language models (LMs) remain unreliable on exact multi-digit arithmetic without gradient fine-tuning or external tool interpreters. We introduce closed-form, zero-gradient circuit-grafting primitives that compile deterministic computation directly into pretrained LM we…",
-      "score": 4,
+      "score": 6,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -248,7 +248,7 @@
       "link": "https://huggingface.co/papers/2611.26408",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "It has been demonstrated that, in certain settings, large language models can perform weight-space programming to directly modify the weights of neural networks. However, it is unknown how dedicated training of these networks can contribute to the successes of weight-space progra…",
-      "score": 13,
+      "score": 15,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -268,7 +268,7 @@
       "link": "https://huggingface.co/papers/2611.26073",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Large language models (LLMs) are increasingly used as judges and graders to replace human annotators, raising the question of when such replacement is statistically justified. To support such decisions, the Alternative Annotator Test (Alt-Test) was introduced for dense settings w…",
-      "score": 21,
+      "score": 23,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -279,7 +279,7 @@
       "link": "https://huggingface.co/papers/2611.26617",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Videos reveal how the world changes, but rarely the actions that cause those changes. Latent action learning recovers such supervision from visual transitions, yet often learns the underlying dynamics largely from scratch. We ask whether a pretrained video generator can instead p…",
-      "score": 2,
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -290,7 +290,7 @@
       "link": "https://huggingface.co/papers/2611.26590",
       "date": "2026-11-19T00:00:00.000Z",
       "summary": "Vision-language models (VLMs) integrate visual and textual information, but their outputs do not reveal internal concept representations. Global workspace theory (GWT) proposes that information is selected from parallel brain processes, integrated in a shared workspace, and made…",
-      "score": 41,
+      "score": 42,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -310,7 +310,7 @@
       "link": "https://huggingface.co/papers/2611.25200",
       "date": "2026-11-18T00:00:00.000Z",
       "summary": "Experimentation teams must decide which proposed website changes to test with live traffic. We evaluated whether forecasts from simulated shoppers could inform that choice. We screened 412 historical website A/B tests and evaluated four systems on the 318 that ran longer than 21…",
-      "score": 2,
+      "score": 3,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -319,7 +319,7 @@
       "link": "https://huggingface.co/papers/2611.23875",
       "date": "2026-11-18T00:00:00.000Z",
       "summary": "Optical neural networks promise fast, energy-efficient computing, but every device departs from its design and must be trained with the hardware. In situ training relies on an expert-built calibrated digital model of each device or on gradient-free trial and error. Coding agents,…",
-      "score": 2,
+      "score": 3,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -337,30 +337,121 @@
   ],
   "news": [
     {
-      "title": "Villarreal boss talks Lamine Yamal threat ahead of Barcelona clash - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOdUdTQmVqOFI5eVNzU18wcTVXTlpLUXZzX3hrb1dqQlpzWWozV1JZZGZ2bjJMMlVubUlIRUwwQU1pXzg0di02Zl9CeW1hZHBZU2xZZV9SZVVYNGRKNGVFVXpIQThqMkdJaG1XVVp2U0t1LVBvS2ZQc0NvSC1jQnl6cVktVEZwcDVtc2NPeG9Gc0psNTVhU09HR2RUZ1JPdFYwM3JDUmNRaHk3elVRelRSQUdGTVd1VFJMdzFzWlF1eDNTams?oc=5",
-      "date": "2026-11-21T04:00:00.000Z",
-      "summary": "Villarreal boss talks Lamine Yamal threat ahead of Barcelona clash&nbsp;&nbsp;Barca Blaugranes",
+      "title": "Barcelona vs Villarreal – Match preview and team news - Yahoo Sports",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPX084NUNrdExsY1VLeDh1YjZoMTFJa21xd1JpcGg5T0JEMFh5VzJydU1ONXpNQjN3bjNreGF3dG9HWHBwZEoyenhaLURrWkJ2VlZ2a2pKMGthN1pPTm5FN1lyeUhwc3RudUpwcjcxQXVTRkRiY3J5T05hcklPZ0FhcGJ5WFR5aVFJTDAtTFdIaw?oc=5",
+      "date": "2026-11-22T05:07:00.000Z",
+      "summary": "Barcelona vs Villarreal – Match preview and team news&nbsp;&nbsp;Yahoo Sports",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "Xavi Espart talks injury latest, his best position and Philipp Lahm comparisons after signing new Barcelona contract - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNd2x6bXA4NzNhTnNGN0xsNVo0TzZRS0xGSkFPM1B1U1ZkYS00ZFZIWnFrNjFRSC1rZmFpRkxsdkdXWDRWZ2VxQW5raE9EbUhTV2g2YjYzT2hIZ1oxTklBcVdBeUVGVXRwSmcxQWtKVFNuc1JOSnN4N2M1OGo0VU4tZWhmMnl4aVlIcktObFZHT2gtXzNEb3BKOTk0NVRlZGRvOHhYbF9qaw?oc=5",
-      "date": "2026-11-21T00:00:00.000Z",
-      "summary": "Xavi Espart talks injury latest, his best position and Philipp Lahm comparisons after signing new Barcelona contract&nbsp;&nbsp;Barca Blaugranes",
+      "title": "Barcelona vs Villarreal – Predicted lineup and team news - Yahoo Sports",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPVExlZW1Fc2d1enFmZEdZa0loc3E4aG93blNKZ296bGJmQnNJRzNrVl9fUm5vOGFYRVFvQ19uX09IMEdkUEUxcUtBWnJ2WWIwN1pHOEJRM0ZuZkp1SFI5Q3BERDlOQVVCX3VkQk5GeVN6VURObHdPdlN1SUt5RVNxbTlwblVITDlKUG5CcWRWWTI5ck0?oc=5",
+      "date": "2026-11-22T05:07:00.000Z",
+      "summary": "Barcelona vs Villarreal – Predicted lineup and team news&nbsp;&nbsp;Yahoo Sports",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "Barcelona tracking Girona starlet Holmes Junior Zamorano - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORktNNk5SanktTkhOWm9Pd2loX0RkVl93WXVFVDNJdlJvMmZLdnVOVGZjdS1pWjhfUWJ6OWlZMUZWMHJGVk84NE5uSmQ5T0hDdmpVSVlIanRUTEtZc29ETmxGbTdjcnpYNVV4S2I2bHh1R2lnaUZTVFd6MEFvYXAzT3Zab09jbjZZekVhNERWdS16blllZ01NMGk2MXREYUt0ZDZTcklRd0pIQ3pTNjdicWFVaHMyYUdpcjZr?oc=5",
-      "date": "2026-11-20T21:00:00.000Z",
-      "summary": "Barcelona tracking Girona starlet Holmes Junior Zamorano&nbsp;&nbsp;Barca Blaugranes",
+      "title": "FC Barcelona squad named for La Liga match against Villarreal - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWm44a3diWEQxZG5RMG9ZQklpUlR4OFppLUZrM1lMWW15a2pwLV8xeFQyaEpwR09UaVVNRDNTZGVlM215Z3BBN1ljYlUtd2QyVVdwdXl5WDFXLXdOY1lTTFR4ajMzWjEzMkNTcDh2MDUtREhYWk1TZFRxMU9aREtDZ2p3VHVGenZSdFgzOXhPd2VwclU3Ym01TDFwaGgxZWZBV3JKbG8xWGVDUQ?oc=5",
+      "date": "2026-11-22T04:00:00.000Z",
+      "summary": "FC Barcelona squad named for La Liga match against Villarreal&nbsp;&nbsp;Barca Blaugranes Favourite victim: Barcelona star's numbers point to Villarreal going under&nbsp;&nbsp;Goal.com Last session before Villarreal&nbsp;&nbsp;Official FC Barcelona Website",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Data Processing Incidents on Inference Providers",
+      "link": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+      "date": "2026-11-22T02:14:14.000Z",
+      "summary": "Article URL: https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/ Comments URL: https://news.ycombinator.com/item?id=50595554 Points: 99 # Comments: 35",
+      "source": "Hacker News",
+      "tags": [
+        "data",
+        "ai"
+      ]
+    },
+    {
+      "title": "Christensen and Cubarsi injuries hand Barca boss Flick defensive headache - AllFootball",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOM0FQNDQxcWNuNW9NUFAxaFpkZ0NnTGVZQVVHZjQ0RTVzR2ZSeDBTUm15Tm9uMmJ2cnFqbmI5QkZFY2tlQnNpd0J1UmhUMnY0aHkxYU8zaVpOSjUtSk5qVjI1TjdMYzBRRmJHX1VjdGRhME9rT1BpeWM1Zkh2Q0FpY1dCeW1oX2xYekhmR2JxOWxIZlNQT3JR?oc=5",
+      "date": "2026-11-22T00:08:58.000Z",
+      "summary": "Christensen and Cubarsi injuries hand Barca boss Flick defensive headache&nbsp;&nbsp;AllFootball",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "On-loan Barcelona star open to return to the club next season - Get Spanish Football News",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxON1hWb1laN1ZERlA2bWp1US1kSm96UkpZRm5udHZiYW9jQ0k3aTZNZzkxQUVMakxHeGhyNTZJZmNsU1dyUG9JbHI1QmRmTG5YTEw2TWZKcWdYMWlEZ3ZMWU5tdDc2NlV0QnhjMzhxSWNSdGJiZkJIUE5DU3BxMWhsWThtTE56Nkphd1lNc3FRaHFueTRoa2swSG9OQQ?oc=5",
+      "date": "2026-11-21T21:22:59.000Z",
+      "summary": "On-loan Barcelona star open to return to the club next season&nbsp;&nbsp;Get Spanish Football News",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "All 25 Beautiful Winners From the Black and White Photo Awards 2026",
+      "link": "https://petapixel.com/2026/11/21/all-25-beautiful-bw-winners-from-the-black-and-white-photo-awards-2026/",
+      "date": "2026-11-21T17:00:20.000Z",
+      "summary": "The Black and White Photo Awards 2026 winners have been unveiled. Photographers competed across six categories, each vying to be named Black and White Photographer of the Year. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Hansi Flick clarifies Barcelona's stance on signing a new centre-back following Andreas Christensen's physical setback - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxONWVua1lqOEdIM2pxYkxMUF9UNjM3UEdsc2VqWEpGTk1ITFAyRlpKbThHNVJ6NXZMejB6N1FuY2ZfRGZUM2V6MnN5UzQzVzh0MFRMZG93WmNLZUd4R21pNUNJcTJ2eGZEcGRqdkNNRWJKR0wxVWZoMjdNU25VMDcxZXVXSGl4Q2xablZfZ25FNzUtbmRBd2JzaEQ0ZjM4Qkl4el90dXhkclk?oc=5",
+      "date": "2026-11-21T14:56:03.000Z",
+      "summary": "Hansi Flick clarifies Barcelona's stance on signing a new centre-back following Andreas Christensen's physical setback&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "I Couldn’t Imagine Working With a Photo Editor on a Different Continent",
+      "link": "https://petapixel.com/2026/11/21/i-couldnt-imagine-working-with-a-photo-editor-thousands-of-miles-away/",
+      "date": "2026-11-21T14:00:02.000Z",
+      "summary": "Long before I worked on the PetaPixel news desk, I was an agency photographer covering breaking news, features, and sports. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "This Photographer Built a DIY Digital Rangefinder Using Two Old Canon Cameras",
+      "link": "https://petapixel.com/2026/11/21/this-photographer-built-a-diy-digital-rangefinder-using-two-old-canon-cameras/",
+      "date": "2026-11-21T12:00:55.000Z",
+      "summary": "Earlier this year, photographer and creator Mr. 50mm built a DIY digital rangefinder camera using parts he salvaged from a FED 5 Soviet-era rangefinder and a Panasonic GF3 Micro Four Thirds camera. Mr. 50mm is back with an even better DIY digital rangefinder, and this time it's A…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "FC Barcelona News: 21 November 2026 - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPNWYwQ3YxVU5CY1NpajVHYkVTTXNYVDNWZGtDRlIweXNOX05hOHZ6Um04OEF3ZGs0RWNGc0Q2bXFZZDlYSWVPeE8tc25jRVZPbkp3Z0w0ZldBOEx1X0VvajFzSjBLbmNUQ29MdEZfd1BYOV9vWmtWdDJSV0xPWWZVajZNU2d2R3dHWXJ2YWw2eFRldjU3X1lYQ2ItSFVfMFlDM0xoWEdqT1dhSXZiQWh6aEVqZ1pzN25NRkdmRDZ1YzBvclAwRHFLVkVOS18tODMySXdudHNLekw4OXFYaWc?oc=5",
+      "date": "2026-11-21T10:00:00.000Z",
+      "summary": "FC Barcelona News: 21 November 2026&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Shouting and scolding: regrettable scene between Barcelona directors at Atlético showdown revealed - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMWlRTUNYWkZTQWpWZW1jbHEwdlZwelVkT0Nrdm8zX0J5RnB2MVVzdlh3ekdwdjExWWx3VHU3Rm5rb3k1VWpWSXRmT3FfRXR1YWFieTl4Nm1talNhcFgzZ2J1Q0t4ZW5yR1o3X185MVpmSHgyYmR1N1hJZU1Hci1iX0ZpcjlMR3BGcHc4YkNFVlBhYTBOMmZjbEpRY3RIZ3hrdUg1ZU42a29xRkNnRncxU2JXSUJONS1RRldaV2FxWkxOaHdpNkc4eXZtYVVSZW15d1llZUVlWi00UVI2cWRnSll2TQ?oc=5",
+      "date": "2026-11-21T08:35:05.000Z",
+      "summary": "Shouting and scolding: regrettable scene between Barcelona directors at Atlético showdown revealed&nbsp;&nbsp;Goal.com",
       "source": "Google News",
       "tags": [
         "football"
@@ -437,16 +528,6 @@
       ]
     },
     {
-      "title": "15 Creative Photos From the AOP Open Award",
-      "link": "https://petapixel.com/2026/11/20/15-creative-finalists-from-the-association-of-photographers-open-award/",
-      "date": "2026-11-20T15:09:29.000Z",
-      "summary": "The Association of Photographers (AOP) has announced the 36 finalists for its 2026 AOP Open Awards, a competition celebrating still and moving images by professional and amateur photographers from around the world. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
       "title": "5 New Albums You Should Listen to Now: Atlas Sound, Toro y Moi, and More",
       "link": "https://pitchfork.com/story/5-new-albums-you-should-listen-to-now-atlas-sound-toro-y-moi-and-more/",
       "date": "2026-11-20T14:53:41.000Z",
@@ -454,57 +535,6 @@
       "source": "Pitchfork",
       "tags": [
         "music"
-      ]
-    },
-    {
-      "title": "Barcelona defender Andreas Christensen hit with fresh injury - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSUVaRk5Eam5ZN3c0d1Z1MTBld29kaVAtY2pYV3B1b2lYSm9HTXlITUxseUdrZVlvWjFBdmpKWlVVZVlNTHJHMVpaeG5KTGZBSm45MXZtREpIcHpyRE9hNUxhRWw0akNnUTdYWEl6c3h2bkN5TWd0Sk1XWXlOX2prR1RfLXFJSHF2YklhV3dTNnVOaW8zQzc3MUpPNHVSQzJ2VFREWUlrb2RUanExOFFkdXllNjdMUklvNVBZ?oc=5",
-      "date": "2026-11-20T14:53:15.000Z",
-      "summary": "Barcelona defender Andreas Christensen hit with fresh injury&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Three Photographers Sue Police Over Use of Tear Gas and Pepper Spray During ICE Raid",
-      "link": "https://petapixel.com/2026/11/20/three-photographers-sue-police-over-use-of-tear-gas-and-pepper-spray-during-ice-raid/",
-      "date": "2026-11-20T14:52:40.000Z",
-      "summary": "Three photographers have sued the St. Paul Police Department in Minnesota over its alleged use of chemical munitions against them during an ICE raid, with their own photographs documenting the incident. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "chem",
-        "photo"
-      ]
-    },
-    {
-      "title": "Xavi Espart signs contract to 2030 - Official FC Barcelona Website",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbFlVMF8tTXN3Mno2NGVPRzFrMWdiNlNqdzFhMVRGckRSX2R3YlVRMUM0UVVieVB4ZXFVeDVLX1FmeVVTOWdqbFVQUDlTSm5Wb3h1djMxaVNLRGZxYUgwV085dlluMmI2ZUJJSkh2bHduUWRjNW5SNGdyQk5SMXdpY2h4dlU3U2FLVnhSQkZoaUxBRjZpamlOa29VMm9XaW8?oc=5",
-      "date": "2026-11-20T13:53:16.000Z",
-      "summary": "Xavi Espart signs contract to 2030&nbsp;&nbsp;Official FC Barcelona Website",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Adobe Ends Free Creative Cloud Subscriptions for Stock Photographers",
-      "link": "https://petapixel.com/2026/11/20/adobe-ends-free-creative-cloud-subscriptions-for-stock-photographers/",
-      "date": "2026-11-20T13:05:09.000Z",
-      "summary": "Adobe will no longer offer complimentary Creative Cloud subscriptions to photographers who sell their work through Adobe Stock, replacing the scheme with discounts instead. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Hansi Flick wants two signings for Barcelona in January - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPQ0I4N1VTcThfRWFrWXVZSzNqTklzMVZoNXhPaUlmRWQ4cGsyNWpCSDM2TUxVU0lHTWk2QjhIZXJoOVdQZVczdnN2cTZwdHpxT3UzN0FISDBObnB5WEIxSHh3UHM5TTBxQThxNWFjb3hONWNoOWNKeEFqRl9CRFEyYUhQZ2NnSFp6YmF5QnlPWmxUSk16Umh5QVR1MC1OLWhEWE9fM1dfRzgyTjB3UmZpRGpJSnh0Nlc2LUxoa2VBSVEtR0MwSnZZ?oc=5",
-      "date": "2026-11-20T08:39:33.000Z",
-      "summary": "Hansi Flick wants two signings for Barcelona in January&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
       ]
     },
     {
@@ -518,16 +548,6 @@
       ]
     },
     {
-      "title": "‘Nothing is finalized’ - Rafa Yuste responds to talk of Barcelona friendly vs Kuwait - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNZnFxWEtpQUwtbFdWXzRCQnVuWkVaV0tDSmdFMDN2Y3hnbnVUU202Sk1OUjJlUEU2STI4aW9WRTBYbmJkUld2X1EtU2xjOFRZZEZrX2VHQURZUHQxcEhHVkdoOFNOVm1RUkFBaUZRSC03ZlQ0NlVUODNBMHIybzBCdGFoZHlLUFhmTWFVbXNHSmgwM3B5TTZidldBVWJLbDNTMnJOMG1ENldnVDFEcWs0NGYtWkdjazV3NDJtQk0zWk1tUXc3TVhmX09jbUwyaW4xcHZzUFpn?oc=5",
-      "date": "2026-11-20T04:00:00.000Z",
-      "summary": "‘Nothing is finalized’ - Rafa Yuste responds to talk of Barcelona friendly vs Kuwait&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
       "title": "Here’s Every Rapper Who Appears in GTA VI",
       "link": "https://pitchfork.com/story/heres-every-rapper-who-appears-in-gta-vi/",
       "date": "2026-11-20T00:25:24.000Z",
@@ -535,16 +555,6 @@
       "source": "Pitchfork",
       "tags": [
         "music"
-      ]
-    },
-    {
-      "title": "‘Nobody was angry’ - Deco insists no problems between Barcelona and Frenkie de Jong over knee injury - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQTGZocHFfTm9tc0Q3dXhqRVFVMDhmbHViRHJxSzQ5RWdJeUYtblRpWUNPbmpUaElLQk5WeGxQUXRRREc0Qlp3c3QtaGV2VkZkb3F4X19CQjA1Y1BWTG1aSGg3YlY2cVFDQmMwaThybGNTMDM2WGxmZ1pjUWFPTE1qcnpmVkpGSmdSd0o4NFdRZC1TdTFwNGZUakNPLXFmVm1sVEpJbw?oc=5",
-      "date": "2026-11-20T00:00:00.000Z",
-      "summary": "‘Nobody was angry’ - Deco insists no problems between Barcelona and Frenkie de Jong over knee injury&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
       ]
     },
     {
