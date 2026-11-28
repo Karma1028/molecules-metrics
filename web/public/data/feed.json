@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T08:55:17.996Z",
+  "generatedAt": "2026-11-28T08:15:57.370Z",
   "interests": [
     {
       "id": "football",
@@ -175,11 +175,22 @@
       ]
     },
     {
+      "title": "LayoutRecall: Preserving Appearance in Multi-Round 3D Layout-Controlled Image Editing",
+      "link": "https://huggingface.co/papers/2611.33885",
+      "date": "2026-11-25T00:00:00.000Z",
+      "summary": "3D layout-controlled image editing gives users explicit control over object placement and camera viewpoint. In a sequence of edits, however, the latest image can lose the appearance of an object when it is occluded or leaves view. The target layout specifies where the object shou…",
+      "score": 3,
+      "source": "Hugging Face Daily Papers",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
       "title": "Generation as Reverse Encoding",
       "link": "https://huggingface.co/papers/2611.34782",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Pretrained visual representations accelerate generative learning by abstracting away appearance and spatial detail. Yet the same abstraction makes the return to pixels far harder, shifting much of the burden onto a larger decoder. We ask why the representation-to-pixel path shoul…",
-      "score": 1,
+      "score": 2,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -199,7 +210,7 @@
       "link": "https://huggingface.co/papers/2611.34232",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Computer-using agents are increasingly expected to complete realistic user goals rather than isolated GUI actions. However, existing benchmarks typically isolate web, mobile, or desktop environments, leaving it unclear whether a single generalist agent can execute long-horizon wo…",
-      "score": 89,
+      "score": 107,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -210,7 +221,7 @@
       "link": "https://huggingface.co/papers/2611.34852",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Deep research agents gather information from multiple sources and synthesize it into reports on complex, open-ended questions. Existing benchmarks assess report quality along several dimensions, but lack a dedicated knowledge-centric evaluation of which research directions a repo…",
-      "score": 22,
+      "score": 24,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -219,7 +230,7 @@
       "link": "https://huggingface.co/papers/2611.34290",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context…",
-      "score": 21,
+      "score": 27,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -230,7 +241,7 @@
       "link": "https://huggingface.co/papers/2611.34813",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Video generation models are increasingly evaluated as visual reasoners: given a first frame and a natural-language prompt, can the model produce the video in which the specified task is carried out? The paradigm is considered advantageous because the reasoning is native to the vi…",
-      "score": 8,
+      "score": 61,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -241,7 +252,7 @@
       "link": "https://huggingface.co/papers/2611.34693",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Interactive world models must generate video continuously while responding promptly to user actions. Real-time throughput alone leaves input latency unresolved: coarse generation blocks delay action updates, and generation after input adds work to the response path. We introduce…",
-      "score": 19,
+      "score": 21,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -250,7 +261,7 @@
       "link": "https://huggingface.co/papers/2611.34457",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Recent video generators produce realistic videos, yet controlling how scenes unfold remains challenging. Structural proxies, such as animated 3D blockouts, guide generation by specifying scene layout, motion, camera behavior, and event order. However, these coarse inputs leave de…",
-      "score": 35,
+      "score": 36,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "photo"
@@ -261,27 +272,7 @@
       "link": "https://huggingface.co/papers/2611.34051",
       "date": "2026-11-25T00:00:00.000Z",
       "summary": "Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states. Gated DeltaNet-2 (GDN-2) introduces independent channel-wise control over erasure and writing, enhancing state-update expressiveness and in-context retr…",
-      "score": 84,
-      "source": "Hugging Face Daily Papers",
-      "tags": []
-    },
-    {
-      "title": "Single-Database Rewards Are Hackable: Counterfactual Execution for Trustworthy Text-to-SQL RL",
-      "link": "https://huggingface.co/papers/2611.34363",
-      "date": "2026-11-25T00:00:00.000Z",
-      "summary": "Reinforcement learning (RL) for text-to-SQL agents pays a query when its result matches the reference on one database. However, a wrong query can match by luck when the data lack the rows that expose its bug. We study a counterfactual-database (CF) reward that also runs the final…",
-      "score": 4,
-      "source": "Hugging Face Daily Papers",
-      "tags": [
-        "data"
-      ]
-    },
-    {
-      "title": "Entangle: Scaling Human-Video In-Context World-Action Models across Unseen Tasks and Contexts",
-      "link": "https://huggingface.co/papers/2611.28732",
-      "date": "2026-11-25T00:00:00.000Z",
-      "summary": "In-context learning (ICL) enables foundation models to perform unseen tasks from context without parameter updates. In robotic manipulation, a human video provides the context that specifies how a task should be performed. However, scaling human-video ICL on world-action models (…",
-      "score": 28,
+      "score": 129,
       "source": "Hugging Face Daily Papers",
       "tags": []
     },
@@ -290,7 +281,7 @@
       "link": "https://huggingface.co/papers/2611.32238",
       "date": "2026-11-24T00:00:00.000Z",
       "summary": "Agent-orchestrated robot systems combine the general reasoning capability of multimodal agents with the precise physical control of learned visuomotor policies. Yet such systems often fail at the moment of handoff: a policy is reliable only from a limited set of start states, whi…",
-      "score": 6,
+      "score": 7,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
@@ -306,63 +297,234 @@
       "tags": []
     },
     {
-      "title": "AIChipBench: Benchmarking LLM Agents for Automated AI Accelerator Design",
-      "link": "https://huggingface.co/papers/2611.33093",
-      "date": "2026-11-24T00:00:00.000Z",
-      "summary": "A language-model decoder carries state between decoding steps, and in hardware a wrong state update can leave the current token correct and corrupt the output several tokens later, so a design can pass output tests and still be wrong. AIChipBench asks what LLM coding agents need…",
-      "score": 3,
+      "title": "Damped Atomic Wave Integration Neurons (DAWIN): A Universal Primitive for Continuous-Time Spatiotemporal Learning",
+      "link": "https://huggingface.co/papers/2611.30025",
+      "date": "2026-11-23T00:00:00.000Z",
+      "summary": "Conventional artificial neurons separate spatial feature aggregation from continuous physical time, limiting their ability to model irregular observations. We introduce the Damped Atomic Wave Integration Neuron (DAWIN), a continuous-time primitive for replacing standard neural la…",
+      "score": 2,
       "source": "Hugging Face Daily Papers",
       "tags": [
         "ai"
       ]
     },
     {
-      "title": "So Many Ways to Multiply 3times3 Matrices: A Large Dataset of Rank-23 Schemes",
-      "link": "https://huggingface.co/papers/2611.31155",
+      "title": "BiSAT: Bidirectionally Aligned Semantic-Acoustic Tokenization for Speech Language Models",
+      "link": "https://huggingface.co/papers/2611.30723",
       "date": "2026-11-23T00:00:00.000Z",
-      "summary": "A publicly available dataset of 62029 rank-23 schemes for 3times3 matrix multiplication is presented. Every scheme in it has its own rank pattern, an invariant formed by the ranks of the factor matrices of a scheme, so all schemes are pairwise inequivalent. The schemes were obtai…",
-      "score": 0,
+      "summary": "Speech language models (LMs) generate speech as sequences of discrete tokens. Their tokenizer must therefore preserve both acoustic detail and linguistic content at a low bitrate. Semantic-enhanced tokenizers may lose acoustic detail, whereas acoustic-oriented tokenizers retain a…",
+      "score": 2,
+      "source": "Hugging Face Daily Papers",
+      "tags": []
+    },
+    {
+      "title": "Revisiting LLMs as Context Engineers",
+      "link": "https://huggingface.co/papers/2611.30494",
+      "date": "2026-11-23T00:00:00.000Z",
+      "summary": "As large language models (LLMs) are used in more and more new tasks, context engineering becomes a fundamental method to efficiently steer LLMs by constructing instruction prompts or metadata without intensive training. A growing number of LLM context engineering (LCE) approaches…",
+      "score": 4,
       "source": "Hugging Face Daily Papers",
       "tags": [
-        "data"
+        "ai"
       ]
     },
     {
-      "title": "Pretrained Tabular Features and the Measurement of Financial Proximity",
-      "link": "https://huggingface.co/papers/2611.31491",
+      "title": "InitFree-SfM: When Initialization-Free Bundle Adjustment meets Learned Structure-from-Motion",
+      "link": "https://huggingface.co/papers/2611.31516",
       "date": "2026-11-23T00:00:00.000Z",
-      "summary": "Spatial arbitrage pricing theory (S-APT) extends factor models to allow returns to spill over between connected firms, beyond what common risk factors explain. In recent years, tabular foundation models (TFMs) have matched or outperformed tuned gradient-boosted and bagged ensembl…",
-      "score": 0,
+      "summary": "Initialization-free bundle adjustment (InitFree BA) aims to jointly recover camera poses and scene structure without requiring an initial global estimate. It is a very challenging problem, especially compared to traditional BA where a good estimation is assumed. While recent meth…",
+      "score": 1,
       "source": "Hugging Face Daily Papers",
-      "tags": []
+      "tags": [
+        "photo"
+      ]
     }
   ],
   "news": [
     {
-      "title": "After interest from Europe's giants, Barcelona set one condition to sell Balde - Goal.com",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWUFNSFpkUndYQnpCd3FKUE9WcGw3UnpWdnlmMjFTT1ZfeHgxa3ZRNk1DLTF6LVVjUGRNVk40NkJYZTZyMU1IUXN1cjgxMzUzeFlKM0djbWYxa3JoMzB5Z1B6S2Mtemg4bWd3ZlNpRjJiOEVUeGdETFN3SFFDWkUySXlBUkNmTVg5cnJMZW53dF9DNGZTNkI1Szh5UmlMc3JJUFctbkdXM0F3dS1keFpXYU9sZEktQzdWNHRhQmplMWx3YWRVMF9tNQ?oc=5",
-      "date": "2026-11-27T08:20:05.000Z",
-      "summary": "After interest from Europe's giants, Barcelona set one condition to sell Balde&nbsp;&nbsp;Goal.com",
+      "title": "Vitor Roque opens fire on Barcelona: 'They didn't talk to me' - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQXNpTU81UEZMX2RCNnoxUjJHbF9WVUhDNUxZb213Wi03LTZuNkxMOXFFTDd5WWhlbzZoZDJPUEhsbU5McGFwOWlvd082ZTdBandzREVDSHF5c2xfc3FXb0FuaXh1WENWaFJvNmJ0Y3U2bkFKWVBTUmpVWXV3dkJCVmZmVTZjSWlNUmhfTDh3bDI3YU8td1B0MUFweXhjVWFmNS0tUjJ1el9GcGFpc0RV?oc=5",
+      "date": "2026-11-28T08:06:48.000Z",
+      "summary": "Vitor Roque opens fire on Barcelona: 'They didn't talk to me'&nbsp;&nbsp;Goal.com",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "Barcelona fan-favourite’s greatest strength is becoming Hansi Flick’s biggest headache - Yahoo Sports",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPSmhReG5VbFBiV3pTRVlFalBLM0g5aUx2WHNvVmd0VjlzdGF5dWU2el9yb2xYWmI3YWctbk5oWmQzMkVsemVkdE1SOHNXSFN2b1RhSXZCdVpKRDktTjAyaDRUS3RfbGlRcUVIcFZYd0NiTEZ5VkRPSTlnYnJUakNDQlJQMHJtQkQ0TXppMTRGcVgwelBjQ3kxRFB6a0hHUQ?oc=5",
-      "date": "2026-11-27T08:20:00.000Z",
-      "summary": "Barcelona fan-favourite’s greatest strength is becoming Hansi Flick’s biggest headache&nbsp;&nbsp;Yahoo Sports",
+      "title": "How will Barcelona line up against Deportivo in their next La Liga match? - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPYkdpZnNKQnRXSFFTVnV5a2VGMlBhVE16ZzBRdzhfZXdvR0Z1OTNybU5iVExWMjJBVEYtU3IzWnozTWlkc0p2ZWl3dXZEcHYwTHFMcE1yc25hb1IwQ283OTJhbkRLSllBVlBIVS1xdFVuZjVrOVhIWTVNdUx6dnRwNGU5OUJZQUo5Z3NfNmZIUGpkbGxyYTdPMTNmUHdhVDczNW9V?oc=5",
+      "date": "2026-11-28T08:00:00.000Z",
+      "summary": "How will Barcelona line up against Deportivo in their next La Liga match?&nbsp;&nbsp;Barca Blaugranes",
       "source": "Google News",
       "tags": [
         "football"
       ]
     },
     {
-      "title": "‘I like high defensive lines’ - Pierre-Emerick Aubameyang relishing Barcelona reunion - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNQ01fUkxQMWpVcFZrekIxcXRRVkt6THlaRDNIakVKQW5SRWczNkZfUjU2Y2tJRG5lcFoxcTJsZGxQaTBabEZWbVJsbXluVUIxMjFGR3A3S1B0NHNYcHh6RlpCYnlNV090YS1PeHAwVFBTQmlrb3pYVG1sMUZSeWlXcjRHbG9oRzNOR1V6U1JXTkdWYkxHX25MbzFHX1N3XzBsVUtaSU1HTVFtd1IwVnhQbVZMdw?oc=5",
-      "date": "2026-11-27T07:00:00.000Z",
-      "summary": "‘I like high defensive lines’ - Pierre-Emerick Aubameyang relishing Barcelona reunion&nbsp;&nbsp;Barca Blaugranes",
+      "title": "Marc Casado tells Deportivo boss ‘four things that could be useful’ against Barcelona - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPT2JKTHJfZXg4eGpMWEh3ZjUtN1ZlNGJXeE9iSlBEZ3F4RzRmakJxY3BkU2d0VnVDUGttcVlCR1JHWVBpUkI1TnM1bXItbFJBZkdTMlhqTXNHUk1YTm5GWl9uSmFaU1hZNXVsM2F5VTVWaXpVRHJtRk5oeENWY1dZUURzZV9jNWhxaDZCeDBVUWk0ZFlEQl9QQm5VdzFWc1ZjYlhYMlhyVE5GallLci1xejVzU2lkRnFySlE?oc=5",
+      "date": "2026-11-28T04:00:00.000Z",
+      "summary": "Marc Casado tells Deportivo boss ‘four things that could be useful’ against Barcelona&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "PGYTECH RetroVa Gives the iPhone a 400mm Reach and a Real Camera Feel",
+      "link": "https://petapixel.com/2026/11/27/pgytech-retrova-gives-the-iphone-a-400mm-reach-and-a-real-camera-feel/",
+      "date": "2026-11-27T21:38:03.000Z",
+      "summary": "PGYTECH is best known for camera bags, tripods and straps, and in the phone world for telephoto extender lenses designed for Vivo and Oppo flagships. Its RetroVa kit brings that lens work to the iPhone. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Even if the Nikon D850 Is Discontinued, It Won’t Be Hard To Buy",
+      "link": "https://petapixel.com/2026/11/27/even-if-the-nikon-d850-is-discontinued-it-wont-be-hard-to-buy/",
+      "date": "2026-11-27T21:33:49.000Z",
+      "summary": "The Nikon D850 may be on its last legs, but that doesn't mean photographers can no longer get their hands on one. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "The Best Black Friday Lens Deals of 2026",
+      "link": "https://petapixel.com/2026/11/27/the-best-black-friday-lens-deals-of-2026/",
+      "date": "2026-11-27T19:36:49.000Z",
+      "summary": "We've already featured the best Black Friday camera deals, and now it's time for lenses. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Black (and White) Film Friday: There are Over 45 Emulsions to Explore",
+      "link": "https://petapixel.com/2026/11/27/black-and-white-film-friday-there-are-over-45-emulsions-to-explore/",
+      "date": "2026-11-27T17:30:31.000Z",
+      "summary": "It is our largest (and most fun) Film Friday of the year: Black (and White) Film Friday! While our Film Fridays tend to spotlight a single emulsion, with this annual celebration we feature the entire selection of black and white film stocks that we have in our inventory. [Read Mo…",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Olivia Rodrigo Delivers Another Christmas Song",
+      "link": "https://pitchfork.com/story/olivia-rodrigo-delivers-another-christmas-song/",
+      "date": "2026-11-27T16:47:24.000Z",
+      "summary": "Listen to “Miss This Christmas”",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "The Best Black Friday Camera Deals of 2026: Save Big on Canon, Nikon, Sony, and More",
+      "link": "https://petapixel.com/2026/11/27/the-best-black-friday-camera-deals-of-2026-save-big-on-canon-nikon-sony-and-more/",
+      "date": "2026-11-27T16:39:51.000Z",
+      "summary": "It's that time of year: Black Friday has arrived. There are plenty of great deals on cameras this year, ranging from affordable entry-level models to deep discounts on professional-grade bodies from all the major manufacturers. Let's dive right in. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Marc Casado sends message to Alejandro Balde and defends Lamine Yamal ahead of Deportivo’s clash with Barcelona - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWUhRb0ZGNV9XeVJqZkpzS0VVWlFXY0RNVV9nVTJQRWZCUWJsOUVaUk5mVDdJTjhGSktCeXJyTnY3TXZWNWc3enVKQ2NJeENNak1kb1lDMERYd2NoVlJnaFVGSjd0OEotSnlkZTYtY0xyWjhVblJEWXNfTHZ5STRHMFhmWWd0NnZtNlZEU29STTBuS0JoUmVNamVvRGcwZ1RqTG53RkJxRXlnbmUwVzNoejlTUF9JVHg1c3dtQTNlT0w0QQ?oc=5",
+      "date": "2026-11-27T16:00:00.000Z",
+      "summary": "Marc Casado sends message to Alejandro Balde and defends Lamine Yamal ahead of Deportivo’s clash with Barcelona&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "The Killers’ Dave Keuning Survived a “Major Stroke” This Month",
+      "link": "https://pitchfork.com/story/the-killers-dave-keuning-survived-a-major-stroke-this-month/",
+      "date": "2026-11-27T15:58:32.000Z",
+      "summary": "The group’s co-founding guitarist says doctors gave him a “40% chance of survival”",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Barcelona loanee invokes Messi: 'Criticism of Yamal makes me laugh' - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxORjR3bmpfSjFCN2NfeW95NENjOGNkQUFVRmo2ZjFTVWhYdjFZZGlWV21mRFZ0OXBOUVdtOHh6RjdzSm16eVd4X0ZyaXhOYmV5d1U1akptQmE4UlhXNXZYc1ZVQzV4ZXdvd0dzZndtMkVHdTVnMEdMazJ6ZTJvRjB2QVJIZ29rdG83UUJoSUhQT2ZnQldHNXAtcktaeFloSU50NEtaVlJreklUai10aGp0S0pfSTd2cHM?oc=5",
+      "date": "2026-11-27T15:57:03.000Z",
+      "summary": "Barcelona loanee invokes Messi: 'Criticism of Yamal makes me laugh'&nbsp;&nbsp;Goal.com",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Pz’ Recruits Don Toliver for New Song “Subliminals”",
+      "link": "https://pitchfork.com/story/pz-recruits-don-toliver-for-new-song-subliminals/",
+      "date": "2026-11-27T15:08:48.000Z",
+      "summary": "The Georgia model-turned-rapper seals a big year off the back of No Turning Back",
+      "source": "Pitchfork",
+      "tags": [
+        "music"
+      ]
+    },
+    {
+      "title": "Arkivism Is a Searchable Archive of More Than Four Million Free Public Domain Images",
+      "link": "https://petapixel.com/2026/11/27/arkivism-is-a-searchable-archive-of-more-than-four-million-free-public-domain-images/",
+      "date": "2026-11-27T14:00:36.000Z",
+      "summary": "A new website called Arkivism aims to make searching for historical imagery considerably easier by bringing more than four million public domain images and videos together in one place. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "Rodri back with the group as Barça return to work - FC Barcelona Website",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSkFIZmNlYmJScU9NVk5qWEpPVV91bmp1LUZiRzhxMTR0cm4yeXZhVnRZOGRQbV9wZEhSdlZTSmZicEpCZGw4NWZVU25HT2d1ZXp2T1owZl9Bd0M5NEYzN1FwWWVTTUlWVkRNVzkwUjRyVjNZTmZnY0J4aWV3LUpPS0ZlMndnMXNrN0MwTUpQZnIwWXNIbkFHcS04VExZdkltWkhEdHJfaWhoTjZ1amJkUVJVdw?oc=5",
+      "date": "2026-11-27T12:43:49.000Z",
+      "summary": "Rodri back with the group as Barça return to work&nbsp;&nbsp;FC Barcelona Website",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "Investigation Reveals Who Betrayed Photographer Secretly Documenting Nazi-Occupied France",
+      "link": "https://petapixel.com/2026/11/27/investigation-reveals-who-betrayed-photographer-secretly-documenting-nazi-occupied-france/",
+      "date": "2026-11-27T12:00:54.000Z",
+      "summary": "A new investigation has uncovered how a brave photographer, who risked his life taking hundreds of pictures of Nazi-occupied France, may have been betrayed by two neighbors. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "How a Photographer Got a Credit on Jennifer Lopez’s Instagram Account",
+      "link": "https://petapixel.com/2026/11/27/how-a-photographer-got-a-credit-on-jennifer-lopezs-instagram-account/",
+      "date": "2026-11-27T10:36:38.000Z",
+      "summary": "A photographer has revealed how he managed to get a credit on Jennifer Lopez's Instagram account after the star initially reposted his video without any attribution. [Read More]",
+      "source": "PetaPixel",
+      "tags": [
+        "photo"
+      ]
+    },
+    {
+      "title": "FC Barcelona News: 27 November 2026; Rodri and Andreas Christensen set to return, Alejandro Balde injury confirmed - Barca Blaugranes",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOenBkUy1VMlZmWE1DZnEyanExdUI3TEVvaHZpSWxwaEpDNHF1RmRwUHNvY1I5eDZrZnZ3aGRUSzA5OFdxbFBCaFVtektoeFlwbkxGd2NzWUFYNXhqcGxnbHBTMkxLTkxNeVVZU2lYeXlVd3dvZ0tYLUNtdXJPVHB5aVphQk8wSnYyb0M5UHBQa084WTh4WXdLM0FBSmR1SmxVaFpvTFFvVWVJWW5JTFBmd1NBcW5za2E1UVRnaHA1MEpDTjN4ckRXa001WklNVUJTX2FMdUk2TWlHQ3U3?oc=5",
+      "date": "2026-11-27T10:00:00.000Z",
+      "summary": "FC Barcelona News: 27 November 2026; Rodri and Andreas Christensen set to return, Alejandro Balde injury confirmed&nbsp;&nbsp;Barca Blaugranes",
+      "source": "Google News",
+      "tags": [
+        "football"
+      ]
+    },
+    {
+      "title": "New headache: Rodri's return sparks battle for places at Barcelona - Goal.com",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTzNsZmJVM01FRU1DTzF4cWhrOEpmU2tBTjRlcnpfMlN1ZEZhdXdaRE5DbkZZVGt6Uy1CeXZGU3BDNjdsSW1ab2NtZl9FbDVyVk9FSU9XdjBOZFhzbU0zYkg1TEdlTjl6dGxfeDcyS21aOFdydS1xNXpCcmxjVWJVWUFNMHI1Z0lZd0ZHaFl2SWppOUFaRHhXYlV4VHAzVkl6TEs3cHpILXRvNUFxcWgzYWZSbEFOaS1p?oc=5",
+      "date": "2026-11-27T07:46:17.000Z",
+      "summary": "New headache: Rodri's return sparks battle for places at Barcelona&nbsp;&nbsp;Goal.com",
       "source": "Google News",
       "tags": [
         "football"
@@ -399,76 +561,6 @@
       ]
     },
     {
-      "title": "Medical update on Balde - FC Barcelona Website",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNZmdQQVAtRUVlU010OGRjUE5yRDJRRURTR2F2ai00cWlSRHJCbUNjRFh0d2s5SkRzQUN6M1JnYnI3aHhQblVFMWp4SUZtQUt0NjE4SHd1c3hZaGIxTGp6Sl84WGgzRndOaUZyWnZNMXJHUFdRT1dHbHhzNEQ3OGN1MEpJeGdUYXN0VUVpZzZuTEU?oc=5",
-      "date": "2026-11-26T14:03:41.000Z",
-      "summary": "Medical update on Balde&nbsp;&nbsp;FC Barcelona Website",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Leica Introduces Two New Camera Bags Made by Billingham",
-      "link": "https://petapixel.com/2026/11/26/leica-introduces-two-new-camera-bags-made-by-billingham/",
-      "date": "2026-11-26T14:00:57.000Z",
-      "summary": "Leica has partnered with British camera bag manufacturer Billingham to introduce two new camera bags designed specifically for its mirrorless cameras. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Barcelona confirm Alejandro Balde injury after Champions League win over Sabah - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOcTZ4TGtlV29acjJ1MmlZazBHZmJnVjQxczYxQUZYOXdzUXVxaXViUGNEUkV3YlJsZHJLc090bmRLOGhOYkVXa01SeHVQdUx5aXNzalpFeUdUNC1MVEJkbmliV1lhWnRwS3VZS2pibW9aVWd3V25Wam9wOEh3a1htNVotS0hfbk1JMXBKaE9NQ2tFMzAxWV91VG82NkhaY21DeTA2NDFOdHctOTNUZ19qaFhucnluQkZwVFlN?oc=5",
-      "date": "2026-11-26T13:49:34.000Z",
-      "summary": "Barcelona confirm Alejandro Balde injury after Champions League win over Sabah&nbsp;&nbsp;Barca Blaugranes",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Missouri Investigates Photographer After Customers Say They Never Received Images",
-      "link": "https://petapixel.com/2026/11/26/missouri-investigates-photographer-after-customers-say-they-never-received-images/",
-      "date": "2026-11-26T11:03:29.000Z",
-      "summary": "Missouri has opened an investigation into a photography business after allegedly leaving numerous customers without the pictures they paid for or a refund. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "These Awards Celebrate the Very Best Adventure and Action Sports Photography",
-      "link": "https://petapixel.com/2026/11/26/these-awards-celebrate-the-very-best-adventure-and-action-sports-photography/",
-      "date": "2026-11-26T11:00:46.000Z",
-      "summary": "The category winners for the Illume Awards have been revealed, an extreme sports photography competition built on the legacy of Red Bull Illume. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Barcelona to file complaint about Florentino Pérez’s quotes over Negreira case - Managing Madrid",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcXd6NzYtMGdUUDV0WHppRVBXTDE2VnQ2RHBZdEVrMkpDdWtoVF9laXI2ZjlRNHR6OFJiNkxic29QbHV0cHh6MWwyRUJjUFlqSDhRRndzUVg2S1NnV0czMUJnZWhoY1JpTFZnQ1UyeWVfZ24xNi1CVUQwWkRUSEUtRW9FUDJWblJjdi1ScWNDV1lwaThzSV93YlRmWWhLaE13MGpz?oc=5",
-      "date": "2026-11-26T09:46:49.000Z",
-      "summary": "Barcelona to file complaint about Florentino Pérez’s quotes over Negreira case&nbsp;&nbsp;Managing Madrid",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
-      "title": "Barcelona: Every loanee in 2026-27 & how they've been faring - Planet Football",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNTFFwcmpOWjRnMHByUFZfNWJHcmhDR2d6LVl6ZlVXb3FkU2Q5ZTl6MWhaenJDWUV1R1hpNlJXN0pUcXNiSExqeDVrZ1NxajZkck9VTHFZYWtkS3dPbnF1QUlVS1huaDRvVUdOOGtqYllDMmdiMTc4MnJFU0s0NV9zcElBZ0w0ZGRyc3ZfcEFZUHhTMFE?oc=5",
-      "date": "2026-11-26T08:00:00.000Z",
-      "summary": "Barcelona: Every loanee in 2026-27 & how they've been faring&nbsp;&nbsp;Planet Football",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
       "title": "King Crimson Co-Founder Michael Giles Dies at 84",
       "link": "https://pitchfork.com/story/king-crimson-co-founder-michael-giles-dies-at-84/",
       "date": "2026-11-25T23:52:08.000Z",
@@ -489,104 +581,12 @@
       ]
     },
     {
-      "title": "Sabah 1-4 Barcelona: Anthony Gordon at the double as Barça cruise to Champions League win in Baku - Barca Blaugranes",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOeE95d24xZ0M4eUdVMHFCbEIyRHVWWWVocmxtdnphZEJIRmtsQzM4M1FQQVFVVVFqQVJIVjZVVE0tTDJIRW5iakkyU2lTWWN4SFBOQ3pQWFJCd3FzOHc5ekRyaVJsSUc5T0ZLYmZRNGdhSnd0N194Z3RLbDdJSmJEd2tNYnBWNDhvbVB5WWNOakJTMnU5b1B2U0gwMWFYSGRWazhwRU9GTUJiNGw4dTJxZUg5a2U1bHVsbjlXcWF4VDMtaVh4cVRPbmlmQU9NT2F0TGpFbDlZVlBONWRv?oc=5",
-      "date": "2026-11-25T19:38:23.000Z",
-      "summary": "Sabah 1-4 Barcelona: Anthony Gordon at the double as Barça cruise to Champions League win in Baku&nbsp;&nbsp;Barca Blaugranes Five things we learned from Barcelona’s 4-1 win over Sabah in the Champions League&nbsp;&nbsp;Barca Universal Barcelona see €70 million summer signing as…",
-      "source": "Google News",
-      "tags": [
-        "football"
-      ]
-    },
-    {
       "title": "Bradford Cox Reveals Autism Diagnosis",
       "link": "https://pitchfork.com/story/bradford-cox-reveals-autism-diagnosis/",
       "date": "2026-11-25T19:17:29.000Z",
       "summary": "“I didn’t understand that I was unable to stop talking, that I was in this neurodivergent state”",
       "source": "Pitchfork",
       "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "The Best Early Black Friday Photo and Camera Deals Available Now",
-      "link": "https://petapixel.com/2026/11/25/the-best-early-black-friday-photo-and-camera-deals-available-now/",
-      "date": "2026-11-25T18:41:35.000Z",
-      "summary": "Although Black Friday isn't quite here yet, plenty of great photography deals are already live. Here are some of the best offers available right now. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "YouTube Is Suddenly Obsessed With Views",
-      "link": "https://petapixel.com/2026/11/25/youtube-is-suddenly-obsessed-with-views/",
-      "date": "2026-11-25T18:12:17.000Z",
-      "summary": "This year, YouTube has changed how it counts views twice — and both occurred within three months of each other, which is shifting the paradigm of expectations for creators and advertisers. It also appears both creepy and desperate on YouTube's part. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "The New York Times Cancels Adobe, the R8 II is a Hit, and Reto Does it Again | The PetaPixel Podcast",
-      "link": "https://petapixel.com/2026/11/25/the-new-york-times-cancels-adobe-the-r8-ii-is-a-hit-and-reto-does-it-again-the-petapixel-podcast/",
-      "date": "2026-11-25T18:00:08.000Z",
-      "summary": "This week on The PetaPixel Podcast, Chris is back from assignment and the team discusses a major development: The New York Times is forbidding the use of Adobe Photoshop 2027 because of too much (undisclosed) AI. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "ai",
-        "photo"
-      ]
-    },
-    {
-      "title": "Hollywood and Analog Photography Power Kodak’s Fifth Consecutive Quarter of Growth",
-      "link": "https://petapixel.com/2026/11/25/hollywood-and-analog-photography-power-kodaks-fifth-consecutive-quarter-of-growth/",
-      "date": "2026-11-25T15:14:52.000Z",
-      "summary": "It has now been five straight quarters of growth for the transformed, resurgent Eastman Kodak. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Family Photographer Arrested for Allegedly Concealing Her Earnings",
-      "link": "https://petapixel.com/2026/11/25/family-photographer-arrested-for-allegedly-concealing-her-earnings/",
-      "date": "2026-11-25T14:30:21.000Z",
-      "summary": "A family photographer has been arrested for allegedly hiding income from her photography business to obtain more than $30,000 in food assistance benefits. [Read More]",
-      "source": "PetaPixel",
-      "tags": [
-        "photo"
-      ]
-    },
-    {
-      "title": "Erykah Badu Does “Breezy,” Salutes Elton John on Fallon",
-      "link": "https://pitchfork.com/story/erykah-badu-does-breezy-salutes-elton-john-on-fallon/",
-      "date": "2026-11-25T13:15:56.000Z",
-      "summary": "Her rendition of the Alchemist-assisted single interpolated “Bennie and the Jets”",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Ninajirachi Drops I Love My Computer Remix Album",
-      "link": "https://pitchfork.com/story/ninajirachi-drops-i-love-my-computer-remix-album/",
-      "date": "2026-11-24T23:06:25.000Z",
-      "summary": "Wet Leg, Mallrat, Genesis Owusu, and more lend their hands to I Love My Computer, All My Friends Are Inside It",
-      "source": "Pitchfork",
-      "tags": [
-        "music"
-      ]
-    },
-    {
-      "title": "Tidal Bans AI Songs",
-      "link": "https://pitchfork.com/story/tidal-bans-ai-songs/",
-      "date": "2026-11-24T18:25:59.000Z",
-      "summary": "In a first-of-its-kind move, the platform plans to delete some 29 million songs it deems wholly AI-generated",
-      "source": "Pitchfork",
-      "tags": [
-        "ai",
         "music"
       ]
     },
@@ -618,16 +618,6 @@
       "source": "ScienceDaily Chemistry",
       "tags": [
         "chem"
-      ]
-    },
-    {
-      "title": "Last chance to vote for BBC Men's Footballer of the Year",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c61wrqr7l1d8o?at_medium=RSS&at_campaign=rss",
-      "date": "2026-11-19T06:30:04.000Z",
-      "summary": "Jude Bellingham, Harry Kane, Kylian Mbappe, Rodri and Lamine Yamal are shortlisted for the BBC's Men's Footballer of the Year award.",
-      "source": "BBC Sport",
-      "tags": [
-        "football"
       ]
     },
     {
